@@ -1,9 +1,7 @@
-// Allocate 48-byte resource records and initialize every indexed entry.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 
-s32 func_00117B40(s32, s32, M2C_UNK);               /* extern */
+void *func_00117B40(void *, unsigned int, int);               /* extern */
 s32 func_00119048(s32);                             /* extern */
 M2C_UNK func_00263748(void *, s32, s32 *, M2C_UNK); /* extern */
 
