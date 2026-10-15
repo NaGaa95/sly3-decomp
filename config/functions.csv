@@ -19,7 +19,7 @@ func_00100A88,0x00100A88,0x00100B08,128,ghidra-provisional
 func_00100B08,0x00100B08,0x00100B80,120,ghidra-provisional
 func_00100B80,0x00100B80,0x00100C00,128,ghidra-provisional
 func_00100C00,0x00100C00,0x00100C80,128,ghidra-provisional
-func_00100C80,0x00100C80,0x00100CF8,120,ghidra-provisional
+func_00100C80,0x00100C80,0x00100CF4,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00100CF8,0x00100CF8,0x00100D90,152,ghidra-provisional
 func_00100D90,0x00100D90,0x00100E18,136,ghidra-provisional
 func_00100E18,0x00100E18,0x00100EA0,136,ghidra-provisional
@@ -90,7 +90,7 @@ func_00103390,0x00103390,0x00103438,168,ghidra-provisional
 func_00103438,0x00103438,0x001034B8,128,ghidra-provisional
 func_001034B8,0x001034B8,0x00103540,136,ghidra-provisional
 func_00103540,0x00103540,0x001035C8,136,ghidra-provisional
-func_001035C8,0x001035C8,0x00103640,120,ghidra-provisional
+func_001035C8,0x001035C8,0x0010363C,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00103640,0x00103640,0x00103718,216,ghidra-provisional
 func_00103718,0x00103718,0x001037F0,216,ghidra-provisional
 func_001037F0,0x001037F0,0x001038E8,248,ghidra-provisional
@@ -108,10 +108,10 @@ func_00104008,0x00104008,0x00104090,136,ghidra-provisional
 func_00104090,0x00104090,0x00104108,120,ghidra-provisional
 func_00104108,0x00104108,0x00104190,136,ghidra-provisional
 func_00104190,0x00104190,0x00104218,136,ghidra-provisional
-func_00104218,0x00104218,0x00104290,120,ghidra-provisional
+func_00104218,0x00104218,0x0010428C,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00104290,0x00104290,0x00104318,136,ghidra-provisional
 func_00104318,0x00104318,0x001043A0,136,ghidra-provisional
-func_001043A0,0x001043A0,0x00104418,120,ghidra-provisional
+func_001043A0,0x001043A0,0x00104414,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00104418,0x00104418,0x00104498,128,ghidra-provisional
 func_00104498,0x00104498,0x00104578,224,ghidra-provisional
 func_00104578,0x00104578,0x00104600,136,ghidra-provisional
@@ -125,7 +125,7 @@ func_00104948,0x00104948,0x001049F0,168,ghidra-provisional
 func_001049F0,0x001049F0,0x00104A70,128,ghidra-provisional
 func_00104A70,0x00104A70,0x00104B18,168,ghidra-provisional
 func_00104B18,0x00104B18,0x00104C18,256,ghidra-provisional
-func_00104C18,0x00104C18,0x00104C90,120,ghidra-provisional
+func_00104C18,0x00104C18,0x00104C8C,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00104C90,0x00104C90,0x00104D68,216,ghidra-provisional
 func_00104D68,0x00104D68,0x00104E10,168,ghidra-provisional
 func_00104E10,0x00104E10,0x00104EB8,168,ghidra-provisional
@@ -234,7 +234,7 @@ func_00108A18,0x00108A18,0x00108A90,120,ghidra-provisional
 func_00108A90,0x00108A90,0x00108B18,136,ghidra-provisional
 func_00108B18,0x00108B18,0x00108BA0,136,ghidra-provisional
 func_00108BA0,0x00108BA0,0x00108C20,128,ghidra-provisional
-func_00108C20,0x00108C20,0x00108C98,120,ghidra-provisional
+func_00108C20,0x00108C20,0x00108C94,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00108C98,0x00108C98,0x00108D50,184,ghidra-provisional
 func_00108D50,0x00108D50,0x00108DD8,136,ghidra-provisional
 func_00108DD8,0x00108DD8,0x00108E48,112,ghidra-provisional
@@ -249,7 +249,7 @@ func_00109210,0x00109210,0x001092C0,176,ghidra-provisional
 func_001092C0,0x001092C0,0x00109330,112,ghidra-provisional
 func_00109330,0x00109330,0x00109410,224,ghidra-provisional
 func_00109410,0x00109410,0x001094B8,168,ghidra-provisional
-func_001094B8,0x001094B8,0x00109530,120,ghidra-provisional
+func_001094B8,0x001094B8,0x0010952C,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00109530,0x00109530,0x001095C0,144,ghidra-provisional
 func_001095C0,0x001095C0,0x00109648,136,ghidra-provisional
 func_00109648,0x00109648,0x001096D0,136,ghidra-provisional
@@ -282,7 +282,7 @@ func_0010A598,0x0010A598,0x0010A620,136,ghidra-provisional
 func_0010A620,0x0010A620,0x0010A6C8,168,ghidra-provisional
 func_0010A6C8,0x0010A6C8,0x0010A740,120,ghidra-provisional
 func_0010A740,0x0010A740,0x0010A7E8,168,ghidra-provisional
-func_0010A7E8,0x0010A7E8,0x0010A860,120,ghidra-provisional
+func_0010A7E8,0x0010A7E8,0x0010A85C,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0010A860,0x0010A860,0x0010A8E8,136,ghidra-provisional
 func_0010A8E8,0x0010A8E8,0x0010A960,120,ghidra-provisional
 func_0010A960,0x0010A960,0x0010A9D8,120,ghidra-provisional
@@ -354,7 +354,7 @@ func_0010CE70,0x0010CE70,0x0010CEF8,136,ghidra-provisional
 func_0010CEF8,0x0010CEF8,0x0010CF80,136,ghidra-provisional
 func_0010CF80,0x0010CF80,0x0010D008,136,ghidra-provisional
 func_0010D008,0x0010D008,0x0010D0C0,184,ghidra-provisional
-func_0010D0C0,0x0010D0C0,0x0010D138,120,ghidra-provisional
+func_0010D0C0,0x0010D0C0,0x0010D134,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0010D138,0x0010D138,0x0010D1C0,136,ghidra-provisional
 func_0010D1C0,0x0010D1C0,0x0010D248,136,ghidra-provisional
 func_0010D248,0x0010D248,0x0010D2B8,112,ghidra-provisional
@@ -401,7 +401,7 @@ func_0010EBC8,0x0010EBC8,0x0010EC68,160,ghidra-provisional
 func_0010EC68,0x0010EC68,0x0010ED10,168,ghidra-provisional
 func_0010ED10,0x0010ED10,0x0010EDC8,184,ghidra-provisional
 func_0010EDC8,0x0010EDC8,0x0010EE68,160,ghidra-provisional
-func_0010EE68,0x0010EE68,0x0010EEE0,120,ghidra-provisional
+func_0010EE68,0x0010EE68,0x0010EEDC,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0010EEE0,0x0010EEE0,0x0010EF68,136,ghidra-provisional
 func_0010EF68,0x0010EF68,0x0010EFF0,136,ghidra-provisional
 func_0010EFF0,0x0010EFF0,0x0010F090,160,ghidra-provisional
@@ -428,7 +428,7 @@ func_0010FCC0,0x0010FCC0,0x0010FD38,120,ghidra-provisional
 func_0010FD38,0x0010FD38,0x0010FDB0,120,ghidra-provisional
 func_0010FDB0,0x0010FDB0,0x0010FE68,184,ghidra-provisional
 func_0010FE68,0x0010FE68,0x0010FF08,160,ghidra-provisional
-func_0010FF08,0x0010FF08,0x0010FF80,120,ghidra-provisional
+func_0010FF08,0x0010FF08,0x0010FF7C,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0010FF80,0x0010FF80,0x00110028,168,ghidra-provisional
 func_00110028,0x00110028,0x001100D0,168,ghidra-provisional
 func_001100D0,0x001100D0,0x00110144,116,manual-complete-original-actual-input-lifetime-JR-delay-independent-whole-native-review
@@ -450,7 +450,7 @@ func_00110900,0x00110900,0x00110978,120,ghidra-provisional
 func_00110978,0x00110978,0x00110A20,168,ghidra-provisional
 func_00110A20,0x00110A20,0x00110AA8,136,ghidra-provisional
 func_00110AA8,0x00110AA8,0x00110B30,136,ghidra-provisional
-func_00110B30,0x00110B30,0x00110BA8,120,ghidra-provisional
+func_00110B30,0x00110B30,0x00110BA4,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00110BA8,0x00110BA8,0x00110C28,128,ghidra-provisional
 func_00110C28,0x00110C28,0x00110CD0,168,ghidra-provisional
 func_00110CD0,0x00110CD0,0x00110D78,168,ghidra-provisional
@@ -473,7 +473,7 @@ func_001116A0,0x001116A0,0x00111728,136,ghidra-provisional
 func_00111728,0x00111728,0x00111800,216,ghidra-provisional
 func_00111800,0x00111800,0x00111878,120,ghidra-provisional
 func_00111878,0x00111878,0x00111900,136,ghidra-provisional
-func_00111900,0x00111900,0x00111978,120,ghidra-provisional
+func_00111900,0x00111900,0x00111974,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00111978,0x00111978,0x00111A20,168,ghidra-provisional
 func_00111A20,0x00111A20,0x00111AA0,128,ghidra-provisional
 func_00111AA0,0x00111AA0,0x00111B80,224,ghidra-provisional
@@ -4100,7 +4100,7 @@ func_001D1AB0,0x001D1AB0,0x001D1B98,232,manual-complete-original-JR-real-delay-a
 func_001D1B98,0x001D1B98,0x001D1BEC,84,manual-original-ghidra-entry-return-and-whole-text-source-review
 func_001D1BF0,0x001D1BF0,0x001D1CC4,212,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001D1CC8,0x001D1CC8,0x001D1E60,408,ghidra-provisional
-func_001D1E60,0x001D1E60,0x001D1EF4,148,manual-original-terminal-return-and-ghidra-body-before-callback-entry
+func_001D1E60,0x001D1E60,0x001D1EF4,148,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001D1EF8,0x001D1EF8,0x001D207C,388,manual-original-callback-table-entry-terminal-return-and-whole-text-control-review
 func_001D2080,0x001D2080,0x001D20C8,72,ghidra+spimdisasm-provisional
 func_001D20C8,0x001D20C8,0x001D2100,56,ghidra+spimdisasm-provisional
@@ -8107,7 +8107,7 @@ func_002BA638,0x002BA638,0x002BA690,88,ghidra+spimdisasm-provisional
 func_002BA690,0x002BA690,0x002BA6B8,40,ghidra+spimdisasm-provisional
 func_002BA6B8,0x002BA6B8,0x002BA760,168,ghidra+spimdisasm-provisional
 func_002BA760,0x002BA760,0x002BA780,32,ghidra+spimdisasm-provisional
-func_002BA780,0x002BA780,0x002BA7E8,104,ghidra+spimdisasm-provisional
+func_002BA780,0x002BA780,0x002BA7E8,104,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_002BA7E8,0x002BA7E8,0x002BA808,32,ghidra+spimdisasm-provisional
 func_002BA808,0x002BA808,0x002BA818,16,ghidra+spimdisasm-provisional
 func_002BA818,0x002BA818,0x002BA828,16,ghidra+spimdisasm-provisional
