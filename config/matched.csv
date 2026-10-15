@@ -1425,10 +1425,12 @@ func_0013D2B0,0x0013D2B0,8,LINKED_MATCH,src/auto/func_0013D2B0.c
 func_0013D400,0x0013D400,15,LINKED_MATCH,src/reference_constants/func_0013D400.c
 func_0013D440,0x0013D440,15,LINKED_MATCH,src/reference_constants/func_0013D440.c
 func_0013DDE8,0x0013DDE8,28,LINKED_MATCH,src/reference_constants/func_0013DDE8.c
+func_0013E510,0x0013E510,381,LINKED_MATCH,src/engine/actor_state.c
 func_0013EE08,0x0013EE08,23,LINKED_MATCH,src/reference_constants/func_0013EE08.c
 func_0013F040,0x0013F040,57,LINKED_MATCH,src/engine/actor_kind.c
 func_0013F128,0x0013F128,35,LINKED_MATCH,src/engine/actor_state_kind.c
 func_0013F1B8,0x0013F1B8,4,EXACT_MATCH,src/P2/actor_state_predicates.c
+func_0013F1C8,0x0013F1C8,49,LINKED_MATCH,src/engine/actor_selection.c
 func_0013F290,0x0013F290,27,LINKED_MATCH,src/reference_constants/func_0013F290.c
 func_0013F840,0x0013F840,12,LINKED_MATCH,src/reference_constants/func_0013F840.c
 func_0013F8D0,0x0013F8D0,23,LINKED_MATCH,src/reference_constants/func_0013F8D0.c
@@ -3153,6 +3155,7 @@ func_001F9820,0x001F9820,16,LINKED_MATCH,src/reference_constants/func_001F9820.c
 func_001F9860,0x001F9860,2,EXACT_MATCH,src/hand/func_001F9860.c
 func_001F9868,0x001F9868,14,LINKED_MATCH,src/reference_constants/func_001F9868.c
 func_001F98A0,0x001F98A0,47,LINKED_MATCH,src/hand/func_001F98A0.c
+func_001F9FB0,0x001F9FB0,180,LINKED_MATCH,src/P2/style_triangles.cpp
 func_001FA280,0x001FA280,194,LINKED_MATCH,src/P2/style_init.cpp
 func_001FA588,0x001FA588,8,LINKED_MATCH,src/auto/func_001FA588.c
 func_001FA5A8,0x001FA5A8,4,EXACT_MATCH,src/auto/func_001FA5A8.c
@@ -4455,6 +4458,7 @@ func_0027FD90,0x0027FD90,14,LINKED_MATCH,src/reference_constants/func_0027FD90.c
 func_0027FDC8,0x0027FDC8,7,LINKED_MATCH,src/auto/func_0027FDC8.c
 func_0027FDE8,0x0027FDE8,125,LINKED_MATCH,src/hand/func_0027FDE8.c
 func_0027FFE0,0x0027FFE0,11,LINKED_MATCH,src/reference/func_0027FFE0.c
+func_00280010,0x00280010,108,LINKED_MATCH,src/P2/controller_activate.cpp
 func_002801C0,0x002801C0,17,LINKED_MATCH,src/reference_constants/func_002801C0.c
 func_00280208,0x00280208,14,LINKED_MATCH,src/reference_constants/func_00280208.c
 func_00280240,0x00280240,12,EXACT_MATCH,src/hand/func_00280240.c
