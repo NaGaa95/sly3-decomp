@@ -1620,6 +1620,7 @@ func_00155ED8,0x00155ED8,19,LINKED_MATCH,src/reference_constants/func_00155ED8.c
 func_00155F28,0x00155F28,22,LINKED_MATCH,src/reference_constants/func_00155F28.c
 func_001561B0,0x001561B0,15,LINKED_MATCH,src/reference_constants/func_001561B0.c
 func_00156438,0x00156438,11,LINKED_MATCH,src/reference_constants/func_00156438.c
+func_00156468,0x00156468,67,LINKED_MATCH,src/engine/actor_reference.cpp
 func_00156578,0x00156578,70,LINKED_MATCH,src/reference_constants/func_00156578.c
 func_00156690,0x00156690,16,LINKED_MATCH,src/reference_constants/func_00156690.c
 func_001566D0,0x001566D0,12,EXACT_MATCH,src/reference_constants/func_001566D0.c
@@ -2346,6 +2347,7 @@ func_001A0F28,0x001A0F28,51,LINKED_MATCH,src/game_middle/radial_source_lifecycle
 func_001A0FF8,0x001A0FF8,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
 func_001A1020,0x001A1020,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
 func_001A1048,0x001A1048,30,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
+func_001A10C0,0x001A10C0,39,LINKED_MATCH,src/game_middle/source_clone_preservation.cpp
 func_001A11C8,0x001A11C8,27,LINKED_MATCH,src/game_middle/radial_travel_query.cpp
 func_001A1238,0x001A1238,52,LINKED_MATCH,src/game_middle/radial_position_offset.cpp
 func_001A1308,0x001A1308,54,LINKED_MATCH,src/game_middle/radial_position_sample.cpp
@@ -2353,6 +2355,7 @@ func_001A13E0,0x001A13E0,51,LINKED_MATCH,src/game_middle/linear_source_lifecycle
 func_001A14B0,0x001A14B0,9,LINKED_MATCH,src/game_middle/linear_source_lifecycle.cpp
 func_001A14D8,0x001A14D8,9,LINKED_MATCH,src/game_middle/linear_source_lifecycle.cpp
 func_001A1500,0x001A1500,27,LINKED_MATCH,src/game_middle/linear_source_lifecycle.cpp
+func_001A1570,0x001A1570,39,LINKED_MATCH,src/game_middle/source_clone_preservation.cpp
 func_001A1610,0x001A1610,11,LINKED_MATCH,src/reference_constants/func_001A1610.c
 func_001A1640,0x001A1640,60,LINKED_MATCH,src/game_middle/frame_linear_offset.cpp
 func_001A18F0,0x001A18F0,43,LINKED_MATCH,src/hand/func_001A18F0.c
@@ -4627,6 +4630,7 @@ func_0028B168,0x0028B168,8,LINKED_MATCH,src/auto/func_0028B168.c
 func_0028B188,0x0028B188,9,EXACT_MATCH,src/hand/func_0028B188.c
 func_0028B1B0,0x0028B1B0,31,LINKED_MATCH,src/reference_constants/func_0028B1B0.c
 func_0028B440,0x0028B440,48,LINKED_MATCH,src/hand/func_0028B440.c
+func_0028BAD0,0x0028BAD0,127,LINKED_MATCH,src/P2/hierarchy_matrix.cpp
 func_0028C210,0x0028C210,10,LINKED_MATCH,src/hand/func_0028C210.c
 func_0028C238,0x0028C238,5,LINKED_MATCH,src/reference/func_0028C238.c
 func_0028C250,0x0028C250,37,LINKED_MATCH,src/reference_constants/func_0028C250.c
