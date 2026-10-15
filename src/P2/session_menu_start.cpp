@@ -98,7 +98,7 @@ extern "C" void func_0017C698(SESSION_CONTROL_DATA *);
 extern "C" SESSION_CONTROL_OPTION *func_0017C018(SESSION_CONTROL_DATA *);
 extern "C" void func_001DBD08(void *,int);
 extern "C" void func_00289198(SESSION_CONTROL_GAME *,int,int,void *);
-extern "C" void func_00289070(SESSION_CONTROL_GAME *,int,int,int,int);
+extern "C" void func_00289070(SESSION_CONTROL_GAME *,const struct RequestRecord64 *,int,int,int);
 extern "C" SESSION_CONTROL_NODE *func_0017C6C8(SESSION_CONTROL_DATA *);
 extern "C" int func_0017AE78(SESSION_CONTROL_PARENT *);
 extern "C" int func_0017AEB8(SESSION_CONTROL_PARENT *);
