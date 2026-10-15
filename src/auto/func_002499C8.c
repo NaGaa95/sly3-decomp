@@ -1,45 +1,11 @@
-// Recovered using the Sly 2 source; Sly 3 calls and globals resolved from original operands.
-#include "m2c_prelude.h"
-M2C_UNK func_00117968(s32, s32, s32);               /* extern */
-M2C_UNK func_001291A8(s32, s32 *);                  /* extern */
-M2C_UNK func_00129EC8(s32 *);                       /* extern */
-M2C_UNK func_0012A0B0(s32 *, M2C_UNK);              /* extern */
-extern M2C_UNK D_00279AD0;
-extern s128 D_002A2DD0;
-extern M2C_UNK D_002A8288;
-extern M2C_UNK D_002A82A8;
-extern s32 D_002A8350;
-extern M2C_UNK D_002A83B8;
-extern M2C_UNK D_002A83C0;
-extern M2C_UNK D_002BBB60;
-extern s32 D_002BD4C0;
-extern M2C_UNK D_002C3C40;
-extern f32 D_002C3C58;
-extern M2C_UNK D_002CA510;
-extern s32 D_002DD2E0;
-extern s32 D_002DD2E4;
-extern s32 D_002DD2E8;
-extern s32 D_002DD2EC;
-extern s32 D_002DD2F0;
-extern s32 D_002DD2F4;
-extern s32 D_002DD5BC;
-extern M2C_UNK D_002DDED0;
-extern f32 D_002DDF10;
-extern s32 D_002E1E40;
-extern s32 D_002E1E54;
-extern s32 D_002F7900;
-extern M2C_UNK D_003DD040;
-extern M2C_UNK D_003DD490;
-extern s32 D_003E1C34;
-extern M2C_UNK D_004435F0;
-extern M2C_UNK D_004520A8;
-extern M2C_UNK D_004520D0;
-extern M2C_UNK D_004520F8;
-extern M2C_UNK D_00452120;
-extern M2C_UNK D_00452148;
-extern M2C_UNK D_00452170;
+#include "pool_reset_api.h"
+#include "eval_dispatch_api.h"
 
-void func_002499C8(s32 arg0, s32 arg1) {
-    func_002BAA50(arg0, 0);
+struct ClosureFrameReference;
+void func_002BAA50(struct ClosureFrameReference *reference, EvalFrame *frame);
+
+void func_002499C8(int reference, int unused)
+{
+    func_002BAA50((struct ClosureFrameReference *)reference, 0);
     func_0012CA50();
 }
