@@ -14,7 +14,7 @@ struct RuntimeObject {
 typedef struct ObjectList { int opaque0[2]; int count; RuntimeObject **items; } ObjectList;
 extern void func_0028C210(void *parent);
 extern void func_0028C238(void *parent);
-extern void func_00151D80(void *owner, int argument, ObjectList *list);
+extern void func_00151D80(void *owner, void *stream, ObjectList *list);
 extern int func_00119178(void *stream);
 extern void func_00119340(void *stream, Matrix *out);
 extern int func_001190A8(void *stream);
@@ -28,10 +28,10 @@ void func_00290438(RuntimeObject *object, void *stream) {
     func_00290078(object);
     func_001C9198(object,func_001190A8(stream));
 }
-void func_002904B0(RuntimeObject *object, int argument, ObjectList *list) {
+void func_002904B0(RuntimeObject *object, void *stream, ObjectList *list) {
     int i=0;
     func_0028C210(object->parent);
-    func_00151D80(object->owner,argument,list);
+    func_00151D80(object->owner,stream,list);
     func_0028C238(object->parent);
     for (; i < list->count; ++i) {
         RuntimeObject *child = list->items[i];

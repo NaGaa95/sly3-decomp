@@ -38,7 +38,7 @@ void *func_001D24D0(MSG *pmsg, void *pv);
 void func_00274530(struct S *p, int id);
 void func_001519C8(struct S *p, void *pbis);
 void func_00274660(struct S *p);
-void func_00151A38(MSG *pmsg);
+MSG *func_00151A38(MSG *pmsg);
 void func_002904B0(struct S *p, void *pbis, MSG *pmsg);
 void func_00273CF8(struct S *p, void *pbis) {
     MARK mark;
