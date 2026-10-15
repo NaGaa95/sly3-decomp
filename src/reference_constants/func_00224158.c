@@ -1,3 +1,4 @@
+#include "bone_key_api.h"
 // Reference algorithm: src/hand/func_001DEDB0.c; Sly 3 identity is canonical.
 // Sly 3 literal/layout changes are verified against every compiled instruction.
 // SLY3_CFLAGS: -Os -G0
@@ -9,7 +10,6 @@ extern struct G D_00475480;
 void func_0017E208(struct G *, int, int, void *, int, Q **);
 void *func_0023FAE8(void *, int);
 void *func_00137428(Q *, void *, int, float, float);
-R *func_00136EE0(Q *, void *, int, int);
 void func_00224158(OBJ *p)
 {
     unsigned int i;
@@ -30,7 +30,7 @@ void func_00224158(OBJ *p)
             if (e->r == 0)
                 continue;
         }
-        r = func_00136EE0(q, o, 0xC, 1);
+        r = (R *)func_00136EE0((struct BoneBindings *)q, (struct BoneQueryOwner *)o, 0xC, 1);
         if (r)
             e->xC = r->x4;
     }
