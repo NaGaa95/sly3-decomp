@@ -9,7 +9,7 @@ extern "C" void func_00271B80(void *p);
 extern "C" char D_004F3000;
 extern "C" int D_004D3000;
 
-extern "C" int func_001D23E0()
+extern "C" int func_001D23E0(int unused_request)
 {
     return g_pbSlot - g_pbGlobal;
 }
