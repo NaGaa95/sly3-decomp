@@ -58,6 +58,7 @@ func_00102FF8,0x00102FF8,34,LINKED_MATCH,src/reference_cpp/func_00102FF8.cpp
 func_00103080,0x00103080,34,LINKED_MATCH,src/reference_cpp/func_00103080.cpp
 func_00103108,0x00103108,29,LINKED_MATCH,src/P2/reflected_00103108.cpp
 func_001032F0,0x001032F0,40,LINKED_MATCH,src/reference_cpp/func_001032F0.cpp
+func_00103438,0x00103438,31,LINKED_MATCH,src/P2/reflected_00103438.cpp
 func_001034B8,0x001034B8,33,LINKED_MATCH,src/P2/reflected_001034B8.cpp
 func_00103540,0x00103540,33,LINKED_MATCH,src/P2/reflected_00103540.cpp
 func_001035C8,0x001035C8,29,LINKED_MATCH,src/P2/reflected_001035C8.cpp
@@ -175,6 +176,8 @@ func_001096D0,0x001096D0,29,LINKED_MATCH,src/P2/reflected_001096D0.cpp
 func_00109748,0x00109748,33,LINKED_MATCH,src/P2/reflected_00109748.cpp
 func_00109A30,0x00109A30,31,LINKED_MATCH,src/P2/reflected_00109A30.cpp
 func_00109AB0,0x00109AB0,29,LINKED_MATCH,src/P2/reflected_00109AB0.cpp
+func_00109D40,0x00109D40,31,LINKED_MATCH,src/P2/reflected_00109D40.cpp
+func_00109DC0,0x00109DC0,31,LINKED_MATCH,src/P2/reflected_00109DC0.cpp
 func_00109E40,0x00109E40,33,LINKED_MATCH,src/P2/reflected_00109E40.cpp
 func_00109F58,0x00109F58,29,LINKED_MATCH,src/P2/reflected_00109F58.cpp
 func_00109FD0,0x00109FD0,29,LINKED_MATCH,src/P2/reflected_00109FD0.cpp
@@ -186,6 +189,7 @@ func_0010A7E8,0x0010A7E8,29,LINKED_MATCH,src/P2/reflected_0010A7E8.cpp
 func_0010A860,0x0010A860,33,LINKED_MATCH,src/P2/reflected_0010A860.cpp
 func_0010A8E8,0x0010A8E8,29,LINKED_MATCH,src/P2/reflected_0010A8E8.cpp
 func_0010A960,0x0010A960,29,LINKED_MATCH,src/P2/reflected_0010A960.cpp
+func_0010AA80,0x0010AA80,31,LINKED_MATCH,src/P2/reflected_0010AA80.cpp
 func_0010AB00,0x0010AB00,44,LINKED_MATCH,src/hand/func_0010AB00.cpp
 func_0010ADB8,0x0010ADB8,31,LINKED_MATCH,src/P2/reflected_0010ADB8.cpp
 func_0010B058,0x0010B058,29,LINKED_MATCH,src/P2/reflected_0010B058.cpp
@@ -1442,6 +1446,7 @@ func_0013D178,0x0013D178,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0013D2B0,0x0013D2B0,8,LINKED_MATCH,src/auto/func_0013D2B0.c
 func_0013D400,0x0013D400,15,LINKED_MATCH,src/reference_constants/func_0013D400.c
 func_0013D440,0x0013D440,15,LINKED_MATCH,src/reference_constants/func_0013D440.c
+func_0013D518,0x0013D518,563,LINKED_MATCH,src/engine/actor_action_update.cpp
 func_0013DDE8,0x0013DDE8,28,LINKED_MATCH,src/reference_constants/func_0013DDE8.c
 func_0013E510,0x0013E510,381,LINKED_MATCH,src/engine/actor_state.c
 func_0013EE08,0x0013EE08,23,LINKED_MATCH,src/reference_constants/func_0013EE08.c
@@ -2336,6 +2341,10 @@ func_001A0A50,0x001A0A50,9,LINKED_MATCH,src/game_middle/actor_registry_membershi
 func_001A0A78,0x001A0A78,33,LINKED_MATCH,src/hand/func_001A0A78.c
 func_001A0BA0,0x001A0BA0,11,LINKED_MATCH,src/reference_constants/func_001A0BA0.c
 func_001A0BD0,0x001A0BD0,22,LINKED_MATCH,src/reference_constants/func_001A0BD0.c
+func_001A0F28,0x001A0F28,51,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
+func_001A0FF8,0x001A0FF8,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
+func_001A1020,0x001A1020,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
+func_001A1048,0x001A1048,30,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
 func_001A11C8,0x001A11C8,27,LINKED_MATCH,src/game_middle/radial_travel_query.cpp
 func_001A1238,0x001A1238,52,LINKED_MATCH,src/game_middle/radial_position_offset.cpp
 func_001A1308,0x001A1308,54,LINKED_MATCH,src/game_middle/radial_position_sample.cpp
