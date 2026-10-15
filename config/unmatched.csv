@@ -366,8 +366,6 @@ func_0013EB08,0x0013EB08,0x0013EB68,96,ghidra+spimdisasm-provisional
 func_0013EB68,0x0013EB68,0x0013EC70,264,ghidra+spimdisasm-provisional
 func_0013EC70,0x0013EC70,0x0013ED10,160,ghidra-provisional
 func_0013ED10,0x0013ED10,0x0013EE08,248,ghidra-provisional
-func_0013EE68,0x0013EE68,0x0013F040,472,ghidra-provisional
-func_0013F870,0x0013F870,0x0013F8D0,96,ghidra+spimdisasm-provisional
 func_0013FE50,0x0013FE50,0x001400C0,624,ghidra-provisional
 func_00140438,0x00140438,0x001404D8,160,ghidra-provisional
 func_001404D8,0x001404D8,0x001405D8,256,ghidra+spimdisasm-provisional
@@ -1121,8 +1119,6 @@ func_001A0F28,0x001A0F28,0x001A1048,288,ghidra-provisional
 func_001A1048,0x001A1048,0x001A10C0,120,ghidra-provisional
 func_001A10C0,0x001A10C0,0x001A1160,160,ghidra-provisional
 func_001A1160,0x001A1160,0x001A11C8,104,ghidra-provisional
-func_001A11C8,0x001A11C8,0x001A1238,112,ghidra-provisional
-func_001A1238,0x001A1238,0x001A1308,208,ghidra-provisional
 func_001A13E0,0x001A13E0,0x001A1500,288,ghidra-provisional
 func_001A1500,0x001A1500,0x001A1570,112,ghidra-provisional
 func_001A1570,0x001A1570,0x001A1610,160,ghidra-provisional
@@ -1139,7 +1135,6 @@ func_001A1F20,0x001A1F20,0x001A1FC0,160,ghidra-provisional
 func_001A1FC0,0x001A1FC0,0x001A2080,192,ghidra-provisional
 func_001A2228,0x001A2228,0x001A22A8,128,ghidra-provisional
 func_001A2338,0x001A2338,0x001A23F8,192,ghidra-provisional
-func_001A23F8,0x001A23F8,0x001A2510,280,ghidra-provisional
 func_001A2510,0x001A2510,0x001A25B0,160,ghidra-provisional
 func_001A25E0,0x001A25E0,0x001A2698,184,ghidra-provisional
 func_001A2768,0x001A2768,0x001A2828,192,ghidra-provisional
@@ -1612,9 +1607,7 @@ func_001F6668,0x001F6668,0x001F66D8,112,ghidra+spimdisasm-provisional
 func_001F6728,0x001F6728,0x001F6798,112,ghidra-provisional
 func_001F6830,0x001F6830,0x001F68C8,152,ghidra-provisional
 func_001F68C8,0x001F68C8,0x001F69F8,304,ghidra-provisional
-func_001F69F8,0x001F69F8,0x001F6A60,104,ghidra-provisional
 func_001F6A60,0x001F6A60,0x001F7030,1488,ghidra+spimdisasm-provisional
-func_001F72D8,0x001F72D8,0x001F7388,176,ghidra-provisional
 func_001F7588,0x001F7588,0x001F7700,376,ghidra+spimdisasm-provisional
 func_001F8280,0x001F8280,0x001F83D8,344,ghidra+spimdisasm-provisional
 func_001F83D8,0x001F83D8,0x001F85F8,544,ghidra+spimdisasm-provisional
@@ -1862,12 +1855,9 @@ func_0021B7E8,0x0021B7E8,0x0021BA40,600,ghidra+spimdisasm-provisional
 func_0021BA40,0x0021BA40,0x0021BBC0,384,ghidra+spimdisasm-provisional
 func_0021BC58,0x0021BC58,0x0021BD48,240,ghidra+spimdisasm-provisional
 func_0021C208,0x0021C208,0x0021C2E0,216,ghidra+spimdisasm-provisional
-func_0021CF20,0x0021CF20,0x0021D010,240,ghidra+spimdisasm-provisional
 func_0021D010,0x0021D010,0x0021D290,640,ghidra+spimdisasm-provisional
 func_0021D290,0x0021D290,0x0021D360,208,ghidra+spimdisasm-provisional
 func_0021D7A0,0x0021D7A0,0x0021D8B0,272,ghidra+spimdisasm-provisional
-func_0021D8B0,0x0021D8B0,0x0021D948,152,ghidra+spimdisasm-provisional
-func_0021D948,0x0021D948,0x0021D9E0,152,ghidra+spimdisasm-provisional
 func_0021D9E0,0x0021D9E0,0x0021DBE8,520,ghidra+spimdisasm-provisional
 func_0021DC60,0x0021DC60,0x0021DCD8,120,ghidra+spimdisasm-provisional
 func_0021DD58,0x0021DD58,0x0021DDC0,104,ghidra+spimdisasm-provisional
