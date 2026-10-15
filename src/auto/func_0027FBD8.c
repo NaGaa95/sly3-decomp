@@ -1,9 +1,8 @@
-// Recovered using the Sly 2 source; Sly 3 calls and globals resolved from original operands.
 #include "m2c_prelude.h"
-M2C_UNK func_0027FC08(s32, M2C_UNK);                /* extern */
-M2C_UNK func_001FCAC8();                            /* extern */
+void func_0027FC08(void *receiver, int state);
+void func_001FCAC8(void *receiver);
 
 void func_0027FBD8(s32 arg0) {
-    func_001FCAC8();
-    func_0027FC08(arg0, 0);
+    func_001FCAC8((void *)arg0);
+    func_0027FC08((void *)arg0, 0);
 }
