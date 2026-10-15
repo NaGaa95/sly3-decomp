@@ -1,0 +1,256 @@
+; Sly3 USA VU1 lighting overlay, original family752237851.
+; This is a full native algorithm: affine positions, inverse-transpose normals,
+; directional/point light accumulation, then the two original color streams.
+; All coordinates below are local VU qword or micro-byte coordinates.
+; Main's concrete dynamic EE launch binding is still qualified separately.
+.ifdef VU_NATIVE_STANDALONE
+.vu
+.align 4
+.endif
+.equ object_bounds_qword,0x302
+.equ object_matrix_qword,0x303
+.equ vertex_spans_qword,0x307
+.equ packet_alpha_qword,0x308
+.equ scene_ambient_qword,11
+
+.macro begin_routine name
+.global \name
+.ifdef VU_NATIVE_STANDALONE
+.type \name,@function
+.endif
+\name:
+.endm
+.macro begin_internal_routine name
+.local \name
+.ifdef VU_NATIVE_STANDALONE
+.type \name,@function
+.endif
+\name:
+.endm
+.macro end_routine name
+.ifdef VU_NATIVE_STANDALONE
+.size \name,.-\name
+.endif
+.endm
+
+; This shipped idle entry is distinct from the packet entry at micro-byte16.
+begin_routine light_idle
+        nop[e]                      nop
+        nop                         nop
+end_routine light_idle
+
+; Header at TOPS+307 carries relative vertex begin/end and two output spans.
+; Records are three qwords: normal.xyz, raw four signed color words, position.
+; Transform and store only XYZ; their carried W lanes are not invented.
+.macro load_vertex_spans
+        nop                         ilw.x vi05,vertex_spans_qword(vi04)
+        nop                         ilw.y vi06,vertex_spans_qword(vi04)
+        nop                         ilw.z vi07,vertex_spans_qword(vi04)
+        nop                         iadd vi05,vi05,vi04
+        nop                         iadd vi06,vi06,vi04
+        nop                         iadd vi07,vi07,vi04
+.endm
+
+; Evaluate the native signed angular cubic: d=normal dot light direction;
+; weight=clamp(coefficient.y+coefficient.z*(d*d*d+d),0,1).
+; Preserve its original separate MAC operations, Z lane and issue slots.
+.macro angular_weight
+        mul.xyz vf20,vf10,vf19      nop
+        addx.z vf20,vf20,vf20x      nop
+        addy.z vf20,vf20,vf20y      nop
+        mul.z vf21,vf20,vf20        nop
+        mul.z vf21,vf21,vf20        nop
+        add.z vf21,vf21,vf20        nop
+        adday.z acc,vf00,vf17y      nop
+        madd.z vf21,vf21,vf17       nop
+        miniw.z vf21,vf21,vf00w     nop
+        max.z vf21,vf21,vf00z       nop
+.endm
+.macro add_light_color
+        nop                         lq.xyzw vf08,0(vi07)
+        mulaz.xyzw acc,vf18,vf21z   nop
+        maddw.xyzw vf08,vf08,vf00w  nop
+        nop                         sqi.xyzw vf08,(vi07++)
+        nop                         iaddi vi05,vi05,3
+        nop                         nop
+.endm
+
+begin_routine light_batch
+        nop                         xtop vi04
+        nop                         lq.xyzw vf01,object_matrix_qword(vi04)
+        nop                         lq.xyzw vf02,object_matrix_qword+1(vi04)
+        nop                         lq.xyzw vf03,object_matrix_qword+2(vi04)
+        nop                         lq.xyzw vf04,object_matrix_qword+3(vi04)
+        nop                         bal vi15,light_inverse_normal_matrix
+        nop                         nop
+        nop                         lq.xyzw vf16,scene_ambient_qword(vi00)
+        sub.xyz vf08,vf00,vf00       nop
+        nop                         lq.w vf08,packet_alpha_qword(vi04)
+        add.w vf08,vf08,vf16         nop
+load_vertex_spans
+        nop[i]                      loi 0.00787407812
+        addi.w vf25,vf00,i           nop
+
+; Native do/while vertex walk; no synthetic empty-span guard is introduced.
+; Transform positions and normalize inverse-transpose normals.
+; Helper writes only VF5/6/7.xyz; their preexisting W lanes are retained.
+transform_vertices:
+        nop                         lq.xyz vf09,2(vi05)
+        mulax.xyzw acc,vf01,vf09x   nop
+        madday.xyzw acc,vf02,vf09y  nop
+        maddaz.xyzw acc,vf03,vf09z  nop
+        maddw.xyzw vf09,vf04,vf00w  nop
+        nop                         sq.xyz vf09,2(vi05)
+        nop                         lq.xyz vf10,0(vi05)
+        mulax.xyzw acc,vf05,vf10x   nop
+        madday.xyzw acc,vf06,vf10y  nop
+        maddz.xyzw vf10,vf07,vf10z  nop
+        nop                         erleng p,vf10
+        nop                         waitp
+        nop                         mfp.x vf23,p
+        mulx.xyz vf10,vf10,vf23x    nop
+        nop                         sq.xyz vf10,0(vi05)
+        nop                         sqi.xyzw vf08,(vi07++)
+        nop                         iaddi vi05,vi05,3
+        nop                         nop
+        nop                         ibne vi05,vi06,transform_vertices
+        nop                         nop
+
+; TOPS header0.x/y gives relative three-qword light begin/end. A zero type
+; selects directional light; every nonzero type uses the original point path.
+        nop                         ilw.x vi01,0(vi04)
+        nop                         ilw.y vi02,0(vi04)
+        nop                         iadd vi09,vi01,vi04
+        nop                         iadd vi10,vi02,vi04
+        nop                         ibeq vi01,vi02,pack_vertex_colors
+next_light:
+        nop                         ilw.x vi01,0(vi09)
+load_vertex_spans
+        nop                         ibne vi01,vi00,point_light
+        nop                         nop
+
+        nop                         lq.xyzw vf17,0(vi09)
+        nop                         lq.xyzw vf18,1(vi09)
+        nop                         lq.xyzw vf19,2(vi09)
+directional_vertex:
+        nop                         lq.xyzw vf10,0(vi05)
+angular_weight
+add_light_color
+        nop                         ibne vi05,vi06,directional_vertex
+        nop                         nop
+        nop                         b advance_light
+        nop                         nop
+
+point_light:
+        nop                         lq.xyzw vf17,0(vi09)
+        nop                         lq.xyzw vf18,1(vi09)
+        nop                         lq.xyzw vf22,2(vi09)
+        nop                         lq.xyzw vf09,object_bounds_qword(vi04)
+        sub.xyz vf09,vf09,vf22       nop
+        nop                         eleng p,vf09
+        nop                         waitp
+        nop                         mfp.w vf23,p
+        sub.w vf23,vf23,vf09         nop
+        mula.w acc,vf23,vf22         nop
+        madd.w vf24,vf00,vf17        nop
+        nop                         nop
+        nop                         nop
+        nop                         nop
+; Status zero/sign of the sphere-level attenuation skips this light.
+; Read flag after the original issue latency; no host float predicate added.
+        nop                         fsand vi01,3
+        nop                         nop
+        nop                         ibne vi01,vi00,advance_light
+        nop                         nop
+point_vertex:
+        nop                         lq.xyzw vf09,2(vi05)
+        nop                         lq.xyzw vf10,0(vi05)
+        sub.xyz vf19,vf09,vf22       nop
+        nop                         eleng p,vf19
+        nop                         waitp
+        nop                         mfp.w vf23,p
+        mula.w acc,vf23,vf22         div q,vf00w,vf23w
+        madd.w vf24,vf00,vf17        nop
+        mini.w vf24,vf24,vf00        nop
+        maxx.w vf24,vf24,vf00x      nop
+        mulq.xyz vf19,vf19,q        waitq
+angular_weight
+        mulw.z vf21,vf21,vf24w      nop
+add_light_color
+        nop                         ibne vi05,vi06,point_vertex
+        nop                         nop
+        nop                         b advance_light
+        nop                         nop
+advance_light:
+        nop                         iaddi vi09,vi09,3
+        nop                         nop
+        nop                         ibne vi09,vi10,next_light
+        nop                         nop
+
+; Clamp accumulated RGB above by1; remaining headroom constrains accumulatedW.
+; First output keeps the raw incoming colorW bits, while RGB is native FTOI0.
+; Second output rescales original signed colorRGB and emits all four FTOI0 lanes.
+; The MOVE.W parallel with ITOF0 reads the preconversion raw W, not convertedW.
+pack_vertex_colors:
+        nop                         ilw.x vi05,vertex_spans_qword(vi04)
+        nop                         ilw.y vi06,vertex_spans_qword(vi04)
+        nop                         ilw.z vi07,vertex_spans_qword(vi04)
+        nop                         ilw.w vi08,vertex_spans_qword(vi04)
+        nop                         iadd vi05,vi05,vi04
+        nop                         iadd vi06,vi06,vi04
+        nop                         iadd vi07,vi07,vi04
+        nop                         iadd vi08,vi08,vi04
+pack_one_vertex:
+        nop                         lq.xyzw vf08,0(vi07)
+        miniw.xyz vf08,vf08,vf00w   nop
+        maxy.x vf11,vf08,vf08y      nop
+        maxz.x vf11,vf11,vf08z      nop
+        subx.w vf11,vf00,vf11x      nop
+        mini.w vf08,vf08,vf11        nop
+        sub.w vf11,vf11,vf08         nop
+        nop                         lq.xyzw vf12,1(vi05)
+        itof0.xyzw vf12,vf12         move.w vf14,vf12
+        maxy.x vf13,vf12,vf12y      nop
+        maxz.x vf13,vf13,vf12z      nop
+        mulaw.xyz acc,vf16,vf11w    nop
+        maddw.xyz vf14,vf08,vf00w   nop
+        mulx.xyz vf14,vf14,vf13x    nop
+        ftoi0.xyz vf14,vf14          nop
+        nop                         sqi.xyzw vf14,(vi07++)
+        mulw.xyz vf15,vf12,vf08w    nop
+        sub[i].w vf11,vf25,vf11      loi 126.999001
+        muli.w vf15,vf11,i           nop
+        nop                         div q,vf12w,vf15w
+        mulq.xyz vf15,vf15,q        waitq
+        ftoi0.xyzw vf15,vf15         nop
+        nop                         sqi.xyzw vf15,(vi08++)
+        nop                         iaddi vi05,vi05,3
+        nop                         nop
+        nop                         ibne vi05,vi06,pack_one_vertex
+        nop                         nop
+        nop[e]                      nop
+        nop                         nop
+end_routine light_batch
+
+; Cofactor columns: C0=cross(M1,M2), C1=cross(M2,M0), C2=cross(M0,M1).
+; Divide them by dot(M0,C0). This is the normal inverse-transpose used above.
+; All XYZ MAC/Q operations and their issue slots match the original hardware.
+; No singular-matrix branch is invented; W ofVF5/6/7 is untouched.
+begin_internal_routine light_inverse_normal_matrix
+        opmula.xyz acc,vf02,vf03     nop
+        opmsub.xyz vf05,vf03,vf02    nop
+        opmula.xyz acc,vf03,vf01     nop
+        opmsub.xyz vf06,vf01,vf03    nop
+        mul.xyz vf08,vf01,vf05       nop
+        opmula.xyz acc,vf01,vf02     nop
+        opmsub.xyz vf07,vf02,vf01    nop
+        mulax.w acc,vf00,vf08x       nop
+        madday.w acc,vf00,vf08y      nop
+        maddz.w vf08,vf00,vf08z      nop
+        nop                         div q,vf00w,vf08w
+        mulq.xyz vf05,vf05,q        waitq
+        mulq.xyz vf06,vf06,q        nop
+        mulq.xyz vf07,vf07,q        nop
+        nop                         jr vi15
+        nop                         nop
+end_routine light_inverse_normal_matrix

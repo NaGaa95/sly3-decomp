@@ -1,0 +1,2179 @@
+; Sly3 USA family1504484043: complete native VU1 multipass mesh overlay.
+; The common original algorithms are byte-identical to family376118843 through
+; byte3660; its separately source-owned payload is never counted here again.
+; Whole original code15128 and staticVIF upload15200 must be independently
+; assembled from this file. No original word arrays, raw binary includes or
+; post-assembly instruction patches are used.
+; Actual XTOP reads latchedTOP; UNPACK writes relative to liveTOPS. Page/state,
+; concrete stock geometry and final chain transport are qualified separately.
+; Native VF/VI/ACC/Q/P/I/flags/issue slots retain original hardware semantics.
+.ifdef VU_NATIVE_STANDALONE
+.vu
+.align 3
+.endif
+.equ VU1_micro_bytes,16384
+.equ buffer_base_sum_qwords,0x24e
+.equ packet_control_qword,12
+.equ packet_flags_qword,13
+.equ packet_matrices_qword,14
+.equ primary_vertices_qword,15
+.equ primary_gif_qword,16
+.equ primary_channels_qword,17
+.equ primary_material_qword,18
+.equ secondary_vertices_qword,19
+.equ secondary_gif_qword,20
+.equ secondary_channels_qword,21
+.equ secondary_material_qword,22
+
+.macro begin_native_routine name
+.local \name
+.ifdef VU_NATIVE_STANDALONE
+.type \name,@function
+.endif
+\name:
+.endm
+.macro end_native_routine name
+.ifdef VU_NATIVE_STANDALONE
+.size \name,.-\name
+.endif
+.endm
+
+; Compose one homogeneous vector from four columns, preserving the original
+; separate multiply/accumulate rounding and each upper issue slot.
+.macro affine_xyzw result,c0,c1,c2,c3,point
+        mulax.xyzw acc,\c0,\point\()x       nop
+        madday.xyzw acc,\c1,\point\()y      nop
+        maddaz.xyzw acc,\c2,\point\()z      nop
+        maddw.xyzw \result,\c3,\point\()w   nop
+.endm
+; Linear XYZ transform. W is preserved exactly by the native destination mask.
+.macro linear_xyz result,c0,c1,c2,point
+        mulax.xyz acc,\c0,\point\()x        nop
+        madday.xyz acc,\c1,\point\()y       nop
+        maddz.xyz \result,\c2,\point\()z    nop
+.endm
+; Dot product with the original reduction order. Other result lanes survive.
+.macro dot_xyz_x result,left,right
+        mul.xyz \result,\left,\right      nop
+        addy.x \result,\result,\result\()y nop
+        addz.x \result,\result,\result\()z nop
+.endm
+; Native link nesting rotates the VF2 four-lane carrier. Restore's final rotate
+; is the REAL JR delay pair, and is not moved ahead of the return.
+.macro save_micro_link
+        nop                         mr32.xyzw vf02,vf02
+        nop                         mfir.x vf02,vi15
+.endm
+.macro return_saved_micro_link
+        nop                         mtir vi15,vf02x
+        nop                         mr32.xyzw vf02,vf02
+        nop                         mr32.xyzw vf02,vf02
+        nop                         jr vi15
+        nop                         mr32.xyzw vf02,vf02
+.endm
+
+.global mesh_program_begin
+mesh_program_begin:
+
+; Compose packet matrix with the absolute scene view matrix. Flags select camera/axis billboard bases; optional scale and translation preserve native W lanes.
+begin_native_routine mesh_compose_transform
+        nop                                       ilw.x vi05,packet_flags_qword(vi04)
+        nop                                       iaddiu vi02,vi00,0x1700
+        nop                                       lq.xyzw vf03,0(vi04)
+        nop                                       lq.xyzw vf04,1(vi04)
+        nop                                       lq.xyzw vf05,2(vi04)
+        nop                                       lq.xyzw vf06,3(vi04)
+        nop                                       lq.xyzw vf07,3(vi00)
+        nop                                       lq.xyzw vf08,4(vi00)
+        nop                                       iand vi01,vi05,vi02
+        nop                                       lq.xyzw vf09,5(vi00)
+        nop                                       ibeq vi01,vi00,transform_apply_local_scale
+        nop                                       lq.xyzw vf10,6(vi00)
+        nop                                       eleng p,vf03
+        nop                                       eleng p,vf04
+        nop                                       mfp.x vf22,p
+        nop                                       eleng p,vf05
+        nop                                       mfp.y vf22,p
+        nop                                       waitp
+        nop                                       mfp.z vf22,p
+        nop                                       iaddiu vi02,vi00,0x100
+        nop                                       iaddiu vi03,vi00,0x200
+        nop                                       ibeq vi01,vi02,transform_camera_facing
+        nop                                       lq.xyzw vf15,10(vi00)
+        nop                                       iaddiu vi02,vi00,0x400
+        nop                                       ibeq vi01,vi03,transform_planar_camera_position
+        nop                                       nop
+        nop                                       ibeq vi01,vi02,transform_axis_billboard
+        nop                                       nop
+        sub.z vf03,vf00,vf00                      nop
+        nop                                       erleng p,vf03
+        nop                                       waitp
+        nop                                       mfp.x vf22,p
+        mulx.xyz vf03,vf03,vf22x                  nop
+        sub.xy vf05,vf00,vf00                     nop
+        addw.z vf05,vf00,vf00w                    nop
+        opmula.xyz acc,vf05,vf03                  nop
+        opmsub.xyz vf04,vf03,vf05                 nop
+        nop                                       erleng p,vf04
+        nop                                       waitp
+        nop                                       mfp.y vf22,p
+        muly.xyz vf04,vf04,vf22y                  nop
+        nop                                       lq.xyzw vf24,0(vi04)
+        dot_xyz_x vf23,vf24,vf03
+        abs.x vf23,vf23                           nop
+        nop                                       b transform_apply_local_scale
+        mulx.xyz vf03,vf03,vf23x                  nop
+transform_axis_billboard:
+        ; I: half scale for axis billboard
+        addy[i].x vf17,vf22,vf22y                 loi 0.5
+        addi.xyz vf01,vf00,i                      nop
+        sub.yz vf03,vf00,vf00                     move.z vf05,vf22
+        sub.xz vf04,vf00,vf00                     nop
+        sub.xy vf05,vf00,vf00                     nop
+        mulx.x vf03,vf01,vf17x                    b transform_apply_local_scale
+        mulx.y vf04,vf01,vf17x                    nop
+transform_planar_camera_position:
+        nop                                       move.z vf15,vf06
+transform_camera_facing:
+        sub.xyw vf18,vf00,vf00                    nop
+        addw.z vf18,vf00,vf00w                    nop
+        sub.xyz vf16,vf15,vf06                    nop
+        nop                                       erleng p,vf16
+        nop                                       waitp
+        nop                                       mfp.w vf17,p
+        mulw.xyz vf19,vf16,vf17w                  nop
+        opmula.xyz acc,vf18,vf16                  nop
+        opmsub.xyz vf20,vf16,vf18                 nop
+        nop                                       erleng p,vf20
+        nop                                       waitp
+        nop                                       mfp.w vf17,p
+        mulw.xyz vf20,vf20,vf17w                  nop
+        opmula.xyz acc,vf19,vf20                  nop
+        opmsub.xyz vf21,vf20,vf19                 nop
+        mulx.xyz vf03,vf19,vf22x                  nop
+        muly.xyz vf04,vf20,vf22y                  nop
+        mulz.xyz vf05,vf21,vf22z                  nop
+transform_apply_local_scale:
+        nop                                       iaddiu vi02,vi00,0x2000
+        nop                                       iand vi01,vi05,vi02
+        nop                                       lq.xyzw vf26,11(vi04)
+        nop                                       ibeq vi01,vi00,transform_compose_view
+        nop                                       lq.xyzw vf25,10(vi04)
+        mulax.xyz acc,vf03,vf26x                  nop
+        madday.xyz acc,vf04,vf26y                 nop
+        maddaz.xyz acc,vf05,vf26z                 nop
+        mulx.xyz vf03,vf03,vf25x                  nop
+        muly.xyz vf04,vf04,vf25y                  nop
+        mulz.xyz vf05,vf05,vf25z                  nop
+        maddw.xyz vf06,vf06,vf00w                 nop
+transform_compose_view:
+        affine_xyzw vf11,vf07,vf08,vf09,vf10,vf03
+        affine_xyzw vf12,vf07,vf08,vf09,vf10,vf04
+        affine_xyzw vf13,vf07,vf08,vf09,vf10,vf05
+        mulax.xyzw acc,vf07,vf06x                 nop
+        madday.xyzw acc,vf08,vf06y                sq.xyzw vf11,4(vi04)
+        maddaz.xyzw acc,vf09,vf06z                sq.xyzw vf12,5(vi04)
+        maddw.xyzw vf14,vf10,vf06w                sq.xyzw vf13,6(vi04)
+        nop                                       jr vi15
+        nop                                       sq.xyzw vf14,7(vi04)
+end_native_routine mesh_compose_transform
+
+; Rotate/save the actual VI15 link in VF2; derive inverse normal basis, attenuate four light records, transpose carrier/color rows and build cubic shader coefficients.
+begin_native_routine mesh_prepare_light_basis
+        save_micro_link
+        nop                                       ilw.x vi07,packet_matrices_qword(vi04)
+        nop                                       ilw.w vi08,packet_flags_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory; symbolic target remains local.
+        nop                                       bal vi15,mesh_inverse_normal_matrix-VU1_micro_bytes
+        nop                                       iaddiu vi01,vi04,0
+        nop                                       iaddiu vi05,vi04,0x17
+        nop                                       iaddiu vi06,vi04,0x23
+        nop                                       iadd vi01,vi08,vi04
+        nop                                       ibne vi07,vi00,light_basis_next_record
+        nop                                       lq.xyzw vf05,3(vi01)
+        nop                                       lq.xyzw vf05,3(vi04)
+light_basis_next_record:
+        nop                                       ilw.x vi09,0(vi05)
+        nop                                       lq.xyzw vf03,0(vi05)
+        nop                                       ibltz vi09,light_basis_transpose_coefficients
+        nop                                       lq.xyzw vf04,2(vi05)
+        nop                                       nop
+        nop                                       ibeq vi09,vi00,light_basis_transform_direction
+        nop                                       nop
+        sub.xyz vf04,vf05,vf04                    nop
+        nop                                       eleng p,vf04
+        nop                                       waitp
+        nop                                       mfp.x vf06,p
+        addax.w acc,vf03,vf00x                    nop
+        maddx.w vf06,vf04,vf06x                   nop
+        miniw.w vf06,vf06,vf00w                   nop
+        maxx.w vf06,vf06,vf00x                    nop
+        mulw.yz vf03,vf03,vf06w                   nop
+        nop                                       sq.xyzw vf03,0(vi05)
+light_basis_transform_direction:
+        linear_xyz vf04,vf29,vf30,vf31,vf04
+        nop                                       erleng p,vf04
+        nop                                       waitp
+        nop                                       mfp.x vf06,p
+        mulx.xyz vf04,vf04,vf06x                  nop
+        nop                                       sq.xyzw vf04,2(vi05)
+        nop                                       iaddi vi05,vi05,3
+        nop                                       nop
+        nop                                       ibne vi05,vi06,light_basis_next_record
+        nop                                       nop
+light_basis_transpose_coefficients:
+        nop                                       lq.xyzw vf08,25(vi04)
+        nop                                       lq.xyzw vf09,28(vi04)
+        nop                                       lq.xyzw vf10,31(vi04)
+        nop                                       lq.xyzw vf11,34(vi04)
+        nop                                       lq.xyzw vf12,24(vi04)
+        nop                                       lq.xyzw vf13,27(vi04)
+        nop                                       lq.xyzw vf14,30(vi04)
+        nop                                       lq.xyzw vf15,33(vi04)
+        nop                                       lq.xyzw vf16,23(vi04)
+        nop                                       lq.xyzw vf17,26(vi04)
+        nop                                       lq.xyzw vf18,29(vi04)
+        nop                                       lq.xyzw vf19,32(vi04)
+        mulay.xyzw acc,vf12,vf16y                 nop
+        madday.xyzw acc,vf13,vf17y                nop
+        madday.xyzw acc,vf14,vf18y                nop
+        maddy.xyzw vf20,vf15,vf19y                nop
+        mulz.xyzw vf12,vf12,vf16z                 nop
+        mulz.xyzw vf13,vf13,vf17z                 nop
+        mulz.xyzw vf14,vf14,vf18z                 nop
+        mulz.xyzw vf15,vf15,vf19z                 nop
+        sub.xyzw vf21,vf00,vf00                   nop
+        suby.z vf06,vf00,vf16y                    nop
+        nop                                       div q,vf06z,vf16z
+        addq.x vf21,vf21,q                        waitq
+        suby.z vf06,vf00,vf17y                    nop
+        nop                                       div q,vf06z,vf17z
+        addq.y vf21,vf21,q                        waitq
+        suby.z vf06,vf00,vf18y                    nop
+        nop                                       div q,vf06z,vf18z
+        addq.z vf21,vf21,q                        waitq
+        suby.z vf06,vf00,vf19y                    nop
+        nop                                       div q,vf06z,vf19z
+        addq.w vf21,vf21,q                        waitq
+        ; I: signed normal/color normalization1/127
+        nop[i]                                    loi 0.0078740157186985016
+        muli.xyzw vf08,vf08,i                     nop
+        muli.xyzw vf09,vf09,i                     nop
+        muli.xyzw vf10,vf10,i                     nop
+        muli.xyzw vf11,vf11,i                     nop
+        addx.y vf08,vf00,vf09x                    mr32.x vf06,vf08
+        addy.z vf09,vf00,vf10y                    mr32.y vf06,vf09
+        mulz.w vf10,vf00,vf11z                    mr32.z vf06,vf10
+        addw.x vf11,vf00,vf08w                    mr32.w vf06,vf11
+        nop                                       move.x vf09,vf06
+        nop                                       move.y vf10,vf06
+        nop                                       move.z vf11,vf06
+        nop                                       move.w vf08,vf06
+        addz.x vf06,vf00,vf08z                    nop
+        addw.y vf06,vf00,vf09w                    nop
+        addx.z vf08,vf00,vf10x                    move.x vf10,vf06
+        muly.w vf09,vf00,vf11y                    move.w vf11,vf06
+        ; I: double cubic coefficients
+        nop[i]                                    loi 2
+        muli.xyzw vf12,vf12,i                     nop
+        muli.xyzw vf13,vf13,i                     nop
+        muli.xyzw vf14,vf14,i                     nop
+        muli.xyzw vf15,vf15,i                     nop
+        muli.xyzw vf20,vf20,i                     nop
+        nop                                       sq.xyzw vf08,23(vi04)
+        nop                                       sq.xyzw vf09,24(vi04)
+        nop                                       sq.xyzw vf10,25(vi04)
+        nop                                       sq.xyzw vf11,26(vi04)
+        nop                                       sq.xyzw vf12,27(vi04)
+        nop                                       sq.xyzw vf13,28(vi04)
+        nop                                       sq.xyzw vf14,29(vi04)
+        nop                                       sq.xyzw vf15,30(vi04)
+        nop                                       sq.xyzw vf20,31(vi04)
+        nop                                       sq.xyzw vf21,32(vi04)
+        return_saved_micro_link
+end_native_routine mesh_prepare_light_basis
+
+; Copy twelve fixed header qwords and the bounded header-directed material tail from the opposite double buffer. Preserve the original empty-tail branch.
+begin_native_routine mesh_restore_previous_packet
+        nop                                       iaddiu vi05,vi00,0x24e
+        nop                                       isub vi05,vi05,vi04
+        nop                                       iaddiu vi06,vi05,0
+        nop                                       iaddiu vi08,vi04,0
+        nop                                       iaddiu vi07,vi06,12
+restore_fixed_header:
+        nop                                       lqi.xyzw vf03,(vi06++)
+        nop                                       nop
+        nop                                       nop
+        nop                                       ibne vi06,vi07,restore_fixed_header
+        nop                                       sqi.xyzw vf03,(vi08++)
+        nop                                       ilw.y vi07,packet_flags_qword(vi04)
+        nop                                       iaddiu vi06,vi05,0x17
+        nop                                       iaddiu vi08,vi04,0x17
+        nop                                       iadd vi07,vi05,vi07
+        nop                                       nop
+        nop                                       ibeq vi07,vi06,restore_done
+        nop                                       nop
+restore_material_tail:
+        nop                                       lqi.xyzw vf03,(vi06++)
+        nop                                       nop
+        nop                                       nop
+        nop                                       ibne vi06,vi07,restore_material_tail
+        nop                                       sqi.xyzw vf03,(vi08++)
+restore_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_restore_previous_packet
+
+; Pipelined four-qword vertex projection: fixed12 UV and fixed4 XYZ, homogeneous clipping, ADC/backface/status flags and screen conversion. VI7 cursor is four qwords per vertex.
+begin_native_routine mesh_project_vertices
+        nop                                       ilw.x vi01,packet_flags_qword(vi04)
+        nop                                       lq.xyzw vf06,4(vi04)
+        nop                                       lq.xyzw vf07,5(vi04)
+        nop                                       lq.xyzw vf08,6(vi04)
+        nop                                       lq.xyzw vf09,7(vi04)
+        nop                                       iaddiu vi02,vi00,0x80
+        nop                                       iand vi01,vi02,vi01
+        nop                                       lq.xyzw vf01,8(vi04)
+        nop                                       ibne vi01,vi00,project_load_screen_state
+        nop                                       iaddi vi06,vi00,-1
+        nop                                       iaddi vi06,vi00,0
+project_load_screen_state:
+        nop                                       lq.xyzw vf03,9(vi04)
+        nop                                       lq.xyzw vf10,0(vi00)
+        subw.x vf00,vf01,vf00w                    lq.xyzw vf11,1(vi00)
+        nop                                       iadd vi08,vi04,vi08
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       iadd vi07,vi00,vi08
+        nop                                       fsand vi13,2
+        nop                                       fcset 0
+        nop                                       isw.x vi10,-1(vi07)
+        mulx.w vf11,vf00,vf03x                    nop
+        muly.w vf10,vf00,vf03y                    nop
+        nop                                       move.xyzw vf12,vf11
+        nop                                       move.xyzw vf13,vf11
+        nop                                       move.xyzw vf14,vf11
+        ; I: ADC flag bias4096
+        nop[i]                                    loi 4096
+        ; I: ADC reject bias8192
+        addi[i].x vf04,vf00,i                     loi 8192
+        ; I: backface ADC bias16384
+        addi[i].y vf04,vf00,i                     loi 16384
+        addi.z vf04,vf00,i                        nop
+        maxw.zw vf31,vf00,vf00w                   ibeq vi11,vi00,project_setup_clip_limit
+        sub.xy vf31,vf00,vf00                     nop
+        nop                                       lq.xy vf31,2(vi00)
+project_setup_clip_limit:
+        addw.z vf25,vf00,vf00w                    nop
+        ; I: finite maximum protects non-clamped homogeneous lanes
+        addz[i].w vf05,vf00,vf03z                 loi 3.4028234663852886e+38
+        addi.xyz vf05,vf00,i                      nop
+        nop                                       lq.xyzw vf15,3(vi07)
+        itof4.xyz vf15,vf15                       nop
+        mulax.xyzw acc,vf06,vf15x                 move.w vf11,vf15
+        madday.xyzw acc,vf07,vf15y                nop
+        maddaz.xyzw acc,vf08,vf15z                nop
+        maddw.xyzw vf19,vf09,vf00w                lq.xyzw vf16,7(vi07)
+        mini.xyzw vf15,vf19,vf05                  div q,vf00w,vf19w
+        nop                                       lq.xy vf25,0(vi07)
+        itof4.xyz vf16,vf16                       nop
+        mulax.xyzw acc,vf06,vf16x                 move.w vf12,vf16
+        madday.xyzw acc,vf07,vf16y                move.w vf26,vf19
+        maddaz.xyzw acc,vf08,vf16z                nop
+        maddw.xyzw vf20,vf09,vf00w                nop
+        mulq.xyzw vf15,vf15,q                     nop
+        itof12.xy vf25,vf25                       nop
+        clipw.xyz vf19,vf19                       lq.xyzw vf17,11(vi07)
+        mini.xyzw vf16,vf20,vf05                  div q,vf00w,vf20w
+        nop                                       nop
+        mulq.xyz vf26,vf25,q                      nop
+        addax.xyzw acc,vf11,vf00x                 nop
+        itof4.xyz vf17,vf17                       nop
+        madd.xyzw vf27,vf10,vf15                  lq.xy vf25,4(vi07)
+        nop                                       sq.xyzw vf26,0(vi07)
+        mulax.xyzw acc,vf06,vf17x                 move.w vf13,vf17
+        madday.xyzw acc,vf07,vf17y                move.w vf26,vf20
+        maddaz.xyzw acc,vf08,vf17z                nop
+        maddw.xyzw vf21,vf09,vf00w                nop
+        mulq.xyzw vf16,vf16,q                     iaddi vi07,vi07,4
+        itof12.xy vf25,vf25                       nop
+        clipw.xyz vf20,vf20                       lq.xyzw vf18,11(vi07)
+        mini.xyzw vf17,vf21,vf05                  div q,vf00w,vf21w
+        sub.xyzw vf23,vf16,vf15                   ibeq vi07,vi09,project_optional_alpha_scale
+        mulq.xyz vf26,vf25,q                      sq.xyzw vf27,-1(vi07)
+        addax.xyzw acc,vf12,vf00x                 nop
+        itof4.xyz vf18,vf18                       nop
+        madd.xyzw vf27,vf10,vf16                  lq.xy vf25,4(vi07)
+        nop                                       sq.xyzw vf26,0(vi07)
+        mulax.xyzw acc,vf06,vf18x                 move.w vf14,vf18
+        madday.xyzw acc,vf07,vf18y                move.w vf26,vf21
+        maddaz.xyzw acc,vf08,vf18z                nop
+        maddw.xyzw vf22,vf09,vf00w                nop
+        mulq.xyzw vf17,vf17,q                     iaddi vi07,vi07,4
+        itof12.xy vf25,vf25                       nop
+        clipw.xyz vf21,vf21                       lq.xyzw vf15,11(vi07)
+        mini.xyzw vf18,vf22,vf05                  div q,vf00w,vf22w
+        sub.xyzw vf24,vf17,vf16                   ibeq vi07,vi09,project_optional_alpha_scale
+        mulq.xyz vf26,vf25,q                      sq.xyzw vf27,-1(vi07)
+mesh_project_vertices_continue:
+; Original live projection loop/continuation; no fresh empty-input or function credit.
+.local mesh_project_vertices_continue
+        addax.xyzw acc,vf13,vf00x                 nop
+        itof4.xyz vf15,vf15                       move.xyzw vf01,vf19
+        madd.xyzw vf27,vf10,vf17                  lq.xy vf25,4(vi07)
+        mulay.x acc,vf23,vf24y                    sq.xyzw vf26,0(vi07)
+        msuby.x vf00,vf24,vf23y                   fcand vi01,0x3ffff
+        mulax.xyzw acc,vf06,vf15x                 move.w vf11,vf15
+        madday.xyzw acc,vf07,vf15y                move.w vf26,vf22
+        maddaz.xyzw acc,vf08,vf15z                ibeq vi01,vi00,project_lane0_clip_done
+        maddw.xyzw vf19,vf09,vf00w                fsand vi02,2
+        mul.xyzw vf28,vf01,vf31                   mtir vi12,vf27w
+        mul.xyzw vf29,vf20,vf31                   bal vi14,mesh_classify_triangle
+        mul.xyzw vf30,vf21,vf31                   fcor vi01,0xfdf7df
+        clipw.xyz vf20,vf20                       nop
+        clipw.xyz vf21,vf21                       nop
+project_lane0_clip_done:
+        mulq.xyzw vf18,vf18,q                     iaddi vi07,vi07,4
+        itof12.xy vf25,vf25                       ibne vi02,vi06,project_lane0_adc_done
+        clipw.xyz vf22,vf22                       lq.xyzw vf16,11(vi07)
+        addz.w vf27,vf27,vf04z                    nop
+project_lane0_adc_done:
+        mini.xyzw vf15,vf19,vf05                  div q,vf00w,vf19w
+        sub.xyzw vf23,vf18,vf17                   ibeq vi07,vi09,project_optional_alpha_scale
+        mulq.xyz vf26,vf25,q                      sq.xyzw vf27,-1(vi07)
+        addax.xyzw acc,vf14,vf00x                 nop
+        itof4.xyz vf16,vf16                       move.xyzw vf01,vf20
+        madd.xyzw vf27,vf10,vf18                  lq.xy vf25,4(vi07)
+        mulay.x acc,vf23,vf24y                    sq.xyzw vf26,0(vi07)
+        msuby.x vf00,vf24,vf23y                   fcand vi01,0x3ffff
+        mulax.xyzw acc,vf06,vf16x                 move.w vf12,vf16
+        madday.xyzw acc,vf07,vf16y                move.w vf26,vf19
+        maddaz.xyzw acc,vf08,vf16z                ibeq vi01,vi00,project_lane1_clip_done
+        maddw.xyzw vf20,vf09,vf00w                fsand vi02,2
+        mul.xyzw vf28,vf01,vf31                   mtir vi12,vf27w
+        mul.xyzw vf29,vf21,vf31                   bal vi14,mesh_classify_triangle
+        mul.xyzw vf30,vf22,vf31                   fcor vi01,0xfdf7df
+        clipw.xyz vf21,vf21                       nop
+        clipw.xyz vf22,vf22                       nop
+project_lane1_clip_done:
+        mulq.xyzw vf15,vf15,q                     iaddi vi07,vi07,4
+        itof12.xy vf25,vf25                       ibne vi02,vi06,project_lane1_adc_done
+        clipw.xyz vf19,vf19                       lq.xyzw vf17,11(vi07)
+        addz.w vf27,vf27,vf04z                    nop
+project_lane1_adc_done:
+        mini.xyzw vf16,vf20,vf05                  div q,vf00w,vf20w
+        sub.xyzw vf24,vf15,vf18                   ibeq vi07,vi09,project_optional_alpha_scale
+        mulq.xyz vf26,vf25,q                      sq.xyzw vf27,-1(vi07)
+        addax.xyzw acc,vf11,vf00x                 nop
+        itof4.xyz vf17,vf17                       move.xyzw vf01,vf21
+        madd.xyzw vf27,vf10,vf15                  lq.xy vf25,4(vi07)
+        mulay.x acc,vf23,vf24y                    sq.xyzw vf26,0(vi07)
+        msuby.x vf00,vf24,vf23y                   fcand vi01,0x3ffff
+        mulax.xyzw acc,vf06,vf17x                 move.w vf13,vf17
+        madday.xyzw acc,vf07,vf17y                move.w vf26,vf20
+        maddaz.xyzw acc,vf08,vf17z                ibeq vi01,vi00,project_lane2_clip_done
+        maddw.xyzw vf21,vf09,vf00w                fsand vi02,2
+        mul.xyzw vf28,vf01,vf31                   mtir vi12,vf27w
+        mul.xyzw vf29,vf22,vf31                   bal vi14,mesh_classify_triangle
+        mul.xyzw vf30,vf19,vf31                   fcor vi01,0xfdf7df
+        clipw.xyz vf22,vf22                       nop
+        clipw.xyz vf19,vf19                       nop
+project_lane2_clip_done:
+        mulq.xyzw vf16,vf16,q                     iaddi vi07,vi07,4
+        itof12.xy vf25,vf25                       ibne vi02,vi06,project_lane2_adc_done
+        clipw.xyz vf20,vf20                       lq.xyzw vf18,11(vi07)
+        addz.w vf27,vf27,vf04z                    nop
+project_lane2_adc_done:
+        mini.xyzw vf17,vf21,vf05                  div q,vf00w,vf21w
+        sub.xyzw vf23,vf16,vf15                   ibeq vi07,vi09,project_optional_alpha_scale
+        mulq.xyz vf26,vf25,q                      sq.xyzw vf27,-1(vi07)
+        addax.xyzw acc,vf12,vf00x                 nop
+        itof4.xyz vf18,vf18                       move.xyzw vf01,vf22
+        madd.xyzw vf27,vf10,vf16                  lq.xy vf25,4(vi07)
+        mulay.x acc,vf23,vf24y                    sq.xyzw vf26,0(vi07)
+        msuby.x vf00,vf24,vf23y                   fcand vi01,0x3ffff
+        mulax.xyzw acc,vf06,vf18x                 move.w vf14,vf18
+        madday.xyzw acc,vf07,vf18y                move.w vf26,vf21
+        maddaz.xyzw acc,vf08,vf18z                ibeq vi01,vi00,project_lane3_clip_done
+        maddw.xyzw vf22,vf09,vf00w                fsand vi02,2
+        mul.xyzw vf28,vf01,vf31                   mtir vi12,vf27w
+        mul.xyzw vf29,vf19,vf31                   bal vi14,mesh_classify_triangle
+        mul.xyzw vf30,vf20,vf31                   fcor vi01,0xfdf7df
+        clipw.xyz vf19,vf19                       nop
+        clipw.xyz vf20,vf20                       nop
+project_lane3_clip_done:
+        mulq.xyzw vf17,vf17,q                     iaddi vi07,vi07,4
+        itof12.xy vf25,vf25                       ibne vi02,vi06,project_lane3_adc_done
+        clipw.xyz vf21,vf21                       lq.xyzw vf15,11(vi07)
+        addz.w vf27,vf27,vf04z                    nop
+project_lane3_adc_done:
+        mini.xyzw vf18,vf22,vf05                  div q,vf00w,vf22w
+        sub.xyzw vf24,vf17,vf16                   ibne vi07,vi09,mesh_project_vertices_continue
+        mulq.xyz vf26,vf25,q                      sq.xyzw vf27,-1(vi07)
+project_optional_alpha_scale:
+        nop                                       ibeq vi13,vi00,project_done
+        nop                                       lq.xyzw vf28,8(vi04)
+        nop                                       iadd vi07,vi08,vi00
+project_alpha_scale_next:
+        nop                                       lq.w vf29,1(vi07)
+        nop                                       lq.xyz vf30,2(vi07)
+        itof0.w vf29,vf29                         nop
+        itof0.xyz vf30,vf30                       nop
+        mulx.w vf29,vf29,vf28x                    iaddi vi07,vi07,4
+        mulx.xyz vf30,vf30,vf28x                  nop
+        ftoi0.w vf29,vf29                         nop
+        ftoi0.xyz vf30,vf30                       nop
+        nop                                       sq.w vf29,-3(vi07)
+        nop                                       ibne vi07,vi09,project_alpha_scale_next
+        nop                                       sq.xyz vf30,-2(vi07)
+project_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_project_vertices
+
+; Three consecutive CLIP samples, six common-plane masks and inherited status determine ADC/reject flags. VI14 carries this helper return; its real delay writes the packet clip marker.
+begin_native_routine mesh_classify_triangle
+        clipw.xyz vf28,vf28                       ibltz vi12,triangle_already_disabled
+        clipw.xyz vf29,vf29                       nop
+        clipw.xyz vf30,vf30                       ibne vi01,vi00,triangle_reject
+        nop                                       fcor vi01,0xfefbef
+        nop                                       nop
+        nop                                       ibne vi01,vi00,triangle_reject
+        nop                                       fcor vi01,0xff7df7
+        nop                                       nop
+        nop                                       ibne vi01,vi00,triangle_reject
+        nop                                       fcor vi01,0xffbefb
+        nop                                       nop
+        nop                                       ibne vi01,vi00,triangle_reject
+        nop                                       fcor vi01,0xffdf7d
+        nop                                       nop
+        nop                                       ibne vi01,vi00,triangle_reject
+        nop                                       fcor vi01,0xffefbe
+        nop                                       nop
+        nop                                       ibne vi01,vi00,triangle_reject
+        nop                                       iaddi vi01,vi00,1
+        addy.w vf27,vf27,vf04y                    jr vi14
+        nop                                       isw.z vi01,packet_control_qword(vi04)
+triangle_reject:
+        addx.w vf27,vf27,vf04x                    jr vi14
+        nop                                       nop
+triangle_already_disabled:
+        nop                                       jr vi14
+        nop                                       nop
+end_native_routine mesh_classify_triangle
+
+; Copy linked UV carriers then add the packet fixed12 XY offset to the four-qword vertex stream; native pipelined end slots stay intact.
+begin_native_routine mesh_adjust_uv
+        nop                                       iadd vi05,vi05,vi04
+        sub.w vf03,vf00,vf00                      ilw.z vi09,0(vi05)
+        nop                                       nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       ibeq vi09,vi00,uv_add_offset_begin
+        nop                                       nop
+uv_copy_linked:
+        nop                                       mtir vi01,vf03x
+        nop                                       mr32.xyzw vf03,vf03
+        nop                                       iadd vi11,vi01,vi04
+        nop                                       ibeq vi01,vi00,uv_add_offset_begin
+        nop                                       iadd vi11,vi11,vi08
+        nop                                       isub vi10,vi11,vi09
+        nop                                       lq.xyzw vf01,2(vi10)
+        nop                                       b uv_copy_linked
+        nop                                       sq.xyzw vf01,2(vi11)
+uv_add_offset_begin:
+        nop                                       ilw.x vi09,0(vi05)
+        nop                                       ilw.y vi10,0(vi05)
+        nop                                       lq.xy vf04,0(vi05)
+        nop                                       iadd vi06,vi06,vi04
+        nop                                       iadd vi07,vi07,vi04
+        nop                                       ior vi01,vi09,vi10
+        nop                                       nop
+        itof12.xy vf04,vf04                       ibeq vi01,vi00,uv_adjust_done
+        nop                                       nop
+        nop                                       lq.xy vf06,0(vi06)
+        itof12.xy vf06,vf06                       lq.xy vf07,4(vi06)
+        itof12.xy vf07,vf07                       lq.xy vf08,8(vi06)
+        add.xy vf06,vf06,vf04                     nop
+        itof12.xy vf08,vf08                       lq.xy vf09,12(vi06)
+        add.xy vf07,vf07,vf04                     nop
+        ftoi12.xy vf06,vf06                       nop
+uv_pipeline_next:
+        nop                                       iaddiu vi06,vi06,4
+        itof12.xy vf09,vf09                       lq.xy vf05,12(vi06)
+        add.xy vf08,vf08,vf04                     ibeq vi06,vi07,uv_adjust_done
+        ftoi12.xy vf07,vf07                       sq.xy vf06,-4(vi06)
+        nop                                       iaddiu vi06,vi06,4
+        itof12.xy vf05,vf05                       lq.xy vf06,12(vi06)
+        add.xy vf09,vf09,vf04                     ibeq vi06,vi07,uv_adjust_done
+        ftoi12.xy vf08,vf08                       sq.xy vf07,-4(vi06)
+        nop                                       iaddiu vi06,vi06,4
+        itof12.xy vf06,vf06                       lq.xy vf07,12(vi06)
+        add.xy vf05,vf05,vf04                     ibeq vi06,vi07,uv_adjust_done
+        ftoi12.xy vf09,vf09                       sq.xy vf08,-4(vi06)
+        nop                                       iaddiu vi06,vi06,4
+        itof12.xy vf07,vf07                       lq.xy vf08,12(vi06)
+        add.xy vf06,vf06,vf04                     ibeq vi06,vi07,uv_adjust_done
+        ftoi12.xy vf05,vf05                       sq.xy vf09,-4(vi06)
+        nop                                       iaddiu vi06,vi06,4
+        itof12.xy vf08,vf08                       lq.xy vf09,12(vi06)
+        add.xy vf07,vf07,vf04                     ibne vi06,vi07,uv_pipeline_next
+        ftoi12.xy vf06,vf06                       sq.xy vf05,-4(vi06)
+uv_adjust_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_adjust_uv
+
+; For each carrier matrix, optional flag100 adds transformed fixed4 XYZ; flag200 adds transformed fixed12 XY. Preserve rolling four-vector pipeline and the original decrement delay.
+begin_native_routine mesh_add_matrix_channels
+        nop                                       ilw.w vi13,packet_flags_qword(vi04)
+        nop                                       ilw.z vi08,packet_flags_qword(vi04)
+        nop                                       iadd vi05,vi04,vi05
+        nop                                       iadd vi06,vi04,vi06
+        nop                                       iadd vi07,vi04,vi07
+        nop                                       iadd vi13,vi04,vi13
+        nop                                       iaddiu vi01,vi00,0x100
+        nop                                       iand vi09,vi01,vi08
+        nop                                       iaddiu vi01,vi00,0x200
+        nop                                       iand vi10,vi01,vi08
+        nop                                       iaddiu vi01,vi00,0xff
+        nop                                       iand vi08,vi01,vi08
+        nop                                       iaddi vi08,vi08,-1
+matrix_channel_next_carrier:
+        nop                                       ibeq vi00,vi09,matrix_channel_uv_begin
+        nop                                       nop
+        nop                                       iaddiu vi12,vi07,0
+        nop                                       iaddiu vi11,vi05,0
+        nop                                       lqi.xyzw vf08,(vi12++)
+        nop                                       lqi.xyzw vf03,(vi13++)
+        nop                                       lqi.xyzw vf04,(vi13++)
+        nop                                       lqi.xyzw vf05,(vi13++)
+        nop                                       lqi.xyzw vf06,(vi13++)
+        mulax.xyzw acc,vf03,vf08x                 lq.xyz vf12,3(vi11)
+        madday.xyzw acc,vf04,vf08y                lqi.xyzw vf09,(vi12++)
+        maddaz.xyzw acc,vf05,vf08z                nop
+        maddw.xyzw vf16,vf06,vf08w                nop
+        itof4.xyz vf12,vf12                       nop
+        mulax.xyzw acc,vf03,vf09x                 nop
+        madday.xyzw acc,vf04,vf09y                lq.xyz vf13,7(vi11)
+        maddaz.xyzw acc,vf05,vf09z                lqi.xyzw vf10,(vi12++)
+        add.xyz vf12,vf12,vf16                    nop
+        maddw.xyzw vf17,vf06,vf09w                nop
+matrix_position_pipeline:
+        itof4.xyz vf13,vf13                       nop
+        mulax.xyzw acc,vf03,vf10x                 nop
+        ftoi4.xyz vf12,vf12                       iaddi vi11,vi11,4
+        madday.xyzw acc,vf04,vf10y                lq.xyz vf14,7(vi11)
+        maddaz.xyzw acc,vf05,vf10z                lqi.xyzw vf07,(vi12++)
+        add.xyz vf13,vf13,vf17                    ibeq vi11,vi06,matrix_channel_uv_begin
+        maddw.xyzw vf18,vf06,vf10w                sq.xyz vf12,-1(vi11)
+        itof4.xyz vf14,vf14                       nop
+        mulax.xyzw acc,vf03,vf07x                 nop
+        ftoi4.xyz vf13,vf13                       iaddi vi11,vi11,4
+        madday.xyzw acc,vf04,vf07y                lq.xyz vf11,7(vi11)
+        maddaz.xyzw acc,vf05,vf07z                lqi.xyzw vf08,(vi12++)
+        add.xyz vf14,vf14,vf18                    ibeq vi11,vi06,matrix_channel_uv_begin
+        maddw.xyzw vf15,vf06,vf07w                sq.xyz vf13,-1(vi11)
+        itof4.xyz vf11,vf11                       nop
+        mulax.xyzw acc,vf03,vf08x                 nop
+        ftoi4.xyz vf14,vf14                       iaddi vi11,vi11,4
+        madday.xyzw acc,vf04,vf08y                lq.xyz vf12,7(vi11)
+        maddaz.xyzw acc,vf05,vf08z                lqi.xyzw vf09,(vi12++)
+        add.xyz vf11,vf11,vf15                    ibeq vi11,vi06,matrix_channel_uv_begin
+        maddw.xyzw vf16,vf06,vf08w                sq.xyz vf14,-1(vi11)
+        itof4.xyz vf12,vf12                       nop
+        mulax.xyzw acc,vf03,vf09x                 nop
+        ftoi4.xyz vf11,vf11                       iaddi vi11,vi11,4
+        madday.xyzw acc,vf04,vf09y                lq.xyz vf13,7(vi11)
+        maddaz.xyzw acc,vf05,vf09z                lqi.xyzw vf10,(vi12++)
+        add.xyz vf12,vf12,vf16                    ibne vi11,vi06,matrix_position_pipeline
+        maddw.xyzw vf17,vf06,vf09w                sq.xyz vf11,-1(vi11)
+matrix_channel_uv_begin:
+        nop                                       ibeq vi00,vi10,matrix_channel_next
+        nop                                       nop
+        nop                                       iaddiu vi12,vi07,0
+        nop                                       iaddiu vi11,vi05,0
+        nop                                       lq.xy vf12,0(vi11)
+        nop                                       lqi.xyzw vf08,(vi12++)
+        nop                                       lqi.xyzw vf03,(vi13++)
+        nop                                       lqi.xyzw vf04,(vi13++)
+        nop                                       lqi.xyzw vf05,(vi13++)
+        itof12.xy vf12,vf12                       lqi.xyzw vf06,(vi13++)
+        mulax.xyzw acc,vf03,vf08x                 lq.xy vf13,4(vi11)
+        madday.xyzw acc,vf04,vf08y                lqi.xyzw vf09,(vi12++)
+        maddaz.xyzw acc,vf05,vf08z                nop
+        maddaw.xyzw acc,vf06,vf08w                nop
+        maddw.xyzw vf12,vf12,vf00w                nop
+        itof12.xy vf13,vf13                       nop
+        mulax.xyzw acc,vf03,vf09x                 lq.xy vf14,8(vi11)
+        madday.xyzw acc,vf04,vf09y                lqi.xyzw vf10,(vi12++)
+        maddaz.xyzw acc,vf05,vf09z                nop
+        maddaw.xyzw acc,vf06,vf09w                nop
+        maddw.xyzw vf13,vf13,vf00w                nop
+        itof12.xy vf14,vf14                       nop
+        ftoi12.xy vf12,vf12                       nop
+matrix_uv_pipeline:
+        mulax.xyzw acc,vf03,vf10x                 lq.xy vf11,12(vi11)
+        madday.xyzw acc,vf04,vf10y                lqi.xyzw vf07,(vi12++)
+        maddaz.xyzw acc,vf05,vf10z                nop
+        maddaw.xyzw acc,vf06,vf10w                iaddiu vi11,vi11,4
+        maddw.xyzw vf14,vf14,vf00w                nop
+        itof12.xy vf11,vf11                       ibeq vi11,vi06,matrix_channel_next
+        ftoi12.xy vf13,vf13                       sq.xy vf12,-4(vi11)
+        mulax.xyzw acc,vf03,vf07x                 lq.xy vf12,12(vi11)
+        madday.xyzw acc,vf04,vf07y                lqi.xyzw vf08,(vi12++)
+        maddaz.xyzw acc,vf05,vf07z                nop
+        maddaw.xyzw acc,vf06,vf07w                iaddiu vi11,vi11,4
+        maddw.xyzw vf11,vf11,vf00w                nop
+        itof12.xy vf12,vf12                       ibeq vi11,vi06,matrix_channel_next
+        ftoi12.xy vf14,vf14                       sq.xy vf13,-4(vi11)
+        mulax.xyzw acc,vf03,vf08x                 lq.xy vf13,12(vi11)
+        madday.xyzw acc,vf04,vf08y                lqi.xyzw vf09,(vi12++)
+        maddaz.xyzw acc,vf05,vf08z                nop
+        maddaw.xyzw acc,vf06,vf08w                iaddiu vi11,vi11,4
+        maddw.xyzw vf12,vf12,vf00w                nop
+        itof12.xy vf13,vf13                       ibeq vi11,vi06,matrix_channel_next
+        ftoi12.xy vf11,vf11                       sq.xy vf14,-4(vi11)
+        mulax.xyzw acc,vf03,vf09x                 lq.xy vf14,12(vi11)
+        madday.xyzw acc,vf04,vf09y                lqi.xyzw vf10,(vi12++)
+        maddaz.xyzw acc,vf05,vf09z                nop
+        maddaw.xyzw acc,vf06,vf09w                iaddiu vi11,vi11,4
+        maddw.xyzw vf13,vf13,vf00w                nop
+        itof12.xy vf14,vf14                       ibne vi11,vi06,matrix_uv_pipeline
+        ftoi12.xy vf12,vf12                       sq.xy vf11,-4(vi11)
+matrix_channel_next:
+        nop                                       iaddi vi07,vi12,-3
+        nop                                       ibgtz vi08,matrix_channel_next_carrier
+        nop                                       iaddi vi08,vi08,-1
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_add_matrix_channels
+
+; Toggle the packed position W/ADC carrier according to bit4000 after adding1000, using the original floating I=16384; all XYZ lanes remain untouched.
+begin_native_routine mesh_toggle_adc
+        nop                                       iadd vi05,vi04,vi05
+        nop                                       iadd vi06,vi04,vi06
+        ; I: packed ADC toggle16384
+        nop[i]                                    loi 16384
+        nop                                       iaddiu vi07,vi00,0x4000
+adc_next_position:
+        nop                                       ilw.w vi01,3(vi05)
+        nop                                       lq.w vf03,3(vi05)
+        nop                                       iaddiu vi01,vi01,0x1000
+        addi.w vf04,vf03,i                        iand vi01,vi01,vi07
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,adc_write_position
+        nop                                       nop
+        subi.w vf04,vf03,i                        nop
+adc_write_position:
+        nop                                       iaddi vi05,vi05,4
+        nop                                       nop
+        nop                                       ibne vi05,vi06,adc_next_position
+        nop                                       sq.w vf04,-1(vi05)
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_toggle_adc
+
+; Evaluate matrix-produced cubic normal coefficients, clamp weights, combine four light colors, split ambient/residual color with original alpha limits, follow signed duplicate links.
+begin_native_routine mesh_shade_cubic
+        add.w vf31,vf00,vf00                      mfir.w vf01,vi07
+        nop                                       ibeq vi06,vi00,shade_shared_return
+        nop                                       iadd vi05,vi04,vi05
+        nop                                       iadd vi06,vi04,vi06
+        itof12.w vf01,vf01                        lq.xyzw vf11,11(vi00)
+        addw.xyz vf31,vf00,vf31w                  lq.xyzw vf10,31(vi04)
+        nop                                       lq.xyzw vf03,23(vi04)
+        nop                                       lq.xyzw vf04,24(vi04)
+        add.w vf01,vf01,vf11                      lq.xyzw vf05,25(vi04)
+        max.xyzw vf15,vf31,vf31xyzw               lq.xyzw vf06,27(vi04)
+        nop                                       lq.xyzw vf07,28(vi04)
+        nop                                       lq.xyzw vf08,29(vi04)
+        add.w vf01,vf01,vf01                      lq.xyzw vf09,30(vi04)
+        ; I: original shader residual-scale coefficient
+        nop[i]                                    loi 0.015748156234622002
+        ; I: original alpha packing limit63.4995
+        addi[i].w vf13,vf31,i                     loi 63.499500274658203
+        maxi.w vf14,vf00,i                        lq.xyzw vf16,0(vi06)
+        add.w vf10,vf10,vf01                      lq.xyzw vf12,32(vi04)
+        nop                                       lq.xyzw vf17,1(vi05)
+        itof0.xyzw vf17,vf17                      nop
+        mulax.xyzw acc,vf03,vf17x                 nop
+        madday.xyzw acc,vf04,vf17y                nop
+        maddz.xyzw vf20,vf05,vf17z                nop
+        mul.xyzw vf21,vf20,vf20                   nop
+        addax.xyzw acc,vf20,vf00x                 nop
+        madd.xyzw vf22,vf20,vf21                  nop
+        mini.xyzw vf22,vf22,vf12                  move.xyzw vf19,vf18
+        mulax.xyzw acc,vf06,vf22x                 move.xyzw vf18,vf17
+        madday.xyzw acc,vf07,vf22y                nop
+        maddaz.xyzw acc,vf08,vf22z                nop
+        maddaw.xyzw acc,vf09,vf22w                lq.xyzw vf17,5(vi05)
+        maddw.xyzw vf23,vf10,vf00w                nop
+        itof0.xyzw vf17,vf17                      nop
+        maxy.x vf25,vf23,vf23y                    nop
+        mulax.xyzw acc,vf03,vf17x                 nop
+        madday.xyzw acc,vf04,vf17y                nop
+        maddz.xyzw vf20,vf05,vf17z                nop
+        maxz.x vf25,vf25,vf23z                    nop
+        mul.xyzw vf21,vf20,vf20                   nop
+        subx.w vf15,vf31,vf25x                    nop
+        addax.xyzw acc,vf20,vf00x                 nop
+        madd.xyzw vf22,vf20,vf21                  nop
+        maxx.w vf15,vf15,vf00x                    nop
+        mini.xyzw vf22,vf22,vf12                  move.xyzw vf19,vf18
+        mini.xyzw vf24,vf23,vf15                  move.xyzw vf18,vf17
+        mulax.xyzw acc,vf06,vf22x                 nop
+        madday.xyzw acc,vf07,vf22y                nop
+        maddaz.xyzw acc,vf08,vf22z                lq.xyzw vf27,2(vi05)
+        maddaw.xyzw acc,vf09,vf22w                lq.xyzw vf17,9(vi05)
+        maddw.xyzw vf23,vf10,vf00w                nop
+        sub.w vf26,vf15,vf24                      nop
+        itof0.xyzw vf27,vf27                      nop
+        itof0.xyzw vf17,vf17                      nop
+        maxy.x vf25,vf23,vf23y                    nop
+        mula.w acc,vf13,vf14                      nop
+        msub.w vf28,vf26,vf14                     nop
+        mulax.xyzw acc,vf03,vf17x                 nop
+        madday.xyzw acc,vf04,vf17y                nop
+        maddz.xyzw vf20,vf05,vf17z                nop
+        maxz.x vf25,vf25,vf23z                    div q,vf27w,vf28w
+        adda.xyz acc,vf00,vf24                    move.w vf30,vf27
+        maddw.xyz vf30,vf11,vf26w                 nop
+        mul.xyzw vf21,vf20,vf20                   nop
+        subx.w vf15,vf31,vf25x                    nop
+        mulw.xyz vf28,vf27,vf24w                  nop
+        addax.xyzw acc,vf20,vf00x                 nop
+        madd.xyzw vf22,vf20,vf21                  nop
+        maxx.w vf15,vf15,vf00x                    nop
+        mulq.xyz vf28,vf28,q                      nop
+        mulw.xyz vf30,vf30,vf19w                  nop
+        mini.xyzw vf22,vf22,vf12                  move.xyzw vf19,vf18
+        mini.xyzw vf24,vf23,vf15                  move.xyzw vf18,vf17
+        ftoi0.xyzw vf29,vf28                      nop
+        ftoi0.xyzw vf30,vf30                      nop
+        mulax.xyzw acc,vf06,vf22x                 nop
+        madday.xyzw acc,vf07,vf22y                nop
+        maddaz.xyzw acc,vf08,vf22z                lq.xyzw vf27,6(vi05)
+cubic_next_source:
+        maddaw.xyzw acc,vf09,vf22w                lq.xyzw vf17,13(vi05)
+        maddw.xyzw vf23,vf10,vf00w                iaddi vi05,vi05,4
+        sub.w vf26,vf15,vf24                      sq.xyzw vf30,1(vi06)
+        itof0.xyzw vf27,vf27                      sq.xyzw vf29,2(vi06)
+        itof0.xyzw vf17,vf17                      mtir vi06,vf16z
+        maxy.x vf25,vf23,vf23y                    iadd vi06,vi04,vi06
+        mula.w acc,vf13,vf14                      lq.xyzw vf16,0(vi06)
+        msub.w vf28,vf26,vf14                     ibgez vi06,cubic_after_duplicates
+        mulax.xyzw acc,vf03,vf17x                 nop
+cubic_duplicate_color:
+        nop                                       sq.xyzw vf30,1(vi06)
+        nop                                       sq.xyzw vf29,2(vi06)
+        nop                                       mtir vi06,vf16z
+        nop                                       iadd vi06,vi04,vi06
+        nop                                       lq.xyzw vf16,0(vi06)
+        nop                                       ibltz vi06,cubic_duplicate_color
+        nop                                       nop
+cubic_after_duplicates:
+        madday.xyzw acc,vf04,vf17y                ibeq vi06,vi04,shade_shared_return
+        maddz.xyzw vf20,vf05,vf17z                nop
+        maxz.x vf25,vf25,vf23z                    div q,vf27w,vf28w
+        adda.xyz acc,vf00,vf24                    move.w vf30,vf27
+        maddw.xyz vf30,vf11,vf26w                 nop
+        mul.xyzw vf21,vf20,vf20                   nop
+        subx.w vf15,vf31,vf25x                    nop
+        mulw.xyz vf28,vf27,vf24w                  nop
+        addax.xyzw acc,vf20,vf00x                 nop
+        madd.xyzw vf22,vf20,vf21                  nop
+        maxx.w vf15,vf15,vf00x                    nop
+        mulq.xyz vf28,vf28,q                      nop
+        mulw.xyz vf30,vf30,vf19w                  nop
+        mini.xyzw vf22,vf22,vf12                  move.xyzw vf19,vf18
+        mini.xyzw vf24,vf23,vf15                  move.xyzw vf18,vf17
+        ftoi0.xyzw vf29,vf28                      nop
+        ftoi0.xyzw vf30,vf30                      nop
+        mulax.xyzw acc,vf06,vf22x                 nop
+        madday.xyzw acc,vf07,vf22y                b cubic_next_source
+        maddaz.xyzw acc,vf08,vf22z                lq.xyzw vf27,6(vi05)
+shade_shared_return:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_shade_cubic
+
+; Inverse-transpose/normalize normals; transform positions; evaluate directional or point light attenuation and cubic angular response across four records; emit native integer colors through linked copies.
+begin_native_routine mesh_shade_dynamic
+        add.w vf04,vf00,vf00                      iadd vi06,vi04,vi06
+        maxw.xyzw vf03,vf00,vf00w                 iadd vi05,vi04,vi05
+        nop                                       ibeq vi06,vi04,shade_shared_return
+        nop                                       mfir.x vf01,vi07
+        addw.xyz vf04,vf00,vf04w                  iaddiu vi08,vi04,0x17
+        nop                                       iaddiu vi09,vi08,12
+        itof12.x vf01,vf01                        lq.xyzw vf31,11(vi00)
+        ; I: original dynamic shader residual scale
+        nop[i]                                    loi 0.015748156234622002
+        ; I: original alpha packing limit
+        addi[i].w vf06,vf04,i                     loi 63.499500274658203
+        maxi.w vf07,vf00,i                        nop
+        max.xyzw vf08,vf04,vf04xyzw               nop
+        sub.xyz vf05,vf00,vf00                    nop
+        addx.w vf05,vf31,vf01x                    nop
+        add.xyzw vf05,vf05,vf05                   nop
+        nop                                       lq.xyzw vf09,0(vi04)
+        nop                                       lq.xyzw vf10,1(vi04)
+        nop                                       lq.xyzw vf11,2(vi04)
+        nop                                       lq.xyzw vf12,3(vi04)
+        opmula.xyz acc,vf10,vf11                  nop
+        opmsub.xyz vf13,vf11,vf10                 nop
+        opmula.xyz acc,vf11,vf09                  nop
+        opmsub.xyz vf14,vf09,vf11                 nop
+        opmula.xyz acc,vf09,vf10                  nop
+        opmsub.xyz vf15,vf10,vf09                 nop
+        mul.xyz vf25,vf09,vf13                    nop
+        mulax.w acc,vf00,vf25x                    nop
+        madday.w acc,vf00,vf25y                   nop
+        maddz.w vf25,vf00,vf25z                   nop
+        nop                                       div q,vf00w,vf25w
+        mulq.xyz vf13,vf13,q                      waitq
+        mulq.xyz vf14,vf14,q                      nop
+        mulq.xyz vf15,vf15,q                      nop
+dynamic_next_vertex:
+        nop                                       lq.xyzw vf16,1(vi05)
+        nop                                       lq.xyzw vf17,2(vi05)
+        nop                                       lq.xyzw vf18,3(vi06)
+        itof0.xyzw vf16,vf16                      nop
+        itof0.xyzw vf17,vf17                      nop
+        linear_xyz vf16,vf13,vf14,vf15,vf16
+        itof4.xyz vf18,vf18                       erleng p,vf16
+        nop                                       waitp
+        nop                                       mfp.x vf25,p
+        mulx.xyz vf16,vf16,vf25x                  nop
+        mulax.xyz acc,vf09,vf18x                  nop
+        madday.xyz acc,vf10,vf18y                 nop
+        maddaz.xyz acc,vf11,vf18z                 nop
+        maddw.xyz vf18,vf12,vf00w                 nop
+        nop                                       iadd vi10,vi00,vi08
+        max.xyzw vf19,vf05,vf05xyzw               nop
+dynamic_next_light:
+        addw.x vf24,vf00,vf00w                    ilw.x vi11,0(vi10)
+        nop                                       lq.xyzw vf20,2(vi10)
+        nop                                       ibltz vi11,dynamic_pack_color
+        nop                                       lq.xyzw vf21,1(vi10)
+        nop                                       ibeq vi11,vi00,dynamic_angular_response
+        nop                                       lq.xyzw vf22,0(vi10)
+        sub.xyz vf20,vf18,vf20                    nop
+        nop                                       eleng p,vf20
+        nop                                       waitp
+        nop                                       mfp.x vf25,p
+        addaw.x acc,vf00,vf22w                    nop
+        maddw.x vf24,vf25,vf20w                   nop
+        maxx.x vf24,vf24,vf00x                    nop
+        miniw.x vf24,vf24,vf00w                   nop
+        nop                                       div q,vf00w,vf25x
+        nop                                       waitq
+        mulq.xyz vf20,vf20,q                      nop
+dynamic_angular_response:
+        mul.xyz vf25,vf16,vf20                    nop
+        adday.x acc,vf25,vf25y                    nop
+        maddz.x vf25,vf03,vf25z                   nop
+        mul.x vf26,vf25,vf25                      nop
+        adda.x acc,vf00,vf25                      nop
+        madd.x vf25,vf25,vf26                     nop
+        mulax.z acc,vf22,vf25x                    nop
+        maddy.z vf23,vf03,vf22y                   nop
+        max.z vf23,vf23,vf00z                     nop
+        miniw.z vf23,vf23,vf00w                   nop
+        mulz.x vf23,vf24,vf23z                    nop
+        mulx.x vf23,vf23,vf04x                    nop
+        addax.xyzw acc,vf19,vf00x                 nop
+        maddx.xyzw vf19,vf21,vf23x                nop
+        nop                                       iaddi vi10,vi10,3
+        nop                                       nop
+        nop                                       ibne vi10,vi09,dynamic_next_light
+        nop                                       nop
+dynamic_pack_color:
+        maxy.x vf27,vf19,vf19y                    nop
+        maxz.x vf27,vf27,vf19z                    nop
+        subx.w vf08,vf04,vf27x                    nop
+        maxx.w vf08,vf08,vf00x                    nop
+        mini.xyzw vf19,vf19,vf08                  nop
+        sub.w vf28,vf08,vf19                      nop
+        mula.w acc,vf06,vf07                      nop
+        msub.w vf30,vf28,vf07                     nop
+        adda.xyz acc,vf00,vf19                    nop
+        maddw.xyz vf29,vf31,vf28w                 nop
+        mulw.xyz vf30,vf17,vf19w                  nop
+        nop                                       div q,vf17w,vf30w
+        mulq.xyz vf30,vf30,q                      waitq
+        mulw.xyz vf29,vf29,vf16w                  nop
+        ftoi0.xyzw vf30,vf30                      move.w vf29,vf17
+        ftoi0.xyzw vf29,vf29                      nop
+dynamic_write_duplicate:
+        nop                                       lq.xyzw vf01,0(vi06)
+        nop                                       sq.xyzw vf29,1(vi06)
+        nop                                       sq.xyzw vf30,2(vi06)
+        nop                                       mtir vi06,vf01z
+        nop                                       iadd vi06,vi04,vi06
+        nop                                       nop
+        nop                                       ibltz vi06,dynamic_write_duplicate
+        nop                                       nop
+        nop                                       iaddiu vi05,vi05,4
+        nop                                       ibne vi06,vi04,dynamic_next_vertex
+        nop                                       nop
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_shade_dynamic
+
+; Direction modes derive a normalized material/view vector. Quadratic dot gain is clamped to material range, then scales alpha or RGB with original half-unit rounding and duplicate links.
+begin_native_routine mesh_modulate_material
+        save_micro_link
+        nop                                       ibeq vi05,vi00,material_restore_link
+        nop                                       iadd vi05,vi04,vi05
+        nop                                       iadd vi06,vi04,vi06
+        nop                                       iadd vi07,vi04,vi07
+        nop                                       ilw.w vi08,1(vi07)
+        nop                                       ilw.z vi09,1(vi07)
+        nop                                       lq.xyzw vf03,0(vi07)
+        nop                                       lq.xyzw vf04,1(vi07)
+        nop                                       ibne vi08,vi00,material_inverse_basis
+        nop                                       iaddiu vi10,vi00,4
+        nop                                       iaddiu vi10,vi00,1
+material_inverse_basis:
+        nop                                       bal vi15,mesh_inverse_normal_matrix
+        nop                                       iaddiu vi01,vi04,0
+        nop                                       ibeq vi09,vi00,material_global_direction
+        nop                                       iaddiu vi11,vi00,2
+        nop                                       lq.xyz vf13,10(vi00)
+        nop                                       lq.xyz vf14,3(vi04)
+        sub.xyz vf13,vf13,vf14                    nop
+        linear_xyz vf13,vf29,vf30,vf31,vf13
+        nop                                       ibeq vi09,vi11,material_next_normal
+        nop                                       nop
+        nop                                       lq.xyzw vf15,2(vi07)
+        sub.xyz vf05,vf13,vf15                    nop
+        nop                                       b material_normalize_direction
+        nop                                       nop
+material_global_direction:
+        nop                                       lq.xyzw vf05,7(vi00)
+        sub.xyz vf05,vf00,vf05                    nop
+        linear_xyz vf05,vf29,vf30,vf31,vf05
+material_normalize_direction:
+        nop                                       erleng p,vf05
+        nop                                       waitp
+        nop                                       mfp.w vf07,p
+        mulw.xyz vf05,vf05,vf07w                  nop
+material_next_normal:
+        nop                                       lq.xyzw vf06,0(vi06)
+        itof0.xyzw vf06,vf06                      nop
+        nop                                       ibne vi09,vi11,material_evaluate_gain
+        nop                                       nop
+        nop                                       lq.xyzw vf16,3(vi05)
+        itof4.xyz vf16,vf16                       nop
+        sub.xyz vf05,vf13,vf16                    nop
+        nop                                       erleng p,vf05
+        nop                                       waitp
+        nop                                       mfp.w vf07,p
+        mulw.xyz vf05,vf05,vf07w                  nop
+material_evaluate_gain:
+        dot_xyz_x vf08,vf05,vf06
+        mul.x vf09,vf08,vf08                      nop
+        adda.x acc,vf00,vf03                      nop
+        madday.x acc,vf08,vf03y                   nop
+        maddz.x vf07,vf09,vf03z                   nop
+        maxx.x vf07,vf07,vf04x                    nop
+        miniy.x vf07,vf07,vf04y                   nop
+        nop                                       ibeq vi08,vi00,material_modulate_rgb_alpha
+        nop                                       lq.w vf10,1(vi06)
+        itof0.w vf10,vf10                         nop
+        ; I: native half-unit alpha rounding
+        mulx[i].w vf10,vf10,vf07x                 loi 0.5
+        addi.w vf10,vf10,i                        nop
+        ftoi0.w vf10,vf10                         nop
+        nop                                       sq.w vf10,1(vi06)
+material_modulate_rgb_alpha:
+        nop                                       ibne vi08,vi00,material_next_duplicate
+        nop                                       lq.w vf10,1(vi05)
+        nop                                       lq.xyz vf11,2(vi05)
+        itof0.w vf10,vf10                         nop
+        itof0.xyz vf11,vf11                       nop
+        mulx.w vf10,vf10,vf07x                    nop
+        ; I: native half-unit RGB rounding
+        mulx[i].xyz vf11,vf11,vf07x               loi 0.5
+        addi.w vf10,vf10,i                        nop
+        addi.xyz vf11,vf11,i                      nop
+        ftoi0.w vf10,vf10                         nop
+        ftoi0.xyz vf11,vf11                       nop
+        nop                                       sq.w vf10,1(vi05)
+        nop                                       sq.xyz vf11,2(vi05)
+material_next_duplicate:
+        nop                                       lq.xyzw vf12,0(vi05)
+        nop                                       mtir vi05,vf12z
+        nop                                       iadd vi05,vi04,vi05
+        nop                                       nop
+        nop                                       ibltz vi05,material_modulate_rgb_alpha
+        nop                                       nop
+        nop                                       ibeq vi05,vi04,material_restore_link
+        nop                                       nop
+        nop                                       iadd vi06,vi06,vi10
+        nop                                       nop
+        nop                                       b material_next_normal
+        nop                                       nop
+material_restore_link:
+        return_saved_micro_link
+end_native_routine mesh_modulate_material
+
+; Load four packet-directed affine matrices, transform the fixed4 position by each and blend their XYZ outputs using original integer weights normalized by1/255. Propagate duplicate position links.
+begin_native_routine mesh_skin_positions
+        nop                                       lq.xyzw vf20,packet_matrices_qword(vi04)
+        nop                                       iadd vi05,vi04,vi05
+        nop                                       iadd vi06,vi04,vi06
+        nop                                       iadd vi07,vi04,vi07
+        nop                                       ibeq vi06,vi04,skin_position_done
+        nop                                       mtir vi09,vf20x
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       lq.xyzw vf03,0(vi09)
+        nop                                       lq.xyzw vf04,1(vi09)
+        nop                                       lq.xyzw vf05,2(vi09)
+        nop                                       lq.xyzw vf06,3(vi09)
+        nop                                       mtir vi09,vf20y
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       lq.xyzw vf07,0(vi09)
+        nop                                       lq.xyzw vf08,1(vi09)
+        nop                                       lq.xyzw vf09,2(vi09)
+        nop                                       lq.xyzw vf10,3(vi09)
+        nop                                       lq.xyz vf26,3(vi05)
+        nop                                       mtir vi09,vf20z
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       lq.xyzw vf11,0(vi09)
+        nop                                       lq.xyzw vf12,1(vi09)
+        nop                                       lq.xyzw vf13,2(vi09)
+        nop                                       lq.xyzw vf14,3(vi09)
+        nop                                       mtir vi09,vf20w
+        nop                                       iadd vi09,vi04,vi09
+        itof4.xyz vf19,vf26                       lq.xyzw vf15,0(vi09)
+        nop                                       lq.xyzw vf16,1(vi09)
+        nop                                       lq.xyzw vf17,2(vi09)
+        nop                                       lq.xyzw vf18,3(vi09)
+        mulax.xyz acc,vf03,vf19x                  lqi.xyzw vf20,(vi07++)
+        madday.xyz acc,vf04,vf19y                 nop
+        maddaz.xyz acc,vf05,vf19z                 nop
+        maddw.xyz vf21,vf06,vf00w                 nop
+        ; I: byte weight normalization1/255
+        itof0[i].xyzw vf20,vf20                   loi 0.0039215688593685627
+        mulax.xyz acc,vf07,vf19x                  nop
+        madday.xyz acc,vf08,vf19y                 nop
+        maddaz.xyz acc,vf09,vf19z                 nop
+        maddw.xyz vf22,vf10,vf00w                 nop
+        muli.xyzw vf20,vf20,i                     nop
+        mulax.xyz acc,vf11,vf19x                  nop
+        madday.xyz acc,vf12,vf19y                 nop
+        maddaz.xyz acc,vf13,vf19z                 nop
+        maddw.xyz vf23,vf14,vf00w                 nop
+        mulax.xyz acc,vf15,vf19x                  lq.xyz vf26,7(vi05)
+        madday.xyz acc,vf16,vf19y                 nop
+        maddaz.xyz acc,vf17,vf19z                 nop
+        maddw.xyz vf24,vf18,vf00w                 nop
+        itof4.xyz vf19,vf26                       nop
+        mulax.xyz acc,vf21,vf20x                  nop
+        madday.xyz acc,vf22,vf20y                 iaddi vi05,vi05,4
+        maddaz.xyz acc,vf23,vf20z                 nop
+        maddw.xyz vf25,vf24,vf20w                 nop
+skin_position_pipeline:
+        mulax.xyz acc,vf03,vf19x                  lqi.xyzw vf20,(vi07++)
+        madday.xyz acc,vf04,vf19y                 nop
+        maddaz.xyz acc,vf05,vf19z                 nop
+        maddw.xyz vf21,vf06,vf00w                 nop
+        ftoi4.xyz vf25,vf25                       nop
+        ; I: byte weight normalization1/255
+        itof0[i].xyzw vf20,vf20                   loi 0.0039215688593685627
+        mulax.xyz acc,vf07,vf19x                  ilw.z vi08,0(vi06)
+        madday.xyz acc,vf08,vf19y                 nop
+        maddaz.xyz acc,vf09,vf19z                 sq.xyz vf25,3(vi06)
+        maddw.xyz vf22,vf10,vf00w                 nop
+        muli.xyzw vf20,vf20,i                     nop
+        mulax.xyz acc,vf11,vf19x                  nop
+        madday.xyz acc,vf12,vf19y                 nop
+        maddaz.xyz acc,vf13,vf19z                 ibgez vi08,skin_position_after_duplicates
+        maddw.xyz vf23,vf14,vf00w                 iadd vi06,vi04,vi08
+skin_position_duplicate:
+        nop                                       ilw.z vi08,0(vi06)
+        nop                                       sq.xyz vf25,3(vi06)
+        nop                                       nop
+        nop                                       nop
+        nop                                       ibltz vi08,skin_position_duplicate
+        nop                                       iadd vi06,vi04,vi08
+skin_position_after_duplicates:
+        mulax.xyz acc,vf15,vf19x                  lq.xyz vf26,7(vi05)
+        madday.xyz acc,vf16,vf19y                 ibeq vi06,vi04,skin_position_done
+        maddaz.xyz acc,vf17,vf19z                 nop
+        maddw.xyz vf24,vf18,vf00w                 nop
+        itof4.xyz vf19,vf26                       nop
+        mulax.xyz acc,vf21,vf20x                  nop
+        madday.xyz acc,vf22,vf20y                 iaddi vi05,vi05,4
+        maddaz.xyz acc,vf23,vf20z                 b skin_position_pipeline
+        maddw.xyz vf25,vf24,vf20w                 nop
+skin_position_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_skin_positions
+
+; The four-matrix weighted path transforms normals and positions, normalizes the mixed normal using native EFU P, rescales to127 and keeps original pipelined linked output writes.
+begin_native_routine mesh_skin_normals_positions
+        nop                                       lq.xyzw vf21,packet_matrices_qword(vi04)
+        nop                                       iadd vi05,vi04,vi05
+        nop                                       iadd vi06,vi04,vi06
+        nop                                       iadd vi07,vi04,vi07
+        nop                                       ibeq vi06,vi04,skin_normal_done
+        nop                                       mtir vi09,vf21x
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       lq.xyzw vf03,0(vi09)
+        nop                                       lq.xyzw vf04,1(vi09)
+        nop                                       lq.xyzw vf05,2(vi09)
+        nop                                       lq.xyzw vf06,3(vi09)
+        nop                                       mtir vi09,vf21y
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       lq.xyzw vf07,0(vi09)
+        nop                                       lq.xyzw vf08,1(vi09)
+        nop                                       lq.xyzw vf09,2(vi09)
+        nop                                       lq.xyzw vf10,3(vi09)
+        nop                                       mtir vi09,vf21z
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       lq.xyzw vf11,0(vi09)
+        nop                                       lq.xyzw vf12,1(vi09)
+        nop                                       lq.xyzw vf13,2(vi09)
+        nop                                       lq.xyzw vf14,3(vi09)
+        nop                                       lq.xyzw vf20,1(vi05)
+        nop                                       lq.xyzw vf19,3(vi05)
+        nop                                       mtir vi09,vf21w
+        nop                                       iadd vi09,vi04,vi09
+        nop                                       lq.xyzw vf15,0(vi09)
+        itof0.xyzw vf20,vf20                      lq.xyzw vf16,1(vi09)
+        itof4.xyz vf19,vf19                       lq.xyzw vf17,2(vi09)
+        nop                                       lq.xyzw vf18,3(vi09)
+        nop                                       iaddi vi05,vi05,4
+        mulax.xyz acc,vf03,vf20x                  lqi.xyzw vf21,(vi07++)
+        madday.xyz acc,vf04,vf20y                 nop
+        maddz.xyz vf26,vf05,vf20z                 nop
+        linear_xyz vf27,vf07,vf08,vf09,vf20
+        ; I: byte weight normalization1/255
+        itof0[i].xyzw vf21,vf21                   loi 0.0039215688593685627
+        linear_xyz vf28,vf11,vf12,vf13,vf20
+        muli.xyzw vf21,vf21,i                     nop
+        linear_xyz vf29,vf15,vf16,vf17,vf20
+        mulax.xyz acc,vf26,vf21x                  nop
+        madday.xyz acc,vf27,vf21y                 nop
+        maddaz.xyz acc,vf28,vf21z                 nop
+        maddw.xyz vf31,vf29,vf21w                 nop
+        mulax.xyz acc,vf03,vf19x                  nop
+        madday.xyz acc,vf04,vf19y                 nop
+        maddaz.xyz acc,vf05,vf19z                 nop
+        maddw.xyz vf22,vf06,vf00w                 erleng p,vf31
+        mulax.xyz acc,vf07,vf19x                  nop
+        madday.xyz acc,vf08,vf19y                 nop
+        maddaz.xyz acc,vf09,vf19z                 nop
+        maddw.xyz vf23,vf10,vf00w                 nop
+        mulax.xyz acc,vf11,vf19x                  nop
+        madday.xyz acc,vf12,vf19y                 nop
+        maddaz.xyz acc,vf13,vf19z                 nop
+        maddw.xyz vf24,vf14,vf00w                 nop
+        mulax.xyz acc,vf15,vf19x                  lq.xyzw vf20,1(vi05)
+        madday.xyz acc,vf16,vf19y                 nop
+        maddaz.xyz acc,vf17,vf19z                 nop
+        maddw.xyz vf25,vf18,vf00w                 nop
+        itof0.xyzw vf20,vf20                      nop
+        mulax.xyz acc,vf22,vf21x                  lq.xyzw vf19,3(vi05)
+        madday.xyz acc,vf23,vf21y                 iaddi vi05,vi05,4
+        maddaz.xyz acc,vf24,vf21z                 nop
+        maddw.xyz vf30,vf25,vf21w                 nop
+skin_normal_pipeline:
+        itof4.xyz vf19,vf19                       nop
+        mulax.xyz acc,vf03,vf20x                  lqi.xyzw vf21,(vi07++)
+        madday.xyz acc,vf04,vf20y                 nop
+        maddz.xyz vf26,vf05,vf20z                 nop
+        ftoi4.xyz vf30,vf30                       nop
+        linear_xyz vf27,vf07,vf08,vf09,vf20
+        ; I: byte weight normalization1/255
+        itof0[i].xyzw vf21,vf21                   loi 0.0039215688593685627
+        mulax.xyz acc,vf11,vf20x                  waitp
+        madday.xyz acc,vf12,vf20y                 mfp.w vf20,p
+        maddz.xyz vf28,vf13,vf20z                 nop
+        muli.xyzw vf21,vf21,i                     nop
+        linear_xyz vf29,vf15,vf16,vf17,vf20
+        mulw.xyz vf20,vf31,vf20w                  nop
+        mulax.xyz acc,vf26,vf21x                  nop
+        madday.xyz acc,vf27,vf21y                 nop
+        maddaz.xyz acc,vf28,vf21z                 nop
+        ; I: signed normal output scale127
+        maddw[i].xyz vf31,vf29,vf21w              loi 127
+        muli.xyz vf20,vf20,i                      nop
+        mulax.xyz acc,vf03,vf19x                  nop
+        madday.xyz acc,vf04,vf19y                 nop
+        maddaz.xyz acc,vf05,vf19z                 nop
+        maddw.xyz vf22,vf06,vf00w                 erleng p,vf31
+        ftoi0.xyzw vf20,vf20                      nop
+        mulax.xyz acc,vf07,vf19x                  nop
+        madday.xyz acc,vf08,vf19y                 nop
+        maddaz.xyz acc,vf09,vf19z                 ilw.z vi08,0(vi06)
+        maddw.xyz vf23,vf10,vf00w                 sq.xyz vf30,3(vi06)
+        mulax.xyz acc,vf11,vf19x                  sq.xyz vf20,-7(vi05)
+        madday.xyz acc,vf12,vf19y                 nop
+        maddaz.xyz acc,vf13,vf19z                 ibgez vi08,skin_normal_after_duplicates
+        maddw.xyz vf24,vf14,vf00w                 iadd vi06,vi04,vi08
+skin_normal_duplicate_position:
+        nop                                       ilw.z vi08,0(vi06)
+        nop                                       sq.xyz vf30,3(vi06)
+        nop                                       nop
+        nop                                       nop
+        nop                                       ibltz vi08,skin_normal_duplicate_position
+        nop                                       iadd vi06,vi04,vi08
+skin_normal_after_duplicates:
+        mulax.xyz acc,vf15,vf19x                  lq.xyzw vf20,1(vi05)
+        madday.xyz acc,vf16,vf19y                 ibeq vi06,vi04,skin_normal_done
+        maddaz.xyz acc,vf17,vf19z                 nop
+        maddw.xyz vf25,vf18,vf00w                 nop
+        itof0.xyzw vf20,vf20                      nop
+        mulax.xyz acc,vf22,vf21x                  lq.xyzw vf19,3(vi05)
+        madday.xyz acc,vf23,vf21y                 iaddi vi05,vi05,4
+        maddaz.xyz acc,vf24,vf21z                 b skin_normal_pipeline
+        maddw.xyz vf30,vf25,vf21w                 nop
+skin_normal_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_skin_normals_positions
+
+; Resolve relative GIF packet pointers, patch inherited header lanes, and XGKICK the first and optional second stream. Original zero-pointer branches are retained.
+begin_native_routine mesh_kick_packet_pair
+        nop                                       lq.xyzw vf01,8(vi04)
+        nop                                       ibeq vi01,vi00,kick_done
+        nop                                       iadd vi01,vi04,vi01
+        nop                                       mtir vi03,vf01w
+        nop                                       nop
+        nop                                       ibeq vi03,vi00,kick_first_packet
+        nop                                       iadd vi03,vi01,vi03
+        nop                                       lq.xyzw vf01,2(vi03)
+        nop                                       sq.xyzw vf01,3(vi01)
+        nop                                       nop
+        nop                                       nop
+kick_first_packet:
+        nop                                       iaddiu vi03,vi01,2
+        nop                                       xgkick vi03
+        nop                                       lq.xyzw vf01,0(vi01)
+        nop                                       ibeq vi02,vi00,kick_done
+        nop                                       iadd vi02,vi04,vi02
+        nop                                       sq.yzw vf01,-1(vi02)
+        nop                                       iaddi vi02,vi02,-1
+        nop                                       nop
+        nop                                       nop
+        nop                                       xgkick vi02
+kick_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_kick_packet_pair
+
+; Accumulate signed XY fan area via ACC; compare status sign to native winding selection and empty the span on backface.
+begin_native_routine mesh_cull_polygon
+        nop                                       ilw.x vi01,packet_flags_qword(vi04)
+        nop                                       iaddiu vi02,vi00,0x80
+        suba.xyzw acc,vf00,vf00                   lq.xyzw vf09,3(vi05)
+        nop                                       lq.xyzw vf10,7(vi05)
+        nop                                       iand vi01,vi02,vi01
+        nop                                       lq.xyzw vf11,11(vi05)
+        nop                                       ibne vi01,vi00,polygon_cull_done
+        sub.xy vf12,vf10,vf09                     iaddi vi12,vi05,8
+polygon_area_next:
+        sub.xy vf13,vf11,vf09                     iaddi vi12,vi12,4
+        nop                                       lq.xyzw vf11,3(vi12)
+        nop                                       nop
+        nop                                       nop
+        madday.x acc,vf13,vf12y                   nop
+        msubay.x acc,vf12,vf13y                   ibne vi12,vi06,polygon_area_next
+        nop                                       move.xyzw vf12,vf13
+        nop                                       iadd vi02,vi07,vi07
+        nop                                       nop
+        nop                                       fsand vi01,2
+        nop                                       nop
+        nop                                       ibne vi01,vi02,polygon_cull_done
+        nop                                       nop
+        nop                                       iadd vi06,vi00,vi05
+polygon_cull_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_cull_polygon
+
+; Sutherland-Hodgman edge clipping for four-qword attributed vertices. Native signed plane distance and Q interpolation retain all attributes and the explicit W marker.
+begin_native_routine mesh_clip_polygon_plane
+        nop                                       iaddiu vi01,vi00,1
+        nop                                       mfir.w vf20,vi01
+        nop                                       lq.xyzw vf13,3(vi05)
+        mul.xyzw vf14,vf01,vf13                   lq.xyzw vf10,0(vi05)
+        addaz.w acc,vf14,vf14z                    lq.xyzw vf11,1(vi05)
+        madday.w acc,vf00,vf14y                   lq.xyzw vf12,2(vi05)
+        maddx.w vf14,vf00,vf14x                   nop
+        nop                                       iadd vi12,vi00,vi05
+        nop                                       iadd vi13,vi00,vi05
+        nop                                       nop
+        nop                                       fsand vi02,2
+        nop                                       sq.xyzw vf10,0(vi06)
+        nop                                       sq.xyzw vf11,1(vi06)
+        nop                                       sq.xyzw vf12,2(vi06)
+        nop                                       sq.xyzw vf13,3(vi06)
+clip_edge_next:
+        max.xyzw vf18,vf13,vf13xyzw               iadd vi03,vi00,vi02
+        max.xyzw vf19,vf14,vf14xyzw               move.xyzw vf15,vf10
+        max.xyzw vf16,vf11,vf11xyzw               move.xyzw vf17,vf12
+        nop                                       lq.xyzw vf13,7(vi12)
+        mul.xyzw vf14,vf01,vf13                   lq.xyzw vf10,4(vi12)
+        addaz.w acc,vf14,vf14z                    lq.xyzw vf11,5(vi12)
+        madday.w acc,vf00,vf14y                   lq.xyzw vf12,6(vi12)
+        maddx.w vf14,vf00,vf14x                   nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       fsand vi02,2
+        nop                                       nop
+        nop                                       ibeq vi03,vi02,clip_edge_no_intersection
+        nop                                       nop
+        sub.w vf09,vf14,vf19                      nop
+        nop                                       div q,vf14w,vf09w
+        subq.w vf09,vf00,q                        waitq
+        mulaq.xyz acc,vf15,q                      nop
+        maddw.xyz vf20,vf10,vf09w                 nop
+        mulaq.xyzw acc,vf16,q                     nop
+        maddw.xyzw vf21,vf11,vf09w                nop
+        mulaq.xyzw acc,vf17,q                     nop
+        maddw.xyzw vf22,vf12,vf09w                nop
+        mulaq.xyzw acc,vf18,q                     nop
+        maddw.xyzw vf23,vf13,vf09w                nop
+        nop                                       sqi.xyzw vf20,(vi13++)
+        nop                                       sqi.xyzw vf21,(vi13++)
+        nop                                       sqi.xyzw vf22,(vi13++)
+        nop                                       sqi.xyzw vf23,(vi13++)
+clip_edge_no_intersection:
+        nop                                       ibne vi02,vi00,clip_edge_next_input
+        nop                                       nop
+        nop                                       sqi.xyzw vf10,(vi13++)
+        nop                                       sqi.xyzw vf11,(vi13++)
+        nop                                       sqi.xyzw vf12,(vi13++)
+        nop                                       sqi.xyzw vf13,(vi13++)
+clip_edge_next_input:
+        nop                                       iaddi vi12,vi12,4
+        nop                                       nop
+        nop                                       ibne vi12,vi06,clip_edge_next
+        nop                                       nop
+        nop                                       iadd vi06,vi00,vi13
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_clip_polygon_plane
+
+; Collect at most twenty unique projected XY positions. The original0.1 tolerance uses both MAC sign bits; full vertex W eligibility and exact-capacity return are preserved.
+begin_native_routine mesh_collect_unique_xy
+        nop                                       ilw.x vi13,0(vi08)
+        nop                                       iadd vi13,vi13,vi04
+        nop                                       iadd vi03,vi00,vi05
+unique_xy_next_candidate:
+        nop                                       iaddiu vi12,vi08,2
+        nop                                       iaddiu vi01,vi12,0x14
+        nop                                       ilw.w vi02,0(vi03)
+        nop                                       ibeq vi13,vi01,unique_xy_done
+        nop                                       lq.xyzw vf09,3(vi03)
+        nop                                       iaddiu vi03,vi03,4
+        nop                                       ibeq vi02,vi00,unique_xy_next
+        nop                                       nop
+unique_xy_find_existing:
+        nop                                       ibeq vi12,vi13,unique_xy_append
+        nop                                       lqi.xyzw vf10,(vi12++)
+        sub.xy vf10,vf10,vf09                     nop
+        ; I: unique XY tolerance0.1
+        abs[i].xy vf10,vf10                       loi 0.10000000149011612
+        subi.xy vf10,vf10,i                       nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       iaddiu vi01,vi00,0xc0
+        nop                                       fmand vi02,vi01
+        nop                                       nop
+        nop                                       ibne vi02,vi01,unique_xy_find_existing
+        nop                                       nop
+        nop                                       b unique_xy_next
+        nop                                       nop
+unique_xy_append:
+        nop                                       sqi.xyzw vf09,(vi13++)
+unique_xy_next:
+        nop                                       isub vi01,vi13,vi04
+        nop                                       ibne vi03,vi06,unique_xy_next_candidate
+        nop                                       isw.x vi01,0(vi08)
+unique_xy_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_collect_unique_xy
+
+; Normalize to homogeneous clipping space, clip negative/positive Z/X/Y as required, collect unique XY where requested, then perspective-map and integer-round all attribute records.
+begin_native_routine mesh_clip_project_polygon
+        save_micro_link
+        nop                                       lq.xyzw vf04,9(vi04)
+        nop                                       lq.xyzw vf05,1(vi00)
+        nop                                       lq.xyzw vf06,0(vi00)
+        mulx.w vf05,vf00,vf04x                    nop
+        muly.w vf06,vf00,vf04y                    nop
+        nop                                       div q,vf00w,vf06x
+        addq.x vf08,vf00,q                        waitq
+        nop                                       div q,vf00w,vf06y
+        addq.y vf08,vf00,q                        waitq
+        nop                                       div q,vf00w,vf06z
+        addq.z vf08,vf00,q                        waitq
+        nop                                       fcset 0
+        nop                                       iadd vi12,vi00,vi05
+clip_normalize_next:
+        nop                                       lq.xyzw vf12,3(vi12)
+        nop                                       lq.xyzw vf09,0(vi12)
+        nop                                       lq.xyzw vf10,1(vi12)
+        nop                                       lq.xyzw vf11,2(vi12)
+        sub.xyz vf12,vf12,vf05                    nop
+        mulw.xyz vf09,vf09,vf09w                  move.w vf12,vf09
+        itof0.xyzw vf10,vf10                      mfir.w vf09,vi00
+        itof0.xyzw vf11,vf11                      nop
+        mul.xyz vf12,vf12,vf08                    nop
+        mulw.xyz vf12,vf12,vf12w                  nop
+        nop                                       sq.xyzw vf09,0(vi12)
+        nop                                       sq.xyzw vf10,1(vi12)
+        nop                                       sq.xyzw vf11,2(vi12)
+        nop                                       sq.xyzw vf12,3(vi12)
+        clipw.xyz vf12,vf12                       iaddi vi12,vi12,4
+        nop                                       nop
+        nop                                       ibne vi12,vi06,clip_normalize_next
+        nop                                       nop
+        nop                                       fcand vi01,0x410410
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,clip_positive_z
+        nop                                       nop
+        max.xyw vf01,vf00,vf00xyw                 bal vi15,mesh_clip_polygon_plane
+        subw.z vf01,vf00,vf00w                    nop
+        nop                                       ibeq vi05,vi06,clip_empty_polygon
+        nop                                       nop
+        nop                                       ibeq vi08,vi00,clip_resample_flags
+        nop                                       nop
+        nop                                       bal vi15,mesh_collect_unique_xy
+        nop                                       nop
+clip_resample_flags:
+        nop                                       fcset 0
+        nop                                       lq.xyzw vf12,3(vi05)
+        clipw.xyz vf12,vf12                       nop
+        nop                                       lq.xyzw vf12,7(vi05)
+        clipw.xyz vf12,vf12                       iaddi vi01,vi05,12
+        nop                                       lq.xyzw vf12,11(vi05)
+        clipw.xyz vf12,vf12                       ibeq vi06,vi01,clip_positive_z
+        nop                                       lq.xyzw vf12,15(vi05)
+        clipw.xyz vf12,vf12                       nop
+clip_positive_z:
+        nop                                       fcand vi01,0x820820
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,clip_negative_x
+        nop                                       nop
+        max.xyw vf01,vf00,vf00xyw                 bal vi15,mesh_clip_polygon_plane
+        addw.z vf01,vf00,vf00w                    nop
+        nop                                       ibeq vi05,vi06,clip_empty_polygon
+        nop                                       nop
+clip_negative_x:
+        nop                                       fcand vi01,0x41041
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,clip_positive_x
+        nop                                       nop
+        max.yzw vf01,vf00,vf00yzw                 bal vi15,mesh_clip_polygon_plane
+        subw.x vf01,vf00,vf00w                    nop
+        nop                                       ibeq vi05,vi06,clip_empty_polygon
+        nop                                       nop
+clip_positive_x:
+        nop                                       fcand vi01,0x82082
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,clip_negative_y
+        nop                                       nop
+        max.yzw vf01,vf00,vf00yzw                 bal vi15,mesh_clip_polygon_plane
+        addw.x vf01,vf00,vf00w                    nop
+        nop                                       ibeq vi05,vi06,clip_empty_polygon
+        nop                                       nop
+clip_negative_y:
+        nop                                       fcand vi01,0x104104
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,clip_positive_y
+        nop                                       nop
+        max.xzw vf01,vf00,vf00xzw                 bal vi15,mesh_clip_polygon_plane
+        subw.y vf01,vf00,vf00w                    nop
+        nop                                       ibeq vi05,vi06,clip_empty_polygon
+        nop                                       nop
+clip_positive_y:
+        nop                                       fcand vi01,0x208208
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,clip_screen_begin
+        nop                                       nop
+        max.xzw vf01,vf00,vf00xzw                 bal vi15,mesh_clip_polygon_plane
+        addw.y vf01,vf00,vf00w                    nop
+        nop                                       ibeq vi05,vi06,clip_empty_polygon
+        nop                                       nop
+clip_screen_begin:
+        nop                                       iadd vi09,vi00,vi00
+        nop                                       iadd vi12,vi00,vi05
+clip_screen_next:
+        nop                                       lq.xyzw vf09,0(vi12)
+        nop                                       lq.xyzw vf10,1(vi12)
+        nop                                       lq.xyzw vf11,2(vi12)
+        nop                                       lq.xyzw vf12,3(vi12)
+        nop                                       div q,vf00w,vf12w
+        miniz.w vf12,vf12,vf04z                   nop
+        mulq.xyz vf09,vf09,q                      waitq
+        mulq.xyzw vf12,vf12,q                     nop
+        mula.xyzw acc,vf12,vf06                   nop
+        ; I: native half-unit color rounding
+        maddw[i].xyzw vf12,vf05,vf00w             loi 0.5
+        addi.xyzw vf10,vf10,i                     nop
+        addi.xyzw vf11,vf11,i                     nop
+        ftoi0.xyzw vf10,vf10                      nop
+        ftoi0.xyzw vf11,vf11                      nop
+        nop                                       sqi.xyzw vf09,(vi12++)
+        nop                                       sqi.xyzw vf10,(vi12++)
+        nop                                       sqi.xyzw vf11,(vi12++)
+        nop                                       sqi.xyzw vf12,(vi12++)
+        nop                                       iaddiu vi09,vi09,1
+        nop                                       ibne vi12,vi06,clip_screen_next
+        nop                                       nop
+        nop                                       b clip_restore_link
+        nop                                       nop
+clip_empty_polygon:
+        nop                                       iadd vi09,vi00,vi00
+        nop                                       iadd vi06,vi00,vi05
+clip_restore_link:
+        return_saved_micro_link
+end_native_routine mesh_clip_project_polygon
+
+; Walk flagged strips, copy each triangle into native scratch, clip/cull it and emit original GIF headers/vertices with XGKICK; preserve alternating winding and optional second material stream.
+begin_native_routine mesh_emit_clipped_triangles
+        nop                                       ilw.z vi01,packet_control_qword(vi04)
+        nop                                       nop
+        save_micro_link
+        nop                                       ibeq vi01,vi00,triangle_restore_link
+        nop                                       nop
+        nop                                       iaddi vi02,vi00,-1
+        nop                                       iaddi vi07,vi00,1
+        nop                                       iadd vi10,vi04,vi10
+        nop                                       iadd vi11,vi04,vi11
+        nop                                       ibgtz vi08,triangle_optional_second_packet
+        nop                                       nop
+        nop                                       ibeq vi08,vi02,triangle_disable_winding
+        nop                                       nop
+        nop                                       b triangle_next
+        nop                                       iaddi vi08,vi00,0
+triangle_optional_second_packet:
+        nop                                       b triangle_next
+        nop                                       iadd vi08,vi04,vi08
+triangle_disable_winding:
+        nop                                       iaddi vi08,vi00,0
+        nop                                       iaddi vi07,vi00,0
+triangle_next:
+        nop                                       ilw.w vi01,3(vi10)
+        nop                                       iaddiu vi02,vi00,0x3000
+        nop                                       iaddiu vi03,vi00,0x1000
+        nop                                       nop
+        nop                                       ibgez vi01,triangle_advance
+        nop                                       iand vi02,vi01,vi02
+        nop                                       nop
+        nop                                       ibne vi02,vi03,triangle_advance
+        nop                                       nop
+        nop                                       iaddiu vi05,vi00,0x10
+        nop                                       iaddiu vi06,vi05,12
+        nop                                       iadd vi12,vi00,vi05
+        nop                                       iaddi vi10,vi10,-12
+triangle_copy_scratch:
+        nop                                       iaddi vi10,vi10,4
+        nop                                       lq.xyzw vf04,0(vi10)
+        nop                                       lq.xyzw vf05,1(vi10)
+        nop                                       lq.xyzw vf06,2(vi10)
+        nop                                       lq.xyzw vf07,3(vi10)
+        nop                                       sqi.xyzw vf04,(vi12++)
+        nop                                       sqi.xyzw vf05,(vi12++)
+        nop                                       sqi.xyzw vf06,(vi12++)
+        nop                                       sqi.xyzw vf07,(vi12++)
+        nop                                       nop
+        nop                                       ibne vi12,vi06,triangle_copy_scratch
+        nop                                       nop
+        nop                                       bal vi15,mesh_clip_project_polygon
+        nop                                       nop
+        nop                                       ibeq vi05,vi06,triangle_advance
+        nop                                       nop
+        nop                                       bal vi15,mesh_cull_polygon
+        nop                                       nop
+        nop                                       ibeq vi05,vi06,triangle_advance
+        nop                                       nop
+        nop                                       iaddiu vi09,vi09,0x4000
+        nop                                       iaddiu vi09,vi09,0x4000
+        nop                                       isw.x vi09,15(vi00)
+        nop                                       mtir vi01,vf03x
+        nop                                       iadd vi02,vi04,vi01
+        nop                                       iaddi vi02,vi02,2
+        nop                                       xgkick vi02
+        nop                                       lq.yz vf08,-1(vi02)
+        nop                                       sq.yz vf08,15(vi00)
+        nop                                       nop
+        nop                                       nop
+        nop                                       iaddi vi02,vi00,15
+        nop                                       xgkick vi02
+        nop                                       mtir vi01,vf03y
+        nop                                       iadd vi02,vi04,vi01
+        nop                                       ibeq vi01,vi00,triangle_restore_first_packet
+        nop                                       iaddi vi02,vi02,2
+        nop                                       xgkick vi02
+        nop                                       lq.yz vf08,-1(vi02)
+        nop                                       sq.yz vf08,15(vi00)
+        nop                                       nop
+        nop                                       nop
+        nop                                       iaddi vi02,vi00,15
+        nop                                       xgkick vi02
+triangle_restore_first_packet:
+        nop                                       mtir vi01,vf03x
+        nop                                       iadd vi02,vi04,vi01
+        nop                                       iaddi vi02,vi02,2
+        nop                                       xgkick vi02
+triangle_advance:
+        nop                                       iaddi vi10,vi10,4
+        nop                                       iaddi vi01,vi00,1
+        nop                                       isub vi07,vi01,vi07
+        nop                                       ibne vi10,vi11,triangle_next
+        nop                                       nop
+triangle_restore_link:
+        return_saved_micro_link
+end_native_routine mesh_emit_clipped_triangles
+
+; Clip the qword-only outline against a signed plane. Q interpolation writes XYZ and retains the original W carrier supplied by native scratch.
+begin_native_routine mesh_clip_outline_plane
+        nop                                       lq.xyzw vf14,0(vi06)
+        nop                                       iaddi vi11,vi06,0
+        nop                                       iaddi vi12,vi11,0
+        mul.xyzw vf15,vf01,vf14                   nop
+        addaz.w acc,vf15,vf15z                    nop
+        madday.w acc,vf00,vf15y                   nop
+        maddx.w vf15,vf00,vf15x                   nop
+        nop                                       sq.xyzw vf14,0(vi07)
+        nop                                       nop
+        nop                                       nop
+        nop                                       fsand vi13,2
+outline_plane_next_edge:
+        max.xyzw vf17,vf15,vf15xyzw               iaddi vi14,vi13,0
+        max.xyzw vf16,vf14,vf14xyzw               nop
+        nop                                       lq.xyzw vf14,1(vi11)
+        mul.xyzw vf15,vf01,vf14                   nop
+        addaz.w acc,vf15,vf15z                    nop
+        madday.w acc,vf00,vf15y                   nop
+        maddx.w vf15,vf00,vf15x                   nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       fsand vi13,2
+        nop                                       nop
+        nop                                       ibeq vi14,vi13,outline_plane_no_crossing
+        nop                                       nop
+        sub.w vf18,vf15,vf17                      nop
+        nop                                       div q,vf15w,vf18w
+        subq.w vf18,vf00,q                        waitq
+        mulaq.xyz acc,vf16,q                      nop
+        maddw.xyz vf19,vf14,vf18w                 nop
+        nop                                       sqi.xyzw vf19,(vi12++)
+outline_plane_no_crossing:
+        nop                                       ibne vi13,vi00,outline_plane_advance
+        nop                                       nop
+        nop                                       sqi.xyzw vf14,(vi12++)
+outline_plane_advance:
+        nop                                       iaddi vi11,vi11,1
+        nop                                       nop
+        nop                                       ibne vi11,vi07,outline_plane_next_edge
+        nop                                       nop
+        nop                                       iaddi vi07,vi12,0
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_clip_outline_plane
+
+; Optional centroid/Manhattan angular ordering and insertion sort; clip four XY sides, project, emit the outline and patch the original packet end pointer.
+begin_native_routine mesh_sort_clip_outline
+        save_micro_link
+        nop                                       ilw.z vi01,packet_control_qword(vi04)
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,outline_restore_link
+        nop                                       iadd vi05,vi05,vi04
+        nop                                       iaddiu vi06,vi05,2
+        nop                                       ilw.x vi07,0(vi05)
+        nop                                       iadd vi07,vi07,vi04
+        nop                                       isub vi03,vi07,vi06
+        nop                                       iaddi vi01,vi03,-3
+        nop                                       nop
+        nop                                       ibltz vi01,outline_restore_link
+        nop                                       nop
+        nop                                       ibeq vi08,vi00,outline_emit_header
+        sub.xyzw vf05,vf00,vf00                   nop
+        nop                                       mfir.w vf03,vi03
+        itof0.w vf03,vf03                         iaddi vi10,vi06,0
+        nop                                       div q,vf00w,vf03w
+outline_accumulate_centroid:
+        nop                                       lqi.xy vf04,(vi10++)
+        add.xy vf05,vf05,vf04                     nop
+        nop                                       ibne vi10,vi07,outline_accumulate_centroid
+        nop                                       nop
+        mulq.xy vf05,vf05,q                       waitq
+        sub.xyzw vf06,vf00,vf00                   iaddiu vi10,vi06,0
+        add.w vf07,vf00,vf00                      nop
+        add.w vf08,vf07,vf07                      nop
+outline_assign_angle:
+        nop                                       lqi.xyzw vf04,(vi10++)
+        sub.xy vf03,vf04,vf05                     iaddiu vi03,vi00,0xc0
+        nop                                       nop
+        nop                                       nop
+        nop                                       nop
+        abs.xy vf09,vf03                          fmand vi03,vi03
+        addx.y vf09,vf09,vf09x                    isubiu vi02,vi03,0x80
+        nop                                       div q,vf03y,vf09y
+        nop                                       waitq
+        nop                                       ibeq vi03,vi00,outline_store_angle
+        addq.w vf04,vf06,q                        nop
+        nop                                       ibgez vi02,outline_store_angle
+        subq.w vf04,vf07,q                        nop
+        addq.w vf04,vf08,q                        nop
+outline_store_angle:
+        nop                                       ibne vi10,vi07,outline_assign_angle
+        nop                                       sq.xyzw vf04,-1(vi10)
+        nop                                       iaddiu vi10,vi06,1
+outline_sort_next:
+        nop                                       isubiu vi11,vi10,1
+outline_insert_previous:
+        nop                                       lq.xyzw vf10,0(vi11)
+        nop                                       lq.xyzw vf11,1(vi11)
+        sub.w vf00,vf11,vf10                      nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       fsand vi03,2
+        nop                                       nop
+        nop                                       ibeq vi03,vi00,outline_insert_done
+        nop                                       nop
+        nop                                       sq.xyzw vf10,1(vi11)
+        nop                                       sq.xyzw vf11,0(vi11)
+        nop                                       ibne vi11,vi06,outline_insert_previous
+        nop                                       isubiu vi11,vi11,1
+outline_insert_done:
+        nop                                       iaddiu vi10,vi10,1
+        nop                                       nop
+        nop                                       ibne vi10,vi07,outline_sort_next
+        nop                                       nop
+        sub.yw vf01,vf00,vf00                     nop
+        maxw.xz vf01,vf00,vf00w                   nop
+        nop                                       bal vi15,mesh_clip_outline_plane
+        nop                                       nop
+        nop                                       ibeq vi06,vi07,outline_update_end
+        nop                                       nop
+        subw.x vf01,vf00,vf00w                    nop
+        nop                                       bal vi15,mesh_clip_outline_plane
+        nop                                       nop
+        nop                                       ibeq vi06,vi07,outline_update_end
+        nop                                       nop
+        sub.xw vf01,vf00,vf00                     nop
+        maxw.yz vf01,vf00,vf00w                   nop
+        nop                                       bal vi15,mesh_clip_outline_plane
+        nop                                       nop
+        nop                                       ibeq vi06,vi07,outline_update_end
+        nop                                       nop
+        subw.y vf01,vf00,vf00w                    nop
+        nop                                       bal vi15,mesh_clip_outline_plane
+        nop                                       nop
+        nop                                       ibeq vi06,vi07,outline_update_end
+        nop                                       nop
+        nop                                       iaddi vi10,vi06,0
+        nop                                       lq.xyzw vf13,0(vi00)
+        nop                                       lq.xyzw vf12,1(vi00)
+outline_project_next:
+        nop                                       lqi.xyzw vf03,(vi10++)
+        nop                                       div q,vf00w,vf03z
+        mulq.xyz vf03,vf03,q                      waitq
+        mula.xyz acc,vf03,vf13                    nop
+        maddw.xyz vf03,vf12,vf00w                 nop
+        sub.w vf03,vf03,vf03                      nop
+        nop                                       ibne vi10,vi07,outline_project_next
+        nop                                       sq.xyzw vf03,-1(vi10)
+        nop                                       iadd vi08,vi08,vi04
+        nop                                       xgkick vi08
+outline_emit_header:
+        nop                                       iadd vi09,vi09,vi04
+        nop                                       lq.yzw vf03,0(vi09)
+        nop                                       sq.yzw vf03,-1(vi06)
+        nop                                       isub vi02,vi07,vi06
+        nop                                       iaddiu vi02,vi02,0x4000
+        nop                                       iaddiu vi02,vi02,0x4000
+        nop                                       isw.x vi02,-1(vi06)
+        nop                                       nop
+        nop                                       nop
+        nop                                       iaddi vi02,vi06,-1
+        nop                                       xgkick vi02
+outline_update_end:
+        nop                                       isub vi01,vi07,vi04
+        nop                                       isw.x vi01,0(vi05)
+outline_restore_link:
+        return_saved_micro_link
+end_native_routine mesh_sort_clip_outline
+
+; Convert and scale only the packet alpha W lane through the original whole-vector integer conversions; store the full original carrier qword.
+begin_native_routine mesh_scale_packet_alpha
+        nop                                       iadd vi05,vi05,vi04
+        nop                                       lq.xyzw vf04,7(vi05)
+        itof0.xyzw vf04,vf04                      nop
+        mulx.w vf04,vf04,vf03x                    nop
+        ftoi0.xyzw vf04,vf04                      nop
+        nop                                       jr vi15
+        nop                                       sq.xyzw vf04,7(vi05)
+end_native_routine mesh_scale_packet_alpha
+
+; Unique callback producer is mesh_alt_draw_secondary at3958, storing instruction index72F/byte3978; mesh_alt_resume_alpha clears at3AA0.
+begin_native_routine mesh_dispatch_previous
+        save_micro_link
+        nop                                       iaddiu vi01,vi00,0x24e
+        nop                                       isub vi04,vi01,vi04
+        nop                                       ilw.x vi01,packet_control_qword(vi04)
+        nop                                       nop
+        nop                                       nop
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,previous_restore_current
+        nop                                       nop
+        nop                                       jalr vi15,vi01
+        nop                                       nop
+previous_restore_current:
+        nop                                       iaddiu vi01,vi00,0x24e
+        nop                                       isub vi04,vi01,vi04
+        return_saved_micro_link
+end_native_routine mesh_dispatch_previous
+
+; Consume and clear the fixed qword15 W debug request; execute the original D flag pair when requested. This helper is preserved even though the bounded launch path does not call it.
+begin_native_routine mesh_debug_acknowledge
+        nop                                       ilw.w vi01,15(vi00)
+        nop                                       isw.w vi00,15(vi00)
+        nop                                       nop
+        nop                                       nop
+        nop                                       ibeq vi01,vi00,debug_acknowledge_done
+        nop                                       nop
+        nop[d]                                    nop
+        nop                                       nop
+debug_acknowledge_done:
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_debug_acknowledge
+
+; Cross cofactors, determinant, transpose and native Q reciprocal for a3x3 inverse, with original issue scheduling and lane masks.
+begin_native_routine mesh_inverse_normal_matrix
+        nop                                       lq.xyzw vf25,0(vi01)
+        nop                                       lq.xyzw vf26,1(vi01)
+        nop                                       lq.xyzw vf27,2(vi01)
+        opmula.xyz acc,vf26,vf27                  nop
+        opmsub.xyz vf29,vf27,vf26                 nop
+        opmula.xyz acc,vf27,vf25                  nop
+        opmsub.xyz vf30,vf25,vf27                 nop
+        mul.xyz vf28,vf25,vf29                    nop
+        opmula.xyz acc,vf25,vf26                  nop
+        opmsub.xyz vf31,vf26,vf25                 nop
+        mulax.w acc,vf00,vf28x                    nop
+        madday.w acc,vf00,vf28y                   nop
+        maddz.w vf28,vf00,vf28z                   nop
+        nop                                       div q,vf00w,vf28w
+        addx.y vf29,vf00,vf30x                    mr32.x vf30,vf29
+        addy.z vf30,vf00,vf31y                    mr32.y vf31,vf30
+        addx.z vf29,vf00,vf31x                    move.z vf28,vf29
+        addz.x vf31,vf00,vf28z                    nop
+        mulq.xyz vf29,vf29,q                      waitq
+        mulq.xyz vf30,vf30,q                      nop
+        mulq.xyz vf31,vf31,q                      nop
+        nop                                       jr vi15
+        nop                                       nop
+end_native_routine mesh_inverse_normal_matrix
+
+; Actual setup MSCAL immediate6C7 enters byte3638. E plus its real following NOP pair ends without inventing a return register.
+begin_native_routine mesh_idle
+        nop[e]                                    nop
+        nop                                       nop
+end_native_routine mesh_idle
+
+; Primary draw starts on the opposite page selected from latchedTOP. Control
+; flags1/4 choose composition/restore, then fixed4 projection with winding0.
+; The two previous-page dispatches and clipped-triangle winding carrier are
+; original operations; no initial register/page zero is fabricated.
+begin_native_routine mesh_alt_draw_primary
+        nop                         xtop vi01
+        nop                         iaddiu vi04,vi00,buffer_base_sum_qwords
+        nop                         isub vi04,vi04,vi01
+        nop                         bal vi15,mesh_dispatch_previous
+        nop                         nop
+        nop                         ilw.x vi01,packet_flags_qword(vi04)
+        nop                         iaddiu vi02,vi00,1
+        nop                         iand vi02,vi02,vi01
+        nop                         nop
+        nop                         ibeq vi02,vi00,alt_primary_restore
+        nop                         nop
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_compose_transform+VU1_micro_bytes
+        nop                         nop
+alt_primary_restore:
+        nop                         ilw.x vi01,packet_flags_qword(vi04)
+        nop                         iaddiu vi02,vi00,4
+        nop                         iand vi02,vi02,vi01
+        nop                         nop
+        nop                         ibeq vi02,vi00,alt_primary_uv
+        nop                         nop
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_restore_previous_packet+VU1_micro_bytes
+        nop                         nop
+alt_primary_uv:
+        nop                         ilw.z vi05,primary_channels_qword(vi04)
+        nop                         ilw.x vi06,primary_vertices_qword(vi04)
+        nop                         ilw.z vi07,primary_vertices_qword(vi04)
+        nop                         lq.xyzw vf03,primary_gif_qword(vi04)
+        nop                         ibeq vi05,vi00,alt_primary_project
+        nop                         ilw.w vi08,primary_material_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_adjust_uv+VU1_micro_bytes
+        nop                         nop
+alt_primary_project:
+        nop                         ilw.x vi08,primary_vertices_qword(vi04)
+        nop                         ilw.z vi09,primary_vertices_qword(vi04)
+        nop                         ilw.w vi10,primary_vertices_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_project_vertices+VU1_micro_bytes
+        nop                         iaddi vi11,vi00,0
+        nop                         bal vi15,mesh_dispatch_previous
+        nop                         nop
+        nop                         bal vi15,mesh_dispatch_previous
+        nop                         nop
+        nop                         ilw.x vi01,primary_gif_qword(vi04)
+        nop                         bal vi15,mesh_kick_packet_pair
+        nop                         ilw.x vi02,primary_vertices_qword(vi04)
+        sub.xyzw vf03,vf00,vf00      ilw.w vi08,packet_control_qword(vi04)
+        nop                         ilw.x vi10,primary_vertices_qword(vi04)
+        nop                         ilw.z vi11,primary_vertices_qword(vi04)
+        nop                         bal vi15,mesh_emit_clipped_triangles
+        nop                         lq.x vf03,primary_gif_qword(vi04)
+        nop[e]                      nop
+        nop                         nop
+end_native_routine mesh_alt_draw_primary
+
+; Secondary draw uses latchedTOP directly. It emits both palette streams,
+; an outline, and the two ADC-toggled passes, then schedules one alpha-resume.
+; CLIP/MAC/Q/E and the original signed winding values are not host substitutes.
+begin_native_routine mesh_alt_draw_secondary
+        nop                         xtop vi04
+        nop                         ilw.z vi05,secondary_channels_qword(vi04)
+        nop                         ilw.x vi06,secondary_vertices_qword(vi04)
+        nop                         ilw.z vi07,secondary_vertices_qword(vi04)
+        nop                         lq.xyzw vf03,secondary_gif_qword(vi04)
+        nop                         ibeq vi05,vi00,alt_secondary_project
+        nop                         ilw.w vi08,secondary_material_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_adjust_uv+VU1_micro_bytes
+        nop                         nop
+alt_secondary_project:
+        nop                         ilw.x vi08,secondary_vertices_qword(vi04)
+        nop                         ilw.z vi09,secondary_vertices_qword(vi04)
+        nop                         ilw.w vi10,secondary_vertices_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_project_vertices+VU1_micro_bytes
+        nop                         iaddi vi11,vi00,0
+        nop                         ilw.x vi01,secondary_gif_qword(vi04)
+        nop                         bal vi15,mesh_kick_packet_pair
+        nop                         ilw.x vi02,secondary_vertices_qword(vi04)
+        sub.xyzw vf03,vf00,vf00      ilw.w vi08,packet_control_qword(vi04)
+        nop                         ilw.x vi10,secondary_vertices_qword(vi04)
+        nop                         ilw.z vi11,secondary_vertices_qword(vi04)
+        nop                         bal vi15,mesh_emit_clipped_triangles
+        nop                         lq.x vf03,secondary_gif_qword(vi04)
+        nop                         ilw.w vi05,packet_control_qword(vi04)
+        nop                         ilw.w vi09,primary_gif_qword(vi04)
+        nop                         bal vi15,mesh_sort_clip_outline
+        nop                         iaddiu vi08,vi09,1
+        nop                         ilw.x vi05,primary_vertices_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_toggle_adc+VU1_micro_bytes
+        nop                         ilw.z vi06,primary_vertices_qword(vi04)
+        nop                         ilw.y vi01,primary_gif_qword(vi04)
+        nop                         bal vi15,mesh_kick_packet_pair
+        nop                         ilw.x vi02,primary_vertices_qword(vi04)
+        sub.xyzw vf03,vf00,vf00      iaddi vi08,vi00,-1
+        nop                         lq.y vf01,primary_gif_qword(vi04)
+        nop                         ilw.x vi10,primary_vertices_qword(vi04)
+        nop                         ilw.z vi11,primary_vertices_qword(vi04)
+        nop                         bal vi15,mesh_emit_clipped_triangles
+        nop                         mr32.x vf03,vf01
+        nop                         ilw.x vi05,secondary_vertices_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_toggle_adc+VU1_micro_bytes
+        nop                         ilw.z vi06,secondary_vertices_qword(vi04)
+        nop                         ilw.y vi01,secondary_gif_qword(vi04)
+        nop                         bal vi15,mesh_kick_packet_pair
+        nop                         ilw.x vi02,secondary_vertices_qword(vi04)
+        sub.xyzw vf03,vf00,vf00      iaddi vi08,vi00,-1
+        nop                         lq.y vf01,secondary_gif_qword(vi04)
+        nop                         ilw.x vi10,secondary_vertices_qword(vi04)
+        nop                         ilw.z vi11,secondary_vertices_qword(vi04)
+        nop                         bal vi15,mesh_emit_clipped_triangles
+        nop                         mr32.x vf03,vf01
+        nop                         iaddiu vi01,vi00,(mesh_alt_resume_alpha-mesh_program_begin)
+        nop                         isw.x vi01,packet_control_qword(vi04)
+        nop[e]                      nop
+        nop                         nop
+end_native_routine mesh_alt_draw_secondary
+
+; The pending callback scales packet alpha with all original full-vector
+; conversions retained, emits both Z material streams and the uncluttered
+; outline, then clears12.X. Its final rotating link write is the real JR delay.
+begin_native_routine mesh_alt_resume_alpha
+        save_micro_link
+        nop                         lq.xyzw vf03,8(vi04)
+        nop                         bal vi15,mesh_scale_packet_alpha
+        nop                         ilw.z vi05,primary_gif_qword(vi04)
+        nop                         bal vi15,mesh_scale_packet_alpha
+        nop                         ilw.z vi05,secondary_gif_qword(vi04)
+        nop                         ilw.x vi05,primary_vertices_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_toggle_adc+VU1_micro_bytes
+        nop                         ilw.z vi06,primary_vertices_qword(vi04)
+        nop                         ilw.z vi01,primary_gif_qword(vi04)
+        nop                         bal vi15,mesh_kick_packet_pair
+        nop                         ilw.x vi02,primary_vertices_qword(vi04)
+        sub.xyzw vf03,vf00,vf00      isub vi08,vi00,vi00
+        nop                         lq.z vf01,primary_gif_qword(vi04)
+        nop                         ilw.x vi10,primary_vertices_qword(vi04)
+        nop                         ilw.z vi11,primary_vertices_qword(vi04)
+        nop                         mr32.xyzw vf01,vf01
+        nop                         bal vi15,mesh_emit_clipped_triangles
+        nop                         mr32.x vf03,vf01
+        nop                         ilw.x vi05,secondary_vertices_qword(vi04)
+        ; Signed branch wraps architectural VU1 micro memory to local helper.
+        nop                         bal vi15,mesh_toggle_adc+VU1_micro_bytes
+        nop                         ilw.z vi06,secondary_vertices_qword(vi04)
+        nop                         ilw.z vi01,secondary_gif_qword(vi04)
+        nop                         bal vi15,mesh_kick_packet_pair
+        nop                         ilw.x vi02,secondary_vertices_qword(vi04)
+        sub.xyzw vf03,vf00,vf00      isub vi08,vi00,vi00
+        ; This original load still uses PRIMARY_GIF.Z for the secondary clip
+        ; carrier. It is retained exactly, not silently repaired tofield20.
+        nop                         lq.z vf01,primary_gif_qword(vi04)
+        nop                         ilw.x vi10,secondary_vertices_qword(vi04)
+        nop                         ilw.z vi11,secondary_vertices_qword(vi04)
+        nop                         mr32.xyzw vf01,vf01
+        nop                         bal vi15,mesh_emit_clipped_triangles
+        nop                         mr32.x vf03,vf01
+        nop                         ilw.w vi05,packet_control_qword(vi04)
+        nop                         ilw.w vi09,primary_gif_qword(vi04)
+        nop                         bal vi15,mesh_sort_clip_outline
+        nop                         isub vi08,vi00,vi00
+        nop                         isw.x vi00,packet_control_qword(vi04)
+        return_saved_micro_link
+end_native_routine mesh_alt_resume_alpha
+
+; Teardown makes three dispatch calls: this selected callback clears on the first, then two zero reads.
+; under the genuine prior-page lifetime contract, thenE plus its delay ends.
+begin_native_routine mesh_alt_flush_pending
+        nop                         xtop vi04
+        nop                         bal vi15,mesh_dispatch_previous
+        nop                         nop
+        nop                         bal vi15,mesh_dispatch_previous
+        nop                         nop
+        nop                         bal vi15,mesh_dispatch_previous
+        nop                         nop
+        nop[e]                      nop
+        nop                         nop
+end_native_routine mesh_alt_flush_pending
+.global mesh_program_end
+mesh_program_end:

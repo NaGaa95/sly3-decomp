@@ -1,0 +1,22 @@
+; Complete original startup VIF0 DMA chain. Tag transfer is enabled by the
+; original CPU startup body, so the two upper words of each tag are VIF commands.
+; Count is computed by the native assembler, never inserted as a copied word.
+.dmapackvif 1
+.global vu0_startup_chain
+.global vu0_startup_chain_end
+vu0_startup_chain:
+dmacnt *
+vifnop
+mpg 0,*
+.include "vu0_math_final.vsm"
+.endmpg
+mscal 0
+vifnop
+vifnop
+vifnop
+.enddmadata
+dmaend 0
+vifnop
+vifnop
+.enddmadata
+vu0_startup_chain_end:

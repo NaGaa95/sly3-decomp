@@ -1,0 +1,11 @@
+; Complete original950-qword upload: eight actual MPG headers,1891pairs
+; and the two trailingVIFNOPs consumed by DMA rounding. DynamicREFS source0.
+.global mesh_upload_begin
+.global mesh_upload_end
+mesh_upload_begin:
+mpg 0,*
+.include "mesh_program.vsm"
+.endmpg
+vifnop
+vifnop
+mesh_upload_end:

@@ -1,0 +1,385 @@
+; Sly3 USA VU1 renderer program. Private readable source recovery.
+; VU byte addresses are local to this program, never EE aliases.
+.ifdef VU_NATIVE_STANDALONE
+.vu
+.endif
+.ifdef VU_NATIVE_STANDALONE
+.align 4
+.endif
+.equ framebuffer_parameter_qword,12
+.equ frame_unmasked_packet_qword,23
+.equ frame_masked_packet_qword,25
+.equ first_buffer_qword,52
+.equ second_buffer_qword,538
+.equ packet_input_offset,7
+.equ packet_output_offset,196
+
+; These four leaves send an already prepared GIF template without changing
+; its words. Their integer pointer and the kick/end issue slots are explicit.
+.macro send_template entry, packet
+.global \entry
+.ifdef VU_NATIVE_STANDALONE
+.type \entry,@function
+.endif
+\entry:
+        nop                 iaddiu vi03,vi00,\packet
+        nop                 nop
+        nop                 xgkick vi03
+        nop                 nop
+        nop[e]              nop
+        nop                 nop
+.ifdef VU_NATIVE_STANDALONE
+.size \entry,.-\entry
+.endif
+.endm
+send_template render_template_27,27
+send_template render_template_30,30
+send_template render_template_34,34
+send_template render_template_37,37
+
+; Patch raw framebuffer bits into the unmasked/masked FRAME_1 templates.
+.macro patch_frame_and_send entry, packet_qword
+.global \entry
+.ifdef VU_NATIVE_STANDALONE
+.type \entry,@function
+.endif
+\entry:
+        nop         lq.x vf01,framebuffer_parameter_qword(vi00)
+        nop         iaddiu vi03,vi00,\packet_qword
+        nop         sq.x vf01,1(vi03)
+        nop         nop
+        nop         xgkick vi03
+        nop         nop
+        nop[e]      nop
+        nop         nop
+.ifdef VU_NATIVE_STANDALONE
+.size \entry,.-\entry
+.endif
+.endm
+
+patch_frame_and_send render_frame_unmasked,frame_unmasked_packet_qword
+patch_frame_and_send render_frame_masked,frame_masked_packet_qword
+
+; Header0..6 uses the same seven-qword cache as the quad routine. Header4.w
+; optionally replaces the persistent signed16-bit request budget at data22.w;
+; sentinel7FFF remains live in the incoming header for subsequent requests.
+; Header7.x is the number of two-qword batch descriptors, followed by their
+; position carriers. The descriptor carries kind.x, span.y, depth.z and RGBA.
+; Buffer/packet framing comes from the actual VIF producers, not VI inputs.
+.global render_vertex_batches
+.ifdef VU_NATIVE_STANDALONE
+.type render_vertex_batches,@function
+.endif
+render_vertex_batches:
+        nop                 xtop vi04
+        nop                 ilw.w vi13,4(vi04)
+        nop                 iaddiu vi01,vi00,0x7fff
+        nop                 ibeq vi13,vi00,budget_ready
+        nop                 isw.w vi00,4(vi04)
+        nop                 isw.w vi13,22(vi00)
+        nop                 ibne vi01,vi13,budget_ready
+        nop                 nop
+        nop                 isw.w vi01,4(vi04)
+budget_ready:
+        nop                 iaddiu vi01,vi00,first_buffer_qword
+        nop                 lq.xyzw vf01,0(vi04)
+        nop                 ibne vi04,vi01,batch_cache_base_ready
+        nop                 lq.xyzw vf02,1(vi04)
+        nop                 iaddiu vi01,vi00,second_buffer_qword
+batch_cache_base_ready:
+        nop                 lq.xyzw vf03,2(vi04)
+        nop                 lq.xyzw vf04,3(vi04)
+        nop                 ilw.y vi02,4(vi04)
+        nop                 lq.xyzw vf07,5(vi04)
+        nop                 isw.y vi00,4(vi04)
+        nop                 lq.xyzw vf08,6(vi04)
+        nop                 ibeq vi00,vi02,batch_header_ready
+        nop                 lq.xyzw vf05,4(vi04)
+        nop                 sq.xyzw vf01,0(vi01)
+        nop                 sq.xyzw vf02,1(vi01)
+        nop                 sq.xyzw vf03,2(vi01)
+        nop                 sq.xyzw vf04,3(vi01)
+        nop                 sq.xyzw vf05,4(vi01)
+        nop                 sq.xyzw vf07,5(vi01)
+        nop                 sq.xyzw vf08,6(vi01)
+batch_header_ready:
+        nop                 ilw.w vi13,22(vi00)
+        nop                 ilw.x vi05,7(vi04)
+        nop                 ibltz vi13,emit_empty_packet
+        nop                 ilw.x vi01,4(vi04)
+        nop                 ibeq vi05,vi00,emit_empty_packet
+        nop                 iaddiu vi06,vi04,8
+; Descriptor pointerVI6, geometry pointerVI8 and output pointersVI7/VI9 are
+; distinct. Each descriptor occupies two qwords; geometry starts after them.
+        nop                 iadd vi08,vi06,vi05
+        nop                 iadd vi08,vi08,vi05
+        nop                 iaddiu vi07,vi04,packet_output_offset
+        nop                 iaddiu vi09,vi07,0
+        nop                 iaddiu vi11,vi00,1
+        nop                 iaddiu vi12,vi00,2
+        nop                 iaddiu vi03,vi00,0x7fff
+        nop                 iaddiu vi03,vi03,1
+        nop                 lq.xyzw vf20,15(vi00)
+        nop                 lq.xyzw vf21,16(vi00)
+        nop                 lq.xyzw vf23,18(vi00)
+        nop                 ibeq vi01,vi00,load_shared_templates
+        nop                 lq.xyzw vf25,20(vi00)
+        nop                 lq.xyzw vf22,17(vi00)
+        nop                 lq.xyzw vf24,19(vi00)
+        nop                 b templates_ready
+        nop                 lq.xyzw vf26,21(vi00)
+load_shared_templates:
+        nop                 lq.xyzw vf22,16(vi00)
+        nop                 lq.xyzw vf24,18(vi00)
+        nop                 lq.xyzw vf26,20(vi00)
+templates_ready:
+; Per-batch depth uses signed ITOF0, multiply4, add header bias and FTOI0.
+; The original depth conversion shares issue slots with descriptor reads and
+; the persistent budget store. It is retained as actual VU arithmetic.
+next_batch:
+        nop                 lq.z vf09,0(vi06)
+        itof0[i].z vf09,vf09 loi 4.0
+        muli.z vf09,vf09,i   isw.w vi13,22(vi00)
+        addz.z vf09,vf09,vf05z lq.xyzw vf06,1(vi06)
+        ftoi0.z vf09,vf09    ilw.x vi14,0(vi06)
+; Color arithmetic clamps all four scaled/biased RGBA lanes before integer
+; conversion. The alpha bit80 selects the final template alternative.
+        itof0[i].xyzw vf06,vf06 loi 255.0
+        mul.xyzw vf06,vf06,vf08 ilw.y vi10,0(vi06)
+        add.xyzw vf06,vf06,vf07 iaddiu vi06,vi06,2
+        minii.xyzw vf06,vf06,i nop
+        maxx.xyzw vf06,vf06,vf00x nop
+        ftoi0.xyzw vf06,vf06 iaddiu vi01,vi00,0x80
+        nop                 mtir vi15,vf06w
+        nop                 nop
+        nop                 iand vi01,vi01,vi15
+        nop                 nop
+        nop                 ibgtz vi01,alpha_high_template
+        nop                 nop
+        nop                 ibne vi14,vi12,alpha_low_kind_one
+        nop                 nop
+        nop                 b batch_template_ready
+        nop                 sq.xyzw vf21,0(vi07)
+alpha_low_kind_one:
+        nop                 ibne vi14,vi11,alpha_low_other_kind
+        nop                 nop
+        nop                 b batch_template_ready
+        nop                 sq.xyzw vf23,0(vi07)
+alpha_low_other_kind:
+        nop                 b batch_template_ready
+        nop                 sq.xyzw vf25,0(vi07)
+alpha_high_template:
+        nop                 ibne vi14,vi12,alpha_high_kind_one
+        nop                 nop
+        nop                 b batch_template_ready
+        nop                 sq.xyzw vf21,0(vi07)
+alpha_high_kind_one:
+        nop                 ibne vi14,vi11,alpha_high_other_kind
+        nop                 nop
+        nop                 b batch_template_ready
+        nop                 sq.xyzw vf23,0(vi07)
+alpha_high_other_kind:
+        nop                 sq.xyzw vf26,0(vi07)
+batch_template_ready:
+        nop                 iaddiu vi07,vi07,1
+        nop                 sqi.xyzw vf06,(vi07++)
+; The native packet-span/end conditions and signed16-bit budget arithmetic
+; remain explicit. No assumption equates the descriptor span with a safe
+; host container length, and the original three-carrier prefetch is retained.
+        nop                 isubiu vi02,vi05,1
+        nop                 iaddiu vi01,vi10,0
+        nop                 ibgtz vi02,batch_end_flag_ready
+        nop                 sq.xyzw vf20,0(vi07)
+        nop                 ior vi01,vi01,vi03
+batch_end_flag_ready:
+        nop                 isw.x vi01,0(vi07)
+        nop                 iadd vi15,vi00,vi07
+        nop                 iaddiu vi07,vi07,1
+        nop                 isub vi13,vi13,vi10
+        nop                 iadd vi14,vi07,vi10
+        nop                 ibgez vi13,geometry_end_ready
+        nop                 iaddi vi14,vi14,-1
+        nop                 iadd vi14,vi14,vi13
+geometry_end_ready:
+        nop                 lqi.xyw vf11,(vi08++)
+        nop                 lqi.xyw vf14,(vi08++)
+        nop                 lqi.xyw vf17,(vi08++)
+        nop                 nop
+; Initial two carrier conversions and the first affine evaluation prime the
+; three-way pipeline. Carrier w is ADDx(value,zero) here, not a bit copy.
+        itof4.xy vf12,vf11   nop
+        addx.w vf13,vf11,vf00x nop
+        itof4.xy vf15,vf14   nop
+        addx.w vf16,vf14,vf00x nop
+        mulax.xy acc,vf01,vf12x nop
+        madday.xy acc,vf02,vf12y nop
+        maddw.xy vf13,vf03,vf00w nop
+geometry_loop:
+        itof4.xy vf18,vf17   lqi.xyw vf11,(vi08++)
+        addx.w vf19,vf17,vf00x nop
+        mulax.xy acc,vf01,vf15x sq.z vf09,0(vi07)
+        madday.xy acc,vf02,vf15y ibeq vi07,vi14,geometry_done
+        maddw.xy vf16,vf03,vf00w sqi.xyw vf13,(vi07++)
+        itof4.xy vf12,vf11   lqi.xyw vf14,(vi08++)
+        addx.w vf13,vf11,vf00x nop
+        mulax.xy acc,vf01,vf18x sq.z vf09,0(vi07)
+        madday.xy acc,vf02,vf18y ibeq vi07,vi14,geometry_done
+        maddw.xy vf19,vf03,vf00w sqi.xyw vf16,(vi07++)
+        itof4.xy vf15,vf14   lqi.xyw vf17,(vi08++)
+        addx.w vf16,vf14,vf00x nop
+        mulax.xy acc,vf01,vf12x sq.z vf09,0(vi07)
+        madday.xy acc,vf02,vf12y ibne vi07,vi14,geometry_loop
+        maddw.xy vf13,vf03,vf00w sqi.xyw vf19,(vi07++)
+geometry_done:
+        nop                 isubiu vi08,vi08,3
+        nop                 ibltz vi13,truncate_last_tag
+        nop                 isubiu vi05,vi05,1
+        nop                 nop
+        nop                 ibgtz vi05,next_batch
+        nop                 nop
+        nop                 b transmit_batches
+        nop                 nop
+; A negative final budget truncates the last tag's low span bits and sets
+; its end bit. This is the original16-bit logic, not a repaired bounds check.
+truncate_last_tag:
+        nop                 ilw.x vi01,0(vi15)
+        nop                 iaddiu vi02,vi00,0x7fff
+        nop                 iand vi01,vi01,vi02
+        nop                 isub vi01,vi01,vi10
+        nop                 ior vi01,vi01,vi03
+        nop                 isw.x vi01,0(vi15)
+transmit_batches:
+        nop                 isw.w vi13,22(vi00)
+        nop                 xgkick vi09
+        nop                 nop
+        nop                 b finish_batches
+        nop                 nop
+; No batches or an already negative request budget still transmits the
+; original zero-loop template with EOP; it does not silently skip the kick.
+emit_empty_packet:
+        nop                 iaddiu vi09,vi04,packet_output_offset
+        nop                 lq.xyzw vf20,15(vi00)
+        nop                 sq.xyzw vf20,0(vi09)
+        nop                 iaddiu vi03,vi00,0x7fff
+        nop                 iaddiu vi03,vi03,1
+        nop                 isw.x vi03,0(vi09)
+        nop                 nop
+        nop                 xgkick vi09
+        nop                 nop
+finish_batches:
+        nop[e]              nop
+        nop                 nop
+.ifdef VU_NATIVE_STANDALONE
+.size render_vertex_batches,.-render_vertex_batches
+.endif
+
+; Full quad packet path follows the batched path as its own complete entry.
+; Private Sly3 USA VU1 quad-packet algorithm, entry byte650 in renderer program.
+; Header qwords0..6 carry the two affine columns, translation, other header
+; state, cache refresh word4.y, color bias5 and color scale6. XTOP chooses the
+; active double buffer. Only a nonzero refresh word copies that seven-qword
+; header to the alternate buffer, after clearing the refresh word.
+;
+; The16-qword input packet starts at header+7. It is copied to header+196:
+; three prefix qwords, one further fixed qword, scaled/clamped RGBA lanes,
+; four raw/position pairs, then three trailing qwords. Position x/y integers
+; have four fractional bits. The VU affine operation transforms those x/y
+; lanes; w passes through unchanged, and z comes from converted header4.z.
+; Floating arithmetic/rounding and MAC/status effects remain native VU work.
+; This source makes no host IEEE or exception/flag-equivalence assertion.
+.global render_quad_packet
+.ifdef VU_NATIVE_STANDALONE
+.type render_quad_packet,@function
+.endif
+render_quad_packet:
+        nop                 xtop vi04
+        nop                 iaddiu vi01,vi00,first_buffer_qword
+        nop                 lq.xyzw vf01,0(vi04)
+        nop                 ibne vi04,vi01,cache_base_ready
+        nop                 lq.xyzw vf02,1(vi04)
+        nop                 iaddiu vi01,vi00,second_buffer_qword
+cache_base_ready:
+        nop                 lq.xyzw vf03,2(vi04)
+        nop                 lq.xyzw vf04,3(vi04)
+        nop                 ilw.y vi02,4(vi04)
+        nop                 lq.xyzw vf07,5(vi04)
+        nop                 isw.y vi00,4(vi04)
+        nop                 lq.xyzw vf08,6(vi04)
+        nop                 ibeq vi00,vi02,header_ready
+        nop                 lq.xyzw vf05,4(vi04)
+        nop                 sq.xyzw vf01,0(vi01)
+        nop                 sq.xyzw vf02,1(vi01)
+        nop                 sq.xyzw vf03,2(vi01)
+        nop                 sq.xyzw vf04,3(vi01)
+        nop                 sq.xyzw vf05,4(vi01)
+        nop                 sq.xyzw vf07,5(vi01)
+        nop                 sq.xyzw vf08,6(vi01)
+header_ready:
+        nop                 iaddiu vi06,vi04,packet_input_offset
+        nop                 iaddiu vi05,vi04,packet_output_offset
+        nop                 iaddiu vi03,vi05,0
+; Copy the fixed packet prefix. Source/destination pointers advance by qword.
+        nop                 lqi.xyzw vf13,(vi06++)
+        nop                 lqi.xyzw vf14,(vi06++)
+        nop                 lqi.xyzw vf15,(vi06++)
+        nop                 sqi.xyzw vf13,(vi05++)
+        nop                 sqi.xyzw vf14,(vi05++)
+        nop                 sqi.xyzw vf15,(vi05++)
+        nop                 lqi.xyzw vf13,(vi06++)
+        nop                 lqi.xyzw vf06,(vi06++)
+; color = FTOI0(max(0,min(255,ITOF0(rawColor)*scale+bias))). LOI is real
+; floating255, not an original instruction word or a copied data blob.
+        itof0.xyzw vf06,vf06 nop
+        mul.xyzw vf06,vf06,vf08 nop
+        add[i].xyzw vf06,vf06,vf07 loi 255.0
+        minii.xyzw vf06,vf06,i nop
+        maxx.xyzw vf06,vf06,vf00x nop
+        ftoi0.xyzw vf06,vf06 nop
+        ftoi0.z vf05,vf05    sqi.xyzw vf13,(vi05++)
+        nop                 sqi.xyzw vf06,(vi05++)
+; Read four position carriers and their unchanged paired qwords. Each carrier
+; transports x/y/w. Its unused incoming z never supplies the output depth.
+        nop                 lq.xyw vf09,1(vi06)
+        nop                 lq.xyw vf10,3(vi06)
+        nop                 lq.xyw vf11,5(vi06)
+        nop                 lq.xyw vf12,7(vi06)
+        itof4.xy vf09,vf09   lq.xyzw vf13,0(vi06)
+        itof4.xy vf10,vf10   lq.xyzw vf14,2(vi06)
+        itof4.xy vf11,vf11   lq.xyzw vf15,4(vi06)
+        itof4.xy vf12,vf12   lq.xyzw vf16,6(vi06)
+; Four affine x/y evaluations interleave with packet stores. The accumulator
+; chains are separate and VF00.w supplies the real1.0 translation multiplier.
+        mulax.xy acc,vf01,vf09x iaddiu vi06,vi06,8
+        madday.xy acc,vf02,vf09y nop
+        maddw.xy vf09,vf03,vf00w nop
+        mulax.xy acc,vf01,vf10x nop
+        madday.xy acc,vf02,vf10y sq.xyzw vf13,0(vi05)
+        maddw.xy vf10,vf03,vf00w sq.z vf05,1(vi05)
+        mulax.xy acc,vf01,vf11x sq.xyw vf09,1(vi05)
+        madday.xy acc,vf02,vf11y sq.xyzw vf14,2(vi05)
+        maddw.xy vf11,vf03,vf00w sq.z vf05,3(vi05)
+        mulax.xy acc,vf01,vf12x sq.xyw vf10,3(vi05)
+        madday.xy acc,vf02,vf12y sq.xyzw vf15,4(vi05)
+        maddw.xy vf12,vf03,vf00w sq.z vf05,5(vi05)
+        nop                 sq.xyw vf11,5(vi05)
+        nop                 sq.xyzw vf16,6(vi05)
+        nop                 sq.z vf05,7(vi05)
+        nop                 sq.xyw vf12,7(vi05)
+; Copy the complete tail, then issue the original GIF PATH1 kick and E/delay.
+        nop                 iaddiu vi05,vi05,8
+        nop                 lqi.xyzw vf13,(vi06++)
+        nop                 lqi.xyzw vf14,(vi06++)
+        nop                 lqi.xyzw vf15,(vi06++)
+        nop                 sqi.xyzw vf13,(vi05++)
+        nop                 sqi.xyzw vf14,(vi05++)
+        nop                 sqi.xyzw vf15,(vi05++)
+        nop                 nop
+        nop                 nop
+        nop                 nop
+        nop                 xgkick vi03
+        nop                 nop
+        nop[e]              nop
+        nop                 nop
+.ifdef VU_NATIVE_STANDALONE
+.size render_quad_packet,.-render_quad_packet
+.endif

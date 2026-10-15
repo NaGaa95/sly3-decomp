@@ -1,0 +1,18 @@
+{
+  "src/P2/heap_init.cpp": {
+    "__static_initialization_and_destruction_0": "0x00117F48",
+    "_GLOBAL_$I$*": "0x001180B8"
+  },
+  "src/P2/palette_init.cpp": {
+    "__static_initialization_and_destruction_0": "0x00115D18",
+    "_GLOBAL_$I$*": "0x00117B20"
+  },
+  "src/P2/callback_table_init.cpp": {
+    "__static_initialization_and_destruction_0": "0x0026A310",
+    "_GLOBAL_$I$*": "0x0026BE08"
+  },
+  "src/P2/state32_init.cpp": {
+    "__static_initialization_and_destruction_0": "0x00242830",
+    "_GLOBAL_$I$*": "0x002429A8"
+  }
+}

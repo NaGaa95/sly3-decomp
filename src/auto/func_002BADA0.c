@@ -1,0 +1,19 @@
+#include "heap_frame_api.h"
+// Recovered using the Sly 2 source; Sly 3 calls and globals resolved from original operands.
+#include "m2c_prelude.h"
+M2C_UNK func_002BACE0(s32 *, M2C_UNK);
+/* extern */ void func_002BADA0(s32 **arg0, s32 arg1) {
+    s32 *temp_a0;
+    s32 temp_v0;
+    temp_a0 = *arg0;
+    if (temp_a0 != NULL) {
+        temp_v0 = *temp_a0 - 1;
+        *temp_a0 = temp_v0;
+        if (temp_v0 == 0) {
+            func_002BACE0(temp_a0, 3);
+        }
+    }
+    if (arg1 & 1) {
+        func_001D2818(arg0);
+    }
+}

@@ -1,0 +1,371 @@
+{
+  "schema": 1,
+  "original": {
+    "path": "disc/SCUS_974.64",
+    "bytes": 3200076,
+    "sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338"
+  },
+  "assembler": {
+    "default": "tools/third_party/dvp/bin/dvp-as.exe",
+    "version": "2.45.1"
+  },
+  "program_flags": [
+    "--defsym",
+    "VU_NATIVE_STANDALONE=1"
+  ],
+  "upload_flags": [],
+  "programs": [
+    {
+      "family": "188059931",
+      "processor": "VU1",
+      "source": "src/vu/renderer_program.vsm",
+      "source_sha256": "f2d2cbf3022d8fbf7d5c1996e97a856118c326f0a4ef65f0242d08a001635faf",
+      "upload_source": "src/vu/renderer_upload.vif",
+      "upload_source_sha256": "011f4483a3a594c285a885fda52191533c538befa7e10e31a251e54192e3d985",
+      "code_bytes": 2240,
+      "code_sha256": "2691a079a57499b9c415e4f640cf6efcadd5dddc41e4dcb4b6c86eb5266b9d75",
+      "upload_address": 2888736,
+      "upload_bytes": 2256,
+      "upload_sha256": "b950b0611dfcbe2d6bfcf36545caa572696fbdbe2c6ba06b1feefd35ca39f71f",
+      "DMA_bytes": 0,
+      "VIF_bytes": 16,
+      "original_function_count": 8,
+      "source_partition_count": 8,
+      "text_alignment": {
+        "program": 16,
+        "upload": 8
+      },
+      "chunks": [
+        [
+          0,
+          2888744,
+          2048
+        ],
+        [
+          2048,
+          2890800,
+          192
+        ]
+      ]
+    },
+    {
+      "family": "11753275",
+      "processor": "VU0",
+      "source": "src/vu/math/vu0_math_final.vsm",
+      "source_sha256": "29513609e12388e94b4951061a247b134b66e3c215c376ee827a4e31de1e0c2d",
+      "upload_source": "src/vu/math/vu0_startup_chain_final.vif",
+      "upload_source_sha256": "dd8a2e067f39e89dff2eae57ff5ab9cb5ba7a1b8f4ed0e03413112d12a422a76",
+      "code_bytes": 672,
+      "code_sha256": "7ad0c6fd345f5875ab3b9a659b2f1e2a4c2301a0daebafdfa44220490854aa68",
+      "upload_address": 2884176,
+      "upload_bytes": 720,
+      "upload_sha256": "22cebde7e1c67ca1785f3d47180a09eb3bbec0623c7b88b156f27a53a544456b",
+      "DMA_bytes": 16,
+      "VIF_bytes": 32,
+      "original_function_count": 7,
+      "source_partition_count": 7,
+      "text_alignment": {
+        "program": 16,
+        "upload": 16
+      },
+      "chunks": [
+        [
+          0,
+          2884192,
+          672
+        ]
+      ]
+    },
+    {
+      "family": "376118779",
+      "processor": "VU1",
+      "source": "src/vu/bootstrap/vu1_idle.vsm",
+      "source_sha256": "2fd1fc9fc9abbda89e707281d24595dbcd378e395249f269c896a1af8847a61b",
+      "upload_source": "src/vu/bootstrap/vu1_startup_chain.vif",
+      "upload_source_sha256": "8c378db3a03ddb978eed1b145b13606bb2d4c8568ac8f5b3dcd3a98d7b0b302d",
+      "code_bytes": 16,
+      "code_sha256": "5eb74410b7d656eb5a22ee9e60eef38c6896a22506b84d1277503a6641acc0df",
+      "upload_address": 2901440,
+      "upload_bytes": 64,
+      "upload_sha256": "4e50d8fff11f14510fc77ab8b5a2109cbb4d8ee97263101c38cb2d2cbe8ed3de",
+      "DMA_bytes": 16,
+      "VIF_bytes": 32,
+      "original_function_count": 1,
+      "source_partition_count": 1,
+      "text_alignment": {
+        "program": 16,
+        "upload": 16
+      },
+      "chunks": [
+        [
+          0,
+          2901456,
+          16
+        ]
+      ]
+    },
+    {
+      "family": "752237851",
+      "processor": "VU1",
+      "source": "src/vu/lighting/lighting_program_v2.vsm",
+      "source_sha256": "167ec6d32d634ff113c37c88e707d684a6e125334713ea70b0630d1c5b7abcd8",
+      "upload_source": "src/vu/lighting/lighting_upload_v2.vif",
+      "upload_source_sha256": "82a8fa1991690db7ce6c7fb6c319d68d6960cd676ee9d578371b1898c95dc0f6",
+      "code_bytes": 1488,
+      "code_sha256": "e464ebda93326068bb753a26839b888196eb35fd27698d6463778fc085ab4739",
+      "upload_address": 2901504,
+      "upload_bytes": 1504,
+      "upload_sha256": "1ba060cbe09341fa8c6be9ed41a791f44172a5e28818ee33deedb6a08b793b6d",
+      "DMA_bytes": 0,
+      "VIF_bytes": 16,
+      "original_function_count": 3,
+      "source_partition_count": 3,
+      "text_alignment": {
+        "program": 16,
+        "upload": 8
+      },
+      "chunks": [
+        [
+          0,
+          2901512,
+          1488
+        ]
+      ]
+    },
+    {
+      "family": "376118843",
+      "processor": "VU1",
+      "source": "src/vu/mesh/mesh_program.vsm",
+      "source_sha256": "d73651ddef6a1c2cf2753e09af483a3285108b1d672b0341b0e070d953c71032",
+      "upload_source": "src/vu/mesh/mesh_upload.vif",
+      "upload_source_sha256": "9cc04b59f0bf6e54ffe417401c0cdef227648c4b07b48931b335cf3128017a64",
+      "code_bytes": 16344,
+      "code_sha256": "6f4ce804a09996de0d189ac0dfa32cd21c1a066ab1efa637df055e4487099e9e",
+      "upload_address": 2903024,
+      "upload_bytes": 16416,
+      "upload_sha256": "6b2adce21f6b37e7529e34ecf9a21bd4fe3bf0521fc472914097f6bec1f3b41a",
+      "DMA_bytes": 0,
+      "VIF_bytes": 72,
+      "original_function_count": null,
+      "source_partition_count": 37,
+      "text_alignment": {
+        "program": 8,
+        "upload": 8
+      },
+      "chunks": [
+        [
+          0,
+          2903032,
+          2048
+        ],
+        [
+          2048,
+          2905088,
+          2048
+        ],
+        [
+          4096,
+          2907144,
+          2048
+        ],
+        [
+          6144,
+          2909200,
+          2048
+        ],
+        [
+          8192,
+          2911256,
+          2048
+        ],
+        [
+          10240,
+          2913312,
+          2048
+        ],
+        [
+          12288,
+          2915368,
+          2048
+        ],
+        [
+          14336,
+          2917424,
+          2008
+        ]
+      ]
+    },
+    {
+      "family": "1504484043",
+      "processor": "VU1",
+      "source": "src/vu/mesh_alt/mesh_program.vsm",
+      "source_sha256": "fda759b27aaccacb42d0b2a8ccce89ecf8d9decc5cfd48b0e07d943facf1f37a",
+      "upload_source": "src/vu/mesh_alt/mesh_upload.vif",
+      "upload_source_sha256": "39983bf0dc4cab3582dc8e7b70fddd5237d51f9db5b661e7560a4f78d1d71429",
+      "code_bytes": 15128,
+      "code_sha256": "e6327c2dd8e47b976474cc5c0d2135f1262a4f14264b527fa3ff5e4d41360d89",
+      "upload_address": 2919456,
+      "upload_bytes": 15200,
+      "upload_sha256": "9d42e58f049c7b406c5da89bfb9cb1b370df6eac153b569c384e12b42bf0e931",
+      "DMA_bytes": 0,
+      "VIF_bytes": 72,
+      "original_function_count": null,
+      "source_partition_count": 30,
+      "text_alignment": {
+        "program": 8,
+        "upload": 8
+      },
+      "chunks": [
+        [
+          0,
+          2919464,
+          2048
+        ],
+        [
+          2048,
+          2921520,
+          2048
+        ],
+        [
+          4096,
+          2923576,
+          2048
+        ],
+        [
+          6144,
+          2925632,
+          2048
+        ],
+        [
+          8192,
+          2927688,
+          2048
+        ],
+        [
+          10240,
+          2929744,
+          2048
+        ],
+        [
+          12288,
+          2931800,
+          2048
+        ],
+        [
+          14336,
+          2933856,
+          792
+        ]
+      ]
+    },
+    {
+      "family": "188058715",
+      "processor": "VU1",
+      "source": "src/vu/volume/volume_program.vsm",
+      "source_sha256": "29d782d968f1feed5ffd7eb09a9630f66b0a396f42e4c1802f40a5edc58fc523",
+      "upload_source": "src/vu/volume/volume_upload.vif",
+      "upload_source_sha256": "00d3c107e9e87032e8a9b2886505301b00a8480bdb99cf11b2341da14137e841",
+      "code_bytes": 8008,
+      "code_sha256": "3c2cf48127acda999a55db79fb68fb8b1fb6df21d2aeccc128524d18a73cd9c5",
+      "upload_address": 2893376,
+      "upload_bytes": 8048,
+      "upload_sha256": "f120da8a904409319b585452be0b93d14f732d137bca1407286331a7eeacc3b9",
+      "DMA_bytes": 0,
+      "VIF_bytes": 40,
+      "original_function_count": null,
+      "source_partition_count": 22,
+      "text_alignment": {
+        "program": 8,
+        "upload": 8
+      },
+      "chunks": [
+        [
+          0,
+          2893384,
+          2048
+        ],
+        [
+          2048,
+          2895440,
+          2048
+        ],
+        [
+          4096,
+          2897496,
+          2048
+        ],
+        [
+          6144,
+          2899552,
+          1864
+        ]
+      ]
+    },
+    {
+      "family": "376117691",
+      "processor": "VU1",
+      "source": "src/vu/particle/particle_program.vsm",
+      "source_sha256": "545a8bfd7ece41cbadaa9851d87b43676eed9f987d5dfc352282ac704bd7222c",
+      "upload_source": "src/vu/particle/particle_upload.vif",
+      "upload_source_sha256": "e37ec04ad6d56165b71b52cb501091f51d1b68945e29a4915f32abdb0fd9cd5b",
+      "code_bytes": 3800,
+      "code_sha256": "30694bb55c1d50b1c6121618106b5c19d5a83c474bf8f7ea7c82c3ce9ccabdae",
+      "upload_address": 2884896,
+      "upload_bytes": 3824,
+      "upload_sha256": "6370899a0bee58d58cdea638b6c5f1d7f9c41566bbb5b8494c70a5c499e39b26",
+      "DMA_bytes": 0,
+      "VIF_bytes": 24,
+      "original_function_count": null,
+      "source_partition_count": 3,
+      "text_alignment": {
+        "program": 8,
+        "upload": 8
+      },
+      "chunks": [
+        [
+          0,
+          2884904,
+          2048
+        ],
+        [
+          2048,
+          2886960,
+          1752
+        ]
+      ]
+    },
+    {
+      "family": "188058427",
+      "processor": "VU1",
+      "source": "src/vu/silhouette/silhouette_program.vsm",
+      "source_sha256": "532da52a1a99ba1f93d129b0bb8bfaf9b5297d565ead03bc39f4dbc18dae0ca3",
+      "upload_source": "src/vu/silhouette/silhouette_upload.vif",
+      "upload_source_sha256": "dfeb9643e6b063a6632f5ccfd07aba3ef2616e35241ac623a065e9090ad93958",
+      "code_bytes": 2336,
+      "code_sha256": "e1d1b43db4cb71cb0f7c01d3628b3396107d0aaf4eedbfeced4916c9a1d8afa3",
+      "upload_address": 2891008,
+      "upload_bytes": 2352,
+      "upload_sha256": "68628aa7782f554418326e4cba414bbf224beff8e0302eba74fdac344271589b",
+      "DMA_bytes": 0,
+      "VIF_bytes": 16,
+      "original_function_count": null,
+      "source_partition_count": 10,
+      "text_alignment": {
+        "program": 8,
+        "upload": 8
+      },
+      "chunks": [
+        [
+          0,
+          2891016,
+          2048
+        ],
+        [
+          2048,
+          2893072,
+          288
+        ]
+      ]
+    }
+  ]
+}

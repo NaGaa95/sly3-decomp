@@ -1,0 +1,32 @@
+*.iso
+*.ISO
+Sly 2 - Band of Thieves (USA)/
+Sly 3 - Honor Among Thieves (USA)/
+ghidra_*/
+pcsx2-*/
+ps2-bios-*/
+disc/
+assets/
+asm/
+references/
+build/
+.venv/
+tools/downloads/
+tools/third_party/
+__pycache__/
+*.pyc
+*.o
+*.obj
+*.elf
+*.gpr
+*.rep/
+config/local.json
+docs/*
+!docs/progress.svg
+notes/
+SETUP.md
+setup.ps1
+Start-Ghidra.ps1
+iop/README.md
+iop/research/
+src/lib/sdk_syscall_agent/README.md

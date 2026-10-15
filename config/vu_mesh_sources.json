@@ -1,0 +1,247 @@
+{
+  "schema": 1,
+  "kind": "mandatory-fifth-complete-readable-native-VU-mesh-component",
+  "component": {
+    "family": "376118843",
+    "processor": "VU1",
+    "source": "src/vu/mesh/mesh_program.vsm",
+    "chain_source": "src/vu/mesh/mesh_upload.vif",
+    "source_sha256": "d73651ddef6a1c2cf2753e09af483a3285108b1d672b0341b0e070d953c71032",
+    "chain_source_sha256": "9cc04b59f0bf6e54ffe417401c0cdef227648c4b07b48931b335cf3128017a64",
+    "code_bytes": 16344,
+    "chain_bytes": 16416,
+    "DMA_protocol_bytes": 0,
+    "VIF_protocol_bytes": 72,
+    "EE_chain_begin": 2903024,
+    "EE_chain_end": 2919440,
+    "program_sha256": "6f4ce804a09996de0d189ac0dfa32cd21c1a066ab1efa637df055e4487099e9e",
+    "chain_sha256": "6b2adce21f6b37e7529e34ecf9a21bd4fe3bf0521fc472914097f6bec1f3b41a",
+    "functions": null,
+    "original_function_count_complete": false,
+    "authored_source_partitions": [
+      {
+        "name": "mesh_compose_transform",
+        "VU_byte_begin": 0,
+        "bytes": 832
+      },
+      {
+        "name": "mesh_prepare_light_basis",
+        "VU_byte_begin": 832,
+        "bytes": 896
+      },
+      {
+        "name": "mesh_restore_previous_packet",
+        "VU_byte_begin": 1728,
+        "bytes": 192
+      },
+      {
+        "name": "mesh_project_vertices",
+        "VU_byte_begin": 1920,
+        "bytes": 1456
+      },
+      {
+        "name": "mesh_classify_triangle",
+        "VU_byte_begin": 3376,
+        "bytes": 200
+      },
+      {
+        "name": "mesh_adjust_uv",
+        "VU_byte_begin": 3576,
+        "bytes": 432
+      },
+      {
+        "name": "mesh_add_matrix_channels",
+        "VU_byte_begin": 4008,
+        "bytes": 928
+      },
+      {
+        "name": "mesh_toggle_adc",
+        "VU_byte_begin": 4936,
+        "bytes": 144
+      },
+      {
+        "name": "mesh_shade_cubic",
+        "VU_byte_begin": 5080,
+        "bytes": 912
+      },
+      {
+        "name": "mesh_shade_dynamic",
+        "VU_byte_begin": 5992,
+        "bytes": 912
+      },
+      {
+        "name": "mesh_modulate_material",
+        "VU_byte_begin": 6904,
+        "bytes": 760
+      },
+      {
+        "name": "mesh_skin_positions",
+        "VU_byte_begin": 7664,
+        "bytes": 680
+      },
+      {
+        "name": "mesh_skin_normals_positions",
+        "VU_byte_begin": 8344,
+        "bytes": 984
+      },
+      {
+        "name": "mesh_kick_packet_pair",
+        "VU_byte_begin": 9328,
+        "bytes": 184
+      },
+      {
+        "name": "mesh_cull_polygon",
+        "VU_byte_begin": 9512,
+        "bytes": 192
+      },
+      {
+        "name": "mesh_clip_polygon_plane",
+        "VU_byte_begin": 9704,
+        "bytes": 464
+      },
+      {
+        "name": "mesh_collect_unique_xy",
+        "VU_byte_begin": 10168,
+        "bytes": 248
+      },
+      {
+        "name": "mesh_clip_project_polygon",
+        "VU_byte_begin": 10416,
+        "bytes": 1008
+      },
+      {
+        "name": "mesh_emit_clipped_triangles",
+        "VU_byte_begin": 11424,
+        "bytes": 728
+      },
+      {
+        "name": "mesh_clip_outline_plane",
+        "VU_byte_begin": 12152,
+        "bytes": 328
+      },
+      {
+        "name": "mesh_sort_clip_outline",
+        "VU_byte_begin": 12480,
+        "bytes": 928
+      },
+      {
+        "name": "mesh_scale_packet_alpha",
+        "VU_byte_begin": 13408,
+        "bytes": 56
+      },
+      {
+        "name": "mesh_dispatch_previous",
+        "VU_byte_begin": 13464,
+        "bytes": 152
+      },
+      {
+        "name": "mesh_debug_acknowledge",
+        "VU_byte_begin": 13616,
+        "bytes": 80
+      },
+      {
+        "name": "mesh_inverse_normal_matrix",
+        "VU_byte_begin": 13696,
+        "bytes": 184
+      },
+      {
+        "name": "mesh_idle",
+        "VU_byte_begin": 13880,
+        "bytes": 16
+      },
+      {
+        "name": "mesh_delay_and_kick",
+        "VU_byte_begin": 13896,
+        "bytes": 136
+      },
+      {
+        "name": "mesh_draw_primary",
+        "VU_byte_begin": 14032,
+        "bytes": 1304
+      },
+      {
+        "name": "mesh_draw_secondary",
+        "VU_byte_begin": 15336,
+        "bytes": 400
+      },
+      {
+        "name": "mesh_resume_secondary_first",
+        "VU_byte_begin": 15736,
+        "bytes": 96
+      },
+      {
+        "name": "mesh_resume_secondary_pair",
+        "VU_byte_begin": 15832,
+        "bytes": 120
+      },
+      {
+        "name": "mesh_resume_secondary_clip",
+        "VU_byte_begin": 15952,
+        "bytes": 104
+      },
+      {
+        "name": "mesh_draw_fast_transform",
+        "VU_byte_begin": 16056,
+        "bytes": 72
+      },
+      {
+        "name": "mesh_draw_fast_restore",
+        "VU_byte_begin": 16128,
+        "bytes": 72
+      },
+      {
+        "name": "mesh_draw_fast_ready",
+        "VU_byte_begin": 16200,
+        "bytes": 56
+      },
+      {
+        "name": "mesh_draw_secondary_ready",
+        "VU_byte_begin": 16256,
+        "bytes": 16
+      },
+      {
+        "name": "mesh_flush_pending",
+        "VU_byte_begin": 16272,
+        "bytes": 72
+      }
+    ],
+    "additional_entries": {
+      "2576": "mesh_project_vertices_continue",
+      "14168": "mesh_draw_primary_restore",
+      "14240": "mesh_draw_primary_ready",
+      "14280": "mesh_draw_primary_after_transform"
+    },
+    "source_partition_count": 37,
+    "aliases_count_as_additional_functions": false,
+    "runtime_scope": "Selected6755alarm/CID2F accepted initialized-frame predicate only, enabled16/14 palettes/camera0/visibility/stamps/validbuffers/queues/DMA/cache/null36B330 optionalclient; original startup4/4 mask0mode0 and mainflags8 finalmode0/cycle1/1, with no universal arbitrary packet or coldboot observation.",
+    "dynamic_REFS_source_credit": 0,
+    "initialized_data_bytes": 0,
+    "BSS_bytes": 0,
+    "allocated_relocations": 0,
+    "nonallocated_overlay_R32_fields": 16,
+    "full_source_relink_complete": false
+  },
+  "original_sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338",
+  "original_unique_program_count": 9,
+  "original_unique_program_code_bytes": 50032,
+  "original_nonallocated_zero_shadow_count": 29,
+  "existing_four_owners_mandatory": true,
+  "known_original_function_count_from_existing_four": 19,
+  "new_original_function_count": null,
+  "evidence_hashes": {
+    "docs/evidence/vu_mesh_selected_main_launch.json": "5d1138450d0d90373b0d2f6b79e015aaed5c295601c206105300a7eeadd1fa2e",
+    "docs/evidence/vu_mesh_normal_state_predecessor.json": "8a04fd892a6659881cec984345355e766a2d4c83fa0a4bd314f46cc0bc59d036",
+    "docs/evidence/vu_mesh_accepted_frame_state.json": "03e9744bcfa085d1b0a81d9c64affea78a07f545fcaf00c30241b48296e8c3f0",
+    "docs/evidence/vu_mesh_source_peer_review.json": "155a355c8394c50187c3720b04ced1e60bea5243fa7971dbfea4e02c3acc5e01",
+    "docs/evidence/vu_mesh_parent_review.json": "994ddbac551fda7b5e8931ad48415f0827df8d1fadf19315e6d054dc680bb14e"
+  },
+  "portable_provenance_sha256": "2199c34122dcb130521cbc1690a2a3f996cd9f59f1c4886055a88ed4354a1ea7",
+  "initialized_data_bytes": 0,
+  "BSS_bytes": 0,
+  "EE_C_CPP_functions_delta": 0,
+  "EE_C_CPP_code_bytes_delta": 0,
+  "historical_original_compiler_identity_confirmed": false,
+  "live_hardware_observed": false,
+  "universal_asset_or_predecessor_domain_claim": false,
+  "full_source_relink_complete": false
+}

@@ -1,0 +1,18 @@
+; Original VU1 startup microprogram. Its only action is native E termination.
+; CPU StartupVU1 invokes PC0 after MPG; the following delay pair is required.
+; No vector, integer, arithmetic-flag, Q/P/I or VU memory input is consumed.
+; Those values stay intact; E changes the processor execution-control state.
+.ifdef VU_NATIVE_STANDALONE
+.vu
+.align 4
+.endif
+.global vu1_startup_idle
+.ifdef VU_NATIVE_STANDALONE
+.type vu1_startup_idle,@function
+.endif
+vu1_startup_idle:
+        nop[e]      nop
+        nop         nop
+.ifdef VU_NATIVE_STANDALONE
+.size vu1_startup_idle,.-vu1_startup_idle
+.endif

@@ -1,0 +1,11 @@
+; Complete original1026-qword mesh upload: eight automatic MPG headers,
+; 2043 genuine instruction pairs, plus the two DMA-consumed trailing VIFNOPs.
+.global mesh_upload_begin
+.global mesh_upload_end
+mesh_upload_begin:
+mpg 0,*
+.include "mesh_program.vsm"
+.endmpg
+vifnop
+vifnop
+mesh_upload_end:

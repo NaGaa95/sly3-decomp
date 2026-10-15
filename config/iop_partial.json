@@ -1,0 +1,446 @@
+{
+  "schema": "sly3-iop-partial-v1",
+  "module": "disc/irx/module_00.irx",
+  "module_sha256": "565ec77e75f174cfddf72c41ccc446c1c07a3d5fb0a2ccfefad337cb8a7d0728",
+  "profiles": [
+    "legacy-scalar-leaf-114",
+    "legacy-scalar-leaf-136"
+  ],
+  "functions": [
+    {
+      "name": "sio2_ctrl_set",
+      "source": "iop/src/sio2man/sio2_ctrl.c",
+      "source_sha256": "385c3d453c00cc55fafc66422b6a94df91e9f7e86c1d3ba8827cea01f303cb96",
+      "module_offset": 0,
+      "size": 20,
+      "export_ordinal": 4,
+      "signature": "void sio2_ctrl_set(u32 value)",
+      "input_registers": [
+        "a0: u32 value",
+        "ra: return address"
+      ],
+      "original_code_sha256": "065d3cf417e9782f7f230141170ad470d6e7b34389698a76b2175c4abb7edfd4",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 4,
+        "function_address": 0,
+        "pointer_field_address": 3204,
+        "relocation": {
+          "section": ".text",
+          "offset": 3204,
+          "module_address": 3204,
+          "raw_r_offset": 3204,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000000"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_control_boundary_review.json",
+      "object_offset": 0
+    },
+    {
+      "name": "sio2_ctrl_get",
+      "source": "iop/src/sio2man/sio2_ctrl.c",
+      "source_sha256": "385c3d453c00cc55fafc66422b6a94df91e9f7e86c1d3ba8827cea01f303cb96",
+      "module_offset": 20,
+      "size": 20,
+      "export_ordinal": 5,
+      "signature": "u32 sio2_ctrl_get(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "original_code_sha256": "4082e75c696c8b55d2228ceeaf72fa6b745eb87686a49e5aea5a7503c723f22c",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 5,
+        "function_address": 20,
+        "pointer_field_address": 3208,
+        "relocation": {
+          "section": ".text",
+          "offset": 3208,
+          "module_address": 3208,
+          "raw_r_offset": 3208,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000014"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_control_boundary_review.json",
+      "object_offset": 20
+    },
+    {
+      "name": "sio2_stat6c_get",
+      "source": "iop/src/sio2man/sio2_stat6c_get.c",
+      "source_sha256": "4d20a38e0ee91d27d750e29eb458d593c057556276466dcc1f25354e215cefb0",
+      "module_offset": 40,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 6,
+      "signature": "u32 sio2_stat6c_get(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "original_code_sha256": "1d7fbf2dbf517858b68e6ab98d170d6b0ab69bc0d84d13431565c308e85da6d5",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 6,
+        "function_address": 40,
+        "pointer_field_address": 3212,
+        "relocation": {
+          "section": ".text",
+          "offset": 3212,
+          "module_address": 3212,
+          "raw_r_offset": 3212,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000028"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_stat70_get",
+      "source": "iop/src/sio2man/sio2_stat70_get.c",
+      "source_sha256": "a0d3c434b3fef4dd1dcab386a611df2e0d273e947d95c117a95292b4b5f7eff4",
+      "module_offset": 156,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 11,
+      "signature": "u32 sio2_stat70_get(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "original_code_sha256": "b497375ffebce0679f45a5d329a6ebd2c1967dbeffd7340871e08bbeed220d20",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 11,
+        "function_address": 156,
+        "pointer_field_address": 3232,
+        "relocation": {
+          "section": ".text",
+          "offset": 3232,
+          "module_address": 3232,
+          "raw_r_offset": 3232,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x0000009C"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_stat74_get",
+      "source": "iop/src/sio2man/sio2_stat74_get.c",
+      "source_sha256": "a7dd5a6f040c922c1d69666afd3adf0a5d63c03fbb7a540dbba204f7701d5db0",
+      "module_offset": 224,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 14,
+      "signature": "u32 sio2_stat74_get(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "original_code_sha256": "54895b2d9e831f4f9970568bb8e6cb2bef4f95bc6750b4d544adb847f5fb3796",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 14,
+        "function_address": 224,
+        "pointer_field_address": 3244,
+        "relocation": {
+          "section": ".text",
+          "offset": 3244,
+          "module_address": 3244,
+          "raw_r_offset": 3244,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x000000E0"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_unkn78_set",
+      "source": "iop/src/sio2man/sio2_unkn78_set.c",
+      "source_sha256": "6855778a1fa4498c0a85274faeeeb7851d7030388dcb578fd838c536194ccd48",
+      "module_offset": 244,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 15,
+      "signature": "void sio2_unkn78_set(u32 value)",
+      "input_registers": [
+        "a0: u32 value",
+        "ra: return address"
+      ],
+      "original_code_sha256": "f4f7a52ec8780f4a5102e311d7742764373a48d0220e364f9f6be5a3943e159c",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 15,
+        "function_address": 244,
+        "pointer_field_address": 3248,
+        "relocation": {
+          "section": ".text",
+          "offset": 3248,
+          "module_address": 3248,
+          "raw_r_offset": 3248,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x000000F4"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_unkn78_get",
+      "source": "iop/src/sio2man/sio2_unkn78_get.c",
+      "source_sha256": "99d74830ee06556223d981f0220bd60d27405adce9f6c8a886d9f126701fb46d",
+      "module_offset": 264,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 16,
+      "signature": "u32 sio2_unkn78_get(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "original_code_sha256": "01d98c15522032cc4623c046bbb611de3a3dd8676948f4125553b4c42e8606af",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 16,
+        "function_address": 264,
+        "pointer_field_address": 3252,
+        "relocation": {
+          "section": ".text",
+          "offset": 3252,
+          "module_address": 3252,
+          "raw_r_offset": 3252,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000108"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_unkn7c_set",
+      "source": "iop/src/sio2man/sio2_unkn7c_set.c",
+      "source_sha256": "84c479d9d1b2f807cc45810045aa14ade917420a732eb7aac2b9e335fdcc4305",
+      "module_offset": 284,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 17,
+      "signature": "void sio2_unkn7c_set(u32 value)",
+      "input_registers": [
+        "a0: u32 value",
+        "ra: return address"
+      ],
+      "original_code_sha256": "046f7e474d2507ee882706c26eafc17b15b574138c94224e002f5baf0f6ef9c1",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 17,
+        "function_address": 284,
+        "pointer_field_address": 3256,
+        "relocation": {
+          "section": ".text",
+          "offset": 3256,
+          "module_address": 3256,
+          "raw_r_offset": 3256,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x0000011C"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_unkn7c_get",
+      "source": "iop/src/sio2man/sio2_unkn7c_get.c",
+      "source_sha256": "ceedff3fd9385b10240f723157fc1ac38a1e315bed1f7eb4e024bc5827ffa763",
+      "module_offset": 304,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 18,
+      "signature": "u32 sio2_unkn7c_get(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "original_code_sha256": "7a5ad400bbb003b86d7be00a428cf4cc98adb4acb9b2408672e1f87fd75e9f84",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 18,
+        "function_address": 304,
+        "pointer_field_address": 3260,
+        "relocation": {
+          "section": ".text",
+          "offset": 3260,
+          "module_address": 3260,
+          "raw_r_offset": 3260,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000130"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_stat_set",
+      "source": "iop/src/sio2man/sio2_stat_set.c",
+      "source_sha256": "379bed662e531a099abf9c1befadc2b01e880f5230a49cbf2c668c3a695140b8",
+      "module_offset": 356,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 21,
+      "signature": "void sio2_stat_set(u32 value)",
+      "input_registers": [
+        "a0: u32 value",
+        "ra: return address"
+      ],
+      "original_code_sha256": "2bca1172c86a9136725b53e8b4577f3ce1b816cc10dfd741e6f77a2169caacfc",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 21,
+        "function_address": 356,
+        "pointer_field_address": 3272,
+        "relocation": {
+          "section": ".text",
+          "offset": 3272,
+          "module_address": 3272,
+          "raw_r_offset": 3272,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000164"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_stat_get",
+      "source": "iop/src/sio2man/sio2_stat_get.c",
+      "source_sha256": "ef234a9ed749acca6a3ef4a4549da8b370ff8d9f695259d265b0d086bc113131",
+      "module_offset": 376,
+      "object_offset": 0,
+      "size": 20,
+      "export_ordinal": 22,
+      "signature": "u32 sio2_stat_get(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "original_code_sha256": "c562cf7e63de3a980b3d99723f8a0d435b0840e2f4ef2412ea7e898bfe1779f4",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 22,
+        "function_address": 376,
+        "pointer_field_address": 3276,
+        "relocation": {
+          "section": ".text",
+          "offset": 3276,
+          "module_address": 3276,
+          "raw_r_offset": 3276,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000178"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_accessor_boundary_review.json"
+    },
+    {
+      "name": "sio2_data_in",
+      "source": "iop/src/sio2man/sio2_data_in.c",
+      "source_sha256": "5524dd5618be8790f46c3ec067fd38d2f3ba2d04ef563c4ad9b0c6e2b4cc931c",
+      "module_offset": 340,
+      "object_offset": 0,
+      "size": 16,
+      "export_ordinal": 20,
+      "signature": "u8 sio2_data_in(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "output_registers": [
+        "v0: zero-extended u8 result"
+      ],
+      "volatile_address": "0xBF808264",
+      "access_width_bits": 8,
+      "memory_operation": "read",
+      "original_code_sha256": "bab6f286c7e5f82415f8eb57ff4ab14230e482d2b929fb7553e44c5902766066",
+      "primary_interface": {
+        "path": "iop/sio/sio2man/include/sio2man.h",
+        "url": "https://raw.githubusercontent.com/ps2dev/ps2sdk/329e2bb43287e16af16c4dde1c614e2662c24468/iop/sio/sio2man/include/sio2man.h",
+        "sha256": "c441bee262a8e31584a4854d5ceb5090dca59f664906fbba447b803297ac7ddd",
+        "bytes": 3371
+      },
+      "original_export_evidence": {
+        "ordinal": 20,
+        "function_address": 340,
+        "pointer_field_address": 3268,
+        "relocation": {
+          "section": ".text",
+          "offset": 3268,
+          "module_address": 3268,
+          "raw_r_offset": 3268,
+          "type": 2,
+          "symbol_index": 0,
+          "original_word": "0x00000154"
+        }
+      },
+      "original_boundary_review": "build/reports/iop_byte_getter_boundary_review.json"
+    }
+  ],
+  "all_unowned_original_bytes": "PRESERVATION_ONLY_EXCLUDED_FROM_SOURCE_PROGRESS",
+  "historical_compiler_identity": "UNCONFIRMED",
+  "general_o32_abi": "UNCONFIRMED",
+  "native_object_header_note": "GNU2.9 retains EE/R5900 tag0x20921000; only matching MIPS1-compatible scalar code is admitted. Original IRX headers are preservation.",
+  "main_ee_build_changed": false
+}

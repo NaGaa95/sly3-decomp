@@ -1,0 +1,231 @@
+{
+  "schema": 1,
+  "kind": "mandatory-seventh-complete-readable-native-VU-volume-component",
+  "component": {
+    "family": "188058715",
+    "processor": "VU1",
+    "source": "src/vu/volume/volume_program.vsm",
+    "chain_source": "src/vu/volume/volume_upload.vif",
+    "source_sha256": "29d782d968f1feed5ffd7eb09a9630f66b0a396f42e4c1802f40a5edc58fc523",
+    "chain_source_sha256": "00d3c107e9e87032e8a9b2886505301b00a8480bdb99cf11b2341da14137e841",
+    "code_bytes": 8008,
+    "chain_bytes": 8048,
+    "DMA_protocol_bytes": 0,
+    "VIF_protocol_bytes": 40,
+    "EE_chain_begin": 2893376,
+    "EE_chain_end": 2901424,
+    "program_sha256": "3c2cf48127acda999a55db79fb68fb8b1fb6df21d2aeccc128524d18a73cd9c5",
+    "chain_sha256": "f120da8a904409319b585452be0b93d14f732d137bca1407286331a7eeacc3b9",
+    "functions": null,
+    "original_function_count_complete": false,
+    "authored_source_partitions": [
+      {
+        "name": "volume_idle",
+        "VU_byte_begin": 0,
+        "bytes": 16,
+        "algorithm": "Realidle Eplusdelay, separateCPUgeometry idle0 provider.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_debug_acknowledge",
+        "VU_byte_begin": 16,
+        "bytes": 80,
+        "algorithm": "Consume/clear absolute15.W debugrequest with originalDpair.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_prepare_transform",
+        "VU_byte_begin": 96,
+        "bytes": 576,
+        "algorithm": "Flags1400 billboard selection; local/view/inverse affine transforms with actualnativeW andsavedlink.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_restore_previous_packet",
+        "VU_byte_begin": 672,
+        "bytes": 192,
+        "algorithm": "Copyten oppositepage cacheqwords and boundedtail14..end.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_skin_positions",
+        "VU_byte_begin": 864,
+        "bytes": 448,
+        "algorithm": "Four packetdirected matrices; integerweightsnormalized1/255; twoqword positions.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_project_edge_space",
+        "VU_byte_begin": 1312,
+        "bytes": 360,
+        "algorithm": "Rollingthree-vector Qprojection XYZ/Z for edgepositions, realend/padding requirements.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_build_silhouette_sides",
+        "VU_byte_begin": 1672,
+        "bytes": 856,
+        "algorithm": "Quadadjacency face-crossproduct Zsign transitions emit sixsidevertices; mantissabias indices andnative1.5extrusion.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_project_strip_body",
+        "VU_byte_begin": 2528,
+        "bytes": 1256,
+        "algorithm": "Homogeneous twoqword stripprojection and alternating marker/Q/CLIP pipeline, completebody.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_classify_triangle",
+        "VU_byte_begin": 3784,
+        "bytes": 344,
+        "algorithm": "NestedVI14 triangleCLIP/ADC classification, rollingAND/OR masks, native markerflags.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_project_strip_reject_tail",
+        "VU_byte_begin": 4128,
+        "bytes": 248,
+        "algorithm": "Projectionbody livecommonplane reject continuation, not an originalfunction orfreshentry.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_kick_strip_packets",
+        "VU_byte_begin": 4376,
+        "bytes": 256,
+        "algorithm": "Patch inheritedGIFtag andkickone/two actualmaterialstreams.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_clip_polygon_plane",
+        "VU_byte_begin": 4632,
+        "bytes": 336,
+        "algorithm": "Sutherland-Hodgman position clipping with signedW distance andQinterpolation.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_clip_project_polygon",
+        "VU_byte_begin": 4968,
+        "bytes": 648,
+        "algorithm": "Six originalCLIP-plane gates thenperspective map, trueemptyoutput andsavedlinkdelay.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_choose_winding_marker",
+        "VU_byte_begin": 5616,
+        "bytes": 208,
+        "algorithm": "Signedfan area chooses originalwindingmarker andfills evenqword carriers.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_emit_clipped_triangles",
+        "VU_byte_begin": 5824,
+        "bytes": 776,
+        "algorithm": "Inheritedpartiallyclipped triangles reconstructed tohomogeneousspace, clip/marker/materialkicks, alternatingwinding/scratchbanks.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_draw_primary",
+        "VU_byte_begin": 6600,
+        "bytes": 344,
+        "algorithm": "Actual19C8 primaryentry: flags1/2/4 compose/restore/skin, adjacencyprojection/silhouette andstripkick.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_draw_secondary",
+        "VU_byte_begin": 6944,
+        "bytes": 56,
+        "algorithm": "Actual1B20 secondaryentry: completeclip thenstripkick andE/delay.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_patch_command_stream",
+        "VU_byte_begin": 7000,
+        "bytes": 472,
+        "algorithm": "Actual1B58 interpreter: signedU16operation/end records27\u2192patch absoluteparameterbank components into TOPS-relativecommandstream36; realnegativeand>8termination.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_patch_teardown_entry",
+        "VU_byte_begin": 7472,
+        "bytes": 16,
+        "algorithm": "Actual1D30 teardown branchinto1B58, noindependentE/reset ornewfunctioncount.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_compose_matrices",
+        "VU_byte_begin": 7488,
+        "bytes": 184,
+        "algorithm": "Fourcolumn matrixcomposition with pipelinedstores andrealJRdelay.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_inverse_normal_matrix",
+        "VU_byte_begin": 7672,
+        "bytes": 184,
+        "algorithm": "Actualwhole184byte3x3 cofactors/determinant/transpose/reciprocalQ; originalequivalence to376/150 proved.",
+        "names_are_source_identifiers_not_original_symbols": true
+      },
+      {
+        "name": "volume_inverse_affine",
+        "VU_byte_begin": 7856,
+        "bytes": 152,
+        "algorithm": "Affineinverse viaactualcofactorhelper thennegatedtranslation; Wchanges expressedasnativeops.",
+        "names_are_source_identifiers_not_original_symbols": true
+      }
+    ],
+    "additional_entries": {
+      "4128": "strip_reject_common_plane",
+      "7320": "command_patch_0",
+      "7336": "command_patch_1",
+      "7352": "command_patch_2",
+      "7368": "command_patch_3",
+      "7384": "command_patch_4",
+      "7400": "command_patch_5",
+      "7416": "command_patch_6",
+      "7432": "command_patch_7",
+      "7448": "command_patch_8"
+    },
+    "source_partition_count": 22,
+    "aliases_count_as_additional_functions": false,
+    "actual_direct_entries": {
+      "0": "volume_idle",
+      "19c8": "volume_draw_primary",
+      "1b20": "volume_draw_secondary",
+      "1b58": "volume_patch_command_stream",
+      "1d30": "volume_patch_teardown_entry"
+    },
+    "runtime_scope": "Actual mode0CID36Bentley/node7kind2/state6RendererID86, normal equalcycle4/4 or1/1 mode0/unmasked/validcamera/header/matrix/geometry/light/video+10divisor/surface/queue/cache/IRQ/DMAfreshstamp/alignedarena/nonnegative settings1C andacceptednonnull2C predicate. Zero1C/F20 clears/skips; negative/customcallback uninitializedmatrix alternative excluded. No state7separate witness, coldboot/asset/vtable/universal GS extent or livehardware claim.",
+    "dynamic_REFS_source_credit": 0,
+    "initialized_data_bytes": 0,
+    "BSS_bytes": 0,
+    "allocated_relocations": 0,
+    "nonallocated_overlay_R32_fields": 8,
+    "full_source_relink_complete": false
+  },
+  "known_original_function_count_from_existing_six": 19,
+  "new_original_function_count": null,
+  "existing_six_owners_mandatory": true,
+  "original_sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338",
+  "original_unique_program_count": 9,
+  "original_unique_program_code_bytes": 50032,
+  "original_nonallocated_zero_shadow_count": 29,
+  "evidence_hashes": {
+    "docs/evidence/vu_volume_borrowed_packet_review.json": "79c6b037d7d9daa52317ba3da7d3312b67a40105864b1239c51cfbf94b69d1dd",
+    "docs/evidence/vu_volume_original_launch_frontier.json": "8fdfbe1395bd85108e0e4e1cb38c8616d208221ea9a2651f02a520bcf92aa8d1",
+    "docs/evidence/vu_volume_packet_original_support.json": "e2ec315f3b8517160a80132c8bf703b508eb08b54c3180f08035208cdc94a5ff",
+    "docs/evidence/vu_volume_parent_review.json": "5b2e00f1699b9488f7f6522523d42f2231f231a3a759bfb57c7239f9672fba71",
+    "docs/evidence/vu_volume_runtime_edge_peer_review.json": "14a459e60a572e47801b097c91bc59e33fac687b55731c028f5a8167e87c07ce",
+    "docs/evidence/vu_volume_source_adjustment.json": "5156326e9bfab3faa73e9512cf6f376fba49635353ad4d2ba596e58da1ec09d9",
+    "docs/evidence/vu_volume_source_peer_review.json": "384c208409c4f060d319b99b778a27580924596102cac8abb072ce17a5301001"
+  },
+  "portable_provenance_sha256": "2199c34122dcb130521cbc1690a2a3f996cd9f59f1c4886055a88ed4354a1ea7",
+  "initialized_data_bytes": 0,
+  "BSS_bytes": 0,
+  "EE_C_CPP_functions_delta": 0,
+  "EE_C_CPP_code_bytes_delta": 0,
+  "historical_original_compiler_identity_confirmed": false,
+  "live_hardware_observed": false,
+  "universal_asset_or_predecessor_domain_claim": false,
+  "full_source_relink_complete": false
+}

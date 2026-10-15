@@ -1,0 +1,20 @@
+; Whole original VIF1 startup chain; CPU explicitly enables tag transfer.
+.dmapackvif 1
+.global vu1_startup_chain
+.global vu1_startup_chain_end
+vu1_startup_chain:
+dmacnt *
+vifnop
+mpg 0,*
+.include "vu1_idle.vsm"
+.endmpg
+mscal 0
+vifnop
+vifnop
+vifnop
+.enddmadata
+dmaend 0
+vifnop
+vifnop
+.enddmadata
+vu1_startup_chain_end:

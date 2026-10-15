@@ -1,0 +1,400 @@
+; Sly3 USA family188058427: complete VU1 skinned silhouette-quad renderer.
+; Reconstructed algorithms retain actual VF/VI operands, ACC/Q/P/I/CLIP and
+; MAC/status effects, paired issue timing and real branch/E delay slots.
+; These ten authored partitions are review scaffolding, not original functions.
+; Runtime record/frame/geometry preconditions remain independently HOLD.
+.ifdef VU_NATIVE_STANDALONE
+.vu
+.align 3
+.endif
+.equ buffer_base_sum_qwords,0x24e
+.equ scene_screen_scale_qword,0
+.equ scene_screen_offset_qword,1
+.equ scene_view_matrix_qword,3
+.equ packet_local_matrix_qword,0
+.equ packet_view_matrix_qword,4
+.equ packet_depth_parameter_qword,8
+.equ packet_screen_parameter_qword,9
+.equ packet_control_qword,10
+.equ packet_ranges_qword,11
+.equ packet_bone_offsets_qword,12
+.equ packet_gif_qword,13
+.equ packet_quad0_qword,18
+.equ quad_bank_sum_qwords,44
+
+.macro begin_native_partition name
+.local \name
+.ifdef VU_NATIVE_STANDALONE
+.type \name,@function
+.endif
+\name:
+.endm
+.macro end_native_partition name
+.ifdef VU_NATIVE_STANDALONE
+.size \name,.-\name
+.endif
+.endm
+; Exact four-stage affine XYZ accumulation; source W is not used or written.
+.macro affine_xyz result,c0,c1,c2,c3,point
+        mulax.xyz acc,\c0,\point\()x       nop
+        madday.xyz acc,\c1,\point\()y      nop
+        maddaz.xyz acc,\c2,\point\()z      nop
+        maddw.xyz \result,\c3,vf00w        nop
+.endm
+.macro load_four_columns base,c0,c1,c2,c3
+        nop                 lq.xyzw \c0,0(\base)
+        nop                 lq.xyzw \c1,1(\base)
+        nop                 lq.xyzw \c2,2(\base)
+        nop                 lq.xyzw \c3,3(\base)
+.endm
+; Saved link occupies VF02.X; three rotations restore the previous carrier.
+; The final rotation is the actual JR delay pair and cannot move earlier.
+.macro return_saved_micro_link
+        nop                 mtir vi15,vf02x
+        nop                 mr32.xyzw vf02,vf02
+        nop                 mr32.xyzw vf02,vf02
+        nop                 jr vi15
+        nop                 mr32.xyzw vf02,vf02
+.endm
+; Four real byte-derived weights, including W; XYZ-only output leaves its W.
+.macro weighted_sum_xyz result,a,b,c,d,weight
+        mulax.xyz acc,\a,\weight\()x       nop
+        madday.xyz acc,\b,\weight\()y      nop
+        maddaz.xyz acc,\c,\weight\()z      nop
+        maddw.xyz \result,\d,\weight\()w  nop
+.endm
+
+.global silhouette_program_begin
+silhouette_program_begin:
+
+; CPU issues MSCAL0 first: real E pair plus delay do not initialize VI04.
+begin_native_partition silhouette_idle
+        nop[e]              nop
+        nop                 nop
+end_native_partition silhouette_idle
+
+; Absolute debug request is consumed and cleared, including the real D pair.
+begin_native_partition silhouette_debug_acknowledge
+        nop                 ilw.w vi01,15(vi00)
+        nop                 isw.w vi00,15(vi00)
+        nop                 nop
+        nop                 nop
+        nop                 ibeq vi01,vi00,debug_return
+        nop                 nop
+        nop[d]              nop
+        nop                 nop
+debug_return:
+        nop                 jr vi15
+        nop                 nop
+end_native_partition silhouette_debug_acknowledge
+
+; Compose object/view matrices, then update the packet's packed depth/color
+; parameter. The write to VF00.Y only supplies status flags: VF00 stays fixed.
+begin_native_partition silhouette_prepare_depth
+        nop                 mr32.xyzw vf02,vf02
+        nop                 mfir.x vf02,vi15
+        nop                 lq.xyzw vf03,packet_depth_parameter_qword(vi04)
+        nop                 lq.xyzw vf04,15(vi04)
+        nop                 iaddiu vi01,vi00,scene_view_matrix_qword
+        nop                 iaddiu vi02,vi04,packet_local_matrix_qword
+        nop                 bal vi15,silhouette_compose_matrix
+        nop                 iaddiu vi03,vi04,packet_view_matrix_qword
+        subw.y vf00,vf03,vf00w       nop
+        itof0.xyzw vf04,vf04         nop
+        sub[i].yz vf05,vf00,vf00     loi 160
+        addi[i].x vf05,vf00,i        loi 0.6
+        muli.y vf03,vf03,i           fsand vi01,2
+        sub.xyz vf05,vf05,vf04       nop
+        adda.xyz acc,vf00,vf04       ibeq vi01,vi00,depth_parameter_ready
+        maddz.xyz vf04,vf05,vf03z    nop
+        muly.w vf04,vf04,vf03y       nop
+depth_parameter_ready:
+        ftoi0.xyzw vf04,vf04         nop
+        nop                 sq.xyzw vf04,15(vi04)
+        return_saved_micro_link
+end_native_partition silhouette_prepare_depth
+
+; Copy ten header qwords and the variable GIF/quad tail from the opposite
+; buffer. Original do/while and empty-tail test retain their exact behavior.
+begin_native_partition silhouette_copy_packet_bank
+        nop                 iaddiu vi05,vi00,buffer_base_sum_qwords
+        nop                 isub vi05,vi05,vi04
+        nop                 iaddiu vi06,vi05,0
+        nop                 iaddiu vi08,vi04,0
+        nop                 iaddiu vi07,vi06,10
+copy_header_qword:
+        nop                 lqi.xyzw vf03,(vi06++)
+        nop                 nop
+        nop                 nop
+        nop                 ibne vi06,vi07,copy_header_qword
+        nop                 sqi.xyzw vf03,(vi08++)
+        nop                 ilw.y vi07,packet_control_qword(vi04)
+        nop                 iaddiu vi06,vi05,packet_gif_qword
+        nop                 iaddiu vi08,vi04,packet_gif_qword
+        nop                 iadd vi07,vi05,vi07
+        nop                 nop
+        nop                 ibeq vi07,vi06,copy_packet_return
+        nop                 nop
+copy_tail_qword:
+        nop                 lqi.xyzw vf03,(vi06++)
+        nop                 nop
+        nop                 nop
+        nop                 ibne vi06,vi07,copy_tail_qword
+        nop                 sqi.xyzw vf03,(vi08++)
+copy_packet_return:
+        nop                 jr vi15
+        nop                 nop
+end_native_partition silhouette_copy_packet_bank
+
+; Four relative bone matrices transform each XYZ position independently.
+; Byte weights are converted in XYZW and scaled by the exact float32 1/255.
+; XYZ stores intentionally preserve uninitialized/unrelated input W words.
+begin_native_partition silhouette_skin_vertices
+        nop                 ilw.x vi05,packet_ranges_qword(vi04)
+        nop                 ilw.y vi06,packet_ranges_qword(vi04)
+        nop                 ilw.z vi07,packet_control_qword(vi04)
+        nop                 lq.xyzw vf03,packet_bone_offsets_qword(vi04)
+        nop                 iadd vi05,vi04,vi05
+        nop                 iadd vi06,vi04,vi06
+        nop                 iadd vi07,vi04,vi07
+        nop                 mtir vi08,vf03x
+        nop                 iadd vi08,vi04,vi08
+        load_four_columns vi08,vf04,vf05,vf06,vf07
+        nop                 mtir vi08,vf03y
+        nop                 iadd vi08,vi04,vi08
+        load_four_columns vi08,vf08,vf09,vf10,vf11
+        nop                 mtir vi08,vf03z
+        nop                 iadd vi08,vi04,vi08
+        load_four_columns vi08,vf12,vf13,vf14,vf15
+        nop                 mtir vi08,vf03w
+        nop                 iadd vi08,vi04,vi08
+        load_four_columns vi08,vf16,vf17,vf18,vf19
+skin_vertex:
+        nop                 lq.xyz vf20,0(vi05)
+        mulax.xyz acc,vf04,vf20x      lqi.xyzw vf21,(vi07++)
+        madday.xyz acc,vf05,vf20y     nop
+        maddaz.xyz acc,vf06,vf20z     nop
+        maddw.xyz vf22,vf07,vf00w     nop
+        itof0[i].xyzw vf21,vf21       loi 0.0039215688593685627
+        affine_xyz vf23,vf08,vf09,vf10,vf11,vf20
+        muli.xyzw vf21,vf21,i         nop
+        affine_xyz vf24,vf12,vf13,vf14,vf15,vf20
+        affine_xyz vf25,vf16,vf17,vf18,vf19,vf20
+        weighted_sum_xyz vf20,vf22,vf23,vf24,vf25,vf21
+        nop                 sqi.xyz vf20,(vi05++)
+        nop                 nop
+        nop                 ibne vi05,vi06,skin_vertex
+        nop                 nop
+        nop                 jr vi15
+        nop                 nop
+end_native_partition silhouette_skin_vertices
+
+; Software-pipelined affine homogeneous transform and perspective divide.
+; Q is used at its original issue distance; pending next DIVs are not waits.
+; Stored XYZ does not assign W even though the input qword loads read XYZW.
+begin_native_partition silhouette_project_vertices
+        nop                 ilw.x vi05,packet_ranges_qword(vi04)
+        nop                 ilw.y vi06,packet_ranges_qword(vi04)
+        nop                 iadd vi05,vi04,vi05
+        nop                 iadd vi06,vi04,vi06
+        nop                 lq.xyzw vf03,0(vi05)
+        nop                 lq.xyzw vf12,4(vi04)
+        nop                 lq.xyzw vf13,5(vi04)
+        nop                 lq.xyzw vf14,6(vi04)
+        nop                 lq.xyzw vf15,7(vi04)
+        mulax.xyzw acc,vf12,vf03x     nop
+        madday.xyzw acc,vf13,vf03y    nop
+        maddaz.xyzw acc,vf14,vf03z    nop
+        maddw.xyzw vf06,vf15,vf00w    lq.xyzw vf04,1(vi05)
+        mulax.xyzw acc,vf12,vf04x     div q,vf00w,vf06w
+        madday.xyzw acc,vf13,vf04y    nop
+        maddaz.xyzw acc,vf14,vf04z    nop
+        maddw.xyzw vf07,vf15,vf00w    lq.xyzw vf05,2(vi05)
+        mulax.xyzw acc,vf12,vf05x     div q,vf00w,vf07w
+        madday.xyzw acc,vf13,vf05y    nop
+        maddaz.xyzw acc,vf14,vf05z    nop
+        maddw.xyzw vf08,vf15,vf00w    lq.xyzw vf03,3(vi05)
+        mulq.xyz vf09,vf06,q         nop
+project_three_vertices:
+        mulax.xyzw acc,vf12,vf03x     div q,vf00w,vf08w
+        madday.xyzw acc,vf13,vf03y    sqi.xyz vf09,(vi05++)
+        maddaz.xyzw acc,vf14,vf03z    nop
+        maddw.xyzw vf06,vf15,vf00w    lq.xyzw vf04,3(vi05)
+        mulq.xyz vf10,vf07,q         ibeq vi05,vi06,project_return
+        mulax.xyzw acc,vf12,vf04x     div q,vf00w,vf06w
+        madday.xyzw acc,vf13,vf04y    sqi.xyz vf10,(vi05++)
+        maddaz.xyzw acc,vf14,vf04z    nop
+        maddw.xyzw vf07,vf15,vf00w    lq.xyzw vf05,3(vi05)
+        mulq.xyz vf11,vf08,q         ibeq vi05,vi06,project_return
+        mulax.xyzw acc,vf12,vf05x     div q,vf00w,vf07w
+        madday.xyzw acc,vf13,vf05y    sqi.xyz vf11,(vi05++)
+        maddaz.xyzw acc,vf14,vf05z    nop
+        maddw.xyzw vf08,vf15,vf00w    lq.xyzw vf03,3(vi05)
+        mulq.xyz vf09,vf06,q         ibne vi05,vi06,project_three_vertices
+        nop                 nop
+project_return:
+        nop                 jr vi15
+        nop                 nop
+end_native_partition silhouette_project_vertices
+
+; Four indexed positions define two incident faces. The cross-product signs
+; and CLIP history select a silhouette; screen XY normal/tangent offsets use
+; P reciprocal length. Writes to VF00 only set flags. Zeroed VF19/20.W stays
+; zero through XYZ operations and all four full XYZW quad stores.
+begin_native_partition silhouette_emit_edges
+        nop                 ilw.x vi05,packet_ranges_qword(vi04)
+        nop                 ilw.z vi06,packet_ranges_qword(vi04)
+        nop                 ilw.w vi07,packet_ranges_qword(vi04)
+        nop                 lq.xyzw vf03,scene_screen_scale_qword(vi00)
+        nop                 lq.xyzw vf04,scene_screen_offset_qword(vi00)
+        nop                 iaddiu vi08,vi00,packet_quad0_qword
+        nop                 iadd vi05,vi04,vi05
+        nop                 iadd vi07,vi04,vi07
+        nop                 iadd vi06,vi04,vi06
+        sub.xyzw vf19,vf00,vf00      ilw.x vi09,0(vi06)
+        sub.xyzw vf20,vf00,vf00      ilw.y vi10,0(vi06)
+        nop                 ilw.z vi11,0(vi06)
+        nop                 ilw.w vi12,0(vi06)
+        nop                 iadd vi09,vi09,vi05
+        nop                 iadd vi10,vi10,vi05
+        nop                 iadd vi11,vi11,vi05
+        nop                 iadd vi12,vi12,vi05
+        nop                 lq.xyzw vf05,0(vi09)
+        nop                 lq.xyzw vf06,0(vi10)
+        nop                 lq.xyzw vf07,0(vi11)
+        nop                 lq.xyzw vf08,0(vi12)
+edge_quad:
+        sub.xyz vf09,vf07,vf06        ilw.x vi09,1(vi06)
+        sub.xyz vf10,vf06,vf05        ilw.y vi10,1(vi06)
+        sub.xyz vf11,vf08,vf07        ilw.z vi11,1(vi06)
+        clipw.xyz vf05,vf00w         ilw.w vi12,1(vi06)
+        mul.xy vf12,vf09,vf09         iaddiu vi06,vi06,1
+        opmula.xyz acc,vf10,vf09      iadd vi09,vi09,vi05
+        opmsub.xyz vf13,vf09,vf10     iadd vi10,vi10,vi05
+        opmula.xyz acc,vf11,vf09      iadd vi11,vi11,vi05
+        opmsub.xyz vf14,vf09,vf11     iadd vi12,vi12,vi05
+        clipw.xyz vf06,vf00w         move.xyzw vf15,vf06
+        clipw.xyz vf07,vf00w         move.xyzw vf16,vf07
+        clipw.xyz vf08,vf00w         lq.xyzw vf05,0(vi09)
+        mul.z vf00,vf13,vf14         lq.xyzw vf06,0(vi10)
+        addy.x vf12,vf12,vf12y        lq.xyzw vf07,0(vi11)
+        nop                 lq.xyzw vf08,0(vi12)
+        nop                 fcand vi01,0xffffff
+        add.z vf00,vf13,vf00         fsand vi02,2
+        nop                 ibne vi01,vi00,edge_next
+        nop                 ersqrt p,vf12x
+        addy.x vf17,vf00,vf09y        ibeq vi02,vi00,edge_next
+        subx.y vf17,vf00,vf09x        fsand vi02,2
+        nop[i]              loi 0.00023999999393709004
+        muli.xy vf18,vf09,i          ibeq vi02,vi00,edge_normal_ready
+        nop                 nop
+        nop[i]              loi -0.00023999999393709004
+edge_normal_ready:
+        muli.xy vf17,vf17,i          nop
+        add.xy vf18,vf18,vf17        nop
+        nop                 waitp
+        nop                 mfp.x vf21,p
+        mulx.xy vf17,vf17,vf21x      nop
+        mulx.xy vf18,vf18,vf21x      nop
+        add.xy vf15,vf15,vf17        nop
+        add.xy vf16,vf16,vf18        nop
+        mula.xyz acc,vf15,vf03       nop
+        maddw.xyz vf19,vf04,vf00w    nop
+        mula.xyz acc,vf16,vf03       nop
+        maddw.xyz vf20,vf04,vf00w    iadd vi01,vi08,vi04
+        nop                 sq.xyzw vf19,2(vi01)
+        nop                 sq.xyzw vf19,6(vi01)
+        nop                 sq.xyzw vf20,3(vi01)
+        nop                 sq.xyzw vf20,7(vi01)
+        nop                 iaddiu vi02,vi00,quad_bank_sum_qwords
+        nop                 isub vi08,vi02,vi08
+        nop                 nop
+        nop                 nop
+        nop                 xgkick vi01
+edge_next:
+        nop                 ibne vi06,vi07,edge_quad
+        nop                 nop
+        nop                 jr vi15
+        nop                 nop
+end_native_partition silhouette_emit_edges
+
+; Entry0x738 derives the alternate qword bank from latched XTOP. Bit0
+; prepares depth/matrix, bit1 copies previous packet state; kickheader13.
+begin_native_partition silhouette_kick_packet
+        nop                 xtop vi01
+        nop                 iaddiu vi04,vi00,buffer_base_sum_qwords
+        nop                 isub vi04,vi04,vi01
+        nop                 ilw.x vi01,packet_control_qword(vi04)
+        nop                 iaddiu vi02,vi00,1
+        nop                 iand vi02,vi02,vi01
+        nop                 nop
+        nop                 ibeq vi02,vi00,kick_maybe_copy
+        nop                 nop
+        nop                 bal vi15,silhouette_prepare_depth
+        nop                 nop
+kick_maybe_copy:
+        nop                 ilw.x vi01,packet_control_qword(vi04)
+        nop                 iaddiu vi02,vi00,2
+        nop                 iand vi02,vi02,vi01
+        nop                 nop
+        nop                 ibeq vi02,vi00,kick_header
+        nop                 nop
+        nop                 bal vi15,silhouette_copy_packet_bank
+        nop                 nop
+kick_header:
+        nop                 iaddiu vi01,vi04,packet_gif_qword
+        nop                 xgkick vi01
+        nop[e]              nop
+        nop                 nop
+end_native_partition silhouette_kick_packet
+
+; Entry0x7F0 keeps VI04 from the prior entry; its XTOP result is immediately
+; replaced by weight range. Skin when nonzero, projectXYZ, emit edge quads.
+begin_native_partition silhouette_draw
+        nop                 xtop vi01
+        nop                 ilw.z vi01,packet_control_qword(vi04)
+        nop                 nop
+        nop                 nop
+        nop                 nop
+        nop                 ibeq vi01,vi00,draw_project
+        nop                 nop
+        nop                 bal vi15,silhouette_skin_vertices
+        nop                 nop
+draw_project:
+        nop                 bal vi15,silhouette_project_vertices
+        nop                 nop
+        nop                 bal vi15,silhouette_emit_edges
+        nop                 nop
+        nop[e]              nop
+        nop                 nop
+end_native_partition silhouette_draw
+
+; Full4x4 matrix product. Lower loads/stores overlap four ACC chains; the
+; final column store is the actual return delay pair. No W simplification.
+begin_native_partition silhouette_compose_matrix
+        nop                 lq.xyzw vf24,0(vi02)
+        nop                 lq.xyzw vf20,0(vi01)
+        nop                 lq.xyzw vf21,1(vi01)
+        nop                 lq.xyzw vf22,2(vi01)
+        nop                 lq.xyzw vf23,3(vi01)
+        mulax.xyzw acc,vf20,vf24x     lq.xyzw vf25,1(vi02)
+        madday.xyzw acc,vf21,vf24y    lq.xyzw vf26,2(vi02)
+        maddaz.xyzw acc,vf22,vf24z    lq.xyzw vf27,3(vi02)
+        maddw.xyzw vf28,vf23,vf24w    nop
+        mulax.xyzw acc,vf20,vf25x     nop
+        madday.xyzw acc,vf21,vf25y    nop
+        maddaz.xyzw acc,vf22,vf25z    nop
+        maddw.xyzw vf29,vf23,vf25w    sq.xyzw vf28,0(vi03)
+        mulax.xyzw acc,vf20,vf26x     nop
+        madday.xyzw acc,vf21,vf26y    nop
+        maddaz.xyzw acc,vf22,vf26z    nop
+        maddw.xyzw vf30,vf23,vf26w    sq.xyzw vf29,1(vi03)
+        mulax.xyzw acc,vf20,vf27x     nop
+        madday.xyzw acc,vf21,vf27y    nop
+        maddaz.xyzw acc,vf22,vf27z    nop
+        maddw.xyzw vf31,vf23,vf27w    sq.xyzw vf30,2(vi03)
+        nop                 jr vi15
+        nop                 sq.xyzw vf31,3(vi03)
+end_native_partition silhouette_compose_matrix
+.global silhouette_program_end
+silhouette_program_end:

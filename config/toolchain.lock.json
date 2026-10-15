@@ -1,0 +1,53 @@
+{
+  "tools": {
+    "ee-gcc2.95.3-136": {
+      "url": "https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.95.3-136.tar.gz",
+      "filename": "ee-gcc2.95.3-136.tar.gz",
+      "sha256": "3b6ae6897229ad005aaf1b0afaa1f3cb46e74b4c21a42e01130c07c0c598067f",
+      "upstream": "https://github.com/decompme/compilers",
+      "version": "compilers"
+    },
+    "ee-gcc2.95.3-114": {
+      "url": "https://github.com/decompme/compilers/releases/download/compilers/ee-gcc2.95.3-114.tar.gz",
+      "filename": "ee-gcc2.95.3-114.tar.gz",
+      "sha256": "dbc2c8c764631788d4cbb4c848c3cb0002fded0f4a95bae39e6d8b794391a6cb",
+      "upstream": "https://github.com/decompme/compilers",
+      "version": "compilers"
+    },
+    "slytools": {
+      "url": "https://github.com/VelocityRa/SlyTools/releases/download/v1.2/slytools-v1.2-x64.zip",
+      "filename": "slytools-v1.2-x64.zip",
+      "sha256": "f24134e65d07345d62858fc08f9fa81638dacb419eb6748ce1cff7f491ad28a1",
+      "upstream": "https://github.com/VelocityRa/SlyTools",
+      "version": "v1.2"
+    },
+    "ghidra-emotionengine": {
+      "url": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded/releases/download/v2.1.38/ghidra_12.1.4_PUBLIC_20261004_ghidra-emotionengine-reloaded.zip",
+      "filename": "ghidra_12.1.4_PUBLIC_20261004_ghidra-emotionengine-reloaded.zip",
+      "sha256": "e389ff3e921d9f7d4db2ece9906f808545ce4ff519d9e25a019b72ea509f240b",
+      "upstream": "https://github.com/chaoticgd/ghidra-emotionengine-reloaded",
+      "version": "v2.1.38"
+    },
+    "m2c": {
+      "url": "https://api.github.com/repos/matt-kempster/m2c/zipball/708d2d2cb2698f091a92492b328f73b24209f72d",
+      "filename": "m2c.zip",
+      "commit": "708d2d2cb2698f091a92492b328f73b24209f72d",
+      "upstream": "https://github.com/matt-kempster/m2c",
+      "sha256": "e0a7b5042a10567fc21e968fc59656508e0a6b1221354606eefe8e0bd45ed5c5"
+    },
+    "slytools-source": {
+      "url": "https://api.github.com/repos/VelocityRa/SlyTools/zipball/63987211721825868615c55d6217ab62f27b9440",
+      "filename": "slytools-source.zip",
+      "commit": "63987211721825868615c55d6217ab62f27b9440",
+      "upstream": "https://github.com/VelocityRa/SlyTools",
+      "sha256": "93db600da0c6f00ef85666f3d4f384e515597c66696c20bcc62fa988ee0fd5c7"
+    },
+    "jdk": {
+      "url": "https://github.com/adoptium/temurin21-binaries/releases/download/jdk-21.0.12.1%2B1/OpenJDK21U-jdk_x64_windows_hotspot_21.0.12.1_1.zip",
+      "filename": "OpenJDK21U-jdk_x64_windows_hotspot_21.0.12.1_1.zip",
+      "sha256": "f9d6e191ab098c0d416e7d588a24420a8621cd2f4720dab2459b8b7b2d2d8b4e",
+      "version": "21.0.12+101.0.LTS",
+      "upstream": "https://adoptium.net/"
+    }
+  }
+}

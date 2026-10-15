@@ -1,0 +1,9 @@
+; Complete147-qword upload: two MPG headers and292 actual instructionpairs.
+; Exactly2352bytes; no DMA rounding tail, preserved zero neighbors unclaimed.
+.global silhouette_upload_begin
+.global silhouette_upload_end
+silhouette_upload_begin:
+mpg 0,*
+.include "silhouette_program.vsm"
+.endmpg
+silhouette_upload_end:

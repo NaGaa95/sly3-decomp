@@ -1,0 +1,11 @@
+; Whole original239-qword transfer:2 MPG headers,475pairs,2 consumed VIFNOPs.
+; Dynamic EE-generated REFS16 is input-only withsourcecredit0.
+.global particle_upload_begin
+.global particle_upload_end
+particle_upload_begin:
+mpg 0,*
+.include "particle_program.vsm"
+.endmpg
+vifnop
+vifnop
+particle_upload_end:

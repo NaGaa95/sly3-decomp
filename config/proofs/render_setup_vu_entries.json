@@ -1,0 +1,43 @@
+{
+  "status": "PASS_COMPLETE408_REAL_A2_VIFS_TWO_ORIGINAL_UPLOADED_VU_ENTRY_LABELS",
+  "EE_source_path": "src/hand/func_00260020.c",
+  "VU_program_source_progress_counted": false,
+  "scoped_VU_absolute_bindings": {
+    "VU_RenderSetup_entry_C0": "0x000000C0",
+    "VU_RenderSetup_entry_100": "0x00000100"
+  },
+  "original_main_sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338",
+  "upload_scope": {
+    "begin": 2888736,
+    "bytes": 2256,
+    "sha256": "b950b0611dfcbe2d6bfcf36545caa572696fbdbe2c6ba06b1feefd35ca39f71f",
+    "packets": [
+      {
+        "command_address": 2888740,
+        "destination": 0,
+        "instructions": 256,
+        "payload_sha256": "a7b70893c7167c1ee331586a9a01b4f3c86135940196de50c85980b213ba1f51"
+      },
+      {
+        "command_address": 2890796,
+        "destination": 2048,
+        "instructions": 24,
+        "payload_sha256": "0dacdbdedefba0874fee65841afb0532af5671f10d11afa030d1371a6ed45c5e"
+      }
+    ],
+    "entries": [
+      {
+        "symbol": "VU_RenderSetup_entry_C0",
+        "address": 192,
+        "size": 64,
+        "sha256": "a549556f5e74ba4741e89459e2d861193966c85e717a7525ea19b819511f5118"
+      },
+      {
+        "symbol": "VU_RenderSetup_entry_100",
+        "address": 256,
+        "size": 64,
+        "sha256": "3b82a4e923efde31f416179955362257d0bbcae090de6ca05c87d92a4173e201"
+      }
+    ]
+  }
+}

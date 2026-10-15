@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "source_language": "readable-native-VSM-VIF",
+  "EE_C_CPP_source_count_delta": 0,
+  "original_sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338",
+  "original_unique_VU_code_bytes": 50032,
+  "original_program_count": 9,
+  "original_nonallocated_zero_shadow_count": 29,
+  "historical_original_compiler_identity_confirmed": false,
+  "full_game_source_relink_complete": false,
+  "portable_provenance_sha256": "2199c34122dcb130521cbc1690a2a3f996cd9f59f1c4886055a88ed4354a1ea7",
+  "components": [
+    {
+      "family_file_name_hash": "188059931",
+      "whole_program_code_bytes": 2240,
+      "whole_upload_bytes": 2256,
+      "VIF_protocol_bytes": 16,
+      "original_EE_upload_address": 2888736,
+      "program_sha256": "2691a079a57499b9c415e4f640cf6efcadd5dddc41e4dcb4b6c86eb5266b9d75",
+      "upload_sha256": "b950b0611dfcbe2d6bfcf36545caa572696fbdbe2c6ba06b1feefd35ca39f71f",
+      "source": "src/vu/renderer_program.vsm",
+      "upload_source": "src/vu/renderer_upload.vif",
+      "routines": [
+        {
+          "name": "render_template_27",
+          "VU_byte_begin": 0,
+          "code_bytes": 48
+        },
+        {
+          "name": "render_template_30",
+          "VU_byte_begin": 48,
+          "code_bytes": 48
+        },
+        {
+          "name": "render_template_34",
+          "VU_byte_begin": 96,
+          "code_bytes": 48
+        },
+        {
+          "name": "render_template_37",
+          "VU_byte_begin": 144,
+          "code_bytes": 48
+        },
+        {
+          "name": "render_frame_unmasked",
+          "VU_byte_begin": 192,
+          "code_bytes": 64
+        },
+        {
+          "name": "render_frame_masked",
+          "VU_byte_begin": 256,
+          "code_bytes": 64
+        },
+        {
+          "name": "render_vertex_batches",
+          "VU_byte_begin": 320,
+          "code_bytes": 1296
+        },
+        {
+          "name": "render_quad_packet",
+          "VU_byte_begin": 1616,
+          "code_bytes": 624
+        }
+      ]
+    }
+  ]
+}

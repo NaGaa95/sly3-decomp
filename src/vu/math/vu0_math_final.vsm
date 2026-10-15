@@ -1,0 +1,130 @@
+; Sly3 USA VU0 math microprogram, family11753275. Readable private source.
+; VU byte entries are local to this program. The CPU calls them through VCALLMS
+; and exchanges full vector registers; none of these kernels reads VU memory.
+.ifdef VU_NATIVE_STANDALONE
+.vu
+.align 4
+.endif
+
+.macro begin_kernel name
+.global \name
+.ifdef VU_NATIVE_STANDALONE
+.type \name,@function
+.endif
+\name:
+.endm
+.macro finish_kernel name
+        nop[e]              nop
+        nop                 nop
+.ifdef VU_NATIVE_STANDALONE
+.size \name,.-\name
+.endif
+.endm
+
+; The startup DMA chain invokes byte0 after loading all code. This completes
+; the microprogram immediately and includes the actual following delay slot.
+begin_kernel vu0_idle_entry
+finish_kernel vu0_idle_entry
+
+; Inputs: matrix columnsVF31/30/29.xyz, translationVF28.xyz, vertexVF24,
+; scaleVF27.x, offset/color-carrierVF23, running minVF26/maxVF25.xyz.
+; OutputVF22.xyz is affine position; VF21.xyz is position*scale+offset.
+; W is transported as raw bits fromVF24/VF23, and boundsW is untouched.
+begin_kernel vu0_transform_and_expand_bounds
+        mulax.xyz acc,vf31,vf24x    nop
+        madday.xyz acc,vf30,vf24y   nop
+        maddaz.xyz acc,vf29,vf24z   nop
+        maddw.xyz vf22,vf28,vf00w   nop
+        mulx.xyz vf21,vf22,vf27x    nop
+        add.xyz vf21,vf21,vf23      nop
+        mini.xyz vf26,vf26,vf21     move.w vf22,vf24
+        max.xyz vf25,vf25,vf21      move.w vf21,vf23
+finish_kernel vu0_transform_and_expand_bounds
+
+; Transform a full homogeneous vector by matrix columnsVF1..4. This is an
+; in-place four-term MULA/MADDA/MADD sequence, with original native rounding.
+.macro transform_homogeneous vector
+        mulax.xyzw acc,vf01,\vector\()x    nop
+        madday.xyzw acc,vf02,\vector\()y   nop
+        maddaz.xyzw acc,vf03,\vector\()z   nop
+        maddw.xyzw \vector,vf04,\vector\()w nop
+.endm
+begin_kernel vu0_multiply_four_vectors
+transform_homogeneous vf05
+transform_homogeneous vf06
+transform_homogeneous vf07
+transform_homogeneous vf08
+finish_kernel vu0_multiply_four_vectors
+
+; Paired CPU array-transform entries useVF5 andVF6 in alternation. Their
+; homogeneous inputW is the constantVF00.w=1, independent of carried vertexW.
+.macro transform_affine name, vector
+begin_kernel \name
+        mulax.xyzw acc,vf01,\vector\()x    nop
+        madday.xyzw acc,vf02,\vector\()y   nop
+        maddaz.xyzw acc,vf03,\vector\()z   nop
+        maddw.xyzw \vector,vf04,vf00w      nop
+finish_kernel \name
+.endm
+transform_affine vu0_transform_affine_vf5,vf05
+transform_affine vu0_transform_affine_vf6,vf06
+
+; VF5.xyz is a normal, VF1..3.xyz the CPU-prepared inverse/transpose columns,
+; andVF4.xyz a position on its plane. Transform the normal, compute its length
+; and dot with the supplied position, then scale everyVF5 lane by1/sqrt(length2).
+; Thus outputXYZ is a normalized transformed normal andW its normalized dot.
+; RSQRT, WAITQ, flag effects and all issue slots are the original native ones.
+begin_kernel vu0_transform_and_normalize_plane
+        mulax.xyz acc,vf01,vf05x    nop
+        madday.xyz acc,vf02,vf05y   nop
+        maddz.xyz vf05,vf03,vf05z   nop
+        addw.x vf08,vf00,vf00w     nop
+        mul.xyz vf06,vf05,vf05     nop
+        mul.xyz vf07,vf05,vf04     nop
+        adday.x acc,vf06,vf06y     nop
+        maddz.x vf06,vf08,vf06z    nop
+        mulax.w acc,vf00,vf07x     rsqrt q,vf00w,vf06x
+        madday.w acc,vf00,vf07y    nop
+        maddz.w vf05,vf00,vf07z    nop
+        mulq.xyzw vf05,vf05,q      waitq
+finish_kernel vu0_transform_and_normalize_plane
+
+; Architectural register contract for this shipped entry is retained literally:
+; deltaVF18=VF15-VF13; radiusVF24.x=VF14.x*VF17.x; inner-widthVF22.x=VF14.x*400.
+; Three coefficient columnsVF10..12, each carrying all four plane lanes,
+; and a broadcastVF16.x define the native MAC sign test.
+; Only when that exact FMAND/branch and subsequentFSAND/branch accept, write
+; VF19.x=min((radius2-distance2)/(radius2-(radius-innerWidth)2),1).
+; OtherwiseVF19 stays zero. No known direct EE VCALLMS1C0 site is fabricated.
+; MSUB destinationVF00 is architecturally constant but STILL writes MAC/status;
+; its destination, four-cycle flag-read timing, DIV even on a later rejected path,
+; Q completion and both real branch-delay slots are deliberately explicit.
+begin_kernel vu0_clipped_radial_ratio
+        mul[i].x vf24,vf14,vf17     loi 400
+        muli.x vf22,vf14,i         nop
+        sub.xyzw vf18,vf15,vf13    move.w vf20,vf00
+        addw.xyz vf20,vf00,vf00w   nop
+        mul.x vf23,vf24,vf24       nop
+        sub.x vf22,vf24,vf22       nop
+        mul.xyz vf21,vf18,vf18     nop
+        mulax.xyzw acc,vf10,vf18x  nop
+        madday.xyzw acc,vf11,vf18y nop
+        maddaz.xyzw acc,vf12,vf18z nop
+        msubx.xyzw vf00,vf20,vf16x nop
+        adday.x acc,vf21,vf21y     nop
+        maddz.x vf21,vf20,vf21z    nop
+        mul.x vf22,vf22,vf22       iaddiu vi02,vi00,0xf0
+        nop                       fmand vi01,vi02
+        sub.xyzw vf19,vf00,vf00    nop
+        sub.x vf24,vf23,vf21       ibne vi01,vi02,radial_done
+        sub.x vf25,vf23,vf22       nop
+        nop                       nop
+        nop                       nop
+        nop                       fsand vi01,2
+        nop                       div q,vf24x,vf25x
+        nop                       ibne vi01,vi00,radial_done
+        nop                       nop
+        addq.x vf19,vf00,q         waitq
+        miniw.x vf19,vf19,vf00w    nop
+radial_done:
+finish_kernel vu0_clipped_radial_ratio

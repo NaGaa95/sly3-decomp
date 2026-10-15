@@ -1,0 +1,90 @@
+{
+  "schema": "sly3-iop-mcman-two-leaf-v1",
+  "module": "disc/irx/module_02.irx",
+  "module_sha256": "1fe154231adbd587f9fb6ec1c7d4201c87c76ffcc91c8615474f24d26c05c7b0",
+  "profiles": [
+    "module02-scalar-no-delayed-branch-114",
+    "module02-scalar-no-delayed-branch-136"
+  ],
+  "compiler_flags": [
+    "-Os",
+    "-G0",
+    "-mips1",
+    "-mgp32",
+    "-mfp32",
+    "-mlong32",
+    "-mcpu=r3000",
+    "-malign-functions=2",
+    "-fno-delayed-branch"
+  ],
+  "assembler_flags": [
+    "-G0",
+    "-mips1",
+    "-mabi=32",
+    "-O0"
+  ],
+  "functions": [
+    {
+      "name": "McGetModuleInfo",
+      "source": "iop/src/mcman/mc_module_info.c",
+      "start": 760,
+      "size": 16,
+      "ordinal": 42,
+      "binding": 73076,
+      "external": "mcman_module_id",
+      "load_opcode": 9,
+      "source_sha256": "ba0c0d7a4020dceeac52fe8a81ec11144599143fa8a60e29643beaec21497585",
+      "module": "disc/irx/module_02.irx",
+      "module_sha256": "1fe154231adbd587f9fb6ec1c7d4201c87c76ffcc91c8615474f24d26c05c7b0",
+      "module_offset": 760,
+      "object_offset": 0,
+      "export_ordinal": 42,
+      "original_code_sha256": "6ec45b606196632a5a6ad30dcb0abd32625b2121dbd6e456186304fd6169daad",
+      "signature": "struct irx_id *McGetModuleInfo(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "output_registers": [
+        "v0: unchanged32-bit identification-record pointer"
+      ],
+      "FPR_inputs": [],
+      "stack_bytes": 0
+    },
+    {
+      "name": "McGetSemaphoreId",
+      "source": "iop/src/mcman/mc_semaphore.c",
+      "start": 64336,
+      "size": 16,
+      "ordinal": 53,
+      "binding": 151912,
+      "external": "mcman_semaphore_id",
+      "load_opcode": 35,
+      "source_sha256": "12dcd001bee82ff05800ced1cbc86975fcacedf0188556814b3a4cd198e88f6e",
+      "module": "disc/irx/module_02.irx",
+      "module_sha256": "1fe154231adbd587f9fb6ec1c7d4201c87c76ffcc91c8615474f24d26c05c7b0",
+      "module_offset": 64336,
+      "object_offset": 0,
+      "export_ordinal": 53,
+      "original_code_sha256": "705e0984fadc53442edfe878a40eaaab3e89dbe8bae9891743986f0a7ab0848c",
+      "signature": "int McGetSemaphoreId(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "output_registers": [
+        "v0: unchanged signed32-bit semaphore ID"
+      ],
+      "FPR_inputs": [],
+      "stack_bytes": 0
+    }
+  ],
+  "source_proposal": "build/reports/iop_extra_mcman_two_leaf_private_proposal.json",
+  "source_proposal_sha256": "ed829cc05f9f853561a3cd8d478ff3c003edc73b843628fe294afc8fc07e06fe",
+  "original_contract": "build/reports/iop_extra_original_contract.json",
+  "original_contract_sha256": "b59d6e4bf104ca620d46a9ff43703c8e03eeadac02ab5a30b778ec094eadefd4",
+  "parent_independent_review": "build/reports/root_iop_extra_independent_review.json",
+  "parent_independent_review_sha256": "f086dd6c3a499b529d0405be664e645180b888cb30f4d45f252023769ad0a29b",
+  "parent_guard_review": "build/reports/root_iop_extra_independent_guard_validation.json",
+  "parent_guard_review_sha256": "e1f74b16c58615ee00d90cec3b33f8c627c68b8794b3b09b9efa794bd8136631",
+  "license": "iop/src/mcman/LICENSE.PS2SDK",
+  "license_sha256": "1ecee940922a6886baccddd9133d17f1ce677d32c5a954fac8e48224f2766fe8"
+}

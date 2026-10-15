@@ -1,0 +1,37 @@
+{
+  "schema": "sly3-iop-libsd-partial-v1",
+  "module": "disc/irx/module_04.irx",
+  "module_sha256": "d26a8dcd121ff4ded9c819b72864ea7f4e723932cc2eab1b4f0f1c93faad43ef",
+  "profiles": [
+    "legacy-scalar-leaf-114",
+    "legacy-scalar-leaf-136"
+  ],
+  "functions": [
+    {
+      "name": "sceSdGetSpu2IntrHandlerArgument",
+      "source": "iop/src/libsd/spu2_argument.c",
+      "source_sha256": "0b72b271ed4ec7933d6c13ded161d0515a53df5c5122f4db7957c0bc5295dec9",
+      "module_offset": 16120,
+      "object_offset": 0,
+      "size": 16,
+      "export_ordinal": 29,
+      "signature": "void *sceSdGetSpu2IntrHandlerArgument(void)",
+      "input_registers": [
+        "ra: return address"
+      ],
+      "output_registers": [
+        "v0: unchanged32-bit opaque pointer"
+      ],
+      "original_code_sha256": "9148799bbaeeee5f462c95d8ea4b8493772e674b44df4340eff1b05ae91eafe5"
+    }
+  ],
+  "symbol_bindings": {
+    "Spu2IntrData": 21268
+  },
+  "original_boundary_proof": "build/iop_research/libsd_getter_proposal.json",
+  "original_boundary_proof_sha256": "15371df2852e3b4cf307941a2f721bd3069deef00e5a95a4e3a57faa3d6af305",
+  "primary_header": "iop/references/ps2sdk/libsd/libsd-common.h",
+  "primary_header_sha256": "7fbc2ac53a4f6663ecc487ac65ba38c3f2179ceae466dfa7b7f5511e5a127171",
+  "independent_original_review": "build/iop_research/libsd_getter_independent_review.json",
+  "independent_original_review_sha256": "bdffcf20c0767b7adbc6a84e9cf9b97e7171dd416c20c87ac4df4699cefb6f9c"
+}

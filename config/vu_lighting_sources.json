@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "kind": "mandatory-fourth-complete-readable-native-VU-lighting-component",
+  "original_sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338",
+  "original_unique_program_count": 9,
+  "original_unique_program_code_bytes": 50032,
+  "original_nonallocated_zero_shadow_count": 29,
+  "component": {
+    "family": "752237851",
+    "processor": "VU1",
+    "source_language": "readable-native-VSM-VIF",
+    "source": "src/vu/lighting/lighting_program_v2.vsm",
+    "upload_source": "src/vu/lighting/lighting_upload_v2.vif",
+    "source_sha256": "167ec6d32d634ff113c37c88e707d684a6e125334713ea70b0630d1c5b7abcd8",
+    "upload_source_sha256": "82a8fa1991690db7ce6c7fb6c319d68d6960cd676ee9d578371b1898c95dc0f6",
+    "program_sha256": "e464ebda93326068bb753a26839b888196eb35fd27698d6463778fc085ab4739",
+    "upload_sha256": "1ba060cbe09341fa8c6be9ed41a791f44172a5e28818ee33deedb6a08b793b6d",
+    "original_EE_upload_begin": 2901504,
+    "original_EE_payload_begin": 2901512,
+    "original_EE_upload_end": 2903008,
+    "VU_code_bytes": 1488,
+    "entire_static_upload_bytes": 1504,
+    "VIF_static_control_bytes": 16,
+    "DMA_static_control_bytes": 0,
+    "routines": [
+      {
+        "name": "light_idle",
+        "VU_byte_begin": 0,
+        "code_bytes": 16
+      },
+      {
+        "name": "light_batch",
+        "VU_byte_begin": 16,
+        "code_bytes": 1344
+      },
+      {
+        "name": "light_inverse_normal_matrix",
+        "VU_byte_begin": 1360,
+        "code_bytes": 128
+      }
+    ],
+    "initialized_data_bytes": 0,
+    "BSS_bytes": 0,
+    "allocated_code_relocations": 0,
+    "nonallocated_overlay_R32_fields": 2,
+    "dynamic_REFS_control_bytes_evidence_only": 16,
+    "dynamic_REFS_source_credit": 0,
+    "runtime_binding_evidence": {
+      "path": "docs/evidence/vu_lighting_runtime_parent_review.json",
+      "sha256": "8d1518fe41dbb40b2d497fa930902360dd4864860a72b62eea56e77b9660de42"
+    },
+    "runtime_scope": "Only loaded v_alarm_light/CID2F node0/surface1type1 with captured lifetime/visibility/queue/DMA/nullclient predicates; no universal class or live hardware claim.",
+    "actual_MSCAL_instruction_immediate": 2,
+    "corresponding_VU_byte_entry": 16,
+    "same_local_byteaddress_in_other_programs_is_not_family_alias": true,
+    "full_game_source_metadata_relink_complete": false
+  },
+  "evidence_hashes": {
+    "docs/evidence/vu_lighting_frame_submission_review.json": "4937d41bbc42de43d8119555e16a44a8bbcb43b58b002e625d694f7bed187f9d",
+    "docs/evidence/vu_lighting_runtime_binding_review.json": "32c8c69102837da0ecb9cdaff60dc7342453a00de06a18478f43fd5968a51c3e",
+    "docs/evidence/vu_lighting_runtime_parent_review.json": "8d1518fe41dbb40b2d497fa930902360dd4864860a72b62eea56e77b9660de42",
+    "docs/evidence/vu_lighting_runtime_refs_control.vif": "6d8c0c4ad36a7bb2fe592197004f2112af8f2f270019877e5d23610ca022f008"
+  },
+  "portable_provenance_sha256": "2199c34122dcb130521cbc1690a2a3f996cd9f59f1c4886055a88ed4354a1ea7",
+  "dynamic_REFS_evidence_source": "docs/evidence/vu_lighting_runtime_refs_control.vif",
+  "dynamic_REFS_evidence_source_sha256": "6d8c0c4ad36a7bb2fe592197004f2112af8f2f270019877e5d23610ca022f008",
+  "dynamic_REFS_source_credit": 0,
+  "existing_three_program_owners_mandatory": true,
+  "initialized_data_bytes": 0,
+  "BSS_bytes": 0,
+  "historical_original_compiler_identity_confirmed": false,
+  "full_source_relink_complete": false,
+  "EE_C_CPP_functions_delta": 0,
+  "EE_C_CPP_code_bytes_delta": 0,
+  "old_Bentley_type0_entry_and_part8_population_withdrawn": true,
+  "live_runtime_execution_observed": false,
+  "universal_class_or_asset_domain_claim": false
+}

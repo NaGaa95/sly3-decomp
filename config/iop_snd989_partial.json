@@ -1,0 +1,100 @@
+{
+  "schema": "sly3-partial-iop-snd989-initializer-v1",
+  "module": "disc/irx/module_07.irx",
+  "module_sha256": "9fa190ec393a60cbed1c04764c922e7b41d04ff0f41436cfae4cf198e1cdb6a5",
+  "functions": [
+    {
+      "name": "snd_initialize_slots",
+      "source": "iop/src/snd989/snd_initialize_slots.c",
+      "source_sha256": "19b0c6518b356f6074686b33b2edb14ff9c1a3456cfdcbc900ff828be784ff47",
+      "module_offset": 58512,
+      "object_offset": 0,
+      "size": 76,
+      "original_code_sha256": "99d5d01266d8c382875f0a0fdcce7268ac33c9e5b4a0fabd335b6da0962cea41",
+      "export_ordinal": null,
+      "signature": "void snd_initialize_slots(SndInitialSlotView *slot, int count, u32 kind, u32 stride)",
+      "input_registers": [
+        "a0: slot pointer",
+        "a1: signed32 count",
+        "a2: kind word",
+        "a3: stride size",
+        "ra: return address"
+      ],
+      "stack_frame_bytes": 0,
+      "consumed_incoming_stack_or_fpr": [],
+      "initialized_data_bytes": 0,
+      "bss_bytes": 0,
+      "real_source_relocations": 0,
+      "source_identifier_kind": "RECONSTRUCTED_C_NAME_NO_ORIGINAL_ELF_FUNCTION_SYMBOL"
+    }
+  ],
+  "data_objects": [],
+  "native_profiles": {
+    "114": [
+      "-Os",
+      "-G0",
+      "-mips1",
+      "-mgp32",
+      "-mfp32",
+      "-mlong32",
+      "-mcpu=r3000",
+      "-malign-functions=2",
+      "-fno-schedule-insns",
+      "-fno-schedule-insns2",
+      "-malign-loops=2"
+    ],
+    "136": [
+      "-Os",
+      "-G0",
+      "-mips1",
+      "-mgp32",
+      "-mfp32",
+      "-mlong32",
+      "-mcpu=r3000",
+      "-malign-functions=2",
+      "-fno-schedule-insns",
+      "-fno-schedule-insns2",
+      "-malign-loops=2"
+    ]
+  },
+  "assembler_flags": [
+    "-G0",
+    "-mips1",
+    "-mabi=32",
+    "-O0"
+  ],
+  "source_name_original": false,
+  "source_functions": 1,
+  "source_code_bytes": 76,
+  "source_initialized_data_bytes": 0,
+  "source_BSS_bytes": 0,
+  "real_native_source_relocations": 0,
+  "original_pool_storage_source_count": 0,
+  "historical_compiler_identity": "UNCONFIRMED",
+  "general_framed_O32_ABI": "UNCONFIRMED",
+  "full_custom989snd_IRX_link_contract": "UNCONFIRMED",
+  "pinned_dependencies": {
+    "tools/common.py": "ea66a7d1022952de2eb5c1d0bbe8551fb0ef6a472d6153b1dde05d0bec42c2ce",
+    "tools/iop_build.py": "aed6391f61893537776e417c0e6efd06171f941c4200fd94079f3a537fd89ea7",
+    "build/iop_extra/original_contract.py": "b04df5ed4dc80abb8740dead0b81e16bb7664c3d82ba14f9afdbccfe051b5457",
+    "build/iop_extra/native_trials.py": "ca8a04c8af05a287c2f0095aae84d0a8a8b1da220d950c2f248299b940cd7ec4",
+    "build/iop_research/interfaces.json": "5cc886e6bf8d83420f2aa0842f78e1fc48fe48423cd3d8dac2fa93e886dca25b",
+    "build/iop_extra/module07_allocator/initializer/proposal/verify.py": "08bd9de241959874fb32eee1b84b71cdfc2643c5ac672b034096e4e03b7d70ad",
+    "build/iop_extra/module07_allocator/initializer/original_contract.json": "ef1d2692cf15aef15a771c8c759c7c26926d88c924ce4c480921b2d59197f28c",
+    "build/iop_extra/module07_allocator/initializer/proposal/semantic_receipt.json": "a0245858fbcf818bc726214eff3eccbf098904f8da256d88a6fb8598b4094302",
+    "build/iop_extra/module07_allocator/initializer/proposal/guard_receipt.json": "ab05d055650d5a14405127474fb52a8834be3c0e6c2d9ba7edaedf0fd4f83f09",
+    "build/reports/iop_extra_module07_initializer_proposal.json": "8e934db176434857ec7b9d9a958edf03b088a8a2404e45523aa6aee73daa42e4",
+    "build/reports/iop_extra_module07_frozen_frontier.json": "5bb365142c63251e9ed297c969cf57019e916e72abbe862377f6f7b021cc0064",
+    "build/reports/game_early_tenth_numeric_metadata_classification.json": "154bb4fea66ddcd6c72c68080c2bf373b27f5f417bb60227905ecade80c94827",
+    "build/reports/vu_matches_early_foreach228_independent_review.json": "78caa6625b269ec266d04e962128e0ca19c4b422853dbe149acdd0018fab6fd2",
+    "iop/src/snd989/snd_initialize_slots.c": "19b0c6518b356f6074686b33b2edb14ff9c1a3456cfdcbc900ff828be784ff47",
+    "build/reports/hand_iop_module07_initializer_independent_review.json": "cbcf1896af51be5aae543fb0b920605026587f17cd88c8e3f2bc094d304c6a17",
+    "build/leaf_matches/peer_reviews/module07_initializer/native_original_review.json": "f468aec181c211211a5633c9f1ca47d4dfcf3ecf6355205251e702b24626b077",
+    "build/leaf_matches/peer_reviews/module07_initializer/pure_guard_receipt.json": "ab05d055650d5a14405127474fb52a8834be3c0e6c2d9ba7edaedf0fd4f83f09"
+  },
+  "independent_peer_prerequisite": {
+    "path": "build/reports/hand_iop_module07_initializer_independent_review.json",
+    "sha256": "cbcf1896af51be5aae543fb0b920605026587f17cd88c8e3f2bc094d304c6a17",
+    "status": "PASS_INDEPENDENT_IOP_MODULE07_INITIALIZER76_BOTH_FRESH_NATIVE_FULL_ORIGINAL_AND_GUARDS"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "src/hand/func_00260020.c": {
+    "address_space": "VU microinstruction byte addresses",
+    "proof": {
+      "path": "config/proofs/render_setup_vu_entries.json",
+      "sha256": "ec9c1bb7333f115f9190bac26b1dced751bd11ffc4444457bd82f7a492436cd4"
+    },
+    "symbols": {
+      "VU_RenderSetup_entry_C0": "0x000000C0",
+      "VU_RenderSetup_entry_100": "0x00000100"
+    }
+  }
+}

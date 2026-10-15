@@ -1,0 +1,11 @@
+; Complete original503-qword transfer: four eight-byte MPG headers and1001pairs.
+; The final two VIFNOPs are genuinely consumed by DMA rounding. DynamicREFS0.
+.global volume_upload_begin
+.global volume_upload_end
+volume_upload_begin:
+mpg 0,*
+.include "volume_program.vsm"
+.endmpg
+vifnop
+vifnop
+volume_upload_end:

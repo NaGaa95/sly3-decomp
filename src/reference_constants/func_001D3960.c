@@ -1,0 +1,35 @@
+// Reference algorithm: src/hand/func_001AF4D8.c; Sly 3 identity is canonical.
+// Sly 3 literal/layout changes are verified against every compiled instruction.
+// SLY3_CFLAGS: -Os -G0
+struct F { int pad[5]; void (*pfn)(struct F *); int pad2[2]; };
+struct E { int n; struct F *af; int x8; int xC; int x10; int x14; int x18; };
+struct S { int pad[14]; int x24; struct E a[16]; int x1E8; int x1EC; };
+void func_001D2ED0(struct S *s, int n);
+void *func_00292034(void *p, int c, unsigned int n);
+int func_001D4658(struct S *s);
+void func_001D3960(struct S *s, int n, struct F *af, int x8, int x18)
+{
+    struct E *e;
+    int i;
+    if (!x8) {
+        if (s->x24 > 0)
+            x8 = s->a[s->x24 - 1].x8;
+    }
+    e = &s->a[s->x24++];
+    func_00292034(e, 0, sizeof(*e));
+    e->af = af;
+    e->n = n;
+    e->x8 = x8;
+    e->x18 = x18;
+    e->xC = 0;
+    func_001D2ED0(s, 1);
+    for (i = 0; i < e->n; i++) {
+        struct F *f = &e->af[i];
+        if (f->pfn)
+            f->pfn(f);
+    }
+    if (func_001D4658(s)) {
+        s->x1EC = s->x24;
+        s->x24--;
+    }
+}

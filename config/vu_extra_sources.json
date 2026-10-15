@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "kind": "two-mandatory-extra-readable-native-VU-components",
+  "original_sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338",
+  "components": [
+    {
+      "family": "11753275",
+      "processor": "VU0",
+      "source": "src/vu/math/vu0_math_final.vsm",
+      "chain_source": "src/vu/math/vu0_startup_chain_final.vif",
+      "source_sha256": "29513609e12388e94b4951061a247b134b66e3c215c376ee827a4e31de1e0c2d",
+      "chain_source_sha256": "dd8a2e067f39e89dff2eae57ff5ab9cb5ba7a1b8f4ed0e03413112d12a422a76",
+      "code_bytes": 672,
+      "chain_bytes": 720,
+      "DMA_protocol_bytes": 16,
+      "VIF_protocol_bytes": 32,
+      "EE_chain_begin": 2884176,
+      "EE_payload_begin": 2884192,
+      "program_sha256": "7ad0c6fd345f5875ab3b9a659b2f1e2a4c2301a0daebafdfa44220490854aa68",
+      "chain_sha256": "22cebde7e1c67ca1785f3d47180a09eb3bbec0623c7b88b156f27a53a544456b",
+      "evidence": "docs/evidence/vu_math_input_review.json",
+      "evidence_sha256": "df52ad1ddfd6febf1ac48f561151bfbffc498ffd64b7f745c73b9bc0a6eac9a1"
+    },
+    {
+      "family": "376118779",
+      "processor": "VU1",
+      "source": "src/vu/bootstrap/vu1_idle.vsm",
+      "chain_source": "src/vu/bootstrap/vu1_startup_chain.vif",
+      "source_sha256": "2fd1fc9fc9abbda89e707281d24595dbcd378e395249f269c896a1af8847a61b",
+      "chain_source_sha256": "8c378db3a03ddb978eed1b145b13606bb2d4c8568ac8f5b3dcd3a98d7b0b302d",
+      "code_bytes": 16,
+      "chain_bytes": 64,
+      "DMA_protocol_bytes": 16,
+      "VIF_protocol_bytes": 32,
+      "EE_chain_begin": 2901440,
+      "EE_payload_begin": 2901456,
+      "program_sha256": "5eb74410b7d656eb5a22ee9e60eef38c6896a22506b84d1277503a6641acc0df",
+      "chain_sha256": "4e50d8fff11f14510fc77ab8b5a2109cbb4d8ee97263101c38cb2d2cbe8ed3de",
+      "evidence": "docs/evidence/vu_bootstrap_input_review.json",
+      "evidence_sha256": "b8d72b7d95db755d06e61756cb3b7a4d01e4074a0b5815c33899b4f6317bdca4"
+    }
+  ],
+  "renderer_original_registry_unchanged_and_mandatory": true,
+  "initialized_data_bytes": 0,
+  "BSS_bytes": 0,
+  "historical_original_compiler_identity_confirmed": false,
+  "full_source_relink_complete": false,
+  "unconfirmed_dynamic_VU0_entry_1C0": true
+}

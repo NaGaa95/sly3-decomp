@@ -1,0 +1,35 @@
+{
+  "game": "Sly 3: Honor Among Thieves",
+  "region": "USA",
+  "serial": "SCUS_974.64",
+  "sha1": "5941b7877e6bf5dfb8acb2d04a3c5059367f385b",
+  "sha256": "ce817858306efd711f08bbc14f393455280119cb00b894bdc9fb1fa47bcbb338",
+  "elf_size": 3200076,
+  "entry": 1048584,
+  "gp": 3616240,
+  "text": {
+    "name_offset": 27,
+    "type": 1,
+    "flags": 6,
+    "addr": 1048576,
+    "offset": 4096,
+    "size": 1835600,
+    "link": 0,
+    "info": 0,
+    "alignment": 64,
+    "entsize": 0,
+    "index": 1,
+    "name": ".text"
+  },
+  "compiler_status": "GCC 2.95.3-136 empirically supported for tested engine and SDK cohorts; per-file profiles in docs/COMPILER.md",
+  "compiler": "tools/third_party/ee-gcc2.95.3-136",
+  "assembler": "tools/third_party/ee-gcc2.95.3-114/lib/gcc-lib/ee/2.95.3/ps2eeas.exe",
+  "cflags": [
+    "-O2",
+    "-G0",
+    "-ffast-math",
+    "-mvu0-use-vf0-vf31",
+    "-fno-exceptions"
+  ],
+  "ghidra_language": "r5900:LE:32:default"
+}

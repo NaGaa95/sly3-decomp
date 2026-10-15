@@ -1,0 +1,512 @@
+; Sly3 USA family376117691: age-driven billboard, streak and rotated quads.
+; Identifiers describe native algorithms; original compiler symbols are gone.
+; VF/VI,ACC/Q/P/MAC/CLIP and issue slots are actual hardware semantics.
+; Source partitions are review scaffolding; original function count is unknown.
+; Input material/node/UPK/frame lifetimes remain separately qualified.
+.ifdef VU_NATIVE_STANDALONE
+.vu
+.align 3
+.endif
+.equ packet_ranges_qword,0
+.equ alpha_curve_qword,1
+.equ size_curve_qword,2
+.equ frame_curve_qword,3
+.equ blend_curve_qword,4
+.equ packet_shape_time_qword,5
+.equ packet_modes_qword,6
+.equ packet_local_matrix_qword,7
+.equ packet_frame_table_qword,15
+.equ packet_output_qword,48
+.equ inherited_color_offset_qwords,47
+
+.macro begin_native_partition name
+.local \name
+.ifdef VU_NATIVE_STANDALONE
+.type \name,@function
+.endif
+\name:
+.endm
+.macro end_native_partition name
+.ifdef VU_NATIVE_STANDALONE
+.size \name,.-\name
+.endif
+.endm
+
+; All three entries begin with the same real TOP latch, scene screen scale/
+; offset, packet shape and ring-frame mask. VI5 becomes the original8000 EOP.
+.macro begin_batch
+        nop                         xtop vi04
+        maxw.xyzw vf01,vf00,vf00w    iaddiu vi05,vi00,0x4000
+        nop                         lq.xyzw vf02,0(vi00)
+        nop                         lq.xyzw vf03,1(vi00)
+        nop                         lq.xyzw vf04,packet_shape_time_qword(vi04)
+        nop                         iadd vi05,vi05,vi05
+        nop                         ilw.z vi09,packet_modes_qword(vi04)
+        nop                         ilw.x vi08,packet_modes_qword(vi04)
+        nop                         iaddi vi09,vi09,-1
+.endm
+; The packet's fixed12 curve scale and signed VI start/end are not host
+; pointers. Retain native EOP+count patch into the preceding GIF header.
+.macro begin_ranges
+        nop                         lq.w vf05,packet_ranges_qword(vi04)
+        nop                         ilw.x vi06,packet_ranges_qword(vi04)
+        nop                         ilw.y vi07,packet_ranges_qword(vi04)
+        nop                         iadd vi06,vi06,vi04
+        itof12.w vf05,vf05           iadd vi07,vi07,vi04
+        nop                         ilw.z vi02,packet_ranges_qword(vi04)
+        nop                         iadd vi01,vi02,vi05
+        nop                         isw.x vi01,-1(vi06)
+.endm
+; Consume current Q, retain actual ADC carrier and screen offset arithmetic.
+.macro screen_vertex result,scale,position,adc
+        mula.xyz acc,\scale,\position mfir.w \result,\adc
+        madd.xyz \result,vf01,vf03    nop
+.endm
+; Two-component rotation keeps the original separate ACC rounding and XY
+; aspect scaling. The scratch VF31 is part of the actual lower-level ABI.
+.macro rotate_corner corner
+        mulax.xy acc,vf21,\corner\()x nop
+        maddy.xy vf31,vf22,\corner\()y nop
+        mul.xy \corner,vf31,vf04       nop
+.endm
+; Native loops are entered without a fabricated empty-range guard. The caller
+; must provide the original ten-qword records/count domain. E delay is real.
+.macro finish_batch loop
+        nop                         iaddiu vi06,vi06,10
+        nop                         nop
+        nop                         ibne vi06,vi07,\loop
+        nop                         nop
+        nop                         iaddiu vi01,vi04,packet_output_qword
+        nop                         xgkick vi01
+        nop[e]                      nop
+        nop                         nop
+.endm
+
+.global particle_program_begin
+particle_program_begin:
+
+; Evaluate age polynomials for alpha/blend/frame/size, transform a center and
+; expand four clip-space billboard corners. Optional colors interpolate the
+; two actual inherited records; frame selection wraps by packet frame mask.
+begin_native_partition particle_billboard_batch
+        begin_batch
+        nop                         lq.xyzw vf05,alpha_curve_qword(vi04)
+        nop                         lq.xyzw vf06,size_curve_qword(vi04)
+        nop                         lq.xyzw vf07,frame_curve_qword(vi04)
+        nop                         lq.xyzw vf08,blend_curve_qword(vi04)
+        begin_ranges
+        mulw.xyz vf05,vf05,vf05w     lq.xyzw vf13,3(vi00)
+        addx.w vf10,vf00,vf00x       lq.xyzw vf14,4(vi00)
+        add.xyz vf11,vf00,vf00       lq.xyzw vf15,5(vi00)
+        nop                         lq.xyzw vf16,6(vi00)
+        nop                         lq.xyzw vf28,packet_local_matrix_qword(vi04)
+        nop                         lq.xyzw vf29,8(vi04)
+        nop                         lq.xyzw vf30,9(vi04)
+        nop                         lq.xyzw vf31,10(vi04)
+billboard_next:
+        nop                         lq.xyzw vf17,3(vi06)
+        sub.w vf19,vf04,vf17         move.x vf18,vf01
+        addw.yz vf18,vf00,vf19w      nop
+        mul.z vf18,vf18,vf18         ilw.x vi11,2(vi06)
+        mul.xyz vf27,vf05,vf18       move.yz vf12,vf01
+        mul.xyz vf26,vf08,vf18       move.x vf12,vf00
+        mul.xyz vf25,vf07,vf18       nop
+        mul.xyz vf24,vf06,vf18       sq.xyzw vf01,4(vi06)
+        addax.y acc,vf27,vf27x       nop
+        maddz.y vf09,vf01,vf27z      sq.xyzw vf12,1(vi06)
+        addax.z acc,vf26,vf26x       move.xy vf12,vf00
+        maddy.z vf09,vf01,vf26y      nop
+        mulax.w acc,vf01,vf25x       nop
+        madday.w acc,vf01,vf25y      nop
+        maddz.w vf09,vf01,vf25z      sq.xyzw vf12,6(vi06)
+        miniw.yz vf09,vf09,vf00w     move.x vf12,vf01
+        adday.x acc,vf24,vf24y       nop
+        maddz.x vf09,vf01,vf24z      nop
+        maxx.yz vf09,vf09,vf00x      sq.xyzw vf12,8(vi06)
+        ftoi0.w vf09,vf09            nop
+        mulax.xyzw acc,vf28,vf17x    ilw.y vi01,2(vi06)
+        madday.xyzw acc,vf29,vf17y   nop
+        maddaz.xyzw acc,vf30,vf17z   nop
+        maddw.xyzw vf10,vf31,vf00w   mtir vi02,vf09w
+        nop                         iadd vi10,vi01,vi02
+        nop                         iand vi10,vi10,vi09
+        mulax.xyzw acc,vf13,vf10x    isub vi01,vi04,vi11
+        madday.xyzw acc,vf14,vf10y   iaddiu vi02,vi00,1
+        maddaz.xyzw acc,vf15,vf10z   lq.xyzw vf21,inherited_color_offset_qwords(vi01)
+        maddw.xyzw vf10,vf16,vf10w   iand vi02,vi02,vi08
+        nop                         nop
+        nop                         ibeq vi02,vi00,billboard_color_ready
+        nop                         nop
+        itof0.xyzw vf21,vf21         nop
+        sub.z vf19,vf01,vf09         isubiu vi01,vi01,1
+        mulaz.xyzw acc,vf21,vf19z    nop
+        nop                         lq.xyzw vf21,inherited_color_offset_qwords(vi01)
+        itof0.xyzw vf21,vf21         nop
+        maddz.xyzw vf21,vf21,vf09z   nop
+        ftoi0.xyzw vf21,vf21         nop
+billboard_color_ready:
+        mulx.xy vf11,vf04,vf09x     div q,vf00w,vf10w
+        itof0.w vf21,vf21            nop
+        add.x vf25,vf10,vf11         nop
+        sub.xyz vf24,vf10,vf11       nop
+        sub.yz vf25,vf10,vf11        nop
+        muly.w vf21,vf21,vf09y       iadd vi10,vi10,vi04
+        sub.x vf26,vf10,vf11         nop
+        add.xyz vf27,vf10,vf11       nop
+        add.yz vf26,vf10,vf11        lq.xyzw vf20,packet_frame_table_qword(vi10)
+        clipw.xyz vf24,vf10w         nop
+        clipw.xyz vf25,vf10w         nop
+        clipw.xyz vf26,vf10w         nop
+        clipw.xyz vf27,vf10w         nop
+        ftoi0.w vf21,vf21            sq.xyzw vf20,0(vi06)
+        mulq.xyz vf23,vf02,q         waitq
+        nop                         nop
+        nop                         nop
+        nop                         fcand vi01,0xffffff
+        nop                         nop
+        nop                         ibeq vi01,vi00,billboard_visible
+        nop                         sq.xyzw vf21,2(vi06)
+        nop                         isw.w vi05,3(vi06)
+        nop                         isw.w vi05,5(vi06)
+        nop                         isw.w vi05,7(vi06)
+        nop                         b billboard_advance
+        nop                         isw.w vi05,9(vi06)
+billboard_visible:
+        screen_vertex vf24,vf23,vf24,vi05
+        screen_vertex vf25,vf23,vf25,vi05
+        screen_vertex vf26,vf23,vf26,vi00
+        screen_vertex vf27,vf23,vf27,vi00
+        nop                         sq.xyzw vf24,3(vi06)
+        nop                         sq.xyzw vf25,5(vi06)
+        nop                         sq.xyzw vf26,7(vi06)
+        nop                         sq.xyzw vf27,9(vi06)
+billboard_advance:
+        finish_batch billboard_next
+end_native_partition particle_billboard_batch
+
+; A local direction becomes a view-facing streak. The original squared/MAC
+; test optionally bounds it with EFU reciprocal length; its cross-product
+; side vector is normalized independently. Each end retains a separate Q.
+begin_native_partition particle_streak_batch
+        begin_batch
+        nop                         lq.xyzw vf05,alpha_curve_qword(vi04)
+        nop                         lq.xyzw vf06,size_curve_qword(vi04)
+        nop                         lq.xyzw vf07,frame_curve_qword(vi04)
+        nop                         lq.xyzw vf08,blend_curve_qword(vi04)
+        begin_ranges
+        mulw.xyz vf05,vf05,vf05w     lq.xyzw vf10,3(vi00)
+        nop                         lq.xyzw vf11,4(vi00)
+        nop                         lq.xyzw vf12,5(vi00)
+        nop                         lq.xyzw vf13,6(vi00)
+        addw.x vf14,vf00,vf10w       lq.xyzw vf25,packet_local_matrix_qword(vi04)
+        addw.y vf14,vf00,vf11w       lq.xyzw vf26,8(vi04)
+        addw.z vf14,vf00,vf12w       lq.xyzw vf27,9(vi04)
+        nop                         lq.xyzw vf28,10(vi04)
+streak_next:
+        nop                         lq.xyzw vf20,3(vi06)
+        sub.w vf31,vf04,vf20         move.x vf30,vf01
+        addw.yz vf30,vf00,vf31w      lq.xyzw vf18,1(vi06)
+        mul.z vf30,vf30,vf30         ilw.x vi11,2(vi06)
+        mul.xyz vf21,vf05,vf30       nop
+        mul.xyz vf22,vf08,vf30       nop
+        mul.xyz vf23,vf07,vf30       nop
+        mul.xyz vf24,vf06,vf30       nop
+        addax.y acc,vf21,vf21x       nop
+        maddz.y vf17,vf01,vf21z      nop
+        addax.z acc,vf22,vf22x       nop
+        maddy.z vf17,vf01,vf22y      nop
+        mulax.w acc,vf01,vf23x       nop
+        madday.w acc,vf01,vf23y      nop
+        maddz.w vf17,vf01,vf23z      nop
+        miniw.yz vf17,vf17,vf00w     nop
+        adday.x acc,vf24,vf24y       nop
+        maddz.x vf17,vf01,vf24z      nop
+        maxx.yz vf17,vf17,vf00x      nop
+        ftoi0.w vf17,vf17            lq.w vf30,packet_modes_qword(vi04)
+        mulax.xyzw acc,vf25,vf18x    nop
+        madday.xyzw acc,vf26,vf18y   nop
+        maddz.xyzw vf18,vf27,vf18z   ilw.y vi01,2(vi06)
+        mulax.xyzw acc,vf25,vf20x    mtir vi02,vf17w
+        mulw.z vf30,vf04,vf30w       nop
+        madday.xyzw acc,vf26,vf20y   nop
+        maddaz.xyzw acc,vf27,vf20z   nop
+        maddw.xyzw vf20,vf28,vf00w   iadd vi10,vi01,vi02
+        mulz.xyz vf18,vf18,vf30z     iand vi10,vi10,vi09
+        mul.xyz vf30,vf18,vf18       iadd vi10,vi10,vi04
+        opmula.xyz acc,vf18,vf14     nop
+        opmsub.xyz vf19,vf14,vf18    nop
+        adday.x acc,vf30,vf30y       lq.xyzw vf15,packet_frame_table_qword(vi10)
+        maddz.x vf30,vf01,vf30z      nop
+        add.x vf31,vf17,vf17         nop
+        mul.x vf30,vf30,vf30         nop
+        mul.x vf31,vf31,vf31         sq.xyzw vf15,0(vi06)
+        sub.x vf00,vf30,vf31         nop
+        nop                         nop
+        nop                         nop
+        nop                         iaddiu vi01,vi00,0x80
+        nop                         fmand vi01,vi01
+        nop                         nop
+        nop                         ibeq vi01,vi00,streak_direction_ready
+        nop                         nop
+        nop                         erleng p,vf18
+        nop                         waitp
+        nop                         mfp.x vf30,p
+        mulx.xyz vf18,vf18,vf30x     nop
+        add.x vf30,vf17,vf17         nop
+        mulx.xyz vf18,vf18,vf30x     nop
+        opmula.xyz acc,vf18,vf14     nop
+        opmsub.xyz vf19,vf14,vf18    nop
+streak_direction_ready:
+        nop                         erleng p,vf19
+        nop                         isub vi01,vi04,vi11
+        nop                         iaddiu vi02,vi00,1
+        nop                         lq.xyzw vf16,inherited_color_offset_qwords(vi01)
+        nop                         iand vi02,vi02,vi08
+        nop                         nop
+        nop                         ibeq vi02,vi00,streak_color_ready
+        nop                         nop
+        itof0.xyzw vf16,vf16         nop
+        sub.z vf31,vf01,vf17         isubiu vi01,vi01,1
+        mulaz.xyzw acc,vf16,vf31z    nop
+        nop                         lq.xyzw vf16,inherited_color_offset_qwords(vi01)
+        itof0.xyzw vf16,vf16         nop
+        maddz.xyzw vf16,vf16,vf17z   nop
+        ftoi0.xyzw vf16,vf16         nop
+streak_color_ready:
+        itof0.w vf16,vf16            nop
+        muly.w vf16,vf16,vf17y       nop
+        ftoi0.w vf16,vf16            nop
+        nop                         sq.xyzw vf16,2(vi06)
+        nop                         waitp
+        add.xyz vf18,vf20,vf18       mfp.x vf30,p
+        mulx.xyz vf19,vf19,vf30x     nop
+        mulx.xyz vf19,vf19,vf17x     nop
+        add.xyz vf23,vf20,vf19       move.yz vf29,vf01
+        sub.xyz vf24,vf20,vf19       move.x vf29,vf00
+        add.xyz vf21,vf18,vf19       nop
+        sub.xyz vf22,vf18,vf19       nop
+        mulax.xyzw acc,vf10,vf23x    nop
+        madday.xyzw acc,vf11,vf23y   sq.xyzw vf01,4(vi06)
+        maddaz.xyzw acc,vf12,vf23z   sq.xyzw vf29,1(vi06)
+        maddw.xyzw vf23,vf13,vf00w   move.xy vf29,vf00
+        mulax.xyzw acc,vf10,vf21x    nop
+        madday.xyzw acc,vf11,vf21y   nop
+        maddaz.xyzw acc,vf12,vf21z   nop
+        maddw.xyzw vf21,vf13,vf00w   div q,vf00w,vf23w
+        mulax.xyzw acc,vf10,vf24x    sq.xyzw vf29,6(vi06)
+        madday.xyzw acc,vf11,vf24y   move.x vf29,vf01
+        maddaz.xyzw acc,vf12,vf24z   nop
+        maddw.xyzw vf24,vf13,vf00w   nop
+        mulax.xyzw acc,vf10,vf22x    nop
+        madday.xyzw acc,vf11,vf22y   nop
+        mulq.xyz vf30,vf02,q         div q,vf00w,vf21w
+        maddaz.xyzw acc,vf12,vf22z   sq.xyzw vf29,8(vi06)
+        maddw.xyzw vf22,vf13,vf00w   nop
+        clipw.xyz vf23,vf23w         nop
+        clipw.xyz vf24,vf24w         nop
+        screen_vertex vf23,vf30,vf23,vi00
+        mulq.xyz vf31,vf02,q         nop
+        screen_vertex vf24,vf30,vf24,vi00
+        clipw.xyz vf21,vf21w         nop
+        clipw.xyz vf22,vf22w         nop
+        screen_vertex vf21,vf31,vf21,vi05
+        mula.xyz acc,vf31,vf22       mfir.w vf22,vi05
+        madd.xyz vf22,vf01,vf03      fcand vi01,0xffffff
+        nop                         nop
+        nop                         ibeq vi01,vi00,streak_visible
+        nop                         sq.xyzw vf21,3(vi06)
+        nop                         isw.w vi05,5(vi06)
+        nop                         isw.w vi05,7(vi06)
+        nop                         b streak_advance
+        nop                         isw.w vi05,9(vi06)
+streak_visible:
+        nop                         sq.xyzw vf22,5(vi06)
+        nop                         sq.xyzw vf23,7(vi06)
+        nop                         sq.xyzw vf24,9(vi06)
+streak_advance:
+        finish_batch streak_next
+end_native_partition particle_streak_batch
+
+; Native ESIN and ESQRT preserve the original angle/quadrant construction.
+; Age curves choose frame, blend, alpha and size. The four XY corner carriers
+; are rotated, aspect-scaled and added to one homogeneous clip-space center.
+begin_native_partition particle_rotated_batch
+        begin_batch
+        add.xyz vf11,vf00,vf00       lq.xyzw vf05,alpha_curve_qword(vi04)
+        add.xyz vf12,vf00,vf00       lq.xyzw vf06,size_curve_qword(vi04)
+        add.xyz vf13,vf00,vf00       lq.xyzw vf07,frame_curve_qword(vi04)
+        add.xyz vf14,vf00,vf00       lq.xyzw vf08,blend_curve_qword(vi04)
+        begin_ranges
+        addw.x vf09,vf00,vf00w       lq.xyzw vf16,3(vi00)
+        addx.w vf10,vf00,vf00x       lq.xyzw vf17,4(vi00)
+        mulw.xyz vf05,vf05,vf05w     lq.xyzw vf18,5(vi00)
+        nop                         lq.xyzw vf19,6(vi00)
+rotated_next:
+        nop                         lq.w vf21,2(vi06)
+        addw.x vf00,vf00,vf21w       nop
+        nop                         nop
+        nop                         nop
+        nop                         iaddiu vi01,vi00,0x80
+        nop                         fmand vi01,vi01
+        nop[i]                      loi 1.5707963705062866
+        nop                         ibeq vi01,vi00,rotated_angle_nonnegative
+        nop                         nop
+        addi.w vf22,vf21,i           nop
+        nop                         nop
+        nop                         nop
+        nop                         iaddiu vi01,vi00,0x10
+        nop                         fmand vi01,vi01
+        nop                         nop
+        nop                         ibeq vi01,vi00,rotated_default_corners
+        nop                         nop
+        subw.xy vf12,vf00,vf00w      nop
+        addw.x vf14,vf00,vf00w       nop
+        subw.y vf14,vf00,vf00w       nop
+        subw.x vf11,vf00,vf00w       nop
+        addw.y vf11,vf00,vf00w       nop
+        addw.xy vf13,vf00,vf00w      move.w vf21,vf22
+        nop                         b rotated_corners_ready
+        nop                         nop
+rotated_angle_nonnegative:
+        subi.w vf22,vf21,i           nop
+        nop                         nop
+        nop                         nop
+        nop                         iaddiu vi01,vi00,0x10
+        nop                         fmand vi01,vi01
+        nop                         nop
+        nop                         ibne vi01,vi00,rotated_default_corners
+        nop                         nop
+        subw.xy vf13,vf00,vf00w      nop
+        addw.x vf11,vf00,vf00w       nop
+        subw.y vf11,vf00,vf00w       nop
+        subw.x vf14,vf00,vf00w       nop
+        addw.y vf14,vf00,vf00w       nop
+        addw.xy vf12,vf00,vf00w      move.w vf21,vf22
+        nop                         b rotated_corners_ready
+        nop                         nop
+rotated_default_corners:
+        subw.xy vf11,vf00,vf00w      nop
+        addw.x vf12,vf00,vf00w       nop
+        subw.y vf12,vf00,vf00w       nop
+        subw.x vf13,vf00,vf00w       nop
+        addw.y vf13,vf00,vf00w       nop
+        addw.xy vf14,vf00,vf00w      nop
+rotated_corners_ready:
+        nop                         esin p,vf21w
+        nop                         lq.xyzw vf20,3(vi06)
+        nop                         ilw.x vi11,2(vi06)
+        sub.w vf09,vf04,vf20         nop
+        addw.yz vf09,vf00,vf09w      nop
+        mul.z vf09,vf09,vf09         nop
+        mul.xyz vf21,vf07,vf09       nop
+        adday.x acc,vf21,vf21y       nop
+        maddz.x vf21,vf01,vf21z      nop
+        ftoi0.x vf21,vf21            ilw.y vi01,2(vi06)
+        nop                         mtir vi02,vf21x
+        nop                         iadd vi10,vi01,vi02
+        nop                         iand vi10,vi10,vi09
+        nop                         isub vi01,vi04,vi11
+        nop                         iaddiu vi02,vi00,1
+        nop                         lq.xyzw vf24,inherited_color_offset_qwords(vi01)
+        nop                         iand vi02,vi02,vi08
+        nop                         nop
+        nop                         ibeq vi02,vi00,rotated_color_ready
+        nop                         nop
+        itof0.xyzw vf24,vf24         nop
+        mul.xyz vf21,vf08,vf09       nop
+        adday.x acc,vf21,vf21y       nop
+        maddz.x vf21,vf01,vf21z      nop
+        miniw.x vf21,vf21,vf00w      nop
+        maxx.x vf21,vf21,vf00x       nop
+        sub.x vf22,vf01,vf21         isubiu vi01,vi01,1
+        mulax.xyzw acc,vf24,vf22x    nop
+        nop                         lq.xyzw vf24,inherited_color_offset_qwords(vi01)
+        itof0.xyzw vf24,vf24         nop
+        maddx.xyzw vf24,vf24,vf21x   nop
+        ftoi0.xyzw vf24,vf24         nop
+rotated_color_ready:
+        mul.xyz vf21,vf05,vf09       iadd vi10,vi10,vi04
+        adday.x acc,vf21,vf21y       lq.xyzw vf23,packet_frame_table_qword(vi10)
+        maddz.x vf21,vf01,vf21z      sq.xyzw vf23,0(vi06)
+        miniw.x vf21,vf21,vf00w      nop
+        maxx.x vf21,vf21,vf00x       nop
+        itof0.w vf24,vf24            nop
+        mulx.w vf24,vf24,vf21x       nop
+        ftoi0.w vf24,vf24            move.xyz vf10,vf20
+        nop                         lq.xyzw vf22,packet_local_matrix_qword(vi04)
+        mulax.xyzw acc,vf22,vf10x    lq.xyzw vf22,8(vi04)
+        madday.xyzw acc,vf22,vf10y   lq.xyzw vf22,9(vi04)
+        maddaz.xyzw acc,vf22,vf10z   lq.xyzw vf22,10(vi04)
+        maddw.xyzw vf10,vf22,vf10w   nop
+        mul.xyz vf21,vf06,vf09       sq.xyzw vf24,2(vi06)
+        adday.x acc,vf21,vf21y       nop
+        maddz.x vf21,vf01,vf21z      nop
+        mulx.xy vf11,vf11,vf21x      nop
+        mulx.xy vf12,vf12,vf21x      nop
+        mulx.xy vf13,vf13,vf21x      nop
+        mulx.xy vf14,vf14,vf21x      nop
+        nop                         waitp
+        nop                         mfp.y vf21,p
+        nop                         move.y vf22,vf21
+        mul.y vf22,vf22,vf22         nop
+        sub.y vf22,vf01,vf22         nop
+        suby.x vf22,vf00,vf21y       esqrt p,vf22y
+        mulax.xyzw acc,vf16,vf10x    nop
+        madday.xyzw acc,vf17,vf10y   nop
+        maddaz.xyzw acc,vf18,vf10z   nop
+        maddw.xyzw vf25,vf19,vf10w   nop
+        nop                         waitp
+        nop                         mfp.y vf22,p
+        addy.x vf21,vf00,vf22y       nop
+        rotate_corner vf11
+        rotate_corner vf12
+        rotate_corner vf13
+        rotate_corner vf14
+        nop                         div q,vf00w,vf25w
+        add.xyz vf27,vf25,vf11       nop
+        add.xyz vf28,vf25,vf12       nop
+        add.xyz vf29,vf25,vf13       nop
+        add.xyz vf30,vf25,vf14       nop
+        clipw.xyz vf27,vf25w         nop
+        clipw.xyz vf28,vf25w         nop
+        clipw.xyz vf29,vf25w         nop
+        clipw.xyz vf30,vf25w         nop
+        nop                         nop
+        nop                         nop
+        nop                         nop
+        nop                         fcand vi01,0xffffff
+        nop                         nop
+        nop                         ibeq vi01,vi00,rotated_visible
+        nop                         nop
+        nop                         isw.w vi05,3(vi06)
+        nop                         isw.w vi05,5(vi06)
+        nop                         isw.w vi05,7(vi06)
+        nop                         isw.w vi05,9(vi06)
+        nop                         b rotated_advance
+        nop                         nop
+rotated_visible:
+        mulq.xyz vf26,vf02,q         waitq
+        screen_vertex vf15,vf26,vf27,vi05
+        nop                         sq.xyzw vf15,3(vi06)
+        screen_vertex vf15,vf26,vf28,vi05
+        nop                         sq.xyzw vf15,5(vi06)
+        screen_vertex vf15,vf26,vf29,vi00
+        nop                         sq.xyzw vf15,7(vi06)
+        screen_vertex vf15,vf26,vf30,vi00
+        nop                         sq.xyzw vf15,9(vi06)
+        add.x vf21,vf00,vf00         nop
+        addw.yz vf21,vf00,vf00w      nop
+        nop                         sq.xyzw vf21,1(vi06)
+        addw.xyz vf21,vf00,vf00w     nop
+        nop                         sq.xyzw vf21,4(vi06)
+        add.xy vf21,vf00,vf00        nop
+        addw.z vf21,vf00,vf00w       nop
+        nop                         sq.xyzw vf21,6(vi06)
+        add.y vf21,vf00,vf00         nop
+        addw.xz vf21,vf00,vf00w      nop
+        nop                         sq.xyzw vf21,8(vi06)
+rotated_advance:
+        finish_batch rotated_next
+end_native_partition particle_rotated_batch
+.global particle_program_end
+particle_program_end:

@@ -1,0 +1,11 @@
+; Whole actual94-qword transfer from the original REF94 upload.
+; MPG owns186 paired instructions; two trailingVIFNOPs are consumed DMA padding.
+.global light_upload_begin
+.global light_upload_end
+light_upload_begin:
+mpg 0,*
+.include "lighting_program_v2.vsm"
+.endmpg
+vifnop
+vifnop
+light_upload_end:

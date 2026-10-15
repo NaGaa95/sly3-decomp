@@ -1,0 +1,42 @@
+// SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
+// The original global array contains two objects of size 0x11C0.
+extern "C" char D_004D2AD8[], D_004D2BB0[], D_004D2C88[];
+extern "C" char D_004D2D60[], D_004D2E38[], D_004D2F10[];
+extern "C" int D_0036AE78, D_0036AE7C, D_0036AE80;
+extern "C" int D_0036AE84, D_0036AE88, D_0036AE8C;
+extern "C" void *func_0011E100(void *p, int cb, int c, int cbAlign);
+extern "C" char D_0036E6D0[];
+struct ARRAY_OBJECT { unsigned char unknown[0x11C0]; };
+extern "C" ARRAY_OBJECT D_0036E740[2];
+extern "C" void *func_002B8948(void * arg0);
+extern "C" void *func_002BE4A8(void * arg0);
+
+extern "C" void func_001A9F88(int initialize, int priority)
+{
+    if (priority == 65535)
+    {
+        if (initialize)
+        {
+            func_002B8948(D_0036E6D0);
+            ARRAY_OBJECT *p = D_0036E740;
+            int i = 2;
+            while (i--)
+            {
+                func_002BE4A8(p);
+                ++p;
+            }
+            if (++D_0036AE78 == 1)
+                func_0011E100(D_004D2AD8, 16, 2048, 16);
+            if (++D_0036AE7C == 1)
+                func_0011E100(D_004D2BB0, 24, 1024, 16);
+            if (++D_0036AE80 == 1)
+                func_0011E100(D_004D2C88, 24, 256, 16);
+            if (++D_0036AE84 == 1)
+                func_0011E100(D_004D2D60, 28, 1024, 16);
+            if (++D_0036AE88 == 1)
+                func_0011E100(D_004D2E38, 12, 256, 16);
+            if (++D_0036AE8C == 1)
+                func_0011E100(D_004D2F10, 24, 256, 16);
+        }
+    }
+}

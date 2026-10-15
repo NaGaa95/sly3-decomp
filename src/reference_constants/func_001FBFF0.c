@@ -1,0 +1,10 @@
+// Reference algorithm: src/hand/func_001CB410.c; Sly 3 identity is canonical.
+// Sly 3 literal/layout changes are verified against every compiled instruction.
+// SLY3_CFLAGS: -Os -G0
+struct T { int n; int *ap; int c; int i; };
+struct S { char pad[0xD0]; struct T *pt; };
+int func_001FB600(struct S *p, int i);
+int func_001FBFF0(struct S *p, int x)
+{
+    /*B*/int i; int n; if (p->pt->n != 1) return 0; n = 0; for (i = p->pt->i; i < p->pt->c; i++) { if (x == p->pt->ap[i]) { n = func_001FB600(p, i); break; } } return n;/*E*/
+}

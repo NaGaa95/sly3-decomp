@@ -1,0 +1,42 @@
+name: Sly 3 - Honor Among Thieves (USA)
+sha1: 5941b7877e6bf5dfb8acb2d04a3c5059367f385b
+options:
+  basename: SCUS_974.64
+  target_path: disc/SCUS_974.64
+  base_path: ..
+  platform: ps2
+  compiler: EEGCC
+  asm_path: asm/splat
+  src_path: src
+  build_path: build/splat
+  ld_script_path: build/splat/SCUS_974.64.ld
+  asset_path: build/splat/assets
+  generate_asm_macros_files: False
+  disasm_unknown: True
+  rodata_string_guesser_level: 2
+  migrate_rodata_to_functions: True
+  create_undefined_funcs_auto: True
+  undefined_funcs_auto_path: build/splat/undefined_funcs_auto.txt
+  create_undefined_syms_auto: True
+  undefined_syms_auto_path: build/splat/undefined_syms_auto.txt
+  symbol_addrs_path: config/symbol_addrs.txt
+  section_order: [".text", ".vutext", ".rodata", ".data", ".bss"]
+  subalign: 8
+  gp_value: 0x372DF0
+segments:
+  - [0, databin, elf_header]
+  - name: main
+    type: code
+    start: 0x1000
+    vram: 0x100000
+    bss_size: 0x1681C8
+    subsegments:
+      - [0x1000, asm, text]
+      - [0x1C1250, textbin, vutext]
+      - [0x1CD800, rodata]
+      - [0x22DA80, data]
+      - {start: 0x26BDD8, type: bss, vram: 0x36ADD8}
+  - [0x26BDD8, databin, load_padding]
+  - [0x26C000, databin, irx]
+  - [0x2DFFC0, databin, vu_overlays_and_metadata]
+  - [0x30D44C]

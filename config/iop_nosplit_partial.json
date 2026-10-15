@@ -1,0 +1,132 @@
+{
+  "schema": "sly3-iop-nosplit-v1",
+  "profiles": [
+    "legacy-scalar-nosplit-114",
+    "legacy-scalar-nosplit-136"
+  ],
+  "proposal": "build/iop_research/publication/final_source_proof.json",
+  "proposal_sha256": "9f3cce19e4ca45f685b696542b0065184de974e191d3c255215101cb099594ad",
+  "functions": [
+    {
+      "name": "sceSdGetTransIntrHandlerArgument",
+      "module": "disc/irx/module_04.irx",
+      "module_sha256": "d26a8dcd121ff4ded9c819b72864ea7f4e723932cc2eab1b4f0f1c93faad43ef",
+      "source": "iop/src/libsd/spu2_transfer_argument.c",
+      "source_sha256": "1263abdf953381b74b4ce85fb11841cfd193c10b491ba9e21ded5127c1669c95",
+      "module_offset": 16024,
+      "object_offset": 0,
+      "size": 24,
+      "export_ordinal": 28,
+      "original_code_sha256": "eb784be92a3c944cee4c181dc6be2282155eb355abed27a5bf430695d28e4211",
+      "symbol_bindings": {
+        "TransferRecords": 21288
+      },
+      "GP_inputs": [
+        "A0 signed32 channel index"
+      ],
+      "GP_outputs": [
+        "V0 unchanged32-bit opaque argument pointer"
+      ],
+      "FPR_inputs": [],
+      "stack_bytes": 0
+    },
+    {
+      "name": "sio2_mtap_change_slot_set",
+      "module": "disc/irx/module_00.irx",
+      "module_sha256": "565ec77e75f174cfddf72c41ccc446c1c07a3d5fb0a2ccfefad337cb8a7d0728",
+      "source": "iop/src/sio2man/sio2_mtap_change_slot_set.c",
+      "source_sha256": "57bb04955de11f6ef7a0100477751b6e3a2e599147d8148510b38469c344e154",
+      "module_offset": 2836,
+      "object_offset": 0,
+      "size": 16,
+      "export_ordinal": 53,
+      "original_code_sha256": "5ffcab13b3bba939e303d29139f80379939fecb43c843a4451e796b786698191",
+      "symbol_bindings": {
+        "Data": 4060
+      },
+      "GP_inputs": [
+        "A0 typed32-bit function pointer"
+      ],
+      "GP_outputs": [
+        "void"
+      ],
+      "FPR_inputs": [],
+      "stack_bytes": 0
+    },
+    {
+      "name": "sio2_mtap_get_slot_max_set",
+      "module": "disc/irx/module_00.irx",
+      "module_sha256": "565ec77e75f174cfddf72c41ccc446c1c07a3d5fb0a2ccfefad337cb8a7d0728",
+      "source": "iop/src/sio2man/sio2_mtap_get_slot_max_set.c",
+      "source_sha256": "484eb19b6c948d0d348889785baff0ba3ac35984cfa4590fba8550a5cbca2c22",
+      "module_offset": 2852,
+      "object_offset": 0,
+      "size": 16,
+      "export_ordinal": 54,
+      "original_code_sha256": "58aff44ad3169cf06880896df7465311b27882da0841af392a3f8bfbcde3e133",
+      "symbol_bindings": {
+        "Data": 4064
+      },
+      "GP_inputs": [
+        "A0 typed32-bit function pointer"
+      ],
+      "GP_outputs": [
+        "void"
+      ],
+      "FPR_inputs": [],
+      "stack_bytes": 0
+    },
+    {
+      "name": "sio2_mtap_get_slot_max2_set",
+      "module": "disc/irx/module_00.irx",
+      "module_sha256": "565ec77e75f174cfddf72c41ccc446c1c07a3d5fb0a2ccfefad337cb8a7d0728",
+      "source": "iop/src/sio2man/sio2_mtap_get_slot_max2_set.c",
+      "source_sha256": "c02162fda7c089bcaa2697cfa12418b934a1f11960006fe5171d499169ffbba5",
+      "module_offset": 2868,
+      "object_offset": 0,
+      "size": 16,
+      "export_ordinal": 55,
+      "original_code_sha256": "6e4f3b20b65a02734b2ecf8d5f73d21d0e2cad7f8aa303ff4d33868fdb759724",
+      "symbol_bindings": {
+        "Data": 4068
+      },
+      "GP_inputs": [
+        "A0 typed32-bit function pointer"
+      ],
+      "GP_outputs": [
+        "void"
+      ],
+      "FPR_inputs": [],
+      "stack_bytes": 0
+    },
+    {
+      "name": "sio2_mtap_update_slots_set",
+      "module": "disc/irx/module_00.irx",
+      "module_sha256": "565ec77e75f174cfddf72c41ccc446c1c07a3d5fb0a2ccfefad337cb8a7d0728",
+      "source": "iop/src/sio2man/sio2_mtap_update_slots_set.c",
+      "source_sha256": "219c991e2f5ac1f02b9666070c877ad975be6b8df531c2910379f6bcbc4d155a",
+      "module_offset": 2884,
+      "object_offset": 0,
+      "size": 16,
+      "export_ordinal": 56,
+      "original_code_sha256": "55c05dbcdcb252c28fe606ebd421011bee60e27686298d0ccea5c1812eac4f64",
+      "symbol_bindings": {
+        "Data": 4072
+      },
+      "GP_inputs": [
+        "A0 typed32-bit function pointer"
+      ],
+      "GP_outputs": [
+        "void"
+      ],
+      "FPR_inputs": [],
+      "stack_bytes": 0
+    }
+  ],
+  "independent_original_review": "build/iop_research/scalar_no_split_independent_review.json",
+  "independent_original_review_sha256": "f0e6861062c41ef86deb2ac9cab33802162dbbec81fc0ea6fa493f8ccd993a26",
+  "public_reservation_manifests": [
+    "config/iop_partial.json",
+    "config/iop_libsd_partial.json"
+  ]
+}
