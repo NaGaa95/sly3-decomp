@@ -17,8 +17,7 @@ def parsed(line):
 
 
 def one_delay_instruction(node):
-    # The initial proof deliberately admits only two instructions whose macro
-    # expansion is unambiguous. More forms require their own operand checks.
+    # Admit only instruction/operand forms independently proved as one word.
     if node[0] != "insn":
         return False
     if node[1] == "nop":
@@ -31,6 +30,19 @@ def one_delay_instruction(node):
             return all(0 <= reg(operand) < 32 for operand in operands)
         except (KeyError, ValueError):
             return False
+    if node[1] == "li":
+        operands = [operand.strip() for operand in node[2].split(",")]
+        if len(operands) != 2:
+            return False
+        destination, literal = operands
+        # Match the compiler's numeric GPR and decimal literal spellings only.
+        # Reserved assembler temporary $1, named aliases, hex, expressions and
+        # multi-word macros stay excluded; SN crashes on the $1 LI controls.
+        if not re.fullmatch(r"\$(?:0|[2-9]|[12][0-9]|3[01])", destination):
+            return False
+        if not re.fullmatch(r"(?:0|-?[1-9][0-9]*)", literal):
+            return False
+        return -32768 <= int(literal, 10) <= 32767
     return False
 
 

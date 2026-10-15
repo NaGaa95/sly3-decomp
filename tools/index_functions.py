@@ -24,6 +24,37 @@ def main():
                 if begin <= address < limit and address % 4 == 0:
                     starts[address].add("ghidra")
     names[target_config()["entry"]] = "_start"
+    exclusions = []
+    exclusion_path = ROOT / "config/function_exclusions.csv"
+    if exclusion_path.exists():
+        with exclusion_path.open(newline="") as stream:
+            reader = csv.DictReader(stream)
+            if reader.fieldnames != ["Start", "End", "Reason"]:
+                raise ValueError("Invalid non-function exclusion columns")
+            for row in reader:
+                if None in row or any(value is None for value in row.values()):
+                    raise ValueError("Invalid non-function exclusion row")
+                start, end = int(row["Start"], 16), int(row["End"], 16)
+                if not begin <= start < end <= limit or start % 4 or end % 4 or not row["Reason"].strip():
+                    raise ValueError("Invalid non-function exclusion")
+                exclusions.append((start, end))
+        exclusions.sort()
+        if any(left[1] > right[0] for left, right in zip(exclusions, exclusions[1:])):
+            raise ValueError("Overlapping non-function exclusions")
+        if any(start <= target_config()["entry"] < end for start, end in exclusions):
+            raise ValueError("The executable entry cannot be excluded")
+        matched_path = ROOT / "config/matched.csv"
+        if matched_path.exists():
+            with matched_path.open(newline="") as stream:
+                for row in csv.DictReader(stream):
+                    address = int(row["address"], 0)
+                    end = address + int(row["instructions"]) * 4
+                    if any(max(address, start) < min(end, stop) for start, stop in exclusions):
+                        raise ValueError("Non-function exclusion overlaps maintained source")
+        for address in list(starts):
+            if any(start <= address < end for start, end in exclusions):
+                del starts[address]
+                names.pop(address, None)
     overrides = {}
     override_path = ROOT / "config/function_overrides.csv"
     if override_path.exists():
@@ -32,6 +63,8 @@ def main():
             end = int(row["End"], 16)
             if not begin <= address < end <= limit or address % 4 or end % 4:
                 raise ValueError("Invalid function boundary override")
+            if any(max(address, start) < min(end, stop) for start, stop in exclusions):
+                raise ValueError("Function override overlaps a non-function exclusion")
             overrides[address] = row
             starts[address].add("manual")
             names[address] = row["Name"]
