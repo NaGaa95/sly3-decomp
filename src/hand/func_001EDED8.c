@@ -1,6 +1,5 @@
-// Recovered from the corresponding Sly 2 implementation; verified against Sly 3.
 struct E { float f; int x; };
-int func_001EDD80(struct E *a, int i, float g, void *p, int f);
+#include "threshold_crossing_api.h"
 void func_001EDED8(struct E *a, int *pi1, int *pi2, void *p, float g1, float g2)
 {
     int i1 = *pi1;
