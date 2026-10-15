@@ -213,6 +213,7 @@ func_0010BBC0,0x0010BBC0,33,LINKED_MATCH,src/P2/reflected_0010BBC0.cpp
 func_0010BC48,0x0010BC48,33,LINKED_MATCH,src/P2/reflected_0010BC48.cpp
 func_0010BCD0,0x0010BCD0,33,LINKED_MATCH,src/P2/reflected_0010BCD0.cpp
 func_0010BD58,0x0010BD58,33,LINKED_MATCH,src/P2/reflected_0010BD58.cpp
+func_0010BE88,0x0010BE88,31,LINKED_MATCH,src/P2/reflected_0010BE88.cpp
 func_0010BF08,0x0010BF08,33,LINKED_MATCH,src/P2/reflected_0010BF08.cpp
 func_0010BF90,0x0010BF90,33,LINKED_MATCH,src/P2/reflected_0010BF90.cpp
 func_0010C018,0x0010C018,33,LINKED_MATCH,src/P2/reflected_0010C018.cpp
@@ -2348,7 +2349,12 @@ func_001A1048,0x001A1048,30,LINKED_MATCH,src/game_middle/radial_source_lifecycle
 func_001A11C8,0x001A11C8,27,LINKED_MATCH,src/game_middle/radial_travel_query.cpp
 func_001A1238,0x001A1238,52,LINKED_MATCH,src/game_middle/radial_position_offset.cpp
 func_001A1308,0x001A1308,54,LINKED_MATCH,src/game_middle/radial_position_sample.cpp
+func_001A13E0,0x001A13E0,51,LINKED_MATCH,src/game_middle/linear_source_lifecycle.cpp
+func_001A14B0,0x001A14B0,9,LINKED_MATCH,src/game_middle/linear_source_lifecycle.cpp
+func_001A14D8,0x001A14D8,9,LINKED_MATCH,src/game_middle/linear_source_lifecycle.cpp
+func_001A1500,0x001A1500,27,LINKED_MATCH,src/game_middle/linear_source_lifecycle.cpp
 func_001A1610,0x001A1610,11,LINKED_MATCH,src/reference_constants/func_001A1610.c
+func_001A1640,0x001A1640,60,LINKED_MATCH,src/game_middle/frame_linear_offset.cpp
 func_001A18F0,0x001A18F0,43,LINKED_MATCH,src/hand/func_001A18F0.c
 func_001A1ED0,0x001A1ED0,9,LINKED_MATCH,src/reference_constants/func_001A1ED0.c
 func_001A1EF8,0x001A1EF8,9,LINKED_MATCH,src/reference_constants/func_001A1EF8.c
@@ -3797,6 +3803,7 @@ func_00238AE8,0x00238AE8,23,LINKED_MATCH,src/reference_constants/func_00238AE8.c
 func_00238B48,0x00238B48,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00238C80,0x00238C80,8,LINKED_MATCH,src/auto/func_00238C80.c
 func_00238CA0,0x00238CA0,26,LINKED_MATCH,src/hand/func_00238CA0.c
+func_00238D08,0x00238D08,89,LINKED_MATCH,src/P2/provider_transform.cpp
 func_00238E70,0x00238E70,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00238FA8,0x00238FA8,8,LINKED_MATCH,src/auto/func_00238FA8.c
 func_00238FC8,0x00238FC8,12,LINKED_MATCH,src/hand/func_00238FC8.c
