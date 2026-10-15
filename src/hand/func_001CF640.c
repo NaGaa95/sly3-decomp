@@ -1,14 +1,11 @@
-// Advance the enabled state, refresh its three embedded records, and optionally update the resource.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 M2C_UNK func_001CEF70(void *);
-/* extern */
 #include "save_state_api.h"
 M2C_UNK func_001D0630(void *, void *);
-/* extern */ M2C_UNK func_0021D290(s32);
-/* extern */ M2C_UNK func_0021D360(s32);
-/* extern */ extern s32 D_004793C8;
+ M2C_UNK func_0021D290(s32);
+ void func_0021D360(void *);
+ extern s32 D_004793C8;
 void func_001CF640(void *arg0, s32 arg1) {
     s32 temp_4;
     s32 temp_5;
@@ -29,7 +26,7 @@ void func_001CF640(void *arg0, s32 arg1) {
                 temp_4 = M2C_FIELD(arg0, s32 *, 0x13954);
                 if (temp_4 != 0) {
                     func_0021D290(temp_4);
-                    func_0021D360(M2C_FIELD(arg0, s32 *, 0x13954));
+                    func_0021D360((void *)M2C_FIELD(arg0, s32 *, 0x13954));
                 }
             }
         }

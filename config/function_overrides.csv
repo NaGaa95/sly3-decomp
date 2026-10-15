@@ -1704,3 +1704,16 @@ func_00106818,0x00106818,0x0010689C,132,manual-complete-original-JR-real-delay-a
 func_001068A0,0x001068A0,0x00106924,132,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001D0D10,0x001D0D10,0x001D0D30,32,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001D0C88,0x001D0C88,0x001D0D10,136,manual-original-menu-update-JR-real-delay-contiguous-setter-unmatched-source0
+func_0021D360,0x0021D360,0x0021D4C8,360,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00296108,0x00296108,0x00296144,60,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_001F7388,0x001F7388,0x001F7564,476,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_001CF640,0x001CF640,0x001CF70C,204,manual-existing-complete-native-API-JR-real-delay-zero4-excluded-source-credit0
+func_0010D398,0x0010D398,0x0010D41C,132,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0010D420,0x0010D420,0x0010D4A4,132,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_001E0998,0x001E0998,0x001E0A74,220,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_001E0A78,0x001E0A78,0x001E0B10,152,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_001E0B10,0x001E0B10,0x001E0B44,52,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0021D4C8,0x0021D4C8,0x0021D56C,164,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0021D570,0x0021D570,0x0021D614,164,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_001FC060,0x001FC060,0x001FC08C,44,manual-existing-complete-native-API-JR-real-delay-zero4-excluded-source-credit0
+func_001FC090,0x001FC090,0x001FC0B4,36,manual-existing-complete-native-API-JR-real-delay-zero4-excluded-source-credit0
