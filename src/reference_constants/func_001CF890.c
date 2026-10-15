@@ -17,9 +17,9 @@ int func_002A3050(int port, int slot, const char *name);
 #include "card_commands.h"
 int func_001CF7A0(void);
 #include "save_bootstrap_api.h"
-int func_001D0478(struct CardContext *context, struct CardBlock *block);
+int func_001D0478(void *context, void *block);
 void func_001CFB40(struct CardContext *context, struct CardBlock *block, char *name);
-int func_001D0B08(struct CardContext *context, const char *name);
+int func_001D0B08(void *context, const char *name);
 void func_001D0D30(void *menu, int selection);
 int func_001CF890(struct CardContext *context) {
     char name[0x50];
