@@ -897,6 +897,7 @@ func_0011B138,0x0011B138,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0011B270,0x0011B270,8,LINKED_MATCH,src/auto/func_0011B270.c
 func_0011B290,0x0011B290,90,LINKED_MATCH,src/hand/func_0011B290.c
 func_0011B3F8,0x0011B3F8,45,LINKED_MATCH,src/hand/func_0011B3F8.cpp
+func_0011B4B0,0x0011B4B0,301,LINKED_MATCH,src/P2/constraint_enforce.cpp
 func_0011B968,0x0011B968,75,LINKED_MATCH,src/reference_constants/game_early_list_graph.cpp
 func_0011BA98,0x0011BA98,86,LINKED_MATCH,src/reference_constants/func_0011BA98.c
 func_0011BBF0,0x0011BBF0,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -1453,6 +1454,7 @@ func_0013F300,0x0013F300,44,LINKED_MATCH,src/engine/actor_component.c
 func_0013F3B0,0x0013F3B0,21,LINKED_MATCH,src/engine/actor_message.c
 func_0013F408,0x0013F408,14,LINKED_MATCH,src/engine/actor_message.c
 func_0013F440,0x0013F440,74,LINKED_MATCH,src/engine/actor_substate.c
+func_0013F568,0x0013F568,182,LINKED_MATCH,src/engine/actor_substate_update.cpp
 func_0013F840,0x0013F840,12,LINKED_MATCH,src/reference_constants/func_0013F840.c
 func_0013F8D0,0x0013F8D0,23,LINKED_MATCH,src/reference_constants/func_0013F8D0.c
 func_0013F930,0x0013F930,15,LINKED_MATCH,src/reference_constants/func_0013F930.c
@@ -1460,6 +1462,7 @@ func_0013F970,0x0013F970,8,LINKED_MATCH,src/hand/func_0013F970.c
 func_0013F990,0x0013F990,100,LINKED_MATCH,src/reference_constants/func_0013F990.c
 func_0013FB20,0x0013FB20,177,LINKED_MATCH,src/reference_constants/func_0013FB20.c
 func_0013FDE8,0x0013FDE8,25,LINKED_MATCH,src/engine/actor_completion.c
+func_001400C0,0x001400C0,26,LINKED_MATCH,src/engine/actor_request_entry.c
 func_00140128,0x00140128,179,LINKED_MATCH,src/engine/actor_request.c
 func_001403F8,0x001403F8,15,LINKED_MATCH,src/reference_constants/func_001403F8.c
 func_00140618,0x00140618,3,LINKED_MATCH,src/reference_constants/func_00140618.c
@@ -2331,6 +2334,7 @@ func_001A0A50,0x001A0A50,9,LINKED_MATCH,src/game_middle/actor_registry_membershi
 func_001A0A78,0x001A0A78,33,LINKED_MATCH,src/hand/func_001A0A78.c
 func_001A0BA0,0x001A0BA0,11,LINKED_MATCH,src/reference_constants/func_001A0BA0.c
 func_001A0BD0,0x001A0BD0,22,LINKED_MATCH,src/reference_constants/func_001A0BD0.c
+func_001A1308,0x001A1308,54,LINKED_MATCH,src/game_middle/radial_position_sample.cpp
 func_001A1610,0x001A1610,11,LINKED_MATCH,src/reference_constants/func_001A1610.c
 func_001A18F0,0x001A18F0,43,LINKED_MATCH,src/hand/func_001A18F0.c
 func_001A1ED0,0x001A1ED0,9,LINKED_MATCH,src/reference_constants/func_001A1ED0.c
@@ -2343,6 +2347,7 @@ func_001A21E0,0x001A21E0,17,LINKED_MATCH,src/reference_constants/func_001A21E0.c
 func_001A22A8,0x001A22A8,19,LINKED_MATCH,src/reference_constants/func_001A22A8.c
 func_001A22F8,0x001A22F8,15,LINKED_MATCH,src/reference_constants/func_001A22F8.c
 func_001A25B0,0x001A25B0,11,LINKED_MATCH,src/reference_constants/func_001A25B0.c
+func_001A2698,0x001A2698,51,LINKED_MATCH,src/game_middle/frame_position_sample.c
 func_001A28C8,0x001A28C8,57,LINKED_MATCH,src/hand/func_001A28C8.c
 func_001A29B0,0x001A29B0,2,EXACT_MATCH,src/hand/func_001A29B0.c
 func_001A2B30,0x001A2B30,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -3490,6 +3495,7 @@ func_0021CB20,0x0021CB20,40,LINKED_MATCH,src/hand/func_0021CB20.c
 func_0021CBC0,0x0021CBC0,67,LINKED_MATCH,src/reference_os/func_0021CBC0.c
 func_0021CCD0,0x0021CCD0,54,LINKED_MATCH,src/hand/func_0021CCD0.cpp
 func_0021CDA8,0x0021CDA8,36,LINKED_MATCH,src/hand/func_0021CDA8.c
+func_0021CE38,0x0021CE38,57,LINKED_MATCH,src/P2/save_path_read.cpp
 func_0021D360,0x0021D360,90,LINKED_MATCH,src/P2/saved_options.cpp
 func_0021D4C8,0x0021D4C8,41,LINKED_MATCH,src/P2/screen_options.cpp
 func_0021D570,0x0021D570,41,LINKED_MATCH,src/P2/screen_options.cpp
@@ -4815,6 +4821,7 @@ func_00296A60,0x00296A60,35,LINKED_MATCH,src/lib/func_00296A60.c
 func_002979C0,0x002979C0,7,LINKED_MATCH,src/hand/func_002979C0.c
 sceSifSyncIop,0x00297F70,20,LINKED_MATCH,src/lib/func_00297F70.c
 func_00298120,0x00298120,6,EXACT_MATCH,src/lib/func_00298120.c
+func_002981A0,0x002981A0,14,EXACT_MATCH,src/lib/func_002981A0.c
 func_00298330,0x00298330,4,EXACT_MATCH,src/lib/sdk_syscall_agent/func_00298330.c
 func_00298398,0x00298398,4,EXACT_MATCH,src/lib/sdk_syscall_agent/func_00298398.c
 func_002983B8,0x002983B8,14,EXACT_MATCH,src/lib/func_002983B8.c
@@ -4868,6 +4875,7 @@ memclr,0x0029FA00,13,EXACT_MATCH,src/lib/memclr.c
 sceDmaGetChan,0x0029FA38,10,LINKED_MATCH,src/lib/func_0029FA38.c
 func_0029FB40,0x0029FB40,118,LINKED_MATCH,src/lib/func_0029FB40.c
 func_0029FDE8,0x0029FDE8,14,LINKED_MATCH,src/runtime_agent/func_0029FDE8.c
+func_002A0520,0x002A0520,27,LINKED_MATCH,src/lib/func_002A0520.c
 sceCdGetReadPos,0x002A0E08,12,LINKED_MATCH,src/lib/func_002A0E08.c
 sceCdGetDiskType_242AB8,0x002A10B0,9,LINKED_MATCH,src/lib/func_002A10B0.c
 sceMcMkdir,0x002A2610,13,LINKED_MATCH,src/lib/func_002A2610.c
