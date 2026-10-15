@@ -1,17 +1,15 @@
-// Reset and notify the associated object resources in their original sequence.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 
-M2C_UNK func_0016D840(void *, M2C_UNK);             /* extern */
-M2C_UNK func_00170360(s32);                         /* extern */
-M2C_UNK func_001703C8(s32, s32, M2C_UNK);           /* extern */
-M2C_UNK func_001854C8(M2C_UNK *, M2C_UNK, void *);  /* extern */
-M2C_UNK func_00238978(void);                            /* extern */
-M2C_UNK func_002389C0(void *);                      /* extern */
-M2C_UNK func_0023DF78(void *);                      /* extern */
-M2C_UNK func_00256828(void *, M2C_UNK, M2C_UNK, s128); /* extern */
-M2C_UNK func_00256DF0(void *);                      /* extern */
+void func_0016D840(void *, int);
+M2C_UNK func_00170360(s32);
+M2C_UNK func_001703C8(s32, s32, M2C_UNK);
+M2C_UNK func_001854C8(M2C_UNK *, M2C_UNK, void *);
+M2C_UNK func_00238978(void);
+M2C_UNK func_002389C0(void *);
+M2C_UNK func_0023DF78(void *);
+M2C_UNK func_00256828(void *, M2C_UNK, M2C_UNK, s128);
+M2C_UNK func_00256DF0(void *);
 extern s128 D_00317560;
 extern M2C_UNK D_0036C700;
 
