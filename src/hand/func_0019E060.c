@@ -1,11 +1,10 @@
-// Change the active mode, release its previous attachment, and notify the selected record.
+#include "state_transition_api.h"
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 
 M2C_UNK func_001854C8(M2C_UNK *, M2C_UNK, void *);  /* extern */
 M2C_UNK func_0019BA10(void *, void *);              /* extern */
-M2C_UNK func_0019C570(void *, M2C_UNK);             /* extern */
+
 M2C_UNK func_0019E1A0(void *);                            /* extern */
 extern f32 D_0036BB98;
 extern M2C_UNK D_0036C700;
@@ -24,7 +23,7 @@ void func_0019E060(void *arg0, s32 arg1) {
         switch (arg1) {                             /* irregular */
         case 1:
             M2C_FIELD(M2C_FIELD(arg0, void **, 0x1F8), s32 *, 0x2F0) = (s32) M2C_FIELD(arg0, s32 *, 0x1FC);
-            func_0019C570(M2C_FIELD(arg0, void **, 0x1F8), 3);
+            func_0019C570((struct StateTransitionOwner *)M2C_FIELD(arg0, void **, 0x1F8), 3);
             break;
         case 2:
             func_001854C8(&D_0036C700, 0x4A, arg0);

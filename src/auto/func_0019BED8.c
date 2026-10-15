@@ -1,9 +1,9 @@
-// Recovered using the Sly 2 source; Sly 3 calls and globals resolved from original operands.
+#include "state_transition_api.h"
 #include "m2c_prelude.h"
-M2C_UNK func_0019C570(s32, M2C_UNK);                /* extern */
-M2C_UNK func_001F3C80();                            /* extern */
+
+void func_001F3C80(void *receiver);                            /* extern */
 
 void func_0019BED8(s32 arg0) {
-    func_001F3C80();
-    func_0019C570(arg0, -1);
+    func_001F3C80((void *)arg0);
+    func_0019C570((struct StateTransitionOwner *)arg0, -1);
 }
