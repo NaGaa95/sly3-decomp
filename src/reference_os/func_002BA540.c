@@ -7,7 +7,7 @@ typedef struct E { unsigned int key; int k; int v; struct E *next; } E;
 typedef struct H { unsigned int c; E **ap; int count; A *pa; } H;
 void *func_00292034(void *, int, int);
 void func_002BA408(H *, int);
-unsigned int func_0011BF50(int);
+unsigned int func_0011BF50(unsigned char *);
 
 int *func_002BA540(H *h, int *pk, int *pv)
 {
@@ -16,7 +16,7 @@ int *func_002BA540(H *h, int *pk, int *pv)
     h->count++;
     if (h->c == 0)
         func_002BA408(h, 0x35);
-    hash = func_0011BF50(*pk);
+    hash = func_0011BF50((unsigned char *)*pk);
     i = hash % h->c;
     e = ((E *(*)(void *, int, int))h->pa->vt[1].pfn)((char *)h->pa + h->pa->vt[1].d, 0x10, 3);
     func_00292034(e, 0, 0x10);
