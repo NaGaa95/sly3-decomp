@@ -1,16 +1,8 @@
-// Recovered using the Sly 2 source; Sly 3 calls and globals resolved from original operands.
 #include "m2c_prelude.h"
-/* Warning: missing "jr $ra" in last block of func_00119C30 (initial). */
 
-M2C_UNK CopyAb__FPvT0Ui(s32, s32, s32);             /* extern */
-extern u8 D_002A4150;
-extern M2C_UNK D_002AA6A1;
-extern M2C_UNK D_002BBAF0;
-extern M2C_UNK D_002BBB10;
-extern M2C_UNK D_002BBB20;
-extern void *D_002DD2F8;
-extern void *D_002DD2FC;
+void *func_00197628(void *, s32, s32);
 
-void func_00197488(s32 arg0, s32 arg1) {
-    func_00197628(arg0, 8, arg1);
+void func_00197488(void *receiver, s32 value)
+{
+    func_00197628(receiver, 8, value);
 }

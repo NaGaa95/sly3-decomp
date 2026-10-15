@@ -1,40 +1,8 @@
-// Recovered using the Sly 2 source; Sly 3 calls and globals resolved from original operands.
 #include "m2c_prelude.h"
-s32 func_001AE318(s32 *);                           /* extern */
-extern s128 D_002A2DD0;
-extern f32 D_002A5370;
-extern f32 D_002A53B8;
-extern M2C_UNK D_002A53C0;
-extern M2C_UNK D_002A53C8;
-extern f32 D_002A53D0;
-extern f32 D_002A53D4;
-extern f32 D_002BE5A0;
-extern M2C_UNK D_002BE5A8;
-extern M2C_UNK D_002BE5B0;
-extern f32 D_002BE5B8;
-extern f32 D_002BE5BC;
-extern f32 D_002BE5C0;
-extern f32 D_002BE5C4;
-extern f32 D_002BE5C8;
-extern f32 D_002BE5CC;
-extern f32 D_002BE5D0;
-extern f32 D_002BE5D4;
-extern f32 D_002BE5D8;
-extern f32 D_002BE5DC;
-extern f32 D_002BE5E0;
-extern f32 D_002DDED0;
-extern M2C_UNK D_002DDF40;
-extern M2C_UNK D_003DD490;
-extern void *D_003E13B4;
-extern s32 D_003E13C0;
-extern s32 D_003E13CC;
-extern s32 D_003E13D8;
-extern s32 D_003E13E4;
-extern s32 D_003E13F0;
-extern s32 D_003E13FC;
-extern s32 D_003E1408;
-extern s32 D_003E1450;
 
-void func_00197368(s32 arg0, s32 arg1) {
-    func_00197628(arg0, 4, arg1);
+void *func_00197628(void *, s32, s32);
+
+void func_00197368(void *receiver, s32 value)
+{
+    func_00197628(receiver, 4, value);
 }
