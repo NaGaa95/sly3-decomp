@@ -124,7 +124,8 @@ def fix(text):
         if c[0] == 'dir' and re.match(r'\.set\s+reorder', c[1]): st = False
         noreorder.append(st)
     changed = 0
-    # work from the end so inserted lines don't shift indices we still need
+    # Keep label-relative displacements until assembly so earlier padding cannot stale them.
+    # Work from the end so inserted lines do not shift indices we still need.
     for i in range(len(lines) - 1, -1, -1):
         c = classify(lines[i])
         if c[0] != 'insn' or c[1] not in COND: continue
@@ -172,17 +173,15 @@ def fix(text):
                 if prev is None: continue
                 dst = prev[2].split(',')[0].strip()
                 if not dst.startswith('$') or dst not in [o for o in ops[:-1]]: continue
-            off = -(n + pad + 1)
-            word = encode(c[1], ops[:-1], off)
+            word = encode(c[1], ops[:-1], 0)
             indent = re.match(r'^\s*', lines[i]).group(0)
             out[i:i + 1] = [f'{indent}.set noreorder'] + [f'{indent}nop' for _ in range(pad)] + \
-                [f'{indent}.word 0x{word:08X}  # {c[1]} {c[2]}', f'{indent}nop', f'{indent}.set reorder']
+                [f'{indent}.word 0x{word:08X} | ((({tgt} - . - 4) >> 2) & 0xFFFF)  # {c[1]} {c[2]}', f'{indent}nop', f'{indent}.set reorder']
             changed += 1
             continue
-        off = -(n + pad + 1)
-        word = encode(c[1], ops[:-1], off)
+        word = encode(c[1], ops[:-1], 0)
         indent = re.match(r'^\s*', lines[i]).group(0)
-        repl = [f'{indent}nop' for _ in range(pad)] + [f'{indent}.word 0x{word:08X}  # {c[1]} {c[2]}']
+        repl = [f'{indent}nop' for _ in range(pad)] + [f'{indent}.word 0x{word:08X} | ((({tgt} - . - 4) >> 2) & 0xFFFF)  # {c[1]} {c[2]}']
         out[i:i + 1] = repl
         changed += 1
     return '\n'.join(out), changed
