@@ -11,7 +11,7 @@ from collections import deque
 from asfix_fdlibm import fix as order
 from asfix_sly2 import classify, reg, COND, JUMPY
 
-GPRS={'move','li','lui','ori','andi','xori','or','and','xor','nor','addu','addiu','add','addi','daddu','daddiu','dsubu','subu','sub','sll','srl','sra','sllv','srlv','srav','dsll','dsrl','dsra','dsllv','dsrlv','dsrav','slt','sltu','slti','sltiu','mfc1','mflo','mfhi','lw','lwu','lh','lhu','lb','lbu','ld','movn','movz'}
+GPRS={'move','li','lui','ori','andi','xori','or','and','xor','nor','addu','addiu','add','addi','daddu','daddiu','dsubu','subu','sub','sll','srl','sra','sllv','srlv','srav','dsll','dsrl','dsra','dsllv','dsrlv','dsrav','slt','sltu','slti','sltiu','mfc1','mflo','mfhi','lw','lwu','lh','lhu','lb','lbu','ld','movn','movz','mult'}
 STORES={'sd','sw','sh','sb','swc1','s.s'}
 STORE_WIDTH={'sd':8,'sw':4,'sh':2,'sb':1,'swc1':4,'s.s':4,'sq':16}
 LIKELY={'beql','bnel','beqzl','bnezl','bgezl','bgtzl','blezl','bltzl','bc1fl','bc1tl'}
@@ -232,6 +232,10 @@ def narrow_saved_gprs(lines):
             node=classify(lines[index])
             if node[0]!='insn':continue
             mn=node[1]
+            if mn=='mult':
+                args=operands(node)
+                if len(args)!=3 or any(not re.fullmatch(r'\$[a-z0-9]+',item) or not isreg(item) for item in args):
+                    raise ValueError('SDK scalar mult requires exactly three physical GPR operands')
             if mn in ('sq','lq') or mn in ('sd','ld') and operands(node) and isreg(operands(node)[0]) and reg(operands(node)[0]) in slots:
                 number,offset=stack_access(node)
                 if number not in slots or slots[number]!=offset:raise ValueError('128-bit body operation or non-SDK save slot')
