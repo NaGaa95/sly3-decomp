@@ -2003,7 +2003,7 @@ func_0014D498,0x0014D498,0x0014D4C8,48,ghidra-provisional
 func_0014D4C8,0x0014D4C8,0x0014D4F8,48,ghidra-provisional
 func_0014D4F8,0x0014D4F8,0x0014D708,528,ghidra-provisional
 func_0014D708,0x0014D708,0x0014D8D0,456,ghidra-provisional
-func_0014D8D0,0x0014D8D0,0x0014D9A8,216,ghidra-provisional
+func_0014D8D0,0x0014D8D0,0x0014D9A8,216,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0014D9A8,0x0014D9A8,0x0014DA08,96,ghidra-provisional
 func_0014DA08,0x0014DA08,0x0014DA98,144,ghidra-provisional
 func_0014DA98,0x0014DA98,0x0014DAE0,72,ghidra-provisional
@@ -2993,7 +2993,7 @@ func_00182FB8,0x00182FB8,0x00183000,72,ghidra+spimdisasm-provisional
 func_00183000,0x00183000,0x00183038,56,ghidra+spimdisasm-provisional
 func_00183038,0x00183038,0x001830F8,192,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001830F8,0x001830F8,0x00183370,632,ghidra-provisional
-func_00183370,0x00183370,0x001834F8,392,ghidra+spimdisasm-provisional
+func_00183370,0x00183370,0x001834F4,388,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001834F8,0x001834F8,0x00183668,368,ghidra+spimdisasm-provisional
 func_00183668,0x00183668,0x001837E0,376,ghidra+spimdisasm-provisional
 func_001837E0,0x001837E0,0x00183C10,1072,ghidra+spimdisasm-provisional
@@ -6359,7 +6359,7 @@ func_00255570,0x00255570,0x002557E0,624,ghidra-provisional
 func_002557E0,0x002557E0,0x002558A8,200,ghidra-provisional
 func_002558A8,0x002558A8,0x00255908,96,ghidra+spimdisasm-provisional
 func_00255908,0x00255908,0x00255960,88,ghidra+spimdisasm-provisional
-func_00255960,0x00255960,0x00255A40,224,ghidra+spimdisasm-provisional
+func_00255960,0x00255960,0x00255A40,224,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00255A40,0x00255A40,0x00255A98,88,ghidra+spimdisasm-provisional
 func_00255A98,0x00255A98,0x00255AE0,72,ghidra-provisional
 func_00255AE0,0x00255AE0,0x00255B28,72,ghidra+spimdisasm-provisional
