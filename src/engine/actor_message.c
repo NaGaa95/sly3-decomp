@@ -1,10 +1,10 @@
 // SLY3_CFLAGS: -Os -G0
 struct ActorMessageOwner { char prefix[0x1520]; int state; };
-int func_001B5DD8(void *context);
+int func_001B5DD8(void *context, int ignored_event);
 int func_00153668(void *receiver,int message);
 int func_0013F3B0(struct ActorMessageOwner *receiver,int message)
 {
-    if(receiver->state==3 && func_001B5DD8((char *)receiver+0x500))
+    if(receiver->state==3 && func_001B5DD8((char *)receiver+0x500,message))
         return 1;
     return func_00153668(receiver,message);
 }

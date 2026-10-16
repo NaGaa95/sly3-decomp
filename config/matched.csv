@@ -1741,6 +1741,7 @@ func_0015ABC0,0x0015ABC0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0015ACF8,0x0015ACF8,8,LINKED_MATCH,src/auto/func_0015ACF8.c
 func_0015ADA0,0x0015ADA0,29,LINKED_MATCH,src/engine/pending_list_reorder.c
 func_0015AE18,0x0015AE18,22,LINKED_MATCH,src/reference_constants/func_0015AE18.c
+func_0015AE70,0x0015AE70,53,LINKED_MATCH,src/engine/pending_handle_flush.c
 func_0015AF48,0x0015AF48,4,EXACT_MATCH,src/hand/func_0015AF48.c
 func_0015B5E0,0x0015B5E0,23,LINKED_MATCH,src/reference_constants/func_0015B5E0.c
 func_0015B640,0x0015B640,27,LINKED_MATCH,src/reference_constants/func_0015B640.c
@@ -1756,6 +1757,7 @@ func_0015C5D8,0x0015C5D8,14,LINKED_MATCH,src/reference_constants/func_0015C5D8.c
 func_0015C610,0x0015C610,16,LINKED_MATCH,src/reference_constants/func_0015C610.c
 func_0015C650,0x0015C650,14,LINKED_MATCH,src/reference_constants/func_0015C650.c
 func_0015C688,0x0015C688,17,EXACT_MATCH,src/reference_constants/func_0015C688.c
+func_0015C6D0,0x0015C6D0,23,LINKED_MATCH,src/engine/controller_tagged_initialize.c
 func_0015C730,0x0015C730,11,LINKED_MATCH,src/auto/func_0015C730.c
 func_0015C760,0x0015C760,11,LINKED_MATCH,src/auto/func_0015C760.c
 func_0015C958,0x0015C958,19,LINKED_MATCH,src/reference_constants/func_0015C958.c
@@ -2753,6 +2755,7 @@ func_001C3BE0,0x001C3BE0,15,LINKED_MATCH,src/reference_constants/func_001C3BE0.c
 func_001C3CD0,0x001C3CD0,18,LINKED_MATCH,src/reference_constants/func_001C3CD0.c
 func_001C3D18,0x001C3D18,23,LINKED_MATCH,src/reference_constants/func_001C3D18.c
 func_001C3D78,0x001C3D78,16,EXACT_MATCH,src/reference_constants/func_001C3D78.c
+func_001C3DB8,0x001C3DB8,67,LINKED_MATCH,src/game_middle/actor_request_permission.c
 func_001C3FB0,0x001C3FB0,11,EXACT_MATCH,src/reference_constants/func_001C3FB0.c
 func_001C3FE0,0x001C3FE0,13,LINKED_MATCH,src/hand/func_001C3FE0.c
 func_001C4088,0x001C4088,21,LINKED_MATCH,src/reference_constants/func_001C4088.c
@@ -3379,6 +3382,7 @@ func_001F5648,0x001F5648,25,LINKED_MATCH,src/P2/resource_selector_secondary.cpp
 func_001F56B0,0x001F56B0,27,LINKED_MATCH,src/P2/resource_selector_secondary.cpp
 func_001F57E0,0x001F57E0,21,LINKED_MATCH,src/reference_constants/func_001F57E0.c
 func_001F5838,0x001F5838,17,LINKED_MATCH,src/reference_constants/func_001F5838.c
+func_001F58E8,0x001F58E8,40,LINKED_MATCH,src/P2/owner_action_text.cpp
 func_001F5988,0x001F5988,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001F5AC0,0x001F5AC0,8,LINKED_MATCH,src/auto/func_001F5AC0.c
 func_001F5AE0,0x001F5AE0,17,LINKED_MATCH,src/reference_constants/func_001F5AE0.c
