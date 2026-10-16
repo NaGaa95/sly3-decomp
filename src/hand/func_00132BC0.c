@@ -1,10 +1,8 @@
-// Choose the original mode transition and notify an active unattached resource.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 
-M2C_UNK func_00132C58(void *, M2C_UNK);             /* extern */
-M2C_UNK func_001FE728(s32, M2C_UNK);                /* extern */
+M2C_UNK func_00132C58(void *, M2C_UNK);
+void *func_001FE728(void *receiver,int flags);
 
 void func_00132BC0(void *arg0) {
     s32 temp_3;
@@ -33,7 +31,7 @@ block_6:
     temp_5 = M2C_FIELD(temp_4, s32 *, 0x17C0);
     if (temp_5 != 0) {
         if (M2C_FIELD(temp_4, s32 *, 0x10F0) == -1) {
-            func_001FE728(temp_5, 1);
+            func_001FE728((void *)temp_5, 1);
         }
     }
 }

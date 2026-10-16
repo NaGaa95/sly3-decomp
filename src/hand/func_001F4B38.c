@@ -1,14 +1,12 @@
-// Replace the selected object, update its virtual index, and synchronize global selection.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 
-s32 func_0013B500(void *, M2C_UNK);                 /* extern */
-M2C_UNK func_00168568(M2C_UNK *);                   /* extern */
-M2C_UNK func_001856E0(M2C_UNK *, s32, s32);         /* extern */
-M2C_UNK func_001B67C0(M2C_UNK *, M2C_UNK, M2C_UNK, M2C_UNK); /* extern */
-M2C_UNK func_001F49C8(M2C_UNK *, s32);              /* extern */
-s32 func_0025AE28(M2C_UNK *);                       /* extern */
+s32 func_0013B500(void *, M2C_UNK);
+M2C_UNK func_00168568(M2C_UNK *);
+M2C_UNK func_001856E0(M2C_UNK *, s32, s32);
+M2C_UNK func_001B67C0(M2C_UNK *, M2C_UNK, M2C_UNK, M2C_UNK);
+void func_001F49C8(void *, s32);
+s32 func_0025AE28(M2C_UNK *);
 extern M2C_UNK D_0036C700;
 extern M2C_UNK D_00475480;
 

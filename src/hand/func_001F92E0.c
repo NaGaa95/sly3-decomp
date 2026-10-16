@@ -1,10 +1,8 @@
-// Enter the requested state through the associated-resource and virtual notifications.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 
-M2C_UNK func_001F7588(void *);                      /* extern */
-M2C_UNK func_001FE728(s32, M2C_UNK);                /* extern */
+M2C_UNK func_001F7588(void *);
+void *func_001FE728(void *receiver,int flags);
 
 void func_001F92E0(void *arg0, s32 arg1) {
     s32 temp_4;
@@ -22,7 +20,7 @@ void func_001F92E0(void *arg0, s32 arg1) {
             }
             temp_4 = M2C_FIELD(arg0, s32 *, 0x194);
             if (temp_4 != 0) {
-                func_001FE728(temp_4, 1);
+                func_001FE728((void *)temp_4, 1);
             }
             temp_2_2 = M2C_FIELD(arg0, void **, 0xC);
             M2C_FIELD(temp_2_2, M2C_UNK (**)(void *, M2C_UNK, M2C_UNK, M2C_UNK, M2C_UNK, M2C_UNK), 0x1C)(arg0 + M2C_FIELD(temp_2_2, s16 *, 0x18), 5, 0, 0, 0, 0);

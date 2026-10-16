@@ -1,6 +1,4 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Complete original716 command and264 release; original zero4 is separate.
-// Algorithm reference only: Sly2 18DA48/18DD78. Fields/events are Sly3 original.
 #include "actor_state_resource_api.h"
 #include "actor_command_method_api.h"
 #include "activation_selector_api.h"
@@ -44,7 +42,7 @@ void *func_002459F8(int identifier);
 void func_00244F08(void *sound,void *owner);
 void func_002BBCD8(void **reference,void *value);
 void func_001ADDD0(void *receiver,int state,int secondary);
-void func_001FE728(void *receiver,int value);
+void *func_001FE728(void *receiver,int flags);
 void func_001B7268(void *context,int kind,void *resource,void *record,float gain);
 void *func_00279C28(void);
 int func_00173428(void *resource);

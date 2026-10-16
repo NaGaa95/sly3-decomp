@@ -1,9 +1,7 @@
-// Apply the enabled source transforms while preserving the object status word.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
 
-M2C_UNK func_001FE728(void *, M2C_UNK);             /* extern */
+void *func_001FE728(void *receiver,int flags);
 extern s32 D_00348018[];
 extern void *D_0038AE90;
 
