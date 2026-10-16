@@ -1025,6 +1025,7 @@ func_00122588,0x00122588,8,EXACT_MATCH,src/P2/builtin_lm_smp_predicates.cpp
 func_001225A8,0x001225A8,8,EXACT_MATCH,src/P2/builtin_lm_smp_predicates.cpp
 func_001225F8,0x001225F8,7,EXACT_MATCH,src/P2/builtin_null_object_predicates.cpp
 func_00122618,0x00122618,8,EXACT_MATCH,src/P2/builtin_null_object_predicates.cpp
+func_00122638,0x00122638,11,EXACT_MATCH,src/P2/builtin_null_object_test.cpp
 func_00122668,0x00122668,8,EXACT_MATCH,src/P2/builtin_method_predicate.cpp
 func_001226C0,0x001226C0,32,LINKED_MATCH,src/engine/numeric_equal.c
 func_00122740,0x00122740,10,EXACT_MATCH,src/P2/builtin_logical_not.cpp
@@ -1082,6 +1083,10 @@ func_00125110,0x00125110,42,LINKED_MATCH,src/reference_constants/func_00125110.c
 func_001251B8,0x001251B8,67,LINKED_MATCH,src/reference_constants/game_early_curve_fit.cpp
 func_001252C8,0x001252C8,23,LINKED_MATCH,src/reference_constants/func_001252C8.c
 func_00125328,0x00125328,24,LINKED_MATCH,src/reference_constants/func_00125328.c
+func_001255C0,0x001255C0,7,EXACT_MATCH,src/P2/builtin_scalar_integer_first.cpp
+func_001255E0,0x001255E0,10,EXACT_MATCH,src/P2/builtin_offset_integer_conversions.cpp
+func_00125608,0x00125608,10,EXACT_MATCH,src/P2/builtin_offset_integer_conversions.cpp
+func_00125630,0x00125630,7,EXACT_MATCH,src/P2/builtin_scalar_integer_second.cpp
 func_00125650,0x00125650,35,LINKED_MATCH,src/reference_constants/func_00125650.c
 func_001256E0,0x001256E0,66,LINKED_MATCH,src/reference_constants/game_early_maximum.cpp
 func_001257E8,0x001257E8,67,LINKED_MATCH,src/reference_constants/game_early_minimum.cpp
@@ -1521,6 +1526,7 @@ func_00140628,0x00140628,20,LINKED_MATCH,src/reference_constants/func_00140628.c
 func_001407A8,0x001407A8,4,EXACT_MATCH,src/hand/func_001407A8.c
 func_001407B8,0x001407B8,11,EXACT_MATCH,src/hand/func_001407B8.c
 func_001408B0,0x001408B0,19,LINKED_MATCH,src/reference_constants/func_001408B0.c
+func_00140900,0x00140900,22,LINKED_MATCH,src/engine/reference_difference.cpp
 func_00140F00,0x00140F00,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00141038,0x00141038,8,LINKED_MATCH,src/auto/func_00141038.c
 func_00141298,0x00141298,13,LINKED_MATCH,src/reference_constants/func_00141298.c
@@ -2726,6 +2732,7 @@ func_001C4088,0x001C4088,21,LINKED_MATCH,src/reference_constants/func_001C4088.c
 func_001C4718,0x001C4718,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001C4850,0x001C4850,8,LINKED_MATCH,src/auto/func_001C4850.c
 func_001C4870,0x001C4870,44,LINKED_MATCH,src/game_middle/class_bucket_default_init.c
+func_001C4A38,0x001C4A38,43,LINKED_MATCH,src/game_middle/class_bucket_lists.cpp
 func_001C4DC0,0x001C4DC0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001C4EF8,0x001C4EF8,8,LINKED_MATCH,src/auto/func_001C4EF8.c
 func_001C4F18,0x001C4F18,19,LINKED_MATCH,src/reference_constants/func_001C4F18.c
@@ -3605,6 +3612,7 @@ func_0020E2A8,0x0020E2A8,16,LINKED_MATCH,src/hand/func_0020E2A8.c
 func_0020E2E8,0x0020E2E8,13,LINKED_MATCH,src/hand/func_0020E2E8.c
 func_0020E3E8,0x0020E3E8,50,LINKED_MATCH,src/hand/func_0020E3E8.c
 func_0020E528,0x0020E528,22,LINKED_MATCH,src/hand/func_0020E528.c
+func_0020E580,0x0020E580,27,LINKED_MATCH,src/P2/particle_blocks_release.c
 func_0020EBD0,0x0020EBD0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0020ED08,0x0020ED08,8,LINKED_MATCH,src/auto/func_0020ED08.c
 func_0020EDE0,0x0020EDE0,18,LINKED_MATCH,src/hand/func_0020EDE0.c
@@ -3981,6 +3989,7 @@ func_00237C40,0x00237C40,24,LINKED_MATCH,src/hand/func_00237C40.c
 func_00237CA0,0x00237CA0,41,LINKED_MATCH,src/P2/shader_scroll_update.cpp
 func_00237DD8,0x00237DD8,3,EXACT_MATCH,src/hand/func_00237DD8.cpp
 func_00237DE8,0x00237DE8,20,LINKED_MATCH,src/hand/func_00237DE8.c
+func_00237E38,0x00237E38,36,LINKED_MATCH,src/P2/shader_circle.cpp
 func_00237EC8,0x00237EC8,17,LINKED_MATCH,src/hand/func_00237EC8.cpp
 func_00238060,0x00238060,22,LINKED_MATCH,src/hand/func_00238060.c
 func_002380B8,0x002380B8,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -4165,6 +4174,8 @@ func_00243738,0x00243738,74,LINKED_MATCH,src/P2/motion_update.cpp
 func_00244558,0x00244558,35,EXACT_MATCH,src/hand/func_00244558.c
 func_00244740,0x00244740,11,EXACT_MATCH,src/hand/func_00244740.c
 func_00244770,0x00244770,46,LINKED_MATCH,src/P2/motion_apply.cpp
+func_00244828,0x00244828,26,LINKED_MATCH,src/P2/motion_linear.cpp
+func_00244890,0x00244890,26,LINKED_MATCH,src/P2/motion_angular.cpp
 func_002448F8,0x002448F8,52,LINKED_MATCH,src/P2/motion_response.c
 func_002449C8,0x002449C8,17,LINKED_MATCH,src/reference_constants/func_002449C8.c
 func_00244A10,0x00244A10,77,LINKED_MATCH,src/P2/pool_registration.cpp
