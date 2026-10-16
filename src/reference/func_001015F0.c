@@ -1,7 +1,6 @@
-// Recovered using the Sly 2 source; Sly 3 calls and globals resolved from original operands.
 #include "recovered/splicewrap.h"
-void func_0012B768(void *, s32);                 /* extern */
-s32 func_0023FB68(s32, s32);                        /* extern */
+CRef *func_0012B768(CRef *, void *);
+void *func_0023FB68(void *, s32);
 
 CRef *func_001015F0(CRef *ret, void *pbasic, s32 cref, CRef *aref)
 {
