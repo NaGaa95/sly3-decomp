@@ -2098,6 +2098,7 @@ func_001801C0,0x001801C0,167,LINKED_MATCH,src/P2/state_emitter_update.cpp
 func_00180460,0x00180460,115,LINKED_MATCH,src/P2/state_emission.c
 func_00180630,0x00180630,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00180768,0x00180768,8,LINKED_MATCH,src/startup/pool_startup.cpp
+func_001807A0,0x001807A0,44,LINKED_MATCH,src/P2/font_initialize.cpp
 func_00180850,0x00180850,17,LINKED_MATCH,src/P2/font_selector_index.cpp
 func_001808E0,0x001808E0,33,LINKED_MATCH,src/P2/font_clip_restore.cpp
 func_00180A30,0x00180A30,22,LINKED_MATCH,src/P2/font_glyph_width.cpp
@@ -2889,13 +2890,16 @@ func_001D47C0,0x001D47C0,9,LINKED_MATCH,src/reference_constants/func_001D47C0.c
 func_001D47E8,0x001D47E8,8,LINKED_MATCH,src/wrappers/func_001D47E8.c
 func_001D4808,0x001D4808,49,LINKED_MATCH,src/hand/func_001D4808.c
 func_001D4BF8,0x001D4BF8,19,LINKED_MATCH,src/reference_constants/func_001D4BF8.c
+func_001D4E10,0x001D4E10,92,LINKED_MATCH,src/game_middle/menu_catalog_choices.c
 func_001D4F80,0x001D4F80,8,LINKED_MATCH,src/wrappers/func_001D4F80.c
 func_001D4FA0,0x001D4FA0,20,LINKED_MATCH,src/hand/func_001D4FA0.c
 func_001D4FF0,0x001D4FF0,18,LINKED_MATCH,src/reference/func_001D4FF0.c
 func_001D5038,0x001D5038,8,LINKED_MATCH,src/wrappers/func_001D5038.c
 func_001D51D8,0x001D51D8,19,LINKED_MATCH,src/reference_constants/func_001D51D8.c
+func_001D5228,0x001D5228,42,LINKED_MATCH,src/game_middle/menu_panel_open.c
 func_001D52D0,0x001D52D0,19,LINKED_MATCH,src/reference_constants/func_001D52D0.c
 func_001D5398,0x001D5398,65,LINKED_MATCH,src/game_middle/save_commit_request.c
+func_001D54A0,0x001D54A0,40,LINKED_MATCH,src/game_middle/menu_start_mode.c
 func_001D5540,0x001D5540,21,LINKED_MATCH,src/reference_constants/func_001D5540.c
 func_001D5658,0x001D5658,16,LINKED_MATCH,src/reference_constants/func_001D5658.c
 func_001D5698,0x001D5698,72,LINKED_MATCH,src/game_middle/menu_object_choices.cpp
@@ -3190,6 +3194,7 @@ func_001F2390,0x001F2390,8,LINKED_MATCH,src/auto/func_001F2390.c
 func_001F23B0,0x001F23B0,21,LINKED_MATCH,src/reference_constants/func_001F23B0.c
 func_001F2F08,0x001F2F08,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001F3040,0x001F3040,8,LINKED_MATCH,src/auto/func_001F3040.c
+func_001F31B0,0x001F31B0,26,LINKED_MATCH,src/P2/sentinel_extent.c
 func_001F32B8,0x001F32B8,11,LINKED_MATCH,src/reference_constants/func_001F32B8.c
 func_001F39F8,0x001F39F8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001F3B30,0x001F3B30,8,LINKED_MATCH,src/auto/func_001F3B30.c
@@ -4224,6 +4229,8 @@ func_00254818,0x00254818,49,LINKED_MATCH,src/hand/func_00254818.c
 func_002548E0,0x002548E0,168,LINKED_MATCH,src/hand/func_002548E0.cpp
 func_00254B80,0x00254B80,14,LINKED_MATCH,src/hand/func_00254B80.c
 func_00254BB8,0x00254BB8,18,LINKED_MATCH,src/hand/func_00254BB8.c
+func_00254D38,0x00254D38,55,LINKED_MATCH,src/P2/resource_attach.c
+func_00254E18,0x00254E18,39,LINKED_MATCH,src/P2/resource_cleanup.c
 func_00254FE0,0x00254FE0,22,LINKED_MATCH,src/hand/func_00254FE0.c
 func_002553D8,0x002553D8,16,LINKED_MATCH,src/hand/func_002553D8.c
 func_00255418,0x00255418,41,EXACT_MATCH,src/hand/func_00255418.c
