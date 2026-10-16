@@ -722,8 +722,8 @@ func_002364F0,0x2364f0,0x236828,824,manual-complete-original-actual-inputs-retur
 func_00236C18,0x236c18,0x236c7c,100,manual-complete-original-signed-key-bss-table-pointer-return-terminal-loop-and-independent-review
 func_00236CF0,0x236cf0,0x236d54,100,manual-complete-original-signed-key-bss-table-pointer-return-terminal-loop-and-independent-review
 func_00237120,0x00237120,0x0023714C,44,manual-complete-original-inputs-concrete-virtual-bindings-and-whole-source-object-review
-func_00237150,0x00237150,0x00237158,8,manual-original-independent-metadata-entry-and-terminal-return-candidate-only
-func_00237158,0x00237158,0x00237164,12,manual-original-independent-metadata-entry-and-terminal-return-candidate-only
+func_00237150,0x00237150,0x00237158,8,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00237158,0x00237158,0x00237164,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_002371C8,0x2371c8,0x237220,88,manual-complete-original-entry-inputs-whole-code-data-and-independent-review
 func_00237850,0x237850,0x2378bc,108,manual-complete-original-receiver-scalar-key-descriptor-count-return-and-independent-review
 func_00237C40,0x237c40,0x237ca0,96,manual-original-whole-body-entry-callee-input-and-complete-emitted-data-review
@@ -1596,7 +1596,7 @@ func_0029FB40,0x0029FB40,0x0029FD18,472,manual-complete-original-JR-real-delay-a
 func_0023CC40,0x0023CC40,0x0023CCA8,104,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0012B818,0x0012B818,0x0012B928,272,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00124450,0x00124450,0x001244C8,120,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
-func_0023CCA8,0x0023CCA8,0x0023CCB0,8,manual-complete-original-JR-real-delay-separate-entry-unmatched-source0
+func_0023CCA8,0x0023CCA8,0x0023CCB0,8,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001244C8,0x001244C8,0x00124504,60,manual-complete-original-JR-real-delay-separate-entry-unmatched-source0
 func_001D5F18,0x001D5F18,0x001D5F34,28,manual-existing-complete-native-API-JR-real-delay-zero4-excluded-source-credit0
 func_001F7568,0x001F7568,0x001F7584,28,manual-existing-complete-native-API-JR-real-delay-zero4-excluded-source-credit0
@@ -2257,3 +2257,11 @@ func_002796A0,0x002796A0,0x00279704,100,manual-complete-original-JR-real-delay-a
 func_002857D0,0x002857D0,0x00285844,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00174408,0x00174408,0x0017447C,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0013D480,0x0013D480,0x0013D514,148,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0022DFA0,0x0022DFA0,0x0022DFAC,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0022DFB0,0x0022DFB0,0x0022DFBC,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00258CE0,0x00258CE0,0x00258CEC,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00267960,0x00267960,0x0026796C,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00282F68,0x00282F68,0x00282F74,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0028A470,0x0028A470,0x0028A480,16,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0025E150,0x0025E150,0x0025E15C,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0025E188,0x0025E188,0x0025E194,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
