@@ -435,7 +435,7 @@ func_00149E58,0x00149E58,0x00149FC0,360,ghidra+spimdisasm-provisional
 func_00149FC0,0x00149FC0,0x0014A2B0,752,ghidra+spimdisasm-provisional
 func_0014A2B0,0x0014A2B0,0x0014A6D0,1056,ghidra-provisional
 func_0014A6D0,0x0014A6D0,0x0014AC48,1400,ghidra-provisional
-func_0014AC48,0x0014AC48,0x0014AE20,472,ghidra+spimdisasm-provisional
+func_0014ADF0,0x0014ADF0,0x0014AE1C,44,manual-complete-original-JR-real-delay-separate-entry-unmatched-source0
 func_0014AFB0,0x0014AFB0,0x0014B248,664,ghidra-provisional
 func_0014B248,0x0014B248,0x0014B370,296,ghidra+spimdisasm-provisional
 func_0014B370,0x0014B370,0x0014B590,544,ghidra+spimdisasm-provisional
@@ -734,7 +734,6 @@ func_0016D0C0,0x0016D0C0,0x0016D138,120,ghidra-provisional
 func_0016D1B8,0x0016D1B8,0x0016D2E8,304,ghidra-provisional
 func_0016D320,0x0016D320,0x0016D350,48,ghidra-provisional
 func_0016D388,0x0016D388,0x0016D418,144,ghidra-provisional
-func_0016D418,0x0016D418,0x0016D480,104,ghidra-provisional
 func_0016D540,0x0016D540,0x0016D5D0,144,ghidra-provisional
 func_0016D5D0,0x0016D5D0,0x0016D638,104,ghidra-provisional
 func_0016D760,0x0016D760,0x0016D840,224,ghidra-provisional
@@ -854,10 +853,8 @@ func_00180898,0x00180898,0x001808E0,72,ghidra+spimdisasm-provisional
 func_00180980,0x00180980,0x001809E0,96,ghidra+spimdisasm-provisional
 func_001809E0,0x001809E0,0x00180A30,80,ghidra+spimdisasm-provisional
 func_00180A88,0x00180A88,0x00180B60,216,ghidra+spimdisasm-provisional
-func_00180B60,0x00180B60,0x00180D80,544,ghidra+spimdisasm-provisional
 func_00180E18,0x00180E18,0x00181118,768,ghidra+spimdisasm-provisional
 func_001812B0,0x001812B0,0x00181330,128,ghidra+spimdisasm-provisional
-func_00181410,0x00181410,0x00181800,1008,ghidra+spimdisasm-provisional
 func_00181800,0x00181800,0x00181888,136,ghidra+spimdisasm-provisional
 func_00181F68,0x00181F68,0x00182028,192,ghidra-provisional
 func_00182068,0x00182068,0x00182450,1000,ghidra+spimdisasm-provisional
@@ -1110,7 +1107,6 @@ func_001A4390,0x001A4390,0x001A4400,112,ghidra+spimdisasm-provisional
 func_001A4400,0x001A4400,0x001A4800,1024,ghidra-provisional
 func_001A4800,0x001A4800,0x001A4B28,808,ghidra+spimdisasm-provisional
 func_001A4B28,0x001A4B28,0x001A4C28,256,ghidra-provisional
-func_001A5038,0x001A5038,0x001A5138,256,ghidra+spimdisasm-provisional
 func_001A5138,0x001A5138,0x001A5510,984,ghidra+spimdisasm-provisional
 func_001A56E0,0x001A56E0,0x001A5750,112,ghidra-provisional
 func_001A5810,0x001A5810,0x001A58D0,192,ghidra+spimdisasm-provisional
@@ -1565,7 +1561,6 @@ func_001F8280,0x001F8280,0x001F83D8,344,ghidra+spimdisasm-provisional
 func_001F83D8,0x001F83D8,0x001F85F8,544,ghidra+spimdisasm-provisional
 func_001F85F8,0x001F85F8,0x001F8CD0,1752,ghidra+spimdisasm-provisional
 func_001F8FA8,0x001F8FA8,0x001F9028,128,ghidra+spimdisasm-provisional
-func_001F9078,0x001F9078,0x001F9130,184,ghidra+spimdisasm-provisional
 func_001F9130,0x001F9130,0x001F9188,88,ghidra-provisional
 func_001F9278,0x001F9278,0x001F92E0,104,ghidra-provisional
 func_001F9570,0x001F9570,0x001F95F0,128,ghidra+spimdisasm-provisional
@@ -2030,7 +2025,6 @@ func_00242B90,0x00242B90,0x00242CF8,360,ghidra+spimdisasm-provisional
 func_00242CF8,0x00242CF8,0x00242E50,344,ghidra+spimdisasm-provisional
 func_00242E50,0x00242E50,0x00243020,464,ghidra+spimdisasm-provisional
 func_00243020,0x00243020,0x00243738,1816,ghidra+spimdisasm-provisional
-func_00243738,0x00243738,0x00243860,296,ghidra+spimdisasm-provisional
 func_00243860,0x00243860,0x00243A80,544,ghidra+spimdisasm-provisional
 func_00243A80,0x00243A80,0x00243F38,1208,ghidra-provisional
 func_00243F38,0x00243F38,0x00244138,512,ghidra+spimdisasm-provisional
@@ -2177,7 +2171,6 @@ func_00258A10,0x00258A10,0x00258C70,608,ghidra+spimdisasm-provisional
 func_00258C70,0x00258C70,0x00258CE0,112,ghidra+spimdisasm-provisional
 func_00258CE0,0x00258CE0,0x00258CF0,16,ghidra+spimdisasm-provisional
 func_00258CF0,0x00258CF0,0x00258DA0,176,ghidra+spimdisasm-provisional
-func_00258DA0,0x00258DA0,0x00258F28,392,ghidra+spimdisasm-provisional
 func_00258F38,0x00258F38,0x00258F90,88,ghidra-provisional
 func_00258FD0,0x00258FD0,0x002591B0,480,ghidra+spimdisasm-provisional
 func_00259208,0x00259208,0x002592A0,152,ghidra+spimdisasm-provisional
@@ -2597,7 +2590,6 @@ func_00297850,0x00297850,0x002978D8,136,spimdisasm-provisional
 func_002978D8,0x002978D8,0x00297948,112,ghidra+spimdisasm-provisional
 func_00297948,0x00297948,0x002979C0,120,ghidra+spimdisasm-provisional
 func_002979F0,0x002979F0,0x00297AF0,256,ghidra+spimdisasm-provisional
-func_00297AF0,0x00297AF0,0x00297B80,144,ghidra+spimdisasm-provisional
 func_00297B80,0x00297B80,0x00297BB8,56,ghidra+spimdisasm-provisional
 func_00297BB8,0x00297BB8,0x00297DC0,520,ghidra+spimdisasm-provisional
 func_00297E18,0x00297E18,0x00297F70,344,ghidra+spimdisasm-provisional
@@ -2621,7 +2613,6 @@ func_00298730,0x00298730,0x00298740,16,ghidra+spimdisasm-provisional
 func_00298740,0x00298740,0x00298750,16,ghidra+spimdisasm-provisional
 func_00298750,0x00298750,0x00298760,16,ghidra+spimdisasm-provisional
 func_00298760,0x00298760,0x002988C0,352,ghidra+spimdisasm-provisional
-func_002988C0,0x002988C0,0x00298958,152,ghidra+spimdisasm-provisional
 func_00298958,0x00298958,0x00298AE8,400,ghidra+spimdisasm-provisional
 func_00298AE8,0x00298AE8,0x00298B70,136,ghidra+spimdisasm-provisional
 func_00298BA8,0x00298BA8,0x00298E50,680,ghidra-provisional
@@ -2631,7 +2622,6 @@ func_00298F18,0x00298F18,0x00298F70,88,ghidra+spimdisasm-provisional
 func_00298F70,0x00298F70,0x00299020,176,ghidra+spimdisasm-provisional
 func_00299020,0x00299020,0x002990A0,128,ghidra+spimdisasm-provisional
 func_002990A0,0x002990A0,0x00299198,248,ghidra+spimdisasm-provisional
-func_00299198,0x00299198,0x00299218,128,ghidra+spimdisasm-provisional
 func_00299218,0x00299218,0x00299298,128,ghidra+spimdisasm-provisional
 func_00299298,0x00299298,0x002992E8,80,ghidra+spimdisasm-provisional
 func_002992E8,0x002992E8,0x00299348,96,ghidra-provisional

@@ -1519,6 +1519,7 @@ func_001495F8,0x001495F8,15,LINKED_MATCH,src/reference_constants/func_001495F8.c
 func_00149718,0x00149718,33,LINKED_MATCH,src/hand/func_00149718.c
 func_00149DE8,0x00149DE8,7,LINKED_MATCH,src/auto/func_00149DE8.c
 func_00149E08,0x00149E08,20,LINKED_MATCH,src/reference_constants/func_00149E08.c
+func_0014AC48,0x0014AC48,106,LINKED_MATCH,src/engine/render_packet.c
 func_0014AE20,0x0014AE20,14,LINKED_MATCH,src/reference_constants/func_0014AE20.c
 func_0014AE58,0x0014AE58,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0014AF90,0x0014AF90,8,LINKED_MATCH,src/auto/func_0014AF90.c
@@ -1860,6 +1861,7 @@ func_0016D138,0x0016D138,18,LINKED_MATCH,src/reference_constants/func_0016D138.c
 func_0016D180,0x0016D180,14,LINKED_MATCH,src/reference_constants/func_0016D180.c
 func_0016D2E8,0x0016D2E8,13,LINKED_MATCH,src/reference_constants/func_0016D2E8.c
 func_0016D350,0x0016D350,13,LINKED_MATCH,src/reference_constants/func_0016D350.c
+func_0016D418,0x0016D418,25,LINKED_MATCH,src/engine/attachment_reset.c
 func_0016D480,0x0016D480,47,LINKED_MATCH,src/reference_constants/func_0016D480.c
 func_0016D638,0x0016D638,14,LINKED_MATCH,src/reference_constants/func_0016D638.c
 func_0016D670,0x0016D670,39,LINKED_MATCH,src/hand/func_0016D670.c
@@ -2096,12 +2098,14 @@ func_00180768,0x00180768,8,LINKED_MATCH,src/startup/pool_startup.cpp
 func_00180850,0x00180850,17,LINKED_MATCH,src/P2/font_selector_index.cpp
 func_001808E0,0x001808E0,33,LINKED_MATCH,src/P2/font_clip_restore.cpp
 func_00180A30,0x00180A30,22,LINKED_MATCH,src/P2/font_glyph_width.cpp
+func_00180B60,0x00180B60,136,LINKED_MATCH,src/P2/font_draw_setup.cpp
 SwitchTex0__8CFontBrxP4GIFS,0x00180D80,38,LINKED_MATCH,src/hand/func_00180D80.cpp
 func_00181118,0x00181118,93,LINKED_MATCH,src/hand/func_00181118.cpp
 func_00181290,0x00181290,7,LINKED_MATCH,src/hand/func_00181290.c
 func_00181330,0x00181330,31,LINKED_MATCH,src/P2/rich_text_init.cpp
 func_001813B0,0x001813B0,14,EXACT_MATCH,src/reference_constants/func_001813B0.c
 func_001813E8,0x001813E8,10,EXACT_MATCH,src/reference_constants/func_001813E8.c
+func_00181410,0x00181410,251,LINKED_MATCH,src/P2/rich_text_next.cpp
 func_00181888,0x00181888,16,EXACT_MATCH,src/reference_constants/func_00181888.c
 func_001818C8,0x001818C8,15,EXACT_MATCH,src/P2/text_cursor_advance.cpp
 func_00181910,0x00181910,96,LINKED_MATCH,src/P2/rich_text_wrap.cpp
@@ -2345,6 +2349,7 @@ func_0019E4F8,0x0019E4F8,47,LINKED_MATCH,src/reference_os/func_0019E4F8.c
 func_0019E5B8,0x0019E5B8,83,LINKED_MATCH,src/hand/func_0019E5B8.c
 func_0019E868,0x0019E868,34,LINKED_MATCH,src/hand/func_0019E868.c
 func_0019F1B8,0x0019F1B8,30,LINKED_MATCH,src/engine/contact_target.c
+func_0019F230,0x0019F230,2,EXACT_MATCH,src/engine/contact_count.c
 func_0019F238,0x0019F238,38,LINKED_MATCH,src/reference_constants/func_0019F238.c
 func_0019F588,0x0019F588,20,EXACT_MATCH,src/hand/func_0019F588.c
 func_0019F5D8,0x0019F5D8,7,LINKED_MATCH,src/wrappers/func_0019F5D8.c
@@ -2443,6 +2448,7 @@ func_001A4F08,0x001A4F08,33,LINKED_MATCH,src/hand/func_001A4F08.c
 func_001A4F90,0x001A4F90,14,LINKED_MATCH,src/reference_constants/func_001A4F90.c
 func_001A4FC8,0x001A4FC8,12,LINKED_MATCH,src/auto/func_001A4FC8.c
 func_001A4FF8,0x001A4FF8,15,LINKED_MATCH,src/reference_constants/func_001A4FF8.c
+func_001A5038,0x001A5038,63,LINKED_MATCH,src/game_middle/wait_command_transition.c
 func_001A5510,0x001A5510,80,LINKED_MATCH,src/game_middle/action_wait_state_update.cpp
 func_001A5650,0x001A5650,11,LINKED_MATCH,src/reference/func_001A5650.c
 func_001A5680,0x001A5680,12,LINKED_MATCH,src/auto/func_001A5680.c
@@ -3250,6 +3256,8 @@ func_001F8E00,0x001F8E00,27,LINKED_MATCH,src/reference_constants/func_001F8E00.c
 func_001F8E70,0x001F8E70,77,LINKED_MATCH,src/P2/reward_transition.cpp
 func_001F9028,0x001F9028,2,EXACT_MATCH,src/hand/func_001F9028.c
 func_001F9030,0x001F9030,11,EXACT_MATCH,src/reference_constants/func_001F9030.c
+func_001F9078,0x001F9078,43,LINKED_MATCH,src/P2/resource_choice.cpp
+func_001F9128,0x001F9128,2,EXACT_MATCH,src/P2/resource_choice.cpp
 func_001F9188,0x001F9188,14,LINKED_MATCH,src/reference_constants/func_001F9188.c
 func_001F91C0,0x001F91C0,46,LINKED_MATCH,src/hand/func_001F91C0.c
 func_001F92E0,0x001F92E0,46,LINKED_MATCH,src/hand/func_001F92E0.c
@@ -4004,6 +4012,7 @@ func_002427E0,0x002427E0,19,EXACT_MATCH,src/reference_constants/func_002427E0.c
 __static_initialization_and_destruction_0,0x00242830,93,LINKED_MATCH,src/P2/state32_init.cpp
 _GLOBAL_$I$C__Users_PC_Downloads_Sly3Decomp_src_P2_state32_init.cppqagaaa,0x002429A8,8,LINKED_MATCH,src/P2/state32_init.cpp
 func_00242A58,0x00242A58,19,LINKED_MATCH,src/hand/func_00242A58.c
+func_00243738,0x00243738,74,LINKED_MATCH,src/P2/motion_update.cpp
 func_00244558,0x00244558,35,EXACT_MATCH,src/hand/func_00244558.c
 func_00244740,0x00244740,11,EXACT_MATCH,src/hand/func_00244740.c
 func_002449C8,0x002449C8,17,LINKED_MATCH,src/reference_constants/func_002449C8.c
@@ -4256,6 +4265,7 @@ func_00257FC0,0x00257FC0,19,LINKED_MATCH,src/hand/func_00257FC0.c
 func_00258910,0x00258910,8,LINKED_MATCH,src/auto/func_00258910.c
 func_00258930,0x00258930,10,EXACT_MATCH,src/hand/func_00258930.c
 func_002589D0,0x002589D0,15,EXACT_MATCH,src/hand/func_002589D0.c
+func_00258DA0,0x00258DA0,98,LINKED_MATCH,src/P2/audio_windows.c
 func_00258F28,0x00258F28,3,EXACT_MATCH,src/hand/func_00258F28.c
 func_00258F90,0x00258F90,16,LINKED_MATCH,src/hand/func_00258F90.c
 func_002591B0,0x002591B0,13,LINKED_MATCH,src/hand/func_002591B0.c
@@ -4905,6 +4915,7 @@ func_00296350,0x00296350,27,LINKED_MATCH,src/lib/func_00296350.c
 func_002967D0,0x002967D0,11,LINKED_MATCH,src/reference_os/func_002967D0.c
 func_00296A60,0x00296A60,35,LINKED_MATCH,src/lib/func_00296A60.c
 func_002979C0,0x002979C0,7,LINKED_MATCH,src/hand/func_002979C0.c
+func_00297AF0,0x00297AF0,35,LINKED_MATCH,src/lib/func_00297AF0.c
 func_00297DC0,0x00297DC0,7,LINKED_MATCH,src/lib/func_00297DC0.c
 sceSifSyncIop,0x00297F70,20,LINKED_MATCH,src/lib/func_00297F70.c
 func_00298120,0x00298120,6,EXACT_MATCH,src/lib/func_00298120.c
@@ -4916,7 +4927,9 @@ func_002983F0,0x002983F0,4,EXACT_MATCH,src/lib/sdk_syscall_agent/func_002983F0.c
 func_00298518,0x00298518,12,EXACT_MATCH,src/lib/func_00298518.c
 func_002985A0,0x002985A0,14,EXACT_MATCH,src/lib/func_002985A0.c
 SetT2,0x002986C0,28,EXACT_MATCH,src/lib/func_002986C0.c
+func_002988C0,0x002988C0,36,LINKED_MATCH,src/lib/func_002988C0.c
 UnlinkAlarm,0x00298B70,14,LINKED_MATCH,src/lib/func_00298B70.c
+func_00299198,0x00299198,31,LINKED_MATCH,src/lib/func_00299198.c
 func_00299748,0x00299748,6,LINKED_MATCH,src/hand/func_00299748.c
 func_002999F0,0x002999F0,13,LINKED_MATCH,src/reference_os/func_002999F0.c
 sceSifRemoveCmdHandler,0x00299AA0,19,LINKED_MATCH,src/lib/func_00299AA0.c
