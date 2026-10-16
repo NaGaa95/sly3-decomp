@@ -1,16 +1,15 @@
-// Sly 2 reference: src/hand/func_0012CF88.c; Sly 3 identity remains canonical.
-// Original Sly 3 call/data operands bind all external symbols.
 // SLY3_CFLAGS: -Os -G0
-typedef struct T { int a; int b; int c; int d; int e; int f; int g; char ab[1]; } T;
+#include "actor_task_clone_api.h"
 typedef struct G { int pad[3]; unsigned int cb; } G;
 extern G D_004799AC;
 void func_001D2898(void *dst, void *src, unsigned int cb);
-void func_0012F378(T *t, T *src, int b, int c)
+
+void func_0012F378(struct ACTOR_TASK *t, const struct ACTOR_TASK *src, void *b, void *c)
 {
-    t->a = src->a;
-    t->d = src->d;
-    t->f = src->f;
-    t->b = b;
-    t->c = c;
-    func_001D2898(t->ab, src->ab, D_004799AC.cb - 0x1C);
+    t->kind = src->kind;
+    t->mode = src->mode;
+    t->identifier = src->identifier;
+    t->owner = b;
+    t->channel = c;
+    func_001D2898((char *)t + 0x1C, (char *)src + 0x1C, D_004799AC.cb - 0x1C);
 }

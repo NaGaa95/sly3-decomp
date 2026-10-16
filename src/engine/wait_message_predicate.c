@@ -3,8 +3,8 @@ struct WaitMessageState {
     char unaccessed[0x48];
     unsigned int word48;
 };
-int func_00238AD8(void);
-int func_00198500(struct WaitMessageState *state,int event)
+#include "empty_message_api.h"
+int func_00198500(struct WaitMessageState *state,int event,void *unused_message)
 {
     switch(event) {
     case 18:
@@ -13,5 +13,5 @@ int func_00198500(struct WaitMessageState *state,int event)
             return 1;
         break;
     }
-    return func_00238AD8();
+    return func_00238AD8(state,event,unused_message);
 }
