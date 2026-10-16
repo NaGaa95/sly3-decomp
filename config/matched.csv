@@ -1313,6 +1313,7 @@ func_001313B8,0x001313B8,21,EXACT_MATCH,src/hand/func_001313B8.c
 func_00131410,0x00131410,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00131548,0x00131548,8,LINKED_MATCH,src/auto/func_00131548.c
 func_00131568,0x00131568,12,LINKED_MATCH,src/hand/func_00131568.c
+func_00131598,0x00131598,30,LINKED_MATCH,src/engine/channel_cache.c
 func_00131610,0x00131610,88,LINKED_MATCH,src/hand/func_00131610.c
 func_00131770,0x00131770,15,LINKED_MATCH,src/auto/func_00131770.c
 func_00131B80,0x00131B80,11,LINKED_MATCH,src/hand/func_00131B80.c
@@ -2102,6 +2103,7 @@ func_001813B0,0x001813B0,14,EXACT_MATCH,src/reference_constants/func_001813B0.c
 func_001813E8,0x001813E8,10,EXACT_MATCH,src/reference_constants/func_001813E8.c
 func_00181888,0x00181888,16,EXACT_MATCH,src/reference_constants/func_00181888.c
 func_001818C8,0x001818C8,15,EXACT_MATCH,src/P2/text_cursor_advance.cpp
+func_00181910,0x00181910,96,LINKED_MATCH,src/P2/rich_text_wrap.cpp
 func_00181A90,0x00181A90,17,LINKED_MATCH,src/reference_constants/func_00181A90.c
 func_00181AD8,0x00181AD8,34,LINKED_MATCH,src/hand/func_00181AD8.cpp
 Draw__9CRichTextP8CTextBoxT1P4GIFS,0x00181B60,158,LINKED_MATCH,src/P2/rich_text_draw.cpp
@@ -2392,12 +2394,16 @@ func_001A2198,0x001A2198,5,EXACT_MATCH,src/reference_constants/func_001A2198.c
 func_001A21E0,0x001A21E0,17,LINKED_MATCH,src/reference_constants/func_001A21E0.c
 func_001A22A8,0x001A22A8,19,LINKED_MATCH,src/reference_constants/func_001A22A8.c
 func_001A22F8,0x001A22F8,15,LINKED_MATCH,src/reference_constants/func_001A22F8.c
+func_001A2338,0x001A2338,48,LINKED_MATCH,src/game_middle/period_registration.cpp
 func_001A23F8,0x001A23F8,49,LINKED_MATCH,src/game_middle/frame_distance_duration.cpp
 func_001A24C0,0x001A24C0,9,LINKED_MATCH,src/game_middle/frame_distance_duration.cpp
 func_001A24E8,0x001A24E8,9,LINKED_MATCH,src/game_middle/frame_distance_duration.cpp
 func_001A2510,0x001A2510,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
 func_001A25B0,0x001A25B0,11,LINKED_MATCH,src/reference_constants/func_001A25B0.c
 func_001A2698,0x001A2698,51,LINKED_MATCH,src/game_middle/frame_position_sample.c
+func_001A2768,0x001A2768,27,LINKED_MATCH,src/game_middle/period_registration.cpp
+func_001A27D8,0x001A27D8,9,LINKED_MATCH,src/game_middle/period_registration.cpp
+func_001A2800,0x001A2800,9,LINKED_MATCH,src/game_middle/period_registration.cpp
 func_001A2828,0x001A2828,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
 func_001A28C8,0x001A28C8,57,LINKED_MATCH,src/hand/func_001A28C8.c
 func_001A29B0,0x001A29B0,2,EXACT_MATCH,src/hand/func_001A29B0.c
@@ -2412,6 +2418,9 @@ FOpenSector__18CBinaryInputStreamUiUi,0x001A3150,24,EXACT_MATCH,src/hand/func_00
 func_001A31B0,0x001A31B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001A32E8,0x001A32E8,8,LINKED_MATCH,src/auto/func_001A32E8.c
 func_001A3438,0x001A3438,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
+func_001A34D8,0x001A34D8,11,LINKED_MATCH,src/game_middle/axis_source_lifecycle.cpp
+func_001A3508,0x001A3508,9,LINKED_MATCH,src/game_middle/axis_source_lifecycle.cpp
+func_001A3530,0x001A3530,9,LINKED_MATCH,src/game_middle/axis_source_lifecycle.cpp
 func_001A35B0,0x001A35B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001A36E8,0x001A36E8,8,LINKED_MATCH,src/auto/func_001A36E8.c
 func_001A3708,0x001A3708,14,LINKED_MATCH,src/reference_constants/func_001A3708.c
@@ -3724,6 +3733,7 @@ func_0022DFF0,0x0022DFF0,26,LINKED_MATCH,src/reference_constants/func_0022DFF0.c
 func_0022E0B8,0x0022E0B8,35,LINKED_MATCH,src/reference_constants/func_0022E0B8.c
 func_0022E330,0x0022E330,20,LINKED_MATCH,src/auto/func_0022E330.c
 func_0022E4D0,0x0022E4D0,20,LINKED_MATCH,src/auto/func_0022E4D0.c
+func_0022E938,0x0022E938,70,LINKED_MATCH,src/P2/curve_minimum.c
 func_0022EA50,0x0022EA50,14,LINKED_MATCH,src/hand/func_0022EA50.c
 func_0022EEA0,0x0022EEA0,36,LINKED_MATCH,src/hand/func_0022EEA0.c
 func_0022EF30,0x0022EF30,73,LINKED_MATCH,src/reference_constants/func_0022EF30.c
@@ -4937,6 +4947,7 @@ __register_frame_info_table,0x0029EA58,10,LINKED_MATCH,src/lib/func_0029EA58.c
 func_0029EE48,0x0029EE48,3,LINKED_MATCH,src/runtime_agent/func_0029EE48.c
 func_0029EFA8,0x0029EFA8,4,LINKED_MATCH,src/lib/func_0029EFA8.c
 func_0029F148,0x0029F148,3,LINKED_MATCH,src/runtime_agent/func_0029F148.c
+func_0029F1C0,0x0029F1C0,40,LINKED_MATCH,src/lib/func_0029F1C0.c
 func_0029F260,0x0029F260,4,EXACT_MATCH,src/lib/sdk_syscall_agent/func_0029F260.c
 func_0029F940,0x0029F940,7,LINKED_MATCH,src/auto/func_0029F940.c
 CheckAddress,0x0029F9D8,10,EXACT_MATCH,src/lib/func_0029F9D8.c

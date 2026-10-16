@@ -1,13 +1,11 @@
-// Reset the related object when eligible and restore its two original state values.
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Original EE call/control flow reconstructed with physical-register arguments.
 #include "m2c_prelude.h"
-M2C_UNK func_00131598(void *);
-/* extern */ M2C_UNK func_00170360(s32);
-/* extern */ s32 func_002533C0(void *, M2C_UNK);
-/* extern */ M2C_UNK func_00256828(void *, M2C_UNK, M2C_UNK, s128);
-/* extern */ M2C_UNK func_0028F068(void *, void *, M2C_UNK);
-/* extern */ extern s128 D_00317560;
+void func_00131598(void *);
+ M2C_UNK func_00170360(s32);
+ s32 func_002533C0(void *, M2C_UNK);
+ M2C_UNK func_00256828(void *, M2C_UNK, M2C_UNK, s128);
+ M2C_UNK func_0028F068(void *, void *, M2C_UNK);
+ extern s128 D_00317560;
 void func_00131BB0(void *arg0) {
     s32 temp_2;
     void *temp_4;
