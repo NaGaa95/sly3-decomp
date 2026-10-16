@@ -4,7 +4,7 @@ class SubjectEventObject {
 public:
     virtual void Retain();
     virtual void Release();
-    virtual void Notify(int event,int schedule,int count,void **arguments,int flags);
+    virtual void Notify(int event,int schedule,int count,void **arguments,void *result);
 };
 struct SubjectWordEvent : SubjectEventObject {
     unsigned char before_owner[0x6C-0x10];

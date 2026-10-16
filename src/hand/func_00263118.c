@@ -1,11 +1,11 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 #include "m2c_prelude.h"
 
-void *func_00117B40(void *, unsigned int, int);               /* extern */
-s32 func_00119048(s32);                             /* extern */
-M2C_UNK func_00263748(void *, s32, s32 *, M2C_UNK); /* extern */
+void *func_00117B40(void *, unsigned int, int);
+s32 func_00119048(void *);
+M2C_UNK func_00263748(void *, void *, s32 *, M2C_UNK);
 
-void func_00263118(void *arg0, s32 arg1) {
+void func_00263118(void *arg0, void *arg1) {
     s32 *temp_6;
     s32 temp_2;
     s32 temp_2_2;
