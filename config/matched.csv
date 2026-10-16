@@ -2699,6 +2699,7 @@ func_001BB6D0,0x001BB6D0,24,LINKED_MATCH,src/hand/func_001BB6D0.c
 func_001BB7B0,0x001BB7B0,32,LINKED_MATCH,src/game_middle/curve_intercept_cost.cpp
 func_001BB830,0x001BB830,12,LINKED_MATCH,src/reference_constants/func_001BB830.c
 func_001BBC00,0x001BBC00,10,EXACT_MATCH,src/reference_constants/func_001BBC00.c
+func_001BBC28,0x001BBC28,32,LINKED_MATCH,src/game_middle/collision_list_filter.c
 func_001BD520,0x001BD520,106,LINKED_MATCH,src/reference_constants/func_001BD520.c
 func_001BD6C8,0x001BD6C8,19,LINKED_MATCH,src/reference_constants/func_001BD6C8.c
 func_001BD718,0x001BD718,15,EXACT_MATCH,src/reference_constants/func_001BD718.c
@@ -3383,6 +3384,7 @@ func_001F5AC0,0x001F5AC0,8,LINKED_MATCH,src/auto/func_001F5AC0.c
 func_001F5AE0,0x001F5AE0,17,LINKED_MATCH,src/reference_constants/func_001F5AE0.c
 func_001F5B28,0x001F5B28,23,LINKED_MATCH,src/reference_constants/func_001F5B28.c
 func_001F5B88,0x001F5B88,28,LINKED_MATCH,src/P2/task_state_cleanup.cpp
+func_001F5C58,0x001F5C58,27,LINKED_MATCH,src/P2/task_channel_setup.cpp
 func_001F5CC8,0x001F5CC8,10,LINKED_MATCH,src/reference_constants/func_001F5CC8.c
 func_001F5CF0,0x001F5CF0,31,LINKED_MATCH,src/hand/func_001F5CF0.c
 func_001F6498,0x001F6498,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -3781,6 +3783,7 @@ func_0021D570,0x0021D570,41,LINKED_MATCH,src/P2/screen_options.cpp
 func_0021D618,0x0021D618,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0021D750,0x0021D750,8,LINKED_MATCH,src/auto/func_0021D750.c
 func_0021D770,0x0021D770,11,LINKED_MATCH,src/hand/func_0021D770.c
+func_0021D7A0,0x0021D7A0,67,LINKED_MATCH,src/P2/global_list_reset.cpp
 func_0021D8B0,0x0021D8B0,38,LINKED_MATCH,src/P2/menu_reset_pair.c
 func_0021D948,0x0021D948,37,LINKED_MATCH,src/P2/menu_reset_pair.c
 func_0021DBE8,0x0021DBE8,17,LINKED_MATCH,src/hand/func_0021DBE8.c
