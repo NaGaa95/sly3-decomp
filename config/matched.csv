@@ -1542,6 +1542,7 @@ func_001414D0,0x001414D0,11,LINKED_MATCH,src/auto/func_001414D0.c
 func_001417E0,0x001417E0,11,LINKED_MATCH,src/reference_constants/func_001417E0.c
 func_00141F38,0x00141F38,18,LINKED_MATCH,src/reference_constants/func_00141F38.c
 func_00141F80,0x00141F80,22,LINKED_MATCH,src/reference_constants/func_00141F80.c
+func_00144628,0x00144628,5,EXACT_MATCH,src/engine/mode_set.c
 func_00144A50,0x00144A50,7,EXACT_MATCH,src/hand/func_00144A50.c
 func_00144A70,0x00144A70,7,EXACT_MATCH,src/hand/func_00144A70.c
 func_00146E68,0x00146E68,2,EXACT_MATCH,src/hand/func_00146E68.c
@@ -1753,6 +1754,9 @@ func_0015BDD8,0x0015BDD8,8,LINKED_MATCH,src/auto/func_0015BDD8.c
 func_0015BDF8,0x0015BDF8,6,EXACT_MATCH,src/reference_constants/func_0015BDF8.c
 func_0015BE10,0x0015BE10,7,LINKED_MATCH,src/auto/func_0015BE10.c
 func_0015BEF8,0x0015BEF8,11,LINKED_MATCH,src/reference_constants/func_0015BEF8.c
+func_0015BF28,0x0015BF28,26,LINKED_MATCH,src/engine/state_enter.c
+func_0015BF90,0x0015BF90,26,LINKED_MATCH,src/engine/state_exit.c
+func_0015C260,0x0015C260,22,EXACT_MATCH,src/engine/record_append_pointer.c
 func_0015C5D8,0x0015C5D8,14,LINKED_MATCH,src/reference_constants/func_0015C5D8.c
 func_0015C610,0x0015C610,16,LINKED_MATCH,src/reference_constants/func_0015C610.c
 func_0015C650,0x0015C650,14,LINKED_MATCH,src/reference_constants/func_0015C650.c
@@ -1923,6 +1927,7 @@ func_0016D088,0x0016D088,14,LINKED_MATCH,src/reference_constants/func_0016D088.c
 func_0016D138,0x0016D138,18,LINKED_MATCH,src/reference_constants/func_0016D138.c
 func_0016D180,0x0016D180,14,LINKED_MATCH,src/reference_constants/func_0016D180.c
 func_0016D2E8,0x0016D2E8,13,LINKED_MATCH,src/reference_constants/func_0016D2E8.c
+func_0016D320,0x0016D320,12,LINKED_MATCH,src/engine/kind_predicate.c
 func_0016D350,0x0016D350,13,LINKED_MATCH,src/reference_constants/func_0016D350.c
 func_0016D388,0x0016D388,36,LINKED_MATCH,src/engine/attachment_activate.c
 func_0016D418,0x0016D418,25,LINKED_MATCH,src/engine/attachment_reset.c
@@ -1959,6 +1964,7 @@ func_0016FCF8,0x0016FCF8,32,LINKED_MATCH,src/engine/request_refresh.c
 func_0016FD78,0x0016FD78,45,LINKED_MATCH,src/engine/pose_origin.c
 func_00170118,0x00170118,37,LINKED_MATCH,src/hand/func_00170118.c
 func_00170328,0x00170328,13,LINKED_MATCH,src/reference_constants/func_00170328.c
+func_00170360,0x00170360,26,LINKED_MATCH,src/engine/request_all.c
 func_001703C8,0x001703C8,17,LINKED_MATCH,src/auto/func_001703C8.c
 func_00170500,0x00170500,10,LINKED_MATCH,src/reference_constants/func_00170500.c
 func_00170528,0x00170528,21,EXACT_MATCH,src/reference_constants/func_00170528.c
@@ -2000,6 +2006,8 @@ func_00172CE0,0x00172CE0,6,EXACT_MATCH,src/hand/func_00172CE0.c
 func_00172CF8,0x00172CF8,6,EXACT_MATCH,src/hand/func_00172CF8.c
 func_00172D10,0x00172D10,21,LINKED_MATCH,src/reference_constants/func_00172D10.c
 func_00173228,0x00173228,22,EXACT_MATCH,src/reference_constants/func_00173228.c
+func_001733C8,0x001733C8,11,EXACT_MATCH,src/engine/value_pick.c
+func_00173408,0x00173408,7,EXACT_MATCH,src/engine/active_sub.c
 func_00173428,0x00173428,7,EXACT_MATCH,src/hand/func_00173428.c
 func_00173448,0x00173448,19,LINKED_MATCH,src/reference_constants/func_00173448.c
 func_00173498,0x00173498,18,LINKED_MATCH,src/reference_constants/func_00173498.c
@@ -2238,6 +2246,7 @@ func_00186080,0x00186080,22,EXACT_MATCH,src/hand/func_00186080.c
 func_001860D8,0x001860D8,12,EXACT_MATCH,src/hand/func_001860D8.c
 func_00186248,0x00186248,19,LINKED_MATCH,src/reference/func_00186248.c
 func_00186298,0x00186298,13,LINKED_MATCH,src/auto/func_00186298.c
+func_00186900,0x00186900,11,LINKED_MATCH,src/engine/mode_query.c
 func_00186DA0,0x00186DA0,33,LINKED_MATCH,src/hand/func_00186DA0.c
 func_00186E28,0x00186E28,21,LINKED_MATCH,src/reference_constants/func_00186E28.c
 func_00186E80,0x00186E80,8,LINKED_MATCH,src/reference_constants/func_00186E80.c
@@ -2322,6 +2331,7 @@ func_0018D138,0x0018D138,4,EXACT_MATCH,src/auto/func_0018D138.c
 func_0018DA48,0x0018DA48,132,LINKED_MATCH,src/P2/bone_attachment_setup.cpp
 func_0018F6B8,0x0018F6B8,62,LINKED_MATCH,src/reference_constants/func_0018F6B8.c
 func_0018FBB0,0x0018FBB0,88,LINKED_MATCH,src/engine/chain_copy.c
+func_0018FF30,0x0018FF30,25,EXACT_MATCH,src/engine/lane_clear.c
 func_00193638,0x00193638,12,EXACT_MATCH,src/reference_constants/func_00193638.c
 func_00194480,0x00194480,26,LINKED_MATCH,src/auto/func_00194480.c
 func_001944E8,0x001944E8,14,LINKED_MATCH,src/reference_constants/func_001944E8.c
