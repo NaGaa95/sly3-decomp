@@ -2275,3 +2275,13 @@ func_0021DD58,0x0021DD58,0x0021DDBC,100,manual-complete-original-JR-real-delay-a
 func_0021DE60,0x0021DE60,0x0021DEE8,136,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00220BF0,0x00220BF0,0x00220C64,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00222750,0x00222750,0x002227C4,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00245138,0x00245138,0x00245320,488,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0028E6A8,0x0028E6A8,0x0028E768,192,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0022B090,0x0022B090,0x0022B14C,188,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0024BDF8,0x0024BDF8,0x0024BE88,144,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0021ADF8,0x0021ADF8,0x0021AEAC,180,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0025DDB0,0x0025DDB0,0x0025DE40,144,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_002746B0,0x002746B0,0x0027470C,92,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00222D38,0x00222D38,0x00222DC8,144,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00222DC8,0x00222DC8,0x00222E44,124,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00221AC8,0x00221AC8,0x00221B40,120,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
