@@ -959,7 +959,6 @@ func_001A6568,0x001A6568,0x001A6850,744,ghidra-provisional
 func_001A6850,0x001A6850,0x001A6A80,560,ghidra+spimdisasm-provisional
 func_001A6B78,0x001A6B78,0x001A6CA8,304,ghidra+spimdisasm-provisional
 func_001A6DF8,0x001A6DF8,0x001A7500,1800,ghidra+spimdisasm-provisional
-func_001A7740,0x001A7740,0x001A77A0,96,ghidra-provisional
 func_001A7900,0x001A7900,0x001A7980,128,ghidra+spimdisasm-provisional
 func_001A79F0,0x001A79F0,0x001A7A80,144,ghidra+spimdisasm-provisional
 func_001A8188,0x001A8188,0x001A8780,1528,ghidra+spimdisasm-provisional
@@ -1112,7 +1111,6 @@ func_001CDF20,0x001CDF20,0x001CE758,2104,ghidra+spimdisasm-provisional
 func_001CEAF0,0x001CEAF0,0x001CEE08,792,ghidra+spimdisasm-provisional
 func_001D02D0,0x001D02D0,0x001D0410,320,ghidra+spimdisasm-provisional
 func_001D08C8,0x001D08C8,0x001D0918,80,ghidra+spimdisasm-provisional
-func_001D0B60,0x001D0B60,0x001D0BB0,80,ghidra+spimdisasm-provisional
 func_001D0C88,0x001D0C88,0x001D0D10,136,manual-original-menu-update-JR-real-delay-contiguous-setter-unmatched-source0
 func_001D0D78,0x001D0D78,0x001D0DC8,80,ghidra+spimdisasm-provisional
 func_001D1470,0x001D1470,0x001D1568,248,ghidra-provisional
@@ -1155,7 +1153,6 @@ func_001DA038,0x001DA038,0x001DA100,200,ghidra+spimdisasm-provisional
 func_001DA860,0x001DA860,0x001DA8A8,72,ghidra-provisional
 func_001DAA08,0x001DAA08,0x001DAB48,320,manual-original-infinite-worker-backedge-real-delay-split-unmatched-source0
 func_001DB6D8,0x001DB6D8,0x001DB8C8,496,ghidra+spimdisasm-provisional
-func_001DC770,0x001DC770,0x001DC7E0,112,ghidra-provisional
 func_001DCA30,0x001DCA30,0x001DCB90,352,ghidra-provisional
 func_001DCEA8,0x001DCEA8,0x001DD520,1656,ghidra+spimdisasm-provisional
 func_001DD590,0x001DD590,0x001DD858,712,ghidra-provisional

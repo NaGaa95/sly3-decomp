@@ -2662,6 +2662,7 @@ func_001A6DD0,0x001A6DD0,9,EXACT_MATCH,src/game_middle/candidate_position_queue.
 func_001A7500,0x001A7500,58,LINKED_MATCH,src/reference_os/func_001A7500.c
 func_001A75E8,0x001A75E8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001A7720,0x001A7720,8,LINKED_MATCH,src/auto/func_001A7720.c
+func_001A7740,0x001A7740,24,LINKED_MATCH,src/game_middle/input_controllers_initialize.c
 func_001A77A0,0x001A77A0,19,LINKED_MATCH,src/reference_constants/func_001A77A0.c
 func_001A77F0,0x001A77F0,19,LINKED_MATCH,src/reference_constants/func_001A77F0.c
 func_001A7840,0x001A7840,19,LINKED_MATCH,src/reference_constants/func_001A7840.c
@@ -3023,6 +3024,7 @@ func_001D0970,0x001D0970,22,LINKED_MATCH,src/game_middle/card_transfer.c
 func_001D09C8,0x001D09C8,40,LINKED_MATCH,src/hand/func_001D09C8.c
 func_001D0A68,0x001D0A68,40,LINKED_MATCH,src/hand/func_001D0A68.c
 func_001D0B08,0x001D0B08,22,LINKED_MATCH,src/game_middle/card_read_delete.c
+func_001D0B60,0x001D0B60,19,LINKED_MATCH,src/game_middle/object_construct_vtable.c
 func_001D0BB0,0x001D0BB0,7,LINKED_MATCH,src/auto/func_001D0BB0.c
 func_001D0BD0,0x001D0BD0,13,LINKED_MATCH,src/reference_constants/func_001D0BD0.c
 func_001D0C08,0x001D0C08,32,LINKED_MATCH,src/hand/func_001D0C08.c
@@ -3233,6 +3235,7 @@ func_001DC530,0x001DC530,92,LINKED_MATCH,src/P2/record_init.cpp
 func_001DC6A0,0x001DC6A0,8,LINKED_MATCH,src/auto/func_001DC6A0.c
 func_001DC6C0,0x001DC6C0,13,LINKED_MATCH,src/reference_constants/func_001DC6C0.c
 func_001DC6F8,0x001DC6F8,30,LINKED_MATCH,src/game_middle/record_flag_raise.c
+func_001DC770,0x001DC770,27,LINKED_MATCH,src/game_middle/light_default_apply.c
 func_001DC7E0,0x001DC7E0,62,LINKED_MATCH,src/game_middle/module_row_collect.cpp
 func_001DC8D8,0x001DC8D8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001DCA10,0x001DCA10,8,LINKED_MATCH,src/auto/func_001DCA10.c
