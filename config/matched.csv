@@ -1,4 +1,5 @@
 name,address,instructions,status,source
+func_00100228,0x00100228,31,LINKED_MATCH,src/P2/reflected_00100228.cpp
 func_001003F8,0x001003F8,42,LINKED_MATCH,src/P2/reflected_001003F8.cpp
 func_00100760,0x00100760,33,LINKED_MATCH,src/P2/reflected_00100760.cpp
 func_001007E8,0x001007E8,29,LINKED_MATCH,src/P2/reflected_001007E8.cpp
@@ -54,6 +55,8 @@ func_001028D8,0x001028D8,33,LINKED_MATCH,src/P2/reflected_001028D8.cpp
 func_00102960,0x00102960,27,LINKED_MATCH,src/reference/func_00102960.c
 func_001029D0,0x001029D0,33,LINKED_MATCH,src/P2/reflected_001029D0.cpp
 func_00102B08,0x00102B08,45,LINKED_MATCH,src/P2/reflected_00102B08.cpp
+func_00102BC0,0x00102BC0,32,LINKED_MATCH,src/P2/reflected_00102BC0.cpp
+func_00102C40,0x00102C40,32,LINKED_MATCH,src/P2/reflected_00102C40.cpp
 func_00102CC0,0x00102CC0,33,LINKED_MATCH,src/P2/reflected_00102CC0.cpp
 func_00102D48,0x00102D48,29,LINKED_MATCH,src/P2/reflected_00102D48.cpp
 func_00102FF8,0x00102FF8,34,LINKED_MATCH,src/reference_cpp/func_00102FF8.cpp
@@ -186,6 +189,7 @@ func_00109F58,0x00109F58,29,LINKED_MATCH,src/P2/reflected_00109F58.cpp
 func_00109FD0,0x00109FD0,29,LINKED_MATCH,src/P2/reflected_00109FD0.cpp
 func_0010A0F0,0x0010A0F0,29,LINKED_MATCH,src/P2/reflected_0010A0F0.cpp
 func_0010A168,0x0010A168,29,LINKED_MATCH,src/P2/reflected_0010A168.cpp
+func_0010A4A0,0x0010A4A0,32,LINKED_MATCH,src/P2/reflected_0010A4A0.cpp
 func_0010A520,0x0010A520,29,LINKED_MATCH,src/P2/reflected_0010A520.cpp
 func_0010A6C8,0x0010A6C8,29,LINKED_MATCH,src/P2/reflected_0010A6C8.cpp
 func_0010A7E8,0x0010A7E8,29,LINKED_MATCH,src/P2/reflected_0010A7E8.cpp
@@ -227,6 +231,8 @@ func_0010C3F8,0x0010C3F8,31,LINKED_MATCH,src/reference/func_0010C3F8.c
 func_0010C5D8,0x0010C5D8,40,LINKED_MATCH,src/hand/func_0010C5D8.cpp
 func_0010C678,0x0010C678,29,LINKED_MATCH,src/P2/reflected_0010C678.cpp
 func_0010C778,0x0010C778,33,LINKED_MATCH,src/P2/reflected_0010C778.cpp
+func_0010C800,0x0010C800,32,LINKED_MATCH,src/P2/reflected_0010C800.cpp
+func_0010C880,0x0010C880,32,LINKED_MATCH,src/P2/reflected_0010C880.cpp
 func_0010C900,0x0010C900,33,LINKED_MATCH,src/P2/reflected_0010C900.cpp
 func_0010C988,0x0010C988,33,LINKED_MATCH,src/P2/reflected_0010C988.cpp
 func_0010CA10,0x0010CA10,46,LINKED_MATCH,src/P2/reflected_0010CA10.cpp
@@ -2144,6 +2150,7 @@ func_00182EE0,0x00182EE0,53,LINKED_MATCH,src/hand/func_00182EE0.cpp
 func_00183000,0x00183000,14,LINKED_MATCH,src/reference_constants/func_00183000.c
 func_00183038,0x00183038,48,LINKED_MATCH,src/P2/frame_delay_history.cpp
 func_00183370,0x00183370,97,LINKED_MATCH,src/P2/frame_submit.cpp
+func_001834F8,0x001834F8,91,LINKED_MATCH,src/P2/frame_retire.cpp
 func_00183668,0x00183668,93,LINKED_MATCH,src/P2/frame_wait.cpp
 func_00183C10,0x00183C10,83,LINKED_MATCH,src/P2/object_initializers.cpp
 func_00183D60,0x00183D60,8,LINKED_MATCH,src/auto/func_00183D60.c
@@ -2270,6 +2277,11 @@ func_00195760,0x00195760,41,LINKED_MATCH,src/hand/func_00195760.cpp
 func_00195A98,0x00195A98,32,LINKED_MATCH,src/hand/func_00195A98.cpp
 func_00196228,0x00196228,14,LINKED_MATCH,src/reference_constants/func_00196228.c
 func_00196260,0x00196260,14,EXACT_MATCH,src/hand/func_00196260.c
+func_00196768,0x00196768,43,LINKED_MATCH,src/engine/display_region.c
+func_00196818,0x00196818,25,LINKED_MATCH,src/engine/display_offset.c
+func_00196880,0x00196880,3,EXACT_MATCH,src/engine/display_offset.c
+func_00196890,0x00196890,95,LINKED_MATCH,src/engine/display_submit.cpp
+func_00196A10,0x00196A10,24,LINKED_MATCH,src/engine/display_chain.cpp
 func_00196A70,0x00196A70,14,EXACT_MATCH,src/hand/func_00196A70.cpp
 func_00196AA8,0x00196AA8,20,LINKED_MATCH,src/hand/func_00196AA8.cpp
 func_00196AF8,0x00196AF8,8,LINKED_MATCH,src/wrappers/func_00196AF8.c
@@ -2283,22 +2295,26 @@ func_001970F8,0x001970F8,8,LINKED_MATCH,src/auto/func_001970F8.c
 func_00197118,0x00197118,19,LINKED_MATCH,src/reference_constants/func_00197118.c
 func_00197168,0x00197168,12,LINKED_MATCH,src/reference_constants/func_00197168.c
 func_00197198,0x00197198,11,LINKED_MATCH,src/auto/func_00197198.c
+func_001971C8,0x001971C8,52,LINKED_MATCH,src/engine/control_chain_resolve.c
 func_00197298,0x00197298,8,LINKED_MATCH,src/auto/func_00197298.c
 func_001972B8,0x001972B8,15,LINKED_MATCH,src/hand/func_001972B8.c
 func_001972F8,0x001972F8,15,LINKED_MATCH,src/hand/func_001972F8.c
 func_00197338,0x00197338,12,LINKED_MATCH,src/reference_constants/func_00197338.c
 func_00197368,0x00197368,8,LINKED_MATCH,src/auto/func_00197368.c
 func_00197388,0x00197388,12,LINKED_MATCH,src/reference_constants/func_00197388.c
+func_001973B8,0x001973B8,25,LINKED_MATCH,src/engine/control_record_words.c
 func_00197488,0x00197488,8,LINKED_MATCH,src/auto/func_00197488.c
 func_001974A8,0x001974A8,8,LINKED_MATCH,src/auto/func_001974A8.c
 func_001974C8,0x001974C8,8,LINKED_MATCH,src/auto/func_001974C8.c
 func_001974E8,0x001974E8,8,LINKED_MATCH,src/auto/func_001974E8.c
 func_00197508,0x00197508,8,LINKED_MATCH,src/auto/func_00197508.c
+func_00197528,0x00197528,16,LINKED_MATCH,src/engine/control_record_extra.c
 func_00197568,0x00197568,12,LINKED_MATCH,src/auto/func_00197568.c
 func_00197598,0x00197598,12,LINKED_MATCH,src/auto/func_00197598.c
 func_001975C8,0x001975C8,8,LINKED_MATCH,src/reference_constants/func_001975C8.c
 func_001975E8,0x001975E8,8,LINKED_MATCH,src/reference_constants/func_001975E8.c
 func_00197608,0x00197608,8,LINKED_MATCH,src/reference_constants/func_00197608.c
+func_00197628,0x00197628,26,LINKED_MATCH,src/engine/control_record_append.c
 func_00197690,0x00197690,10,LINKED_MATCH,src/auto/func_00197690.c
 func_001976B8,0x001976B8,58,LINKED_MATCH,src/engine/wait_target.c
 func_001977A0,0x001977A0,21,LINKED_MATCH,src/reference_constants/func_001977A0.c
@@ -2330,6 +2346,7 @@ func_00199270,0x00199270,26,LINKED_MATCH,src/engine/path_task_finish.c
 func_00199728,0x00199728,44,LINKED_MATCH,src/P2/select_entry.c
 func_00199F80,0x00199F80,32,LINKED_MATCH,src/hand/func_00199F80.c
 func_0019A000,0x0019A000,11,LINKED_MATCH,src/auto/func_0019A000.c
+func_0019A030,0x0019A030,31,LINKED_MATCH,src/engine/path_task_clear.c
 func_0019A0B0,0x0019A0B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0019A1E8,0x0019A1E8,8,LINKED_MATCH,src/auto/func_0019A1E8.c
 func_0019A208,0x0019A208,11,LINKED_MATCH,src/reference/func_0019A208.c
@@ -2608,6 +2625,7 @@ func_001B2560,0x001B2560,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001B2698,0x001B2698,8,LINKED_MATCH,src/auto/func_001B2698.c
 func_001B26B8,0x001B26B8,25,LINKED_MATCH,src/auto/func_001B26B8.c
 func_001B5C78,0x001B5C78,35,EXACT_MATCH,src/hand/func_001B5C78.c
+func_001B5D08,0x001B5D08,52,LINKED_MATCH,src/game_middle/context_mode_permission.c
 func_001B5DD8,0x001B5DD8,16,EXACT_MATCH,src/reference_os/func_001B5DD8.c
 func_001B6E58,0x001B6E58,46,LINKED_MATCH,src/reference_constants/func_001B6E58.c
 func_001B6F10,0x001B6F10,59,LINKED_MATCH,src/reference_constants/func_001B6F10.c
@@ -2626,6 +2644,8 @@ func_001BD8D8,0x001BD8D8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001BDA10,0x001BDA10,8,LINKED_MATCH,src/auto/func_001BDA10.c
 func_001BDA30,0x001BDA30,13,LINKED_MATCH,src/reference_constants/func_001BDA30.c
 func_001BDA68,0x001BDA68,7,LINKED_MATCH,src/wrappers/func_001BDA68.c
+func_001BDA88,0x001BDA88,49,LINKED_MATCH,src/game_middle/context_mode_record.c
+func_001BE220,0x001BE220,84,LINKED_MATCH,src/game_middle/context_mode_update.c
 func_001BE3D0,0x001BE3D0,14,LINKED_MATCH,src/reference_constants/func_001BE3D0.c
 func_001BE4A8,0x001BE4A8,19,LINKED_MATCH,src/reference_constants/func_001BE4A8.c
 func_001BE568,0x001BE568,16,LINKED_MATCH,src/reference_constants/func_001BE568.c
@@ -3182,6 +3202,9 @@ func_001EE170,0x001EE170,44,LINKED_MATCH,src/reference_os/func_001EE170.c
 func_001EE220,0x001EE220,50,LINKED_MATCH,src/reference_constants/func_001EE220.c
 func_001EE448,0x001EE448,96,LINKED_MATCH,src/reference_constants/func_001EE448.c
 func_001EE5C8,0x001EE5C8,111,LINKED_MATCH,src/hand/func_001EE5C8.c
+func_001EE788,0x001EE788,28,LINKED_MATCH,src/game_middle/position_anchor.c
+func_001EE7F8,0x001EE7F8,32,LINKED_MATCH,src/game_middle/position_anchor_midpoint.c
+func_001EE878,0x001EE878,34,LINKED_MATCH,src/game_middle/position_anchor_radius.cpp
 func_001EE900,0x001EE900,12,LINKED_MATCH,src/reference_constants/func_001EE900.c
 func_001EE930,0x001EE930,14,LINKED_MATCH,src/reference_constants/func_001EE930.c
 func_001EE968,0x001EE968,14,LINKED_MATCH,src/reference_constants/func_001EE968.c
@@ -3191,6 +3214,7 @@ func_001EF5B0,0x001EF5B0,22,LINKED_MATCH,src/reference_constants/func_001EF5B0.c
 func_001EF6E0,0x001EF6E0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001EF818,0x001EF818,8,LINKED_MATCH,src/auto/func_001EF818.c
 func_001EF838,0x001EF838,18,LINKED_MATCH,src/reference_constants/func_001EF838.c
+func_001EF880,0x001EF880,36,LINKED_MATCH,src/game_middle/timed_command_activate.c
 func_001EF910,0x001EF910,15,LINKED_MATCH,src/reference_constants/func_001EF910.c
 func_001EF950,0x001EF950,90,LINKED_MATCH,src/reference_constants/func_001EF950.c
 func_001EFAB8,0x001EFAB8,86,LINKED_MATCH,src/game_middle/timed_command_transition.c
@@ -3234,6 +3258,7 @@ func_001F3040,0x001F3040,8,LINKED_MATCH,src/auto/func_001F3040.c
 func_001F31B0,0x001F31B0,26,LINKED_MATCH,src/P2/sentinel_extent.c
 func_001F3218,0x001F3218,39,LINKED_MATCH,src/P2/context_clone_preserve.cpp
 func_001F32B8,0x001F32B8,11,LINKED_MATCH,src/reference_constants/func_001F32B8.c
+func_001F3720,0x001F3720,46,LINKED_MATCH,src/P2/path_control_distance.c
 func_001F39F8,0x001F39F8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001F3B30,0x001F3B30,8,LINKED_MATCH,src/auto/func_001F3B30.c
 func_001F3B50,0x001F3B50,30,LINKED_MATCH,src/P2/actor_defaults.c
@@ -3352,14 +3377,17 @@ func_001FBE30,0x001FBE30,28,LINKED_MATCH,src/reference_constants/func_001FBE30.c
 func_001FBEA0,0x001FBEA0,8,LINKED_MATCH,src/auto/func_001FBEA0.c
 func_001FBEC0,0x001FBEC0,18,LINKED_MATCH,src/reference_constants/func_001FBEC0.c
 func_001FBF08,0x001FBF08,14,LINKED_MATCH,src/auto/func_001FBF08.c
+func_001FBF40,0x001FBF40,43,LINKED_MATCH,src/P2/instance_object_refs.cpp
 func_001FBFF0,0x001FBFF0,28,LINKED_MATCH,src/reference_constants/func_001FBFF0.c
 func_001FC060,0x001FC060,11,LINKED_MATCH,src/auto/func_001FC060.c
 func_001FC090,0x001FC090,9,LINKED_MATCH,src/auto/func_001FC090.c
 func_001FC0B8,0x001FC0B8,10,LINKED_MATCH,src/reference_constants/func_001FC0B8.c
 func_001FC0E0,0x001FC0E0,13,LINKED_MATCH,src/reference_constants/func_001FC0E0.c
+func_001FC118,0x001FC118,36,LINKED_MATCH,src/P2/instance_context_owner.cpp
 func_001FC1A8,0x001FC1A8,17,EXACT_MATCH,src/reference_constants/func_001FC1A8.c
 func_001FC1F0,0x001FC1F0,21,LINKED_MATCH,src/reference_constants/func_001FC1F0.c
 func_001FC248,0x001FC248,18,LINKED_MATCH,src/reference_constants/func_001FC248.c
+func_001FC290,0x001FC290,42,LINKED_MATCH,src/P2/instance_collect_branch.cpp
 func_001FC338,0x001FC338,26,EXACT_MATCH,src/hand/func_001FC338.c
 func_001FC3A0,0x001FC3A0,45,LINKED_MATCH,src/P2/instance_collect.cpp
 func_001FC458,0x001FC458,50,LINKED_MATCH,src/P2/instance_collect_all.cpp
@@ -3408,12 +3436,15 @@ func_001FE190,0x001FE190,14,LINKED_MATCH,src/reference_constants/func_001FE190.c
 func_001FE1C8,0x001FE1C8,14,LINKED_MATCH,src/reference_constants/func_001FE1C8.c
 func_001FE200,0x001FE200,14,LINKED_MATCH,src/reference_constants/func_001FE200.c
 func_001FE238,0x001FE238,14,LINKED_MATCH,src/reference_constants/func_001FE238.c
+func_001FE550,0x001FE550,36,LINKED_MATCH,src/P2/descriptor_clone.c
+func_001FE5E0,0x001FE5E0,36,LINKED_MATCH,src/P2/descriptor_resolve.c
 func_001FE670,0x001FE670,16,LINKED_MATCH,src/reference_constants/func_001FE670.c
 func_001FE6B0,0x001FE6B0,30,LINKED_MATCH,src/P2/descriptor_register.c
 func_001FE728,0x001FE728,69,LINKED_MATCH,src/P2/factory_instance.cpp
 func_001FE840,0x001FE840,34,LINKED_MATCH,src/P2/descriptor_instance.c
 func_001FE8C8,0x001FE8C8,34,LINKED_MATCH,src/P2/particle_owner_unbind.cpp
 func_001FE950,0x001FE950,26,EXACT_MATCH,src/P2/descriptor_query.c
+func_001FEA08,0x001FEA08,27,LINKED_MATCH,src/P2/descriptor_defaults.c
 func_001FEA78,0x001FEA78,45,LINKED_MATCH,src/P2/resolve_descriptors.c
 func_001FEB30,0x001FEB30,12,LINKED_MATCH,src/reference_constants/func_001FEB30.c
 func_001FEB60,0x001FEB60,12,LINKED_MATCH,src/auto/func_001FEB60.c
@@ -3449,6 +3480,7 @@ func_002036C8,0x002036C8,9,LINKED_MATCH,src/P2/context_extent_list.c
 func_002036F0,0x002036F0,39,LINKED_MATCH,src/P2/context_clone_preserve_2036f0.cpp
 func_00203790,0x00203790,11,LINKED_MATCH,src/hand/func_00203790.c
 func_002037C0,0x002037C0,22,LINKED_MATCH,src/reference_constants/func_002037C0.c
+func_00203818,0x00203818,40,LINKED_MATCH,src/P2/control_distance.c
 func_002038B8,0x002038B8,19,LINKED_MATCH,src/hand/func_002038B8.c
 func_00203AC0,0x00203AC0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00203BF8,0x00203BF8,8,LINKED_MATCH,src/auto/func_00203BF8.c
@@ -3486,6 +3518,7 @@ func_00209640,0x00209640,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00209778,0x00209778,8,LINKED_MATCH,src/auto/func_00209778.c
 func_00209B60,0x00209B60,16,LINKED_MATCH,src/hand/func_00209B60.c
 func_00209BA0,0x00209BA0,40,LINKED_MATCH,src/hand/func_00209BA0.c
+func_00209C40,0x00209C40,70,LINKED_MATCH,src/P2/game_frame_update.c
 func_00209D58,0x00209D58,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00209E90,0x00209E90,8,LINKED_MATCH,src/auto/func_00209E90.c
 func_00209FA0,0x00209FA0,12,LINKED_MATCH,src/hand/func_00209FA0.c
@@ -3762,6 +3795,7 @@ func_00226578,0x00226578,25,LINKED_MATCH,src/hand/func_00226578.c
 func_00226700,0x00226700,27,LINKED_MATCH,src/hand/func_00226700.c
 func_00226770,0x00226770,29,LINKED_MATCH,src/reference_constants/func_00226770.c
 func_002267E8,0x002267E8,15,LINKED_MATCH,src/hand/func_002267E8.c
+func_00226828,0x00226828,74,LINKED_MATCH,src/P2/record_search.c
 func_00226AE8,0x00226AE8,13,LINKED_MATCH,src/hand/func_00226AE8.c
 func_00226B20,0x00226B20,21,LINKED_MATCH,src/hand/func_00226B20.c
 func_00226B78,0x00226B78,13,EXACT_MATCH,src/hand/func_00226B78.c
@@ -3884,6 +3918,7 @@ func_00236FE0,0x00236FE0,31,LINKED_MATCH,src/hand/func_00236FE0.c
 func_00237060,0x00237060,47,LINKED_MATCH,src/reference_constants/func_00237060.c
 func_00237120,0x00237120,11,LINKED_MATCH,src/hand/func_00237120.c
 func_002371C8,0x002371C8,22,LINKED_MATCH,src/hand/func_002371C8.cpp
+func_00237298,0x00237298,43,LINKED_MATCH,src/P2/shader_offset.cpp
 func_00237348,0x00237348,5,EXACT_MATCH,src/auto/func_00237348.c
 func_00237360,0x00237360,41,LINKED_MATCH,src/reference_os/func_00237360.c
 func_00237408,0x00237408,60,LINKED_MATCH,src/P2/shader_frame_loop.cpp
@@ -4083,6 +4118,8 @@ func_00242A58,0x00242A58,19,LINKED_MATCH,src/hand/func_00242A58.c
 func_00243738,0x00243738,74,LINKED_MATCH,src/P2/motion_update.cpp
 func_00244558,0x00244558,35,EXACT_MATCH,src/hand/func_00244558.c
 func_00244740,0x00244740,11,EXACT_MATCH,src/hand/func_00244740.c
+func_00244770,0x00244770,46,LINKED_MATCH,src/P2/motion_apply.cpp
+func_002448F8,0x002448F8,52,LINKED_MATCH,src/P2/motion_response.c
 func_002449C8,0x002449C8,17,LINKED_MATCH,src/reference_constants/func_002449C8.c
 func_00244A10,0x00244A10,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00244B48,0x00244B48,8,LINKED_MATCH,src/auto/func_00244B48.c
@@ -4345,6 +4382,7 @@ func_002591B0,0x002591B0,13,LINKED_MATCH,src/hand/func_002591B0.c
 func_002591E8,0x002591E8,7,LINKED_MATCH,src/wrappers/func_002591E8.c
 func_002592A0,0x002592A0,2,EXACT_MATCH,src/hand/func_002592A0.c
 func_002592A8,0x002592A8,33,LINKED_MATCH,src/hand/func_002592A8.c
+func_002594E0,0x002594E0,43,LINKED_MATCH,src/P2/animation_record.c
 func_00259590,0x00259590,8,LINKED_MATCH,src/wrappers/func_00259590.c
 func_002595B0,0x002595B0,9,LINKED_MATCH,src/hand/func_002595B0.c
 func_002595D8,0x002595D8,19,LINKED_MATCH,src/hand/func_002595D8.c
@@ -4766,6 +4804,7 @@ func_0028A600,0x0028A600,7,LINKED_MATCH,src/reference/func_0028A600.c
 func_0028A620,0x0028A620,7,LINKED_MATCH,src/hand/func_0028A620.cpp
 func_0028A698,0x0028A698,17,LINKED_MATCH,src/reference_constants/func_0028A698.c
 func_0028A788,0x0028A788,18,LINKED_MATCH,src/hand/func_0028A788.c
+func_0028AC30,0x0028AC30,69,LINKED_MATCH,src/P2/envelope_update.c
 func_0028B030,0x0028B030,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0028B168,0x0028B168,8,LINKED_MATCH,src/auto/func_0028B168.c
 func_0028B188,0x0028B188,9,EXACT_MATCH,src/hand/func_0028B188.c
