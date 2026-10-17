@@ -1933,6 +1933,7 @@ func_0015BCA0,0x0015BCA0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0015BDD8,0x0015BDD8,8,LINKED_MATCH,src/auto/func_0015BDD8.c
 func_0015BDF8,0x0015BDF8,6,EXACT_MATCH,src/reference_constants/func_0015BDF8.c
 func_0015BE10,0x0015BE10,7,LINKED_MATCH,src/auto/func_0015BE10.c
+func_0015BE30,0x0015BE30,49,LINKED_MATCH,src/engine/entry_resolve.c
 func_0015BEF8,0x0015BEF8,11,LINKED_MATCH,src/reference_constants/func_0015BEF8.c
 func_0015BF28,0x0015BF28,26,LINKED_MATCH,src/engine/state_enter.c
 func_0015BF90,0x0015BF90,26,LINKED_MATCH,src/engine/state_exit.c
@@ -2049,6 +2050,7 @@ func_00165728,0x00165728,8,LINKED_MATCH,src/auto/func_00165728.c
 func_00165A48,0x00165A48,25,LINKED_MATCH,src/engine/lookup_and_snapshot.c
 func_00165B28,0x00165B28,7,EXACT_MATCH,src/reference_constants/func_00165B28.c
 func_00165B48,0x00165B48,15,EXACT_MATCH,src/reference_constants/func_00165B48.c
+func_00165D40,0x00165D40,33,LINKED_MATCH,src/engine/sorted_remove.c
 func_00165DC8,0x00165DC8,10,LINKED_MATCH,src/reference_constants/func_00165DC8.c
 func_00166228,0x00166228,32,LINKED_MATCH,src/engine/list_remove.c
 func_001662A8,0x001662A8,6,EXACT_MATCH,src/hand/func_001662A8.c
@@ -2088,6 +2090,7 @@ func_001694D8,0x001694D8,10,EXACT_MATCH,src/hand/func_001694D8.c
 func_00169558,0x00169558,86,LINKED_MATCH,src/P2/object_initializers.cpp
 func_001696B0,0x001696B0,8,LINKED_MATCH,src/auto/func_001696B0.c
 func_001696D0,0x001696D0,8,LINKED_MATCH,src/auto/func_001696D0.c
+func_001696F0,0x001696F0,43,LINKED_MATCH,src/engine/record_initialize.c
 func_001697A0,0x001697A0,12,LINKED_MATCH,src/reference_constants/func_001697A0.c
 func_001697D0,0x001697D0,13,LINKED_MATCH,src/hand/func_001697D0.c
 func_00169AA0,0x00169AA0,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -2205,6 +2208,7 @@ func_00172460,0x00172460,8,LINKED_MATCH,src/auto/func_00172460.c
 func_00172480,0x00172480,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001725B8,0x001725B8,8,LINKED_MATCH,src/auto/func_001725B8.c
 func_001725D8,0x001725D8,11,LINKED_MATCH,src/reference_constants/func_001725D8.c
+func_00172710,0x00172710,46,LINKED_MATCH,src/engine/entry_add.c
 func_001727F8,0x001727F8,21,EXACT_MATCH,src/hand/func_001727F8.c
 func_00172850,0x00172850,9,LINKED_MATCH,src/reference_constants/func_00172850.c
 func_00172878,0x00172878,9,LINKED_MATCH,src/reference_constants/func_00172878.c
@@ -2243,6 +2247,7 @@ func_00173F30,0x00173F30,22,LINKED_MATCH,src/reference_constants/func_00173F30.c
 func_00173F88,0x00173F88,13,LINKED_MATCH,src/reference_constants/func_00173F88.c
 func_00173FC0,0x00173FC0,16,LINKED_MATCH,src/reference_constants/func_00173FC0.c
 func_00174000,0x00174000,18,LINKED_MATCH,src/reference_constants/func_00174000.c
+func_00174048,0x00174048,54,LINKED_MATCH,src/engine/item_prune.c
 func_00174120,0x00174120,70,LINKED_MATCH,src/reference_constants/func_00174120.c
 func_00174238,0x00174238,29,LINKED_MATCH,src/engine/flagged_forward.c
 func_001742B0,0x001742B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -2457,6 +2462,7 @@ func_001855F0,0x001855F0,17,LINKED_MATCH,src/engine/request_open.c
 func_001856E0,0x001856E0,7,EXACT_MATCH,src/hand/func_001856E0.c
 func_00185700,0x00185700,8,EXACT_MATCH,src/reference_constants/func_00185700.c
 func_00185720,0x00185720,20,EXACT_MATCH,src/engine/slot_request_select.c
+func_00185860,0x00185860,27,EXACT_MATCH,src/engine/grid_find.c
 func_001858D0,0x001858D0,13,EXACT_MATCH,src/hand/func_001858D0.c
 func_00185908,0x00185908,30,LINKED_MATCH,src/reference_os/func_00185908.c
 func_00185980,0x00185980,10,EXACT_MATCH,src/hand/func_00185980.c
@@ -2562,6 +2568,7 @@ func_0018D138,0x0018D138,4,EXACT_MATCH,src/auto/func_0018D138.c
 func_0018DA48,0x0018DA48,132,LINKED_MATCH,src/P2/bone_attachment_setup.cpp
 func_0018F6B8,0x0018F6B8,62,LINKED_MATCH,src/reference_constants/func_0018F6B8.c
 func_0018FBB0,0x0018FBB0,88,LINKED_MATCH,src/engine/chain_copy.c
+func_0018FE80,0x0018FE80,44,LINKED_MATCH,src/engine/entry_loop.c
 func_0018FF30,0x0018FF30,25,EXACT_MATCH,src/engine/lane_clear.c
 func_00193638,0x00193638,12,EXACT_MATCH,src/reference_constants/func_00193638.c
 func_00194480,0x00194480,26,LINKED_MATCH,src/auto/func_00194480.c
