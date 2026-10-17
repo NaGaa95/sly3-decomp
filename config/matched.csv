@@ -1864,6 +1864,7 @@ func_00152978,0x00152978,51,LINKED_MATCH,src/engine/control_step_152978.c
 func_00152A48,0x00152A48,68,LINKED_MATCH,src/engine/frame_update_152a48.c
 func_00152D50,0x00152D50,28,LINKED_MATCH,src/reference_constants/func_00152D50.c
 func_00152DC0,0x00152DC0,50,LINKED_MATCH,src/hand/func_00152DC0.c
+func_00152E88,0x00152E88,155,LINKED_MATCH,src/engine/retained_fade_152e88.c
 func_001530F8,0x001530F8,23,LINKED_MATCH,src/reference_constants/func_001530F8.c
 func_00153498,0x00153498,27,LINKED_MATCH,src/reference_constants/func_00153498.c
 func_001535E0,0x001535E0,15,LINKED_MATCH,src/reference_constants/func_001535E0.c
@@ -3153,6 +3154,7 @@ func_001BE3D0,0x001BE3D0,14,LINKED_MATCH,src/reference_constants/func_001BE3D0.c
 func_001BE4A8,0x001BE4A8,19,LINKED_MATCH,src/reference_constants/func_001BE4A8.c
 func_001BE4F8,0x001BE4F8,27,LINKED_MATCH,src/game_middle/link_target_initialize.c
 func_001BE568,0x001BE568,16,LINKED_MATCH,src/reference_constants/func_001BE568.c
+func_001BEA30,0x001BEA30,161,LINKED_MATCH,src/game_middle/event_controller_update_1BEA30.cpp
 func_001BECB8,0x001BECB8,6,EXACT_MATCH,src/hand/func_001BECB8.c
 func_001BECD0,0x001BECD0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001BEE08,0x001BEE08,8,LINKED_MATCH,src/auto/func_001BEE08.c
