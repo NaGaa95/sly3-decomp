@@ -1614,6 +1614,7 @@ func_00139B70,0x00139B70,9,LINKED_MATCH,src/reference_constants/func_00139B70.c
 func_00139B98,0x00139B98,6,EXACT_MATCH,src/reference_constants/func_00139B98.c
 func_00139FC0,0x00139FC0,7,LINKED_MATCH,src/wrappers/func_00139FC0.c
 func_0013A5B8,0x0013A5B8,47,LINKED_MATCH,src/engine/state_select_13a5b8.c
+func_0013AB30,0x0013AB30,37,LINKED_MATCH,src/engine/seek_update_13ab30.c
 func_0013ADE0,0x0013ADE0,9,EXACT_MATCH,src/hand/func_0013ADE0.c
 func_0013AE08,0x0013AE08,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0013AF40,0x0013AF40,8,LINKED_MATCH,src/auto/func_0013AF40.c
@@ -1767,6 +1768,8 @@ func_0014B590,0x0014B590,85,LINKED_MATCH,src/hand/func_0014B590.c
 func_0014B7A8,0x0014B7A8,11,LINKED_MATCH,src/reference_constants/func_0014B7A8.c
 func_0014B7D8,0x0014B7D8,11,LINKED_MATCH,src/reference_constants/func_0014B7D8.c
 func_0014BB50,0x0014BB50,25,LINKED_MATCH,src/engine/lookup_and_snapshot.c
+func_0014BC70,0x0014BC70,58,LINKED_MATCH,src/engine/task_spawn_14bc70.c
+func_0014BD58,0x0014BD58,56,LINKED_MATCH,src/engine/link_refresh_14bd58.c
 func_0014BE38,0x0014BE38,8,LINKED_MATCH,src/wrappers/func_0014BE38.c
 func_0014BE58,0x0014BE58,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0014BF90,0x0014BF90,8,LINKED_MATCH,src/auto/func_0014BF90.c
@@ -1856,6 +1859,7 @@ func_00153F28,0x00153F28,15,LINKED_MATCH,src/reference_constants/func_00153F28.c
 func_001540A0,0x001540A0,18,LINKED_MATCH,src/reference_constants/func_001540A0.c
 func_00154330,0x00154330,8,EXACT_MATCH,src/reference_constants/func_00154330.c
 func_00154350,0x00154350,67,LINKED_MATCH,src/hand/func_00154350.c
+func_00154460,0x00154460,46,LINKED_MATCH,src/engine/damage_apply_154460.c
 func_00154518,0x00154518,35,LINKED_MATCH,src/hand/func_00154518.c
 func_001545A8,0x001545A8,24,LINKED_MATCH,src/engine/request_kind_notify.c
 func_001546B0,0x001546B0,2,EXACT_MATCH,src/hand/func_001546B0.c
@@ -1925,6 +1929,7 @@ func_00157950,0x00157950,7,LINKED_MATCH,src/wrappers/func_00157950.c
 func_00157A80,0x00157A80,7,EXACT_MATCH,src/hand/func_00157A80.c
 func_00157B28,0x00157B28,15,LINKED_MATCH,src/reference_constants/func_00157B28.c
 func_00157B68,0x00157B68,15,LINKED_MATCH,src/reference_constants/func_00157B68.c
+func_00158648,0x00158648,30,LINKED_MATCH,src/engine/target_query_158648.c
 func_001586C0,0x001586C0,109,LINKED_MATCH,src/reference_constants/func_001586C0.c
 func_00158878,0x00158878,11,LINKED_MATCH,src/reference/func_00158878.c
 func_001588A8,0x001588A8,26,LINKED_MATCH,src/reference_constants/func_001588A8.c
@@ -1957,6 +1962,7 @@ func_0015B6B0,0x0015B6B0,29,LINKED_MATCH,src/engine/pending_list_reorder.c
 func_0015B728,0x0015B728,22,LINKED_MATCH,src/reference_constants/func_0015B728.c
 func_0015B780,0x0015B780,4,EXACT_MATCH,src/hand/func_0015B780.c
 func_0015B790,0x0015B790,36,LINKED_MATCH,src/engine/pending_drain.c
+func_0015BBB8,0x0015BBB8,57,LINKED_MATCH,src/engine/tracker_update_15bbb8.c
 func_0015BCA0,0x0015BCA0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0015BDD8,0x0015BDD8,8,LINKED_MATCH,src/auto/func_0015BDD8.c
 func_0015BDF8,0x0015BDF8,6,EXACT_MATCH,src/reference_constants/func_0015BDF8.c
@@ -2761,6 +2767,7 @@ func_0019BE90,0x0019BE90,17,LINKED_MATCH,src/reference_constants/func_0019BE90.c
 func_0019BED8,0x0019BED8,12,LINKED_MATCH,src/auto/func_0019BED8.c
 func_0019BF08,0x0019BF08,25,LINKED_MATCH,src/engine/spawn_request.c
 func_0019BF70,0x0019BF70,54,LINKED_MATCH,src/reference_constants/func_0019BF70.c
+func_0019C048,0x0019C048,26,LINKED_MATCH,src/engine/actor_reset_19c048.c
 func_0019C370,0x0019C370,66,LINKED_MATCH,src/engine/motion_reset_19c370.c
 func_0019C478,0x0019C478,53,LINKED_MATCH,src/engine/event_accept_19c478.c
 func_0019C550,0x0019C550,7,LINKED_MATCH,src/wrappers/func_0019C550.c
@@ -2782,6 +2789,7 @@ func_0019DBA8,0x0019DBA8,26,LINKED_MATCH,src/engine/state_gate.c
 func_0019DD10,0x0019DD10,9,EXACT_MATCH,src/reference_constants/func_0019DD10.c
 func_0019DD38,0x0019DD38,18,EXACT_MATCH,src/hand/func_0019DD38.c
 func_0019DD80,0x0019DD80,18,EXACT_MATCH,src/hand/func_0019DD80.c
+func_0019DDC8,0x0019DDC8,11,LINKED_MATCH,src/engine/vector_scale_19ddc8.c
 func_0019DDF8,0x0019DDF8,6,EXACT_MATCH,src/reference_constants/func_0019DDF8.c
 func_0019DE10,0x0019DE10,13,LINKED_MATCH,src/reference_constants/func_0019DE10.c
 func_0019DE48,0x0019DE48,13,LINKED_MATCH,src/reference_constants/func_0019DE48.c
