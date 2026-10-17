@@ -2149,6 +2149,7 @@ func_00167D10,0x00167D10,10,LINKED_MATCH,src/reference_constants/func_00167D10.c
 func_00167D38,0x00167D38,5,LINKED_MATCH,src/reference_constants/func_00167D38.c
 func_00167D50,0x00167D50,21,LINKED_MATCH,src/engine/record_clear_167d50.c
 func_00167DA8,0x00167DA8,12,LINKED_MATCH,src/reference_constants/func_00167DA8.c
+func_00168048,0x00168048,20,LINKED_MATCH,src/engine/distance_gate_168048.c
 func_00168098,0x00168098,28,EXACT_MATCH,src/hand/func_00168098.c
 func_001682A8,0x001682A8,34,LINKED_MATCH,src/engine/target_create.c
 func_00168330,0x00168330,9,LINKED_MATCH,src/reference_constants/func_00168330.c
@@ -4025,6 +4026,7 @@ func_001FC768,0x001FC768,26,EXACT_MATCH,src/P2/instance_remove_event.cpp
 func_001FC7D0,0x001FC7D0,37,LINKED_MATCH,src/P2/node_scan.c
 func_001FC868,0x001FC868,25,EXACT_MATCH,src/P2/instance_restore_event.cpp
 func_001FC8D0,0x001FC8D0,10,EXACT_MATCH,src/reference_constants/func_001FC8D0.c
+func_001FC8F8,0x001FC8F8,28,LINKED_MATCH,src/P2/scene_owner_message_1fc8f8.cpp
 func_001FC968,0x001FC968,87,LINKED_MATCH,src/P2/reset_pose.cpp
 func_001FCAC8,0x001FCAC8,22,EXACT_MATCH,src/P2/flag_clear_notify.c
 func_001FCB20,0x001FCB20,27,LINKED_MATCH,src/P2/owner_reset_scales.c
@@ -5098,6 +5100,7 @@ func_002539E0,0x002539E0,17,LINKED_MATCH,src/hand/func_002539E0.c
 func_00253A28,0x00253A28,32,LINKED_MATCH,src/hand/func_00253A28.c
 func_00253AA8,0x00253AA8,13,LINKED_MATCH,src/hand/func_00253AA8.c
 func_00253AE0,0x00253AE0,257,LINKED_MATCH,src/leaf/action_flags_253ae0.cpp
+func_002541F8,0x002541F8,28,LINKED_MATCH,src/P2/selected_registration_2541f8.c
 func_00254268,0x00254268,7,LINKED_MATCH,src/wrappers/func_00254268.c
 func_00254288,0x00254288,7,LINKED_MATCH,src/wrappers/func_00254288.c
 func_002542A8,0x002542A8,7,LINKED_MATCH,src/wrappers/func_002542A8.c

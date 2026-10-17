@@ -49,7 +49,7 @@ void func_00238AB8(void *receiver);
 int func_0013B500(void *object, int kind);
 void *func_00255130(void *owner, const ClipTransitionMask *mask);
 void func_001703C8(void *controller, void *subject, int mode);
-void func_002541F8(void *owner, int selected);
+void func_002541F8(void *owner, void *selected);
 }
 
 extern "C" void func_001A59C8(void *receiver, int state)

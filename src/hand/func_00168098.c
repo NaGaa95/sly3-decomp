@@ -1,8 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 typedef struct State { unsigned char pad[0x114]; float duration; } State;
-// Report whether the scaled time has reached the threshold and optionally
-// calculate its 400-unit transition weight.
-int func_00168098(const State *state, float *weight, float scale, float threshold)
+int func_00168098(const State *state, float scale, float threshold, float *weight)
 {
     float time = scale * state->duration;
     if (threshold < time) return 0;

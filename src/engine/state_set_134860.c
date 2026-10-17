@@ -9,7 +9,7 @@ void func_00238AE8(void *slot);
 void func_00238AB8(void *self);
 struct StateRecord *func_00238690(void *list, int kind);
 void func_001703C8(void *queue, int value, int flag);
-void func_002541F8(void *owner, int selected);
+void func_002541F8(void *owner, void *selected);
 
 extern float D_0036BB90[];
 void func_00134860(struct StateSelf *self, int state)
