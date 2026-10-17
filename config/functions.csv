@@ -1883,7 +1883,7 @@ func_00141058,0x00141058,0x00141298,576,ghidra-provisional
 func_00141298,0x00141298,0x001412D0,56,ghidra-provisional
 func_001412D0,0x001412D0,0x00141308,56,ghidra-provisional
 func_00141308,0x00141308,0x00141350,72,ghidra-provisional
-func_00141350,0x00141350,0x001414D0,384,ghidra-provisional
+func_00141350,0x00141350,0x001414D0,384,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001414D0,0x001414D0,0x00141500,48,ghidra-provisional
 func_00141500,0x00141500,0x00141580,128,ghidra-provisional
 func_00141580,0x00141580,0x001417E0,608,ghidra+spimdisasm-provisional

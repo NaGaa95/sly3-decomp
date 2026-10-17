@@ -1717,6 +1717,7 @@ func_00141038,0x00141038,8,LINKED_MATCH,src/auto/func_00141038.c
 func_00141298,0x00141298,13,LINKED_MATCH,src/reference_constants/func_00141298.c
 func_001412D0,0x001412D0,13,LINKED_MATCH,src/reference_constants/func_001412D0.c
 func_00141308,0x00141308,18,LINKED_MATCH,src/reference_constants/func_00141308.c
+func_00141350,0x00141350,96,LINKED_MATCH,src/engine/actor_init_141350.c
 func_001414D0,0x001414D0,11,LINKED_MATCH,src/auto/func_001414D0.c
 func_001417E0,0x001417E0,11,LINKED_MATCH,src/reference_constants/func_001417E0.c
 func_00141810,0x00141810,23,LINKED_MATCH,src/engine/offset_shift.c
