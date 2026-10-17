@@ -5172,7 +5172,7 @@ func_0020CD18,0x0020CD18,0x0020CD88,112,manual-complete-original-JR-real-delay-a
 func_0020CD88,0x0020CD88,0x0020D348,1472,ghidra-provisional
 func_0020D348,0x0020D348,0x0020D3A0,88,ghidra-provisional
 func_0020D3A0,0x0020D3A0,0x0020D50C,364,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
-func_0020D510,0x0020D510,0x0020D6B8,424,ghidra-provisional
+func_0020D510,0x0020D510,0x0020D6B4,420,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0020D6B8,0x0020D6B8,0x0020D710,88,ghidra-provisional
 func_0020D710,0x0020D710,0x0020D750,64,ghidra-provisional
 func_0020D750,0x0020D750,0x0020D7A0,80,ghidra-provisional
