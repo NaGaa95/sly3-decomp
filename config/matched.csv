@@ -3709,6 +3709,7 @@ func_001E6348,0x001E6348,27,LINKED_MATCH,src/reference_constants/func_001E6348.c
 func_001E66D8,0x001E66D8,15,EXACT_MATCH,src/reference_constants/func_001E66D8.c
 func_001E6718,0x001E6718,69,LINKED_MATCH,src/reference_constants/func_001E6718.c
 func_001E7100,0x001E7100,73,LINKED_MATCH,src/game_middle/path_range_search_1E7100.c
+func_001E7228,0x001E7228,108,LINKED_MATCH,src/game_middle/path_bounds_bake_1E7228.c
 func_001E73D8,0x001E73D8,14,LINKED_MATCH,src/reference_constants/func_001E73D8.c
 func_001E7410,0x001E7410,60,LINKED_MATCH,src/reference_constants/func_001E7410.c
 func_001E7A60,0x001E7A60,115,LINKED_MATCH,src/hand/func_001E7A60.c

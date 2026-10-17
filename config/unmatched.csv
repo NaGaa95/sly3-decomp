@@ -818,7 +818,6 @@ func_001E6830,0x001E6830,0x001E6BF0,960,ghidra+spimdisasm-provisional
 func_001E6BF0,0x001E6BF0,0x001E6CB8,200,ghidra+spimdisasm-provisional
 func_001E6CB8,0x001E6CB8,0x001E6ED0,536,ghidra+spimdisasm-provisional
 func_001E6ED0,0x001E6ED0,0x001E7100,560,ghidra+spimdisasm-provisional
-func_001E7228,0x001E7228,0x001E73D8,432,ghidra+spimdisasm-provisional
 func_001E7500,0x001E7500,0x001E75F0,240,ghidra+spimdisasm-provisional
 func_001E75F0,0x001E75F0,0x001E7750,352,ghidra+spimdisasm-provisional
 func_001E7750,0x001E7750,0x001E7908,440,ghidra+spimdisasm-provisional
