@@ -1646,6 +1646,7 @@ func_0013B808,0x0013B808,24,LINKED_MATCH,src/auto/func_0013B808.c
 func_0013B868,0x0013B868,11,EXACT_MATCH,src/reference_constants/func_0013B868.c
 func_0013B8A0,0x0013B8A0,64,LINKED_MATCH,src/engine/notify_node.c
 func_0013B9A0,0x0013B9A0,16,LINKED_MATCH,src/auto/func_0013B9A0.c
+func_0013B9E0,0x0013B9E0,58,LINKED_MATCH,src/engine/schedule_node_13b9e0.c
 func_0013BAC8,0x0013BAC8,35,LINKED_MATCH,src/engine/notify_cancel.c
 func_0013BB58,0x0013BB58,73,LINKED_MATCH,src/engine/notify_dispatch.c
 func_0013BC80,0x0013BC80,15,EXACT_MATCH,src/reference_os/func_0013BC80.c
@@ -1996,6 +1997,7 @@ func_0015C6D0,0x0015C6D0,23,LINKED_MATCH,src/engine/controller_tagged_initialize
 func_0015C730,0x0015C730,11,LINKED_MATCH,src/auto/func_0015C730.c
 func_0015C760,0x0015C760,11,LINKED_MATCH,src/auto/func_0015C760.c
 func_0015C958,0x0015C958,19,LINKED_MATCH,src/reference_constants/func_0015C958.c
+func_0015C9A8,0x0015C9A8,73,LINKED_MATCH,src/engine/filter_accept_15c9a8.c
 func_0015CAD0,0x0015CAD0,40,LINKED_MATCH,src/engine/target_clear.c
 func_0015CB70,0x0015CB70,10,EXACT_MATCH,src/hand/func_0015CB70.c
 func_0015CB98,0x0015CB98,70,LINKED_MATCH,src/engine/flags_initialize.c
@@ -2113,8 +2115,10 @@ func_00165728,0x00165728,8,LINKED_MATCH,src/auto/func_00165728.c
 func_00165A48,0x00165A48,25,LINKED_MATCH,src/engine/lookup_and_snapshot.c
 func_00165B28,0x00165B28,7,EXACT_MATCH,src/reference_constants/func_00165B28.c
 func_00165B48,0x00165B48,15,EXACT_MATCH,src/reference_constants/func_00165B48.c
+func_00165C70,0x00165C70,52,LINKED_MATCH,src/engine/sorted_insert_165c70.c
 func_00165D40,0x00165D40,33,LINKED_MATCH,src/engine/sorted_remove.c
 func_00165DC8,0x00165DC8,10,LINKED_MATCH,src/reference_constants/func_00165DC8.c
+func_00166150,0x00166150,53,LINKED_MATCH,src/engine/sorted_insert_166150.c
 func_00166228,0x00166228,32,LINKED_MATCH,src/engine/list_remove.c
 func_001662A8,0x001662A8,6,EXACT_MATCH,src/hand/func_001662A8.c
 func_00166540,0x00166540,2,EXACT_MATCH,src/hand/func_00166540.c
@@ -2255,6 +2259,7 @@ func_0016FC98,0x0016FC98,11,LINKED_MATCH,src/auto/func_0016FC98.c
 func_0016FCC8,0x0016FCC8,11,LINKED_MATCH,src/auto/func_0016FCC8.c
 func_0016FCF8,0x0016FCF8,32,LINKED_MATCH,src/engine/request_refresh.c
 func_0016FD78,0x0016FD78,45,LINKED_MATCH,src/engine/pose_origin.c
+func_0016FF08,0x0016FF08,67,LINKED_MATCH,src/engine/request_prune_16ff08.c
 func_00170118,0x00170118,37,LINKED_MATCH,src/hand/func_00170118.c
 func_001702A0,0x001702A0,34,LINKED_MATCH,src/engine/request_remove.c
 func_00170328,0x00170328,13,LINKED_MATCH,src/reference_constants/func_00170328.c
