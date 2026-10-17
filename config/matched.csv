@@ -1874,6 +1874,7 @@ func_00154F40,0x00154F40,4,EXACT_MATCH,src/hand/func_00154F40.c
 func_00155270,0x00155270,26,LINKED_MATCH,src/engine/state_target_and_record.c
 func_001552D8,0x001552D8,11,LINKED_MATCH,src/reference_constants/func_001552D8.c
 func_00155308,0x00155308,2,EXACT_MATCH,src/hand/func_00155308.c
+func_00155310,0x00155310,5,LINKED_MATCH,src/engine/field_set_155310.c
 func_00155328,0x00155328,22,LINKED_MATCH,src/reference_constants/func_00155328.c
 func_00155AB8,0x00155AB8,14,EXACT_MATCH,src/reference_constants/func_00155AB8.c
 func_00155AF0,0x00155AF0,38,LINKED_MATCH,src/engine/limit_apply.c
@@ -2114,6 +2115,7 @@ func_00167CC0,0x00167CC0,10,LINKED_MATCH,src/reference_constants/func_00167CC0.c
 func_00167CE8,0x00167CE8,10,LINKED_MATCH,src/reference_constants/func_00167CE8.c
 func_00167D10,0x00167D10,10,LINKED_MATCH,src/reference_constants/func_00167D10.c
 func_00167D38,0x00167D38,5,LINKED_MATCH,src/reference_constants/func_00167D38.c
+func_00167D50,0x00167D50,21,LINKED_MATCH,src/engine/record_clear_167d50.c
 func_00167DA8,0x00167DA8,12,LINKED_MATCH,src/reference_constants/func_00167DA8.c
 func_00168098,0x00168098,28,EXACT_MATCH,src/hand/func_00168098.c
 func_001682A8,0x001682A8,34,LINKED_MATCH,src/engine/target_create.c
@@ -2122,6 +2124,8 @@ func_00168478,0x00168478,59,LINKED_MATCH,src/engine/player_swap.c
 func_00168568,0x00168568,23,LINKED_MATCH,src/reference_constants/func_00168568.c
 func_001685C8,0x001685C8,41,LINKED_MATCH,src/engine/target_switch.c
 func_00168948,0x00168948,7,LINKED_MATCH,src/reference_constants/func_00168948.c
+func_00168968,0x00168968,15,LINKED_MATCH,src/engine/buffer_select_168968.c
+func_001689A8,0x001689A8,65,LINKED_MATCH,src/engine/gif_frame_1689a8.cpp
 func_00168CC0,0x00168CC0,69,LINKED_MATCH,src/engine/light_apply_168cc0.c
 func_00168E88,0x00168E88,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00168FC0,0x00168FC0,8,LINKED_MATCH,src/auto/func_00168FC0.c
@@ -2563,6 +2567,7 @@ func_00188118,0x00188118,31,LINKED_MATCH,src/engine/entry_append.c
 func_00188198,0x00188198,22,EXACT_MATCH,src/hand/func_00188198.c
 func_00188420,0x00188420,15,EXACT_MATCH,src/reference_constants/func_00188420.c
 func_00188460,0x00188460,55,LINKED_MATCH,src/reference_constants/func_00188460.c
+func_00188540,0x00188540,56,LINKED_MATCH,src/engine/focus_apply_188540.cpp
 func_00188620,0x00188620,13,LINKED_MATCH,src/auto/func_00188620.c
 func_00188868,0x00188868,47,LINKED_MATCH,src/engine/subject_word_event.cpp
 func_00188928,0x00188928,62,LINKED_MATCH,src/hand/func_00188928.c
@@ -2591,6 +2596,7 @@ func_00189DA0,0x00189DA0,22,LINKED_MATCH,src/reference_constants/func_00189DA0.c
 func_00189DF8,0x00189DF8,26,LINKED_MATCH,src/engine/subject_pair_event.cpp
 func_00189E60,0x00189E60,3,EXACT_MATCH,src/hand/func_00189E60.c
 func_0018A3E8,0x0018A3E8,161,LINKED_MATCH,src/P2/state_relationship.cpp
+func_0018A670,0x0018A670,66,LINKED_MATCH,src/engine/focus_set_18a670.cpp
 func_0018A890,0x0018A890,27,EXACT_MATCH,src/engine/subject_compare.cpp
 func_0018AA48,0x0018AA48,27,LINKED_MATCH,src/engine/current_set.c
 func_0018AAB8,0x0018AAB8,10,LINKED_MATCH,src/hand/func_0018AAB8.c
@@ -2652,6 +2658,7 @@ func_001953B0,0x001953B0,8,LINKED_MATCH,src/auto/func_001953B0.c
 func_00195688,0x00195688,11,LINKED_MATCH,src/hand/func_00195688.cpp
 func_00195760,0x00195760,41,LINKED_MATCH,src/hand/func_00195760.cpp
 func_00195A98,0x00195A98,32,LINKED_MATCH,src/hand/func_00195A98.cpp
+func_00195B18,0x00195B18,78,LINKED_MATCH,src/engine/gif_clear_195b18.cpp
 func_001961D0,0x001961D0,22,LINKED_MATCH,src/engine/table_select.c
 func_00196228,0x00196228,14,LINKED_MATCH,src/reference_constants/func_00196228.c
 func_00196260,0x00196260,14,EXACT_MATCH,src/hand/func_00196260.c
@@ -2748,6 +2755,7 @@ func_0019B968,0x0019B968,41,LINKED_MATCH,src/hand/func_0019B968.c
 func_0019BA10,0x0019BA10,36,LINKED_MATCH,src/reference_constants/func_0019BA10.c
 func_0019BAA0,0x0019BAA0,24,LINKED_MATCH,src/reference_constants/func_0019BAA0.c
 func_0019BB00,0x0019BB00,29,LINKED_MATCH,src/engine/state_callback.c
+func_0019BE08,0x0019BE08,19,LINKED_MATCH,src/engine/heading_set_19be08.c
 func_0019BE58,0x0019BE58,14,LINKED_MATCH,src/reference_constants/func_0019BE58.c
 func_0019BE90,0x0019BE90,17,LINKED_MATCH,src/reference_constants/func_0019BE90.c
 func_0019BED8,0x0019BED8,12,LINKED_MATCH,src/auto/func_0019BED8.c
