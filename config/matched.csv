@@ -4348,6 +4348,7 @@ func_0021AB48,0x0021AB48,24,EXACT_MATCH,src/P2/record_detach.c
 func_0021AD38,0x0021AD38,15,LINKED_MATCH,src/hand/func_0021AD38.c
 func_0021AD78,0x0021AD78,32,LINKED_MATCH,src/hand/func_0021AD78.c
 func_0021ADF8,0x0021ADF8,45,LINKED_MATCH,src/P2/record_value_refresh.cpp
+func_0021B320,0x0021B320,102,LINKED_MATCH,src/leaf/spawn_shuffle_21b320.c
 func_0021B4B8,0x0021B4B8,15,LINKED_MATCH,src/hand/func_0021B4B8.c
 func_0021B6C0,0x0021B6C0,24,EXACT_MATCH,src/leaf/ratio_update_21b6c0.c
 func_0021BA40,0x0021BA40,96,LINKED_MATCH,src/leaf/sound_start_21ba40.c
@@ -4436,6 +4437,7 @@ func_00220080,0x00220080,14,LINKED_MATCH,src/reference_constants/func_00220080.c
 func_002200B8,0x002200B8,71,LINKED_MATCH,src/P2/selection_clamp.c
 func_002201D8,0x002201D8,50,LINKED_MATCH,src/P2/selection_refresh.c
 func_00220590,0x00220590,104,LINKED_MATCH,src/P2/selection_transition.c
+func_002207E8,0x002207E8,128,LINKED_MATCH,src/leaf/menu_text_2207e8.c
 func_002209E8,0x002209E8,33,LINKED_MATCH,src/P2/menu_title_text.c
 func_00220A70,0x00220A70,32,LINKED_MATCH,src/P2/menu_count_text.c
 func_00220AF0,0x00220AF0,31,LINKED_MATCH,src/P2/menu_cost_title.c
@@ -5402,6 +5404,7 @@ func_002700D0,0x002700D0,56,EXACT_MATCH,src/hand/func_002700D0.cpp
 func_002701B0,0x002701B0,21,LINKED_MATCH,src/reference_os/func_002701B0.c
 func_00270208,0x00270208,55,LINKED_MATCH,src/hand/func_00270208.cpp
 func_002705C8,0x002705C8,36,LINKED_MATCH,src/hand/func_002705C8.cpp
+func_002710E8,0x002710E8,143,LINKED_MATCH,src/leaf/wide_format_2710e8.c
 func_00271328,0x00271328,24,LINKED_MATCH,src/hand/func_00271328.c
 func_00271388,0x00271388,18,LINKED_MATCH,src/hand/func_00271388.c
 func_002713D0,0x002713D0,30,LINKED_MATCH,src/lib/text_output_unbounded.c
