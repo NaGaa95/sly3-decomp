@@ -3790,6 +3790,7 @@ func_0020DE48,0x0020DE48,44,LINKED_MATCH,src/P2/particle_callback_remove.cpp
 func_0020E210,0x0020E210,37,LINKED_MATCH,src/P2/particle_contact_rotation.cpp
 func_0020E2A8,0x0020E2A8,16,LINKED_MATCH,src/hand/func_0020E2A8.c
 func_0020E2E8,0x0020E2E8,13,LINKED_MATCH,src/hand/func_0020E2E8.c
+func_0020E320,0x0020E320,50,LINKED_MATCH,src/P2/particle_contact_wave.cpp
 func_0020E3E8,0x0020E3E8,50,LINKED_MATCH,src/hand/func_0020E3E8.c
 func_0020E4B0,0x0020E4B0,29,LINKED_MATCH,src/P2/particle_spawn_transfer.cpp
 func_0020E528,0x0020E528,22,LINKED_MATCH,src/hand/func_0020E528.c
