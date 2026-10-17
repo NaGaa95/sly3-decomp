@@ -2854,7 +2854,9 @@ func_001A1800,0x001A1800,9,LINKED_MATCH,src/game_middle/control_source_lifecycle
 func_001A1828,0x001A1828,9,LINKED_MATCH,src/game_middle/control_source_lifecycle.cpp
 func_001A1850,0x001A1850,39,LINKED_MATCH,src/game_middle/control_source_clone.cpp
 func_001A18F0,0x001A18F0,43,LINKED_MATCH,src/hand/func_001A18F0.c
+func_001A19A0,0x001A19A0,34,LINKED_MATCH,src/game_middle/actor_orientation_apply_1A19A0.c
 func_001A1A28,0x001A1A28,164,LINKED_MATCH,src/game_middle/control_mode_transition.cpp
+func_001A1CB8,0x001A1CB8,45,LINKED_MATCH,src/game_middle/actor_event_start_1A1CB8.c
 func_001A1D70,0x001A1D70,57,LINKED_MATCH,src/game_middle/frame_limit_initialize.cpp
 func_001A1ED0,0x001A1ED0,9,LINKED_MATCH,src/reference_constants/func_001A1ED0.c
 func_001A1EF8,0x001A1EF8,9,LINKED_MATCH,src/reference_constants/func_001A1EF8.c
@@ -2892,6 +2894,7 @@ func_001A3118,0x001A3118,14,LINKED_MATCH,src/auto/func_001A3118.c
 FOpenSector__18CBinaryInputStreamUiUi,0x001A3150,24,EXACT_MATCH,src/hand/func_001A3150.cpp
 func_001A31B0,0x001A31B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001A32E8,0x001A32E8,8,LINKED_MATCH,src/auto/func_001A32E8.c
+func_001A3308,0x001A3308,76,LINKED_MATCH,src/game_middle/control_init_blend_1A3308.c
 func_001A3438,0x001A3438,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
 func_001A34D8,0x001A34D8,11,LINKED_MATCH,src/game_middle/axis_source_lifecycle.cpp
 func_001A3508,0x001A3508,9,LINKED_MATCH,src/game_middle/axis_source_lifecycle.cpp
@@ -3021,6 +3024,7 @@ func_001AB760,0x001AB760,61,LINKED_MATCH,src/game_middle/actor_record_update.c
 func_001AB858,0x001AB858,64,LINKED_MATCH,src/game_middle/state_vector_apply_1AB858.cpp
 func_001AB958,0x001AB958,46,LINKED_MATCH,src/game_middle/position_capture_flagged.c
 func_001ABA10,0x001ABA10,27,LINKED_MATCH,src/reference_constants/func_001ABA10.c
+func_001ABA80,0x001ABA80,91,LINKED_MATCH,src/game_middle/command_state_adjust_1ABA80.cpp
 func_001ACCA8,0x001ACCA8,31,LINKED_MATCH,src/reference_constants/func_001ACCA8.c
 func_001ADBE0,0x001ADBE0,48,LINKED_MATCH,src/game_middle/actor_state_selection.c
 func_001ADCA0,0x001ADCA0,76,LINKED_MATCH,src/hand/func_001ADCA0.c
@@ -3039,6 +3043,7 @@ func_001AFBE0,0x001AFBE0,2,EXACT_MATCH,src/game_middle/quad_store.c
 func_001B0070,0x001B0070,66,LINKED_MATCH,src/game_middle/actor_request_update.c
 func_001B0178,0x001B0178,44,LINKED_MATCH,src/game_middle/basis_slot_dispatch_1B0178.c
 func_001B0450,0x001B0450,19,LINKED_MATCH,src/reference_constants/func_001B0450.c
+func_001B04A0,0x001B04A0,95,LINKED_MATCH,src/game_middle/contact_clear_query_1B04A0.cpp
 func_001B0620,0x001B0620,12,LINKED_MATCH,src/reference_constants/func_001B0620.c
 func_001B0650,0x001B0650,60,LINKED_MATCH,src/game_middle/actor_owner_cleanup.cpp
 func_001B0740,0x001B0740,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -3054,6 +3059,7 @@ func_001B26B8,0x001B26B8,25,LINKED_MATCH,src/auto/func_001B26B8.c
 func_001B2720,0x001B2720,46,LINKED_MATCH,src/game_middle/component_group_initialize.c
 func_001B40F0,0x001B40F0,71,LINKED_MATCH,src/game_middle/actor_payload_mode.cpp
 func_001B4210,0x001B4210,31,LINKED_MATCH,src/game_middle/subject_parent_chain_filter.c
+func_001B56F0,0x001B56F0,79,LINKED_MATCH,src/game_middle/path_follow_apply_1B56F0.c
 func_001B5830,0x001B5830,24,LINKED_MATCH,src/game_middle/state_change_stamp.c
 func_001B5C78,0x001B5C78,35,EXACT_MATCH,src/hand/func_001B5C78.c
 func_001B5D08,0x001B5D08,52,LINKED_MATCH,src/game_middle/context_mode_permission.c
@@ -3065,6 +3071,7 @@ func_001B7038,0x001B7038,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001B7170,0x001B7170,8,LINKED_MATCH,src/auto/func_001B7170.c
 func_001B7190,0x001B7190,17,LINKED_MATCH,src/game_middle/fields_initialize.c
 func_001B71D8,0x001B71D8,35,LINKED_MATCH,src/hand/func_001B71D8.c
+func_001B8EB0,0x001B8EB0,92,LINKED_MATCH,src/game_middle/heading_state_select_1B8EB0.c
 func_001BADC0,0x001BADC0,14,EXACT_MATCH,src/hand/func_001BADC0.c
 func_001BB188,0x001BB188,40,LINKED_MATCH,src/game_middle/vertical_intercept.cpp
 func_001BB6D0,0x001BB6D0,24,LINKED_MATCH,src/hand/func_001BB6D0.c
@@ -3649,6 +3656,7 @@ func_001E84E0,0x001E84E0,10,LINKED_MATCH,src/reference_constants/func_001E84E0.c
 func_001E8A18,0x001E8A18,7,LINKED_MATCH,src/auto/func_001E8A18.c
 func_001E8B18,0x001E8B18,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001E8C50,0x001E8C50,8,LINKED_MATCH,src/auto/func_001E8C50.c
+func_001E8C70,0x001E8C70,32,LINKED_MATCH,src/game_middle/actor_range_defaults_1E8C70.c
 func_001E8CF0,0x001E8CF0,12,LINKED_MATCH,src/reference_constants/func_001E8CF0.c
 func_001E8D20,0x001E8D20,12,LINKED_MATCH,src/reference_constants/func_001E8D20.c
 func_001E8D50,0x001E8D50,12,LINKED_MATCH,src/auto/func_001E8D50.c
