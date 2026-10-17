@@ -2601,6 +2601,7 @@ func_00186EC0,0x00186EC0,8,LINKED_MATCH,src/reference_constants/func_00186EC0.c
 func_00186F90,0x00186F90,21,LINKED_MATCH,src/engine/mode_dispatch.c
 func_00186FE8,0x00186FE8,21,LINKED_MATCH,src/reference_constants/func_00186FE8.c
 func_001871C0,0x001871C0,44,LINKED_MATCH,src/hand/func_001871C0.c
+func_00187270,0x00187270,157,LINKED_MATCH,src/engine/cursor_reset_187270.cpp
 func_001874E8,0x001874E8,50,LINKED_MATCH,src/engine/transition_tail_1874e8.c
 func_001878A0,0x001878A0,16,LINKED_MATCH,src/reference_constants/func_001878A0.c
 func_00187CB8,0x00187CB8,5,LINKED_MATCH,src/reference_constants/func_00187CB8.c
