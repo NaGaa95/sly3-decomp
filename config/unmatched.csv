@@ -4,14 +4,11 @@ _start,0x00100008,0x00100218,528,ghidra+spimdisasm-provisional
 func_00100218,0x00100218,0x00100220,8,manual-original-J298550-NOP-thunk8-source0-reflection124-partition98
 func_00100220,0x00100220,0x00100228,8,manual-original-SetupThread-T0-ExitThread35-syscall8-source0-reflection124-partition98
 func_001004A0,0x001004A0,0x00100558,184,ghidra-provisional
-func_00100CF8,0x00100CF8,0x00100D90,152,ghidra-provisional
 func_00101BB0,0x00101BB0,0x00101C78,200,ghidra-provisional
-func_001023A8,0x001023A8,0x00102450,168,ghidra-provisional
 func_00102F50,0x00102F50,0x00102FF8,168,ghidra-provisional
 func_00105210,0x00105210,0x001052C8,184,ghidra-provisional
 func_00107FE0,0x00107FE0,0x00108088,168,ghidra-provisional
 func_001081B8,0x001081B8,0x00108298,224,ghidra-provisional
-func_0010A598,0x0010A598,0x0010A620,136,ghidra-provisional
 func_0010A620,0x0010A620,0x0010A6C8,168,ghidra-provisional
 func_0010CC18,0x0010CC18,0x0010CCB8,160,ghidra-provisional
 func_0010DFE8,0x0010DFE8,0x0010E090,168,ghidra-provisional

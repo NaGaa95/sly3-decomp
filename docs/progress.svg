@@ -1,14 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="192" viewBox="0 0 600 192" role="img" aria-labelledby="title desc">
   <title id="title">Sly 3 USA matching decompilation progress</title>
-  <desc id="desc">Main EE code: 716776 of 1835600 bytes, 39.05 percent, 6209 functions. VU code: 50032 of 50032 bytes, 100 percent, all nine inventoried programs. IOP: 25 matching functions, 676 code bytes and 936 initialized data bytes. Verified October 17, 2026.</desc>
+  <desc id="desc">Main EE code: 717224 of 1835600 bytes, 39.07 percent, 6212 functions. VU code: 50032 of 50032 bytes, 100 percent, all nine inventoried programs. IOP: 25 matching functions, 676 code bytes and 936 initialized data bytes. Verified October 17, 2026.</desc>
   <rect width="600" height="192" rx="12" fill="#111827"/>
   <g font-family="Segoe UI,Arial,sans-serif">
     <text x="24" y="30" fill="#f9fafb" font-size="16" font-weight="600">Verified source coverage</text>
     <text x="576" y="29" fill="#9ca3af" font-size="11" text-anchor="end">2026-10-17</text>
     <text x="24" y="58" fill="#e5e7eb" font-size="13">Main EE</text>
-    <text x="576" y="58" fill="#e5e7eb" font-size="13" text-anchor="end">39.05% &#183; 6,209 functions</text>
+    <text x="576" y="58" fill="#e5e7eb" font-size="13" text-anchor="end">39.07% &#183; 6,212 functions</text>
     <rect x="24" y="68" width="552" height="12" rx="6" fill="#374151"/>
-    <rect x="24" y="68" width="215.5482" height="12" rx="6" fill="#38bdf8"/>
+    <rect x="24" y="68" width="215.6830" height="12" rx="6" fill="#38bdf8"/>
     <text x="24" y="103" fill="#e5e7eb" font-size="13">VU code</text>
     <text x="576" y="103" fill="#e5e7eb" font-size="13" text-anchor="end">100% &#183; 9/9 programs</text>
     <rect x="24" y="113" width="552" height="12" rx="6" fill="#34d399"/>
