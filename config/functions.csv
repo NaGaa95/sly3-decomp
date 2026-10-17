@@ -6155,7 +6155,7 @@ func_00246E98,0x00246E98,0x00246EE0,72,ghidra+spimdisasm-provisional
 func_00246EE0,0x00246EE0,0x00246EF0,16,manual-complete-original-two-GP-producer-full32-return-JR-shift-delay-independent-native-review
 func_00246EF0,0x00246EF0,0x00246F30,64,ghidra+spimdisasm-provisional
 func_00246F30,0x00246F30,0x00246F58,40,ghidra+spimdisasm-provisional
-func_00246F58,0x00246F58,0x00247470,1304,ghidra+spimdisasm-provisional
+func_00246F58,0x00246F58,0x0024746C,1300,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00247470,0x00247470,0x00247588,280,ghidra+spimdisasm-provisional
 func_00247588,0x00247588,0x0024764C,196,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00247650,0x00247650,0x00247728,216,ghidra+spimdisasm-provisional
