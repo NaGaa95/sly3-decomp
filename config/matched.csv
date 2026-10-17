@@ -3101,8 +3101,10 @@ func_001B0878,0x001B0878,8,LINKED_MATCH,src/auto/func_001B0878.c
 func_001B0B18,0x001B0B18,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001B0C50,0x001B0C50,8,LINKED_MATCH,src/auto/func_001B0C50.c
 func_001B0C70,0x001B0C70,19,LINKED_MATCH,src/hand/func_001B0C70.c
+func_001B1798,0x001B1798,81,LINKED_MATCH,src/P2/rotation_align_commit_1B1798.cpp
 func_001B18E0,0x001B18E0,16,LINKED_MATCH,src/reference_constants/func_001B18E0.c
 func_001B2038,0x001B2038,14,LINKED_MATCH,src/reference_constants/func_001B2038.c
+func_001B2430,0x001B2430,76,LINKED_MATCH,src/P2/rotation_align_apply_1B2430.cpp
 func_001B2560,0x001B2560,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001B2698,0x001B2698,8,LINKED_MATCH,src/auto/func_001B2698.c
 func_001B26B8,0x001B26B8,25,LINKED_MATCH,src/auto/func_001B26B8.c
@@ -3396,6 +3398,8 @@ func_001D0D30,0x001D0D30,18,LINKED_MATCH,src/reference_constants/func_001D0D30.c
 func_001D0DC8,0x001D0DC8,241,LINKED_MATCH,src/P2/menu_update.c
 func_001D1190,0x001D1190,119,LINKED_MATCH,src/game_middle/menu_cancel_dispatch.cpp
 func_001D1370,0x001D1370,64,LINKED_MATCH,src/game_middle/menu_command_dispatch.c
+func_001D1470,0x001D1470,61,LINKED_MATCH,src/game_middle/save_slot_select_cue_1D1470.c
+func_001D1568,0x001D1568,56,LINKED_MATCH,src/game_middle/save_slot_select_commit_1D1568.c
 func_001D1648,0x001D1648,48,LINKED_MATCH,src/game_middle/save_pending.c
 func_001D17F0,0x001D17F0,120,LINKED_MATCH,src/game_middle/save_slot_initial_selection.cpp
 func_001D19D0,0x001D19D0,40,LINKED_MATCH,src/reference_constants/func_001D19D0.c
@@ -3594,6 +3598,7 @@ func_001DB560,0x001DB560,16,LINKED_MATCH,src/hand/func_001DB560.c
 func_001DB5A0,0x001DB5A0,9,LINKED_MATCH,src/auto/func_001DB5A0.c
 func_001DB5C8,0x001DB5C8,52,LINKED_MATCH,src/game_middle/movie_drain_callback.c
 func_001DB698,0x001DB698,14,LINKED_MATCH,src/reference_constants/func_001DB698.c
+func_001DB6D8,0x001DB6D8,124,LINKED_MATCH,src/game_middle/movie_tile_upload_1DB6D8.cpp
 func_001DB8C8,0x001DB8C8,272,LINKED_MATCH,src/game_middle/movie_render_packets.cpp
 func_001DBD08,0x001DBD08,43,EXACT_MATCH,src/hand/func_001DBD08.c
 func_001DBDB8,0x001DBDB8,50,LINKED_MATCH,src/game_middle/movie_batch.c
@@ -3699,6 +3704,7 @@ func_001E6310,0x001E6310,13,LINKED_MATCH,src/reference_constants/func_001E6310.c
 func_001E6348,0x001E6348,27,LINKED_MATCH,src/reference_constants/func_001E6348.c
 func_001E66D8,0x001E66D8,15,EXACT_MATCH,src/reference_constants/func_001E66D8.c
 func_001E6718,0x001E6718,69,LINKED_MATCH,src/reference_constants/func_001E6718.c
+func_001E7100,0x001E7100,73,LINKED_MATCH,src/game_middle/path_range_search_1E7100.c
 func_001E73D8,0x001E73D8,14,LINKED_MATCH,src/reference_constants/func_001E73D8.c
 func_001E7410,0x001E7410,60,LINKED_MATCH,src/reference_constants/func_001E7410.c
 func_001E7A60,0x001E7A60,115,LINKED_MATCH,src/hand/func_001E7A60.c
