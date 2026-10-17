@@ -1359,6 +1359,7 @@ func_00129CB8,0x00129CB8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00129DF0,0x00129DF0,8,LINKED_MATCH,src/auto/func_00129DF0.c
 func_00129E10,0x00129E10,3,EXACT_MATCH,src/hand/func_00129E10.c
 func_00129E20,0x00129E20,25,LINKED_MATCH,src/reference_constants/func_00129E20.c
+func_00129E88,0x00129E88,272,LINKED_MATCH,src/engine/record_walk_129e88.c
 func_0012A2C8,0x0012A2C8,66,LINKED_MATCH,src/engine/parity_register_12a2c8.c
 func_0012A798,0x0012A798,80,LINKED_MATCH,src/P2/object_initializers.cpp
 func_0012A8D8,0x0012A8D8,8,LINKED_MATCH,src/auto/func_0012A8D8.c
@@ -1936,6 +1937,7 @@ func_001574E8,0x001574E8,8,LINKED_MATCH,src/auto/func_001574E8.c
 func_00157508,0x00157508,12,LINKED_MATCH,src/reference_constants/func_00157508.c
 func_00157538,0x00157538,68,LINKED_MATCH,src/hand/func_00157538.c
 func_00157648,0x00157648,15,LINKED_MATCH,src/auto/func_00157648.c
+func_00157688,0x00157688,78,LINKED_MATCH,src/engine/path_step_157688.c
 func_001577C0,0x001577C0,15,LINKED_MATCH,src/hand/func_001577C0.c
 func_00157800,0x00157800,32,LINKED_MATCH,src/reference_constants/func_00157800.c
 func_00157880,0x00157880,17,LINKED_MATCH,src/auto/func_00157880.c
@@ -2320,6 +2322,7 @@ func_00172BA8,0x00172BA8,34,LINKED_MATCH,src/hand/func_00172BA8.c
 func_00172CE0,0x00172CE0,6,EXACT_MATCH,src/hand/func_00172CE0.c
 func_00172CF8,0x00172CF8,6,EXACT_MATCH,src/hand/func_00172CF8.c
 func_00172D10,0x00172D10,21,LINKED_MATCH,src/reference_constants/func_00172D10.c
+func_00172D68,0x00172D68,62,LINKED_MATCH,src/engine/record_apply_172d68.c
 func_001731B0,0x001731B0,29,LINKED_MATCH,src/engine/tri_state_predicate.c
 func_00173228,0x00173228,22,EXACT_MATCH,src/reference_constants/func_00173228.c
 func_00173280,0x00173280,33,LINKED_MATCH,src/engine/mode_switch.c
@@ -2383,6 +2386,7 @@ func_00174FF8,0x00174FF8,3,EXACT_MATCH,src/hand/func_00174FF8.c
 func_00175008,0x00175008,26,LINKED_MATCH,src/engine/signed_component.c
 func_00175070,0x00175070,9,EXACT_MATCH,src/reference_constants/func_00175070.c
 func_00175098,0x00175098,6,LINKED_MATCH,src/lib/func_00175098.c
+func_001750B0,0x001750B0,14,LINKED_MATCH,src/engine/slot_get_1750b0.c
 func_001750E8,0x001750E8,9,LINKED_MATCH,src/reference_constants/func_001750E8.c
 func_00175110,0x00175110,44,LINKED_MATCH,src/hand/func_00175110.c
 func_001751C0,0x001751C0,17,LINKED_MATCH,src/engine/mode_pair.c
@@ -2561,6 +2565,7 @@ func_001848F8,0x001848F8,8,LINKED_MATCH,src/auto/func_001848F8.c
 func_00184918,0x00184918,19,LINKED_MATCH,src/reference_constants/func_00184918.c
 func_001849E8,0x001849E8,8,LINKED_MATCH,src/wrappers/func_001849E8.c
 func_00184A60,0x00184A60,15,LINKED_MATCH,src/reference_constants/func_00184A60.c
+func_00184B60,0x00184B60,329,LINKED_MATCH,src/engine/focus_reset_184b60.cpp
 func_001852E0,0x001852E0,17,LINKED_MATCH,src/reference_os/func_001852E0.c
 func_001853D8,0x001853D8,17,LINKED_MATCH,src/reference_constants/func_001853D8.c
 func_00185420,0x00185420,23,LINKED_MATCH,src/hand/func_00185420.c
