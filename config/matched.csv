@@ -3327,6 +3327,7 @@ func_001D3AE8,0x001D3AE8,16,LINKED_MATCH,src/reference_constants/func_001D3AE8.c
 func_001D3B28,0x001D3B28,11,LINKED_MATCH,src/reference_constants/func_001D3B28.c
 func_001D3DF0,0x001D3DF0,116,LINKED_MATCH,src/game_middle/menu_option_labels.cpp
 func_001D3FC0,0x001D3FC0,309,LINKED_MATCH,src/game_middle/menu_option_apply.cpp
+func_001D4498,0x001D4498,30,LINKED_MATCH,src/game_middle/option_kind_flush.c
 func_001D45B0,0x001D45B0,41,LINKED_MATCH,src/game_middle/menu_selection_identity.c
 func_001D4658,0x001D4658,21,LINKED_MATCH,src/reference_constants/func_001D4658.c
 func_001D46B0,0x001D46B0,33,LINKED_MATCH,src/reference_constants/func_001D46B0.c
@@ -3487,6 +3488,7 @@ func_001DD858,0x001DD858,26,LINKED_MATCH,src/game_middle/anim_pending_clear.c
 func_001DD8C0,0x001DD8C0,18,LINKED_MATCH,src/reference_constants/func_001DD8C0.c
 func_001DDE80,0x001DDE80,89,LINKED_MATCH,src/game_middle/actor_attack_cycle.cpp
 func_001DE398,0x001DE398,79,LINKED_MATCH,src/game_middle/actor_secondary_mode.cpp
+func_001DEE28,0x001DEE28,57,LINKED_MATCH,src/game_middle/state_command_switch.c
 func_001DF418,0x001DF418,64,LINKED_MATCH,src/game_middle/actor_phase_retry.c
 func_001DF7E8,0x001DF7E8,19,LINKED_MATCH,src/reference_constants/func_001DF7E8.c
 func_001DF838,0x001DF838,19,LINKED_MATCH,src/reference_constants/func_001DF838.c
