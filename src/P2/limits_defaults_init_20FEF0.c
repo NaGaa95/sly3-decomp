@@ -1,0 +1,61 @@
+// SLY3_CFLAGS: -Os -G0
+struct LimitsSelf {
+    unsigned char prefix0[0x210];
+    int index;
+    unsigned char gap214[0x220 - 0x214];
+    float f220;
+    unsigned char gap224[0x22C - 0x224];
+    float f22C;
+    unsigned char gap230[0x240 - 0x230];
+    float v240[3];
+    unsigned char gap24C[0x250 - 0x24C];
+    float f250, f254;
+    unsigned char gap258[0x260 - 0x258];
+    float v260[3];
+    unsigned char gap26C[0x270 - 0x26C];
+    float f270, f274;
+    unsigned char gap278[0x284 - 0x278];
+    int word284;
+    unsigned char gap288[0x290 - 0x288];
+    float v290[3];
+    unsigned char gap29C[0x2A0 - 0x29C];
+    float v2A0[3];
+    float f2AC;
+    float f2B0;
+    float v2B4[3];
+};
+void func_0020ED28(void *receiver);
+void func_0020FEF0(struct LimitsSelf *self)
+{
+    float *a, *b, *c, *d, *e;
+    func_0020ED28(self);
+    self->index = -1;
+    self->f220 = 0.4f;
+    a = self->v240;
+    a[0] = 600.0f;
+    a[1] = 2500.0f;
+    a[2] = 0.0f;
+    self->f250 = 600.0f;
+    self->f254 = 2600.0f;
+    b = self->v260;
+    b[0] = 0.0f;
+    b[1] = 1.0f;
+    b[2] = 0.0f;
+    self->f270 = 0.0f;
+    self->f274 = 1000.0f;
+    self->f22C = 0.5f;
+    c = self->v290;
+    c[0] = 0.0f;
+    c[1] = 0.0f;
+    c[2] = 20.0f;
+    d = self->v2A0;
+    d[0] = -270.0f;
+    d[1] = 0.0f;
+    d[2] = 250.0f;
+    self->f2B0 = 1.25f;
+    e = self->v2B4;
+    e[0] = 2.0f;
+    e[1] = 0.0f;
+    e[2] = 0.6f;
+    self->word284 = 1;
+}
