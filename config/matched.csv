@@ -1555,6 +1555,7 @@ func_00135EE8,0x00135EE8,23,LINKED_MATCH,src/reference_constants/func_00135EE8.c
 func_00135F48,0x00135F48,13,LINKED_MATCH,src/engine/record_load_once.c
 func_00135F80,0x00135F80,12,EXACT_MATCH,src/engine/reset_fields.c
 func_001367F0,0x001367F0,12,LINKED_MATCH,src/hand/func_001367F0.c
+func_00136820,0x00136820,23,LINKED_MATCH,src/engine/object_exit_136820.c
 func_00136880,0x00136880,23,EXACT_MATCH,src/P2/animation_record_lookup.c
 func_001368E0,0x001368E0,10,LINKED_MATCH,src/auto/func_001368E0.c
 func_00136DB8,0x00136DB8,27,LINKED_MATCH,src/reference_constants/func_00136DB8.c
@@ -2157,6 +2158,7 @@ func_00168948,0x00168948,7,LINKED_MATCH,src/reference_constants/func_00168948.c
 func_00168968,0x00168968,15,LINKED_MATCH,src/engine/buffer_select_168968.c
 func_001689A8,0x001689A8,65,LINKED_MATCH,src/engine/gif_frame_1689a8.cpp
 func_00168CC0,0x00168CC0,69,LINKED_MATCH,src/engine/light_apply_168cc0.c
+func_00168E30,0x00168E30,22,EXACT_MATCH,src/engine/object_activate_168e30.c
 func_00168E88,0x00168E88,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00168FC0,0x00168FC0,8,LINKED_MATCH,src/auto/func_00168FC0.c
 func_00168FE0,0x00168FE0,91,LINKED_MATCH,src/engine/actor_init_168fe0.c
@@ -3751,6 +3753,7 @@ func_001EA3F8,0x001EA3F8,32,LINKED_MATCH,src/game_middle/event_counter_clamp.c
 func_001EA478,0x001EA478,13,LINKED_MATCH,src/reference_constants/func_001EA478.c
 func_001EA940,0x001EA940,25,LINKED_MATCH,src/game_middle/mode_state_gate.c
 func_001EA9A8,0x001EA9A8,3,EXACT_MATCH,src/game_middle/flag_set.c
+func_001EA9B8,0x001EA9B8,17,LINKED_MATCH,src/game_middle/actor_pending_clear_1EA9B8.c
 func_001EB030,0x001EB030,9,LINKED_MATCH,src/reference_constants/func_001EB030.c
 func_001EB058,0x001EB058,47,LINKED_MATCH,src/game_middle/child_create_setup.c
 func_001EB288,0x001EB288,29,LINKED_MATCH,src/game_middle/reference_pack_gather.c
@@ -5206,6 +5209,7 @@ func_0025A030,0x0025A030,2,EXACT_MATCH,src/hand/func_0025A030.c
 func_0025A048,0x0025A048,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0025A180,0x0025A180,8,LINKED_MATCH,src/auto/func_0025A180.c
 func_0025A1A0,0x0025A1A0,28,LINKED_MATCH,src/P2/buffer_init.c
+func_0025A210,0x0025A210,29,LINKED_MATCH,src/P2/output_initialize_25a210.c
 _$_20UnknownOwner0025A288,0x0025A288,17,LINKED_MATCH,src/reference_cpp/func_0025A288.cpp
 func_0025A2D0,0x0025A2D0,75,LINKED_MATCH,src/leaf/stream_write_25a2d0.cpp
 func_0025A400,0x0025A400,52,LINKED_MATCH,src/P2/output_flush.cpp
