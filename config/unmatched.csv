@@ -1134,11 +1134,7 @@ func_001F4350,0x001F4350,0x001F43C8,120,ghidra+spimdisasm-provisional
 func_001F4670,0x001F4670,0x001F4748,216,ghidra+spimdisasm-provisional
 func_001F4C40,0x001F4C40,0x001F4D28,232,ghidra+spimdisasm-provisional
 func_001F4D28,0x001F4D28,0x001F4D38,16,ghidra+spimdisasm-provisional
-func_001F4DD8,0x001F4DD8,0x001F4E10,56,ghidra+spimdisasm-provisional
 func_001F4E10,0x001F4E10,0x001F4E20,16,ghidra+spimdisasm-provisional
-func_001F5020,0x001F5020,0x001F5178,344,manual-original-owner-action-codes220-four-registered-siblings-real-delays-two-zero4-source0
-func_001F5178,0x001F5178,0x001F5268,240,manual-original-owner-action-codes220-four-registered-siblings-real-delays-two-zero4-source0
-func_001F52F0,0x001F52F0,0x001F53A8,184,manual-original-owner-action-codes220-four-registered-siblings-real-delays-two-zero4-source0
 func_001F5720,0x001F5720,0x001F57E0,192,ghidra-provisional
 func_001F5BF8,0x001F5BF8,0x001F5C58,96,ghidra-provisional
 func_001F5D70,0x001F5D70,0x001F60E8,888,ghidra-provisional
@@ -1177,7 +1173,6 @@ func_002020C8,0x002020C8,0x00202220,344,ghidra+spimdisasm-provisional
 func_00202330,0x00202330,0x002025B8,648,ghidra-provisional
 func_002025B8,0x002025B8,0x002027F0,568,ghidra-provisional
 func_00202958,0x00202958,0x002029E8,144,ghidra-provisional
-func_002029E8,0x002029E8,0x00202A88,160,ghidra+spimdisasm-provisional
 func_00202A88,0x00202A88,0x00202C20,408,ghidra+spimdisasm-provisional
 func_00202C90,0x00202C90,0x00202D30,160,ghidra+spimdisasm-provisional
 func_00202E58,0x00202E58,0x00203030,472,ghidra+spimdisasm-provisional

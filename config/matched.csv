@@ -3639,13 +3639,17 @@ func_001F4B00,0x001F4B00,12,LINKED_MATCH,src/reference_constants/func_001F4B00.c
 func_001F4B30,0x001F4B30,2,EXACT_MATCH,src/hand/func_001F4B30.c
 func_001F4B38,0x001F4B38,65,LINKED_MATCH,src/hand/func_001F4B38.c
 func_001F4D38,0x001F4D38,40,EXACT_MATCH,src/P2/child_controller_binding.c
+func_001F4DD8,0x001F4DD8,13,LINKED_MATCH,src/P2/setting_stamp_default.c
 func_001F4E20,0x001F4E20,10,LINKED_MATCH,src/reference_constants/func_001F4E20.c
 func_001F4E48,0x001F4E48,10,LINKED_MATCH,src/reference_constants/func_001F4E48.c
 func_001F4E70,0x001F4E70,10,LINKED_MATCH,src/reference_constants/func_001F4E70.c
 func_001F4E98,0x001F4E98,10,LINKED_MATCH,src/reference_constants/func_001F4E98.c
 func_001F4EC0,0x001F4EC0,31,LINKED_MATCH,src/hand/func_001F4EC0.c
 func_001F4F40,0x001F4F40,55,LINKED_MATCH,src/P2/owner_action_codes.c
+func_001F5020,0x001F5020,86,LINKED_MATCH,src/P2/owner_action_variant344.c
+func_001F5178,0x001F5178,60,LINKED_MATCH,src/P2/owner_action_variant240.c
 func_001F5268,0x001F5268,33,LINKED_MATCH,src/P2/owner_action_direct.c
+func_001F52F0,0x001F52F0,46,LINKED_MATCH,src/P2/owner_action_mode.c
 func_001F53A8,0x001F53A8,49,LINKED_MATCH,src/P2/resource_selector.cpp
 func_001F5470,0x001F5470,27,LINKED_MATCH,src/P2/resource_selector.cpp
 func_001F54E0,0x001F54E0,27,LINKED_MATCH,src/P2/resource_selector.cpp
@@ -3840,6 +3844,7 @@ func_00202220,0x00202220,21,LINKED_MATCH,src/hand/func_00202220.c
 func_00202278,0x00202278,45,LINKED_MATCH,src/hand/func_00202278.c
 func_002027F0,0x002027F0,50,LINKED_MATCH,src/P2/particle_list_render.cpp
 func_002028B8,0x002028B8,40,LINKED_MATCH,src/P2/owner_list_teardown.c
+func_002029E8,0x002029E8,39,LINKED_MATCH,src/P2/query_kind_switch.c
 func_00202C20,0x00202C20,4,EXACT_MATCH,src/P2/counter_increment_202c20.c
 func_00202C30,0x00202C30,23,LINKED_MATCH,src/hand/func_00202C30.c
 func_00202D30,0x00202D30,20,LINKED_MATCH,src/hand/func_00202D30.c
