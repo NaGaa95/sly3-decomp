@@ -2056,6 +2056,7 @@ func_00162AF0,0x00162AF0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00162C28,0x00162C28,8,LINKED_MATCH,src/auto/func_00162C28.c
 func_00162E08,0x00162E08,15,LINKED_MATCH,src/reference/func_00162E08.c
 func_00162E48,0x00162E48,11,LINKED_MATCH,src/reference_constants/func_00162E48.c
+func_00162E80,0x00162E80,92,LINKED_MATCH,src/engine/load_check_162e80.c
 func_00162FF0,0x00162FF0,47,LINKED_MATCH,src/hand/func_00162FF0.cpp
 func_001630B0,0x001630B0,39,LINKED_MATCH,src/reference_os/func_001630B0.c
 func_00163150,0x00163150,8,LINKED_MATCH,src/auto/func_00163150.c
@@ -2227,9 +2228,11 @@ func_0016ECD8,0x0016ECD8,8,LINKED_MATCH,src/auto/func_0016ECD8.c
 func_0016ECF8,0x0016ECF8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0016EE30,0x0016EE30,8,LINKED_MATCH,src/auto/func_0016EE30.c
 func_0016EE50,0x0016EE50,17,LINKED_MATCH,src/reference_constants/func_0016EE50.c
+func_0016EE98,0x0016EE98,126,LINKED_MATCH,src/engine/stream_load_16ee98.c
 func_0016F5E8,0x0016F5E8,10,EXACT_MATCH,src/reference_constants/func_0016F5E8.c
 func_0016F610,0x0016F610,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0016F748,0x0016F748,8,LINKED_MATCH,src/auto/func_0016F748.c
+func_0016F768,0x0016F768,160,LINKED_MATCH,src/engine/record_load_16f768.c
 func_0016F9E8,0x0016F9E8,7,LINKED_MATCH,src/auto/func_0016F9E8.c
 func_0016FA08,0x0016FA08,55,LINKED_MATCH,src/engine/command_play_16fa08.c
 func_0016FAE8,0x0016FAE8,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -2275,6 +2278,7 @@ func_00171A10,0x00171A10,8,LINKED_MATCH,src/auto/func_00171A10.c
 func_00171A30,0x00171A30,8,LINKED_MATCH,src/auto/func_00171A30.c
 func_00171A50,0x00171A50,2,EXACT_MATCH,src/hand/func_00171A50.c
 func_00171A58,0x00171A58,18,LINKED_MATCH,src/reference_constants/func_00171A58.c
+func_00171AA0,0x00171AA0,125,LINKED_MATCH,src/engine/option_message_171aa0.cpp
 func_00171D98,0x00171D98,15,LINKED_MATCH,src/auto/func_00171D98.c
 func_00171DD8,0x00171DD8,29,LINKED_MATCH,src/engine/value_store.c
 func_00171E50,0x00171E50,262,LINKED_MATCH,src/reference_constants/func_00171E50.c
@@ -2317,6 +2321,7 @@ func_001738F0,0x001738F0,23,LINKED_MATCH,src/reference_constants/func_001738F0.c
 func_00173950,0x00173950,21,LINKED_MATCH,src/reference_constants/func_00173950.c
 func_001739A8,0x001739A8,60,LINKED_MATCH,src/engine/attachment_remove.cpp
 func_00173A98,0x00173A98,10,LINKED_MATCH,src/reference_constants/func_00173A98.c
+func_00173C10,0x00173C10,123,LINKED_MATCH,src/engine/widget_set_173c10.c
 func_00173E00,0x00173E00,17,LINKED_MATCH,src/reference_constants/func_00173E00.c
 func_00173E48,0x00173E48,40,LINKED_MATCH,src/reference_os/func_00173E48.c
 func_00173EE8,0x00173EE8,18,LINKED_MATCH,src/reference_constants/func_00173EE8.c
@@ -2620,6 +2625,7 @@ func_0018ADB0,0x0018ADB0,19,LINKED_MATCH,src/engine/active_query_18adb0.c
 func_0018AE00,0x0018AE00,19,LINKED_MATCH,src/engine/provider_gate.c
 func_0018AE50,0x0018AE50,80,LINKED_MATCH,src/P2/object_initializers.cpp
 func_0018AF90,0x0018AF90,8,LINKED_MATCH,src/auto/func_0018AF90.c
+func_0018B330,0x0018B330,115,LINKED_MATCH,src/engine/record_collect_18b330.c
 func_0018B500,0x0018B500,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0018B638,0x0018B638,8,LINKED_MATCH,src/auto/func_0018B638.c
 func_0018B658,0x0018B658,26,LINKED_MATCH,src/engine/slot_pointer.c
