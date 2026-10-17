@@ -3039,6 +3039,8 @@ func_001A98C8,0x001A98C8,5,EXACT_MATCH,src/P2/input_mask.cpp
 func_001A98E0,0x001A98E0,14,LINKED_MATCH,src/P2/input_state_more.cpp
 func_001A9918,0x001A9918,9,EXACT_MATCH,src/reference_constants/func_001A9918.c
 func_001A9940,0x001A9940,7,EXACT_MATCH,src/reference_constants/func_001A9940.c
+func_001A9960,0x001A9960,13,LINKED_MATCH,src/game_middle/input_amount_set_1A9960.c
+func_001A9998,0x001A9998,14,LINKED_MATCH,src/game_middle/input_state_clear_1A9998.c
 func_001A99D0,0x001A99D0,4,EXACT_MATCH,src/hand/func_001A99D0.c
 func_001A99E0,0x001A99E0,150,LINKED_MATCH,src/game_middle/input_repeat_x.c
 func_001A9C38,0x001A9C38,150,LINKED_MATCH,src/game_middle/input_repeat_y.c
@@ -3095,6 +3097,7 @@ func_001B40F0,0x001B40F0,71,LINKED_MATCH,src/game_middle/actor_payload_mode.cpp
 func_001B4210,0x001B4210,31,LINKED_MATCH,src/game_middle/subject_parent_chain_filter.c
 func_001B56F0,0x001B56F0,79,LINKED_MATCH,src/game_middle/path_follow_apply_1B56F0.c
 func_001B5830,0x001B5830,24,LINKED_MATCH,src/game_middle/state_change_stamp.c
+func_001B5890,0x001B5890,31,LINKED_MATCH,src/game_middle/component_defaults_initialize_1B5890.c
 func_001B5C78,0x001B5C78,35,EXACT_MATCH,src/hand/func_001B5C78.c
 func_001B5D08,0x001B5D08,52,LINKED_MATCH,src/game_middle/context_mode_permission.c
 func_001B5DD8,0x001B5DD8,16,EXACT_MATCH,src/reference_os/func_001B5DD8.c
@@ -3622,6 +3625,7 @@ func_001E0DF8,0x001E0DF8,24,LINKED_MATCH,src/hand/func_001E0DF8.cpp
 func_001E1320,0x001E1320,20,LINKED_MATCH,src/reference_constants/func_001E1320.c
 func_001E1370,0x001E1370,112,LINKED_MATCH,src/reference_constants/func_001E1370.c
 func_001E1810,0x001E1810,120,LINKED_MATCH,src/hand/func_001E1810.c
+func_001E19F0,0x001E19F0,29,LINKED_MATCH,src/game_middle/vector_negate_apply_1E19F0.c
 func_001E1C68,0x001E1C68,71,LINKED_MATCH,src/game_middle/actor_alternate_select.c
 func_001E1D88,0x001E1D88,22,LINKED_MATCH,src/game_middle/buffer_release_match.c
 func_001E2358,0x001E2358,11,LINKED_MATCH,src/reference_constants/func_001E2358.c
