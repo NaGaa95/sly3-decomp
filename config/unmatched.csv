@@ -942,7 +942,6 @@ func_001F32E8,0x001F32E8,0x001F3720,1080,ghidra+spimdisasm-provisional
 func_001F37D8,0x001F37D8,0x001F3860,136,ghidra-provisional
 func_001F3860,0x001F3860,0x001F3990,304,ghidra-provisional
 func_001F39E8,0x001F39E8,0x001F39F4,12,manual-original-path-span88-registered-setter12-zero4-source0
-func_001F3D48,0x001F3D48,0x001F3E48,256,ghidra+spimdisasm-provisional
 func_001F3E48,0x001F3E48,0x001F3ED8,144,ghidra+spimdisasm-provisional
 func_001F3ED8,0x001F3ED8,0x001F4278,928,ghidra+spimdisasm-provisional
 func_001F4350,0x001F4350,0x001F43C8,120,ghidra+spimdisasm-provisional

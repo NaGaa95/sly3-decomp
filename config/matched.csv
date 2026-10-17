@@ -3795,6 +3795,7 @@ func_001F3C48,0x001F3C48,14,LINKED_MATCH,src/reference_constants/func_001F3C48.c
 func_001F3C80,0x001F3C80,14,LINKED_MATCH,src/reference_constants/func_001F3C80.c
 func_001F3CB8,0x001F3CB8,22,LINKED_MATCH,src/P2/attachment_position.c
 func_001F3D10,0x001F3D10,14,LINKED_MATCH,src/reference_constants/func_001F3D10.c
+func_001F3D48,0x001F3D48,64,LINKED_MATCH,src/P2/query_record_build_1F3D48.c
 func_001F4278,0x001F4278,27,LINKED_MATCH,src/reference_constants/func_001F4278.c
 func_001F42E8,0x001F42E8,26,LINKED_MATCH,src/P2/subject_gate.c
 func_001F43C8,0x001F43C8,2,EXACT_MATCH,src/hand/func_001F43C8.c
