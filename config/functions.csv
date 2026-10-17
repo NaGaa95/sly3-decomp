@@ -1623,7 +1623,7 @@ func_00132C58,0x00132C58,0x00133388,1840,ghidra+spimdisasm-provisional
 func_00133388,0x00133388,0x00133510,392,ghidra+spimdisasm-provisional
 func_00133510,0x00133510,0x00133568,88,ghidra+spimdisasm-provisional
 func_00133568,0x00133568,0x00133810,680,ghidra-provisional
-func_00133810,0x00133810,0x00133A38,552,ghidra+spimdisasm-provisional
+func_00133810,0x00133810,0x00133A38,552,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00133A38,0x00133A38,0x00133A58,32,ghidra-provisional
 func_00133A58,0x00133A58,0x00133A90,56,ghidra-provisional
 func_00133A90,0x00133A90,0x00133AD0,64,ghidra-provisional
@@ -2317,7 +2317,7 @@ func_0015CF88,0x0015CF88,0x0015CFD8,80,ghidra-provisional
 func_0015CFD8,0x0015CFD8,0x0015D048,112,ghidra-provisional
 func_0015D048,0x0015D048,0x0015D0E0,152,ghidra-provisional
 func_0015D0E0,0x0015D0E0,0x0015D100,32,ghidra+spimdisasm-provisional
-func_0015D100,0x0015D100,0x0015D288,392,ghidra+spimdisasm-provisional
+func_0015D100,0x0015D100,0x0015D284,388,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0015D288,0x0015D288,0x0015D2A8,32,ghidra-provisional
 func_0015D2A8,0x0015D2A8,0x0015D2D4,44,manual-original-ghidra-return-and-whole-text-control-review
 func_0015D2F0,0x0015D2F0,0x0015D510,544,ghidra+spimdisasm-provisional
@@ -3261,7 +3261,7 @@ func_00195688,0x00195688,0x001956B8,48,ghidra+spimdisasm-provisional
 func_001956B8,0x001956B8,0x00195710,88,ghidra+spimdisasm-provisional
 func_00195710,0x00195710,0x00195760,80,ghidra-provisional
 func_00195760,0x00195760,0x00195808,168,ghidra+spimdisasm-provisional
-func_00195808,0x00195808,0x00195A98,656,ghidra+spimdisasm-provisional
+func_00195808,0x00195808,0x00195A98,656,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00195A98,0x00195A98,0x00195B18,128,ghidra+spimdisasm-provisional
 func_00195B18,0x00195B18,0x00195C50,312,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00195C50,0x00195C50,0x00196050,1024,ghidra+spimdisasm-provisional

@@ -2839,3 +2839,6 @@ func_00166150,0x00166150,0x00166224,212,manual-complete-original-JR-real-delay-a
 func_0015C9A8,0x0015C9A8,0x0015CACC,292,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0016FF08,0x0016FF08,0x00170014,268,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0013B9E0,0x0013B9E0,0x0013BAC8,232,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_0015D100,0x0015D100,0x0015D284,388,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00195808,0x00195808,0x00195A98,656,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
+func_00133810,0x00133810,0x00133A38,552,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review

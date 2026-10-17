@@ -1521,6 +1521,7 @@ func_001323C8,0x001323C8,28,LINKED_MATCH,src/engine/control_update.c
 func_001327F0,0x001327F0,48,LINKED_MATCH,src/engine/event_filter_1327f0.c
 func_001328B0,0x001328B0,32,LINKED_MATCH,src/engine/control_task_clear.c
 func_00132BC0,0x00132BC0,37,LINKED_MATCH,src/hand/func_00132BC0.c
+func_00133810,0x00133810,138,LINKED_MATCH,src/engine/runtime_startup_133810.cpp
 func_00133A38,0x00133A38,8,LINKED_MATCH,src/auto/func_00133A38.c
 func_00133A58,0x00133A58,14,LINKED_MATCH,src/reference_constants/func_00133A58.c
 func_00133A90,0x00133A90,16,LINKED_MATCH,src/reference_constants/func_00133A90.c
@@ -2010,6 +2011,7 @@ func_0015CF18,0x0015CF18,7,LINKED_MATCH,src/auto/func_0015CF18.c
 func_0015CF38,0x0015CF38,19,LINKED_MATCH,src/reference_constants/func_0015CF38.c
 func_0015CF88,0x0015CF88,19,LINKED_MATCH,src/reference_constants/func_0015CF88.c
 func_0015D0E0,0x0015D0E0,7,EXACT_MATCH,src/hand/func_0015D0E0.c
+func_0015D100,0x0015D100,97,LINKED_MATCH,src/engine/flag_register_15d100.c
 func_0015D288,0x0015D288,8,LINKED_MATCH,src/reference_constants/func_0015D288.c
 func_0015D2A8,0x0015D2A8,11,LINKED_MATCH,src/reference_constants/func_0015D2A8.c
 func_0015D6A0,0x0015D6A0,13,LINKED_MATCH,src/reference_constants/func_0015D6A0.c
@@ -2701,6 +2703,7 @@ func_00195278,0x00195278,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001953B0,0x001953B0,8,LINKED_MATCH,src/auto/func_001953B0.c
 func_00195688,0x00195688,11,LINKED_MATCH,src/hand/func_00195688.cpp
 func_00195760,0x00195760,41,LINKED_MATCH,src/hand/func_00195760.cpp
+func_00195808,0x00195808,164,LINKED_MATCH,src/engine/frame_border_195808.cpp
 func_00195A98,0x00195A98,32,LINKED_MATCH,src/hand/func_00195A98.cpp
 func_00195B18,0x00195B18,78,LINKED_MATCH,src/engine/gif_clear_195b18.cpp
 func_001961D0,0x001961D0,22,LINKED_MATCH,src/engine/table_select.c
