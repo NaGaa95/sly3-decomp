@@ -1675,6 +1675,7 @@ func_0013D0E8,0x0013D0E8,8,LINKED_MATCH,src/auto/func_0013D0E8.c
 func_0013D108,0x0013D108,27,LINKED_MATCH,src/reference_constants/func_0013D108.c
 func_0013D178,0x0013D178,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0013D2B0,0x0013D2B0,8,LINKED_MATCH,src/auto/func_0013D2B0.c
+func_0013D2D0,0x0013D2D0,76,LINKED_MATCH,src/engine/actor_setup_13d2d0.c
 func_0013D400,0x0013D400,15,LINKED_MATCH,src/reference_constants/func_0013D400.c
 func_0013D440,0x0013D440,15,LINKED_MATCH,src/reference_constants/func_0013D440.c
 func_0013D480,0x0013D480,37,LINKED_MATCH,src/engine/init_sequence.c
@@ -1890,6 +1891,7 @@ func_00155D00,0x00155D00,24,LINKED_MATCH,src/reference_constants/func_00155D00.c
 func_00155E30,0x00155E30,41,LINKED_MATCH,src/hand/func_00155E30.c
 func_00155ED8,0x00155ED8,19,LINKED_MATCH,src/reference_constants/func_00155ED8.c
 func_00155F28,0x00155F28,22,LINKED_MATCH,src/reference_constants/func_00155F28.c
+func_00155F80,0x00155F80,140,LINKED_MATCH,src/engine/link_event_155f80.c
 func_001561B0,0x001561B0,15,LINKED_MATCH,src/reference_constants/func_001561B0.c
 func_00156438,0x00156438,11,LINKED_MATCH,src/reference_constants/func_00156438.c
 func_00156468,0x00156468,67,LINKED_MATCH,src/engine/actor_reference.cpp
@@ -2039,6 +2041,7 @@ func_0015FCF8,0x0015FCF8,24,LINKED_MATCH,src/reference_constants/func_0015FCF8.c
 func_0015FD58,0x0015FD58,68,LINKED_MATCH,src/engine/state_change_15fd58.c
 func_00161140,0x00161140,27,LINKED_MATCH,src/engine/state_restart.c
 func_001612D0,0x001612D0,44,LINKED_MATCH,src/engine/list_accept.c
+func_00161610,0x00161610,67,LINKED_MATCH,src/engine/handle_open_161610.c
 func_00161B40,0x00161B40,11,LINKED_MATCH,src/auto/func_00161B40.c
 func_00161B70,0x00161B70,2,EXACT_MATCH,src/hand/func_00161B70.c
 func_00161B78,0x00161B78,26,LINKED_MATCH,src/engine/entry_kind.c
@@ -2140,6 +2143,7 @@ func_001689A8,0x001689A8,65,LINKED_MATCH,src/engine/gif_frame_1689a8.cpp
 func_00168CC0,0x00168CC0,69,LINKED_MATCH,src/engine/light_apply_168cc0.c
 func_00168E88,0x00168E88,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00168FC0,0x00168FC0,8,LINKED_MATCH,src/auto/func_00168FC0.c
+func_00168FE0,0x00168FE0,91,LINKED_MATCH,src/engine/actor_init_168fe0.c
 func_001691B0,0x001691B0,12,LINKED_MATCH,src/engine/set_color.cpp
 func_001692E8,0x001692E8,44,LINKED_MATCH,src/reference_constants/func_001692E8.c
 func_00169460,0x00169460,7,LINKED_MATCH,src/reference_constants/func_00169460.c
@@ -2218,6 +2222,7 @@ func_0016D940,0x0016D940,4,EXACT_MATCH,src/engine/mode_is_two.c
 func_0016D950,0x0016D950,13,LINKED_MATCH,src/reference_constants/func_0016D950.c
 func_0016D988,0x0016D988,26,LINKED_MATCH,src/reference_constants/func_0016D988.c
 func_0016DB68,0x0016DB68,48,LINKED_MATCH,src/reference_constants/func_0016DB68.c
+func_0016DEE8,0x0016DEE8,121,LINKED_MATCH,src/engine/event_react_16dee8.c
 func_0016E0D0,0x0016E0D0,17,LINKED_MATCH,src/reference_constants/func_0016E0D0.c
 func_0016E5A0,0x0016E5A0,14,LINKED_MATCH,src/reference_constants/func_0016E5A0.c
 func_0016E5D8,0x0016E5D8,14,LINKED_MATCH,src/reference_constants/func_0016E5D8.c
@@ -2266,6 +2271,7 @@ func_001710E0,0x001710E0,10,EXACT_MATCH,src/hand/func_001710E0.c
 func_00171108,0x00171108,12,LINKED_MATCH,src/reference_constants/func_00171108.c
 func_00171138,0x00171138,19,LINKED_MATCH,src/reference_constants/func_00171138.c
 func_00171188,0x00171188,12,LINKED_MATCH,src/auto/func_00171188.c
+func_001711B8,0x001711B8,103,LINKED_MATCH,src/engine/state_machine_1711b8.c
 func_00171508,0x00171508,12,LINKED_MATCH,src/reference_constants/func_00171508.c
 func_00171670,0x00171670,33,LINKED_MATCH,src/engine/state_slot.c
 func_001716F8,0x001716F8,8,LINKED_MATCH,src/reference_constants/func_001716F8.c
@@ -2671,6 +2677,7 @@ func_00194480,0x00194480,26,LINKED_MATCH,src/auto/func_00194480.c
 func_001944E8,0x001944E8,14,LINKED_MATCH,src/reference_constants/func_001944E8.c
 func_00194520,0x00194520,14,LINKED_MATCH,src/reference_constants/func_00194520.c
 func_00194AE8,0x00194AE8,14,LINKED_MATCH,src/reference_constants/func_00194AE8.c
+func_00195028,0x00195028,79,LINKED_MATCH,src/engine/transform_read_195028.c
 func_00195168,0x00195168,14,LINKED_MATCH,src/reference_constants/func_00195168.c
 func_00195278,0x00195278,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001953B0,0x001953B0,8,LINKED_MATCH,src/auto/func_001953B0.c
