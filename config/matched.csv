@@ -3624,6 +3624,7 @@ func_001E0D68,0x001E0D68,35,LINKED_MATCH,src/reference_constants/func_001E0D68.c
 func_001E0DF8,0x001E0DF8,24,LINKED_MATCH,src/hand/func_001E0DF8.cpp
 func_001E1320,0x001E1320,20,LINKED_MATCH,src/reference_constants/func_001E1320.c
 func_001E1370,0x001E1370,112,LINKED_MATCH,src/reference_constants/func_001E1370.c
+func_001E16E8,0x001E16E8,73,LINKED_MATCH,src/game_middle/actor_mode_animation_1E16E8.c
 func_001E1810,0x001E1810,120,LINKED_MATCH,src/hand/func_001E1810.c
 func_001E19F0,0x001E19F0,29,LINKED_MATCH,src/game_middle/vector_negate_apply_1E19F0.c
 func_001E1C68,0x001E1C68,71,LINKED_MATCH,src/game_middle/actor_alternate_select.c
