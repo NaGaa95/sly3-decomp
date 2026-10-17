@@ -5907,7 +5907,7 @@ func_0023AC58,0x0023AC58,0x0023ACA8,80,manual-original-ghidra-return-and-whole-t
 func_0023ACB0,0x0023ACB0,0x0023ADE8,312,ghidra+spimdisasm-provisional
 func_0023ADE8,0x0023ADE8,0x0023AE08,32,ghidra-provisional
 func_0023AE08,0x0023AE08,0x0023AEB8,176,ghidra+spimdisasm-provisional
-func_0023AEB8,0x0023AEB8,0x0023B310,1112,ghidra-provisional
+func_0023AEB8,0x0023AEB8,0x0023B310,1112,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0023B310,0x0023B310,0x0023B3A8,152,ghidra+spimdisasm-provisional
 func_0023B3A8,0x0023B3A8,0x0023B550,424,ghidra+spimdisasm-provisional
 func_0023B550,0x0023B550,0x0023B5C0,112,ghidra+spimdisasm-provisional
