@@ -1793,6 +1793,7 @@ func_0015B640,0x0015B640,27,LINKED_MATCH,src/reference_constants/func_0015B640.c
 func_0015B6B0,0x0015B6B0,29,LINKED_MATCH,src/engine/pending_list_reorder.c
 func_0015B728,0x0015B728,22,LINKED_MATCH,src/reference_constants/func_0015B728.c
 func_0015B780,0x0015B780,4,EXACT_MATCH,src/hand/func_0015B780.c
+func_0015B790,0x0015B790,36,LINKED_MATCH,src/engine/pending_drain.c
 func_0015BCA0,0x0015BCA0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0015BDD8,0x0015BDD8,8,LINKED_MATCH,src/auto/func_0015BDD8.c
 func_0015BDF8,0x0015BDF8,6,EXACT_MATCH,src/reference_constants/func_0015BDF8.c
@@ -1889,6 +1890,7 @@ func_00163ED8,0x00163ED8,18,LINKED_MATCH,src/P2/list_splot.cpp
 func_00163F28,0x00163F28,12,EXACT_MATCH,src/auto/func_00163F28.c
 func_00163F58,0x00163F58,51,LINKED_MATCH,src/P2/list_splot_input.cpp
 func_00164028,0x00164028,82,LINKED_MATCH,src/P2/list_splot.cpp
+func_001641B0,0x001641B0,30,LINKED_MATCH,src/engine/object_select.c
 func_00164760,0x00164760,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00164898,0x00164898,8,LINKED_MATCH,src/auto/func_00164898.c
 func_001648B8,0x001648B8,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -2362,6 +2364,7 @@ func_00189DF8,0x00189DF8,26,LINKED_MATCH,src/engine/subject_pair_event.cpp
 func_00189E60,0x00189E60,3,EXACT_MATCH,src/hand/func_00189E60.c
 func_0018A3E8,0x0018A3E8,161,LINKED_MATCH,src/P2/state_relationship.cpp
 func_0018A890,0x0018A890,27,EXACT_MATCH,src/engine/subject_compare.cpp
+func_0018AA48,0x0018AA48,27,LINKED_MATCH,src/engine/current_set.c
 func_0018AAB8,0x0018AAB8,10,LINKED_MATCH,src/hand/func_0018AAB8.c
 func_0018AAE0,0x0018AAE0,10,LINKED_MATCH,src/hand/func_0018AAE0.c
 func_0018AC60,0x0018AC60,62,LINKED_MATCH,src/P2/progress_restore.cpp
@@ -2509,6 +2512,7 @@ func_0019B940,0x0019B940,10,EXACT_MATCH,src/hand/func_0019B940.c
 func_0019B968,0x0019B968,41,LINKED_MATCH,src/hand/func_0019B968.c
 func_0019BA10,0x0019BA10,36,LINKED_MATCH,src/reference_constants/func_0019BA10.c
 func_0019BAA0,0x0019BAA0,24,LINKED_MATCH,src/reference_constants/func_0019BAA0.c
+func_0019BB00,0x0019BB00,29,LINKED_MATCH,src/engine/state_callback.c
 func_0019BE58,0x0019BE58,14,LINKED_MATCH,src/reference_constants/func_0019BE58.c
 func_0019BE90,0x0019BE90,17,LINKED_MATCH,src/reference_constants/func_0019BE90.c
 func_0019BED8,0x0019BED8,12,LINKED_MATCH,src/auto/func_0019BED8.c
