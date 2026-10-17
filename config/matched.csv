@@ -3125,6 +3125,7 @@ func_001B7170,0x001B7170,8,LINKED_MATCH,src/auto/func_001B7170.c
 func_001B7190,0x001B7190,17,LINKED_MATCH,src/game_middle/fields_initialize.c
 func_001B71D8,0x001B71D8,35,LINKED_MATCH,src/hand/func_001B71D8.c
 func_001B8EB0,0x001B8EB0,92,LINKED_MATCH,src/game_middle/heading_state_select_1B8EB0.c
+func_001BAC20,0x001BAC20,67,LINKED_MATCH,src/game_middle/vector_align_notify_1BAC20.c
 func_001BADC0,0x001BADC0,14,EXACT_MATCH,src/hand/func_001BADC0.c
 func_001BB188,0x001BB188,40,LINKED_MATCH,src/game_middle/vertical_intercept.cpp
 func_001BB6D0,0x001BB6D0,24,LINKED_MATCH,src/hand/func_001BB6D0.c
@@ -3154,6 +3155,7 @@ func_001BECB8,0x001BECB8,6,EXACT_MATCH,src/hand/func_001BECB8.c
 func_001BECD0,0x001BECD0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001BEE08,0x001BEE08,8,LINKED_MATCH,src/auto/func_001BEE08.c
 func_001BEE28,0x001BEE28,18,EXACT_MATCH,src/game_middle/range_pair_defaults.c
+func_001BEF88,0x001BEF88,103,LINKED_MATCH,src/game_middle/path_orient_apply_1BEF88.cpp
 func_001BF128,0x001BF128,51,LINKED_MATCH,src/reference_constants/func_001BF128.c
 func_001BF990,0x001BF990,29,LINKED_MATCH,src/reference_constants/func_001BF990.c
 func_001BFA08,0x001BFA08,3,EXACT_MATCH,src/reference_os/func_001BFA08.c
@@ -3499,6 +3501,7 @@ func_001D5EA8,0x001D5EA8,28,LINKED_MATCH,src/reference_constants/func_001D5EA8.c
 func_001D5F18,0x001D5F18,7,LINKED_MATCH,src/auto/func_001D5F18.c
 func_001D6608,0x001D6608,20,LINKED_MATCH,src/reference_constants/func_001D6608.c
 func_001D6658,0x001D6658,29,LINKED_MATCH,src/game_middle/path_heading_aligned.c
+func_001D66D0,0x001D66D0,84,LINKED_MATCH,src/game_middle/target_range_check_1D66D0.c
 func_001D6820,0x001D6820,54,LINKED_MATCH,src/reference_constants/func_001D6820.c
 func_001D68F8,0x001D68F8,2,EXACT_MATCH,src/hand/func_001D68F8.c
 func_001D6900,0x001D6900,32,LINKED_MATCH,src/reference_constants/func_001D6900.c
@@ -3627,6 +3630,7 @@ func_001DDE80,0x001DDE80,89,LINKED_MATCH,src/game_middle/actor_attack_cycle.cpp
 func_001DE398,0x001DE398,79,LINKED_MATCH,src/game_middle/actor_secondary_mode.cpp
 func_001DEE28,0x001DEE28,57,LINKED_MATCH,src/game_middle/state_command_switch.c
 func_001DF418,0x001DF418,64,LINKED_MATCH,src/game_middle/actor_phase_retry.c
+func_001DF518,0x001DF518,58,LINKED_MATCH,src/game_middle/motion_pull_apply_1DF518.c
 func_001DF7E8,0x001DF7E8,19,LINKED_MATCH,src/reference_constants/func_001DF7E8.c
 func_001DF838,0x001DF838,19,LINKED_MATCH,src/reference_constants/func_001DF838.c
 func_001E0380,0x001E0380,39,LINKED_MATCH,src/game_middle/target_offset_forward.cpp
