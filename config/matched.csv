@@ -4084,6 +4084,7 @@ func_001FF100,0x001FF100,183,LINKED_MATCH,src/P2/particle_event_loop.c
 func_001FF3E0,0x001FF3E0,56,LINKED_MATCH,src/P2/particle_event.c
 func_001FF4C0,0x001FF4C0,5,EXACT_MATCH,src/reference_constants/func_001FF4C0.c
 func_001FF4D8,0x001FF4D8,45,LINKED_MATCH,src/P2/particle_event.c
+func_001FF590,0x001FF590,71,LINKED_MATCH,src/P2/particle_batch_setup_1FF590.c
 func_002001C0,0x002001C0,90,LINKED_MATCH,src/P2/particle_lifetime.c
 func_00200868,0x00200868,21,LINKED_MATCH,src/hand/func_00200868.c
 func_002017E0,0x002017E0,40,LINKED_MATCH,src/P2/particle_list_release.cpp
