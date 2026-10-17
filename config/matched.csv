@@ -4093,6 +4093,7 @@ func_001FF590,0x001FF590,71,LINKED_MATCH,src/P2/particle_batch_setup_1FF590.c
 func_002001C0,0x002001C0,90,LINKED_MATCH,src/P2/particle_lifetime.c
 func_00200868,0x00200868,21,LINKED_MATCH,src/hand/func_00200868.c
 func_002017E0,0x002017E0,40,LINKED_MATCH,src/P2/particle_list_release.cpp
+func_00201880,0x00201880,49,LINKED_MATCH,src/P2/bucket_radius_count_201880.cpp
 func_00201C18,0x00201C18,127,LINKED_MATCH,src/P2/particle_render_bind.cpp
 func_00202220,0x00202220,21,LINKED_MATCH,src/hand/func_00202220.c
 func_00202278,0x00202278,45,LINKED_MATCH,src/hand/func_00202278.c
