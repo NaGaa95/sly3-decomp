@@ -2626,6 +2626,8 @@ func_00186610,0x00186610,71,LINKED_MATCH,src/engine/subject_close_186610.cpp
 func_00186730,0x00186730,56,LINKED_MATCH,src/engine/event_handle_186730.c
 func_00186810,0x00186810,60,LINKED_MATCH,src/engine/subject_event_186810.c
 func_00186900,0x00186900,11,LINKED_MATCH,src/engine/mode_query.c
+func_00186930,0x00186930,141,LINKED_MATCH,src/engine/mode_prompt_186930.c
+func_00186B68,0x00186B68,141,LINKED_MATCH,src/engine/mode_reply_186b68.c
 func_00186DA0,0x00186DA0,33,LINKED_MATCH,src/hand/func_00186DA0.c
 func_00186E28,0x00186E28,21,LINKED_MATCH,src/reference_constants/func_00186E28.c
 func_00186E80,0x00186E80,8,LINKED_MATCH,src/reference_constants/func_00186E80.c
@@ -3676,6 +3678,7 @@ func_001DF518,0x001DF518,58,LINKED_MATCH,src/game_middle/motion_pull_apply_1DF51
 func_001DF7E8,0x001DF7E8,19,LINKED_MATCH,src/reference_constants/func_001DF7E8.c
 func_001DF838,0x001DF838,19,LINKED_MATCH,src/reference_constants/func_001DF838.c
 func_001E0380,0x001E0380,39,LINKED_MATCH,src/game_middle/target_offset_forward.cpp
+func_001E0420,0x001E0420,49,LINKED_MATCH,src/game_middle/entry_release_1E0420.c
 func_001E04E8,0x001E04E8,94,LINKED_MATCH,src/reference_constants/func_001E04E8.c
 func_001E0660,0x001E0660,67,LINKED_MATCH,src/hand/func_001E0660.c
 func_001E0770,0x001E0770,97,LINKED_MATCH,src/game_middle/actor_mode_mapping.c
@@ -5178,6 +5181,7 @@ func_00255A40,0x00255A40,22,LINKED_MATCH,src/hand/func_00255A40.c
 func_00255A98,0x00255A98,17,LINKED_MATCH,src/hand/func_00255A98.c
 func_00255AE0,0x00255AE0,17,LINKED_MATCH,src/hand/func_00255AE0.c
 func_00255B28,0x00255B28,41,LINKED_MATCH,src/hand/func_00255B28.c
+func_00256090,0x00256090,75,LINKED_MATCH,src/leaf/selection_256090.cpp
 func_002561C0,0x002561C0,46,LINKED_MATCH,src/hand/func_002561C0.c
 func_00256278,0x00256278,23,LINKED_MATCH,src/reference/func_00256278.c
 func_002562D8,0x002562D8,15,EXACT_MATCH,src/reference_os/func_002562D8.c
@@ -5552,6 +5556,7 @@ func_002793F0,0x002793F0,24,LINKED_MATCH,src/P2/rig_release.c
 func_00279568,0x00279568,22,LINKED_MATCH,src/leaf/pending_check_279568.c
 func_00279660,0x00279660,15,EXACT_MATCH,src/hand/func_00279660.c
 func_002796A0,0x002796A0,25,LINKED_MATCH,src/P2/pending_state.cpp
+func_00279708,0x00279708,28,LINKED_MATCH,src/leaf/tagged_init_279708.c
 func_00279778,0x00279778,18,LINKED_MATCH,src/hand/func_00279778.c
 func_002797C0,0x002797C0,11,LINKED_MATCH,src/auto/func_002797C0.c
 func_00279998,0x00279998,2,EXACT_MATCH,src/hand/func_00279998.c
