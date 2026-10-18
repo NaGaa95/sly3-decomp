@@ -2596,6 +2596,7 @@ func_00182808,0x00182808,71,LINKED_MATCH,src/engine/bone_link_load.cpp
 func_00182A88,0x00182A88,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00182BC0,0x00182BC0,8,LINKED_MATCH,src/auto/func_00182BC0.c
 func_00182BE0,0x00182BE0,34,LINKED_MATCH,src/engine/frame_startup.c
+func_00182C68,0x00182C68,61,LINKED_MATCH,src/engine/frame_open_182c68.cpp
 func_00182D60,0x00182D60,10,LINKED_MATCH,src/hand/func_00182D60.cpp
 func_00182D88,0x00182D88,55,LINKED_MATCH,src/hand/func_00182D88.cpp
 func_00182E68,0x00182E68,30,LINKED_MATCH,src/auto/func_00182E68.c
