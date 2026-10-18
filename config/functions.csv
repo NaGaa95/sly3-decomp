@@ -5212,7 +5212,7 @@ func_0020F820,0x0020F820,0x0020F868,72,ghidra+spimdisasm-provisional
 func_0020F868,0x0020F868,0x0020FA10,424,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0020FA10,0x0020FA10,0x0020FB54,324,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0020FB58,0x0020FB58,0x0020FC58,256,ghidra+spimdisasm-provisional
-func_0020FC58,0x0020FC58,0x0020FE60,520,ghidra+spimdisasm-provisional
+func_0020FC58,0x0020FC58,0x0020FE5C,516,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0020FE60,0x0020FE60,0x0020FEEC,140,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0020FEF0,0x0020FEF0,0x00210008,280,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00210008,0x00210008,0x00210038,48,ghidra-provisional
