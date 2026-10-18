@@ -2636,10 +2636,12 @@ func_00186EC0,0x00186EC0,8,LINKED_MATCH,src/reference_constants/func_00186EC0.c
 func_00186EE0,0x00186EE0,44,LINKED_MATCH,src/engine/order_start_186ee0.c
 func_00186F90,0x00186F90,21,LINKED_MATCH,src/engine/mode_dispatch.c
 func_00186FE8,0x00186FE8,21,LINKED_MATCH,src/reference_constants/func_00186FE8.c
+func_00187040,0x00187040,54,LINKED_MATCH,src/engine/subject_offer_187040.c
 func_00187118,0x00187118,42,LINKED_MATCH,src/engine/panel_stop_187118.c
 func_001871C0,0x001871C0,44,LINKED_MATCH,src/hand/func_001871C0.c
 func_00187270,0x00187270,157,LINKED_MATCH,src/engine/cursor_reset_187270.cpp
 func_001874E8,0x001874E8,50,LINKED_MATCH,src/engine/transition_tail_1874e8.c
+func_001875B0,0x001875B0,187,LINKED_MATCH,src/engine/subject_tick_1875b0.c
 func_001878A0,0x001878A0,16,LINKED_MATCH,src/reference_constants/func_001878A0.c
 func_001878E0,0x001878E0,246,LINKED_MATCH,src/engine/subject_transition_1878e0.c
 func_00187CB8,0x00187CB8,5,LINKED_MATCH,src/reference_constants/func_00187CB8.c
@@ -5363,6 +5365,7 @@ func_00260EC8,0x00260EC8,20,LINKED_MATCH,src/P2/id_dispatch.c
 func_00260FE8,0x00260FE8,17,LINKED_MATCH,src/hand/func_00260FE8.c
 func_00261030,0x00261030,8,LINKED_MATCH,src/hand/func_00261030.c
 func_00261050,0x00261050,8,LINKED_MATCH,src/hand/func_00261050.c
+func_00261250,0x00261250,152,LINKED_MATCH,src/leaf/animation_tick_261250.c
 func_002614B0,0x002614B0,21,LINKED_MATCH,src/hand/func_002614B0.c
 func_00261508,0x00261508,7,LINKED_MATCH,src/auto/func_00261508.c
 func_00261528,0x00261528,21,LINKED_MATCH,src/hand/func_00261528.c
