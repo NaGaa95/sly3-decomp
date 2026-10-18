@@ -2973,6 +2973,7 @@ func_001A19A0,0x001A19A0,34,LINKED_MATCH,src/game_middle/actor_orientation_apply
 func_001A1A28,0x001A1A28,164,LINKED_MATCH,src/game_middle/control_mode_transition.cpp
 func_001A1CB8,0x001A1CB8,45,LINKED_MATCH,src/game_middle/actor_event_start_1A1CB8.c
 func_001A1D70,0x001A1D70,57,LINKED_MATCH,src/game_middle/frame_limit_initialize.cpp
+func_001A1E58,0x001A1E58,30,LINKED_MATCH,src/game_middle/binding_scalar_defaults_1A1E58.c
 func_001A1ED0,0x001A1ED0,9,LINKED_MATCH,src/reference_constants/func_001A1ED0.c
 func_001A1EF8,0x001A1EF8,9,LINKED_MATCH,src/reference_constants/func_001A1EF8.c
 func_001A1F20,0x001A1F20,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
@@ -3221,6 +3222,7 @@ func_001BDB50,0x001BDB50,23,LINKED_MATCH,src/game_middle/mode_range_notify.c
 func_001BE220,0x001BE220,84,LINKED_MATCH,src/game_middle/context_mode_update.c
 func_001BE370,0x001BE370,23,LINKED_MATCH,src/game_middle/state_value_commit.c
 func_001BE3D0,0x001BE3D0,14,LINKED_MATCH,src/reference_constants/func_001BE3D0.c
+func_001BE408,0x001BE408,39,LINKED_MATCH,src/game_middle/subject_motion_clear_1BE408.cpp
 func_001BE4A8,0x001BE4A8,19,LINKED_MATCH,src/reference_constants/func_001BE4A8.c
 func_001BE4F8,0x001BE4F8,27,LINKED_MATCH,src/game_middle/link_target_initialize.c
 func_001BE568,0x001BE568,16,LINKED_MATCH,src/reference_constants/func_001BE568.c
@@ -3343,7 +3345,9 @@ func_001C7DC8,0x001C7DC8,48,LINKED_MATCH,src/hand/func_001C7DC8.c
 func_001C7E88,0x001C7E88,10,EXACT_MATCH,src/reference_os/func_001C7E88.c
 func_001C7EB0,0x001C7EB0,10,LINKED_MATCH,src/reference/func_001C7EB0.c
 func_001C7ED8,0x001C7ED8,15,LINKED_MATCH,src/game_middle/list_node_push.c
+func_001C7F18,0x001C7F18,36,EXACT_MATCH,src/game_middle/scene_callbacks_reverse_1C7F18.cpp
 func_001C7FA8,0x001C7FA8,70,LINKED_MATCH,src/P2/scene_lifecycle.cpp
+func_001C80C0,0x001C80C0,41,LINKED_MATCH,src/game_middle/scene_pending_ready_1C80C0.c
 func_001C8168,0x001C8168,20,LINKED_MATCH,src/reference_constants/func_001C8168.c
 func_001C8248,0x001C8248,56,LINKED_MATCH,src/P2/scene_transform.cpp
 func_001C8548,0x001C8548,13,EXACT_MATCH,src/P2/scene_transform.cpp
@@ -3832,6 +3836,7 @@ func_001EA060,0x001EA060,4,EXACT_MATCH,src/P2/actor_state_predicates.c
 func_001EA070,0x001EA070,17,LINKED_MATCH,src/reference_constants/func_001EA070.c
 func_001EA0B8,0x001EA0B8,3,LINKED_MATCH,src/reference_constants/func_001EA0B8.c
 func_001EA0C8,0x001EA0C8,43,LINKED_MATCH,src/reference_constants/func_001EA0C8.c
+func_001EA1E0,0x001EA1E0,46,LINKED_MATCH,src/game_middle/mode_state_permit_1EA1E0.c
 func_001EA298,0x001EA298,24,LINKED_MATCH,src/game_middle/command_params_set.c
 func_001EA2F8,0x001EA2F8,40,LINKED_MATCH,src/hand/func_001EA2F8.c
 func_001EA398,0x001EA398,23,LINKED_MATCH,src/reference_constants/func_001EA398.c
@@ -3884,6 +3889,7 @@ func_001EE900,0x001EE900,12,LINKED_MATCH,src/reference_constants/func_001EE900.c
 func_001EE930,0x001EE930,14,LINKED_MATCH,src/reference_constants/func_001EE930.c
 func_001EE968,0x001EE968,14,LINKED_MATCH,src/reference_constants/func_001EE968.c
 func_001EEA28,0x001EEA28,26,LINKED_MATCH,src/reference_constants/func_001EEA28.c
+func_001EF170,0x001EF170,78,EXACT_MATCH,src/game_middle/keyframe_cursor_seek_1EF170.c
 func_001EF588,0x001EF588,6,EXACT_MATCH,src/reference_constants/func_001EF588.c
 func_001EF5A0,0x001EF5A0,4,EXACT_MATCH,src/game_middle/counter_increment_1ef5a0.c
 func_001EF5B0,0x001EF5B0,22,LINKED_MATCH,src/reference_constants/func_001EF5B0.c
