@@ -2621,6 +2621,7 @@ func_001860D8,0x001860D8,12,EXACT_MATCH,src/hand/func_001860D8.c
 func_00186248,0x00186248,19,LINKED_MATCH,src/reference/func_00186248.c
 func_00186298,0x00186298,13,LINKED_MATCH,src/auto/func_00186298.c
 func_001862D0,0x001862D0,25,LINKED_MATCH,src/engine/walk_value.c
+func_00186610,0x00186610,71,LINKED_MATCH,src/engine/subject_close_186610.cpp
 func_00186730,0x00186730,56,LINKED_MATCH,src/engine/event_handle_186730.c
 func_00186810,0x00186810,60,LINKED_MATCH,src/engine/subject_event_186810.c
 func_00186900,0x00186900,11,LINKED_MATCH,src/engine/mode_query.c
@@ -3693,6 +3694,7 @@ func_001E1C68,0x001E1C68,71,LINKED_MATCH,src/game_middle/actor_alternate_select.
 func_001E1D88,0x001E1D88,22,LINKED_MATCH,src/game_middle/buffer_release_match.c
 func_001E2358,0x001E2358,11,LINKED_MATCH,src/reference_constants/func_001E2358.c
 func_001E2388,0x001E2388,26,LINKED_MATCH,src/game_middle/target_state_initialize.c
+func_001E25B0,0x001E25B0,87,LINKED_MATCH,src/game_middle/actor_state_event_1E25B0.c
 func_001E2710,0x001E2710,21,LINKED_MATCH,src/game_middle/request_state_dispatch.c
 func_001E2768,0x001E2768,3,LINKED_MATCH,src/reference_constants/func_001E2768.c
 func_001E2778,0x001E2778,16,LINKED_MATCH,src/reference_constants/func_001E2778.c
