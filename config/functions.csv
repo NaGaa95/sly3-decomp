@@ -5799,7 +5799,7 @@ func_00237150,0x00237150,0x00237158,8,manual-complete-original-JR-real-delay-act
 func_00237158,0x00237158,0x00237164,12,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00237168,0x00237168,0x002371C4,92,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_002371C8,0x002371C8,0x00237220,88,manual-complete-original-entry-inputs-whole-code-data-and-independent-review
-func_00237220,0x00237220,0x00237298,120,ghidra+spimdisasm-provisional
+func_00237220,0x00237220,0x00237294,116,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00237298,0x00237298,0x00237344,172,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00237348,0x00237348,0x00237360,24,ghidra+spimdisasm-provisional
 func_00237360,0x00237360,0x00237408,168,ghidra-provisional
@@ -6646,7 +6646,7 @@ func_00261508,0x00261508,0x00261528,32,ghidra-provisional
 func_00261528,0x00261528,0x00261580,88,ghidra+spimdisasm-provisional
 func_00261580,0x00261580,0x002616AC,300,manual-full-original-gain-loop-pointer-ID-F12-JR-delay-and-separate-SP80-fragment-review
 func_002616B8,0x002616B8,0x002617E4,300,manual-full-original-gain-loop-pointer-ID-F12-JR-delay-and-separate-SP80-fragment-review
-func_002617F0,0x002617F0,0x002618C8,216,ghidra+spimdisasm-provisional
+func_002617F0,0x002617F0,0x002618C8,216,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_002618C8,0x002618C8,0x00261BD0,776,ghidra+spimdisasm-provisional
 func_00261BD0,0x00261BD0,0x00261C08,56,ghidra+spimdisasm-provisional
 func_00261C08,0x00261C08,0x00262128,1312,ghidra-provisional
