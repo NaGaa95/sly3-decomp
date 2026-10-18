@@ -2268,7 +2268,9 @@ func_0016FCC8,0x0016FCC8,11,LINKED_MATCH,src/auto/func_0016FCC8.c
 func_0016FCF8,0x0016FCF8,32,LINKED_MATCH,src/engine/request_refresh.c
 func_0016FD78,0x0016FD78,45,LINKED_MATCH,src/engine/pose_origin.c
 func_0016FF08,0x0016FF08,67,LINKED_MATCH,src/engine/request_prune_16ff08.c
+func_00170018,0x00170018,64,LINKED_MATCH,src/engine/request_add170018.c
 func_00170118,0x00170118,37,LINKED_MATCH,src/hand/func_00170118.c
+func_001701B0,0x001701B0,60,LINKED_MATCH,src/engine/request_remove1701b0.c
 func_001702A0,0x001702A0,34,LINKED_MATCH,src/engine/request_remove.c
 func_00170328,0x00170328,13,LINKED_MATCH,src/reference_constants/func_00170328.c
 func_00170360,0x00170360,26,LINKED_MATCH,src/engine/request_all.c
