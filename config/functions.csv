@@ -3537,7 +3537,7 @@ func_001A2828,0x001A2828,0x001A28C4,156,manual-complete-original-JR-real-delay-a
 func_001A28C8,0x001A28C8,0x001A29B0,232,ghidra+spimdisasm-provisional
 func_001A29B0,0x001A29B0,0x001A29B8,8,ghidra+spimdisasm-provisional
 func_001A29B8,0x001A29B8,0x001A2A3C,132,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
-func_001A2A40,0x001A2A40,0x001A2B30,240,ghidra+spimdisasm-provisional
+func_001A2A40,0x001A2A40,0x001A2B30,240,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001A2B30,0x001A2B30,0x001A2C68,312,ghidra+spimdisasm-provisional
 func_001A2C68,0x001A2C68,0x001A2C88,32,ghidra-provisional
 func_001A2C88,0x001A2C88,0x001A2D30,168,ghidra+spimdisasm-provisional
@@ -4616,7 +4616,7 @@ func_001EC6D8,0x001EC6D8,0x001EC6E4,12,manual-complete-original-JR-real-delay-ac
 func_001EC6E8,0x001EC6E8,0x001ECBB8,1232,ghidra+spimdisasm-provisional
 func_001ECBB8,0x001ECBB8,0x001ECC10,88,ghidra+spimdisasm-provisional
 func_001ECC10,0x001ECC10,0x001ECC58,72,ghidra-provisional
-func_001ECC58,0x001ECC58,0x001ECEC0,616,ghidra-provisional
+func_001ECC58,0x001ECC58,0x001ECEC0,616,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001ECEC0,0x001ECEC0,0x001ED0E0,544,ghidra+spimdisasm-provisional
 func_001ED0E0,0x001ED0E0,0x001ED16C,140,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001ED170,0x001ED170,0x001ED190,32,ghidra+spimdisasm-provisional
@@ -6791,7 +6791,7 @@ func_0026ED40,0x0026ED40,0x0026EE78,312,ghidra+spimdisasm-provisional
 func_0026EE78,0x0026EE78,0x0026EE98,32,ghidra-provisional
 func_0026EE98,0x0026EE98,0x0026EED0,56,ghidra-provisional
 func_0026EED0,0x0026EED0,0x0026EF10,64,ghidra-provisional
-func_0026EF10,0x0026EF10,0x0026F190,640,ghidra+spimdisasm-provisional
+func_0026EF10,0x0026EF10,0x0026F190,640,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0026F190,0x0026F190,0x0026F818,1672,ghidra+spimdisasm-provisional
 func_0026F818,0x0026F818,0x0026F950,312,ghidra+spimdisasm-provisional
 func_0026F950,0x0026F950,0x0026F970,32,ghidra-provisional

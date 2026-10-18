@@ -2968,6 +2968,7 @@ func_001A2828,0x001A2828,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
 func_001A28C8,0x001A28C8,57,LINKED_MATCH,src/hand/func_001A28C8.c
 func_001A29B0,0x001A29B0,2,EXACT_MATCH,src/hand/func_001A29B0.c
 func_001A29B8,0x001A29B8,33,LINKED_MATCH,src/game_middle/virtual_pair_query.c
+func_001A2A40,0x001A2A40,60,LINKED_MATCH,src/game_middle/embedded_component_1A2A40.c
 func_001A2B30,0x001A2B30,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001A2C68,0x001A2C68,8,LINKED_MATCH,src/auto/func_001A2C68.c
 func_001A2C88,0x001A2C88,42,LINKED_MATCH,src/hand/func_001A2C88.c
@@ -3812,6 +3813,7 @@ func_001EC688,0x001EC688,20,LINKED_MATCH,src/reference_constants/func_001EC688.c
 func_001EC6D8,0x001EC6D8,3,EXACT_MATCH,src/game_middle/quad_push.c
 func_001ECBB8,0x001ECBB8,22,LINKED_MATCH,src/hand/func_001ECBB8.c
 func_001ECC10,0x001ECC10,17,LINKED_MATCH,src/reference_constants/func_001ECC10.c
+func_001ECC58,0x001ECC58,154,LINKED_MATCH,src/game_middle/topology_load_1ECC58.c
 func_001ED0E0,0x001ED0E0,35,EXACT_MATCH,src/game_middle/entry_distance_refresh.cpp
 func_001ED170,0x001ED170,8,LINKED_MATCH,src/reference_constants/func_001ED170.c
 func_001ED190,0x001ED190,7,LINKED_MATCH,src/wrappers/func_001ED190.c
@@ -5453,6 +5455,7 @@ func_0026ED40,0x0026ED40,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0026EE78,0x0026EE78,8,LINKED_MATCH,src/auto/func_0026EE78.c
 func_0026EE98,0x0026EE98,14,LINKED_MATCH,src/auto/func_0026EE98.c
 func_0026EED0,0x0026EED0,15,LINKED_MATCH,src/hand/func_0026EED0.c
+func_0026EF10,0x0026EF10,160,LINKED_MATCH,src/leaf/stream_chain_26ef10.c
 func_0026F818,0x0026F818,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0026F950,0x0026F950,8,LINKED_MATCH,src/auto/func_0026F950.c
 func_0026F970,0x0026F970,20,LINKED_MATCH,src/hand/func_0026F970.c
