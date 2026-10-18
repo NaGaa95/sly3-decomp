@@ -2647,6 +2647,7 @@ func_001878E0,0x001878E0,246,LINKED_MATCH,src/engine/subject_transition_1878e0.c
 func_00187CB8,0x00187CB8,5,LINKED_MATCH,src/reference_constants/func_00187CB8.c
 func_00187CD0,0x00187CD0,11,LINKED_MATCH,src/reference_constants/func_00187CD0.c
 func_00187D00,0x00187D00,12,EXACT_MATCH,src/reference_constants/func_00187D00.c
+func_00187D30,0x00187D30,88,LINKED_MATCH,src/engine/subject_options_187d30.cpp
 func_00187F08,0x00187F08,122,LINKED_MATCH,src/reference_constants/func_00187F08.cpp
 func_001880F0,0x001880F0,9,EXACT_MATCH,src/reference_constants/func_001880F0.c
 func_00188118,0x00188118,31,LINKED_MATCH,src/engine/entry_append.c
@@ -2662,6 +2663,7 @@ func_00188A20,0x00188A20,5,LINKED_MATCH,src/reference_constants/func_00188A20.c
 func_00188A38,0x00188A38,25,LINKED_MATCH,src/engine/subject_active_predicate.c
 func_00188AA0,0x00188AA0,25,EXACT_MATCH,src/engine/subject_mode_id.c
 func_00188CB0,0x00188CB0,75,LINKED_MATCH,src/reference_constants/func_00188CB0.c
+func_00188DE0,0x00188DE0,138,LINKED_MATCH,src/engine/focus_options_188de0.cpp
 func_00189008,0x00189008,27,EXACT_MATCH,src/reference_constants/func_00189008.c
 func_00189078,0x00189078,13,LINKED_MATCH,src/reference_constants/func_00189078.c
 func_001890B0,0x001890B0,13,LINKED_MATCH,src/reference_constants/func_001890B0.c
