@@ -2296,7 +2296,9 @@ func_00171108,0x00171108,12,LINKED_MATCH,src/reference_constants/func_00171108.c
 func_00171138,0x00171138,19,LINKED_MATCH,src/reference_constants/func_00171138.c
 func_00171188,0x00171188,12,LINKED_MATCH,src/auto/func_00171188.c
 func_001711B8,0x001711B8,103,LINKED_MATCH,src/engine/state_machine_1711b8.c
+func_00171358,0x00171358,107,LINKED_MATCH,src/engine/panel_navigation171358.c
 func_00171508,0x00171508,12,LINKED_MATCH,src/reference_constants/func_00171508.c
+func_00171538,0x00171538,77,LINKED_MATCH,src/engine/panel_mode171538.c
 func_00171670,0x00171670,33,LINKED_MATCH,src/engine/state_slot.c
 func_001716F8,0x001716F8,8,LINKED_MATCH,src/reference_constants/func_001716F8.c
 func_00171740,0x00171740,25,EXACT_MATCH,src/engine/digit_split.c
@@ -2929,6 +2931,7 @@ func_001A24C0,0x001A24C0,9,LINKED_MATCH,src/game_middle/frame_distance_duration.
 func_001A24E8,0x001A24E8,9,LINKED_MATCH,src/game_middle/frame_distance_duration.cpp
 func_001A2510,0x001A2510,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
 func_001A25B0,0x001A25B0,11,LINKED_MATCH,src/reference_constants/func_001A25B0.c
+func_001A25E0,0x001A25E0,46,LINKED_MATCH,src/game_middle/lifted_position_output_1A25E0.cpp
 func_001A2698,0x001A2698,51,LINKED_MATCH,src/game_middle/frame_position_sample.c
 func_001A2768,0x001A2768,27,LINKED_MATCH,src/game_middle/period_registration.cpp
 func_001A27D8,0x001A27D8,9,LINKED_MATCH,src/game_middle/period_registration.cpp
@@ -5354,12 +5357,14 @@ func_00265D68,0x00265D68,29,EXACT_MATCH,src/hand/func_00265D68.c
 func_00265DE0,0x00265DE0,21,LINKED_MATCH,src/hand/func_00265DE0.c
 func_00266F20,0x00266F20,32,LINKED_MATCH,src/reference_constants/func_00266F20.c
 func_00266FA0,0x00266FA0,34,LINKED_MATCH,src/hand/func_00266FA0.cpp
+func_00267110,0x00267110,88,LINKED_MATCH,src/leaf/frame_begin_267110.cpp
 func_00267270,0x00267270,17,EXACT_MATCH,src/reference_os/func_00267270.c
 func_002672B8,0x002672B8,35,LINKED_MATCH,src/reference_os/func_002672B8.c
 func_00267348,0x00267348,10,LINKED_MATCH,src/reference/func_00267348.c
 func_00267370,0x00267370,23,LINKED_MATCH,src/leaf/weight_apply_267370.c
 func_002673D0,0x002673D0,10,LINKED_MATCH,src/reference/func_002673D0.c
 func_002675C0,0x002675C0,18,LINKED_MATCH,src/hand/func_002675C0.c
+func_00267608,0x00267608,121,LINKED_MATCH,src/leaf/frame_draw_267608.cpp
 func_002677F0,0x002677F0,10,LINKED_MATCH,src/auto/func_002677F0.c
 func_00267818,0x00267818,18,LINKED_MATCH,src/hand/func_00267818.c
 func_00267860,0x00267860,10,LINKED_MATCH,src/auto/func_00267860.c
