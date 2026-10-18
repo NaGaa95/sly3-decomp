@@ -1341,6 +1341,7 @@ func_00128610,0x00128610,36,LINKED_MATCH,src/P2/script_optional_eval.cpp
 func_001286A0,0x001286A0,58,LINKED_MATCH,src/engine/conditional.cpp
 func_00128788,0x00128788,54,LINKED_MATCH,src/P2/script_short_circuit.cpp
 func_00128860,0x00128860,58,LINKED_MATCH,src/P2/script_short_circuit.cpp
+func_00128948,0x00128948,97,LINKED_MATCH,src/engine/script_cond_128948.cpp
 func_00128AD0,0x00128AD0,133,LINKED_MATCH,src/P2/select_case.cpp
 func_00128CE8,0x00128CE8,109,LINKED_MATCH,src/reference_constants/func_00128CE8.cpp
 func_00128EA0,0x00128EA0,60,LINKED_MATCH,src/P2/script_loop_sequence.cpp
@@ -1752,6 +1753,7 @@ func_00144628,0x00144628,5,EXACT_MATCH,src/engine/mode_set.c
 func_00144A50,0x00144A50,7,EXACT_MATCH,src/hand/func_00144A50.c
 func_00144A70,0x00144A70,7,EXACT_MATCH,src/hand/func_00144A70.c
 func_00145080,0x00145080,46,LINKED_MATCH,src/engine/spawn_bind_145080.c
+func_00145138,0x00145138,35,LINKED_MATCH,src/engine/track_event_145138.c
 func_001459D0,0x001459D0,60,LINKED_MATCH,src/engine/slot_query.c
 func_00145E40,0x00145E40,37,EXACT_MATCH,src/engine/items_notify.c
 func_00145ED8,0x00145ED8,38,LINKED_MATCH,src/engine/slots_expire.c
