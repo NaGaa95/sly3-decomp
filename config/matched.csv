@@ -5022,6 +5022,7 @@ func_00242748,0x00242748,38,LINKED_MATCH,src/hand/func_00242748.c
 func_002427E0,0x002427E0,19,EXACT_MATCH,src/reference_constants/func_002427E0.c
 __static_initialization_and_destruction_0,0x00242830,93,LINKED_MATCH,src/P2/state32_init.cpp
 _GLOBAL_$I$C__Users_PC_Downloads_Sly3Decomp_src_P2_state32_init.cppqagaaa,0x002429A8,8,LINKED_MATCH,src/P2/state32_init.cpp
+func_002429C8,0x002429C8,36,LINKED_MATCH,src/leaf/entry_notify_2429c8.c
 func_00242A58,0x00242A58,19,LINKED_MATCH,src/hand/func_00242A58.c
 func_00242AA8,0x00242AA8,57,LINKED_MATCH,src/P2/relation_collect.c
 func_00243738,0x00243738,74,LINKED_MATCH,src/P2/motion_update.cpp
