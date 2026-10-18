@@ -89,7 +89,6 @@ func_001303E0,0x001303E0,0x001304E8,264,ghidra-provisional
 func_001305F8,0x001305F8,0x001306C8,208,ghidra-provisional
 func_00130C40,0x00130C40,0x00130CD0,144,ghidra-provisional
 func_00131850,0x00131850,0x00131B80,816,ghidra+spimdisasm-provisional
-func_00131D78,0x00131D78,0x00131E10,152,ghidra-provisional
 func_00131E10,0x00131E10,0x00132390,1408,ghidra-provisional
 func_00132438,0x00132438,0x001327A8,880,ghidra+spimdisasm-provisional
 func_001327A8,0x001327A8,0x001327F0,72,ghidra+spimdisasm-provisional
@@ -141,7 +140,6 @@ func_0013EC70,0x0013EC70,0x0013ED10,160,ghidra-provisional
 func_0013ED10,0x0013ED10,0x0013EE08,248,ghidra-provisional
 func_0013FE50,0x0013FE50,0x001400C0,624,ghidra-provisional
 func_00140438,0x00140438,0x001404D8,160,ghidra-provisional
-func_00140678,0x00140678,0x00140738,192,ghidra-provisional
 func_001407E8,0x001407E8,0x001408B0,200,ghidra+spimdisasm-provisional
 func_00140958,0x00140958,0x00140BE8,656,ghidra+spimdisasm-provisional
 func_00140BF0,0x00140BF0,0x00140CD0,224,ghidra+spimdisasm-provisional
@@ -375,7 +373,6 @@ func_0016FE30,0x0016FE30,0x0016FF08,216,ghidra+spimdisasm-provisional
 func_00170580,0x00170580,0x00170968,1000,ghidra+spimdisasm-provisional
 func_00170A50,0x00170A50,0x00170BC8,376,ghidra+spimdisasm-provisional
 func_00171C98,0x00171C98,0x00171D98,256,ghidra+spimdisasm-provisional
-func_00172268,0x00172268,0x00172328,192,ghidra+spimdisasm-provisional
 func_001728F0,0x001728F0,0x00172A90,416,ghidra-provisional
 func_00172C30,0x00172C30,0x00172CE0,176,ghidra+spimdisasm-provisional
 func_00172F48,0x00172F48,0x00173068,288,ghidra+spimdisasm-provisional
@@ -437,7 +434,6 @@ func_00186108,0x00186108,0x00186200,248,ghidra-provisional
 func_00186200,0x00186200,0x00186248,72,ghidra+spimdisasm-provisional
 func_00186338,0x00186338,0x00186610,728,ghidra+spimdisasm-provisional
 func_00187E90,0x00187E90,0x00187F08,120,ghidra-provisional
-func_00188658,0x00188658,0x00188868,528,ghidra+spimdisasm-provisional
 func_001899F0,0x001899F0,0x00189B08,280,ghidra+spimdisasm-provisional
 func_0018A778,0x0018A778,0x0018A88C,276,manual-original-subject-parent276-JR-real-delay-zero4-comparator108-source0
 func_0018A900,0x0018A900,0x0018AA48,328,ghidra+spimdisasm-provisional

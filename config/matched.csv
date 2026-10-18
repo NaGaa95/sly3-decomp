@@ -1518,6 +1518,7 @@ func_00131B80,0x00131B80,11,LINKED_MATCH,src/hand/func_00131B80.c
 func_00131BB0,0x00131BB0,38,LINKED_MATCH,src/hand/func_00131BB0.c
 func_00131C48,0x00131C48,20,LINKED_MATCH,src/reference_constants/func_00131C48.c
 func_00131C98,0x00131C98,56,LINKED_MATCH,src/engine/channel_message.c
+func_00131D78,0x00131D78,37,LINKED_MATCH,src/engine/record_initialize_131d78.c
 func_00132390,0x00132390,14,LINKED_MATCH,src/reference_constants/func_00132390.c
 func_001323C8,0x001323C8,28,LINKED_MATCH,src/engine/control_update.c
 func_001327F0,0x001327F0,48,LINKED_MATCH,src/engine/event_filter_1327f0.c
@@ -1724,6 +1725,7 @@ func_001404D8,0x001404D8,63,LINKED_MATCH,src/engine/indicator_place_1404d8.c
 func_001405D8,0x001405D8,15,LINKED_MATCH,src/engine/mode_set_1405d8.c
 func_00140618,0x00140618,3,LINKED_MATCH,src/reference_constants/func_00140618.c
 func_00140628,0x00140628,20,LINKED_MATCH,src/reference_constants/func_00140628.c
+func_00140678,0x00140678,47,LINKED_MATCH,src/engine/flag_write_140678.cpp
 func_00140738,0x00140738,28,LINKED_MATCH,src/engine/option_query_140738.cpp
 func_001407A8,0x001407A8,4,EXACT_MATCH,src/hand/func_001407A8.c
 func_001407B8,0x001407B8,11,EXACT_MATCH,src/hand/func_001407B8.c
@@ -2344,6 +2346,7 @@ func_00171AA0,0x00171AA0,125,LINKED_MATCH,src/engine/option_message_171aa0.cpp
 func_00171D98,0x00171D98,15,LINKED_MATCH,src/auto/func_00171D98.c
 func_00171DD8,0x00171DD8,29,LINKED_MATCH,src/engine/value_store.c
 func_00171E50,0x00171E50,262,LINKED_MATCH,src/reference_constants/func_00171E50.c
+func_00172268,0x00172268,47,LINKED_MATCH,src/engine/scale_count_172268.c
 func_00172328,0x00172328,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00172460,0x00172460,8,LINKED_MATCH,src/auto/func_00172460.c
 func_00172480,0x00172480,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -2679,6 +2682,7 @@ func_00188420,0x00188420,15,EXACT_MATCH,src/reference_constants/func_00188420.c
 func_00188460,0x00188460,55,LINKED_MATCH,src/reference_constants/func_00188460.c
 func_00188540,0x00188540,56,LINKED_MATCH,src/engine/focus_apply_188540.cpp
 func_00188620,0x00188620,13,LINKED_MATCH,src/auto/func_00188620.c
+func_00188658,0x00188658,132,LINKED_MATCH,src/engine/focus_activate_188658.cpp
 func_00188868,0x00188868,47,LINKED_MATCH,src/engine/subject_word_event.cpp
 func_00188928,0x00188928,62,LINKED_MATCH,src/hand/func_00188928.c
 func_00188A20,0x00188A20,5,LINKED_MATCH,src/reference_constants/func_00188A20.c
