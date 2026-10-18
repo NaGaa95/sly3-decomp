@@ -6619,7 +6619,7 @@ func_00260220,0x00260220,0x00260270,80,ghidra+spimdisasm-provisional
 func_00260270,0x00260270,0x00260298,40,ghidra+spimdisasm-provisional
 func_00260298,0x00260298,0x002602C0,40,ghidra+spimdisasm-provisional
 func_002602C0,0x002602C0,0x00260398,216,ghidra-provisional
-func_00260398,0x00260398,0x00260558,448,ghidra-provisional
+func_00260398,0x00260398,0x00260554,444,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00260558,0x00260558,0x002605B4,92,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_002605B8,0x002605B8,0x00260640,136,ghidra-provisional
 func_00260640,0x00260640,0x0026069C,92,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
