@@ -14,11 +14,12 @@ struct KEY;
 struct SubjectBits { unsigned long low : 48; long kind : 4; unsigned long high : 12; };
 struct SubjectList { unsigned char prefix[0x80]; void *members; };
 struct SubjectKeys { int word; int other; };
+struct Action;
 struct SubjectSelf {
     unsigned char prefix[0x28]; SubjectBits bits; unsigned char gap30[0x3C - 0x30]; unsigned int tag;
     unsigned char gap40[0x54 - 0x40]; int word54; int word58; unsigned char gap5C[0x64 - 0x5C]; float rate; unsigned char gap68[0x6C - 0x68]; SubjectList *list; int word70;
     unsigned char gap74[0x80 - 0x74]; int *first; int firstCount; int *firstOut; int *second; int secondCount; int *secondOut;
-    int word98, word9C, wordA0, wordA4; unsigned char gapA8[0xD0 - 0xA8]; SubjectKeys keyA; SubjectKeys keyB;
+    int word98; Action *word9C; int wordA0, wordA4; unsigned char gapA8[0xD0 - 0xA8]; SubjectKeys keyA; SubjectKeys keyB;
 };
 struct SubjectGame { unsigned char opaque[1]; };
 extern "C" {
@@ -30,7 +31,7 @@ void func_0011AD80(void *list, void *value);
 void *func_0017E1B8(void *game, int kind, int id, void *context);
 int func_00188A20(void *self);
 int func_001880F0(void *self);
-void func_00185A70(void *self, int kind, int a, int b);
+void func_00185A70(void *self, int kind, int count, Action *actions);
 void func_00185DB0(void *self, int kind, int a, int b, int flag);
 void func_001C9118(void *self, int value);
 }

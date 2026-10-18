@@ -2611,6 +2611,7 @@ func_00185908,0x00185908,30,LINKED_MATCH,src/reference_os/func_00185908.c
 func_00185980,0x00185980,10,EXACT_MATCH,src/hand/func_00185980.c
 func_001859A8,0x001859A8,23,LINKED_MATCH,src/reference/func_001859A8.c
 func_00185A08,0x00185A08,24,LINKED_MATCH,src/reference_constants/func_00185A08.c
+func_00185A70,0x00185A70,111,LINKED_MATCH,src/engine/event_activate_185a70.cpp
 func_00185C30,0x00185C30,95,LINKED_MATCH,src/reference_constants/func_00185C30.c
 func_00185DB0,0x00185DB0,35,LINKED_MATCH,src/reference_constants/func_00185DB0.c
 func_00185FD8,0x00185FD8,9,EXACT_MATCH,src/reference_constants/func_00185FD8.c
@@ -5372,6 +5373,7 @@ func_00263118,0x00263118,43,LINKED_MATCH,src/hand/func_00263118.c
 func_002643C8,0x002643C8,2,EXACT_MATCH,src/hand/func_002643C8.c
 func_002643D0,0x002643D0,9,LINKED_MATCH,src/hand/func_002643D0.c
 func_002643F8,0x002643F8,31,LINKED_MATCH,src/P2/activity_init.c
+func_00264478,0x00264478,74,LINKED_MATCH,src/leaf/event_begin_264478.cpp
 func_002646F8,0x002646F8,41,LINKED_MATCH,src/P2/activity_release.cpp
 func_002647A0,0x002647A0,29,LINKED_MATCH,src/leaf/event_payload_2647a0.c
 func_00264818,0x00264818,26,LINKED_MATCH,src/reference_os/func_00264818.c
