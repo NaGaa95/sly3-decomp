@@ -2243,7 +2243,7 @@ func_001592A8,0x001592A8,0x00159310,104,ghidra-provisional
 func_00159310,0x00159310,0x00159358,72,ghidra-provisional
 func_00159358,0x00159358,0x00159708,944,ghidra-provisional
 func_00159708,0x00159708,0x001599E0,728,ghidra-provisional
-func_001599E0,0x001599E0,0x00159A88,168,ghidra+spimdisasm-provisional
+func_001599E0,0x001599E0,0x00159A84,164,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00159A88,0x00159A88,0x00159DD0,840,ghidra+spimdisasm-provisional
 func_00159DD0,0x00159DD0,0x00159DF0,32,ghidra-provisional
 func_00159DF0,0x00159DF0,0x00159E50,96,ghidra-provisional
@@ -2400,7 +2400,7 @@ func_001628C8,0x001628C8,0x00162900,56,ghidra+spimdisasm-provisional
 func_00162900,0x00162900,0x00162A38,312,ghidra+spimdisasm-provisional
 func_00162A38,0x00162A38,0x00162A58,32,manual-fixed-frame-jr-ra-and-matching-deallocation-delay
 func_00162A68,0x00162A68,0x00162A80,24,manual-original-ghidra-return-and-whole-text-control-review
-func_00162A88,0x00162A88,0x00162AF0,104,ghidra+spimdisasm-provisional
+func_00162A88,0x00162A88,0x00162AF0,104,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00162AF0,0x00162AF0,0x00162C28,312,ghidra+spimdisasm-provisional
 func_00162C28,0x00162C28,0x00162C48,32,ghidra-provisional
 func_00162C48,0x00162C48,0x00162E08,448,ghidra+spimdisasm-provisional
@@ -3080,7 +3080,7 @@ func_00186200,0x00186200,0x00186248,72,ghidra+spimdisasm-provisional
 func_00186248,0x00186248,0x00186298,80,ghidra+spimdisasm-provisional
 func_00186298,0x00186298,0x001862D0,56,ghidra+spimdisasm-provisional
 func_001862D0,0x001862D0,0x00186334,100,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
-func_00186338,0x00186338,0x00186610,728,ghidra+spimdisasm-provisional
+func_00186338,0x00186338,0x0018660C,724,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00186610,0x00186610,0x0018672C,284,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00186730,0x00186730,0x00186810,224,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00186810,0x00186810,0x00186900,240,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
