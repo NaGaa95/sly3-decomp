@@ -3933,6 +3933,7 @@ func_001F54E0,0x001F54E0,27,LINKED_MATCH,src/P2/resource_selector.cpp
 func_001F5550,0x001F5550,62,LINKED_MATCH,src/P2/resource_selector_secondary.cpp
 func_001F5648,0x001F5648,25,LINKED_MATCH,src/P2/resource_selector_secondary.cpp
 func_001F56B0,0x001F56B0,27,LINKED_MATCH,src/P2/resource_selector_secondary.cpp
+func_001F5720,0x001F5720,47,LINKED_MATCH,src/game_middle/owner_action_flags_1f5720.c
 func_001F57E0,0x001F57E0,21,LINKED_MATCH,src/reference_constants/func_001F57E0.c
 func_001F5838,0x001F5838,17,LINKED_MATCH,src/reference_constants/func_001F5838.c
 func_001F5880,0x001F5880,26,LINKED_MATCH,src/P2/owner_action_override.c
@@ -5759,6 +5760,7 @@ func_0028EDC8,0x0028EDC8,51,LINKED_MATCH,src/reference_os/func_0028EDC8.c
 func_0028EFD8,0x0028EFD8,14,LINKED_MATCH,src/hand/func_0028EFD8.c
 func_0028F010,0x0028F010,13,LINKED_MATCH,src/hand/func_0028F010.c
 func_0028F048,0x0028F048,8,EXACT_MATCH,src/lib/func_0028F048.c
+func_0028F068,0x0028F068,125,LINKED_MATCH,src/leaf/channel_mode_28f068.c
 func_0028F2E0,0x0028F2E0,50,LINKED_MATCH,src/hand/func_0028F2E0.c
 func_0028F680,0x0028F680,43,LINKED_MATCH,src/lib/func_0028F680.c
 func_0028F958,0x0028F958,8,LINKED_MATCH,src/lib/func_0028F958.c
