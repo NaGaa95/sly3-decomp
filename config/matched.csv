@@ -1576,6 +1576,7 @@ func_001378A0,0x001378A0,23,LINKED_MATCH,src/reference_constants/func_001378A0.c
 func_00137900,0x00137900,127,LINKED_MATCH,src/engine/animation_update.cpp
 func_00137B00,0x00137B00,130,LINKED_MATCH,src/engine/animation_cancel.cpp
 func_00137D08,0x00137D08,101,LINKED_MATCH,src/P2/animation_seek.c
+func_001380E0,0x001380E0,94,LINKED_MATCH,src/engine/timeline_step_1380e0.cpp
 func_00138258,0x00138258,6,EXACT_MATCH,src/reference_os/func_00138258.c
 func_00138898,0x00138898,39,LINKED_MATCH,src/reference_os/func_00138898.c
 func_00138938,0x00138938,99,LINKED_MATCH,src/reference_constants/func_00138938.c
@@ -5056,6 +5057,7 @@ func_00249B78,0x00249B78,10,EXACT_MATCH,src/hand/func_00249B78.c
 func_00249BA0,0x00249BA0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00249CD8,0x00249CD8,8,LINKED_MATCH,src/auto/func_00249CD8.c
 func_00249CF8,0x00249CF8,39,LINKED_MATCH,src/reference_os/func_00249CF8.c
+func_0024AB90,0x0024AB90,34,LINKED_MATCH,src/leaf/lookup_reference_24ab90.cpp
 func_0024AC18,0x0024AC18,31,LINKED_MATCH,src/hand/func_0024AC18.c
 func_0024AC98,0x0024AC98,25,LINKED_MATCH,src/auto/func_0024AC98.c
 func_0024AD00,0x0024AD00,36,LINKED_MATCH,src/auto/func_0024AD00.c
@@ -5399,6 +5401,7 @@ func_002646F8,0x002646F8,41,LINKED_MATCH,src/P2/activity_release.cpp
 func_002647A0,0x002647A0,29,LINKED_MATCH,src/leaf/event_payload_2647a0.c
 func_00264818,0x00264818,26,LINKED_MATCH,src/reference_os/func_00264818.c
 func_00264880,0x00264880,87,LINKED_MATCH,src/P2/font_construct.c
+func_002649E0,0x002649E0,77,LINKED_MATCH,src/leaf/effect_record_2649e0.cpp
 func_00264B18,0x00264B18,22,LINKED_MATCH,src/hand/func_00264B18.c
 func_00264B70,0x00264B70,16,LINKED_MATCH,src/hand/func_00264B70.c
 func_00264CB0,0x00264CB0,20,LINKED_MATCH,src/reference_os/func_00264CB0.c
