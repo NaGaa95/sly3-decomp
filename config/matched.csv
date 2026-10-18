@@ -2632,6 +2632,7 @@ func_00186EC0,0x00186EC0,8,LINKED_MATCH,src/reference_constants/func_00186EC0.c
 func_00186EE0,0x00186EE0,44,LINKED_MATCH,src/engine/order_start_186ee0.c
 func_00186F90,0x00186F90,21,LINKED_MATCH,src/engine/mode_dispatch.c
 func_00186FE8,0x00186FE8,21,LINKED_MATCH,src/reference_constants/func_00186FE8.c
+func_00187118,0x00187118,42,LINKED_MATCH,src/engine/panel_stop_187118.c
 func_001871C0,0x001871C0,44,LINKED_MATCH,src/hand/func_001871C0.c
 func_00187270,0x00187270,157,LINKED_MATCH,src/engine/cursor_reset_187270.cpp
 func_001874E8,0x001874E8,50,LINKED_MATCH,src/engine/transition_tail_1874e8.c
@@ -3762,6 +3763,7 @@ func_001E84B8,0x001E84B8,10,LINKED_MATCH,src/reference_constants/func_001E84B8.c
 func_001E84E0,0x001E84E0,10,LINKED_MATCH,src/reference_constants/func_001E84E0.c
 func_001E8908,0x001E8908,68,LINKED_MATCH,src/game_middle/texture_packet_submit_1E8908.cpp
 func_001E8A18,0x001E8A18,7,LINKED_MATCH,src/auto/func_001E8A18.c
+func_001E8A38,0x001E8A38,56,LINKED_MATCH,src/game_middle/world_target_resolve_1E8A38.c
 func_001E8B18,0x001E8B18,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001E8C50,0x001E8C50,8,LINKED_MATCH,src/auto/func_001E8C50.c
 func_001E8C70,0x001E8C70,32,LINKED_MATCH,src/game_middle/actor_range_defaults_1E8C70.c
