@@ -6342,7 +6342,7 @@ func_00253278,0x00253278,0x002533C0,328,ghidra+spimdisasm-provisional
 func_002533C0,0x002533C0,0x00253400,64,ghidra+spimdisasm-provisional
 func_00253400,0x00253400,0x00253464,100,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00253468,0x00253468,0x002534C0,88,ghidra+spimdisasm-provisional
-func_002534C0,0x002534C0,0x00253540,128,ghidra+spimdisasm-provisional
+func_002534C0,0x002534C0,0x0025353C,124,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00253540,0x00253540,0x002535F0,176,ghidra+spimdisasm-provisional
 func_002535F0,0x002535F0,0x0025368C,156,manual-original-entry-actual-inputs-concrete-constructor-virtual-protocol-and-complete-object-review
 func_00253690,0x00253690,0x00253728,152,ghidra+spimdisasm-provisional
