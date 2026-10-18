@@ -3941,6 +3941,7 @@ func_001F1A08,0x001F1A08,10,EXACT_MATCH,src/P2/state_unblocked.c
 func_001F1CF8,0x001F1CF8,72,LINKED_MATCH,src/reference_constants/func_001F1CF8.c
 func_001F1E18,0x001F1E18,56,LINKED_MATCH,src/P2/actor_queue_advance.cpp
 func_001F1F78,0x001F1F78,4,EXACT_MATCH,src/hand/func_001F1F78.c
+func_001F1F88,0x001F1F88,258,LINKED_MATCH,src/P2/startup_masks_pools_1F1F88.cpp
 func_001F2390,0x001F2390,8,LINKED_MATCH,src/auto/func_001F2390.c
 func_001F23B0,0x001F23B0,21,LINKED_MATCH,src/reference_constants/func_001F23B0.c
 func_001F2950,0x001F2950,19,LINKED_MATCH,src/P2/binding_clear.c
