@@ -460,7 +460,6 @@ func_00186200,0x00186200,0x00186248,72,ghidra+spimdisasm-provisional
 func_00186338,0x00186338,0x00186610,728,ghidra+spimdisasm-provisional
 func_00187E90,0x00187E90,0x00187F08,120,ghidra-provisional
 func_00188658,0x00188658,0x00188868,528,ghidra+spimdisasm-provisional
-func_00188B08,0x00188B08,0x00188CB0,424,ghidra+spimdisasm-provisional
 func_001899F0,0x001899F0,0x00189B08,280,ghidra+spimdisasm-provisional
 func_00189F38,0x00189F38,0x0018A0D0,408,ghidra+spimdisasm-provisional
 func_0018A778,0x0018A778,0x0018A88C,276,manual-original-subject-parent276-JR-real-delay-zero4-comparator108-source0
@@ -1322,7 +1321,6 @@ func_0026E268,0x0026E268,0x0026E6C8,1120,ghidra-provisional
 func_0026E6F8,0x0026E6F8,0x0026E7E8,240,ghidra-provisional
 func_0026E7E8,0x0026E7E8,0x0026E9B0,456,ghidra-provisional
 func_0026E9B0,0x0026E9B0,0x0026EC80,720,ghidra-provisional
-func_0026EC80,0x0026EC80,0x0026ED40,192,ghidra+spimdisasm-provisional
 func_0026F190,0x0026F190,0x0026F818,1672,ghidra+spimdisasm-provisional
 func_0026FC50,0x0026FC50,0x0026FF90,832,ghidra+spimdisasm-provisional
 func_002702E8,0x002702E8,0x002705C8,736,ghidra+spimdisasm-provisional

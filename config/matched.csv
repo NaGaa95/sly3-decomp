@@ -2662,6 +2662,7 @@ func_00188928,0x00188928,62,LINKED_MATCH,src/hand/func_00188928.c
 func_00188A20,0x00188A20,5,LINKED_MATCH,src/reference_constants/func_00188A20.c
 func_00188A38,0x00188A38,25,LINKED_MATCH,src/engine/subject_active_predicate.c
 func_00188AA0,0x00188AA0,25,EXACT_MATCH,src/engine/subject_mode_id.c
+func_00188B08,0x00188B08,105,LINKED_MATCH,src/engine/focus_graph_188b08.cpp
 func_00188CB0,0x00188CB0,75,LINKED_MATCH,src/reference_constants/func_00188CB0.c
 func_00188DE0,0x00188DE0,138,LINKED_MATCH,src/engine/focus_options_188de0.cpp
 func_00189008,0x00189008,27,EXACT_MATCH,src/reference_constants/func_00189008.c
@@ -5463,6 +5464,7 @@ func_0026E0D0,0x0026E0D0,18,LINKED_MATCH,src/hand/func_0026E0D0.c
 func_0026E118,0x0026E118,14,LINKED_MATCH,src/reference_constants/func_0026E118.c
 func_0026E150,0x0026E150,70,LINKED_MATCH,src/leaf/history_prime_26e150.c
 func_0026E6C8,0x0026E6C8,11,LINKED_MATCH,src/auto/func_0026E6C8.c
+func_0026EC80,0x0026EC80,48,LINKED_MATCH,src/leaf/mesh_position_26ec80.c
 func_0026ED40,0x0026ED40,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0026EE78,0x0026EE78,8,LINKED_MATCH,src/auto/func_0026EE78.c
 func_0026EE98,0x0026EE98,14,LINKED_MATCH,src/auto/func_0026EE98.c
