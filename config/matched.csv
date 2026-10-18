@@ -3972,6 +3972,7 @@ func_001F4500,0x001F4500,18,LINKED_MATCH,src/reference_constants/func_001F4500.c
 func_001F4548,0x001F4548,52,LINKED_MATCH,src/P2/controller_rebind.c
 func_001F4618,0x001F4618,6,LINKED_MATCH,src/reference_constants/func_001F4618.c
 func_001F4630,0x001F4630,16,LINKED_MATCH,src/P2/registration_contains.c
+func_001F4670,0x001F4670,53,LINKED_MATCH,src/P2/registration_set_1F4670.c
 func_001F4748,0x001F4748,32,LINKED_MATCH,src/P2/primary_link_replace.c
 func_001F47C8,0x001F47C8,26,LINKED_MATCH,src/P2/secondary_link_replace.c
 func_001F4830,0x001F4830,28,LINKED_MATCH,src/P2/property_int_default.c
@@ -4062,6 +4063,7 @@ func_001F9128,0x001F9128,2,EXACT_MATCH,src/P2/resource_choice.cpp
 func_001F9130,0x001F9130,21,LINKED_MATCH,src/P2/actor_scalar_defaults.c
 func_001F9188,0x001F9188,14,LINKED_MATCH,src/reference_constants/func_001F9188.c
 func_001F91C0,0x001F91C0,46,LINKED_MATCH,src/hand/func_001F91C0.c
+func_001F9278,0x001F9278,26,LINKED_MATCH,src/P2/actor_scalar_limits_1F9278.c
 func_001F92E0,0x001F92E0,46,LINKED_MATCH,src/hand/func_001F92E0.c
 func_001F9398,0x001F9398,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001F94D0,0x001F94D0,8,LINKED_MATCH,src/auto/func_001F94D0.c
@@ -4200,11 +4202,13 @@ func_00202278,0x00202278,45,LINKED_MATCH,src/hand/func_00202278.c
 func_002027F0,0x002027F0,50,LINKED_MATCH,src/P2/particle_list_render.cpp
 func_002028B8,0x002028B8,40,LINKED_MATCH,src/P2/owner_list_teardown.c
 func_002029E8,0x002029E8,39,LINKED_MATCH,src/P2/query_kind_switch.c
+func_00202A88,0x00202A88,101,LINKED_MATCH,src/P2/owner_ctor_202A88.c
 func_00202C20,0x00202C20,4,EXACT_MATCH,src/P2/counter_increment_202c20.c
 func_00202C30,0x00202C30,23,LINKED_MATCH,src/hand/func_00202C30.c
 func_00202C90,0x00202C90,40,EXACT_MATCH,src/P2/lookup_notify_chain.c
 func_00202D30,0x00202D30,20,LINKED_MATCH,src/hand/func_00202D30.c
 func_00202D80,0x00202D80,54,LINKED_MATCH,src/P2/particle_owner_update.cpp
+func_00202E58,0x00202E58,117,LINKED_MATCH,src/P2/matrix_gather_202E58.c
 func_00203030,0x00203030,18,LINKED_MATCH,src/hand/func_00203030.c
 func_00203078,0x00203078,52,LINKED_MATCH,src/P2/particle_owner_cleanup.cpp
 func_00203148,0x00203148,10,LINKED_MATCH,src/hand/func_00203148.c
