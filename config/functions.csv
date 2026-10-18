@@ -4802,7 +4802,7 @@ func_001F5AC0,0x001F5AC0,0x001F5AE0,32,ghidra-provisional
 func_001F5AE0,0x001F5AE0,0x001F5B28,72,ghidra-provisional
 func_001F5B28,0x001F5B28,0x001F5B84,92,manual-original-ghidra-entry-return-and-whole-text-source-review
 func_001F5B88,0x001F5B88,0x001F5BF8,112,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
-func_001F5BF8,0x001F5BF8,0x001F5C58,96,ghidra-provisional
+func_001F5BF8,0x001F5BF8,0x001F5C54,92,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001F5C58,0x001F5C58,0x001F5CC4,108,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001F5CC8,0x001F5CC8,0x001F5CF0,40,ghidra+spimdisasm-provisional
 func_001F5CF0,0x001F5CF0,0x001F5D70,128,ghidra+spimdisasm-provisional

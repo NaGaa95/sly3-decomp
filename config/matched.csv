@@ -4029,6 +4029,7 @@ func_001F5AC0,0x001F5AC0,8,LINKED_MATCH,src/auto/func_001F5AC0.c
 func_001F5AE0,0x001F5AE0,17,LINKED_MATCH,src/reference_constants/func_001F5AE0.c
 func_001F5B28,0x001F5B28,23,LINKED_MATCH,src/reference_constants/func_001F5B28.c
 func_001F5B88,0x001F5B88,28,LINKED_MATCH,src/P2/task_state_cleanup.cpp
+func_001F5BF8,0x001F5BF8,23,LINKED_MATCH,src/P2/task_event_1F5BF8.c
 func_001F5C58,0x001F5C58,27,LINKED_MATCH,src/P2/task_channel_setup.cpp
 func_001F5CC8,0x001F5CC8,10,LINKED_MATCH,src/reference_constants/func_001F5CC8.c
 func_001F5CF0,0x001F5CF0,31,LINKED_MATCH,src/hand/func_001F5CF0.c
