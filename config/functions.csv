@@ -6326,7 +6326,7 @@ func_00251AD0,0x00251AD0,0x00251B3C,108,manual-complete-original-receiver-packed
 func_00251B40,0x00251B40,0x00251C08,200,ghidra+spimdisasm-provisional
 func_00251C08,0x00251C08,0x00252408,2048,ghidra-provisional
 func_00252408,0x00252408,0x00252440,56,ghidra+spimdisasm-provisional
-func_00252440,0x00252440,0x00252508,200,ghidra+spimdisasm-provisional
+func_00252440,0x00252440,0x00252508,200,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00252508,0x00252508,0x002529F8,1264,ghidra+spimdisasm-provisional
 func_002529F8,0x002529F8,0x00252A78,128,ghidra-provisional
 func_00252A78,0x00252A78,0x00252AD0,88,ghidra-provisional
