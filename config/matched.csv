@@ -3029,6 +3029,7 @@ func_001A3A80,0x001A3A80,21,LINKED_MATCH,src/reference_constants/func_001A3A80.c
 func_001A3AD8,0x001A3AD8,19,LINKED_MATCH,src/reference_constants/func_001A3AD8.c
 func_001A3B28,0x001A3B28,31,LINKED_MATCH,src/game_middle/subject_filter_predicate.c
 func_001A4318,0x001A4318,29,LINKED_MATCH,src/game_middle/task_retry_gate.c
+func_001A4390,0x001A4390,28,LINKED_MATCH,src/game_middle/task_owner_ready_1A4390.c
 func_001A4B28,0x001A4B28,63,LINKED_MATCH,src/game_middle/event_state_switch_1A4B28.c
 func_001A4C28,0x001A4C28,14,LINKED_MATCH,src/reference_constants/func_001A4C28.c
 func_001A4C60,0x001A4C60,12,LINKED_MATCH,src/auto/func_001A4C60.c
@@ -3197,6 +3198,7 @@ func_001B7190,0x001B7190,17,LINKED_MATCH,src/game_middle/fields_initialize.c
 func_001B71D8,0x001B71D8,35,LINKED_MATCH,src/hand/func_001B71D8.c
 func_001B8EB0,0x001B8EB0,92,LINKED_MATCH,src/game_middle/heading_state_select_1B8EB0.c
 func_001BAC20,0x001BAC20,67,LINKED_MATCH,src/game_middle/vector_align_notify_1BAC20.c
+func_001BAD30,0x001BAD30,36,LINKED_MATCH,src/game_middle/kind_range_forward_1BAD30.c
 func_001BADC0,0x001BADC0,14,EXACT_MATCH,src/hand/func_001BADC0.c
 func_001BB188,0x001BB188,40,LINKED_MATCH,src/game_middle/vertical_intercept.cpp
 func_001BB6D0,0x001BB6D0,24,LINKED_MATCH,src/hand/func_001BB6D0.c
@@ -3721,8 +3723,12 @@ func_001E0998,0x001E0998,55,LINKED_MATCH,src/game_middle/actor_selection_query.c
 func_001E0A78,0x001E0A78,38,LINKED_MATCH,src/game_middle/actor_selection_query.c
 func_001E0B10,0x001E0B10,13,EXACT_MATCH,src/game_middle/actor_selection_query.c
 func_001E0B48,0x001E0B48,71,LINKED_MATCH,src/game_middle/actor_component_dispatch.c
+func_001E0C68,0x001E0C68,21,LINKED_MATCH,src/game_middle/actor_state_gate_1E0C68.c
+func_001E0CC0,0x001E0CC0,41,LINKED_MATCH,src/game_middle/state_message_permit_1E0CC0.c
 func_001E0D68,0x001E0D68,35,LINKED_MATCH,src/reference_constants/func_001E0D68.c
 func_001E0DF8,0x001E0DF8,24,LINKED_MATCH,src/hand/func_001E0DF8.cpp
+func_001E0E58,0x001E0E58,56,LINKED_MATCH,src/game_middle/side_select_flag_1E0E58.cpp
+func_001E0F38,0x001E0F38,56,LINKED_MATCH,src/game_middle/side_select_attach_1E0F38.cpp
 func_001E1320,0x001E1320,20,LINKED_MATCH,src/reference_constants/func_001E1320.c
 func_001E1370,0x001E1370,112,LINKED_MATCH,src/reference_constants/func_001E1370.c
 func_001E16E8,0x001E16E8,73,LINKED_MATCH,src/game_middle/actor_mode_animation_1E16E8.c
