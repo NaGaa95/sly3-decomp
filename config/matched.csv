@@ -2211,6 +2211,7 @@ func_0016A628,0x0016A628,50,LINKED_MATCH,src/engine/cue_stop_16a628.c
 func_0016A6F0,0x0016A6F0,23,LINKED_MATCH,src/reference_constants/func_0016A6F0.c
 func_0016A750,0x0016A750,37,LINKED_MATCH,src/engine/position_lift.c
 func_0016A930,0x0016A930,60,LINKED_MATCH,src/engine/cue_init_16a930.c
+func_0016AA20,0x0016AA20,232,LINKED_MATCH,src/engine/camera_follow_16aa20.c
 func_0016ADC0,0x0016ADC0,15,LINKED_MATCH,src/reference_constants/func_0016ADC0.c
 func_0016AE00,0x0016AE00,15,LINKED_MATCH,src/reference_constants/func_0016AE00.c
 func_0016AE40,0x0016AE40,17,LINKED_MATCH,src/reference_constants/func_0016AE40.c
@@ -2741,6 +2742,7 @@ func_0018D118,0x0018D118,8,LINKED_MATCH,src/auto/func_0018D118.c
 func_0018D138,0x0018D138,4,EXACT_MATCH,src/auto/func_0018D138.c
 func_0018DA48,0x0018DA48,132,LINKED_MATCH,src/P2/bone_attachment_setup.cpp
 func_0018F6B8,0x0018F6B8,62,LINKED_MATCH,src/reference_constants/func_0018F6B8.c
+func_0018F7B0,0x0018F7B0,256,LINKED_MATCH,src/engine/model_load_18f7b0.cpp
 func_0018FBB0,0x0018FBB0,88,LINKED_MATCH,src/engine/chain_copy.c
 func_0018FE80,0x0018FE80,44,LINKED_MATCH,src/engine/entry_loop.c
 func_0018FF30,0x0018FF30,25,EXACT_MATCH,src/engine/lane_clear.c
