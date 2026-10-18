@@ -1,0 +1,10 @@
+// SLY3_CFLAGS: -Os -G0
+extern int D_0036DC90, D_0036DC98, D_0036DCA0[];
+void func_00195688(void);
+void func_001956B8(void)
+{
+    D_0036DCA0[D_0036DC90] = D_0036DC98;
+    D_0036DC90 = 1 - D_0036DC90;
+    D_0036DCA0[D_0036DC90] = -1;
+    func_00195688();
+}
