@@ -3056,6 +3056,7 @@ func_001A77F0,0x001A77F0,19,LINKED_MATCH,src/reference_constants/func_001A77F0.c
 func_001A7840,0x001A7840,19,LINKED_MATCH,src/reference_constants/func_001A7840.c
 func_001A7890,0x001A7890,27,LINKED_MATCH,src/game_middle/controller_find_query.c
 func_001A7980,0x001A7980,27,LINKED_MATCH,src/game_middle/input_pair_query.c
+func_001A79F0,0x001A79F0,35,LINKED_MATCH,src/game_middle/timed_pair_ready_1A79F0.c
 func_001A7A80,0x001A7A80,23,EXACT_MATCH,src/P2/input_query.cpp
 func_001A7AE0,0x001A7AE0,15,LINKED_MATCH,src/P2/input_query.cpp
 func_001A7B20,0x001A7B20,5,LINKED_MATCH,src/reference_constants/func_001A7B20.c
@@ -3201,6 +3202,7 @@ func_001BE3D0,0x001BE3D0,14,LINKED_MATCH,src/reference_constants/func_001BE3D0.c
 func_001BE4A8,0x001BE4A8,19,LINKED_MATCH,src/reference_constants/func_001BE4A8.c
 func_001BE4F8,0x001BE4F8,27,LINKED_MATCH,src/game_middle/link_target_initialize.c
 func_001BE568,0x001BE568,16,LINKED_MATCH,src/reference_constants/func_001BE568.c
+func_001BE918,0x001BE918,69,LINKED_MATCH,src/game_middle/focus_slot_select_1BE918.cpp
 func_001BEA30,0x001BEA30,161,LINKED_MATCH,src/game_middle/event_controller_update_1BEA30.cpp
 func_001BECB8,0x001BECB8,6,EXACT_MATCH,src/hand/func_001BECB8.c
 func_001BECD0,0x001BECD0,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -3812,6 +3814,7 @@ func_001EA478,0x001EA478,13,LINKED_MATCH,src/reference_constants/func_001EA478.c
 func_001EA940,0x001EA940,25,LINKED_MATCH,src/game_middle/mode_state_gate.c
 func_001EA9A8,0x001EA9A8,3,EXACT_MATCH,src/game_middle/flag_set.c
 func_001EA9B8,0x001EA9B8,17,LINKED_MATCH,src/game_middle/actor_pending_clear_1EA9B8.c
+func_001EAF80,0x001EAF80,43,LINKED_MATCH,src/game_middle/contact_gate_ternary_1EAF80.cpp
 func_001EB030,0x001EB030,9,LINKED_MATCH,src/reference_constants/func_001EB030.c
 func_001EB058,0x001EB058,47,LINKED_MATCH,src/game_middle/child_create_setup.c
 func_001EB288,0x001EB288,29,LINKED_MATCH,src/game_middle/reference_pack_gather.c
@@ -4229,6 +4232,7 @@ func_00209470,0x00209470,8,LINKED_MATCH,src/hand/func_00209470.c
 func_00209490,0x00209490,108,LINKED_MATCH,src/P2/actor_pending_transition.cpp
 func_00209640,0x00209640,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00209778,0x00209778,8,LINKED_MATCH,src/auto/func_00209778.c
+func_002099A8,0x002099A8,110,LINKED_MATCH,src/P2/world_label_draw_2099A8.cpp
 func_00209B60,0x00209B60,16,LINKED_MATCH,src/hand/func_00209B60.c
 func_00209BA0,0x00209BA0,40,LINKED_MATCH,src/hand/func_00209BA0.c
 func_00209C40,0x00209C40,70,LINKED_MATCH,src/P2/game_frame_update.c
