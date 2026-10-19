@@ -4168,6 +4168,7 @@ func_001FD668,0x001FD668,14,LINKED_MATCH,src/reference_constants/func_001FD668.c
 func_001FD6A0,0x001FD6A0,45,LINKED_MATCH,src/P2/shared_second_record.c
 func_001FD758,0x001FD758,22,LINKED_MATCH,src/reference_constants/func_001FD758.c
 func_001FD7B0,0x001FD7B0,13,LINKED_MATCH,src/reference_constants/func_001FD7B0.c
+func_001FD7E8,0x001FD7E8,85,LINKED_MATCH,src/P2/resource_packet_build_1FD7E8.cpp
 func_001FD940,0x001FD940,18,LINKED_MATCH,src/reference_constants/func_001FD940.c
 func_001FD988,0x001FD988,20,LINKED_MATCH,src/reference_constants/func_001FD988.c
 func_001FDB80,0x001FDB80,37,LINKED_MATCH,src/P2/color_record_kind.c

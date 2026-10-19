@@ -4946,7 +4946,7 @@ func_001FD668,0x001FD668,0x001FD6A0,56,ghidra-provisional
 func_001FD6A0,0x001FD6A0,0x001FD754,180,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001FD758,0x001FD758,0x001FD7B0,88,manual-complete-original-entry-incoming-inputs-return-and-whole-object-review
 func_001FD7B0,0x001FD7B0,0x001FD7E8,56,ghidra-provisional
-func_001FD7E8,0x001FD7E8,0x001FD940,344,ghidra-provisional
+func_001FD7E8,0x001FD7E8,0x001FD93C,340,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001FD940,0x001FD940,0x001FD988,72,ghidra-provisional
 func_001FD988,0x001FD988,0x001FD9D8,80,manual-original-ghidra-entry-return-and-whole-text-source-review
 func_001FD9D8,0x001FD9D8,0x001FDB80,424,ghidra-provisional
