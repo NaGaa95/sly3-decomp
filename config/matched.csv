@@ -1203,6 +1203,7 @@ func_00120C80,0x00120C80,68,LINKED_MATCH,src/claude/func_00120C80.cpp
 func_00120D98,0x00120D98,56,EXACT_MATCH,src/claude/func_00120D98.c
 func_00120E80,0x00120E80,12,LINKED_MATCH,src/hand/func_00120E80.c
 func_00120EB0,0x00120EB0,12,LINKED_MATCH,src/hand/func_00120EB0.c
+func_00120EE0,0x00120EE0,30,EXACT_MATCH,src/claude/func_00120EE0.c
 func_00120F58,0x00120F58,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00121090,0x00121090,8,LINKED_MATCH,src/auto/func_00121090.c
 func_001210B0,0x001210B0,164,LINKED_MATCH,src/claude/func_001210B0.cpp
@@ -1960,6 +1961,7 @@ func_00149E08,0x00149E08,20,LINKED_MATCH,src/reference_constants/func_00149E08.c
 func_00149E58,0x00149E58,90,LINKED_MATCH,src/claude/func_00149E58.c
 func_00149FC0,0x00149FC0,188,LINKED_MATCH,src/claude/func_00149FC0.cpp
 func_0014AC48,0x0014AC48,106,LINKED_MATCH,src/engine/render_packet.c
+func_0014ADF0,0x0014ADF0,11,LINKED_MATCH,src/claude/func_0014ADF0.c
 func_0014AE20,0x0014AE20,14,LINKED_MATCH,src/reference_constants/func_0014AE20.c
 func_0014AE58,0x0014AE58,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0014AF90,0x0014AF90,8,LINKED_MATCH,src/auto/func_0014AF90.c
@@ -3276,6 +3278,7 @@ func_00198938,0x00198938,14,EXACT_MATCH,src/claude/func_00198938.c
 func_00198970,0x00198970,15,EXACT_MATCH,src/claude/func_00198970.c
 func_001989B0,0x001989B0,15,EXACT_MATCH,src/claude/func_001989B0.c
 func_001989F0,0x001989F0,12,EXACT_MATCH,src/claude/func_001989F0.c
+func_00198A20,0x00198A20,12,EXACT_MATCH,src/claude/func_00198A20.c
 func_00198A50,0x00198A50,168,LINKED_MATCH,src/engine/path_setup.c
 func_00198CF0,0x00198CF0,34,EXACT_MATCH,src/hand/func_00198CF0.c
 func_00198D78,0x00198D78,87,LINKED_MATCH,src/engine/ray_projection.c
@@ -3654,6 +3657,7 @@ func_001AFB10,0x001AFB10,24,LINKED_MATCH,src/reference_constants/func_001AFB10.c
 func_001AFB70,0x001AFB70,27,LINKED_MATCH,src/game_middle/actor_scalar_query.c
 func_001AFBE0,0x001AFBE0,2,EXACT_MATCH,src/game_middle/quad_store.c
 func_001AFE60,0x001AFE60,40,LINKED_MATCH,src/claude/func_001AFE60.c
+func_001AFF00,0x001AFF00,92,LINKED_MATCH,src/claude/func_001AFF00.c
 func_001B0070,0x001B0070,66,LINKED_MATCH,src/game_middle/actor_request_update.c
 func_001B0178,0x001B0178,44,LINKED_MATCH,src/game_middle/basis_slot_dispatch_1B0178.c
 func_001B0450,0x001B0450,19,LINKED_MATCH,src/reference_constants/func_001B0450.c
