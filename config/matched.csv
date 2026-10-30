@@ -1196,6 +1196,7 @@ func_00122128,0x00122128,12,LINKED_MATCH,src/auto/func_00122128.c
 func_00122158,0x00122158,12,LINKED_MATCH,src/auto/func_00122158.c
 func_00122188,0x00122188,12,LINKED_MATCH,src/auto/func_00122188.c
 func_001221B8,0x001221B8,26,LINKED_MATCH,src/claude/func_001221B8.cpp
+func_00122220,0x00122220,142,LINKED_MATCH,src/claude/func_00122220.cpp
 func_00122458,0x00122458,12,LINKED_MATCH,src/P2/builtin_equal_forward.cpp
 func_00122488,0x00122488,8,EXACT_MATCH,src/P2/builtin_type_predicates.cpp
 func_001224A8,0x001224A8,8,EXACT_MATCH,src/P2/builtin_type_predicates.cpp
