@@ -1914,6 +1914,7 @@ func_0014C890,0x0014C890,74,LINKED_MATCH,src/claude/func_0014C890.c
 func_0014C9B8,0x0014C9B8,120,LINKED_MATCH,src/claude/func_0014C9B8.c
 func_0014CB98,0x0014CB98,7,LINKED_MATCH,src/reference_constants/func_0014CB98.c
 func_0014CD78,0x0014CD78,42,LINKED_MATCH,src/reference_os/func_0014CD78.c
+func_0014CE20,0x0014CE20,186,LINKED_MATCH,src/claude/func_0014CE20.c
 func_0014D108,0x0014D108,31,LINKED_MATCH,src/engine/reset_source.c
 func_0014D188,0x0014D188,25,LINKED_MATCH,src/engine/pair_key_condition.c
 func_0014D1F0,0x0014D1F0,13,LINKED_MATCH,src/reference_constants/func_0014D1F0.c
@@ -3394,6 +3395,7 @@ func_001A7C68,0x001A7C68,29,LINKED_MATCH,src/P2/input_controller.cpp
 func_001A7CE0,0x001A7CE0,39,LINKED_MATCH,src/P2/input_controller.cpp
 func_001A7D80,0x001A7D80,258,LINKED_MATCH,src/P2/controller_negotiation.cpp
 func_001A8780,0x001A8780,107,LINKED_MATCH,src/P2/input_mode.cpp
+func_001A8930,0x001A8930,150,LINKED_MATCH,src/claude/func_001A8930.c
 func_001A8F10,0x001A8F10,41,LINKED_MATCH,src/P2/input_state_more.cpp
 func_001A8FB8,0x001A8FB8,22,LINKED_MATCH,src/P2/input_mask.cpp
 func_001A9010,0x001A9010,17,LINKED_MATCH,src/P2/input_mask.cpp
