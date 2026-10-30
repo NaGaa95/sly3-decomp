@@ -1643,6 +1643,7 @@ func_00134AE0,0x00134AE0,26,LINKED_MATCH,src/engine/control_emit.c
 func_00134B48,0x00134B48,20,EXACT_MATCH,src/engine/mode_taper_134b48.c
 func_00134B98,0x00134B98,20,EXACT_MATCH,src/engine/kind_scale.c
 func_00134BE8,0x00134BE8,24,LINKED_MATCH,src/claude/func_00134BE8.c
+func_00134FF8,0x00134FF8,34,EXACT_MATCH,src/claude/func_00134FF8.cpp
 func_00135080,0x00135080,20,EXACT_MATCH,src/engine/child_position_query.c
 func_00135288,0x00135288,28,LINKED_MATCH,src/engine/clone_and_rotation_task.cpp
 func_001353D0,0x001353D0,7,LINKED_MATCH,src/wrappers/func_001353D0.c
@@ -2559,6 +2560,7 @@ func_0016B0D0,0x0016B0D0,44,LINKED_MATCH,src/engine/cue_stop_16b0d0.c
 func_0016B180,0x0016B180,23,LINKED_MATCH,src/reference_constants/func_0016B180.c
 func_0016B1E0,0x0016B1E0,31,LINKED_MATCH,src/engine/record_initialize_16b1e0.c
 func_0016B260,0x0016B260,14,LINKED_MATCH,src/reference_constants/func_0016B260.c
+func_0016B298,0x0016B298,212,LINKED_MATCH,src/claude/func_0016B298.cpp
 func_0016B5E8,0x0016B5E8,17,LINKED_MATCH,src/reference_constants/func_0016B5E8.c
 func_0016B630,0x0016B630,16,LINKED_MATCH,src/reference_constants/func_0016B630.c
 func_0016BDE8,0x0016BDE8,73,LINKED_MATCH,src/engine/history_push.c
