@@ -3121,6 +3121,7 @@ func_001A0588,0x001A0588,10,EXACT_MATCH,src/hand/func_001A0588.c
 func_001A05B0,0x001A05B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001A06E8,0x001A06E8,8,LINKED_MATCH,src/auto/func_001A06E8.c
 func_001A0740,0x001A0740,22,EXACT_MATCH,src/game_middle/virtual_chain_position.c
+func_001A0798,0x001A0798,38,EXACT_MATCH,src/claude/func_001A0798.c
 func_001A0950,0x001A0950,53,LINKED_MATCH,src/game_middle/control_init_tagged.c
 func_001A0A28,0x001A0A28,9,LINKED_MATCH,src/game_middle/actor_registry_membership.c
 func_001A0A50,0x001A0A50,9,LINKED_MATCH,src/game_middle/actor_registry_membership.c
@@ -3159,6 +3160,7 @@ func_001A1E58,0x001A1E58,30,LINKED_MATCH,src/game_middle/binding_scalar_defaults
 func_001A1ED0,0x001A1ED0,9,LINKED_MATCH,src/reference_constants/func_001A1ED0.c
 func_001A1EF8,0x001A1EF8,9,LINKED_MATCH,src/reference_constants/func_001A1EF8.c
 func_001A1F20,0x001A1F20,39,LINKED_MATCH,src/game_middle/extra_source_clones.cpp
+func_001A1FC0,0x001A1FC0,12,LINKED_MATCH,src/claude/func_001A1FC0.c
 func_001A2080,0x001A2080,16,LINKED_MATCH,src/reference_constants/func_001A2080.c
 func_001A20C0,0x001A20C0,14,LINKED_MATCH,src/reference_constants/func_001A20C0.c
 func_001A20F8,0x001A20F8,40,LINKED_MATCH,src/hand/func_001A20F8.c
@@ -3260,6 +3262,7 @@ func_001A77A0,0x001A77A0,19,LINKED_MATCH,src/reference_constants/func_001A77A0.c
 func_001A77F0,0x001A77F0,19,LINKED_MATCH,src/reference_constants/func_001A77F0.c
 func_001A7840,0x001A7840,19,LINKED_MATCH,src/reference_constants/func_001A7840.c
 func_001A7890,0x001A7890,27,LINKED_MATCH,src/game_middle/controller_find_query.c
+func_001A7900,0x001A7900,30,LINKED_MATCH,src/claude/func_001A7900.c
 func_001A7980,0x001A7980,27,LINKED_MATCH,src/game_middle/input_pair_query.c
 func_001A79F0,0x001A79F0,35,LINKED_MATCH,src/game_middle/timed_pair_ready_1A79F0.c
 func_001A7A80,0x001A7A80,23,EXACT_MATCH,src/P2/input_query.cpp
