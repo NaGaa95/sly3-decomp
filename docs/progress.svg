@@ -10,9 +10,9 @@
   <text x="928.0" y="106.0" font-size="22" fill="#2f9e6e" text-anchor="end" font-weight="bold">83.8%</text>
   <text x="32.0" y="124.0" font-size="12" fill="#656d76" text-anchor="start" font-weight="normal">How many of the game's functions have source code that compiles to the exact original bytes</text>
   <rect x="32" y="134" width="896" height="22" rx="6" fill="#e4e7ec" />
-  <rect x="32" y="134" width="750.9" height="22" rx="6" fill="#2f9e6e" />
-  <text x="32.0" y="174.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">7,226 of 8,622 functions matched</text>
-  <text x="928.0" y="174.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">1,396 functions left to 100%</text>
+  <rect x="32" y="134" width="750.8" height="22" rx="6" fill="#2f9e6e" />
+  <text x="32.0" y="174.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">7,226 of 8,623 functions matched</text>
+  <text x="928.0" y="174.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">1,397 functions left to 100%</text>
 
   <!-- Code size (instructions) Section -->
   <text x="32.0" y="202.0" font-size="15" fill="#1f2328" text-anchor="start" font-weight="bold">Code size (instructions)</text>
@@ -20,8 +20,8 @@
   <text x="32.0" y="220.0" font-size="12" fill="#656d76" text-anchor="start" font-weight="normal">The same, weighted by size — the honest "how much of the game is decompiled" number</text>
   <rect x="32" y="230" width="896" height="22" rx="6" fill="#e4e7ec" />
   <rect x="32" y="230" width="493.1" height="22" rx="6" fill="#4c7fd1" />
-  <text x="32.0" y="270.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">251,307 of 456,620 instructions matched</text>
-  <text x="928.0" y="270.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">205,313 instructions left to 100%</text>
+  <text x="32.0" y="270.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">251,307 of 456,618 instructions matched</text>
+  <text x="928.0" y="270.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">205,311 instructions left to 100%</text>
 
   <!-- VU and IOP -->
   <text x="32.0" y="298.0" font-size="12" fill="#656d76" text-anchor="start" font-weight="normal">VU microcode: 9 of 9 programs matched   ·   IOP modules: 25 functions matched (676 code bytes)</text>
@@ -616,7 +616,7 @@
   <rect x="240" y="650" width="270" height="14" rx="3" fill="#e4e7ec" />
   <rect x="240" y="650" width="205.1" height="14" rx="3" fill="#d97706" />
   <text x="630.0" y="662.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">76.0% of code</text>
-  <text x="928.0" y="662.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">3,578 of 3,806 functions matched · 228 left</text>
+  <text x="928.0" y="662.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">3,578 of 3,807 functions matched · 229 left</text>
   <rect x="32" y="677" width="10" height="12" rx="2" fill="#7c3aed" />
   <text x="48.0" y="688.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">NaGa + Claude + ChatGPT</text>
   <rect x="240" y="676" width="270" height="14" rx="3" fill="#e4e7ec" />
@@ -719,10 +719,10 @@
   <rect x="32" y="1007" width="10" height="12" rx="2" fill="#d97706" />
   <text x="52.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">0x190000–0x1A0000</text>
   <rect x="250" y="1007" width="250" height="12" rx="3" fill="#e4e7ec" />
-  <rect x="250" y="1007" width="160.0" height="12" rx="3" fill="#4c7fd1" />
+  <rect x="250" y="1007" width="160.1" height="12" rx="3" fill="#4c7fd1" />
   <text x="560.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">64%</text>
-  <text x="650.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">25</text>
-  <text x="760.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">4,952</text>
+  <text x="650.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">26</text>
+  <text x="760.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">4,950</text>
   <text x="928.0" y="1018.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">590 instr.</text>
   <rect x="32" y="1029" width="10" height="12" rx="2" fill="#d97706" />
   <text x="52.0" y="1040.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">0x1A0000–0x1B0000</text>
@@ -886,14 +886,14 @@
   <text x="928.0" y="1516.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">146 of 3,651 functions left · 1,176 instr.</text>
   <text x="32.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Small (21–100)</text>
   <rect x="190" y="1530" width="350" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="190" y="1530" width="297.6" height="14" rx="3" fill="#2f9e6e" />
+  <rect x="190" y="1530" width="297.5" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">85% done</text>
-  <text x="928.0" y="1542.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">589 of 3,934 functions left · 34,821 instr.</text>
+  <text x="928.0" y="1542.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">590 of 3,935 functions left · 34,871 instr.</text>
   <text x="32.0" y="1568.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Medium (101–300)</text>
   <rect x="190" y="1556" width="350" height="14" rx="3" fill="#e4e7ec" />
   <rect x="190" y="1556" width="145.2" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1568.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">41% done</text>
-  <text x="928.0" y="1568.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">508 of 868 functions left · 87,469 instr.</text>
+  <text x="928.0" y="1568.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">508 of 868 functions left · 87,417 instr.</text>
   <text x="32.0" y="1594.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Large (301–1,000)</text>
   <rect x="190" y="1582" width="350" height="14" rx="3" fill="#e4e7ec" />
   <rect x="190" y="1582" width="31.2" height="14" rx="3" fill="#2f9e6e" />
