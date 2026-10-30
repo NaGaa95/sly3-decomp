@@ -1467,10 +1467,12 @@ func_0012D2B0,0x0012D2B0,19,LINKED_MATCH,src/auto/func_0012D2B0.c
 func_0012D300,0x0012D300,11,LINKED_MATCH,src/reference_constants/func_0012D300.c
 func_0012D330,0x0012D330,65,LINKED_MATCH,src/engine/compact_curve_readers.cpp
 func_0012D438,0x0012D438,137,LINKED_MATCH,src/engine/compact_curve_initialize.cpp
+func_0012D660,0x0012D660,38,LINKED_MATCH,src/claude/func_0012D660.c
 func_0012D6F8,0x0012D6F8,122,LINKED_MATCH,src/engine/compact_curve_sample.cpp
 func_0012D8E0,0x0012D8E0,10,LINKED_MATCH,src/reference_constants/func_0012D8E0.c
 func_0012D908,0x0012D908,62,LINKED_MATCH,src/engine/compact_curve_readers.cpp
 func_0012DA00,0x0012DA00,137,LINKED_MATCH,src/engine/compact_curve_initialize.cpp
+func_0012DC28,0x0012DC28,38,LINKED_MATCH,src/claude/func_0012DC28.c
 func_0012DCC0,0x0012DCC0,122,LINKED_MATCH,src/engine/compact_curve_sample.cpp
 func_0012DEA8,0x0012DEA8,10,LINKED_MATCH,src/reference_constants/func_0012DEA8.c
 func_0012DED0,0x0012DED0,23,LINKED_MATCH,src/engine/static_packed_xyz.cpp
@@ -1479,10 +1481,12 @@ func_0012DFF0,0x0012DFF0,35,LINKED_MATCH,src/engine/static_packed_xyz.cpp
 func_0012E080,0x0012E080,11,LINKED_MATCH,src/reference_constants/func_0012E080.c
 func_0012E0B0,0x0012E0B0,71,LINKED_MATCH,src/engine/compact_short_readers.cpp
 func_0012E1D0,0x0012E1D0,137,LINKED_MATCH,src/engine/compact_short_initialize.cpp
+func_0012E3F8,0x0012E3F8,38,LINKED_MATCH,src/claude/func_0012E3F8.c
 func_0012E490,0x0012E490,201,LINKED_MATCH,src/engine/compact_short_sample.cpp
 func_0012E7B8,0x0012E7B8,10,LINKED_MATCH,src/reference_constants/func_0012E7B8.c
 func_0012E7E0,0x0012E7E0,67,LINKED_MATCH,src/engine/compact_short_readers.cpp
 func_0012E8F0,0x0012E8F0,137,LINKED_MATCH,src/engine/compact_short_initialize.cpp
+func_0012EB18,0x0012EB18,38,LINKED_MATCH,src/claude/func_0012EB18.c
 func_0012EBB0,0x0012EBB0,201,LINKED_MATCH,src/engine/compact_short_sample.cpp
 func_0012EED8,0x0012EED8,10,LINKED_MATCH,src/reference_constants/func_0012EED8.c
 func_0012EF00,0x0012EF00,12,LINKED_MATCH,src/reference_constants/func_0012EF00.c
