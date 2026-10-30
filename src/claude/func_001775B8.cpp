@@ -1,0 +1,80 @@
+// SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
+// Sly 3 port of Sly 2 LoadEmitmeshFromBrx (src/hand), bound to func_001775B8; fallback normal D_00317550.
+typedef int qword __attribute__((mode(TI)));
+struct AL { int cb; int cbAlign; AL(int c, int a) { cb = c; cbAlign = a; } };
+struct CBinaryInputStream;
+struct TRI { int aipos[3]; float sArea; };
+struct EMITMESH { int cpos; qword *apos; int ctri; TRI *atri; qword *anormal; float sArea; int pad18[2]; qword v20; };
+extern "C" {
+int func_00119048(CBinaryInputStream *pbis);
+void func_001192D8(CBinaryInputStream *pbis, qword *pv);
+float func_00119260(CBinaryInputStream *pbis);
+void *func_001D2470(AL *pal);
+void *func_001D2538(AL *pal);
+}
+extern qword D_00317550;
+static inline void *PvAlloc(int cb, int cbAlign) { AL al(cb, cbAlign); return func_001D2470(&al); }
+static inline void *PvAllocClear(int cb, int cbAlign) { AL al(cb, cbAlign); return func_001D2538(&al); }
+static inline qword Sub(qword a, qword b) { qword d; __asm__("vsub.xyzw %0, %1, %2" : "=j"(d) : "j"(a), "j"(b)); return d; }
+static inline qword Add(qword a, qword b) { qword d; __asm__("vadd.xyzw %0, %1, %2" : "=j"(d) : "j"(a), "j"(b)); return d; }
+static inline qword Cross(qword a, qword b)
+{
+    qword d;
+    __asm__("vopmula.xyz ACC, %1, %2\n\tvopmsub.xyz %0, %2, %1" : "=j"(d) : "j"(a), "j"(b));
+    return d;
+}
+static __inline__ qword VLen(qword c)
+{
+    qword l, one;
+    __asm__("vmul.xyz %0, %2, %2\n\tvaddw.x %1, $vf0, $vf0w\n\tvadday.x ACC, %0, %0y\n\tvmaddz.x %0, %1, %0z" : "=&j"(l), "=&j"(one) : "j"(c));
+    {
+    qword r;
+    __asm__("vsqrt Q, %1x\n\tvwaitq\n\tvaddq.x %0, $vf0, Q" : "=j"(r) : "j"(l));
+    return r;
+    }
+}
+static __inline__ void VNormalize(qword *pr, qword c, qword k)
+{
+    qword l;
+    register qword t __asm__("vf1"); /* register pin (the only one): result reg of the normalize */
+    float gl;
+    l = VLen(c);
+    __asm__("qmfc2.ni %0, %1" : "=r"(gl) : "j"(l));
+    if (gl < 1e-4f) {
+        __asm__("" : "+r"(k));
+        t = k;
+    } else {
+        __asm__ __volatile__("vdiv Q, $vf0w, %2x\n\tvwaitq\n\tvmulq.xyzw %0, %1, Q" : "=j"(t) : "j"(c), "j"(l));
+    }
+    *pr = t;
+}
+extern "C" void func_001775B8(EMITMESH *pemitmesh, CBinaryInputStream *pbis);
+void func_001775B8(EMITMESH *pemitmesh, CBinaryInputStream *pbis)
+{
+    int i;
+    pemitmesh->cpos = func_00119048(pbis);
+    pemitmesh->apos = (qword *)PvAlloc(pemitmesh->cpos * 16, 16);
+    pemitmesh->anormal = (qword *)PvAllocClear(pemitmesh->cpos * 16, 16);
+    for (i = 0; i < pemitmesh->cpos; i++)
+        func_001192D8(pbis, &pemitmesh->apos[i]);
+    pemitmesh->ctri = func_00119048(pbis);
+    pemitmesh->atri = (TRI *)PvAlloc(pemitmesh->ctri * 16, 16);
+    pemitmesh->sArea = 0.0f;
+    for (int itri = 0; itri < pemitmesh->ctri; itri++) {
+        TRI *ptri = &pemitmesh->atri[itri];
+        for (i = 0; i < 3; i++)
+            ptri->aipos[i] = func_00119048(pbis);
+        ptri->sArea = func_00119260(pbis);
+        pemitmesh->sArea += ptri->sArea;
+        qword *apos = pemitmesh->apos;
+        qword p0 = apos[ptri->aipos[0]];
+        qword normal = Cross(Sub(apos[ptri->aipos[1]], p0), Sub(apos[ptri->aipos[2]], p0));
+        for (i = 0; i < 3; i++) {
+            qword *pn = &pemitmesh->anormal[ptri->aipos[i]];
+            *pn = Add(*pn, normal);
+        }
+    }
+    func_001192D8(pbis, &pemitmesh->v20);
+    for (i = 0; i < pemitmesh->cpos; i++)
+        VNormalize(&pemitmesh->anormal[i], pemitmesh->anormal[i], D_00317550);
+}
