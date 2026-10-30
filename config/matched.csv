@@ -1745,6 +1745,8 @@ func_0013D518,0x0013D518,563,LINKED_MATCH,src/engine/actor_action_update.cpp
 func_0013DDE8,0x0013DDE8,28,LINKED_MATCH,src/reference_constants/func_0013DDE8.c
 func_0013E510,0x0013E510,381,LINKED_MATCH,src/engine/actor_state.c
 func_0013EB08,0x0013EB08,23,LINKED_MATCH,src/engine/controller_value_store.c
+func_0013EB68,0x0013EB68,66,LINKED_MATCH,src/claude/func_0013EB68.c
+func_0013EC70,0x0013EC70,40,LINKED_MATCH,src/claude/func_0013EC70.c
 func_0013EE08,0x0013EE08,23,LINKED_MATCH,src/reference_constants/func_0013EE08.c
 func_0013EE68,0x0013EE68,118,LINKED_MATCH,src/engine/actor_event.c
 func_0013F040,0x0013F040,57,LINKED_MATCH,src/engine/actor_kind.c
@@ -1906,6 +1908,7 @@ func_0014DC08,0x0014DC08,31,LINKED_MATCH,src/hand/func_0014DC08.c
 func_0014DC88,0x0014DC88,3,EXACT_MATCH,src/hand/func_0014DC88.c
 func_0014E770,0x0014E770,11,EXACT_MATCH,src/hand/func_0014E770.c
 func_0014E7A0,0x0014E7A0,16,LINKED_MATCH,src/reference_constants/func_0014E7A0.c
+func_0014E938,0x0014E938,30,EXACT_MATCH,src/claude/func_0014E938.c
 func_0014E9B0,0x0014E9B0,15,LINKED_MATCH,src/reference_constants/func_0014E9B0.c
 func_0014E9F0,0x0014E9F0,48,LINKED_MATCH,src/engine/object_attach_14e9f0.c
 func_0014EAB0,0x0014EAB0,17,LINKED_MATCH,src/reference/func_0014EAB0.c
@@ -2044,6 +2047,7 @@ func_00156AB0,0x00156AB0,7,EXACT_MATCH,src/reference_constants/func_00156AB0.c
 func_00156AD0,0x00156AD0,11,LINKED_MATCH,src/auto/func_00156AD0.c
 func_00156B00,0x00156B00,38,LINKED_MATCH,src/engine/controller_bind_156b00.c
 func_00156D48,0x00156D48,30,LINKED_MATCH,src/engine/lookup_match.c
+func_00156DC0,0x00156DC0,34,LINKED_MATCH,src/claude/func_00156DC0.c
 func_00156E48,0x00156E48,6,EXACT_MATCH,src/claude/func_00156E48.c
 func_00156E60,0x00156E60,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00156F98,0x00156F98,8,LINKED_MATCH,src/auto/func_00156F98.c
@@ -2125,6 +2129,7 @@ func_0015C2B8,0x0015C2B8,34,LINKED_MATCH,src/engine/record_append_tagged.c
 func_0015C340,0x0015C340,56,LINKED_MATCH,src/claude/func_0015C340.c
 func_0015C420,0x0015C420,34,LINKED_MATCH,src/claude/func_0015C420.c
 func_0015C4A8,0x0015C4A8,19,EXACT_MATCH,src/engine/record_append_id.c
+func_0015C4F8,0x0015C4F8,54,LINKED_MATCH,src/claude/func_0015C4F8.c
 func_0015C5D0,0x0015C5D0,2,EXACT_MATCH,src/claude/func_0015C5D0.c
 func_0015C5D8,0x0015C5D8,14,LINKED_MATCH,src/reference_constants/func_0015C5D8.c
 func_0015C610,0x0015C610,16,LINKED_MATCH,src/reference_constants/func_0015C610.c
@@ -2935,6 +2940,7 @@ func_0018CFE0,0x0018CFE0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0018D118,0x0018D118,8,LINKED_MATCH,src/auto/func_0018D118.c
 func_0018D138,0x0018D138,4,EXACT_MATCH,src/auto/func_0018D138.c
 func_0018DA48,0x0018DA48,132,LINKED_MATCH,src/P2/bone_attachment_setup.cpp
+func_0018DD60,0x0018DD60,72,EXACT_MATCH,src/claude/func_0018DD60.c
 func_0018E728,0x0018E728,54,LINKED_MATCH,src/claude/func_0018E728.c
 func_0018F6B8,0x0018F6B8,62,LINKED_MATCH,src/reference_constants/func_0018F6B8.c
 func_0018F7B0,0x0018F7B0,256,LINKED_MATCH,src/engine/model_load_18f7b0.cpp
