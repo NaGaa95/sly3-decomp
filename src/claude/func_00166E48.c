@@ -1,0 +1,31 @@
+// SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
+// Sly 2 reference: /home/claude/decomp src/hand/func_0014E1A8.c (matrix now built in a local and passed on).
+typedef int qword __attribute__((mode(TI)));
+typedef struct { float x, y, z, w; } V4;
+typedef struct { V4 r[3]; } M3 __attribute__((aligned(16)));
+typedef struct { M3 m; V4 pos; } M4;
+struct CM;
+void func_00120BA8(qword v, float *a, float *b, int c);
+M3 func_0011CAE0(float a, float b);
+void func_002BA818(V4 *p, qword v);
+void func_00166DE8(struct CM *p, M4 *pm);
+static __inline__ void LoadM4(M4 *pm, M3 m, qword pos)
+{
+    func_002BA818(&pm->pos, pos);
+    pm->m = m;
+    pm->pos.w = 1.0f;
+    pm->m.r[2].w = 0;
+    pm->m.r[1].w = 0;
+    pm->m.r[0].w = 0;
+}
+
+void func_00166E48(struct CM *p, qword pos, qword tgt, float da, float db)
+{
+    qword d;
+    float a, b;
+    M4 m;
+    __asm__("vsub.xyzw %0, %1, %2" : "=j"(d) : "j"(tgt), "j"(pos));
+    func_00120BA8(d, &a, &b, 0);
+    LoadM4(&m, func_0011CAE0(a + da, b + db), pos);
+    func_00166DE8(p, &m);
+}
