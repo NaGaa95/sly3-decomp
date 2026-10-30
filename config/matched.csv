@@ -1867,6 +1867,7 @@ func_00147FC8,0x00147FC8,2,EXACT_MATCH,src/claude/func_00147FC8.c
 func_00148468,0x00148468,71,LINKED_MATCH,src/P2/fill_blend_segments.cpp
 func_00148810,0x00148810,32,EXACT_MATCH,src/hand/func_00148810.cpp
 func_00148890,0x00148890,42,LINKED_MATCH,src/reference_constants/func_00148890.c
+func_00148938,0x00148938,106,LINKED_MATCH,src/claude/func_00148938.c
 func_00148AE0,0x00148AE0,2,EXACT_MATCH,src/claude/func_00148AE0.c
 func_00149028,0x00149028,10,LINKED_MATCH,src/reference_constants/func_00149028.c
 func_00149058,0x00149058,128,LINKED_MATCH,src/reference_constants/func_00149058.c
