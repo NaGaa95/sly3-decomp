@@ -2440,7 +2440,7 @@ func_00162A68,0x00162A68,0x00162A80,24,manual-original-ghidra-return-and-whole-t
 func_00162A88,0x00162A88,0x00162AF0,104,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_00162AF0,0x00162AF0,0x00162C28,312,ghidra+spimdisasm-provisional
 func_00162C28,0x00162C28,0x00162C48,32,ghidra-provisional
-func_00162C48,0x00162C48,0x00162E08,448,ghidra+spimdisasm-provisional
+func_00162C48,0x00162C48,0x00162DFC,436,manual-terminal-return-trailing-dead-epilogue-fragment-excluded
 func_00162E08,0x00162E08,0x00162E48,64,ghidra+spimdisasm-provisional
 func_00162E48,0x00162E48,0x00162E74,44,manual-original-ghidra-entry-return-and-whole-text-source-review
 func_00162E78,0x00162E78,0x00162E80,8,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
@@ -2529,7 +2529,8 @@ func_00166DE8,0x00166DE8,0x00166E44,92,manual-complete-original-JR-real-delay-ac
 func_00166E48,0x00166E48,0x00166F08,192,ghidra+spimdisasm-provisional
 func_00166F08,0x00166F08,0x001670A8,416,ghidra+spimdisasm-provisional
 func_001670A8,0x001670A8,0x001672A0,504,ghidra+spimdisasm-provisional
-func_001672A0,0x001672A0,0x00167588,744,ghidra+spimdisasm-provisional
+func_001672A0,0x001672A0,0x00167574,724,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_00167578,0x00167578,0x00167584,12,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_00167588,0x00167588,0x00167660,216,ghidra-provisional
 func_00167660,0x00167660,0x00167838,472,ghidra+spimdisasm-provisional
 func_00167838,0x00167838,0x001678C8,144,ghidra+spimdisasm-provisional
@@ -2646,7 +2647,8 @@ func_0016B670,0x0016B670,0x0016BDE8,1912,ghidra-provisional
 func_0016BDE8,0x0016BDE8,0x0016BF0C,292,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0016BF10,0x0016BF10,0x0016BF5C,76,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_0016BF60,0x0016BF60,0x0016BFA8,72,ghidra-provisional
-func_0016BFA8,0x0016BFA8,0x0016C608,1632,ghidra-provisional
+func_0016BFA8,0x0016BFA8,0x0016C274,716,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0016C280,0x0016C280,0x0016C604,900,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_0016C608,0x0016C608,0x0016C664,92,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_0016C670,0x0016C670,0x0016C6A4,52,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_0016C6A8,0x0016C6A8,0x0016C6D8,48,ghidra-provisional

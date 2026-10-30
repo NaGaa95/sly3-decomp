@@ -3198,3 +3198,8 @@ func_00169EB0,0x00169EB0,0x00169F34,132,manual-terminal-return-split-entry-is-ja
 func_00169F40,0x00169F40,0x00169F5C,28,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_0016C608,0x0016C608,0x0016C664,92,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_0016C670,0x0016C670,0x0016C6A4,52,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_00162C48,0x00162C48,0x00162DFC,436,manual-terminal-return-trailing-dead-epilogue-fragment-excluded
+func_001672A0,0x001672A0,0x00167574,724,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_00167578,0x00167578,0x00167584,12,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0016BFA8,0x0016BFA8,0x0016C274,716,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0016C280,0x0016C280,0x0016C604,900,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
