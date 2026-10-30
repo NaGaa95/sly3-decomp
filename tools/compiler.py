@@ -62,6 +62,8 @@ def source_signature(source, compiler, assembler, flags, apply_filter, include_d
             inputs[str(ROOT / "tools/asfix_backward_b.py")] = file_hash(ROOT / "tools/asfix_backward_b.py")
         if filter_mode == "sdk-branch-fold":
             inputs[str(ROOT / "tools/asfix_branch_fold.py")] = file_hash(ROOT / "tools/asfix_branch_fold.py")
+        if filter_mode == "engine-divfix1":
+            inputs[str(ROOT / "tools/asfix_divfix1.py")] = file_hash(ROOT / "tools/asfix_divfix1.py")
     inputs[str(Path(__file__).resolve())] = file_hash(Path(__file__).resolve())
     return hashlib.sha256(json.dumps({"inputs": inputs, "flags": flags, "filter": apply_filter, "filter_mode": filter_mode}, sort_keys=True).encode()).hexdigest()
 
@@ -101,7 +103,7 @@ def compile_source(source, output, include_dirs=()):
     mode_match = re.search(r"SLY3_ASFIX:\s*(\S+)", header)
     filter_mode = os.environ.get("SLY3_ASFIX", mode_match[1] if mode_match else "engine")
     filter_mode = {"1": "engine", "0": "off"}.get(filter_mode, filter_mode)
-    if filter_mode not in ("engine", "off", "sdk-loop7", "sdk-fdlibm", "engine-const-copy", "sdk-gp64", "sdk-softdf", "sdk-literals", "engine-local-jumps", "sdk-branch-fold", "engine-exit-slots"):
+    if filter_mode not in ("engine", "off", "sdk-loop7", "sdk-fdlibm", "engine-const-copy", "sdk-gp64", "sdk-softdf", "sdk-literals", "engine-local-jumps", "sdk-branch-fold", "engine-exit-slots", "engine-divfix1"):
         raise ValueError("Unsupported assembler filter: " + filter_mode)
     apply_filter = filter_mode != "off"
     signature = source_signature(source, compiler, assembler, flags, apply_filter, include_dirs, filter_mode)
@@ -132,6 +134,8 @@ def compile_source(source, output, include_dirs=()):
             from asfix_backward_b import fix
         elif filter_mode == "sdk-branch-fold":
             from asfix_branch_fold import fix
+        elif filter_mode == "engine-divfix1":
+            from asfix_divfix1 import fix
         else:
             from asfix_sly2 import fix
         text, _ = fix(text)
