@@ -1263,6 +1263,7 @@ func_00124A58,0x00124A58,53,LINKED_MATCH,src/engine/vector_pair.cpp
 func_00124B30,0x00124B30,23,LINKED_MATCH,src/hand/func_00124B30.c
 func_00124B90,0x00124B90,23,LINKED_MATCH,src/reference_constants/func_00124B90.c
 func_00124BF0,0x00124BF0,24,LINKED_MATCH,src/P2/builtin_relative_matrix.cpp
+func_00124C50,0x00124C50,76,LINKED_MATCH,src/claude/func_00124C50.cpp
 func_00124D80,0x00124D80,18,LINKED_MATCH,src/auto/func_00124D80.c
 func_00124DC8,0x00124DC8,17,LINKED_MATCH,src/auto/func_00124DC8.c
 func_00124E10,0x00124E10,19,LINKED_MATCH,src/hand/func_00124E10.c
@@ -2073,6 +2074,8 @@ func_0015AE18,0x0015AE18,22,LINKED_MATCH,src/reference_constants/func_0015AE18.c
 func_0015AE70,0x0015AE70,53,LINKED_MATCH,src/engine/pending_handle_flush.c
 func_0015AF48,0x0015AF48,4,EXACT_MATCH,src/hand/func_0015AF48.c
 func_0015AF58,0x0015AF58,68,LINKED_MATCH,src/claude/func_0015AF58.c
+func_0015B068,0x0015B068,32,LINKED_MATCH,src/claude/func_0015B068.c
+func_0015B420,0x0015B420,88,LINKED_MATCH,src/claude/func_0015B420.c
 func_0015B580,0x0015B580,24,LINKED_MATCH,src/claude/func_0015B580.c
 func_0015B5E0,0x0015B5E0,23,LINKED_MATCH,src/reference_constants/func_0015B5E0.c
 func_0015B640,0x0015B640,27,LINKED_MATCH,src/reference_constants/func_0015B640.c
@@ -2090,6 +2093,7 @@ func_0015BE30,0x0015BE30,49,LINKED_MATCH,src/engine/entry_resolve.c
 func_0015BEF8,0x0015BEF8,11,LINKED_MATCH,src/reference_constants/func_0015BEF8.c
 func_0015BF28,0x0015BF28,26,LINKED_MATCH,src/engine/state_enter.c
 func_0015BF90,0x0015BF90,26,LINKED_MATCH,src/engine/state_exit.c
+func_0015BFF8,0x0015BFF8,96,LINKED_MATCH,src/claude/func_0015BFF8.c
 func_0015C178,0x0015C178,58,LINKED_MATCH,src/claude/func_0015C178.c
 func_0015C260,0x0015C260,22,EXACT_MATCH,src/engine/record_append_pointer.c
 func_0015C2B8,0x0015C2B8,34,LINKED_MATCH,src/engine/record_append_tagged.c
@@ -2891,6 +2895,7 @@ func_0018E728,0x0018E728,54,LINKED_MATCH,src/claude/func_0018E728.c
 func_0018F6B8,0x0018F6B8,62,LINKED_MATCH,src/reference_constants/func_0018F6B8.c
 func_0018F7B0,0x0018F7B0,256,LINKED_MATCH,src/engine/model_load_18f7b0.cpp
 func_0018FBB0,0x0018FBB0,88,LINKED_MATCH,src/engine/chain_copy.c
+func_0018FD10,0x0018FD10,92,LINKED_MATCH,src/claude/func_0018FD10.c
 func_0018FE80,0x0018FE80,44,LINKED_MATCH,src/engine/entry_loop.c
 func_0018FF30,0x0018FF30,25,EXACT_MATCH,src/engine/lane_clear.c
 func_00193638,0x00193638,12,EXACT_MATCH,src/reference_constants/func_00193638.c
