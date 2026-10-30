@@ -2248,6 +2248,7 @@ func_0015E628,0x0015E628,25,LINKED_MATCH,src/engine/range_test.c
 func_0015EC20,0x0015EC20,218,LINKED_MATCH,src/claude/func_0015EC20.c
 func_0015EF88,0x0015EF88,41,LINKED_MATCH,src/reference_constants/func_0015EF88.c
 func_0015F030,0x0015F030,8,EXACT_MATCH,src/reference_constants/func_0015F030.c
+func_0015F050,0x0015F050,226,LINKED_MATCH,src/claude/func_0015EC20.c
 func_0015F3D8,0x0015F3D8,46,LINKED_MATCH,src/engine/init_session_15f3d8.c
 func_0015F528,0x0015F528,29,LINKED_MATCH,src/engine/shutdown.c
 func_0015F5A0,0x0015F5A0,13,LINKED_MATCH,src/reference_constants/func_0015F5A0.c
