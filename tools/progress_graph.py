@@ -86,7 +86,7 @@ def log(mf, mi, total_f, total_i, note=''):
     rows = load_history()
     if rows and int(rows[-1]['functions']) == mf and int(rows[-1]['instructions']) == mi:
         return rows
-    rows.append({'date': datetime.date.today().isoformat(), 'functions': str(mf), 'instructions': str(mi),
+    rows.append({'date': datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M'), 'functions': str(mf), 'instructions': str(mi),
                  'total_functions': str(total_f), 'total_instructions': str(total_i), 'note': note})
     with open(HIST, 'w', newline='') as f:
         w = csv.DictWriter(f, fieldnames=['date', 'functions', 'instructions', 'total_functions', 'total_instructions', 'note'])
@@ -169,14 +169,34 @@ def render(real, matched_addrs):
     out.append('<!-- Progress Over Time Section -->')
     y += 16
     out.append(t(32, y, 'Progress over time', 16, weight='bold'))
-    out.append(t(W - 32, y, 'each point = one recorded checkpoint', 12, C_MUTED, 'end'))
+    out.append(t(W - 32, y, 'each point = one commit that changed the match list', 12, C_MUTED, 'end'))
     cx, cy, cw, ch = 72, y + 20, W - 72 - 40, 200
     for p in range(0, 101, 25):
         gy = cy + ch - ch * p / 100
         out.append(f'<line x1="{cx}" y1="{gy:.1f}" x2="{cx + cw}" y2="{gy:.1f}" stroke="{C_GRID}" stroke-width="1"/>')
         out.append(t(cx - 8, gy + 4, f'{p}%', 11, C_MUTED, 'end'))
-    n = len(hist)
-    xs = [cx + (cw * i / (n - 1) if n > 1 else cw / 2) for i in range(n)]
+
+    # x axis is real time (dates may be "YYYY-MM-DD" or "YYYY-MM-DDTHH:MM"), so gaps between work sessions show
+    def when(r):
+        d = r['date']
+        return datetime.datetime.fromisoformat(d if 'T' in d else d + 'T12:00')
+    times = [when(r) for r in hist]
+    t0 = min(times).replace(hour=0, minute=0)
+    t1 = max(times).replace(hour=0, minute=0) + datetime.timedelta(days=1)
+    span = (t1 - t0).total_seconds()
+    xs = [cx + cw * (tm - t0).total_seconds() / span for tm in times]
+
+    # one tick per day; labels thinned so they never overlap
+    days = [t0 + datetime.timedelta(days=k) for k in range((t1 - t0).days + 1)]
+    last_label = -1e9
+    for d in days:
+        dx = cx + cw * (d - t0).total_seconds() / span
+        out.append(f'<line x1="{dx:.1f}" y1="{cy + ch}" x2="{dx:.1f}" y2="{cy + ch + 4}" stroke="{C_GRID}" stroke-width="1"/>')
+        if d < t1 and dx - last_label >= 44:
+            mid = dx + cw * 43200 / span          # label sits in the middle of its day
+            out.append(t(mid, cy + ch + 16, d.strftime('%m-%d'), 10, C_MUTED, 'middle'))
+            last_label = dx
+
     for key, color in (('functions', C_DONE), ('instructions', C_DONE2)):
         pts = []
         for i, r in enumerate(hist):
@@ -186,18 +206,7 @@ def render(real, matched_addrs):
             out.append(f'<polyline fill="none" stroke="{color}" stroke-width="2.5" stroke-linejoin="round" points="'
                        + ' '.join(f'{a:.1f},{b:.1f}' for a, b in pts) + '"/>')
         for a, b in pts:
-            out.append(f'<circle cx="{a:.1f}" cy="{b:.1f}" r="3.5" fill="{color}"/>')
-    first = {}
-    for i, r in enumerate(hist):
-        first.setdefault(r['date'][5:], i)
-    keep = []
-    for lab, i in sorted(first.items(), key=lambda kv: kv[1]):
-        while keep and xs[i] - xs[keep[-1][1]] < 42:
-            keep.pop()
-        keep.append((lab, i))
-    for lab, i in keep:
-        anchor = 'end' if xs[i] > cx + cw - 20 else ('start' if xs[i] < cx + 20 else 'middle')
-        out.append(t(xs[i], cy + ch + 16, lab, 10, C_MUTED, anchor))
+            out.append(f'<circle cx="{a:.1f}" cy="{b:.1f}" r="2.5" fill="{color}"/>')
     ly = cy + ch + 36
     out.append(f'<rect x="{cx}" y="{ly - 9}" width="12" height="4" fill="{C_DONE}"/>' + t(cx + 18, ly - 4, 'Functions', 12))
     out.append(f'<rect x="{cx + 100}" y="{ly - 9}" width="12" height="4" fill="{C_DONE2}"/>' + t(cx + 118, ly - 4, 'Code size (instructions)', 12))
