@@ -16,7 +16,6 @@ public:
     void UnpackHelper(UPK upk, int c, int iqw, int *pcb, uint **ppun);
 };
 // VU1 microcode entry points (absolute VU addresses).
-__asm__("\t.globl D_00003F90\n\tD_00003F90 = 0x3F90\n\t.globl D_00003638\n\tD_00003638 = 0x3638\n\t.globl D_00003AD0\n\tD_00003AD0 = 0x3AD0");
 extern "C" {
 extern char D_00003F90[], D_00003638[], D_00003AD0[];
 // Microcode blob at 0x2C8C20..0x2CC778 has no symbol in symbol_addrs.txt; it is addressed relative to the
