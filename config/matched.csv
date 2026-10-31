@@ -2520,6 +2520,7 @@ func_00168098,0x00168098,28,EXACT_MATCH,src/hand/func_00168098.c
 func_00168108,0x00168108,42,LINKED_MATCH,src/claude/func_00168108.c
 func_001682A8,0x001682A8,34,LINKED_MATCH,src/engine/target_create.c
 func_00168330,0x00168330,9,LINKED_MATCH,src/reference_constants/func_00168330.c
+func_00168358,0x00168358,72,LINKED_MATCH,src/claude/func_00168358.c
 func_00168478,0x00168478,59,LINKED_MATCH,src/engine/player_swap.c
 func_00168568,0x00168568,23,LINKED_MATCH,src/reference_constants/func_00168568.c
 func_001685C8,0x001685C8,41,LINKED_MATCH,src/engine/target_switch.c
