@@ -1419,6 +1419,7 @@ func_00128EA0,0x00128EA0,60,LINKED_MATCH,src/P2/script_loop_sequence.cpp
 func_00128F90,0x00128F90,72,LINKED_MATCH,src/P2/script_closure.cpp
 func_001290B0,0x001290B0,37,LINKED_MATCH,src/reference_constants/func_001290B0.c
 func_00129148,0x00129148,47,LINKED_MATCH,src/P2/script_loop_sequence.cpp
+func_00129208,0x00129208,314,LINKED_MATCH,src/claude/func_00129208.cpp
 func_001296F0,0x001296F0,95,LINKED_MATCH,src/P2/eval_dispatch.cpp
 func_00129870,0x00129870,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001299A8,0x001299A8,8,LINKED_MATCH,src/auto/func_001299A8.c
