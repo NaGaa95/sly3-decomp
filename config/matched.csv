@@ -1267,6 +1267,7 @@ func_00123C98,0x00123C98,108,LINKED_MATCH,src/reference_constants/func_00123C98.
 func_00123E48,0x00123E48,42,LINKED_MATCH,src/reference_constants/func_00123E48.c
 func_00123EF0,0x00123EF0,42,LINKED_MATCH,src/reference_constants/func_00123EF0.c
 func_00123F98,0x00123F98,42,LINKED_MATCH,src/reference_constants/game_early_sample.cpp
+func_00124040,0x00124040,64,LINKED_MATCH,src/claude/func_00124040.cpp
 func_00124140,0x00124140,58,LINKED_MATCH,src/reference_constants/game_early_random_range.cpp
 func_00124228,0x00124228,7,LINKED_MATCH,src/P2/builtin_float_limit.cpp
 func_00124248,0x00124248,33,LINKED_MATCH,src/reference_constants/func_00124248.c
@@ -1942,6 +1943,7 @@ func_00147218,0x00147218,11,EXACT_MATCH,src/hand/func_00147218.c
 func_00147248,0x00147248,11,EXACT_MATCH,src/hand/func_00147248.c
 func_00147278,0x00147278,73,LINKED_MATCH,src/engine/shuffle_queue.c
 func_001473A0,0x001473A0,27,LINKED_MATCH,src/engine/packed_record_and_any_identity.c
+func_001479A0,0x001479A0,196,LINKED_MATCH,src/claude/func_001479A0.cpp
 func_00147CB0,0x00147CB0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00147DE8,0x00147DE8,8,LINKED_MATCH,src/auto/func_00147DE8.c
 func_00147E08,0x00147E08,104,LINKED_MATCH,src/claude/func_00147E08.c
@@ -2379,6 +2381,7 @@ func_00162060,0x00162060,42,LINKED_MATCH,src/engine/target_gate_162060.c
 func_00162108,0x00162108,16,EXACT_MATCH,src/engine/range_defaults.c
 func_00162148,0x00162148,94,LINKED_MATCH,src/claude/func_00162148.c
 func_001622C0,0x001622C0,44,EXACT_MATCH,src/claude/func_001622C0.c
+func_00162370,0x00162370,194,LINKED_MATCH,src/claude/func_00162370.cpp
 func_00162678,0x00162678,7,LINKED_MATCH,src/auto/func_00162678.c
 func_00162698,0x00162698,94,LINKED_MATCH,src/claude/func_00162698.c
 func_00162810,0x00162810,46,LINKED_MATCH,src/engine/selection_notify_162810.c
@@ -2563,6 +2566,7 @@ func_00169FC0,0x00169FC0,11,LINKED_MATCH,src/reference_constants/func_00169FC0.c
 func_00169FF0,0x00169FF0,34,LINKED_MATCH,src/claude/func_00169FF0.c
 func_0016A078,0x0016A078,28,LINKED_MATCH,src/claude/func_0016A078.c
 func_0016A0E8,0x0016A0E8,75,LINKED_MATCH,src/engine/cue_init_16a0e8.c
+func_0016A218,0x0016A218,260,LINKED_MATCH,src/claude/func_0016A218.c
 func_0016A628,0x0016A628,50,LINKED_MATCH,src/engine/cue_stop_16a628.c
 func_0016A6F0,0x0016A6F0,23,LINKED_MATCH,src/reference_constants/func_0016A6F0.c
 func_0016A750,0x0016A750,37,LINKED_MATCH,src/engine/position_lift.c
@@ -2599,6 +2603,7 @@ func_0016C950,0x0016C950,11,LINKED_MATCH,src/reference_constants/func_0016C950.c
 func_0016C980,0x0016C980,15,LINKED_MATCH,src/reference_constants/func_0016C980.c
 func_0016C9C0,0x0016C9C0,20,LINKED_MATCH,src/reference_constants/func_0016C9C0.c
 func_0016CA10,0x0016CA10,74,LINKED_MATCH,src/engine/timer_expire_16ca10.c
+func_0016CB38,0x0016CB38,306,LINKED_MATCH,src/claude/func_0016CB38.cpp
 func_0016D000,0x0016D000,14,LINKED_MATCH,src/reference_constants/func_0016D000.c
 func_0016D038,0x0016D038,20,LINKED_MATCH,src/engine/world_notify.c
 func_0016D088,0x0016D088,14,LINKED_MATCH,src/reference_constants/func_0016D088.c
@@ -2986,6 +2991,7 @@ func_00181F10,0x00181F10,8,LINKED_MATCH,src/auto/func_00181F10.c
 func_00181F30,0x00181F30,14,LINKED_MATCH,src/reference_constants/func_00181F30.c
 func_00181F68,0x00181F68,48,LINKED_MATCH,src/P2/action_query_activate.cpp
 func_00182028,0x00182028,16,LINKED_MATCH,src/reference_constants/func_00182028.c
+func_00182068,0x00182068,250,LINKED_MATCH,src/claude/func_00182068.cpp
 func_00182450,0x00182450,92,LINKED_MATCH,src/P2/action_query_update.cpp
 func_001825C0,0x001825C0,59,LINKED_MATCH,src/P2/action_query_mode.cpp
 func_001826B0,0x001826B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -3221,6 +3227,7 @@ func_00194408,0x00194408,30,LINKED_MATCH,src/claude/func_00194308.cpp
 func_00194480,0x00194480,26,LINKED_MATCH,src/auto/func_00194480.c
 func_001944E8,0x001944E8,14,LINKED_MATCH,src/reference_constants/func_001944E8.c
 func_00194520,0x00194520,14,LINKED_MATCH,src/reference_constants/func_00194520.c
+func_00194558,0x00194558,344,LINKED_MATCH,src/claude/func_00194558.cpp
 func_00194AB8,0x00194AB8,12,LINKED_MATCH,src/claude/func_00194AB8.c
 func_00194AE8,0x00194AE8,14,LINKED_MATCH,src/reference_constants/func_00194AE8.c
 func_00194F60,0x00194F60,50,LINKED_MATCH,src/engine/pose_reset_194f60.c
