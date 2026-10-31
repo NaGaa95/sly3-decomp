@@ -2913,6 +2913,7 @@ func_0017D160,0x0017D160,8,LINKED_MATCH,src/auto/func_0017D160.c
 func_0017D180,0x0017D180,22,LINKED_MATCH,src/reference_constants/func_0017D180.c
 func_0017D1D8,0x0017D1D8,27,LINKED_MATCH,src/engine/clock_expiry.c
 func_0017D248,0x0017D248,10,LINKED_MATCH,src/reference_constants/func_0017D248.c
+func_0017D270,0x0017D270,344,LINKED_MATCH,src/claude/func_0017D270.cpp
 func_0017D7D0,0x0017D7D0,20,LINKED_MATCH,src/engine/stamp_update.c
 func_0017D820,0x0017D820,7,LINKED_MATCH,src/reference_constants/func_0017D820.c
 func_0017D840,0x0017D840,13,LINKED_MATCH,src/reference_constants/func_0017D840.c
@@ -3123,6 +3124,7 @@ func_00189710,0x00189710,45,LINKED_MATCH,src/game_middle/relationship_lifecycle.
 func_001897C8,0x001897C8,45,LINKED_MATCH,src/game_middle/relationship_lifecycle.cpp
 func_00189880,0x00189880,45,LINKED_MATCH,src/game_middle/relationship_lifecycle.cpp
 func_00189938,0x00189938,45,LINKED_MATCH,src/game_middle/relationship_lifecycle.cpp
+func_001899F0,0x001899F0,70,LINKED_MATCH,src/claude/func_001899F0.c
 func_00189B08,0x00189B08,166,LINKED_MATCH,src/game_middle/relationship_propagation.cpp
 func_00189DA0,0x00189DA0,22,LINKED_MATCH,src/reference_constants/func_00189DA0.c
 func_00189DF8,0x00189DF8,26,LINKED_MATCH,src/engine/subject_pair_event.cpp
@@ -3249,6 +3251,7 @@ func_00196AA8,0x00196AA8,20,LINKED_MATCH,src/hand/func_00196AA8.cpp
 func_00196AF8,0x00196AF8,8,LINKED_MATCH,src/wrappers/func_00196AF8.c
 func_00196B18,0x00196B18,27,EXACT_MATCH,src/hand/func_00196B18.c
 func_00196B88,0x00196B88,36,LINKED_MATCH,src/hand/func_00196B88.c
+func_00196C18,0x00196C18,68,LINKED_MATCH,src/claude/func_00196C18.c
 func_00196D28,0x00196D28,55,LINKED_MATCH,src/hand/func_00196D28.cpp
 func_00196E08,0x00196E08,61,LINKED_MATCH,src/reference_os/func_00196E08.c
 func_00196F00,0x00196F00,9,LINKED_MATCH,src/auto/func_00196F00.c
