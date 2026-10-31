@@ -2376,6 +2376,7 @@ func_0015FCA8,0x0015FCA8,19,LINKED_MATCH,src/reference_constants/func_0015FCA8.c
 func_0015FCF8,0x0015FCF8,24,LINKED_MATCH,src/reference_constants/func_0015FCF8.c
 func_0015FD58,0x0015FD58,68,LINKED_MATCH,src/engine/state_change_15fd58.c
 func_0015FE68,0x0015FE68,162,LINKED_MATCH,src/claude/func_0015FE68.c
+func_00160960,0x00160960,504,LINKED_MATCH,src/claude/func_00160960.cpp
 func_00161140,0x00161140,27,LINKED_MATCH,src/engine/state_restart.c
 func_001611B0,0x001611B0,72,LINKED_MATCH,src/claude/func_001611B0.c
 func_001612D0,0x001612D0,44,LINKED_MATCH,src/engine/list_accept.c
