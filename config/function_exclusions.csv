@@ -67,3 +67,7 @@ Start,End,Reason
 0x001A9790,0x001A97B8,original-unreachable-epilogue-fragment-source0
 0x001AA628,0x001AA630,original-unreachable-epilogue-fragment-source0
 0x002BA0C0,0x002BA0D0,original-unreachable-stack-fragments-source0
+0x001C6F18,0x001C6F20,original-unreachable-epilogue-fragment-source0
+0x001D0910,0x001D0918,original-unreachable-epilogue-fragment-source0
+0x0022E0B0,0x0022E0B8,original-unreachable-epilogue-fragment-source0
+0x001F4E18,0x001F4E20,original-unreachable-epilogue-fragment-source0
