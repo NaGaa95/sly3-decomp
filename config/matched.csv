@@ -2046,6 +2046,7 @@ func_0014DBB8,0x0014DBB8,18,EXACT_MATCH,src/claude/func_0014DBB8.c
 func_0014DC00,0x0014DC00,2,EXACT_MATCH,src/claude/func_0014DC00.c
 func_0014DC08,0x0014DC08,31,LINKED_MATCH,src/hand/func_0014DC08.c
 func_0014DC88,0x0014DC88,3,EXACT_MATCH,src/hand/func_0014DC88.c
+func_0014DC98,0x0014DC98,694,LINKED_MATCH,src/claude/func_0014DC98.c
 func_0014E770,0x0014E770,11,EXACT_MATCH,src/hand/func_0014E770.c
 func_0014E7A0,0x0014E7A0,16,LINKED_MATCH,src/reference_constants/func_0014E7A0.c
 func_0014E7E0,0x0014E7E0,86,LINKED_MATCH,src/claude/func_0014E7E0.c
@@ -2094,6 +2095,7 @@ func_00151B60,0x00151B60,39,LINKED_MATCH,src/P2/object_collection.cpp
 func_00151C00,0x00151C00,37,LINKED_MATCH,src/reference_constants/func_00151C00.c
 func_00151C98,0x00151C98,29,LINKED_MATCH,src/P2/object_filter.cpp
 func_00151D10,0x00151D10,28,LINKED_MATCH,src/engine/packed_record_and_any_identity.c
+func_00151D80,0x00151D80,208,LINKED_MATCH,src/claude/func_00151D80.c
 func_001520C0,0x001520C0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001521F8,0x001521F8,8,LINKED_MATCH,src/auto/func_001521F8.c
 func_00152218,0x00152218,94,LINKED_MATCH,src/claude/func_00152218.c
@@ -3579,6 +3581,7 @@ func_001A3A48,0x001A3A48,14,LINKED_MATCH,src/reference_constants/func_001A3A48.c
 func_001A3A80,0x001A3A80,21,LINKED_MATCH,src/reference_constants/func_001A3A80.c
 func_001A3AD8,0x001A3AD8,19,LINKED_MATCH,src/reference_constants/func_001A3AD8.c
 func_001A3B28,0x001A3B28,31,LINKED_MATCH,src/game_middle/subject_filter_predicate.c
+func_001A3BA8,0x001A3BA8,270,LINKED_MATCH,src/claude/func_001A3BA8.cpp
 func_001A3FE0,0x001A3FE0,206,LINKED_MATCH,src/claude/func_001A3FE0.cpp
 func_001A4318,0x001A4318,29,LINKED_MATCH,src/game_middle/task_retry_gate.c
 func_001A4390,0x001A4390,28,LINKED_MATCH,src/game_middle/task_owner_ready_1A4390.c
@@ -3622,6 +3625,7 @@ func_001A6568,0x001A6568,186,LINKED_MATCH,src/claude/func_001A6568.c
 func_001A6850,0x001A6850,140,LINKED_MATCH,src/claude/func_001A6568.c
 func_001A6A80,0x001A6A80,32,LINKED_MATCH,src/reference_constants/func_001A6A80.c
 func_001A6B00,0x001A6B00,30,EXACT_MATCH,src/hand/func_001A6B00.c
+func_001A6B78,0x001A6B78,76,LINKED_MATCH,src/claude/func_001A6B78.c
 func_001A6CA8,0x001A6CA8,13,EXACT_MATCH,src/hand/func_001A6CA8.c
 func_001A6CE0,0x001A6CE0,59,LINKED_MATCH,src/game_middle/candidate_position_queue.c
 func_001A6DD0,0x001A6DD0,9,EXACT_MATCH,src/game_middle/candidate_position_queue.c
