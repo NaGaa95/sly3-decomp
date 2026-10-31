@@ -3728,6 +3728,7 @@ func_001AD1D0,0x001AD1D0,392,LINKED_MATCH,src/claude/func_001AD1D0.cpp
 func_001AD7F0,0x001AD7F0,252,LINKED_MATCH,src/claude/func_001AD7F0.c
 func_001ADBE0,0x001ADBE0,48,LINKED_MATCH,src/game_middle/actor_state_selection.c
 func_001ADCA0,0x001ADCA0,76,LINKED_MATCH,src/hand/func_001ADCA0.c
+func_001ADDD0,0x001ADDD0,1236,LINKED_MATCH,src/claude/func_001ADDD0.cpp
 func_001AF120,0x001AF120,12,LINKED_MATCH,src/reference_constants/func_001AF120.c
 func_001AF150,0x001AF150,43,LINKED_MATCH,src/game_middle/actor_state_index.c
 func_001AF200,0x001AF200,37,LINKED_MATCH,src/game_middle/actor_state_index.c
