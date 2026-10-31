@@ -4649,12 +4649,14 @@ func_001E9678,0x001E9678,0x001E96E8,112,ghidra+spimdisasm-provisional
 func_001E96E8,0x001E96E8,0x001E9798,176,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001E9798,0x001E9798,0x001E9BC8,1072,ghidra+spimdisasm-provisional
 func_001E9BC8,0x001E9BC8,0x001E9F48,896,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
-func_001E9F48,0x001E9F48,0x001EA060,280,manual-trim-provisional-unmatched-predecessor-at-separate-proved-virtual-entry
+func_001E9F48,0x001E9F48,0x001E9FF0,168,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_001E9FF0,0x001E9FF0,0x001EA060,112,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_001EA060,0x001EA060,0x001EA070,16,manual-complete-original-virtual-receiver-return-delay-and-both-native-profiles
 func_001EA070,0x001EA070,0x001EA0B4,68,manual-complete-original-state-receiver-integer-return-and-independent-review
 func_001EA0B8,0x001EA0B8,0x001EA0C4,12,manual-original-real-vtable-entry-pointer-return-no-consumed-inputs-and-independent-review
 func_001EA0C8,0x001EA0C8,0x001EA178,176,ghidra-provisional
-func_001EA178,0x001EA178,0x001EA1E0,104,ghidra-provisional
+func_001EA178,0x001EA178,0x001EA1B8,64,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_001EA1B8,0x001EA1B8,0x001EA1E0,40,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_001EA1E0,0x001EA1E0,0x001EA298,184,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001EA298,0x001EA298,0x001EA2F8,96,manual-complete-original-JR-real-delay-actual-incoming-ABI-native-whole-sections-root-resumed-review
 func_001EA2F8,0x001EA2F8,0x001EA398,160,ghidra-provisional
