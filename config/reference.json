@@ -1,6 +1,6 @@
 {
   "upstream": "https://github.com/Komasia/sly2-decomp",
-  "revision": "a4d782bd5895ba50eddbc4ca9e3686821d5772b6",
+  "revision": "be803ab8801df098639c83be51366b8d094b78f5",
   "asfix_sly2_sha256": "899ade1d82edb3a604e709eeb76ddaf02f3bee7ca2f9bec273ba6ed63f9157b8",
   "policy": "Reference only; Sly 3 types, symbols, compiler settings and matches require independent validation. No upstream LICENSE file was present in the supplied snapshot."
 }
