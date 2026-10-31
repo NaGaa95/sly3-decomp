@@ -4465,6 +4465,7 @@ func_001EA9B8,0x001EA9B8,17,LINKED_MATCH,src/game_middle/actor_pending_clear_1EA
 func_001EAF80,0x001EAF80,43,LINKED_MATCH,src/game_middle/contact_gate_ternary_1EAF80.cpp
 func_001EB030,0x001EB030,9,LINKED_MATCH,src/reference_constants/func_001EB030.c
 func_001EB058,0x001EB058,47,LINKED_MATCH,src/game_middle/child_create_setup.c
+func_001EB118,0x001EB118,92,LINKED_MATCH,src/game_middle/func_001EB118.c
 func_001EB288,0x001EB288,29,LINKED_MATCH,src/game_middle/reference_pack_gather.c
 func_001EB300,0x001EB300,15,LINKED_MATCH,src/reference_constants/func_001EB300.c
 func_001EB340,0x001EB340,11,LINKED_MATCH,src/reference_constants/func_001EB340.c
@@ -4946,6 +4947,7 @@ func_0020BED0,0x0020BED0,17,EXACT_MATCH,src/hand/func_0020BED0.c
 func_0020BF18,0x0020BF18,18,EXACT_MATCH,src/hand/func_0020BF18.c
 func_0020BF60,0x0020BF60,17,EXACT_MATCH,src/hand/func_0020BF60.c
 func_0020C170,0x0020C170,20,LINKED_MATCH,src/hand/func_0020C170.c
+func_0020C760,0x0020C760,97,LINKED_MATCH,src/leaf/frame_build_20C760.c
 func_0020CB98,0x0020CB98,34,LINKED_MATCH,src/P2/particle_contact_guard.cpp
 func_0020CC20,0x0020CC20,61,LINKED_MATCH,src/P2/sample_frame_20CC20.c
 func_0020CD18,0x0020CD18,28,LINKED_MATCH,src/P2/particle_position_seed.c
@@ -5494,6 +5496,7 @@ func_00237DD8,0x00237DD8,3,EXACT_MATCH,src/hand/func_00237DD8.cpp
 func_00237DE8,0x00237DE8,20,LINKED_MATCH,src/hand/func_00237DE8.c
 func_00237E38,0x00237E38,36,LINKED_MATCH,src/P2/shader_circle.cpp
 func_00237EC8,0x00237EC8,17,LINKED_MATCH,src/hand/func_00237EC8.cpp
+func_00237F10,0x00237F10,38,LINKED_MATCH,src/leaf/basis_inverse_237f10.cpp
 func_00238060,0x00238060,22,LINKED_MATCH,src/hand/func_00238060.c
 func_002380B8,0x002380B8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_002381F0,0x002381F0,8,LINKED_MATCH,src/startup/pool_startup.cpp
