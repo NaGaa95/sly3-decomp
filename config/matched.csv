@@ -3765,6 +3765,7 @@ func_001B5890,0x001B5890,31,LINKED_MATCH,src/game_middle/component_defaults_init
 func_001B5C78,0x001B5C78,35,EXACT_MATCH,src/hand/func_001B5C78.c
 func_001B5D08,0x001B5D08,52,LINKED_MATCH,src/game_middle/context_mode_permission.c
 func_001B5DD8,0x001B5DD8,16,EXACT_MATCH,src/reference_os/func_001B5DD8.c
+func_001B6798,0x001B6798,9,EXACT_MATCH,src/game_middle/func_001B6798.c
 func_001B6E58,0x001B6E58,46,LINKED_MATCH,src/reference_constants/func_001B6E58.c
 func_001B6F10,0x001B6F10,59,LINKED_MATCH,src/reference_constants/func_001B6F10.c
 func_001B7000,0x001B7000,13,LINKED_MATCH,src/reference_constants/func_001B7000.c
@@ -4470,6 +4471,7 @@ func_001EC6D8,0x001EC6D8,3,EXACT_MATCH,src/game_middle/quad_push.c
 func_001ECBB8,0x001ECBB8,22,LINKED_MATCH,src/hand/func_001ECBB8.c
 func_001ECC10,0x001ECC10,17,LINKED_MATCH,src/reference_constants/func_001ECC10.c
 func_001ECC58,0x001ECC58,154,LINKED_MATCH,src/game_middle/topology_load_1ECC58.c
+func_001ECEC0,0x001ECEC0,135,LINKED_MATCH,src/game_middle/func_001ECEC0.c
 func_001ED0E0,0x001ED0E0,35,EXACT_MATCH,src/game_middle/entry_distance_refresh.cpp
 func_001ED170,0x001ED170,8,LINKED_MATCH,src/reference_constants/func_001ED170.c
 func_001ED190,0x001ED190,7,LINKED_MATCH,src/wrappers/func_001ED190.c
@@ -4482,6 +4484,7 @@ func_001ED350,0x001ED350,68,LINKED_MATCH,src/reference_os/func_001ED350.c
 func_001ED7B0,0x001ED7B0,28,LINKED_MATCH,src/reference_constants/func_001ED7B0.c
 func_001ED820,0x001ED820,102,LINKED_MATCH,src/reference_os/func_001ED820.c
 func_001ED9B8,0x001ED9B8,27,LINKED_MATCH,src/reference_constants/func_001ED9B8.c
+func_001EDA28,0x001EDA28,71,LINKED_MATCH,src/game_middle/func_001EDA28.c
 func_001EDB48,0x001EDB48,116,LINKED_MATCH,src/reference_constants/func_001EDB48.c
 func_001EDD18,0x001EDD18,25,LINKED_MATCH,src/game_middle/query_cache_initialize.c
 func_001EDD80,0x001EDD80,85,EXACT_MATCH,src/game_middle/threshold_crossing_update.c
@@ -5324,6 +5327,7 @@ func_0022C2B0,0x0022C2B0,21,LINKED_MATCH,src/hand/func_0022C2B0.c
 func_0022C308,0x0022C308,125,LINKED_MATCH,src/leaf/actor_tick_22c308.c
 func_0022C500,0x0022C500,28,LINKED_MATCH,src/hand/func_0022C500.c
 func_0022C570,0x0022C570,74,LINKED_MATCH,src/leaf/actor_component_update_22c570.c
+func_0022C698,0x0022C698,245,LINKED_MATCH,src/leaf/actor_action_update_22c698.cpp
 func_0022D018,0x0022D018,4,EXACT_MATCH,src/P2/actor_state_predicates.c
 func_0022D028,0x0022D028,17,LINKED_MATCH,src/hand/func_0022D028.c
 func_0022D070,0x0022D070,3,LINKED_MATCH,src/hand/func_0022D070.c
