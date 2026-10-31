@@ -3865,6 +3865,7 @@ func_001C3FB0,0x001C3FB0,11,EXACT_MATCH,src/reference_constants/func_001C3FB0.c
 func_001C3FE0,0x001C3FE0,13,LINKED_MATCH,src/hand/func_001C3FE0.c
 func_001C4018,0x001C4018,28,LINKED_MATCH,src/game_middle/owner_kind_status.c
 func_001C4088,0x001C4088,21,LINKED_MATCH,src/reference_constants/func_001C4088.c
+func_001C4408,0x001C4408,77,LINKED_MATCH,src/game_middle/func_001C4408.cpp
 func_001C4718,0x001C4718,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001C4850,0x001C4850,8,LINKED_MATCH,src/auto/func_001C4850.c
 func_001C4870,0x001C4870,44,LINKED_MATCH,src/game_middle/class_bucket_default_init.c
@@ -3908,6 +3909,7 @@ func_001C5DA8,0x001C5DA8,23,EXACT_MATCH,src/reference_constants/func_001C5DA8.c
 func_001C5E08,0x001C5E08,35,LINKED_MATCH,src/reference_constants/func_001C5E08.c
 func_001C6D50,0x001C6D50,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001C6E88,0x001C6E88,8,LINKED_MATCH,src/auto/func_001C6E88.c
+func_001C6EA8,0x001C6EA8,28,LINKED_MATCH,src/game_middle/func_001C6EA8.c
 func_001C6F20,0x001C6F20,4,EXACT_MATCH,src/auto/func_001C6F20.c
 func_001C6F30,0x001C6F30,78,LINKED_MATCH,src/game_middle/command_sequence_dispatch.c
 func_001C7068,0x001C7068,28,LINKED_MATCH,src/hand/func_001C7068.c
@@ -3938,6 +3940,8 @@ func_001C7F18,0x001C7F18,36,EXACT_MATCH,src/game_middle/scene_callbacks_reverse_
 func_001C7FA8,0x001C7FA8,70,LINKED_MATCH,src/P2/scene_lifecycle.cpp
 func_001C80C0,0x001C80C0,41,LINKED_MATCH,src/game_middle/scene_pending_ready_1C80C0.c
 func_001C8168,0x001C8168,20,LINKED_MATCH,src/reference_constants/func_001C8168.c
+func_001C8238,0x001C8238,2,EXACT_MATCH,src/game_middle/func_001C8238.c
+func_001C8240,0x001C8240,2,EXACT_MATCH,src/game_middle/func_001C8238.c
 func_001C8248,0x001C8248,56,LINKED_MATCH,src/P2/scene_transform.cpp
 func_001C8548,0x001C8548,13,EXACT_MATCH,src/P2/scene_transform.cpp
 func_001C85C0,0x001C85C0,9,LINKED_MATCH,src/reference_constants/func_001C85C0.c
@@ -4057,6 +4061,7 @@ func_001D0658,0x001D0658,65,LINKED_MATCH,src/game_middle/save_info.c
 func_001D0760,0x001D0760,42,LINKED_MATCH,src/game_middle/save_card_pair.c
 func_001D0808,0x001D0808,22,LINKED_MATCH,src/game_middle/save_bootstrap.c
 func_001D0860,0x001D0860,26,LINKED_MATCH,src/game_middle/card_transfer.c
+func_001D08C8,0x001D08C8,17,LINKED_MATCH,src/game_middle/func_001D08C8.c
 func_001D0918,0x001D0918,22,LINKED_MATCH,src/game_middle/card_read_delete.c
 func_001D0970,0x001D0970,22,LINKED_MATCH,src/game_middle/card_transfer.c
 func_001D09C8,0x001D09C8,40,LINKED_MATCH,src/hand/func_001D09C8.c
