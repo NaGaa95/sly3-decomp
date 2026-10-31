@@ -3215,3 +3215,15 @@ func_001C8238,0x001C8238,0x001C8240,8,manual-terminal-return-split-entry-is-jal-
 func_001C8240,0x001C8240,0x001C8248,8,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_001D5058,0x001D5058,0x001D5178,288,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_001D5178,0x001D5178,0x001D51D8,96,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0022E058,0x0022E058,0x0022E0B0,88,manual-original-return-and-exact-compilation
+func_0023B5C0,0x0023B5C0,0x0023B5F8,56,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0023B5F8,0x0023B5F8,0x0023B610,24,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0023B610,0x0023B610,0x0023B620,16,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0023FD38,0x0023FD38,0x0023FD98,96,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0023FD98,0x0023FD98,0x0023FDA8,16,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0022D130,0x0022D130,0x0022D1D0,160,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0022D1D0,0x0022D1D0,0x0022D1F8,40,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0022CF00,0x0022CF00,0x0022CFA8,168,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0022CFA8,0x0022CFA8,0x0022D018,112,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0023EDD8,0x0023EDD8,0x0023EDE0,8,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0023EDE0,0x0023EDE0,0x0023EDE8,8,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
