@@ -2430,6 +2430,7 @@ func_001638A0,0x001638A0,8,LINKED_MATCH,src/auto/func_001638A0.c
 func_001638C0,0x001638C0,14,LINKED_MATCH,src/reference_constants/func_001638C0.c
 func_001638F8,0x001638F8,12,LINKED_MATCH,src/reference_constants/func_001638F8.c
 func_00163928,0x00163928,15,LINKED_MATCH,src/reference_constants/func_00163928.c
+func_00163968,0x00163968,170,LINKED_MATCH,src/claude/func_00163968.c
 func_00163C10,0x00163C10,71,LINKED_MATCH,src/hand/func_00163C10.c
 func_00163D30,0x00163D30,20,LINKED_MATCH,src/reference_constants/func_00163D30.c
 func_00163D80,0x00163D80,77,LINKED_MATCH,src/P2/pool_registration.cpp
