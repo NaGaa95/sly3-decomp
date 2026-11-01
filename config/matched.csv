@@ -3764,6 +3764,7 @@ func_001B2560,0x001B2560,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001B2698,0x001B2698,8,LINKED_MATCH,src/auto/func_001B2698.c
 func_001B26B8,0x001B26B8,25,LINKED_MATCH,src/auto/func_001B26B8.c
 func_001B2720,0x001B2720,46,LINKED_MATCH,src/game_middle/component_group_initialize.c
+func_001B30E8,0x001B30E8,1025,LINKED_MATCH,src/game_middle/func_001B30E8.cpp
 func_001B40F0,0x001B40F0,71,LINKED_MATCH,src/game_middle/actor_payload_mode.cpp
 func_001B4210,0x001B4210,31,LINKED_MATCH,src/game_middle/subject_parent_chain_filter.c
 func_001B4290,0x001B4290,104,LINKED_MATCH,src/game_middle/func_001B4290.cpp
@@ -4515,6 +4516,8 @@ func_001EA2F8,0x001EA2F8,40,LINKED_MATCH,src/hand/func_001EA2F8.c
 func_001EA398,0x001EA398,23,LINKED_MATCH,src/reference_constants/func_001EA398.c
 func_001EA3F8,0x001EA3F8,32,LINKED_MATCH,src/game_middle/event_counter_clamp.c
 func_001EA478,0x001EA478,13,LINKED_MATCH,src/reference_constants/func_001EA478.c
+func_001EA4B0,0x001EA4B0,167,LINKED_MATCH,src/game_middle/func_001EA4B0.c
+func_001EA750,0x001EA750,124,LINKED_MATCH,src/game_middle/func_001EA750.c
 func_001EA940,0x001EA940,25,LINKED_MATCH,src/game_middle/mode_state_gate.c
 func_001EA9A8,0x001EA9A8,3,EXACT_MATCH,src/game_middle/flag_set.c
 func_001EA9B8,0x001EA9B8,17,LINKED_MATCH,src/game_middle/actor_pending_clear_1EA9B8.c
@@ -5116,6 +5119,7 @@ func_00212098,0x00212098,33,LINKED_MATCH,src/hand/func_00212098.c
 func_00212120,0x00212120,129,LINKED_MATCH,src/leaf/sphere_insert_212120.c
 func_00212328,0x00212328,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00212460,0x00212460,8,LINKED_MATCH,src/auto/func_00212460.c
+func_00212480,0x00212480,105,LINKED_MATCH,src/leaf/lob_velocity_212480.c
 func_00212628,0x00212628,39,LINKED_MATCH,src/leaf/launch_velocity_212628.c
 func_002126C8,0x002126C8,28,LINKED_MATCH,src/hand/func_002126C8.c
 func_00212738,0x00212738,14,LINKED_MATCH,src/reference_constants/func_00212738.c
@@ -5377,6 +5381,7 @@ func_00222C50,0x00222C50,33,LINKED_MATCH,src/leaf/shot_start_222c50.cpp
 func_00222CD8,0x00222CD8,24,EXACT_MATCH,src/P2/target_reset.c
 func_00222D38,0x00222D38,36,LINKED_MATCH,src/P2/panel_activate.c
 func_00222DC8,0x00222DC8,31,LINKED_MATCH,src/P2/panel_deactivate.c
+func_00222E48,0x00222E48,106,LINKED_MATCH,src/leaf/menu_confirm_222e48.cpp
 func_00222FF0,0x00222FF0,33,LINKED_MATCH,src/P2/widget_configure.c
 func_00223078,0x00223078,51,LINKED_MATCH,src/leaf/mode_text_223078.c
 func_00223148,0x00223148,112,LINKED_MATCH,src/leaf/mode_status_223148.c
@@ -5404,6 +5409,7 @@ func_00224338,0x00224338,65,LINKED_MATCH,src/leaf/anchor_points_224338.c
 func_00224600,0x00224600,64,LINKED_MATCH,src/leaf/entry_contacts_224600.c
 func_00224700,0x00224700,11,LINKED_MATCH,src/auto/func_00224700.c
 func_00224730,0x00224730,112,LINKED_MATCH,src/hand/func_00224730.c
+func_002248F0,0x002248F0,137,LINKED_MATCH,src/leaf/endpoint_motion_2248f0.cpp
 func_00224B18,0x00224B18,237,LINKED_MATCH,src/leaf/connector_render_224b18.cpp
 func_00224ED0,0x00224ED0,24,EXACT_MATCH,src/hand/func_00224ED0.c
 func_00224F30,0x00224F30,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -5526,6 +5532,7 @@ func_0022F600,0x0022F600,13,LINKED_MATCH,src/hand/func_0022F600.c
 func_0022F638,0x0022F638,11,LINKED_MATCH,src/hand/func_0022F638.c
 func_0022F668,0x0022F668,76,LINKED_MATCH,src/leaf/enabled_state_22f668.c
 func_0022FC08,0x0022FC08,6,EXACT_MATCH,src/leaf/link_id_22fc08.c
+func_0022FC20,0x0022FC20,111,LINKED_MATCH,src/leaf/interval_sample_22fc20.c
 func_0022FDE0,0x0022FDE0,109,LINKED_MATCH,src/leaf/path_follow_init_22fde0.c
 func_00231078,0x00231078,48,LINKED_MATCH,src/reference_constants/func_00231078.c
 func_00231138,0x00231138,66,LINKED_MATCH,src/hand/func_00231138.c
@@ -5555,6 +5562,7 @@ func_00233668,0x00233668,17,EXACT_MATCH,src/hand/func_00233668.c
 func_002336B0,0x002336B0,43,EXACT_MATCH,src/leaf/target_near_2336b0.cpp
 func_00233760,0x00233760,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00233898,0x00233898,8,LINKED_MATCH,src/auto/func_00233898.c
+func_002338B8,0x002338B8,137,LINKED_MATCH,src/leaf/color_grade_2338b8.c
 func_00233AE0,0x00233AE0,108,LINKED_MATCH,src/leaf/resource_relocate.c
 func_00233C90,0x00233C90,16,EXACT_MATCH,src/reference_constants/func_00233C90.c
 func_00233CD0,0x00233CD0,34,LINKED_MATCH,src/reference_os/func_00233CD0.c
