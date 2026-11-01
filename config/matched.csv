@@ -4152,6 +4152,7 @@ func_001D2D48,0x001D2D48,17,LINKED_MATCH,src/reference_constants/func_001D2D48.c
 func_001D2D90,0x001D2D90,26,LINKED_MATCH,src/game_middle/menu_clock_zero_sequence.c
 func_001D2DF8,0x001D2DF8,30,LINKED_MATCH,src/game_middle/menu_clock_one_sequence.c
 func_001D2E70,0x001D2E70,24,LINKED_MATCH,src/hand/func_001D2E70.c
+func_001D3810,0x001D3810,2,EXACT_MATCH,src/game_middle/func_001D3810.c
 func_001D3818,0x001D3818,64,LINKED_MATCH,src/reference_constants/func_001D3818.c
 func_001D3918,0x001D3918,17,LINKED_MATCH,src/reference_constants/func_001D3918.c
 func_001D3960,0x001D3960,75,LINKED_MATCH,src/reference_constants/func_001D3960.c
