@@ -73,3 +73,4 @@ Start,End,Reason
 0x001F4E18,0x001F4E20,original-unreachable-epilogue-fragment-source0
 0x0020C710,0x0020C718,original-unreachable-epilogue-fragment-source0
 0x001E7900,0x001E7908,original-unreachable-epilogue-fragment-source0
+0x002099A0,0x002099A8,original-unreachable-epilogue-fragment-source0

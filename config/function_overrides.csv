@@ -3272,3 +3272,4 @@ func_001CB1D8,0x001CB1D8,0x001CB2D8,256,manual-terminal-branch-split-entry-is-da
 func_001CB2D8,0x001CB2D8,0x001CB540,616,manual-terminal-branch-split-entry-is-data-pointer-no-branch-past-cut
 func_001D3288,0x001D3288,0x001D3810,1416,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_001D3810,0x001D3810,0x001D3818,8,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_00209798,0x00209798,0x002099A0,520,manual-original-return-and-exact-compilation
