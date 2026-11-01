@@ -1,0 +1,44 @@
+// SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
+typedef int qword __attribute__((mode(TI)));
+typedef struct { qword r[4]; } M4;
+struct X;
+typedef struct { short d; short pad; M4 *(*pfn)(struct X *); } VT;
+struct O { char pad[0xA4]; int xA4; };
+struct X { int x0, x4, x8; VT *vt; char pad0[0x40 - 0x10]; struct O *po; char pad[0xD8 - 0x44]; int c; char pad2[0xE4 - 0xDC]; qword *apos;
+           char pad3[0x1D8 - 0xE8]; int k; qword *aplane; };
+extern qword D_00317550;
+void func_00119EA8(qword *pplane, qword n, qword pos);
+static inline qword MulPt(M4 *m, qword v) { qword r; __asm__("vmulax.xyz ACC, %1, %2x\n\tvmadday.xyz ACC, %3, %2y\n\tvmaddaz.xyz ACC, %4, %2z\n\tvmaddw.xyz %0, %5, $vf0w" : "=j"(r) : "j"(m->r[0]), "j"(v), "j"(m->r[1]), "j"(m->r[2]), "j"(m->r[3])); return r; }
+static inline M4 *GetMat(struct X *p) { return p->vt[36].pfn((struct X *)((char *)p + p->vt[36].d)); }
+static inline qword Normalize(qword n)
+{
+    qword l, one, r;
+    __asm__("vmul.xyz %0, %2, %2\n\tvaddw.x %1, $vf0, $vf0w\n\tvadday.x ACC, %0, %0y\n\tvmaddz.x %0, %1, %0z" : "=&j"(l), "=&j"(one) : "j"(n));
+    __asm__("vsqrt Q, %1x\n\tvwaitq\n\tvaddq.x %0, $vf0, Q" : "=j"(l) : "j"(l));
+    __asm__("vdiv Q, $vf0w, %1x\n\tvwaitq\n\tvmulq.xyzw %0, %2, Q" : "=j"(r) : "j"(l), "j"(n));
+    return r;
+}
+static inline qword Sub(qword a, qword b) { qword r; __asm__("vsub.xyzw %0, %1, %2" : "=j"(r) : "j"(a), "j"(b)); return r; }
+static inline qword Cross(qword a, qword b) { qword r; __asm__("vopmula.xyz ACC, %1, %2\n\tvopmsub.xyz %0, %2, %1" : "=j"(r) : "j"(a), "j"(b)); return r; }
+// Rebuilds the edge plane list of a path from its transformed points (same routine as Sly 2 func_001BD400): one plane per
+// segment, normal = normalize(cross(segment, up)), refreshed only when the owner stamp k changed.
+void func_001E75F0(struct X *p)
+{
+    int i;
+    int k = p->po ? p->po->xA4 : 0;
+    if (p->k != k) {
+        M4 m;
+        qword v;
+        i = 1;
+        m = *GetMat(p);
+        v = MulPt(&m, p->apos[0]);
+        if (i < p->c) {
+            do {
+                qword v0 = v;
+                v = MulPt(&m, p->apos[i]);
+                func_00119EA8(&p->aplane[i - 1], Normalize(Cross(Sub(v, v0), D_00317550)), v0);
+            } while (++i < p->c);
+        }
+        p->k = k;
+    }
+}
