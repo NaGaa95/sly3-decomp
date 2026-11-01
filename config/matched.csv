@@ -3850,6 +3850,7 @@ func_001C0350,0x001C0350,8,LINKED_MATCH,src/auto/func_001C0350.c
 func_001C0370,0x001C0370,11,LINKED_MATCH,src/reference_constants/func_001C0370.c
 func_001C03A0,0x001C03A0,81,LINKED_MATCH,src/game_middle/func_001C03A0.cpp
 func_001C04E8,0x001C04E8,19,LINKED_MATCH,src/hand/func_001C04E8.c
+func_001C0538,0x001C0538,171,LINKED_MATCH,src/game_middle/func_001C0538.c
 func_001C0CB8,0x001C0CB8,59,LINKED_MATCH,src/game_middle/actor_recent_state_dispatch.c
 func_001C0DA8,0x001C0DA8,92,LINKED_MATCH,src/P2/scene_recent_queue.cpp
 func_001C0F18,0x001C0F18,97,LINKED_MATCH,src/game_middle/packed_recent_queue.cpp
@@ -5052,6 +5053,7 @@ func_0020C170,0x0020C170,20,LINKED_MATCH,src/hand/func_0020C170.c
 func_0020C6C8,0x0020C6C8,18,LINKED_MATCH,src/leaf/ref_push_20C6C8.c
 func_0020C718,0x0020C718,18,LINKED_MATCH,src/leaf/ref_push_20C6C8.c
 func_0020C760,0x0020C760,97,LINKED_MATCH,src/leaf/frame_build_20C760.c
+func_0020C8E8,0x0020C8E8,171,LINKED_MATCH,src/leaf/particle_spawn_20C8E8.cpp
 func_0020CB98,0x0020CB98,34,LINKED_MATCH,src/P2/particle_contact_guard.cpp
 func_0020CC20,0x0020CC20,61,LINKED_MATCH,src/P2/sample_frame_20CC20.c
 func_0020CD18,0x0020CD18,28,LINKED_MATCH,src/P2/particle_position_seed.c
@@ -5198,6 +5200,7 @@ func_00216318,0x00216318,14,LINKED_MATCH,src/hand/func_00216318.c
 func_002171E8,0x002171E8,56,LINKED_MATCH,src/leaf/mover_mode_2171e8.c
 func_002172C8,0x002172C8,24,LINKED_MATCH,src/hand/func_002172C8.c
 func_00217328,0x00217328,82,LINKED_MATCH,src/leaf/mover_path_217328.cpp
+func_00217650,0x00217650,186,LINKED_MATCH,src/leaf/partner_pick_217650.cpp
 func_00217938,0x00217938,25,LINKED_MATCH,src/leaf/mode_toggle_217938.c
 func_00217D50,0x00217D50,16,LINKED_MATCH,src/hand/func_00217D50.c
 func_00217D90,0x00217D90,95,LINKED_MATCH,src/leaf/slot_timers_217d90.c
