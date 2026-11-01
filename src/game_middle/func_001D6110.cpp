@@ -11,6 +11,7 @@ struct M4{U row[4];};struct M3{U row[3];};
 struct PATH;struct ASEG;struct ASEGA;struct EFFECT;struct SOURCE;
 struct ENT{ASEG*clip;int flags;int pad;};   // per-state animation table entry (12 bytes)
 struct P{char pad0[12];VE*vt;char pad10[0x4C-0x10];void*group;char pad50[0x138-0x50];float low0,high0,low1,high1,lead;char pad14c[4];PATH*path;float parameter,phase;char pad15c[4];ENT aseg[4];char pad190[0x1A4-0x190];ASEGA*animation;char pad1c8[8];F speed;int oldMode;float heading;char pad1dc[4];M3 basis;float spin[3];float ratio;int state;float changed,randomDeadline,deadline;int amount;char pad234[12];U damageOffset;};
+// copy-constructed wrapper: gcc keeps its register copy (the original has the extra `por a1,zero,v0` for the position)
 struct VV{qword q;VV(const qword&v){q=v;}};
 struct WORK{U first,second,direction,velocity,scalar;float angle,parameter;};
 struct CLOCK{float t,dt;};
