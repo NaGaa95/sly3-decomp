@@ -39,9 +39,11 @@ void func_00220C68(unsigned short *text)
         if (selection < 0x43) {
             unsigned int off = selection * sizeof(struct Row);
             struct Row *table = D_00343098;
-            int *unlock0 = &table->unlock; int *unlock = (int *)((char *)unlock0 + off);
+            int *unlock0 = &table->unlock;
+            int *unlock = (int *)((char *)unlock0 + off);
             if (*unlock != -1) {
-                int *cost0 = &table->cost; int *cost = (int *)((char *)cost0 + off);
+                int *cost0 = &table->cost;
+                int *cost = (int *)((char *)cost0 + off);
                 int id = func_001852E0(D_0036C700) < *cost ? 0x12E : 0x12F;
                 func_00271730(text, func_00150630(D_00475480, D_00343098[selection].title));
                 func_00271828(text, D_003260B0);
