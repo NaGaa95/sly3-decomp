@@ -5250,7 +5250,8 @@ func_0020BF18,0x0020BF18,0x0020BF60,72,ghidra+spimdisasm-provisional
 func_0020BF60,0x0020BF60,0x0020BFA8,72,ghidra+spimdisasm-provisional
 func_0020BFA8,0x0020BFA8,0x0020C170,456,ghidra+spimdisasm-provisional
 func_0020C170,0x0020C170,0x0020C1C0,80,ghidra+spimdisasm-provisional
-func_0020C1C0,0x0020C1C0,0x0020C470,688,ghidra+spimdisasm-provisional
+func_0020C1C0,0x0020C1C0,0x0020C350,400,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_0020C350,0x0020C350,0x0020C470,288,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_0020C470,0x0020C470,0x0020C6C8,600,ghidra+spimdisasm-provisional
 func_0020C6C8,0x0020C6C8,0x0020C710,72,manual-original-return-and-exact-compilation
 func_0020C718,0x0020C718,0x0020C760,72,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
