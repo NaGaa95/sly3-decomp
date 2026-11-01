@@ -2376,6 +2376,8 @@ func_0015FCA8,0x0015FCA8,19,LINKED_MATCH,src/reference_constants/func_0015FCA8.c
 func_0015FCF8,0x0015FCF8,24,LINKED_MATCH,src/reference_constants/func_0015FCF8.c
 func_0015FD58,0x0015FD58,68,LINKED_MATCH,src/engine/state_change_15fd58.c
 func_0015FE68,0x0015FE68,162,LINKED_MATCH,src/claude/func_0015FE68.c
+func_001600F0,0x001600F0,540,LINKED_MATCH,src/claude/func_001600F0.cpp
+func_00160960,0x00160960,504,LINKED_MATCH,src/claude/func_00160960.cpp
 func_00161140,0x00161140,27,LINKED_MATCH,src/engine/state_restart.c
 func_001611B0,0x001611B0,72,LINKED_MATCH,src/claude/func_001611B0.c
 func_001612D0,0x001612D0,44,LINKED_MATCH,src/engine/list_accept.c
@@ -3230,6 +3232,7 @@ func_0018DA48,0x0018DA48,132,LINKED_MATCH,src/P2/bone_attachment_setup.cpp
 func_0018DC58,0x0018DC58,66,LINKED_MATCH,src/claude/func_0018DC58.cpp
 func_0018DD60,0x0018DD60,72,EXACT_MATCH,src/claude/func_0018DD60.c
 func_0018DEC8,0x0018DEC8,124,LINKED_MATCH,src/claude/func_0018DEC8.cpp
+func_0018E0B8,0x0018E0B8,188,LINKED_MATCH,src/claude/func_0018E0B8.cpp
 func_0018E3A8,0x0018E3A8,86,LINKED_MATCH,src/claude/func_0018E3A8.c
 func_0018E728,0x0018E728,54,LINKED_MATCH,src/claude/func_0018E728.c
 func_0018F6B8,0x0018F6B8,62,LINKED_MATCH,src/reference_constants/func_0018F6B8.c
@@ -3419,6 +3422,7 @@ func_0019CE68,0x0019CE68,27,LINKED_MATCH,src/reference_constants/func_0019CE68.c
 func_0019CED8,0x0019CED8,13,LINKED_MATCH,src/reference_constants/func_0019CED8.c
 func_0019CF10,0x0019CF10,12,LINKED_MATCH,src/auto/func_0019CF10.c
 func_0019CF40,0x0019CF40,7,LINKED_MATCH,src/auto/func_0019CF40.c
+func_0019CF60,0x0019CF60,590,LINKED_MATCH,src/claude/func_0019CF60.cpp
 func_0019D898,0x0019D898,70,LINKED_MATCH,src/claude/func_0019D898.cpp
 func_0019D9B0,0x0019D9B0,39,LINKED_MATCH,src/engine/contact_peer.c
 func_0019DA50,0x0019DA50,86,LINKED_MATCH,src/claude/func_0019DA50.c
@@ -3716,8 +3720,10 @@ func_001AB858,0x001AB858,64,LINKED_MATCH,src/game_middle/state_vector_apply_1AB8
 func_001AB958,0x001AB958,46,LINKED_MATCH,src/game_middle/position_capture_flagged.c
 func_001ABA10,0x001ABA10,27,LINKED_MATCH,src/reference_constants/func_001ABA10.c
 func_001ABA80,0x001ABA80,91,LINKED_MATCH,src/game_middle/command_state_adjust_1ABA80.cpp
+func_001ABBF0,0x001ABBF0,298,LINKED_MATCH,src/claude/func_001ABBF0.cpp
 func_001ACCA8,0x001ACCA8,31,LINKED_MATCH,src/reference_constants/func_001ACCA8.c
 func_001ACD28,0x001ACD28,70,LINKED_MATCH,src/claude/func_001ACD28.c
+func_001ACE40,0x001ACE40,228,LINKED_MATCH,src/claude/func_001ACE40.c
 func_001AD1D0,0x001AD1D0,392,LINKED_MATCH,src/claude/func_001AD1D0.cpp
 func_001AD7F0,0x001AD7F0,252,LINKED_MATCH,src/claude/func_001AD7F0.c
 func_001ADBE0,0x001ADBE0,48,LINKED_MATCH,src/game_middle/actor_state_selection.c
