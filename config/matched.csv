@@ -3771,6 +3771,7 @@ func_001B55A0,0x001B55A0,83,LINKED_MATCH,src/P2/path_probe_forward_1B55A0.cpp
 func_001B56F0,0x001B56F0,79,LINKED_MATCH,src/game_middle/path_follow_apply_1B56F0.c
 func_001B5830,0x001B5830,24,LINKED_MATCH,src/game_middle/state_change_stamp.c
 func_001B5890,0x001B5890,31,LINKED_MATCH,src/game_middle/component_defaults_initialize_1B5890.c
+func_001B5A90,0x001B5A90,122,LINKED_MATCH,src/game_middle/func_001B5A90.c
 func_001B5C78,0x001B5C78,35,EXACT_MATCH,src/hand/func_001B5C78.c
 func_001B5D08,0x001B5D08,52,LINKED_MATCH,src/game_middle/context_mode_permission.c
 func_001B5DD8,0x001B5DD8,16,EXACT_MATCH,src/reference_os/func_001B5DD8.c
