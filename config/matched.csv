@@ -3768,10 +3768,12 @@ func_001B40F0,0x001B40F0,71,LINKED_MATCH,src/game_middle/actor_payload_mode.cpp
 func_001B4210,0x001B4210,31,LINKED_MATCH,src/game_middle/subject_parent_chain_filter.c
 func_001B4290,0x001B4290,104,LINKED_MATCH,src/game_middle/func_001B4290.cpp
 func_001B5170,0x001B5170,127,LINKED_MATCH,src/game_middle/func_001B5170.c
+func_001B5370,0x001B5370,139,LINKED_MATCH,src/game_middle/func_001B5370.cpp
 func_001B55A0,0x001B55A0,83,LINKED_MATCH,src/P2/path_probe_forward_1B55A0.cpp
 func_001B56F0,0x001B56F0,79,LINKED_MATCH,src/game_middle/path_follow_apply_1B56F0.c
 func_001B5830,0x001B5830,24,LINKED_MATCH,src/game_middle/state_change_stamp.c
 func_001B5890,0x001B5890,31,LINKED_MATCH,src/game_middle/component_defaults_initialize_1B5890.c
+func_001B5910,0x001B5910,95,LINKED_MATCH,src/game_middle/func_001B5910.c
 func_001B5A90,0x001B5A90,122,LINKED_MATCH,src/game_middle/func_001B5A90.c
 func_001B5C78,0x001B5C78,35,EXACT_MATCH,src/hand/func_001B5C78.c
 func_001B5D08,0x001B5D08,52,LINKED_MATCH,src/game_middle/context_mode_permission.c
@@ -4794,6 +4796,7 @@ func_001FB580,0x001FB580,22,LINKED_MATCH,src/reference_constants/func_001FB580.c
 func_001FB5D8,0x001FB5D8,10,EXACT_MATCH,src/reference_constants/func_001FB5D8.c
 func_001FB600,0x001FB600,8,EXACT_MATCH,src/reference_constants/func_001FB600.c
 func_001FB620,0x001FB620,60,LINKED_MATCH,src/P2/instance_state.cpp
+func_001FB710,0x001FB710,197,LINKED_MATCH,src/game_middle/func_001FB710.cpp
 func_001FBA28,0x001FBA28,56,LINKED_MATCH,src/P2/instance_selection.cpp
 func_001FBB08,0x001FBB08,201,LINKED_MATCH,src/P2/instance_apply.cpp
 func_001FBE30,0x001FBE30,28,LINKED_MATCH,src/reference_constants/func_001FBE30.c
@@ -5536,6 +5539,7 @@ func_00232258,0x00232258,65,LINKED_MATCH,src/leaf/object_defaults_232258.c
 func_00232360,0x00232360,26,LINKED_MATCH,src/hand/func_00232360.c
 func_002323C8,0x002323C8,29,LINKED_MATCH,src/leaf/segment_start_2323c8.cpp
 func_00232440,0x00232440,14,LINKED_MATCH,src/hand/func_00232440.c
+func_00232478,0x00232478,125,LINKED_MATCH,src/leaf/follower_update_232478.cpp
 func_00232670,0x00232670,39,LINKED_MATCH,src/P2/timer_step.c
 func_00232A38,0x00232A38,136,LINKED_MATCH,src/leaf/follower_state_232a38.cpp
 func_00232C58,0x00232C58,34,LINKED_MATCH,src/P2/key_gate.c
