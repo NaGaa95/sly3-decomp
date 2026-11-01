@@ -3969,6 +3969,9 @@ func_001C87B0,0x001C87B0,3,LINKED_MATCH,src/reference_constants/func_001C87B0.c
 func_001C87C0,0x001C87C0,30,LINKED_MATCH,src/P2/scene_rotation.cpp
 func_001C8838,0x001C8838,40,LINKED_MATCH,src/P2/scene_rotation.cpp
 func_001C88D8,0x001C88D8,37,EXACT_MATCH,src/reference_constants/func_001C88D8.c
+func_001C8970,0x001C8970,121,LINKED_MATCH,src/game_middle/func_001C8970.c
+func_001C8B58,0x001C8B58,11,EXACT_MATCH,src/game_middle/func_001C8970.c
+func_001C8B88,0x001C8B88,25,EXACT_MATCH,src/game_middle/func_001C8970.c
 func_001C8BF0,0x001C8BF0,193,LINKED_MATCH,src/P2/scene_clone.cpp
 func_001C8EF8,0x001C8EF8,10,EXACT_MATCH,src/reference_constants/func_001C8EF8.c
 func_001C8F20,0x001C8F20,14,EXACT_MATCH,src/hand/func_001C8F20.c
