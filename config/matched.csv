@@ -4395,6 +4395,7 @@ func_001E1DE0,0x001E1DE0,54,LINKED_MATCH,src/game_middle/func_001E1DE0.c
 func_001E1EB8,0x001E1EB8,296,LINKED_MATCH,src/game_middle/attachment_state_1E1EB8.cpp
 func_001E2358,0x001E2358,11,LINKED_MATCH,src/reference_constants/func_001E2358.c
 func_001E2388,0x001E2388,26,LINKED_MATCH,src/game_middle/target_state_initialize.c
+func_001E23F0,0x001E23F0,111,LINKED_MATCH,src/game_middle/func_001E23F0.c
 func_001E25B0,0x001E25B0,87,LINKED_MATCH,src/game_middle/actor_state_event_1E25B0.c
 func_001E2710,0x001E2710,21,LINKED_MATCH,src/game_middle/request_state_dispatch.c
 func_001E2768,0x001E2768,3,LINKED_MATCH,src/reference_constants/func_001E2768.c
@@ -5082,6 +5083,7 @@ func_00210008,0x00210008,12,LINKED_MATCH,src/auto/func_00210008.c
 func_00210038,0x00210038,12,LINKED_MATCH,src/auto/func_00210038.c
 func_00210068,0x00210068,19,LINKED_MATCH,src/hand/func_00210068.c
 func_002100B8,0x002100B8,11,LINKED_MATCH,src/auto/func_002100B8.c
+func_002100E8,0x002100E8,201,LINKED_MATCH,src/leaf/attach_state_2100E8.cpp
 func_00210410,0x00210410,103,LINKED_MATCH,src/leaf/state_change_210410.c
 func_002105B0,0x002105B0,41,LINKED_MATCH,src/leaf/curve_sample_2105B0.c
 func_00210658,0x00210658,19,LINKED_MATCH,src/hand/func_00210658.c
