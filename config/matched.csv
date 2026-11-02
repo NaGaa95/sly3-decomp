@@ -5201,6 +5201,7 @@ func_00212480,0x00212480,105,LINKED_MATCH,src/leaf/lob_velocity_212480.c
 func_00212628,0x00212628,39,LINKED_MATCH,src/leaf/launch_velocity_212628.c
 func_002126C8,0x002126C8,28,LINKED_MATCH,src/hand/func_002126C8.c
 func_00212738,0x00212738,14,LINKED_MATCH,src/reference_constants/func_00212738.c
+func_00212770,0x00212770,376,LINKED_MATCH,src/leaf/func_00212770.cpp
 func_00212D50,0x00212D50,148,LINKED_MATCH,src/leaf/launch_point_212d50.cpp
 func_00212FA0,0x00212FA0,62,LINKED_MATCH,src/leaf/probe_segment_212FA0.c
 func_00213098,0x00213098,77,LINKED_MATCH,src/P2/pool_registration.cpp
