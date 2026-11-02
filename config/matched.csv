@@ -3814,6 +3814,7 @@ func_001BB860,0x001BB860,45,LINKED_MATCH,src/game_middle/curve_cost_minimum_1BB8
 func_001BB918,0x001BB918,186,LINKED_MATCH,src/game_middle/func_001BB918.cpp
 func_001BBC00,0x001BBC00,10,EXACT_MATCH,src/reference_constants/func_001BBC00.c
 func_001BBC28,0x001BBC28,32,LINKED_MATCH,src/game_middle/collision_list_filter.c
+func_001BBCA8,0x001BBCA8,1235,LINKED_MATCH,src/game_middle/func_001BBCA8.cpp
 func_001BD520,0x001BD520,106,LINKED_MATCH,src/reference_constants/func_001BD520.c
 func_001BD6C8,0x001BD6C8,19,LINKED_MATCH,src/reference_constants/func_001BD6C8.c
 func_001BD718,0x001BD718,15,EXACT_MATCH,src/reference_constants/func_001BD718.c
@@ -4103,6 +4104,7 @@ func_001CFE08,0x001CFE08,60,LINKED_MATCH,src/game_middle/auto_save.c
 func_001CFEF8,0x001CFEF8,87,LINKED_MATCH,src/game_middle/card_directory_read.c
 func_001D0058,0x001D0058,14,LINKED_MATCH,src/game_middle/save_write_directory.c
 func_001D00A0,0x001D00A0,140,LINKED_MATCH,src/game_middle/card_icon_metadata.c
+func_001D02D0,0x001D02D0,80,LINKED_MATCH,src/game_middle/func_001D02D0.cpp
 func_001D0410,0x001D0410,26,LINKED_MATCH,src/game_middle/save_block_write.c
 func_001D0478,0x001D0478,36,LINKED_MATCH,src/game_middle/save_block_write.c
 func_001D0508,0x001D0508,32,LINKED_MATCH,src/hand/func_001D0508.c
@@ -5269,6 +5271,7 @@ func_00218E98,0x00218E98,76,LINKED_MATCH,src/leaf/nearest_object_218e98.cpp
 func_00218FC8,0x00218FC8,13,LINKED_MATCH,src/hand/func_00218FC8.c
 func_00219000,0x00219000,21,LINKED_MATCH,src/hand/func_00219000.c
 func_00219058,0x00219058,49,LINKED_MATCH,src/leaf/curve_sample_219058.c
+func_00219120,0x00219120,60,LINKED_MATCH,src/leaf/func_00219120.c
 func_00219210,0x00219210,131,LINKED_MATCH,src/leaf/screen_markers_219210.cpp
 func_00219420,0x00219420,10,EXACT_MATCH,src/hand/func_00219420.c
 func_00219448,0x00219448,5,EXACT_MATCH,src/hand/func_00219448.c
