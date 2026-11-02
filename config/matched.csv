@@ -4293,6 +4293,7 @@ func_001D8AA0,0x001D8AA0,8,LINKED_MATCH,src/hand/func_001D8AA0.c
 func_001D8AC0,0x001D8AC0,31,EXACT_MATCH,src/game_middle/radius_probe_check.cpp
 func_001D8B40,0x001D8B40,26,LINKED_MATCH,src/game_middle/query_reference_1D8B40.c
 func_001D8BA8,0x001D8BA8,17,LINKED_MATCH,src/reference_constants/func_001D8BA8.c
+func_001D8BF0,0x001D8BF0,183,LINKED_MATCH,src/game_middle/func_001D8BF0.cpp
 func_001D8ED0,0x001D8ED0,66,LINKED_MATCH,src/game_middle/curve_command_transition.c
 func_001D8FD8,0x001D8FD8,13,EXACT_MATCH,src/hand/func_001D8FD8.c
 func_001D9010,0x001D9010,12,LINKED_MATCH,src/reference_constants/func_001D9010.c
@@ -5636,6 +5637,7 @@ func_0022F5B0,0x0022F5B0,20,LINKED_MATCH,src/reference_constants/func_0022F5B0.c
 func_0022F600,0x0022F600,13,LINKED_MATCH,src/hand/func_0022F600.c
 func_0022F638,0x0022F638,11,LINKED_MATCH,src/hand/func_0022F638.c
 func_0022F668,0x0022F668,76,LINKED_MATCH,src/leaf/enabled_state_22f668.c
+func_0022F998,0x0022F998,155,LINKED_MATCH,src/leaf/path_radius_22f998.cpp
 func_0022FC08,0x0022FC08,6,EXACT_MATCH,src/leaf/link_id_22fc08.c
 func_0022FC20,0x0022FC20,111,LINKED_MATCH,src/leaf/interval_sample_22fc20.c
 func_0022FDE0,0x0022FDE0,109,LINKED_MATCH,src/leaf/path_follow_init_22fde0.c
