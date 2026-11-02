@@ -3766,6 +3766,7 @@ func_001B2560,0x001B2560,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001B2698,0x001B2698,8,LINKED_MATCH,src/auto/func_001B2698.c
 func_001B26B8,0x001B26B8,25,LINKED_MATCH,src/auto/func_001B26B8.c
 func_001B2720,0x001B2720,46,LINKED_MATCH,src/game_middle/component_group_initialize.c
+func_001B27D8,0x001B27D8,580,LINKED_MATCH,src/game_middle/func_001B27D8.cpp
 func_001B30E8,0x001B30E8,1025,LINKED_MATCH,src/game_middle/func_001B30E8.cpp
 func_001B40F0,0x001B40F0,71,LINKED_MATCH,src/game_middle/actor_payload_mode.cpp
 func_001B4210,0x001B4210,31,LINKED_MATCH,src/game_middle/subject_parent_chain_filter.c
