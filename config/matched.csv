@@ -3875,6 +3875,7 @@ func_001C12B8,0x001C12B8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001C13F0,0x001C13F0,8,LINKED_MATCH,src/auto/func_001C13F0.c
 func_001C1410,0x001C1410,80,LINKED_MATCH,src/game_middle/func_001C1410.cpp
 func_001C1550,0x001C1550,205,LINKED_MATCH,src/game_middle/func_001C1550.c
+func_001C1888,0x001C1888,184,LINKED_MATCH,src/game_middle/func_001C1888.cpp
 func_001C1B68,0x001C1B68,80,LINKED_MATCH,src/game_middle/func_001C1B68.cpp
 func_001C1CA8,0x001C1CA8,133,LINKED_MATCH,src/game_middle/func_001C1CA8.c
 func_001C1EC0,0x001C1EC0,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -4060,6 +4061,7 @@ func_001CB1D8,0x001CB1D8,64,LINKED_MATCH,src/game_middle/func_001CB1D8.c
 func_001CB2D8,0x001CB2D8,154,LINKED_MATCH,src/game_middle/func_001CB2D8.c
 func_001CB540,0x001CB540,27,LINKED_MATCH,src/game_middle/vu_upload_wrappers.c
 func_001CB5B0,0x001CB5B0,27,LINKED_MATCH,src/game_middle/vu_upload_wrappers.c
+func_001CB620,0x001CB620,77,LINKED_MATCH,src/game_middle/func_001CB620.cpp
 func_001CB758,0x001CB758,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001CB890,0x001CB890,8,LINKED_MATCH,src/auto/func_001CB890.c
 func_001CB8B0,0x001CB8B0,123,LINKED_MATCH,src/game_middle/func_001CB8B0.c
@@ -4413,6 +4415,7 @@ func_001DF7E8,0x001DF7E8,19,LINKED_MATCH,src/reference_constants/func_001DF7E8.c
 func_001DF838,0x001DF838,19,LINKED_MATCH,src/reference_constants/func_001DF838.c
 func_001DF888,0x001DF888,147,LINKED_MATCH,src/game_middle/func_001DF888.c
 func_001DFAD8,0x001DFAD8,258,LINKED_MATCH,src/game_middle/func_001DFAD8.cpp
+func_001DFEE0,0x001DFEE0,159,LINKED_MATCH,src/game_middle/func_001DFEE0.cpp
 func_001E0160,0x001E0160,135,LINKED_MATCH,src/game_middle/func_001E0160.cpp
 func_001E0380,0x001E0380,39,LINKED_MATCH,src/game_middle/target_offset_forward.cpp
 func_001E0420,0x001E0420,49,LINKED_MATCH,src/game_middle/entry_release_1E0420.c
