@@ -3895,6 +3895,7 @@ func_001C2CC0,0x001C2CC0,102,LINKED_MATCH,src/game_middle/fade_parameter_update.
 func_001C2E58,0x001C2E58,8,EXACT_MATCH,src/reference_constants/func_001C2E58.c
 func_001C2E78,0x001C2E78,91,LINKED_MATCH,src/game_middle/func_001C2E78.cpp
 func_001C2FE8,0x001C2FE8,8,LINKED_MATCH,src/auto/func_001C2FE8.c
+func_001C3470,0x001C3470,414,LINKED_MATCH,src/game_middle/func_001C3470.cpp
 func_001C3AE8,0x001C3AE8,18,LINKED_MATCH,src/reference_constants/func_001C3AE8.c
 func_001C3B30,0x001C3B30,44,LINKED_MATCH,src/game_middle/state_entry_dispatch_1c3b30.c
 func_001C3BE0,0x001C3BE0,15,LINKED_MATCH,src/reference_constants/func_001C3BE0.c
