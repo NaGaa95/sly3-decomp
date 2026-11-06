@@ -3278,3 +3278,11 @@ func_001D3810,0x001D3810,0x001D3818,8,manual-terminal-return-split-entry-is-jal-
 func_00209798,0x00209798,0x002099A0,520,manual-original-return-and-exact-compilation
 func_0020C1C0,0x0020C1C0,0x0020C350,400,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_0020C350,0x0020C350,0x0020C470,288,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_00299568,0x00299568,0x00299590,40,manual-terminal-return-trailing-dead-epilogue-fragment-excluded
+func_002996C0,0x002996C0,0x002996E8,40,manual-terminal-return-trailing-dead-epilogue-fragment-excluded
+func_00299718,0x00299718,0x00299738,32,manual-unreferenced-leaf-after-excluded-fragment
+func_00299738,0x00299738,0x00299748,16,manual-unreferenced-leaf-after-excluded-fragment
+func_002A9288,0x002A9288,0x002A92E8,96,manual-terminal-return-trailing-dead-epilogue-fragment-excluded
+func_002A9F58,0x002A9F58,0x002A9F60,8,manual-terminal-return-trailing-dead-epilogue-fragment-excluded
+func_002B3908,0x002B3908,0x002B3920,24,manual-split-two-functions-both-data-pointer-targets
+func_002B3920,0x002B3920,0x002B3930,16,manual-split-second-function-data-pointer-target
