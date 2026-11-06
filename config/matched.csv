@@ -3507,6 +3507,7 @@ func_001A0B00,0x001A0B00,40,LINKED_MATCH,src/claude/func_001A0B00.cpp
 func_001A0BA0,0x001A0BA0,11,LINKED_MATCH,src/reference_constants/func_001A0BA0.c
 func_001A0BD0,0x001A0BD0,22,LINKED_MATCH,src/reference_constants/func_001A0BD0.c
 func_001A0C28,0x001A0C28,40,LINKED_MATCH,src/game_middle/path_distance_clamp.c
+func_001A0CC8,0x001A0CC8,76,LINKED_MATCH,src/claude/func_001A0CC8.cpp
 func_001A0F28,0x001A0F28,51,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
 func_001A0FF8,0x001A0FF8,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
 func_001A1020,0x001A1020,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
