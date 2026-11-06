@@ -1955,6 +1955,7 @@ func_00147218,0x00147218,11,EXACT_MATCH,src/hand/func_00147218.c
 func_00147248,0x00147248,11,EXACT_MATCH,src/hand/func_00147248.c
 func_00147278,0x00147278,73,LINKED_MATCH,src/engine/shuffle_queue.c
 func_001473A0,0x001473A0,27,LINKED_MATCH,src/engine/packed_record_and_any_identity.c
+func_00147410,0x00147410,34,EXACT_MATCH,src/claude/func_00147410.cpp
 func_00147498,0x00147498,322,LINKED_MATCH,src/claude/func_00147498.cpp
 func_001479A0,0x001479A0,196,LINKED_MATCH,src/claude/func_001479A0.cpp
 func_00147CB0,0x00147CB0,77,LINKED_MATCH,src/P2/pool_registration.cpp
@@ -2256,6 +2257,7 @@ func_001592A8,0x001592A8,26,LINKED_MATCH,src/reference_constants/func_001592A8.c
 func_00159310,0x00159310,17,LINKED_MATCH,src/reference_constants/func_00159310.c
 func_00159358,0x00159358,236,LINKED_MATCH,src/claude/func_00159358.c
 func_001599E0,0x001599E0,41,LINKED_MATCH,src/engine/kind_swap_1599e0.c
+func_00159A88,0x00159A88,210,LINKED_MATCH,src/claude/func_00159A88.cpp
 func_00159DD0,0x00159DD0,8,LINKED_MATCH,src/auto/func_00159DD0.c
 func_00159DF0,0x00159DF0,24,LINKED_MATCH,src/reference_constants/func_00159DF0.c
 func_00159E50,0x00159E50,20,LINKED_MATCH,src/reference_constants/func_00159E50.c
