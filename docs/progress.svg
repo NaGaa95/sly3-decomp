@@ -7,21 +7,21 @@
 
   <!-- Functions Section -->
   <text x="32.0" y="106.0" font-size="15" fill="#1f2328" text-anchor="start" font-weight="bold">Functions</text>
-  <text x="928.0" y="106.0" font-size="22" fill="#2f9e6e" text-anchor="end" font-weight="bold">93.0%</text>
+  <text x="928.0" y="106.0" font-size="22" fill="#2f9e6e" text-anchor="end" font-weight="bold">92.2%</text>
   <text x="32.0" y="124.0" font-size="12" fill="#656d76" text-anchor="start" font-weight="normal">How many of the game's functions have source code that compiles to the exact original bytes</text>
   <rect x="32" y="134" width="896" height="22" rx="6" fill="#e4e7ec" />
-  <rect x="32" y="134" width="833.2" height="22" rx="6" fill="#2f9e6e" />
-  <text x="32.0" y="174.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">8,039 of 8,645 functions matched</text>
-  <text x="928.0" y="174.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">606 functions left to 100%</text>
+  <rect x="32" y="134" width="826.3" height="22" rx="6" fill="#2f9e6e" />
+  <text x="32.0" y="174.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">8,039 of 8,717 functions matched</text>
+  <text x="928.0" y="174.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">678 functions left to 100%</text>
 
   <!-- Code size (instructions) Section -->
   <text x="32.0" y="202.0" font-size="15" fill="#1f2328" text-anchor="start" font-weight="bold">Code size (instructions)</text>
   <text x="928.0" y="202.0" font-size="22" fill="#4c7fd1" text-anchor="end" font-weight="bold">78.7%</text>
   <text x="32.0" y="220.0" font-size="12" fill="#656d76" text-anchor="start" font-weight="normal">The same, weighted by size — the honest "how much of the game is decompiled" number</text>
   <rect x="32" y="230" width="896" height="22" rx="6" fill="#e4e7ec" />
-  <rect x="32" y="230" width="704.7" height="22" rx="6" fill="#4c7fd1" />
-  <text x="32.0" y="270.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">359,003 of 456,448 instructions matched</text>
-  <text x="928.0" y="270.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">97,445 instructions left to 100%</text>
+  <rect x="32" y="230" width="704.9" height="22" rx="6" fill="#4c7fd1" />
+  <text x="32.0" y="270.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">359,003 of 456,325 instructions matched</text>
+  <text x="928.0" y="270.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">97,322 instructions left to 100%</text>
 
   <!-- VU and IOP -->
   <text x="32.0" y="298.0" font-size="12" fill="#656d76" text-anchor="start" font-weight="normal">VU microcode: 9 of 9 programs matched   ·   IOP modules: 25 functions matched (676 code bytes)</text>
@@ -701,9 +701,9 @@
   <rect x="32" y="703" width="10" height="12" rx="2" fill="#db2777" />
   <text x="48.0" y="714.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">Lilly + Claude</text>
   <rect x="240" y="702" width="270" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="240" y="702" width="128.8" height="14" rx="3" fill="#db2777" />
-  <text x="630.0" y="714.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">47.7% of code</text>
-  <text x="928.0" y="714.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">2,038 of 2,528 functions matched · 490 left</text>
+  <rect x="240" y="702" width="128.9" height="14" rx="3" fill="#db2777" />
+  <text x="630.0" y="714.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">47.8% of code</text>
+  <text x="928.0" y="714.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">2,038 of 2,600 functions matched · 562 left</text>
 
   <!-- By Address Range Section -->
   <text x="32.0" y="750.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">Where the remaining work is (by address range)</text>
@@ -884,7 +884,7 @@
   <rect x="250" y="1249" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1249" width="155.3" height="12" rx="3" fill="#4c7fd1" />
   <text x="560.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">62%</text>
-  <text x="650.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">51</text>
+  <text x="650.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">88</text>
   <text x="760.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">6,260</text>
   <text x="928.0" y="1260.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">454 instr.</text>
   <rect x="32" y="1271" width="10" height="12" rx="2" fill="#db2777" />
@@ -892,8 +892,8 @@
   <rect x="250" y="1271" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1271" width="154.0" height="12" rx="3" fill="#4c7fd1" />
   <text x="560.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">62%</text>
-  <text x="650.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">41</text>
-  <text x="760.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">6,210</text>
+  <text x="650.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">45</text>
+  <text x="760.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">6,206</text>
   <text x="928.0" y="1282.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">576 instr.</text>
   <rect x="32" y="1293" width="10" height="12" rx="2" fill="#db2777" />
   <text x="52.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">0x260000–0x270000</text>
@@ -901,7 +901,7 @@
   <rect x="250" y="1293" width="137.7" height="12" rx="3" fill="#4c7fd1" />
   <text x="560.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">55%</text>
   <text x="650.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">34</text>
-  <text x="760.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">7,370</text>
+  <text x="760.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">7,368</text>
   <text x="928.0" y="1304.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">862 instr.</text>
   <rect x="32" y="1315" width="10" height="12" rx="2" fill="#db2777" />
   <text x="52.0" y="1326.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">0x270000–0x280000</text>
@@ -916,33 +916,33 @@
   <rect x="250" y="1337" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1337" width="113.7" height="12" rx="3" fill="#4c7fd1" />
   <text x="560.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">45%</text>
-  <text x="650.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">44</text>
-  <text x="760.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">8,938</text>
+  <text x="650.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">46</text>
+  <text x="760.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">8,936</text>
   <text x="928.0" y="1348.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">1,804 instr.</text>
   <rect x="32" y="1359" width="10" height="12" rx="2" fill="#db2777" />
   <text x="52.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">0x290000–0x2A0000</text>
   <rect x="250" y="1359" width="250" height="12" rx="3" fill="#e4e7ec" />
-  <rect x="250" y="1359" width="81.0" height="12" rx="3" fill="#4c7fd1" />
-  <text x="560.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">32%</text>
-  <text x="650.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">135</text>
-  <text x="760.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">10,880</text>
+  <rect x="250" y="1359" width="81.5" height="12" rx="3" fill="#4c7fd1" />
+  <text x="560.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">33%</text>
+  <text x="650.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">140</text>
+  <text x="760.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">10,797</text>
   <text x="928.0" y="1370.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">837 instr.</text>
   <rect x="32" y="1381" width="10" height="12" rx="2" fill="#db2777" />
   <text x="52.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">0x2A0000–0x2B0000</text>
   <rect x="250" y="1381" width="250" height="12" rx="3" fill="#e4e7ec" />
-  <rect x="250" y="1381" width="22.2" height="12" rx="3" fill="#4c7fd1" />
+  <rect x="250" y="1381" width="22.3" height="12" rx="3" fill="#4c7fd1" />
   <text x="560.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">9%</text>
-  <text x="650.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">106</text>
-  <text x="760.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">14,884</text>
+  <text x="650.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">109</text>
+  <text x="760.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">14,852</text>
   <text x="928.0" y="1392.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">1,898 instr.</text>
   <rect x="32" y="1403" width="10" height="12" rx="2" fill="#db2777" />
   <text x="52.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">0x2B0000–0x2C0000</text>
   <rect x="250" y="1403" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1403" width="186.6" height="12" rx="3" fill="#4c7fd1" />
   <text x="560.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">75%</text>
-  <text x="650.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">40</text>
+  <text x="650.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">61</text>
   <text x="760.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">4,114</text>
-  <text x="928.0" y="1414.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">924 instr.</text>
+  <text x="928.0" y="1414.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">342 instr.</text>
   <rect x="32" y="1425" width="10" height="12" rx="2" fill="#db2777" />
   <text x="52.0" y="1436.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x2C0000–0x2D0000</text>
   <rect x="250" y="1425" width="250" height="12" rx="3" fill="#e4e7ec" />
@@ -956,24 +956,24 @@
   <text x="32.0" y="1480.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">What's left, by function size</text>
   <text x="32.0" y="1516.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Tiny (≤20 instr.)</text>
   <rect x="190" y="1504" width="350" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="190" y="1504" width="345.6" height="14" rx="3" fill="#2f9e6e" />
-  <text x="630.0" y="1516.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">99% done</text>
-  <text x="928.0" y="1516.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">46 of 3,672 functions left · 518 instr.</text>
+  <rect x="190" y="1504" width="340.3" height="14" rx="3" fill="#2f9e6e" />
+  <text x="630.0" y="1516.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">97% done</text>
+  <text x="928.0" y="1516.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">103 of 3,729 functions left · 976 instr.</text>
   <text x="32.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Small (21–100)</text>
   <rect x="190" y="1530" width="350" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="190" y="1530" width="327.8" height="14" rx="3" fill="#2f9e6e" />
-  <text x="630.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">94% done</text>
-  <text x="928.0" y="1542.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">250 of 3,939 functions left · 14,990 instr.</text>
+  <rect x="190" y="1530" width="326.2" height="14" rx="3" fill="#2f9e6e" />
+  <text x="630.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">93% done</text>
+  <text x="928.0" y="1542.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">269 of 3,958 functions left · 15,883 instr.</text>
   <text x="32.0" y="1568.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Medium (101–300)</text>
   <rect x="190" y="1556" width="350" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="190" y="1556" width="255.3" height="14" rx="3" fill="#2f9e6e" />
+  <rect x="190" y="1556" width="256.2" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1568.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">73% done</text>
-  <text x="928.0" y="1568.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">234 of 865 functions left · 39,454 instr.</text>
+  <text x="928.0" y="1568.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">231 of 862 functions left · 38,912 instr.</text>
   <text x="32.0" y="1594.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Large (301–1,000)</text>
   <rect x="190" y="1582" width="350" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="190" y="1582" width="189.5" height="14" rx="3" fill="#2f9e6e" />
+  <rect x="190" y="1582" width="190.7" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1594.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">54% done</text>
-  <text x="928.0" y="1594.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">72 of 157 functions left · 34,403 instr.</text>
+  <text x="928.0" y="1594.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">71 of 156 functions left · 33,471 instr.</text>
   <text x="32.0" y="1620.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Huge (1,000+)</text>
   <rect x="190" y="1608" width="350" height="14" rx="3" fill="#e4e7ec" />
   <rect x="190" y="1608" width="233.3" height="14" rx="3" fill="#2f9e6e" />
