@@ -2211,6 +2211,7 @@ func_00156E48,0x00156E48,6,EXACT_MATCH,src/claude/func_00156E48.c
 func_00156E60,0x00156E60,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_00156F98,0x00156F98,8,LINKED_MATCH,src/auto/func_00156F98.c
 func_00156FB8,0x00156FB8,5,EXACT_MATCH,src/reference_constants/func_00156FB8.c
+func_00156FD0,0x00156FD0,180,LINKED_MATCH,src/claude/func_00156FD0.c
 func_00157398,0x00157398,2,EXACT_MATCH,src/hand/func_00157398.c
 func_001573A0,0x001573A0,4,LINKED_MATCH,src/engine/float_limit.c
 func_001573B0,0x001573B0,77,LINKED_MATCH,src/P2/pool_registration.cpp
