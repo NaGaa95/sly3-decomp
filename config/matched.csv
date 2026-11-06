@@ -7840,3 +7840,5 @@ func_002BFE68,0x002BFE68,27,LINKED_MATCH,src/P2/func_002BFE68.cpp
 func_002BFED8,0x002BFED8,98,LINKED_MATCH,src/P2/func_002BFED8.cpp
 func_002C0060,0x002C0060,102,LINKED_MATCH,src/P2/func_002C0060.cpp
 func_002C01F8,0x002C01F8,19,LINKED_MATCH,src/hand/func_002C01F8.c
+__static_initialization_and_destruction_0,0x0017A770,146,LINKED_MATCH,src/claude/func_0017A770.cpp
+_GLOBAL_$I$_home_claude_sly3_decomp_src_claude_func_0017A770.cppxpaaaa,0x0017A9B8,8,LINKED_MATCH,src/claude/func_0017A770.cpp

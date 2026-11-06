@@ -14,5 +14,9 @@
   "src/P2/state32_init.cpp": {
     "__static_initialization_and_destruction_0": "0x00242830",
     "_GLOBAL_$I$*": "0x002429A8"
+  },
+  "src/claude/func_0017A770.cpp": {
+    "__static_initialization_and_destruction_0": "0x0017A770",
+    "_GLOBAL_$I$*": "0x0017A9B8"
   }
 }
