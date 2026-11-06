@@ -3260,3 +3260,4 @@ func_0020C6C8,0x0020C6C8,0x0020C710,72,manual-original-return-and-exact-compilat
 func_0020C718,0x0020C718,0x0020C760,72,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_00215008,0x00215008,0x00215158,336,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
 func_00215158,0x00215158,0x00215160,8,manual-terminal-return-split-entry-is-jal-target-or-data-pointer-no-branch-past-cut
+func_001A9568,0x001A9568,0x001A95C8,96,manual-terminal-return-trailing-dead-epilogue-fragment-excluded
