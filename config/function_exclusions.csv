@@ -107,3 +107,6 @@ Start,End,Reason
 0x002BFD20,0x002BFD38,original-unreachable-epilogue-fragment-source0
 0x002BFD60,0x002BFD70,original-unreachable-epilogue-fragment-source0
 0x002BFD78,0x002BFD80,original-unreachable-epilogue-fragment-source0
+0x00298228,0x00298230,original-unreachable-epilogue-fragment-source0
+0x002716F8,0x00271700,original-unreachable-epilogue-fragment-source0
+0x00271C48,0x00271C58,original-unreachable-epilogue-fragment-source0
