@@ -1996,6 +1996,7 @@ func_0014ADF0,0x0014ADF0,11,LINKED_MATCH,src/claude/func_0014ADF0.c
 func_0014AE20,0x0014AE20,14,LINKED_MATCH,src/reference_constants/func_0014AE20.c
 func_0014AE58,0x0014AE58,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0014AF90,0x0014AF90,8,LINKED_MATCH,src/auto/func_0014AF90.c
+func_0014AFB0,0x0014AFB0,154,LINKED_MATCH,src/claude/func_0014AFB0.cpp
 func_0014B218,0x0014B218,12,EXACT_MATCH,src/claude/func_0014B218.c
 func_0014B248,0x0014B248,74,LINKED_MATCH,src/claude/func_0014B248.c
 func_0014B370,0x0014B370,136,LINKED_MATCH,src/claude/func_0014B370.cpp
@@ -2913,6 +2914,8 @@ func_0017A280,0x0017A280,23,LINKED_MATCH,src/reference_constants/func_0017A280.c
 func_0017A2E0,0x0017A2E0,10,EXACT_MATCH,src/reference_constants/func_0017A2E0.c
 func_0017A308,0x0017A308,15,LINKED_MATCH,src/P2/session_deserialize.cpp
 func_0017A348,0x0017A348,266,LINKED_MATCH,src/claude/func_0017A348.c
+__static_initialization_and_destruction_0,0x0017A770,146,LINKED_MATCH,src/claude/func_0017A770.cpp
+_GLOBAL_$I$_home_claude_sly3_decomp_src_claude_func_0017A770.cppxpaaaa,0x0017A9B8,8,LINKED_MATCH,src/claude/func_0017A770.cpp
 func_0017A9D8,0x0017A9D8,12,LINKED_MATCH,src/reference_constants/func_0017A9D8.c
 func_0017AA08,0x0017AA08,64,LINKED_MATCH,src/P2/session_deserialize.cpp
 func_0017AB08,0x0017AB08,220,LINKED_MATCH,src/P2/parent_registration.cpp
@@ -3480,6 +3483,7 @@ func_0019F5F8,0x0019F5F8,7,LINKED_MATCH,src/wrappers/func_0019F5F8.c
 func_0019F618,0x0019F618,48,LINKED_MATCH,src/claude/func_0019F618.c
 func_0019F6D8,0x0019F6D8,118,LINKED_MATCH,src/claude/func_0019F6D8.c
 func_0019F8B0,0x0019F8B0,70,LINKED_MATCH,src/claude/func_0019F8B0.cpp
+func_0019F9C8,0x0019F9C8,162,LINKED_MATCH,src/claude/func_0019F9C8.cpp
 func_0019FC50,0x0019FC50,12,LINKED_MATCH,src/auto/func_0019FC50.c
 func_0019FC80,0x0019FC80,160,LINKED_MATCH,src/claude/func_0019FC80.cpp
 func_0019FF00,0x0019FF00,140,LINKED_MATCH,src/claude/func_0019FF00.cpp
@@ -7840,5 +7844,3 @@ func_002BFE68,0x002BFE68,27,LINKED_MATCH,src/P2/func_002BFE68.cpp
 func_002BFED8,0x002BFED8,98,LINKED_MATCH,src/P2/func_002BFED8.cpp
 func_002C0060,0x002C0060,102,LINKED_MATCH,src/P2/func_002C0060.cpp
 func_002C01F8,0x002C01F8,19,LINKED_MATCH,src/hand/func_002C01F8.c
-__static_initialization_and_destruction_0,0x0017A770,146,LINKED_MATCH,src/claude/func_0017A770.cpp
-_GLOBAL_$I$_home_claude_sly3_decomp_src_claude_func_0017A770.cppxpaaaa,0x0017A9B8,8,LINKED_MATCH,src/claude/func_0017A770.cpp
