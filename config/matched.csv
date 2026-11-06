@@ -3508,6 +3508,7 @@ func_001A0BA0,0x001A0BA0,11,LINKED_MATCH,src/reference_constants/func_001A0BA0.c
 func_001A0BD0,0x001A0BD0,22,LINKED_MATCH,src/reference_constants/func_001A0BD0.c
 func_001A0C28,0x001A0C28,40,LINKED_MATCH,src/game_middle/path_distance_clamp.c
 func_001A0CC8,0x001A0CC8,76,LINKED_MATCH,src/claude/func_001A0CC8.cpp
+func_001A0DF8,0x001A0DF8,76,LINKED_MATCH,src/claude/func_001A0DF8.cpp
 func_001A0F28,0x001A0F28,51,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
 func_001A0FF8,0x001A0FF8,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
 func_001A1020,0x001A1020,9,LINKED_MATCH,src/game_middle/radial_source_lifecycle.cpp
@@ -3691,6 +3692,7 @@ func_001A9478,0x001A9478,11,LINKED_MATCH,src/hand/func_001A9478.c
 func_001A94A8,0x001A94A8,18,LINKED_MATCH,src/reference_constants/func_001A94A8.c
 func_001A94F0,0x001A94F0,18,LINKED_MATCH,src/reference_constants/func_001A94F0.c
 func_001A9538,0x001A9538,11,LINKED_MATCH,src/hand/func_001A9538.c
+func_001A9568,0x001A9568,24,LINKED_MATCH,src/claude/func_001A9568.c
 func_001A95D0,0x001A95D0,11,LINKED_MATCH,src/hand/func_001A95D0.c
 func_001A9600,0x001A9600,11,LINKED_MATCH,src/hand/func_001A9600.c
 func_001A9630,0x001A9630,38,LINKED_MATCH,src/P2/input_suppression_counts.cpp
