@@ -30,6 +30,11 @@ The remaining code is split three ways by **bytes left**, in contiguous address 
 Stay inside your own range. If you match something in someone else's range (for example while porting a whole Sly 2
 source file), tell them before pushing so nobody duplicates work. Rebalance here when a range runs dry.
 
+**Rebalance, 2026-11-06:** Dimitri's range is down to 47 hard functions, so Dimitri + Claude agents are now also
+working in `0x240000`–end (Lilly's range, ~700 functions left, no Sly 3 commits there yet), split as
+`0x240000`–`0x270A18`, `0x270A18`–`0x299478` and `0x299478`–end. Lilly: if you've started on anything in there,
+say which functions and we'll steer around them.
+
 Biggest functions left in each range:
 - Dimitri: `func_0018FF98` (2,694 insns), `func_001ADDD0` (1,236), `func_00150AE8` (952), `func_0018E800` (942)
 - NaGa: `func_00226D00` (2,510), `func_001BBCA8` (1,236), `func_001B30E8` (1,026), `func_00229438` (1,022)
