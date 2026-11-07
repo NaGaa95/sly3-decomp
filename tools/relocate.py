@@ -46,7 +46,7 @@ class ObjectLinker:
         self.funcs = [s for s in self.symbols if s["type"] == 2 and s["size"] and s["shndx"] < len(self.elf.sections)]
         self.relocations = {}
         for section in self.elf.sections:
-            if section["type"] == 4:
+            if section["type"] == 4 and section["size"]:  # GNU as 2.96 (SLY3_ASM) adds an empty .rela.text
                 raise RelocationError("RELA is not supported")
             if section["type"] != 9:
                 continue
@@ -267,6 +267,22 @@ class ObjectLinker:
                 patch(record, value)
             else:
                 raise RelocationError(f"Unsupported static relocation: {kind}")
+        if pending:
+            # MIPS ABI: a HI16 pairs with the next LO16 of the same symbol in the relocation table.  GNU as 2.96
+            # (SLY3_ASM sources) may list a function's HI16 just before a LO16 that lies in a LATER function of the
+            # same object; resolve those with that LO16's addend (only reachable for such objects - every other
+            # object either pairs inside the function or failed here before).
+            table = self.relocations.get(section["index"], [])
+            data = self.elf.section_data(section)
+            for high in list(pending):
+                index = next(i for i, r in enumerate(table) if r is high)
+                low_record = next((r for r in table[index + 1:] if r["kind"] == 6 and (r["symbol"]["table"], r["symbol"]["index"]) == (high["symbol"]["table"], high["symbol"]["index"])), None)
+                if low_record is None or start <= low_record["offset"] < end:
+                    continue
+                low = sign16(struct.unpack_from("<I", data, low_record["offset"])[0])
+                value = self.symbol_value(high["symbol"], ((read(high) & 0xffff) << 16) + low)
+                patch(high, (value + 0x8000) >> 16)
+                pending.remove(high)
         if pending:
             raise RelocationError("Unpaired HI16 relocation")
         return bytes(raw), evidence

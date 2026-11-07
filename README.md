@@ -22,6 +22,23 @@ Ranges: orange = Dimitri + Claude, purple = NaGa, pink = Lilly (see `ASSIGNMENTS
 - VU microcode is assembled with GNU `dvp-as` 2.45.1; IOP modules have their own pipeline under `iop/`.
 - Compilers come from decomp.me's collection (`config/toolchain.lock.json`) and go in `tools/third_party/`.
   On Windows they run natively; on Linux they run through [wibo](https://github.com/decompals/wibo).
+- **Sony SDK libraries** (libkernel/sif, libpad, libmpeg, libcdvd, libgcc, libm, ...) were built by Sony with
+  older EE compilers and assembled by GNU as in reorder mode. `tools/bootstrap.py` also fetches those compilers
+  (ee-gcc 2.9-990721 / 991111 / 991111a / 991111-01 / 991111-01-dtls13010, 3.2-030926 / 040921 and 2.96 — the
+  same set the Sly 2 decomp uses; native 32-bit Linux binaries, so Linux/WSL with a 32-bit glibc). A source opts in
+  with its header, nothing else changes:
+
+  ```c
+  // SLY3_CC: tools/third_party/ee-gcc2.9-991111      (or the short form `991111`)
+  // SLY3_CFLAGS: -O2 -G0
+  // SLY3_ASM: gnu-reorder-db
+  ```
+
+  `SLY3_ASM` modes (`tools/gnu_reorder.py`, ported from Sly 2): `gnu-reorder-db` (gcc fills delay slots, GNU as
+  2.96 fills the rest; most SDK code), `gnu-reorder` (no gcc slot filling, adds `-fno-delayed-branch`; libkernel),
+  `gnu-reorg` (like -db, short single-block loops keep a nop; libgcc). Extra switches: `// SLY3_SAVES: sd`
+  (64-bit `sd`/`ld` register saves), `// SLY3_DIVNOP` (libm), `// SLY3_NOLOOPFIX` (libmpeg). `SLY3_ASFIX`
+  filters are for ps2eeas output and cannot be combined with these.
 
 ## Build (Windows)
 

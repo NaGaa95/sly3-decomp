@@ -39,6 +39,17 @@ def main():
     wanted = {
         "ee-gcc2.95.3-136": ("decompme/compilers", "compilers", "ee-gcc2.95.3-136.tar.gz"),
         "ee-gcc2.95.3-114": ("decompme/compilers", "compilers", "ee-gcc2.95.3-114.tar.gz"),
+        # Sony SDK library compilers (native 32-bit Linux builds; need /lib/ld-linux.so.2, i.e. Linux/WSL).
+        # Opt-in per source with `// SLY3_CC: tools/third_party/ee-gcc2.9-991111` + `// SLY3_ASM: gnu-reorder-db`;
+        # ee-gcc2.96 provides the GNU as used by tools/gnu_reorder.py.  Same set as the Sly 2 decomp's setup_all.sh.
+        "ee-gcc2.96": ("decompme/compilers", "compilers", "ee-gcc2.96.tar.xz"),
+        "ee-gcc2.9-990721": ("decompme/compilers", "compilers", "ee-gcc2.9-990721.tar.xz"),
+        "ee-gcc2.9-991111": ("decompme/compilers", "compilers", "ee-gcc2.9-991111.tar.xz"),
+        "ee-gcc2.9-991111a": ("decompme/compilers", "compilers", "ee-gcc2.9-991111a.tar.xz"),
+        "ee-gcc2.9-991111-01": ("decompme/compilers", "compilers", "ee-gcc2.9-991111-01.tar.xz"),
+        "ee-gcc2.9-991111-01-dtls13010": ("decompme/compilers", "compilers", "ee-gcc2.9-991111-01-dtls13010.tar.gz"),
+        "ee-gcc3.2-030926": ("decompme/compilers", "compilers", "ee-gcc3.2-030926.tar.gz"),
+        "ee-gcc3.2-040921": ("decompme/compilers", "compilers", "ee-gcc3.2-040921.tar.xz"),
         "slytools": ("VelocityRa/SlyTools", "v1.2", "slytools-v1.2-x64.zip"),
         "ghidra-emotionengine": ("chaoticgd/ghidra-emotionengine-reloaded", "v2.1.38", "ghidra_12.1.4_PUBLIC_20261004_ghidra-emotionengine-reloaded.zip"),
     }

@@ -19,7 +19,29 @@ def file_hash(path):
     return _file_hashes[key]
 
 
-def source_signature(source, compiler, assembler, flags, apply_filter, include_dirs, filter_mode="engine"):
+SDK_ASM_MODES = ("gnu-reorder-db", "gnu-reorder", "gnu-reorg")
+
+
+def resolve_compiler(value):
+    """A SLY3_CC value: a compiler directory relative to the project root (as always), or - only when no such
+    directory exists - a short name of a compiler under tools/third_party (e.g. `991111` -> ee-gcc2.9-991111,
+    `2.96` -> ee-gcc2.96, `3.2-040921` -> ee-gcc3.2-040921, `114` -> ee-gcc2.95.3-114)."""
+    path = ROOT / value
+    if path.is_dir():
+        return path
+    third = ROOT / "tools/third_party"
+    for name in (value, "ee-gcc" + value, "ee-gcc2.9-" + value, "ee-gcc2.95.3-" + value):
+        if (third / name).is_dir():
+            return third / name
+    return path
+
+
+def is_native(compiler):
+    """Native 32-bit Linux toolchains (the ee-gcc 2.9/2.96/3.2 builds from decomp.me) ship bin/ee-gcc, no .exe."""
+    return not (compiler / "bin/ee-gcc.exe").exists() and (compiler / "bin/ee-gcc").is_file()
+
+
+def source_signature(source, compiler, assembler, flags, apply_filter, include_dirs, filter_mode="engine", sdk=None):
     directories = [source.parent, ROOT / "include", *(Path(p).resolve() for p in include_dirs)]
     macros = next((ROOT / "tools/third_party/m2c").glob("*/m2c_macros.h"), None)
     if macros:
@@ -37,10 +59,21 @@ def source_signature(source, compiler, assembler, flags, apply_filter, include_d
                     pending.append(dependency)
                     break
     inputs[str(assembler)] = file_hash(assembler)
-    inputs[str(compiler / "bin/ee-gcc.exe")] = file_hash(compiler / "bin/ee-gcc.exe")
-    for path in (compiler / "lib/gcc-lib/ee").rglob("*.exe"):
-        if path.stem in ("cc1", "cc1plus", "cpp"):
-            inputs[str(path)] = file_hash(path)
+    if is_native(compiler):
+        inputs[str(compiler / "bin/ee-gcc")] = file_hash(compiler / "bin/ee-gcc")
+        for path in (compiler / "lib/gcc-lib/ee").rglob("*"):
+            if path.name in ("cc1", "cc1plus", "cpp"):
+                inputs[str(path)] = file_hash(path)
+        if (compiler / "ee/bin/as").is_file():
+            inputs[str(compiler / "ee/bin/as")] = file_hash(compiler / "ee/bin/as")
+    else:
+        inputs[str(compiler / "bin/ee-gcc.exe")] = file_hash(compiler / "bin/ee-gcc.exe")
+        for path in (compiler / "lib/gcc-lib/ee").rglob("*.exe"):
+            if path.stem in ("cc1", "cc1plus", "cpp"):
+                inputs[str(path)] = file_hash(path)
+    if sdk:
+        for name in ("tools/gnu_reorder.py", "tools/asfix_sly2.py", "tools/third_party/ee-gcc2.96/ee/bin/as"):
+            inputs[str(ROOT / name)] = file_hash(ROOT / name)
     if apply_filter:
         inputs[str(ROOT / "tools/asfix_sly2.py")] = file_hash(ROOT / "tools/asfix_sly2.py")
         if filter_mode == "sdk-loop7":
@@ -65,7 +98,10 @@ def source_signature(source, compiler, assembler, flags, apply_filter, include_d
         if filter_mode == "engine-divfix1":
             inputs[str(ROOT / "tools/asfix_divfix1.py")] = file_hash(ROOT / "tools/asfix_divfix1.py")
     inputs[str(Path(__file__).resolve())] = file_hash(Path(__file__).resolve())
-    return hashlib.sha256(json.dumps({"inputs": inputs, "flags": flags, "filter": apply_filter, "filter_mode": filter_mode}, sort_keys=True).encode()).hexdigest()
+    key = {"inputs": inputs, "flags": flags, "filter": apply_filter, "filter_mode": filter_mode}
+    if sdk:
+        key["sdk"] = sdk
+    return hashlib.sha256(json.dumps(key, sort_keys=True).encode()).hexdigest()
 
 
 def compile_source(source, output, include_dirs=()):
@@ -74,12 +110,21 @@ def compile_source(source, output, include_dirs=()):
     output.parent.mkdir(parents=True, exist_ok=True)
     target = target_config()
     header = source.read_text(encoding="utf-8", errors="replace")[:3000]
-    if re.search(r"SLY3_ASM:\s*gnu-reorder", header):
-        raise ValueError("The reference GNU 2.96 reorder assembler profile is not installed; adapt and verify this source explicitly")
+    # Sony SDK path (opt-in per file, see docs in tools/gnu_reorder.py and the README):
+    #   // SLY3_ASM: gnu-reorder | gnu-reorder-db | gnu-reorg   GNU as 2.96 reorder-mode assembly instead of ps2eeas
+    #   // SLY3_SAVES: sd     64-bit sd/ld register saves (Sony's SDK compiler) instead of sq/lq
+    #   // SLY3_DIVNOP, // SLY3_NOLOOPFIX                        extra gnu_reorder rules (libm / libmpeg)
+    asm_match = re.search(r"SLY3_ASM:\s*(\S+)", header)
+    asm_mode = None
+    if asm_match:
+        asm_mode = asm_match[1]
+        if asm_mode not in SDK_ASM_MODES:
+            raise ValueError("Unsupported SLY3_ASM mode: " + asm_mode)
     compiler = ROOT / os.environ.get("SLY3_CC", target["compiler"])
     override = re.search(r"SLY3_CC:\s*(\S+)", header)
     if override:
-        compiler = ROOT / override[1]
+        compiler = resolve_compiler(override[1])
+    native = is_native(compiler)
     flags = os.environ.get("SLY3_CFLAGS", " ".join(target["cflags"])).split()
     override = re.search(r"SLY3_CFLAGS:\s*([^\r\n]+)", header)
     if override:
@@ -91,6 +136,11 @@ def compile_source(source, output, include_dirs=()):
     if macros:
         flags.append("-I" + macros.parent.as_posix())
     flags += ["-I" + Path(p).resolve().as_posix() for p in include_dirs]
+    if native:
+        # the old native compilers predate -mvu0-use-vf0-vf31; let their driver find their own GNU as
+        flags = [x for x in flags if x != "-mvu0-use-vf0-vf31"] + ["-B" + (compiler / "ee/bin").as_posix() + "/"]
+    if asm_mode == "gnu-reorder":
+        flags.append("-fno-delayed-branch")
     raw = output.with_suffix(".raw.s")
     fixed = output.with_suffix(".s")
     assembler = ROOT / os.environ.get("SLY3_AS", target["assembler"])
@@ -101,20 +151,46 @@ def compile_source(source, output, include_dirs=()):
             raise ValueError("Unsupported assembler profile: " + assembler_override[1])
         assembler = ROOT / profiles[assembler_override[1]]
     mode_match = re.search(r"SLY3_ASFIX:\s*(\S+)", header)
+    if (asm_mode or native) and mode_match:
+        raise ValueError("SLY3_ASFIX filters are for ps2eeas output; they cannot be combined with SLY3_ASM or a native SDK compiler")
     filter_mode = os.environ.get("SLY3_ASFIX", mode_match[1] if mode_match else "engine")
+    if asm_mode or native:
+        filter_mode = "off"
     filter_mode = {"1": "engine", "0": "off"}.get(filter_mode, filter_mode)
     if filter_mode not in ("engine", "off", "sdk-loop7", "sdk-fdlibm", "engine-const-copy", "sdk-gp64", "sdk-softdf", "sdk-literals", "engine-local-jumps", "sdk-branch-fold", "engine-exit-slots", "engine-divfix1"):
         raise ValueError("Unsupported assembler filter: " + filter_mode)
     apply_filter = filter_mode != "off"
-    signature = source_signature(source, compiler, assembler, flags, apply_filter, include_dirs, filter_mode)
+    sdk = None
+    if asm_mode or native:
+        sdk = {"asm": asm_mode or "driver", "saves": bool(re.search(r"SLY3_SAVES:\s*sd\b", header)),
+               "divnop": bool(re.search(r"SLY3_DIVNOP", header)), "noloopfix": bool(re.search(r"SLY3_NOLOOPFIX", header))}
+    signature = source_signature(source, compiler, assembler, flags, apply_filter, include_dirs, filter_mode, sdk)
     manifest = output.with_suffix(".compile.json")
     if manifest.exists() and output.exists() and os.environ.get("SLY3_FORCE_COMPILE") != "1":
         cached = json.loads(manifest.read_text())
         if cached.get("signature") == signature and cached.get("object_sha256") == file_hash(output):
             return output
-    cmd = [str(compiler / "bin/ee-gcc.exe"), "-S", *flags, source.as_posix(), "-o", raw.as_posix()]
+    driver = str(compiler / ("bin/ee-gcc" if native else "bin/ee-gcc.exe"))
+    cmd = [driver, "-S", *flags, source.as_posix(), "-o", raw.as_posix()]
     subprocess.run(cmd, cwd=ROOT, check=True, capture_output=True, text=True, timeout=120)
     text = raw.read_text(encoding="utf-8")
+    if sdk:
+        if sdk["saves"]:
+            # Sony's SDK compiler saved/restored registers with 64-bit sd/ld (in 16-byte slots); emulate it on
+            # $sp-based sq/lq only (SDK C code has no other 128-bit stack accesses; a wrong rewrite cannot match)
+            text = re.sub(r"^(\s+)sq(\s+\$\w+\s*,\s*-?\w*\(\$sp\))", r"\1sd\2", text, flags=re.M)
+            text = re.sub(r"^(\s+)lq(\s+\$\w+\s*,\s*-?\w*\(\$sp\))", r"\1ld\2", text, flags=re.M)
+        if asm_mode:
+            import gnu_reorder
+            text = gnu_reorder.rewrite(text, asm_mode, sdk["divnop"], sdk["noloopfix"])
+            fixed.write_text(text, encoding="utf-8")
+            subprocess.run([str(ROOT / gnu_reorder.GNU_AS), "-G0", "-EL", "-mabi=eabi", "-o", output.as_posix(), fixed.as_posix()], cwd=ROOT, check=True, capture_output=True, text=True, timeout=120)
+        else:
+            # native compiler without SLY3_ASM: its own driver + GNU as, like `ee-gcc -c`
+            fixed.write_text(text, encoding="utf-8")
+            subprocess.run([driver, "-c", *[x for x in flags if x not in ("-x", "c", "c++")], "-x", "assembler", fixed.as_posix(), "-o", output.as_posix()], cwd=ROOT, check=True, capture_output=True, text=True, timeout=120)
+        manifest.write_text(json.dumps({"source": source.as_posix(), "signature": signature, "object_sha256": file_hash(output)}, indent=2) + "\n", encoding="utf-8")
+        return output
     if apply_filter:
         if filter_mode == "sdk-loop7":
             from asfix_sdk import fix
