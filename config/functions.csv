@@ -7784,7 +7784,8 @@ func_00299F00,0x00299F00,0x00299F10,16,ghidra+spimdisasm-provisional
 func_00299F10,0x00299F10,0x00299FD8,200,ghidra+spimdisasm-provisional
 func_00299FD8,0x00299FD8,0x00299FE8,16,ghidra+spimdisasm-provisional
 func_00299FE8,0x00299FE8,0x0029A028,64,ghidra-provisional
-func_0029A028,0x0029A028,0x0029A3A8,896,ghidra+spimdisasm-provisional
+func_0029A028,0x0029A028,0x0029A21C,500,manual-split-terminal-return-verified-by-matching-draft
+func_0029A21C,0x0029A21C,0x0029A3A8,396,manual-split-kernel-mode-asm-tail
 func_0029A3A8,0x0029A3A8,0x0029A458,176,ghidra-provisional
 func_0029A458,0x0029A458,0x0029A478,32,ghidra+spimdisasm-provisional
 func_0029A478,0x0029A478,0x0029AB68,1776,ghidra+spimdisasm-provisional
@@ -7824,7 +7825,11 @@ func_0029D040,0x0029D040,0x0029D068,40,ghidra+spimdisasm-provisional
 func_0029D068,0x0029D068,0x0029D090,40,ghidra-provisional
 func_0029D090,0x0029D090,0x0029D0F8,104,ghidra-provisional
 func_0029D0F8,0x0029D0F8,0x0029D120,40,ghidra-provisional
-func_0029D120,0x0029D120,0x0029D408,744,ghidra+spimdisasm-provisional
+func_0029D120,0x0029D120,0x0029D298,376,manual-split-terminal-return-verified-by-matching-draft
+func_0029D298,0x0029D298,0x0029D3B0,280,manual-split-terminal-return-verified-by-matching-draft
+func_0029D3B0,0x0029D3B0,0x0029D3F8,72,manual-split-terminal-return-verified-by-matching-draft
+func_0029D3F8,0x0029D3F8,0x0029D400,8,manual-split-terminal-return-verified-by-matching-draft
+func_0029D400,0x0029D400,0x0029D408,8,manual-split-terminal-return-verified-by-matching-draft
 func_0029D408,0x0029D408,0x0029D4E0,216,ghidra+spimdisasm-provisional
 func_0029D4E0,0x0029D4E0,0x0029D628,328,ghidra+spimdisasm-provisional
 func_0029D628,0x0029D628,0x0029D6B0,136,ghidra+spimdisasm-provisional

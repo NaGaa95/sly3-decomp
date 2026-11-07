@@ -3438,3 +3438,10 @@ func_002B2AD0,0x002B2AD0,0x002B2AE0,16,manual-split-audit-referenced-function-af
 func_002B2AE0,0x002B2AE0,0x002B2CC8,488,manual-split-audit-referenced-function-after-jr
 func_002B2CC8,0x002B2CC8,0x002B2CD8,16,manual-split-audit-referenced-function-after-jr
 func_002B2CD8,0x002B2CD8,0x002B2CE8,16,manual-split-audit-referenced-function-after-jr
+func_0029A028,0x0029A028,0x0029A21C,500,manual-split-terminal-return-verified-by-matching-draft
+func_0029A21C,0x0029A21C,0x0029A3A8,396,manual-split-kernel-mode-asm-tail
+func_0029D120,0x0029D120,0x0029D298,376,manual-split-terminal-return-verified-by-matching-draft
+func_0029D298,0x0029D298,0x0029D3B0,280,manual-split-terminal-return-verified-by-matching-draft
+func_0029D3B0,0x0029D3B0,0x0029D3F8,72,manual-split-terminal-return-verified-by-matching-draft
+func_0029D3F8,0x0029D3F8,0x0029D400,8,manual-split-terminal-return-verified-by-matching-draft
+func_0029D400,0x0029D400,0x0029D408,8,manual-split-terminal-return-verified-by-matching-draft
