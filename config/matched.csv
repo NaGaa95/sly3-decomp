@@ -2009,6 +2009,7 @@ func_0014B590,0x0014B590,85,LINKED_MATCH,src/hand/func_0014B590.c
 func_0014B6E8,0x0014B6E8,48,LINKED_MATCH,src/claude/func_0014B6E8.c
 func_0014B7A8,0x0014B7A8,11,LINKED_MATCH,src/reference_constants/func_0014B7A8.c
 func_0014B7D8,0x0014B7D8,11,LINKED_MATCH,src/reference_constants/func_0014B7D8.c
+func_0014B808,0x0014B808,124,LINKED_MATCH,src/claude/func_0014B808.c
 func_0014B9F8,0x0014B9F8,86,LINKED_MATCH,src/claude/func_0014B9F8.c
 func_0014BB50,0x0014BB50,25,LINKED_MATCH,src/engine/lookup_and_snapshot.c
 func_0014BBB8,0x0014BBB8,46,LINKED_MATCH,src/engine/table_make_14bbb8.c
