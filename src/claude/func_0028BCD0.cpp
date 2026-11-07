@@ -1,0 +1,90 @@
+// SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
+// func_0028BCD0 (agent A60): Sly 3 form of Sly 2 func_0022D348 (velocity of an XF chain), rewritten without pins/instruction asm.
+// Sly 3: sum/delta/input live in stack homes (Add takes const qword &); Rotate takes the vector by value so sum is
+// made addressable before delta (slot order 0x90/0xA0); the stop inverse is bound to a const reference (pointer in s0).
+typedef int qword __attribute__((mode(TI)));
+struct M4 { qword r[4]; };
+union V { qword q; float f[4]; };
+struct JOB { int kind; void *owner; };
+union SOURCE { void *object; float deadline; };
+struct O {
+    M4 local, world; float t0, t1; float *time, *dt; JOB *hook; int kind; short mode, state; unsigned int tag;
+    O *parent; int priority; SOURCE source; unsigned short force, damping; qword velocity, v0, v1, v2, v3;
+};
+extern qword D_00317560;
+extern "C" {
+M4 func_0011D768(const M4 *);
+M4 func_0028B730(O *);
+void func_0028C8F0(void *, O *, int);
+void func_00118558(float, float, float, qword, qword, qword, qword, qword *, qword *, qword *);
+}
+static inline qword Zero() { qword r; __asm__("vsub.xyzw %0, $vf0, $vf0" : "=j"(r)); return r; }
+static inline qword Add(const qword &a, const qword &b) { qword r; __asm__("vadd.xyzw %0, %1, %2" : "=j"(r) : "j"(a), "j"(b)); return r; }
+static inline qword Transform(const M4 &m, const qword &v)
+{
+    qword r = m.r[0];
+    __asm__("vmulax.xyz $ACC, %0, %4x\n\tvmadday.xyz $ACC, %1, %4y\n\tvmaddaz.xyz $ACC, %2, %4z\n\tvmaddw.xyz %0, %3, $vf0w"
+            : "+j"(r) : "j"(m.r[1]), "j"(m.r[2]), "j"(m.r[3]), "j"(v));
+    return r;
+}
+static inline qword RotateRow(const M4 &m, qword v)
+{
+    qword r = m.r[0];
+    __asm__("vmulax.xyz $ACC, %0, %3x\n\tvmadday.xyz $ACC, %1, %3y\n\tvmaddz.xyz %0, %2, %3z"
+            : "+j"(r) : "j"(m.r[1]), "j"(m.r[2]), "j"(v));
+    return r;
+}
+static inline qword Rotate(const M4 &m, qword v)
+{
+    __asm__("vmulax.xyz $ACC, %1, %0x\n\tvmadday.xyz $ACC, %2, %0y\n\tvmaddz.xyz %0, %3, %0z"
+            : "+j"(v) : "j"(m.r[0]), "j"(m.r[1]), "j"(m.r[2]));
+    return v;
+}
+static inline void Eval(O *p, qword *v) { func_00118558(p->t1 - p->t0, *p->time - p->t0, *p->dt, p->v0, p->v1, p->v2, p->v3, 0, v, 0); }
+extern "C" qword func_0028BCD0(O *p, O *stop, qword input)
+{
+    qword sum;
+    qword delta;
+    M4 m;
+    sum = Zero();
+    for (; p != stop; p = p->parent) {
+        switch (p->mode) {
+        case 0: case 3: case 11: case 13: case 16: case 20: break;
+        default:
+            switch (p->kind) {
+            case 1: case 4: case 5: case 9: case 10: {
+                switch (p->mode) {
+                case 1: case 2: case 8: case 9: case 10: case 12: case 18: case 19: case 21: case 22: delta = p->velocity; break;
+                case 5: case 6: case 7:
+                    if (p->hook) func_0028C8F0(p->hook->owner, p, 6);
+                    switch (p->state) {
+                    case 3: case 4: delta = p->v1; break;
+                    case 1: { V tmp; Eval(p, &tmp.q); delta = tmp.q; break; }
+                    case 0: case 2: case 5: default: delta = D_00317560; break;
+                    }
+                    break;
+                }
+                if (p->parent) sum = Add(sum, RotateRow(p->parent->world, delta));
+                else sum = Add(sum, delta);
+                break;
+            }
+            default: {
+                if (p->hook) func_0028C8F0(p->hook->owner, p, 6);
+                m = func_0028B730(p);
+                O *parent = p->parent;
+                if (parent) {
+                    M4 inverse = func_0011D768(&p->world);
+                    sum = Add(sum, Rotate(parent->world, Transform(m, Transform(inverse, input))));
+                } else {
+                    M4 inverse = func_0011D768(&p->world);
+                    sum = Add(sum, Transform(m, Transform(inverse, input)));
+                }
+                break;
+            }
+            }
+            break;
+        }
+    }
+    if (stop) { const M4 &inverse = func_0011D768(&stop->world); sum = Rotate(inverse, sum); }
+    return sum;
+}
