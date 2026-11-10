@@ -4498,6 +4498,7 @@ func_001E2910,0x001E2910,40,LINKED_MATCH,src/game_middle/aseg_apply_checked.c
 func_001E29B0,0x001E29B0,28,LINKED_MATCH,src/game_middle/aseg_apply_unless_flag.c
 func_001E2A20,0x001E2A20,42,LINKED_MATCH,src/game_middle/func_001E2A20.c
 func_001E2AC8,0x001E2AC8,240,LINKED_MATCH,src/game_middle/func_001E2AC8.cpp
+func_001E3298,0x001E3298,81,LINKED_MATCH,src/game_middle/func_001E3298.cpp
 func_001E33E0,0x001E33E0,42,LINKED_MATCH,src/game_middle/random_offset_apply_1E33E0.c
 func_001E3488,0x001E3488,881,LINKED_MATCH,src/game_middle/func_001E3488.cpp
 func_001E4250,0x001E4250,298,LINKED_MATCH,src/game_middle/func_001E4250.cpp
