@@ -3946,6 +3946,7 @@ func_001C4018,0x001C4018,28,LINKED_MATCH,src/game_middle/owner_kind_status.c
 func_001C4088,0x001C4088,21,LINKED_MATCH,src/reference_constants/func_001C4088.c
 func_001C40E0,0x001C40E0,201,LINKED_MATCH,src/game_middle/func_001C40E0.cpp
 func_001C4408,0x001C4408,77,LINKED_MATCH,src/game_middle/func_001C4408.cpp
+func_001C4540,0x001C4540,118,LINKED_MATCH,src/game_middle/func_001C4540.cpp
 func_001C4718,0x001C4718,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001C4850,0x001C4850,8,LINKED_MATCH,src/auto/func_001C4850.c
 func_001C4870,0x001C4870,44,LINKED_MATCH,src/game_middle/class_bucket_default_init.c
@@ -4681,7 +4682,9 @@ func_001EEA00,0x001EEA00,10,EXACT_MATCH,src/game_middle/func_001EE9A0.c
 func_001EEA28,0x001EEA28,26,LINKED_MATCH,src/reference_constants/func_001EEA28.c
 func_001EEA90,0x001EEA90,327,LINKED_MATCH,src/game_middle/func_001EEA90.cpp
 func_001EEFB0,0x001EEFB0,34,LINKED_MATCH,src/game_middle/func_001EEFB0.cpp
+func_001EF038,0x001EF038,77,LINKED_MATCH,src/game_middle/func_001EF038.c
 func_001EF170,0x001EF170,78,EXACT_MATCH,src/game_middle/keyframe_cursor_seek_1EF170.c
+func_001EF498,0x001EF498,59,LINKED_MATCH,src/game_middle/func_001EF498.cpp
 func_001EF588,0x001EF588,6,EXACT_MATCH,src/reference_constants/func_001EF588.c
 func_001EF5A0,0x001EF5A0,4,EXACT_MATCH,src/game_middle/counter_increment_1ef5a0.c
 func_001EF5B0,0x001EF5B0,22,LINKED_MATCH,src/reference_constants/func_001EF5B0.c
@@ -4740,6 +4743,7 @@ func_001F2408,0x001F2408,282,LINKED_MATCH,src/game_middle/func_001F2408.cpp
 func_001F2870,0x001F2870,56,LINKED_MATCH,src/game_middle/func_001F2870.c
 func_001F2950,0x001F2950,19,LINKED_MATCH,src/P2/binding_clear.c
 func_001F29A0,0x001F29A0,151,LINKED_MATCH,src/game_middle/func_001F29A0.cpp
+func_001F2C00,0x001F2C00,193,LINKED_MATCH,src/game_middle/func_001F2C00.cpp
 func_001F2F08,0x001F2F08,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001F3040,0x001F3040,8,LINKED_MATCH,src/auto/func_001F3040.c
 func_001F3060,0x001F3060,64,LINKED_MATCH,src/game_middle/func_001F3060.cpp
@@ -5906,6 +5910,7 @@ func_0023A070,0x0023A070,61,LINKED_MATCH,src/hand/func_0023A070.cpp
 func_0023A168,0x0023A168,42,LINKED_MATCH,src/reference_os/func_0023A168.c
 func_0023A210,0x0023A210,91,LINKED_MATCH,src/hand/func_0023A210.c
 func_0023A380,0x0023A380,42,LINKED_MATCH,src/leaf/collection_filter_23a380.c
+func_0023A428,0x0023A428,133,LINKED_MATCH,src/leaf/func_0023A428.c
 func_0023A640,0x0023A640,14,LINKED_MATCH,src/auto/func_0023A640.c
 func_0023A678,0x0023A678,39,LINKED_MATCH,src/hand/func_0023A678.cpp
 func_0023A718,0x0023A718,30,LINKED_MATCH,src/hand/func_0023A718.cpp
