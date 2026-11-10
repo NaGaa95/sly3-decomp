@@ -3445,3 +3445,5 @@ func_0029D298,0x0029D298,0x0029D3B0,280,manual-split-terminal-return-verified-by
 func_0029D3B0,0x0029D3B0,0x0029D3F8,72,manual-split-terminal-return-verified-by-matching-draft
 func_0029D3F8,0x0029D3F8,0x0029D400,8,manual-split-terminal-return-verified-by-matching-draft
 func_0029D400,0x0029D400,0x0029D408,8,manual-split-terminal-return-verified-by-matching-draft
+func_0020CD88,0x0020CD88,0x0020D208,1152,manual-split-terminal-return-verified-by-matching-draft
+func_0020D208,0x0020D208,0x0020D348,320,manual-split-terminal-return-verified-by-matching-draft
