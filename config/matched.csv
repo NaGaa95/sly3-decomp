@@ -4618,6 +4618,7 @@ func_001EA940,0x001EA940,25,LINKED_MATCH,src/game_middle/mode_state_gate.c
 func_001EA9A8,0x001EA9A8,3,EXACT_MATCH,src/game_middle/flag_set.c
 func_001EA9B8,0x001EA9B8,17,LINKED_MATCH,src/game_middle/actor_pending_clear_1EA9B8.c
 func_001EAA00,0x001EAA00,79,LINKED_MATCH,src/game_middle/func_001EAA00.c
+func_001EAB40,0x001EAB40,271,LINKED_MATCH,src/game_middle/func_001EAB40.cpp
 func_001EAF80,0x001EAF80,43,LINKED_MATCH,src/game_middle/contact_gate_ternary_1EAF80.cpp
 func_001EB030,0x001EB030,9,LINKED_MATCH,src/reference_constants/func_001EB030.c
 func_001EB058,0x001EB058,47,LINKED_MATCH,src/game_middle/child_create_setup.c
