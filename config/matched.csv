@@ -3884,6 +3884,7 @@ func_001BFA08,0x001BFA08,3,EXACT_MATCH,src/reference_os/func_001BFA08.c
 func_001BFA18,0x001BFA18,26,LINKED_MATCH,src/game_middle/func_001BFA18.cpp
 func_001BFA80,0x001BFA80,16,LINKED_MATCH,src/reference_constants/func_001BFA80.c
 func_001BFAC0,0x001BFAC0,3,EXACT_MATCH,src/reference_os/func_001BFAC0.c
+func_001BFAD0,0x001BFAD0,313,LINKED_MATCH,src/game_middle/func_001BFAD0.cpp
 func_001BFFB8,0x001BFFB8,7,EXACT_MATCH,src/reference_constants/func_001BFFB8.c
 func_001BFFD8,0x001BFFD8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001C0110,0x001C0110,8,LINKED_MATCH,src/auto/func_001C0110.c
