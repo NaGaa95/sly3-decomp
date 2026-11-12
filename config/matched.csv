@@ -4981,6 +4981,7 @@ func_001FD7B0,0x001FD7B0,13,LINKED_MATCH,src/reference_constants/func_001FD7B0.c
 func_001FD7E8,0x001FD7E8,85,LINKED_MATCH,src/P2/resource_packet_build_1FD7E8.cpp
 func_001FD940,0x001FD940,18,LINKED_MATCH,src/reference_constants/func_001FD940.c
 func_001FD988,0x001FD988,20,LINKED_MATCH,src/reference_constants/func_001FD988.c
+func_001FD9D8,0x001FD9D8,102,LINKED_MATCH,src/game_middle/func_001FD9D8.cpp
 func_001FDB70,0x001FDB70,4,EXACT_MATCH,src/game_middle/func_001FDB70.c
 func_001FDB80,0x001FDB80,37,LINKED_MATCH,src/P2/color_record_kind.c
 func_001FDC18,0x001FDC18,38,LINKED_MATCH,src/P2/color_record.c
@@ -5215,6 +5216,7 @@ func_0020DBA0,0x0020DBA0,41,LINKED_MATCH,src/P2/blend_delay_apply_20DBA0.c
 func_0020DC48,0x0020DC48,127,LINKED_MATCH,src/leaf/spin_fade_20DC48.cpp
 func_0020DE48,0x0020DE48,44,LINKED_MATCH,src/P2/particle_callback_remove.cpp
 func_0020DEF8,0x0020DEF8,50,LINKED_MATCH,src/leaf/random_orientation_20DEF8.c
+func_0020DFC0,0x0020DFC0,147,LINKED_MATCH,src/leaf/func_0020DFC0.cpp
 func_0020E210,0x0020E210,37,LINKED_MATCH,src/P2/particle_contact_rotation.cpp
 func_0020E2A8,0x0020E2A8,16,LINKED_MATCH,src/hand/func_0020E2A8.c
 func_0020E2E8,0x0020E2E8,13,LINKED_MATCH,src/hand/func_0020E2E8.c
