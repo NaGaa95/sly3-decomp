@@ -3879,6 +3879,7 @@ func_001BEE28,0x001BEE28,18,EXACT_MATCH,src/game_middle/range_pair_defaults.c
 func_001BEE70,0x001BEE70,70,LINKED_MATCH,src/game_middle/func_001BEE70.cpp
 func_001BEF88,0x001BEF88,103,LINKED_MATCH,src/game_middle/path_orient_apply_1BEF88.cpp
 func_001BF128,0x001BF128,51,LINKED_MATCH,src/reference_constants/func_001BF128.c
+func_001BF1F8,0x001BF1F8,485,LINKED_MATCH,src/game_middle/func_001BF1F8.cpp
 func_001BF990,0x001BF990,29,LINKED_MATCH,src/reference_constants/func_001BF990.c
 func_001BFA08,0x001BFA08,3,EXACT_MATCH,src/reference_os/func_001BFA08.c
 func_001BFA18,0x001BFA18,26,LINKED_MATCH,src/game_middle/func_001BFA18.cpp
@@ -4572,6 +4573,7 @@ func_001E7908,0x001E7908,86,LINKED_MATCH,src/game_middle/func_001E7908.c
 func_001E7A60,0x001E7A60,115,LINKED_MATCH,src/hand/func_001E7A60.c
 func_001E7C30,0x001E7C30,27,EXACT_MATCH,src/game_middle/point_order_compare.c
 func_001E7EF0,0x001E7EF0,26,LINKED_MATCH,src/reference_constants/func_001E7EF0.c
+func_001E7F58,0x001E7F58,204,LINKED_MATCH,src/game_middle/func_001E7F58.cpp
 func_001E8288,0x001E8288,22,LINKED_MATCH,src/reference_os/func_001E8288.c
 func_001E82E0,0x001E82E0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001E8418,0x001E8418,8,LINKED_MATCH,src/auto/func_001E8418.c
