@@ -4971,6 +4971,7 @@ func_001FCAC8,0x001FCAC8,22,EXACT_MATCH,src/P2/flag_clear_notify.c
 func_001FCB20,0x001FCB20,27,LINKED_MATCH,src/P2/owner_reset_scales.c
 func_001FCB90,0x001FCB90,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001FCCC8,0x001FCCC8,8,LINKED_MATCH,src/auto/func_001FCCC8.c
+func_001FCCE8,0x001FCCE8,128,LINKED_MATCH,src/game_middle/func_001FCCE8.c
 func_001FCEE8,0x001FCEE8,9,EXACT_MATCH,src/reference_constants/func_001FCEE8.c
 func_001FCF10,0x001FCF10,161,LINKED_MATCH,src/P2/mesh_load.cpp
 func_001FD198,0x001FD198,46,LINKED_MATCH,src/P2/record_load.cpp
