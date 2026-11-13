@@ -3857,6 +3857,7 @@ func_001BAD30,0x001BAD30,36,LINKED_MATCH,src/game_middle/kind_range_forward_1BAD
 func_001BADC0,0x001BADC0,14,EXACT_MATCH,src/hand/func_001BADC0.c
 func_001BADF8,0x001BADF8,228,LINKED_MATCH,src/game_middle/func_001B9C48.cpp
 func_001BB188,0x001BB188,40,LINKED_MATCH,src/game_middle/vertical_intercept.cpp
+func_001BB228,0x001BB228,176,LINKED_MATCH,src/game_middle/func_001BB228.cpp
 func_001BB4E8,0x001BB4E8,122,LINKED_MATCH,src/game_middle/func_001BB4E8.c
 func_001BB6D0,0x001BB6D0,24,LINKED_MATCH,src/hand/func_001BB6D0.c
 func_001BB730,0x001BB730,32,LINKED_MATCH,src/game_middle/curve_point_cost_1BB730.cpp
