@@ -35,18 +35,11 @@ working in `0x240000`–end (Lilly's range, ~700 functions left, no Sly 3 commit
 `0x240000`–`0x270A18`, `0x270A18`–`0x299478` and `0x299478`–end. Lilly: if you've started on anything in there,
 say which functions and we'll steer around them.
 
-**Rebalance, 2026-11-13:** our own ranges are down to hard or blocked functions (Dimitri's range: ~30, mostly
-crt0 stubs, vcallms/ei code and scheduler ties; `0x240000`–`0x293000`: ~10; `0x293000`–end: 22 genuine hand-written
-assembly routines). NaGa's range has 71 functions left and no commits since 2026-11-07, so it is split three ways:
-
-| Owner | Range | Functions left (2026-11-13) |
-|---|---|---|
-| **NaGa** | `0x1B0000`–`0x1E2E88` | 20 |
-| **Dimitri** (by hand) | `0x1E2E88`–`0x1FCCE8` | 19 |
-| **Claude agents** | `0x1FCCE8`–`0x240000` | 32 |
-
-NaGa: if you have uncommitted work anywhere in `0x1E2E88`–`0x240000`, say which functions and we'll steer around
-them (or take the range back — this is only to keep everyone from working on the same functions).
+**Rebalance, 2026-11-13 (updated the same day):** a split of NaGa's range between NaGa, Dimitri and Claude agents was
+made here before NaGa's 2026-11-10..13 commits reached us. NaGa had been matching all over his range in the meantime
+(56 functions), and 9 functions ended up matched by both sides; NaGa's copies were kept and ours dropped. The split is
+withdrawn: `0x1B0000`–`0x240000` is NaGa's again (15 functions left). Dimitri would still like to try
+`func_001EC300` and `func_001ED460` by hand if NaGa hasn't started them. Claude agents stay out of the range.
 
 Biggest functions left in each range:
 - Dimitri: `func_0018FF98` (2,694 insns), `func_001ADDD0` (1,236), `func_00150AE8` (952), `func_0018E800` (942)

@@ -57,6 +57,7 @@ def main():
     from test_branch_fold import main as test_branch_fold
     from test_switch_tables import main as test_switch_tables
     from test_engine_exit_slots import main as test_engine_exit_slots
+    from test_asfix_aligned_loops import main as test_asfix_aligned_loops
     test_relocations()
     test_sdk_filter()
     test_fdlibm_filter()
@@ -70,6 +71,7 @@ def main():
     test_branch_fold()
     test_switch_tables()
     test_engine_exit_slots()
+    test_asfix_aligned_loops()
 
 
 if __name__ == "__main__":
