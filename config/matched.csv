@@ -4669,6 +4669,7 @@ func_001EBD40,0x001EBD40,4,EXACT_MATCH,src/game_middle/element_index.c
 func_001EBD50,0x001EBD50,165,LINKED_MATCH,src/game_middle/func_001EBD50.cpp
 func_001EBFE8,0x001EBFE8,103,LINKED_MATCH,src/reference_os/func_001EBFE8.c
 func_001EC188,0x001EC188,93,LINKED_MATCH,src/game_middle/func_001EC188.cpp
+func_001EC300,0x001EC300,226,LINKED_MATCH,src/game_middle/func_001EC300.cpp
 func_001EC688,0x001EC688,20,LINKED_MATCH,src/reference_constants/func_001EC688.c
 func_001EC6D8,0x001EC6D8,3,EXACT_MATCH,src/game_middle/quad_push.c
 func_001EC6E8,0x001EC6E8,307,LINKED_MATCH,src/game_middle/func_001EC6E8.cpp
