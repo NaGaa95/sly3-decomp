@@ -3947,6 +3947,7 @@ func_001C2CC0,0x001C2CC0,102,LINKED_MATCH,src/game_middle/fade_parameter_update.
 func_001C2E58,0x001C2E58,8,EXACT_MATCH,src/reference_constants/func_001C2E58.c
 func_001C2E78,0x001C2E78,91,LINKED_MATCH,src/game_middle/func_001C2E78.cpp
 func_001C2FE8,0x001C2FE8,8,LINKED_MATCH,src/auto/func_001C2FE8.c
+func_001C3008,0x001C3008,281,LINKED_MATCH,src/game_middle/func_001C3008.cpp
 func_001C3470,0x001C3470,414,LINKED_MATCH,src/game_middle/func_001C3470.cpp
 func_001C3AE8,0x001C3AE8,18,LINKED_MATCH,src/reference_constants/func_001C3AE8.c
 func_001C3B30,0x001C3B30,44,LINKED_MATCH,src/game_middle/state_entry_dispatch_1c3b30.c
@@ -5076,6 +5077,7 @@ func_002020C8,0x002020C8,85,LINKED_MATCH,src/leaf/func_002020C8.cpp
 func_00202220,0x00202220,21,LINKED_MATCH,src/hand/func_00202220.c
 func_00202278,0x00202278,45,LINKED_MATCH,src/hand/func_00202278.c
 func_00202330,0x00202330,161,LINKED_MATCH,src/leaf/func_00202330.cpp
+func_002025B8,0x002025B8,141,LINKED_MATCH,src/leaf/func_002025B8.cpp
 func_002027F0,0x002027F0,50,LINKED_MATCH,src/P2/particle_list_render.cpp
 func_002028B8,0x002028B8,40,LINKED_MATCH,src/P2/owner_list_teardown.c
 func_00202958,0x00202958,36,LINKED_MATCH,src/leaf/func_00202958.cpp
@@ -5232,6 +5234,7 @@ func_0020C8E8,0x0020C8E8,171,LINKED_MATCH,src/leaf/particle_spawn_20C8E8.cpp
 func_0020CB98,0x0020CB98,34,LINKED_MATCH,src/P2/particle_contact_guard.cpp
 func_0020CC20,0x0020CC20,61,LINKED_MATCH,src/P2/sample_frame_20CC20.c
 func_0020CD18,0x0020CD18,28,LINKED_MATCH,src/P2/particle_position_seed.c
+func_0020CD88,0x0020CD88,287,LINKED_MATCH,src/leaf/func_0020CD88.cpp
 func_0020D208,0x0020D208,79,LINKED_MATCH,src/leaf/item_sample_20d208.cpp
 func_0020D348,0x0020D348,22,LINKED_MATCH,src/hand/func_0020D348.cpp
 func_0020D3A0,0x0020D3A0,91,LINKED_MATCH,src/P2/follow_frame_capture_20D3A0.cpp
@@ -5772,6 +5775,7 @@ func_0022F5B0,0x0022F5B0,20,LINKED_MATCH,src/reference_constants/func_0022F5B0.c
 func_0022F600,0x0022F600,13,LINKED_MATCH,src/hand/func_0022F600.c
 func_0022F638,0x0022F638,11,LINKED_MATCH,src/hand/func_0022F638.c
 func_0022F668,0x0022F668,76,LINKED_MATCH,src/leaf/enabled_state_22f668.c
+func_0022F798,0x0022F798,128,LINKED_MATCH,src/leaf/func_0022F798.cpp
 func_0022F998,0x0022F998,155,LINKED_MATCH,src/leaf/path_radius_22f998.cpp
 func_0022FC08,0x0022FC08,6,EXACT_MATCH,src/leaf/link_id_22fc08.c
 func_0022FC20,0x0022FC20,111,LINKED_MATCH,src/leaf/interval_sample_22fc20.c
