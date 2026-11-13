@@ -7,7 +7,7 @@ pcsx2-*/
 ps2-bios-*/
 disc/
 assets/
-asm/
+/asm/
 references/
 build/
 .venv/

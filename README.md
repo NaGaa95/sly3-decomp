@@ -63,6 +63,7 @@ VU sources:
 - `src/reference*/` — functions recovered from the finished Sly 2 decomp and re-verified against Sly 3
 - `src/auto/` — functions matched from m2c output (byte-identical, still need cleanup into proper types/names)
 - `src/lib/`, `src/startup/`, `src/vu/` — Sony SDK libraries, startup code, VU microcode
+- `src/asm/` — Sony's original hand-written assembly routines (see below)
 - `iop/src/` — IOP module sources
 - `include/` — shared headers
 - `config/functions.csv` — every function's address/size; `config/symbol_addrs.txt` — known names;
@@ -84,3 +85,13 @@ VU sources:
 - At most one commented register pin per function; no inline asm replacing plain C (VU helper inlines are fine).
 - No invented global names — address-based `D_XXXXXXXX` / `func_XXXXXXXX` names are fine until the real name
   is known.
+
+### Hand-written assembly (`src/asm/`)
+A few routines in the SDK libraries were never C: Sony wrote them in assembly (libkernel's timer read, D-cache
+write-back and kernel-mode exception/syscall trampolines, newlib's r5900 `strcmp`, and libmpeg's MMI
+`_copyRefImage`/`_copyAddRefImage` and `_rix_*`/`_ri0_*` motion-compensation routines at 0x298E50–0x2B1EA8). They use
+COP0/ERET, `cache`, MMI and SA-register instructions and non-ABI register conventions that no compiler output
+reproduces, so they are kept as top-level `__asm__(".set noreorder" … ".ent" …)` blocks, one file per original
+routine group, exactly like their counterparts in the finished Sly 2 decomp (`src/lib/*.c` there). Each file's
+header names the Sly 2 counterpart and the evidence. These are the only instruction-level asm sources in the
+project: the no-asm rule above still applies to all C/C++ code.

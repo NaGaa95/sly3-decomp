@@ -1,0 +1,66 @@
+/* Sony's original hand-written assembly (no C equivalent exists):
+ * libkernel sceSifWriteBackDCache.
+ * Evidence: it writes back each 64-byte line with `cache 0x18` (Hit Writeback Invalidate D) between syncs, an
+ * operation C cannot express, unrolled by hand 8x with non-ABI register use ($t9 as the mask).
+ * Sly 2 counterpart: src/lib/sceSifWriteBackDCache.c (0x0023B170), identical instructions.
+ * The finished Sly 2 decomp keeps it as the same kind of top-level asm block.
+ * Each routine is a top-level __asm__ block under .set noreorder, so the assembler emits it exactly as written;
+ * the global symbols are the Sly 3 address names (the original names are in the per-block comments). */
+
+/* func_00299DF0 = Sly 2 sceSifWriteBackDCache */
+__asm__(
+    ".set noreorder\n"
+    ".text\n"
+    ".globl func_00299DF0\n"
+    ".ent func_00299DF0\n"
+    "func_00299DF0:\n"
+    "lui $25, 0xFFFF\n"
+    "ori $25, $25, 0xFFC0\n"
+    "blez $5, 3f\n"
+    "addu $10, $4, $5\n"
+    "and $8, $4, $25\n"
+    "addiu $10, $10, -1\n"
+    "and $9, $10, $25\n"
+    "subu $10, $9, $8\n"
+    "srl $11, $10, 6\n"
+    "addiu $11, $11, 1\n"
+    "andi $9, $11, 7\n"
+    "beqz $9, 2f\n"
+    "srl $10, $11, 3\n"
+    "1:\n"
+    "sync\n"
+    "cache 0x18, 0($8)\n"
+    "sync\n"
+    "nop\n"
+    "addiu $9, $9, -1\n"
+    "bgtz $9, 1b\n"
+    "addiu $8, $8, 0x40\n"
+    "2:\n"
+    "beqz $10, 3f\n"
+    "4:\n"
+    "addiu $10, $10, -1\n"
+    "sync\n"
+    "cache 0x18, 0($8)\n"
+    "sync\n"
+    "cache 0x18, 0x40($8)\n"
+    "sync\n"
+    "cache 0x18, 0x80($8)\n"
+    "sync\n"
+    "cache 0x18, 0xC0($8)\n"
+    "sync\n"
+    "cache 0x18, 0x100($8)\n"
+    "sync\n"
+    "cache 0x18, 0x140($8)\n"
+    "sync\n"
+    "cache 0x18, 0x180($8)\n"
+    "sync\n"
+    "cache 0x18, 0x1C0($8)\n"
+    "sync\n"
+    "bgtz $10, 4b\n"
+    "addiu $8, $8, 0x200\n"
+    "3:\n"
+    "jr $31\n"
+    "nop\n"
+    ".end func_00299DF0\n"
+    ".set reorder\n"
+);
