@@ -4104,6 +4104,7 @@ func_001C9D70,0x001C9D70,99,LINKED_MATCH,src/P2/scene_mode.cpp
 func_001C9F00,0x001C9F00,75,LINKED_MATCH,src/hand/func_001C9F00.c
 func_001CA030,0x001CA030,17,LINKED_MATCH,src/P2/scene_mode.cpp
 func_001CA078,0x001CA078,225,LINKED_MATCH,src/game_middle/func_001CA078.c
+func_001CA400,0x001CA400,431,LINKED_MATCH,src/game_middle/func_001CA400.cpp
 func_001CAAC0,0x001CAAC0,28,LINKED_MATCH,src/P2/scene_mode_event.cpp
 func_001CAB30,0x001CAB30,34,LINKED_MATCH,src/P2/scene_mode_callbacks.cpp
 func_001CABB8,0x001CABB8,29,LINKED_MATCH,src/P2/scene_mode_callbacks.cpp
