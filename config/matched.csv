@@ -7406,6 +7406,7 @@ memcpy,0x00291E8C,43,EXACT_MATCH,src/lib/string/memcpy.c
 memmove,0x00291F38,63,EXACT_MATCH,src/lib/string/memmove.c
 memset,0x00292034,46,EXACT_MATCH,src/lib/string/memset.c
 func_002920F0,0x002920F0,114,EXACT_MATCH,src/lib/string/func_002920F0.c
+func_002922B8,0x002922B8,114,EXACT_MATCH,src/lib/string/func_002922B8.c
 atoi,0x00292480,10,LINKED_MATCH,src/lib/func_00292480.c
 func_002924A8,0x002924A8,37,LINKED_MATCH,src/lib/func_002924A8.c
 func_00292540,0x00292540,631,LINKED_MATCH,src/lib/stdlib/qsort.c
