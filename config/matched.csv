@@ -4112,6 +4112,7 @@ func_001CBAF0,0x001CBAF0,79,LINKED_MATCH,src/game_middle/func_001CBAF0.c
 func_001CBC30,0x001CBC30,58,LINKED_MATCH,src/game_middle/frame_pair_update_1CBC30.cpp
 func_001CBD18,0x001CBD18,72,LINKED_MATCH,src/game_middle/segment_hit_collect_1CBD18.c
 func_001CBE38,0x001CBE38,139,LINKED_MATCH,src/game_middle/func_001CBE38.c
+func_001CC068,0x001CC068,162,LINKED_MATCH,src/game_middle/func_001CC068.cpp
 func_001CC2F0,0x001CC2F0,83,EXACT_MATCH,src/hand/func_001CC2F0.c
 func_001CC440,0x001CC440,212,LINKED_MATCH,src/game_middle/func_001CC440.cpp
 func_001CC790,0x001CC790,402,LINKED_MATCH,src/game_middle/func_001CC790.cpp
