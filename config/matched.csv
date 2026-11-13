@@ -5761,6 +5761,7 @@ func_0022F998,0x0022F998,155,LINKED_MATCH,src/leaf/path_radius_22f998.cpp
 func_0022FC08,0x0022FC08,6,EXACT_MATCH,src/leaf/link_id_22fc08.c
 func_0022FC20,0x0022FC20,111,LINKED_MATCH,src/leaf/interval_sample_22fc20.c
 func_0022FDE0,0x0022FDE0,109,LINKED_MATCH,src/leaf/path_follow_init_22fde0.c
+func_0022FF98,0x0022FF98,822,LINKED_MATCH,src/leaf/func_0022FF98.cpp
 func_00230C70,0x00230C70,258,LINKED_MATCH,src/leaf/rope_chain_step_230c70.cpp
 func_00231078,0x00231078,48,LINKED_MATCH,src/reference_constants/func_00231078.c
 func_00231138,0x00231138,66,LINKED_MATCH,src/hand/func_00231138.c
