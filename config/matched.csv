@@ -3670,6 +3670,7 @@ func_001A6B78,0x001A6B78,76,LINKED_MATCH,src/claude/func_001A6B78.c
 func_001A6CA8,0x001A6CA8,13,EXACT_MATCH,src/hand/func_001A6CA8.c
 func_001A6CE0,0x001A6CE0,59,LINKED_MATCH,src/game_middle/candidate_position_queue.c
 func_001A6DD0,0x001A6DD0,9,EXACT_MATCH,src/game_middle/candidate_position_queue.c
+func_001A6DF8,0x001A6DF8,450,LINKED_MATCH,src/claude/func_001A6DF8.cpp
 func_001A7500,0x001A7500,58,LINKED_MATCH,src/reference_os/func_001A7500.c
 func_001A75E8,0x001A75E8,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001A7720,0x001A7720,8,LINKED_MATCH,src/auto/func_001A7720.c
