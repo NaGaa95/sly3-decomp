@@ -4359,6 +4359,7 @@ func_001D7FD0,0x001D7FD0,14,LINKED_MATCH,src/reference_constants/func_001D7FD0.c
 func_001D8008,0x001D8008,25,LINKED_MATCH,src/game_middle/object_defaults_initialize.c
 func_001D8070,0x001D8070,39,LINKED_MATCH,src/game_middle/func_001D8070.c
 func_001D8110,0x001D8110,12,LINKED_MATCH,src/auto/func_001D8110.c
+func_001D8140,0x001D8140,540,LINKED_MATCH,src/game_middle/func_001D8140.cpp
 func_001D89B0,0x001D89B0,60,LINKED_MATCH,src/game_middle/radius_mode_settle.cpp
 func_001D8AA0,0x001D8AA0,8,LINKED_MATCH,src/hand/func_001D8AA0.c
 func_001D8AC0,0x001D8AC0,31,EXACT_MATCH,src/game_middle/radius_probe_check.cpp
