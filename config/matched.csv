@@ -4691,6 +4691,7 @@ func_001ED1F0,0x001ED1F0,40,LINKED_MATCH,src/game_middle/point_clear_predicate.c
 func_001ED290,0x001ED290,35,LINKED_MATCH,src/game_middle/object_create_resolved.c
 func_001ED320,0x001ED320,12,LINKED_MATCH,src/reference_constants/func_001ED320.c
 func_001ED350,0x001ED350,68,LINKED_MATCH,src/reference_os/func_001ED350.c
+func_001ED460,0x001ED460,134,LINKED_MATCH,src/game_middle/func_001ED460.c
 func_001ED678,0x001ED678,78,LINKED_MATCH,src/game_middle/func_001ED678.c
 func_001ED7B0,0x001ED7B0,28,LINKED_MATCH,src/reference_constants/func_001ED7B0.c
 func_001ED820,0x001ED820,102,LINKED_MATCH,src/reference_os/func_001ED820.c
