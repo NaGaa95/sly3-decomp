@@ -3848,6 +3848,7 @@ func_001B7268,0x001B7268,355,LINKED_MATCH,src/game_middle/func_001B7268.cpp
 func_001B77F8,0x001B77F8,765,LINKED_MATCH,src/game_middle/func_001B77F8.cpp
 func_001B83F0,0x001B83F0,95,LINKED_MATCH,src/game_middle/func_001B83F0.cpp
 func_001B8570,0x001B8570,219,LINKED_MATCH,src/game_middle/func_001B8570.cpp
+func_001B88E0,0x001B88E0,372,LINKED_MATCH,src/game_middle/func_001B88E0.cpp
 func_001B8EB0,0x001B8EB0,92,LINKED_MATCH,src/game_middle/heading_state_select_1B8EB0.c
 func_001B9020,0x001B9020,778,LINKED_MATCH,src/game_middle/func_001B9020.cpp
 func_001B9C48,0x001B9C48,1014,LINKED_MATCH,src/game_middle/func_001B9C48.cpp
