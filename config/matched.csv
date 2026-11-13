@@ -6035,6 +6035,7 @@ func_0023E130,0x0023E130,17,EXACT_MATCH,src/hand/func_0023E130.c
 func_0023E178,0x0023E178,30,EXACT_MATCH,src/P2/scene_pair_condition.cpp
 func_0023E1F0,0x0023E1F0,13,EXACT_MATCH,src/leaf/target_mode_23e1f0.c
 func_0023E228,0x0023E228,26,LINKED_MATCH,src/hand/func_0023E228.c
+func_0023E290,0x0023E290,427,LINKED_MATCH,src/leaf/func_0023E290.cpp
 func_0023E940,0x0023E940,36,EXACT_MATCH,src/leaf/bounds_grow_23e940.c
 func_0023E9D0,0x0023E9D0,46,LINKED_MATCH,src/leaf/axis_normalize_23e9d0.c
 func_0023EA88,0x0023EA88,81,LINKED_MATCH,src/P2/scene_rebind.cpp
