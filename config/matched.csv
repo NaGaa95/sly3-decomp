@@ -6077,6 +6077,7 @@ func_0023EDD8,0x0023EDD8,2,EXACT_MATCH,src/leaf/func_0023EDD8.c
 func_0023EDE0,0x0023EDE0,2,EXACT_MATCH,src/leaf/func_0023EDD8.c
 func_0023EDE8,0x0023EDE8,109,LINKED_MATCH,src/leaf/body_spin_spring_23ede8.cpp
 func_0023EFA0,0x0023EFA0,119,LINKED_MATCH,src/leaf/body_steer_force_23efa0.cpp
+func_0023F180,0x0023F180,124,LINKED_MATCH,src/leaf/body_target_force_23f180.cpp
 func_0023F370,0x0023F370,17,EXACT_MATCH,src/hand/func_0023F370.c
 func_0023F3B8,0x0023F3B8,17,EXACT_MATCH,src/hand/func_0023F3B8.c
 func_0023F400,0x0023F400,405,LINKED_MATCH,src/leaf/body_pair_clone_23f400.c
