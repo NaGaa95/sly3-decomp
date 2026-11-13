@@ -3803,6 +3803,7 @@ func_001B0898,0x001B0898,159,LINKED_MATCH,src/game_middle/func_001B0898.cpp
 func_001B0B18,0x001B0B18,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_001B0C50,0x001B0C50,8,LINKED_MATCH,src/auto/func_001B0C50.c
 func_001B0C70,0x001B0C70,19,LINKED_MATCH,src/hand/func_001B0C70.c
+func_001B0FF0,0x001B0FF0,490,LINKED_MATCH,src/game_middle/func_001B0FF0.cpp
 func_001B1798,0x001B1798,81,LINKED_MATCH,src/P2/rotation_align_commit_1B1798.cpp
 func_001B18E0,0x001B18E0,16,LINKED_MATCH,src/reference_constants/func_001B18E0.c
 func_001B1920,0x001B1920,454,LINKED_MATCH,src/game_middle/func_001B1920.cpp
