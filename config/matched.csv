@@ -5214,6 +5214,7 @@ func_0020E528,0x0020E528,22,LINKED_MATCH,src/hand/func_0020E528.c
 func_0020E580,0x0020E580,27,LINKED_MATCH,src/P2/particle_blocks_release.c
 func_0020E5F0,0x0020E5F0,96,LINKED_MATCH,src/leaf/anchor_place_20E5F0.c
 func_0020E770,0x0020E770,57,LINKED_MATCH,src/leaf/block_setup_20E770.c
+func_0020E858,0x0020E858,222,LINKED_MATCH,src/claude/func_0020E858.cpp
 func_0020EBD0,0x0020EBD0,77,LINKED_MATCH,src/P2/pool_registration.cpp
 func_0020ED08,0x0020ED08,8,LINKED_MATCH,src/auto/func_0020ED08.c
 func_0020ED28,0x0020ED28,46,LINKED_MATCH,src/leaf/point_defaults_20ED28.c
