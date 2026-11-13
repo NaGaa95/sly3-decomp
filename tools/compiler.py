@@ -93,6 +93,8 @@ def source_signature(source, compiler, assembler, flags, apply_filter, include_d
             inputs[str(ROOT / "tools/asfix_engine_exit_slots.py")] = file_hash(ROOT / "tools/asfix_engine_exit_slots.py")
         if filter_mode == "engine-local-jumps":
             inputs[str(ROOT / "tools/asfix_backward_b.py")] = file_hash(ROOT / "tools/asfix_backward_b.py")
+        if filter_mode == "engine-aligned-loops":
+            inputs[str(ROOT / "tools/asfix_aligned_loops.py")] = file_hash(ROOT / "tools/asfix_aligned_loops.py")
         if filter_mode == "sdk-branch-fold":
             inputs[str(ROOT / "tools/asfix_branch_fold.py")] = file_hash(ROOT / "tools/asfix_branch_fold.py")
         if filter_mode == "engine-divfix1":
@@ -157,7 +159,7 @@ def compile_source(source, output, include_dirs=()):
     if asm_mode or native:
         filter_mode = "off"
     filter_mode = {"1": "engine", "0": "off"}.get(filter_mode, filter_mode)
-    if filter_mode not in ("engine", "off", "sdk-loop7", "sdk-fdlibm", "engine-const-copy", "sdk-gp64", "sdk-softdf", "sdk-literals", "engine-local-jumps", "sdk-branch-fold", "engine-exit-slots", "engine-divfix1"):
+    if filter_mode not in ("engine", "off", "sdk-loop7", "sdk-fdlibm", "engine-const-copy", "sdk-gp64", "sdk-softdf", "sdk-literals", "engine-local-jumps", "sdk-branch-fold", "engine-exit-slots", "engine-divfix1", "engine-aligned-loops"):
         raise ValueError("Unsupported assembler filter: " + filter_mode)
     apply_filter = filter_mode != "off"
     sdk = None
@@ -208,6 +210,8 @@ def compile_source(source, output, include_dirs=()):
             from asfix_engine_exit_slots import fix
         elif filter_mode == "engine-local-jumps":
             from asfix_backward_b import fix
+        elif filter_mode == "engine-aligned-loops":
+            from asfix_aligned_loops import fix
         elif filter_mode == "sdk-branch-fold":
             from asfix_branch_fold import fix
         elif filter_mode == "engine-divfix1":
