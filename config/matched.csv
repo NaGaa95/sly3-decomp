@@ -1665,6 +1665,7 @@ func_00135080,0x00135080,20,EXACT_MATCH,src/engine/child_position_query.c
 func_001350D0,0x001350D0,56,LINKED_MATCH,src/claude/func_001350D0.c
 func_001351B0,0x001351B0,54,LINKED_MATCH,src/claude/func_001350D0.c
 func_00135288,0x00135288,28,LINKED_MATCH,src/engine/clone_and_rotation_task.cpp
+func_001352F8,0x001352F8,54,LINKED_MATCH,src/claude/func_001352F8.cpp
 func_001353D0,0x001353D0,7,LINKED_MATCH,src/wrappers/func_001353D0.c
 func_001353F0,0x001353F0,14,LINKED_MATCH,src/reference_constants/func_001353F0.c
 func_00135428,0x00135428,15,LINKED_MATCH,src/reference_constants/func_00135428.c
