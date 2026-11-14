@@ -2637,6 +2637,7 @@ func_0016B260,0x0016B260,14,LINKED_MATCH,src/reference_constants/func_0016B260.c
 func_0016B298,0x0016B298,212,LINKED_MATCH,src/claude/func_0016B298.cpp
 func_0016B5E8,0x0016B5E8,17,LINKED_MATCH,src/reference_constants/func_0016B5E8.c
 func_0016B630,0x0016B630,16,LINKED_MATCH,src/reference_constants/func_0016B630.c
+func_0016B670,0x0016B670,478,LINKED_MATCH,src/claude/func_0016B670.cpp
 func_0016BDE8,0x0016BDE8,73,LINKED_MATCH,src/engine/history_push.c
 func_0016BF10,0x0016BF10,19,LINKED_MATCH,src/engine/record_ctor_8.c
 func_0016BF60,0x0016BF60,17,LINKED_MATCH,src/reference_constants/func_0016BF60.c
@@ -3768,6 +3769,7 @@ func_001AB958,0x001AB958,46,LINKED_MATCH,src/game_middle/position_capture_flagge
 func_001ABA10,0x001ABA10,27,LINKED_MATCH,src/reference_constants/func_001ABA10.c
 func_001ABA80,0x001ABA80,91,LINKED_MATCH,src/game_middle/command_state_adjust_1ABA80.cpp
 func_001ABBF0,0x001ABBF0,298,LINKED_MATCH,src/claude/func_001ABBF0.cpp
+func_001AC098,0x001AC098,772,LINKED_MATCH,src/claude/func_001AC098.cpp
 func_001ACCA8,0x001ACCA8,31,LINKED_MATCH,src/reference_constants/func_001ACCA8.c
 func_001ACD28,0x001ACD28,70,LINKED_MATCH,src/claude/func_001ACD28.c
 func_001ACE40,0x001ACE40,228,LINKED_MATCH,src/claude/func_001ACE40.c
