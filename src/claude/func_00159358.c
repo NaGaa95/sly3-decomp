@@ -111,5 +111,98 @@ void func_00159358(struct P *p)
     } while (p->x30 != state);
 }
 
-/* Next .rodata item of the original unit (an LM {0.1, 1.0} read by func_00159708); it follows the jump table. */
-const float D_00320758[2] = { 0.1f, 1.0f };
+/* func_00159708: per-state movement blend and heading toward the target (Sly 2 counterpart func_00146B18).
+   Its LM {0.1, 1.0} is a local aggregate initializer; gcc puts it in .rodata right after func_00159358's jump
+   table (0x320758), so both functions live in this file. */
+struct Matrix { qword rows[4]; };
+struct Method { short delta, reserved; struct Matrix *(*call)(void *); };
+struct Object { unsigned char pad00[0xC]; struct Method *methods; };
+struct Self { char pad[0x10]; char *actor; char pad14[0x30 - 0x14]; int state; int pad34; struct Object *target; int pending; };
+struct CLQ { float g0, g1, g2, gPad; } __attribute__((aligned(16)));
+struct LM { float gMin, gMax; };
+void func_001A9960(void *p, float g);
+float func_001205C8(qword v);
+void func_001A9940(void *p, int n);
+static inline struct Matrix *matrix_of(struct Object *object)
+{
+    struct Method *method = &object->methods[36];
+    return method->call((unsigned char *)object + method->delta);
+}
+static inline float SqrtX(qword t)
+{
+    qword r;
+    float g;
+    __asm__("vsqrt $Q, %1x\n\tvwaitq\n\tvaddq.x %0, $vf0, $Q" : "=j"(r) : "j"(t));
+    __asm__("qmfc2.ni %0, %1" : "=r"(g) : "j"(r));
+    return g;
+}
+static inline float GFromClq(float g, struct CLQ *pclq) { return pclq->g0 + g * (pclq->g1 + g * pclq->g2); }
+static inline float GLimitLm(struct LM *plm, float g)
+{
+    float gMin = plm->gMin, gMax = plm->gMax;
+    if (g < gMin)
+        return gMin;
+    if (gMax < g)
+        return gMax;
+    return g;
+}
+void func_00159708(struct Self *self)
+{
+    switch (self->state) {
+    case 1: {
+        qword a = matrix_of(self->target)->rows[3];
+        qword d;
+        __asm__("vsub.xyzw %0, %1, %2" : "=j"(d) : "j"(a), "j"(matrix_of((struct Object *)self->actor)->rows[3]));
+        func_001A9960(self->actor + 0x140C, 1.0f);
+        *(float *)(self->actor + 0x110C) = func_001205C8(d);
+        break;
+    }
+    case 2: {
+        qword a = matrix_of(self->target)->rows[3];
+        qword d;
+        __asm__("vsub.xyzw %0, %1, %2" : "=j"(d) : "j"(a), "j"(matrix_of((struct Object *)self->actor)->rows[3]) : "vf2"); /* register pin: clobbering the dead vf2 makes reload use vf3 for a and d, as in the original */
+        func_001A9960(self->actor + 0x140C, 1.0f);
+        *(float *)(self->actor + 0x110C) = func_001205C8(d);
+        if (self->pending) {
+            func_001A9940(self->actor + 0x140C, 0x80);
+            self->pending = 0;
+        }
+        break;
+    }
+    case 3: {
+        qword d;
+        qword a = matrix_of(self->target)->rows[3];
+        struct CLQ clq;
+        __asm__("vsub.xyzw %0, %1, %2" : "=j"(d) : "j"(a), "j"(matrix_of((struct Object *)self->actor)->rows[3]));
+        {
+            qword t;
+            float g;
+            __asm__("vmul.xy %0, %1, %1\n\tvaddy.x %0, %0, %0y" : "=j"(t) : "j"(d), "m"(clq.g0)); /* allocation-only "m" input (never read): the clq initialization below waits for the vmul, as in the original */
+            clq = (struct CLQ){-0.25f, 0.00156249990686774f};
+            g = SqrtX(t);
+            {
+                struct LM lm = {0.1f, 1.0f};
+                func_001A9960(self->actor + 0x140C, GLimitLm(&lm, GFromClq(g, &clq)));
+            }
+        }
+        *(float *)(self->actor + 0x110C) = func_001205C8(d);
+        if (self->pending) {
+            func_001A9940(self->actor + 0x140C, 0x40);
+            self->pending = 0;
+        }
+        break;
+    }
+    case 4: {
+        qword a = matrix_of(self->target)->rows[3];
+        qword d;
+        __asm__("vsub.xyzw %0, %1, %2" : "=j"(d) : "j"(a), "j"(matrix_of((struct Object *)self->actor)->rows[3]));
+        func_001A9960(self->actor + 0x140C, 1.0f);
+        *(float *)(self->actor + 0x110C) = func_001205C8(d);
+        if (self->pending) {
+            func_001A9940(self->actor + 0x140C, 0x80);
+            self->pending = 0;
+        }
+        break;
+    }
+    }
+}
