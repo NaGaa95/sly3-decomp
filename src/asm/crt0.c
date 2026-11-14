@@ -5,6 +5,13 @@ __asm__(
     ".set noreorder\n"
     ".set noat\n"
     ".text\n"
+    /* crt0 opens with two nops ahead of the entry point (ELF e_entry is _start, 0x100008). */
+    ".globl func_00100000\n"
+    ".ent func_00100000\n"
+    "func_00100000:\n"
+    "nop\n"
+    "nop\n"
+    ".end func_00100000\n"
     ".globl _start\n"
     ".ent _start\n"
     "_start:\n"

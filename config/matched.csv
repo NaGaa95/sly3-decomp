@@ -1,4 +1,5 @@
 name,address,instructions,status,source
+func_00100000,0x00100000,2,EXACT_MATCH,src/asm/crt0.c
 _start,0x00100008,132,LINKED_MATCH,src/asm/crt0.c
 func_00100218,0x00100218,2,LINKED_MATCH,src/asm/crt0.c
 func_00100220,0x00100220,2,EXACT_MATCH,src/asm/crt0.c
