@@ -1,5 +1,5 @@
 // Sly 2 counterpart: _dispRefImage (decomp src/lib/_dispRefImage.c)
-// (Claude agent) MATCH. Same shape as _dispRefImageField: 2.9-991111, setField inline with pointer params, shared else-store, long bit temps, descending pC, checkSize inline returning ok.
+// MATCH. Same shape as _dispRefImageField: 2.9-991111, setField inline with pointer params, shared else-store, long bit temps, descending pC, checkSize inline returning ok.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
-// func_0014B370 (A46): A12 draft fixed: CTX must have a non-BLK mode (qword member) so it does not reuse the M4 temp slot (ctx at 0x40); Pos() reads p->p8 after the VECTOR copy; SetPos(&p->m, v) inline.
+// func_0014B370: CTX must have a non-BLK mode (qword member) so it does not reuse the M4 temp slot (ctx at 0x40); Pos() reads p->p8 after the VECTOR copy; SetPos(&p->m, v) inline.
 typedef int qword __attribute__((mode(TI)));
 struct ALLOCREQ { int cb; int cbAlign; ALLOCREQ(int b, int a) { cb = b; cbAlign = a; } };
 class CTX {

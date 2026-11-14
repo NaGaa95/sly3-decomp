@@ -1,5 +1,5 @@
 // Sly 2 counterpart: _decodeOrSkipFrame (decomp src/lib/_decodeOrSkipFrame.c)
-// (Claude agent) inline _decodeFrame: `t = 0` set after the func_002A98B8 call (v0 still live -> t in v1).
+// Inline _decodeFrame: `t = 0` set after the func_002A98B8 call (v0 still live -> t in v1).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

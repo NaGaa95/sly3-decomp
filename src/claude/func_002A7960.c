@@ -1,5 +1,4 @@
 // Sly 2 counterpart: __kernel_rem_pio2f (decomp src/lib/__kernel_rem_pio2f.c)
-// (Claude agent) ee-gcc2.9-991111 -O2 gnu-reorg: 11/595 - only c.eq.s->bc1f nop missing at 0x249438 (if(z==0.0) before while(iq[jz]==0)) and an extra nop before that short loop; tool-side?
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorg

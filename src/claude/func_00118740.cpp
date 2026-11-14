@@ -1,11 +1,10 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Ported from the matched Sly 2 source func_00117308 (Sly 3 addresses, -Os).
-// func_00118740 (Claude agent, lane A13, 2026-10-23): MATCH, from build/hand_wip/func_00118740.fresh15.cpp (4).
 // Rotation interpolation between two orientations (pmat0/w0 and pmat1/w1); writes the blended matrix and/or the
 // blended angular velocity.  Matching notes:
 //  - k is a plain qword (no volatile copy): it gets no hard register and is reloaded from its spill slot (0x120).
 //  - In the final combine asm k is operand 1 and w operand 2 (template %2,%1), so reload gives k vf5 / w vf6.
-//  - The trailing "j"(k) is an allocation-only operand (see AGENT_GUIDE "Allocation-only asm operands").
+//  - The trailing "j"(k) is an allocation-only operand.
 //  - kb's dead VU-float store is written after the result store; ka keeps it inside VF().
 //  - ScaleT's asm is volatile (commented below) to emulate the toolchain's scheduling of the trailing stores.
 typedef int qword __attribute__((mode(TI)));

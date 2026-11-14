@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0
-// func_00141FD8 (agent A43, from A7 wip): IsCur is (st == -1 || st == x430) (A7 had the != / && inverse);
+// func_00141FD8: IsCur is (st == -1 || st == x430);
 // the third test is written out directly. -FLT_MAX literal D_0032000C belongs to func_00141580.c rodata.
 struct CLOCK { float t; };
 extern struct CLOCK g_clock;

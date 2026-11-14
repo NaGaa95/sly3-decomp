@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // func_0024DB88: advance the source cloud, clear its samples, and place the target point at the centroid of the other
-// cloud carried from its space into the first's (A57's logic). Matching notes: the sum is a plain qword (its 0x90 slot is
+// cloud carried from its space into the first's. Matching notes: the sum is a plain qword (its 0x90 slot is
 // the reload spill across the matrix calls), g is the stack home of the 1/count VU float (declared first -> sp+0), the
 // loop re-reads p->pcl1->av, the matrix product uses the comma-expression form so &m/&mInv sit in s-regs.
 typedef int qword __attribute__((mode(TI)));

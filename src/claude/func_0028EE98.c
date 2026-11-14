@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0
 // Port of Sly 2 func_002301D0 (src/hand/func_002301D0.c).
-/* (Claude agent, lane E13) Matched. c is reused as the insertion index (for (c--; ...)), and the sorted insert is
+/* Matched. c is reused as the insertion index (for (c--; ...)), and the sorted insert is
    an if + do-while instead of a for loop. */
 typedef struct VT { short d; short pad; void *pfn; } VT;
 typedef struct N { char pad[0xC]; int k; struct N *next; int x14; VT *vt; } N;

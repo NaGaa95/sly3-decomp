@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00151D80 (A21 f1d80f + A34 keep-alive asm on cb in the func_001FA778 path).
+// func_00151D80: keep-alive asm on cb in the func_001FA778 path.
 struct VT { short d; short pad; void *f; };
 struct IF { struct VT *vt; int x4; int x8; };
 struct LO { char pad[0xC]; struct VT *vt; char pad2[0x40 - 0x10]; int x40; char pad3[0x50 - 0x44]; int x50; };

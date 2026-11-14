@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A19/A48 drafts; A70: rewritten in the style of the matched sibling src/leaf/func_0020A200.cpp (same font/text calls).
+// Rewritten in the style of the matched sibling src/leaf/func_0020A200.cpp (same font/text calls).
 struct Font { char data[0x84]; float dy; char pad[0x1B0 - 0x88]; };
 struct Text { float x, y, dx, dy; unsigned char pad[0x10]; };
 struct Chars { unsigned short a[6]; };
@@ -62,7 +62,7 @@ extern "C" void func_0018C220(int key, float x0, float y0, float gScale, float g
         u.s.a[3] = '&';
         u.s.a[4] = '.';
         u.s.a[5] = 0;
-        /* zero-insn no-op asms (A70): extra refs give x f20 / y f21 and let the text stores issue first */
+        /* zero-insn no-op asms: extra refs give x f20 / y f21 and let the text stores issue first */
         __asm__("" : "=f"(x) : "0"(x));
         __asm__("" : "=f"(y) : "0"(y));
         func_00264880(&fontT, u.s.a, scale);

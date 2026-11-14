@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/hand/func_001604E8.cpp.
+// Sly 2 reference: src/hand/func_001604E8.cpp.
 typedef int qword __attribute__((mode(TI)));
 union U { qword q; float f[4]; int i[4]; };
 struct M3 { qword r[3]; };

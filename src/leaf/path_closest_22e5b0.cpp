@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0022E5B0 (w2lane4, wave 2): closest point on a path (chain of control points under the path's own matrix) to a query point,
+// func_0022E5B0: closest point on a path (chain of control points under the path's own matrix) to a query point,
 // searched from a starting time. func_0022F058 turns the starting time into a segment index; the loop projects the point on that
 // segment (segment vector rotated by the matrix, point minus the transformed start) and walks to the next / previous segment (wrapping
 // when the path is cyclic) until the projection falls inside a segment. Afterwards the position, direction, time and value outputs

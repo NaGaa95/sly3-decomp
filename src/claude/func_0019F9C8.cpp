@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
-// func_0019F9C8 (A48): from A24 f9c8_f.cpp; keys: func_002BA818 returns qword* (sched2 dependents), VU_FLOAT(0.5f) temporaries per QwCombine arg + VU_VECTOR params, if/else GSmooth calls, Length via mtc1 asm (gcc qmfc2), stores of the M3 rows and r[3].w through pm = &mat.
+// func_0019F9C8. Keys: func_002BA818 returns qword* (sched2 dependents), VU_FLOAT(0.5f) temporaries per QwCombine arg + VU_VECTOR params, if/else GSmooth calls, Length via mtc1 asm (gcc qmfc2), stores of the M3 rows and r[3].w through pm = &mat.
 typedef int qword __attribute__((mode(TI)));
 struct VTE { short delta, pad; void *fn; };
 struct M3 { qword r[3]; };

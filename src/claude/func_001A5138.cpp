@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 counterpart: /home/claude/sly2-decomp src/hand/func_0017B9C0.cpp (JOBB2::Choose), rewritten without asm bodies.
+// Sly 2 counterpart: src/hand/func_0017B9C0.cpp (JOBB2::Choose), rewritten without asm bodies.
 // origin, bestPoint and candidate are plain qwords that reload spills (VU class, slots 0x10/0x20/0x30 in declaration
 // order), so their uses reload with lqc2/lq and the GPR value of candidate feeds the qmtc2 reload directly.
 typedef int qword __attribute__((mode(TI)));

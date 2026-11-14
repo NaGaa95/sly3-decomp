@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-/* Sly 3 version of Sly 2 src/hand/func_0013C560.c (state change). A34: case-2 LINKE positions in locals + zero-instruction "j"(qb) asm. Owns rodata 0x320300 (vector) + jump tables 0x320310/0x320340. */
+/* Sly 3 version of Sly 2 src/hand/func_0013C560.c (state change). Case-2 LINKE positions in locals + zero-instruction "j"(qb) asm. Owns rodata 0x320300 (vector) + jump tables 0x320310/0x320340. */
 typedef int qword __attribute__((mode(TI)));
 struct VTE { short d; short pad; void (*pfn)(); };
 struct VT { struct VTE a[64]; };

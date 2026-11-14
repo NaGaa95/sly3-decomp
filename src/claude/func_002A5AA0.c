@@ -1,5 +1,5 @@
 // Sly 2 counterpart: __ieee754_acosf (decomp src/lib/__ieee754_acosf.c)
-// (Claude agent) fdlibm/newlib ef_acos.c, written fresh. Sony libm compiler = ee-gcc2.9-991111-01, whose divsf3 pattern is the
+// fdlibm/newlib ef_acos.c, written fresh. Sony libm compiler = ee-gcc2.9-991111-01, whose divsf3 pattern is the
 // noreorder unit `nop; nop; div.s` (length 3: never put in a delay slot, but not a reorg search stop), so the DIVNOP emulation is not needed.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111-01
 // SLY3_CFLAGS: -O2 -G0

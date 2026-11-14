@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014FEC8.c (local offset rotated by a yaw/pitch matrix, added to position).
+// Sly 2 reference: src/hand/func_0014FEC8.c (local offset rotated by a yaw/pitch matrix, added to position).
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[3]; } M3;
 typedef union { float f[4]; qword q; } U;

@@ -1,11 +1,11 @@
 // Sly 2 counterpart: scePadPortOpen (decomp src/lib/scePadPortOpen.c)
-// func_002A1680 (0x243088) MATCH (Lilly's agent, T1642, 2026-10-24). Plain C, no asm/pins/volatile; from lilly9 (T1636).
-// The key: the IOP request buffer D_004D1140 is used directly (lilly9 reused the loop pointer p, which has no alias base).
+// func_002A1680 (Sly 2 0x243088). Plain C, no asm/pins/volatile.
+// The key: the IOP request buffer D_004D1140 is used directly (the loop pointer p has no alias base).
 // With strict aliasing the field types decide which tail stores conflict: open/dmaid/x0 (int) conflict, cmd/iopcmd
 // (PadCmd *) conflict, buf (PadData *) and the void * read of D_004D1140[5] are alone. The int return read
 // D_004D1140[3] has a known base in sched1, so it stays independent of the PadSt stores there; in sched2 (hard-reg
 // addresses are baseless) it depends on the int stores, which raises the dmaid store's priority so it issues right
-// after c->x0 like the target. See notes/23C000.md (T1636, T1642).
+// after c->x0 like the target.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0 
 // SLY3_ASM: gnu-reorder-db

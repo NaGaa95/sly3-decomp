@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014FE58.c (position + 150 * up when flag 0x33 set).
+// Sly 2 reference: src/hand/func_0014FE58.c (position + 150 * up when flag 0x33 set).
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword q; float f; } U;
 struct VEntry { short delta; short pad; void *(*get)(void *); };

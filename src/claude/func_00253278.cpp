@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // SLY3_ASFIX: engine-local-jumps
-// Score of mask b against a: 0 unless a is a subset of b, else the number of set bits of a&b (A53 draft, by-value BITS params).
+// Score of mask b against a: 0 unless a is a subset of b, else the number of set bits of a&b (by-value BITS params).
 struct BITS { unsigned char b[16]; };
 static inline BITS operator&(const BITS &a, const BITS &b)
 {

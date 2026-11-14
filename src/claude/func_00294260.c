@@ -3,7 +3,7 @@
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
 // SLY3_SAVES: sd
-// MATCH (Claude agent): thread-context reset is one noreorder asm block (keeps GNU as from filling the EI jal slot).
+// MATCH: thread-context reset is one noreorder asm block (keeps GNU as from filling the EI jal slot).
 typedef struct {
     int status; void *entry; char *stack; int stackSize;
     void *gpReg; int initPriority; int currentPriority; unsigned attr;

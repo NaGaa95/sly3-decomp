@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0
 // SLY3_ASM: gnu-reorder-db
-// (A16 draft; A70: the missing tool was GNU as reorder-mode, which keeps the target's in-loop beqz/nop + bnel)
+// GNU as reorder mode keeps the target's in-loop beqz/nop + bnel.
 struct N { int f0; struct N *pnext; int f8; int key; };
 struct L { char pad[0x64]; struct N *phead; };
 struct K { char pad[0x60]; int key; };

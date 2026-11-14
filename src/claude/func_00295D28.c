@@ -1,5 +1,5 @@
 // Sly 2 counterpart: sceSifBindRpc (decomp src/lib/sceSifBindRpc.c)
-// (Claude agent, -Os sweep) MATCH: needed -fstrict-aliasing
+// Needs -fstrict-aliasing.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0 -fstrict-aliasing
 // SLY3_ASM: gnu-reorder-db

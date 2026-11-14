@@ -1,5 +1,4 @@
 // Sly 2 counterpart: asinf (decomp src/lib/asinf.c)
-// (Claude agent) only diff: Sony gas nop between c.eq/c.lt.s and bc1f (libm FPU compare hazard, toolchain); otherwise exact.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

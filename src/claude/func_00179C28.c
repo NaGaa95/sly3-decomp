@@ -1,4 +1,4 @@
-// Sly 2 reference: /home/claude/decomp src/hand/func_0015BF40.c.
+// Sly 2 reference: src/hand/func_0015BF40.c.
 typedef int qword __attribute__((mode(TI)));
 struct S { char pad[0x58]; float g58; int pad5c; qword q60; qword v70; float g80; };
 struct O { qword q0; qword v10; float g20; float g24; };

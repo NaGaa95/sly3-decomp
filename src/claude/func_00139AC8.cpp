@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// (A16) Segment store; VU_FLOAT has a ctor so its temp lives on the stack; D_00317550 is a struct so the vD0 store forces its reload.
+// Segment store; VU_FLOAT has a ctor so its temp lives on the stack; D_00317550 is a struct so the vD0 store forces its reload.
 typedef int qword __attribute__((mode(TI)));
 struct P { char pad[0xC8]; float gC8; int padCC; qword vD0; qword vE0; };
 extern "C" {

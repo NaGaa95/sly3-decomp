@@ -1,4 +1,4 @@
-// Sly 2 counterpart: /home/claude/sly2-decomp src/hand/func_0011B500.c (BuildRotateMatrixAxis), same body.
+// Sly 2 counterpart: src/hand/func_0011B500.c (BuildRotateMatrixAxis), same body.
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword q; int n; } U;
 typedef struct { qword r[3]; } M3;

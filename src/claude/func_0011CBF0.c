@@ -1,5 +1,5 @@
 // Adapted from the matched Sly 2 source src/hand/func_0011B830.c (Sly 3 call/data addresses).
-/* func_0011CBF0 (Claude agent, 2026-10-23): matched from build/hand_wip/func_0011CBF0.v4.c. Separate l/l2 for the two
+/* func_0011CBF0: separate l/l2 for the two
    lengths, plus allocation-only operands on the first Div and second Len. */
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[3]; } M3;

@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Adapted from the matched Sly 2 source src/hand/func_0011F440.cpp (Sly 3: -Os, short tags 2 lower, node ref at +0; asm labels bind the CRef operator= overloads to their Sly 3 addresses).
-// (Claude agent, lane A9, 2026-10-23) script `+` builtin (probably). The first node is read through an inline accessor in an
+// Script `+` builtin (probably). The first node is read through an inline accessor in an
 // if/else: the inline blocks jump.c's "x = b; if (c) x = a" rewrite, so `pn = 0` is laid out after the branch and
 // reorg steals it into the beqz delay slot as in the original.
 typedef int qword __attribute__((mode(TI)));

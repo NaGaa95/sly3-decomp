@@ -1,5 +1,5 @@
 // Sly 2 counterpart: sceCdInit (decomp src/lib/sceCdInit.c)
-// func_002A06E8 (T1576): MATCH. Keys: the bind-ok path sits inside the while(1) loop and stores 6798 = 0 BEFORE the mode
+// func_002A06E8: MATCH. Keys: the bind-ok path sits inside the while(1) loop and stores 6798 = 0 BEFORE the mode
 // (its hi register then has a shorter live length, so global-alloc gives hi(6798) s4 and hi(679C) s5); the init-counter
 // increment is a volatile store of a plain read (the read must not depend on the volatile 6764 store); init store order
 // found by an exhaustive/hill-climb search (sched1 order), checked against the relocation symbols too.

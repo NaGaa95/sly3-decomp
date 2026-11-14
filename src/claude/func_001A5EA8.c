@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A74: dot and vsqrt in separate asms + lengths stored with a "sw" lane-store helper (gcc emits the qmfc2 itself, and the
+// Dot and vsqrt in separate asms + lengths stored with a "sw" lane-store helper (gcc emits the qmfc2 itself, and the
 // asm store keeps the jal delay slot a nop); zero-insn "=j"/"0" copies on pb (caller-save in vf1) and d1 fix VF numbering.
 typedef int qword __attribute__((mode(TI)));
 struct Xf { qword r[4]; unsigned char pad[0xA0 - 0x40]; int nA0; };

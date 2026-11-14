@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // func_00141870 (A25/A25b layout, finished by A30): smoothed euler target -> rotation, angular velocity of p4C, and the
-// position correction pushed through func_00244828. Keys (A30): both VU_FLOAT(g_clock.dt) use the func_00151340 ctor
+// position correction pushed through func_00244828. Keys: both VU_FLOAT(g_clock.dt) use the func_00151340 ctor
 // with a "r,V" word input (gcc-generated lw, tied to the dying &g_clock reg) as by-value temporaries (second one gets
 // its own home at 0xF0), vB0 read into a local before the VU_FLOAT temp and vF0 by const reference after it.
 typedef int qword __attribute__((mode(TI)));

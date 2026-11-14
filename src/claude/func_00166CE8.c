@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014E078.c.
+// Sly 2 reference: src/hand/func_0014E078.c.
 typedef int qword __attribute__((mode(TI)));
 struct O { char pad[0x100]; int k; };
 struct VEntry { short delta; short pad; void *(*get)(void *); };

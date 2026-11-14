@@ -902,7 +902,7 @@ static inline qword QwHermiteVel(XF *pxf)
             break; \
     }
 // An opaque copy (empty asm, "=r" tied to its input): cse cannot merge the two pseudos. The default arm of the position chase needs it so the arms of its rate
-// switch are plain $v0 loads into a short-lived local with ONE shared spill store (T1641; without it each arm spills its own and the Hermite arm picks $v1).
+// switch are plain $v0 loads into a short-lived local with ONE shared spill store (without it each arm spills its own and the Hermite arm picks $v1).
 static inline qword PassQ(qword x){qword r;__asm__("" : "=r"(r) : "0"(x));return r;}
 static inline void SlotRateTo(XF *pxf, VECTOR4 *pv)
 {

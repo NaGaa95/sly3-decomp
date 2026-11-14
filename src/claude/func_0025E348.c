@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0
 // Count the entries of a group and how many of them have "is_complete" set (Splice lookups through func_002BC010).
-// (A64) Find() inline keeps &D as a base pseudo ((hi+lo)+8 per call); zero-insn asm on f raises its alloc priority so &ref is rematerialized.
+// Find() inline keeps &D as a base pseudo ((hi+lo)+8 per call); zero-insn asm on f raises its alloc priority so &ref is rematerialized.
 #include "eval_dispatch_api.h"
 struct E { int c; void **ap; };
 struct KEY { int n; short *ps; };

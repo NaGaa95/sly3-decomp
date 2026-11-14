@@ -1,5 +1,5 @@
 // Sly 2 counterpart: __ieee754_sqrt (decomp src/lib/__ieee754_sqrt.c)
-// (Claude agent) fdlibm e_sqrt.c; ee-gcc2.9-991111 gnu-reorg.
+// fdlibm e_sqrt.c; ee-gcc2.9-991111 gnu-reorg.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorg

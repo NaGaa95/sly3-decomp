@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* (Claude agent, 2026-10-17) Keys: Skip as a plain loop on p-> fields with one `p->pos += n` after the if;
+/* Keys: Skip as a plain loop on p-> fields with one `p->pos += n` after the if;
    `*p->cur++` post-increment (cur store queued after the buf store); else-branch `hasSystemHeader = 0`. */
 typedef struct {
     unsigned long buf,pos;

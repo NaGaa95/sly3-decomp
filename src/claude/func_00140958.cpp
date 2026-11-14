@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00140958 (A18): adapted from the Sly 2 func_00137248 match (Claude agent laneB24). len as an mtc1 asm from the qword (gcc emits the qmfc2), cz via a pextuw asm with a float "=r" output (gcc emits the mtc1).
+// func_00140958: adapted from the Sly 2 func_00137248 match. len as an mtc1 asm from the qword (gcc emits the qmfc2), cz via a pextuw asm with a float "=r" output (gcc emits the mtc1).
 typedef int qword __attribute__((mode(TI)));
 struct M3 { qword r[3]; };
 union UQ { qword q; };

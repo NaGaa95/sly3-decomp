@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
-// func_001A0DF8 (Claude agent A45, from A28 df8_b.cpp): SafeNormalize-style NormalTo stores through *pn in both arms;
+// func_001A0DF8: SafeNormalize-style NormalTo stores through *pn in both arms;
 // zero-instruction identity asm on the fallback keeps its lq in the dot block; vdiv's "0"(one) tie + two allocation-only
 // "j"(one) operands give the target VF numbering; one GPR pin for pdv.
 typedef int qword __attribute__((mode(TI)));
@@ -63,7 +63,7 @@ static inline qword QwSub(qword a, qword b)
 }
 extern "C" void func_001A0DF8(void *self, float g, qword *pv, qword *pdv)
 {
-    register qword *pd __asm__("$18") = pdv; /* register pin (Claude agent): pdv in s2, the D_00317550 high part in s3 */
+    register qword *pd __asm__("$18") = pdv; /* register pin: pdv in s2, the D_00317550 high part in s3 */
     V4 pos, dir;
     qword n;
     func_0022E330(self, func_0022FC20(self, g, 150.0f), (qword *)&pos, (qword *)&dir);

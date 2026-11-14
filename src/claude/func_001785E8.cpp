@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_001785E8: EMITB choose emit position/direction (Claude agent, lanes E3-E11).
+// func_001785E8: EMITB choose emit position/direction.
 // Notes: the unused case-1 VU_VECTOR[3] frees the stack slot that case 3's an[] reuses; VLen = one length-squared asm
 // plus a separate vsqrt asm; Normalize returns its VU_VECTOR by value (gives dir its stack slot).
 typedef int qword __attribute__((mode(TI)));

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0018E0B8 (A36): port of Sly 2 func_001681F8 (src/hand there) without its fNever stand-in; Sly 3 adds the tick==-2 skip,
+// func_0018E0B8: port of Sly 2 func_001681F8 (src/hand there) without its fNever stand-in; Sly 3 adds the tick==-2 skip,
 // flag 0x2000, and the sphere-center copy read through the X/Y/Z getters (by-value U inline, as func_00192FD8).
 typedef int qword __attribute__((mode(TI)));
 typedef unsigned int uint;

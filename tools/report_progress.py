@@ -66,7 +66,7 @@ remains explicitly unconfirmed.'''
 Generated from the completed source build at {timestamp}. Later machine-readable
 reports under `build/reports` and `config/matched.csv` are the current authority.
 
-**The complete game is not yet decompiled.** This checkpoint verifies
+This checkpoint verifies
 {progress['verified_functions']:,} C/C++ functions, comprising
 {progress['compiled_code_bytes']:,} bytes ({progress['main_text_percent']:.2f}% of
 the main EE executable text), and {progress['compiled_data_bytes']:,} unique
@@ -113,14 +113,14 @@ bytes and {build['preserved_other_bytes']:,} other file bytes remain original
 preservation inputs. The checksum verifies all recovered replacements in their
 original layout; it does not demonstrate complete recovery or full relinking.
 
-There are {progress['function_candidates']:,} provisional main EE function
-candidates. Further work includes the remaining game and SDK functions,
-initialized globals, translation-unit/linker layout, the nine extracted IOP
-modules and VU programs. The intact `SLY3.WAD` is extracted from the supplied
+{progress['verified_functions']:,} of {progress['function_candidates']:,} main EE functions are verified.
+Not rebuilt from source: the remaining initialized globals, the
+translation-unit/linker layout and most of the nine extracted IOP modules.
+The intact `SLY3.WAD` is extracted from the supplied
 disc; its encrypted PS2 catalog has not been converted into named assets.
 
 The local portable compilers, Python libraries and Ghidra environment are ready
-for the current matching workflow. No additional system installation is needed
+for building and checking the sources. No additional system installation is needed
 for the work verified here. A complete game relink and other compiler cohorts
 still need their own validation.
 

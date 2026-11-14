@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0028ADC8: expire timed entries, then dispatch per-entry state (A54 draft; loop condition written t > g10 so jump2 does not cross-jump the rotated entry test).
+// func_0028ADC8: expire timed entries, then dispatch per-entry state (loop condition written t > g10 so jump2 does not cross-jump the rotated entry test).
 struct Q { char pad[0xC]; float gC; float g10; char pad14[0x28 - 0x14]; };
 struct E { char pad[0x28]; int c; struct Q aq[1]; char pad1[0x54 - 0x2C - sizeof(struct Q)]; };
 struct S { char pad[0x40]; float t40; char pad44[0x690 - 0x44]; int c; int pad694; struct E ae[1]; };

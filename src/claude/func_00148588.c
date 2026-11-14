@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0
-/* Port of Sly 2 src/hand/CalculateBlendAmrsg__FiiPviiP4MRSGPf.c (Sly 3 offsets; A12/A46 drafts).
-   A70: one function-scope `ab` (a non-local pseudo, so the add ties to the product register) and the
+/* Port of Sly 2 src/hand/CalculateBlendAmrsg__FiiPviiP4MRSGPf.c (Sly 3 offsets).
+   One function-scope `ab` (a non-local pseudo, so the add ties to the product register) and the
    loop counters shared as in the target (i: loops 1/2-inner/3, j: loop 2-outer/5). */
 struct MRSG { float g0; float g4; };
 struct X { char pad[0x64]; float g74; };

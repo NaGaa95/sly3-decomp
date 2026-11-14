@@ -50,7 +50,7 @@ static inline float GDist(qword a, qword b)
     return g;
 }
 /* Loop 1 reads the distance with a plain qmfc2 "=r" float output: reload then emits the mtc1 through spill reg v1,
-   which advances reload's round-robin so loop 2's GRF copy gets a0/a1 as in the target (A47). Loop 2 uses GDist. */
+   which advances reload's round-robin so loop 2's GRF copy gets a0/a1 as in the target. Loop 2 uses GDist. */
 static inline float GDistR(qword a, qword b)
 {
     qword d, t;

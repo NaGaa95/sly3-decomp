@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0028B730 (agent A60): DmatXf - Sly 3 form of Sly 2 DmatXf__FP2XFPv (0x22CDC0), rewritten without instruction asm.
+// func_0028B730: DmatXf - Sly 3 form of Sly 2 DmatXf__FP2XFPv (0x22CDC0), rewritten without instruction asm.
 // Sly 3: k98 memset list 0,3,11,13-17,20; inner k98 lists shifted (1,2,8-10,12,18,19,21,22 / 5-7); k9A 5 skews qwF0.
 // One pin: the first k9A switch's value lives in v0 and is copied (por) into s0 at the join.
 typedef int qword __attribute__((mode(TI)));

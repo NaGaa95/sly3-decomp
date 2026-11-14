@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // SLY3_ASFIX: engine-divfix1
-// A18 port of Sly 2 func_00138660 (A43 s6: no "memory" on 2nd vadda); A70: allocation-only "j"(v) on the vadda fixes the vf2/vf3 order.
+// Port of Sly 2 func_00138660 (no "memory" on the 2nd vadda); the allocation-only "j"(v) on the vadda fixes the vf2/vf3 order.
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword q; float f[4]; } VU;
 struct VTE { short d; short pad; void *pfn; };
@@ -32,8 +32,8 @@ void func_00118558(float, float, float, qword, qword, qword, qword, VU *, VU *, 
 static __inline__ qword Madd(qword a, qword v, qword s)
 {
     qword r;
-    __asm__ __volatile__("vadda.xyzw $ACC, %0, $vf0" : : "j"(a), "j"(s), "j"(v)); /* allocation-only "j"(s), "j"(v) (A70) */ /* unused "j"(s): allocation-only operand (Claude agent) */
-    __asm__ __volatile__("vmaddx.xyzw %0, %1, %2x" : "=j"(r) : "j"(v), "j"(s), "0"(a)); /* "0"(a): r shares a's VF reg like the target (Claude agent) */
+    __asm__ __volatile__("vadda.xyzw $ACC, %0, $vf0" : : "j"(a), "j"(s), "j"(v)); /* allocation-only "j"(s), "j"(v) */ /* unused "j"(s): allocation-only operand */
+    __asm__ __volatile__("vmaddx.xyzw %0, %1, %2x" : "=j"(r) : "j"(v), "j"(s), "0"(a)); /* "0"(a): r shares a's VF reg like the target */
     return r;
 }
 
@@ -111,7 +111,7 @@ void func_00148AE8(struct P *p, struct Q *pq)
             struct B *pb = p->x8;
             if (!pb) {
                 float g = pe->p4->x74;
-                ratio = g / ((struct P volatile *)p)->p4->x74; /* volatile read (Claude agent): the target reloads p->p4 here (no cse with the loop test's load) */
+                ratio = g / ((struct P volatile *)p)->p4->x74; /* volatile read: the target reloads p->p4 here (no cse with the loop test's load) */
                 t[1] = u * g;
             } else {
                 struct SEG *ps = (struct SEG *)((char *)pe + pb->x0) + iSeg;
@@ -132,7 +132,7 @@ void func_00148AE8(struct P *p, struct Q *pq)
         }
         {
             qword s;
-            register int wb asm("$20") = *(int *)&pe->w; /* register pin (Claude agent): target loads pe->w into pe's dying register */
+            register int wb asm("$20") = *(int *)&pe->w; /* register pin: target loads pe->w into pe's dying register */
             __asm__ __volatile__("qmtc2.ni %1, %0" : "=j"(s) : "r"(wb));
             a = MaddN(a, c.q, s);
             w.q = s;
@@ -142,5 +142,5 @@ void func_00148AE8(struct P *p, struct Q *pq)
     pq->x9A = 4;
     pq->xC0.q = a;
     pq->xD0.q = b;
-    __asm__ __volatile__("" : : "r"(pq)); /* empty asm (Claude agent): one more use of pq for global-alloc priority (pq s2, pe s3 like the target) */
+    __asm__ __volatile__("" : : "r"(pq)); /* empty asm: one more use of pq for global-alloc priority (pq s2, pe s3 like the target) */
 }

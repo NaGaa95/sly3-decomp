@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -fno-strength-reduce
-// func_0015D510 (agent A43, from A2 draft): compare loop written as while (ids[i] == a[i]) { if (++i >= n) goto same; }
+// func_0015D510: compare loop written as while (ids[i] == a[i]) { if (++i >= n) goto same; }
 // so jump1 duplicates the compare as in the target; -fno-strength-reduce keeps the indexed loads; table loaded after CopyAb.
 struct VirtualEntry { short delta, reserved; void (*call)(void *, int, int, int, int, int); };
 struct CLOCK { float t; };

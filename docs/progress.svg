@@ -1,9 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1674" viewBox="0 0 960 1674" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
-  <rect width="960" height="1674" rx="12" fill="#ffffff" stroke="#d0d7de" />
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="1648" viewBox="0 0 960 1648" font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">
+  <rect width="960" height="1648" rx="12" fill="#ffffff" stroke="#d0d7de" />
 
   <!-- Header -->
   <text x="32.0" y="40.0" font-size="22" fill="#1f2328" text-anchor="start" font-weight="bold">Sly 3: Honor Among Thieves — matching decompilation progress</text>
-  <text x="32.0" y="62.0" font-size="13" fill="#656d76" text-anchor="start" font-weight="normal">SCUS_974.64 (NTSC-U) · only byte-identical, relocation-checked functions count · updated 2026-11-14</text>
+  <text x="32.0" y="62.0" font-size="13" fill="#656d76" text-anchor="start" font-weight="normal">SCUS_974.64 (NTSC-U) · only byte-identical, relocation-checked functions count · completed 2026-11-14</text>
 
   <!-- Functions Section -->
   <text x="32.0" y="106.0" font-size="15" fill="#1f2328" text-anchor="start" font-weight="bold">Functions</text>
@@ -913,299 +913,259 @@
   <text x="190.0" y="584.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Code size (instructions)</text>
 
   <!-- Progress By Person Section -->
-  <text x="32.0" y="628.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">Progress by person (assigned ranges, see ASSIGNMENTS.md)</text>
-  <rect x="32" y="651" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="48.0" y="662.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">Dimitri + Claude</text>
+  <text x="32.0" y="628.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">Progress by person (see CREDITS.md)</text>
+  <rect x="32" y="651" width="10" height="12" rx="2" fill="#7c3aed" />
+  <text x="48.0" y="662.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">NaGa</text>
   <rect x="240" y="650" width="270" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="240" y="650" width="270.0" height="14" rx="3" fill="#d97706" />
+  <rect x="240" y="650" width="270.0" height="14" rx="3" fill="#7c3aed" />
   <text x="630.0" y="662.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100.0% of code</text>
-  <text x="928.0" y="662.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">3,809 of 3,809 functions matched · 0 left</text>
-  <rect x="32" y="677" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="48.0" y="688.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">NaGa + Claude + ChatGPT</text>
+  <text x="928.0" y="662.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">7,344 of 7,344 functions matched · 0 left</text>
+  <rect x="32" y="677" width="10" height="12" rx="2" fill="#d97706" />
+  <text x="48.0" y="688.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">Dimitri</text>
   <rect x="240" y="676" width="270" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="240" y="676" width="270.0" height="14" rx="3" fill="#7c3aed" />
+  <rect x="240" y="676" width="270.0" height="14" rx="3" fill="#d97706" />
   <text x="630.0" y="688.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100.0% of code</text>
-  <text x="928.0" y="688.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">2,309 of 2,309 functions matched · 0 left</text>
-  <rect x="32" y="703" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="48.0" y="714.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">Lilly + Claude</text>
-  <rect x="240" y="702" width="270" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="240" y="702" width="270.0" height="14" rx="3" fill="#db2777" />
-  <text x="630.0" y="714.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100.0% of code</text>
-  <text x="928.0" y="714.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">2,605 of 2,605 functions matched · 0 left</text>
+  <text x="928.0" y="688.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">1,379 of 1,379 functions matched · 0 left</text>
 
   <!-- By Address Range Section -->
-  <text x="32.0" y="750.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">Where the remaining work is (by address range)</text>
-  <rect x="32" y="759" width="10" height="10" rx="2" fill="#d97706" />
-  <text x="48.0" y="768.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Dimitri + Claude</text>
-  <rect x="170" y="759" width="10" height="10" rx="2" fill="#7c3aed" />
-  <text x="186.0" y="768.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">NaGa</text>
-  <rect x="240" y="759" width="10" height="10" rx="2" fill="#db2777" />
-  <text x="256.0" y="768.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Lilly</text>
-  <text x="928.0" y="768.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">bar = share of the range's code matched</text>
-  <text x="52.0" y="790.0" font-size="11" fill="#656d76" text-anchor="start" font-weight="normal">Range</text>
-  <text x="560.0" y="790.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Code done</text>
-  <text x="650.0" y="790.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Funcs left</text>
-  <text x="760.0" y="790.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Instr. left</text>
-  <text x="928.0" y="790.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Biggest left</text>
-  <rect x="32" y="809" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="820.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x100000–0x110000</text>
+  <text x="32.0" y="724.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">By address range</text>
+  <text x="928.0" y="724.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">bar = share of the range's code matched</text>
+  <text x="32.0" y="746.0" font-size="11" fill="#656d76" text-anchor="start" font-weight="normal">Range</text>
+  <text x="560.0" y="746.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Code done</text>
+  <text x="650.0" y="746.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Funcs left</text>
+  <text x="760.0" y="746.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Instr. left</text>
+  <text x="928.0" y="746.0" font-size="11" fill="#656d76" text-anchor="end" font-weight="normal">Biggest left</text>
+  <text x="32.0" y="776.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x100000–0x110000</text>
+  <rect x="250" y="765" width="250" height="12" rx="3" fill="#e4e7ec" />
+  <rect x="250" y="765" width="250.0" height="12" rx="3" fill="#2f9e6e" />
+  <text x="560.0" y="776.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
+  <text x="650.0" y="776.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
+  <text x="760.0" y="776.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
+  <text x="928.0" y="776.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
+  <text x="32.0" y="798.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x110000–0x120000</text>
+  <rect x="250" y="787" width="250" height="12" rx="3" fill="#e4e7ec" />
+  <rect x="250" y="787" width="250.0" height="12" rx="3" fill="#2f9e6e" />
+  <text x="560.0" y="798.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
+  <text x="650.0" y="798.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
+  <text x="760.0" y="798.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
+  <text x="928.0" y="798.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
+  <text x="32.0" y="820.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x120000–0x130000</text>
   <rect x="250" y="809" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="809" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="820.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="820.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="820.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="820.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="831" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="842.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x110000–0x120000</text>
+  <text x="32.0" y="842.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x130000–0x140000</text>
   <rect x="250" y="831" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="831" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="842.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="842.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="842.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="842.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="853" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="864.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x120000–0x130000</text>
+  <text x="32.0" y="864.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x140000–0x150000</text>
   <rect x="250" y="853" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="853" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="864.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="864.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="864.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="864.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="875" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="886.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x130000–0x140000</text>
+  <text x="32.0" y="886.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x150000–0x160000</text>
   <rect x="250" y="875" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="875" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="886.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="886.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="886.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="886.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="897" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="908.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x140000–0x150000</text>
+  <text x="32.0" y="908.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x160000–0x170000</text>
   <rect x="250" y="897" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="897" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="908.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="908.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="908.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="908.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="919" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="930.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x150000–0x160000</text>
+  <text x="32.0" y="930.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x170000–0x180000</text>
   <rect x="250" y="919" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="919" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="930.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="930.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="930.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="930.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="941" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="952.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x160000–0x170000</text>
+  <text x="32.0" y="952.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x180000–0x190000</text>
   <rect x="250" y="941" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="941" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="952.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="952.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="952.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="952.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="963" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="974.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x170000–0x180000</text>
+  <text x="32.0" y="974.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x190000–0x1A0000</text>
   <rect x="250" y="963" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="963" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="974.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="974.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="974.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="974.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="985" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="996.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x180000–0x190000</text>
+  <text x="32.0" y="996.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1A0000–0x1B0000</text>
   <rect x="250" y="985" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="985" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="996.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="996.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="996.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="996.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1007" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x190000–0x1A0000</text>
+  <text x="32.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1B0000–0x1C0000</text>
   <rect x="250" y="1007" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1007" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1018.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1018.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1018.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1029" width="10" height="12" rx="2" fill="#d97706" />
-  <text x="52.0" y="1040.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1A0000–0x1B0000</text>
+  <text x="32.0" y="1040.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1C0000–0x1D0000</text>
   <rect x="250" y="1029" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1029" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1040.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1040.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1040.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1040.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1051" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1062.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1B0000–0x1C0000</text>
+  <text x="32.0" y="1062.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1D0000–0x1E0000</text>
   <rect x="250" y="1051" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1051" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1062.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1062.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1062.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1062.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1073" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1084.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1C0000–0x1D0000</text>
+  <text x="32.0" y="1084.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1E0000–0x1F0000</text>
   <rect x="250" y="1073" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1073" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1084.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1084.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1084.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1084.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1095" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1106.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1D0000–0x1E0000</text>
+  <text x="32.0" y="1106.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1F0000–0x200000</text>
   <rect x="250" y="1095" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1095" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1106.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1106.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1106.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1106.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1117" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1128.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1E0000–0x1F0000</text>
+  <text x="32.0" y="1128.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x200000–0x210000</text>
   <rect x="250" y="1117" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1117" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1128.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1128.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1128.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1128.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1139" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1150.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x1F0000–0x200000</text>
+  <text x="32.0" y="1150.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x210000–0x220000</text>
   <rect x="250" y="1139" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1139" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1150.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1150.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1150.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1150.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1161" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1172.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x200000–0x210000</text>
+  <text x="32.0" y="1172.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x220000–0x230000</text>
   <rect x="250" y="1161" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1161" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1172.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1172.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1172.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1172.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1183" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1194.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x210000–0x220000</text>
+  <text x="32.0" y="1194.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x230000–0x240000</text>
   <rect x="250" y="1183" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1183" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1194.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1194.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1194.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1194.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1205" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1216.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x220000–0x230000</text>
+  <text x="32.0" y="1216.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x240000–0x250000</text>
   <rect x="250" y="1205" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1205" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1216.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1216.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1216.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1216.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1227" width="10" height="12" rx="2" fill="#7c3aed" />
-  <text x="52.0" y="1238.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x230000–0x240000</text>
+  <text x="32.0" y="1238.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x250000–0x260000</text>
   <rect x="250" y="1227" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1227" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1238.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1238.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1238.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1238.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1249" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x240000–0x250000</text>
+  <text x="32.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x260000–0x270000</text>
   <rect x="250" y="1249" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1249" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1260.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1260.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1260.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1271" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x250000–0x260000</text>
+  <text x="32.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x270000–0x280000</text>
   <rect x="250" y="1271" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1271" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1282.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1282.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1282.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1293" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x260000–0x270000</text>
+  <text x="32.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x280000–0x290000</text>
   <rect x="250" y="1293" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1293" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1304.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1304.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1304.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1315" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1326.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x270000–0x280000</text>
+  <text x="32.0" y="1326.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x290000–0x2A0000</text>
   <rect x="250" y="1315" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1315" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1326.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1326.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1326.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1326.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1337" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x280000–0x290000</text>
+  <text x="32.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x2A0000–0x2B0000</text>
   <rect x="250" y="1337" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1337" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1348.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1348.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1348.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1359" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x290000–0x2A0000</text>
+  <text x="32.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x2B0000–0x2C0000</text>
   <rect x="250" y="1359" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1359" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1370.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1370.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1370.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1381" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x2A0000–0x2B0000</text>
+  <text x="32.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x2C0000–0x2D0000</text>
   <rect x="250" y="1381" width="250" height="12" rx="3" fill="#e4e7ec" />
   <rect x="250" y="1381" width="250.0" height="12" rx="3" fill="#2f9e6e" />
   <text x="560.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
   <text x="650.0" y="1392.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
   <text x="760.0" y="1392.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
   <text x="928.0" y="1392.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1403" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x2B0000–0x2C0000</text>
-  <rect x="250" y="1403" width="250" height="12" rx="3" fill="#e4e7ec" />
-  <rect x="250" y="1403" width="250.0" height="12" rx="3" fill="#2f9e6e" />
-  <text x="560.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
-  <text x="650.0" y="1414.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
-  <text x="760.0" y="1414.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
-  <text x="928.0" y="1414.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
-  <rect x="32" y="1425" width="10" height="12" rx="2" fill="#db2777" />
-  <text x="52.0" y="1436.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="bold">0x2C0000–0x2D0000</text>
-  <rect x="250" y="1425" width="250" height="12" rx="3" fill="#e4e7ec" />
-  <rect x="250" y="1425" width="250.0" height="12" rx="3" fill="#2f9e6e" />
-  <text x="560.0" y="1436.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100%</text>
-  <text x="650.0" y="1436.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">done</text>
-  <text x="760.0" y="1436.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">—</text>
-  <text x="928.0" y="1436.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">—</text>
 
   <!-- By Function Size Section -->
-  <text x="32.0" y="1480.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">What's left, by function size</text>
-  <text x="32.0" y="1516.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Tiny (≤20 instr.)</text>
+  <text x="32.0" y="1436.0" font-size="16" fill="#1f2328" text-anchor="start" font-weight="bold">By function size</text>
+  <text x="32.0" y="1454.0" font-size="12" fill="#656d76" text-anchor="start" font-weight="normal">Every function is matched — the decompilation is complete.</text>
+  <text x="32.0" y="1490.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Tiny (≤20 instr.)</text>
+  <rect x="190" y="1478" width="350" height="14" rx="3" fill="#e4e7ec" />
+  <rect x="190" y="1478" width="350.0" height="14" rx="3" fill="#2f9e6e" />
+  <text x="630.0" y="1490.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100% done</text>
+  <text x="928.0" y="1490.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 3,732 functions left · 0 instr.</text>
+  <text x="32.0" y="1516.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Small (21–100)</text>
   <rect x="190" y="1504" width="350" height="14" rx="3" fill="#e4e7ec" />
   <rect x="190" y="1504" width="350.0" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1516.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100% done</text>
-  <text x="928.0" y="1516.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 3,732 functions left · 0 instr.</text>
-  <text x="32.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Small (21–100)</text>
+  <text x="928.0" y="1516.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 3,962 functions left · 0 instr.</text>
+  <text x="32.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Medium (101–300)</text>
   <rect x="190" y="1530" width="350" height="14" rx="3" fill="#e4e7ec" />
   <rect x="190" y="1530" width="350.0" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1542.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100% done</text>
-  <text x="928.0" y="1542.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 3,962 functions left · 0 instr.</text>
-  <text x="32.0" y="1568.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Medium (101–300)</text>
+  <text x="928.0" y="1542.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 862 functions left · 0 instr.</text>
+  <text x="32.0" y="1568.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Large (301–1,000)</text>
   <rect x="190" y="1556" width="350" height="14" rx="3" fill="#e4e7ec" />
   <rect x="190" y="1556" width="350.0" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1568.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100% done</text>
-  <text x="928.0" y="1568.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 862 functions left · 0 instr.</text>
-  <text x="32.0" y="1594.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Large (301–1,000)</text>
+  <text x="928.0" y="1568.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 155 functions left · 0 instr.</text>
+  <text x="32.0" y="1594.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Huge (1,000+)</text>
   <rect x="190" y="1582" width="350" height="14" rx="3" fill="#e4e7ec" />
   <rect x="190" y="1582" width="350.0" height="14" rx="3" fill="#2f9e6e" />
   <text x="630.0" y="1594.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100% done</text>
-  <text x="928.0" y="1594.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 155 functions left · 0 instr.</text>
-  <text x="32.0" y="1620.0" font-size="12" fill="#1f2328" text-anchor="start" font-weight="normal">Huge (1,000+)</text>
-  <rect x="190" y="1608" width="350" height="14" rx="3" fill="#e4e7ec" />
-  <rect x="190" y="1608" width="350.0" height="14" rx="3" fill="#2f9e6e" />
-  <text x="630.0" y="1620.0" font-size="12" fill="#1f2328" text-anchor="end" font-weight="normal">100% done</text>
-  <text x="928.0" y="1620.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 12 functions left · 0 instr.</text>
-  <text x="32.0" y="1650.0" font-size="11" fill="#656d76" text-anchor="start" font-weight="normal">Generated by tools/progress_graph.py from config/matched.csv (refreshed automatically on every push).</text>
+  <text x="928.0" y="1594.0" font-size="12" fill="#656d76" text-anchor="end" font-weight="normal">0 of 12 functions left · 0 instr.</text>
+  <text x="32.0" y="1624.0" font-size="11" fill="#656d76" text-anchor="start" font-weight="normal">Generated by tools/progress_graph.py from config/matched.csv.</text>
 </svg>

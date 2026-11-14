@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00288098 (agent A60): follow the target position - query the placement (func_00287890), refresh the
+// func_00288098: follow the target position - query the placement (func_00287890), refresh the
 // tracked value and actuator, and when it moved more than 1 unit turn the XF frame by the rotation from its x axis to
 // the (safe-normalised) move and shift its position. Matching notes: `out` is a float[4] struct (BLKmode, slot 0);
 // mat = r * mat with r assigned (3-store pattern); DotQ carries two allocation-only "j"(v) operands; no pins.

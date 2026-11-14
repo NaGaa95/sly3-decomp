@@ -1,6 +1,6 @@
 // SLY3_ASFIX: engine-divfix1
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00132438 (agent A20b): steering update for states 2-9 when xD0 is 1 or 2 (jump table at 0x31F760).
+// func_00132438: steering update for states 2-9 when xD0 is 1 or 2 (jump table at 0x31F760).
 // Matching notes: v is a spilled qword (0x40); w/u/t are memory unions; VU_FLOAT by value (homes 0x10/0x30);
 // the vmulx helper carries a "memory" clobber so the VU_FLOAT(-1) home store stays ahead of the transform;
 // FV() holds the one register pin ($a0) for the normalize-test readback.

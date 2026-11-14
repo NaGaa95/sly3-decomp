@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00276900 (agent A60): PosEyeCut - Sly 3 form of Sly 2 PosEyeCut__FP8CPFOLLOWG9VU_VECTORT1P6VECTOR (0x223A70).
+// func_00276900: PosEyeCut - Sly 3 form of Sly 2 PosEyeCut__FP8CPFOLLOWG9VU_VECTORT1P6VECTOR (0x223A70).
 // Sly 3: CTX scope (explicit __3CTX/_$_3CTX on the WORK slot at 0x40), the object position comes from vtable slot 36 (+0x30),
 // the eye squish takes an extra int arg 1, the camera is p->cm (radius 0x140), FLT_MAX/0 rodata is a static table;
 // the start angle (0) doubles as the first interval gap, the later gap is the literal 0. One pin: bestCost in f21.

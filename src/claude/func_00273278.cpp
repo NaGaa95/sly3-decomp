@@ -1,6 +1,6 @@
 // SLY3_ASFIX: engine-divfix1
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00273278 (agent A60): push the tracked actor (p->x10, one of the two player globals) away from p->x0 in the
+// func_00273278: push the tracked actor (p->x10, one of the two player globals) away from p->x0 in the
 // ground plane (Project on D_00317550, safe-normalised, *400 + up*600) when it may be knocked back; else the 0x71 check.
 // Matching notes: k = 400 is an "=rj" mfc1 VU_FLOAT (memory home 0x20), vel declared before k (slot 0x10), the
 // SafeNormalize stores through a pointer in both arms; one pin (Len's qmfc2 lane register a0).

@@ -1,5 +1,5 @@
 // Sly 2 counterpart: _motionComp0 (decomp src/lib/_motionComp0.c)
-// (Claude agent) libmpeg func_002AED90: intra-path pointer setup in do{}while(0) (loop-depth ref weighting fixes s-reg priority),
+// libmpeg func_002AED90: intra-path pointer setup in do{}while(0) (loop-depth ref weighting fixes s-reg priority),
 // non-intra pointers set before func_002AE688; first IPU wait is a goto loop (unpadded, address rematerialised).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0

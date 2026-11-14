@@ -1,5 +1,5 @@
 // Sly 2 counterpart: pow (decomp src/lib/pow.c)
-// (Claude agent) newlib w_pow.c, -O2: only 6 diffs, all the PRE hi-copy artefact (target 'lui s5,%hi(D_0032C2F0)' in the prologue; ours 'lui v1 ... daddu s5,v1' after the call). powf (same source, float) has no copy.
+// newlib w_pow.c.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

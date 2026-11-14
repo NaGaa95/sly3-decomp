@@ -1,6 +1,6 @@
 // SLY3_ASFIX: engine-divfix1
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00132C58 (agent A29): state setter (xD0); state 1 picks a launch per xCC (jump table 0x31F790, FLT_MAX literal 0x31F780).
+// func_00132C58: state setter (xD0); state 1 picks a launch per xCC (jump table 0x31F790, FLT_MAX literal 0x31F780).
 // Matching notes: dd/vv/w/w2/t are plain qwords live across calls, so reload spills them in declaration order
 // (0x20..0x60); VU_FLOAT temps share slot 0; GetZ/case-4 reads are reloads of vv's spill slot. The sqrt asm is
 // volatile + earlyclobber. Store pairs to xE0/xE4 are written in reverse order (gcc emits the last first).

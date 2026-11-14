@@ -1,5 +1,5 @@
 // Sly 2 counterpart: _pictureHeader (decomp src/lib/_pictureHeader.c)
-// (Claude agent) MATCHES only with the empty asm barrier after the first call (same post-call-group issue). Without: 3/81 differ.
+// Matches only with the empty asm barrier after the first call (without it 3 of 81 words differ).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

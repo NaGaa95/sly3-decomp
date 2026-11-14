@@ -3,7 +3,6 @@
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
 __asm__(".macro sq r, m\n\tsd \\r, \\m\n\t.endm\n\t.macro lq r, m\n\tld \\r, \\m\n\t.endm");
-// (Claude agent) near miss: 17/34, target keeps %hi(sema) in s1 across the loop (frame 0x30), ours 0x20
 struct iob { int x0, x4, x8, xC; };
 extern int D_0034A6A8;
 extern struct iob D_004CC500[];

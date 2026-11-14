@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014E1A8.c (matrix now built in a local and passed on).
+// Sly 2 reference: src/hand/func_0014E1A8.c (matrix now built in a local and passed on).
 typedef int qword __attribute__((mode(TI)));
 typedef struct { float x, y, z, w; } V4;
 typedef struct { V4 r[3]; } M3 __attribute__((aligned(16)));

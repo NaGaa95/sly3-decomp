@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00276510 (agent A60): CheckFocusVisible - Sly 3 form of Sly 2 CheckFocusVisible__FP8CPFOLLOW (0x2236E8), no pins.
+// func_00276510: CheckFocusVisible - Sly 3 form of Sly 2 CheckFocusVisible__FP8CPFOLLOW (0x2236E8), no pins.
 // Sly 3: the sample offsets come from the focus (count +0x58, table +0x5C, up to 8 -> aqw[14]), the camera is
 // pcmpart->pcm (positions via vtable slot 36 +0x30), CTX scope, both loops index aqw[3 + i] (strength-reduced).
 // New data symbol D_00349FA0.

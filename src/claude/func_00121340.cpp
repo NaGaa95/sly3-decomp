@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Adapted from the matched Sly 2 source src/hand/func_0011F6D0.cpp (Sly 3: -Os, short tags 2 lower, node ref at +0; asm labels bind the CRef operator= overloads to their Sly 3 addresses).
-// (Claude agent, lane A9, 2026-10-23) script `-` builtin (probably), same shape as func_0011F440: the inline accessor in the
+// Script `-` builtin (probably), same shape as func_0011F440: the inline accessor in the
 // if/else keeps `pn = 0` after the branch (no jump.c rewrite), so reorg puts it in the beqz delay slot.
 typedef int qword __attribute__((mode(TI)));
 struct VECTOR { float x, y, z, w; };

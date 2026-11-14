@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0
-// func_00286250 (agent A73): state-machine step loop (states 1-3), re-run while the state changes.
+// func_00286250: state-machine step loop (states 1-3), re-run while the state changes.
 // The target's 'bltz k / bne k,1' left subtree is a merged 'case 0: case 1:' range node whose body re-tests k == 1.
 struct Q { char pad[0x18]; int x18; };
 struct S { char pad[0x134]; struct Q *x134; char pad2[0x1A0 - 0x138]; int state; float t1A4; char pad3[0x2C8 - 0x1A8]; void *x2C8; };

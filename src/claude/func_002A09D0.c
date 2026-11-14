@@ -1,6 +1,6 @@
 // Sly 2 counterparts: sceCdDiskReady_old + sceCdDiskReady_2425F0 (one unit: they share string literals)
 // Sly 2 counterpart: sceCdDiskReady_old (decomp src/lib/sceCdDiskReady_old.c)
-// (Claude agent) libcdvd func_002A09D0: bind retry loop sets the bound flag before break; both failure exits written out (gcc cross-jumps them).
+// libcdvd func_002A09D0: bind retry loop sets the bound flag before break; both failure exits written out (gcc cross-jumps them).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

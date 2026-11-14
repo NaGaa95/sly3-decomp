@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Adapted from the matched Sly 2 source src/hand/SmoothMatrix.cpp (Sly 3 addresses; this unit builds with -Os).
-// func_0011DDA8 (Sly 1 name). Matched by Claude agent (2026-10-23): g++ named-return MulM3 with a dead M3 copy t
+// func_0011DDA8 (Sly 1 name). g++ named-return MulM3 with a dead M3 copy t
 // (stored before m, per row), the first mat in its own block so the MulM3 temp and the VU scalar u reuse its slot.
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[3]; } M3;

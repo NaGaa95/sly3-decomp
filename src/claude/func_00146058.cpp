@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A18 draft (u1.cpp); A70: the first func_0011EE68 call is written in each arm (target cross-jumps the shared div/call tail, leaving lui a0 in both arms).
+// The first func_0011EE68 call is written in each arm (target cross-jumps the shared div/call tail, leaving lui a0 in both arms).
 typedef int qword __attribute__((mode(TI)));
 struct M4 { qword r[4]; };
 struct VTE { short d; short pad; void *pfn; };

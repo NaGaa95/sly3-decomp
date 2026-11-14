@@ -1,5 +1,5 @@
 // Sly 2 counterpart: sceSifCallRpc (decomp src/lib/sceSifCallRpc.c)
-// (Claude agent) MATCH. volatile reads of end_param/rec_id emulate Sony's scheduler keeping both loads ahead of the stores.
+// MATCH. volatile reads of end_param/rec_id emulate Sony's scheduler keeping both loads ahead of the stores.
 // SLY3_CC: tools/third_party/ee-gcc2.95.3-114
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

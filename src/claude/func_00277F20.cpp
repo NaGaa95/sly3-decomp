@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00277F20 (agent A60): state setter (0x130) - leaves the old state (CTX scope 0/4, 6 reset, -1 attach),
+// func_00277F20: state setter (0x130) - leaves the old state (CTX scope 0/4, 6 reset, -1 attach),
 // enters the new one through a jump table (-1..6); its rodata (the per-state id table 0x8B..0x91 at 0x329240) is
 // defined here in front of the jump table. Matching notes: Normalize is three VU asms (dot / sqrt / div) with an
 // allocation-only extra "j"(v); the 0028E990 results enter the VU via the compiler's own qmtc2; no pins.

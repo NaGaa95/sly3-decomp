@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0028BCD0 (agent A60): Sly 3 form of Sly 2 func_0022D348 (velocity of an XF chain), rewritten without pins/instruction asm.
+// func_0028BCD0: Sly 3 form of Sly 2 func_0022D348 (velocity of an XF chain), rewritten without pins/instruction asm.
 // Sly 3: sum/delta/input live in stack homes (Add takes const qword &); Rotate takes the vector by value so sum is
 // made addressable before delta (slot order 0x90/0xA0); the stop inverse is bound to a const reference (pointer in s0).
 typedef int qword __attribute__((mode(TI)));

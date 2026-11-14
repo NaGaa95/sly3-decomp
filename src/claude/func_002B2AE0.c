@@ -1,5 +1,5 @@
 // Sly 2 counterpart: _pictureCodingExtension (decomp src/lib/_pictureCodingExtension.c)
-// (Claude agent) MATCHES only with the empty asm barriers after each 'd->x = call()' statement: emulates Sony's scheduler keeping
+// Matches only with the empty asm barriers after each 'd->x = call()' statement: emulates Sony's scheduler keeping
 // the return-value consumer right after the call (gcc3 in_post_call_group_p-like). Without them 24/121 differ (sw moves into jal slot).
 // SLY3_CC: tools/third_party/ee-gcc2.95.3-114
 // SLY3_CFLAGS: -O2 -G0

@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Restructured from the matched Sly 2 source src/hand/func_0012D220.c for the Sly 3 version of the function.
-// A20b: posT is a VU_VECTOR stack object (0x80), dv a spilled qword (0x70); the matrix call sits in both branches
+// posT is a VU_VECTOR stack object (0x80), dv a spilled qword (0x70); the matrix call sits in both branches
 // (cross-jumped at the jal) with the C++ return temporary at 0x30 shared by both; separate ag0/ag1 floats.
 extern "C" {
 typedef int qword __attribute__((mode(TI)));

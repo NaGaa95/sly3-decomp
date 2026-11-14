@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0019CF60 (A38): Sly 3 version of Sly 2 func_00180668 (adds state 5 and a 6-entry dispatch table).
+// func_0019CF60: Sly 3 version of Sly 2 func_00180668 (adds state 5 and a 6-entry dispatch table).
 typedef int qword __attribute__((mode(TI)));
 typedef unsigned long ulong;
 typedef union U { qword q; float f[4]; int i[4]; } U;

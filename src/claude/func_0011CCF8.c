@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Ported from the matched Sly 2 source func_0011B938 (Sly 3 addresses, -Os).
-// (Claude agent) Matched: MulM3q writes rows through an out pointer, copying each row right after storing it (interleaved m/t stores).
+// Matched: MulM3q writes rows through an out pointer, copying each row right after storing it (interleaved m/t stores).
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[3]; } M3;
 extern qword D_002A2DB0;

@@ -1,6 +1,6 @@
 // SLY3_ASFIX: engine-divfix1
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014AA30.c.
+// Sly 2 reference: src/hand/func_0014AA30.c.
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword q; float f[4]; } VU;
 struct RANGE { float a; float b; };
@@ -76,7 +76,7 @@ int func_0015EC20(struct P *p)
 
 /* func_0015F050 shares the 16-byte .rodata row at 0x3208C0 (its FLT_MAX literal and jump table) with
    func_0015EC20's RANGE {0,10}, so both functions live in this file. */
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014AE38.c (state change of a guard-like controller); Sly 3 spawns
+// Sly 2 reference: src/hand/func_0014AE38.c (state change of a guard-like controller); Sly 3 spawns
 // its actions through a component list at +0x29C and builds the chase action from a ray between two positions.
 extern qword D_00317560;
 struct CLOCK_F050 { float t; };

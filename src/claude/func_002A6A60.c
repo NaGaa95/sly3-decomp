@@ -3,7 +3,7 @@
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
 // SLY3_DIVNOP
-// (Claude agent) fdlibm/newlib ef_pow.c, written fresh. DIVS (asm div.s) on the three early-return divisions emulates Sony's
+// fdlibm/newlib ef_pow.c, written fresh. DIVS (asm div.s) on the three early-return divisions emulates Sony's
 // slot-ineligible 'nop;nop;div.s' unit, so reorg fills those b slots from the exit (ld $ra / mov.s) like the target.
 typedef int __int32_t;
 typedef unsigned int __uint32_t;

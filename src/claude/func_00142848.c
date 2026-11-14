@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0
-// A12 draft; A70: dead if/else arms + keep-alive reproduce the orphaned x198 compare.
+// Dead if/else arms + keep-alive reproduce the orphaned x198 compare.
 struct VTE { short d; short pad; void (*pfn)(void *); };
 struct O { char pad[0xC]; struct VTE *pvt; };
 struct OR { struct O *po; int x4; };
@@ -60,7 +60,7 @@ void func_00142848(struct P *p)
     func_001434A8(p, -1);
     {
         int state = p->x198;
-        /* dead arms (A70): flow deletes both sets of i, but the branch and compare survive until jump2 (after
+        /* Dead arms: flow deletes both sets of i, but the branch and compare survive until jump2 (after
            sched2), so sw x358 is scheduled in the join block like the target */
         if (state < 3) i = p->c340; else i = p->c32C;
         __asm__("" : : "r"(state)); /* zero-insn keep-alive: state stays live past the compare (lw v1 / slti v0) */

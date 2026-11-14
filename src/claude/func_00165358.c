@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0
 // EE hardware intrinsics preserve COP0 operations; C expresses control flow.
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014CFE0.c.
+// Sly 2 reference: src/hand/func_0014CFE0.c.
 struct CLOCK {
     int fEnabled;
     float t;

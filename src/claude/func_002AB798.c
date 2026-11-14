@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* (Claude agent, 2026-10-17) Same Skip inline as _pack_header; the stuffing loop is
+/* Same Skip inline as _pack_header; the stuffing loop is
    `if (c) do Skip(p,24); while (c);` with c = (int)(buf>>63) == 1 (no sign-test fold, beql loop). */
 typedef struct {
     unsigned long buf,pos;

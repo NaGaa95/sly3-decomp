@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // New Sly 3 code: two-bone IK (law of cosines for the elbow, then aim the chain root at the target).
-// MATRIX3 operator* is Lilly's (Sly 2 src/hand/func_0021CB18.cpp: left rows in qword locals, VU_VECTOR4 row temps, NRV),
+// MATRIX3 operator* is the Sly 2 one (src/hand/func_0021CB18.cpp: left rows in qword locals, VU_VECTOR4 row temps, NRV),
 // which gives the target's double row stores; axis is a VECTOR so it takes the freed temp slot at 0x30.
 typedef int qword __attribute__((mode(TI)));
 union U { qword q; float f[4]; int i[4]; };

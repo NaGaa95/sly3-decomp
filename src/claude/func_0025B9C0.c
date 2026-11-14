@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// (Claude agent A86) search uses (pmgr->a13C + j)->n: with pmgr->a13C[j].n cse keeps &a13C[0] in a register before the
+// Search uses (pmgr->a13C + j)->n: with pmgr->a13C[j].n cse keeps &a13C[0] in a register before the
 // peeled compare, the giv init reuses it and reorg fills the beq slot with it (target: beql stealing the c138 reload).
 struct VTE { short d; short pad; void (*pfn)(void *); };
 struct VT { char pad[0x40]; struct VTE e40; struct VTE e48; };

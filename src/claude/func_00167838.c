@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014F268.c (matrix multiply replaced by a call).
+// Sly 2 reference: src/hand/func_0014F268.c (matrix multiply replaced by a call).
 typedef int qword __attribute__((mode(TI)));
 struct CM { char pad[0x138]; float sx, sy; };
 static __inline__ float GetX(qword q) { float x; __asm__("mtc1 %1,%0" : "=f"(x) : "r"(q)); return x; }

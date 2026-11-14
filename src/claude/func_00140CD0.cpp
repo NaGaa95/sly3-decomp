@@ -24,7 +24,7 @@ void func_00137588(ANIM *, PO *, int, void *, float, float);
 struct VECTOR { float x, y, z, w; } __attribute__((aligned(16)));
 /* qmtc2 form: the value goes straight to a VF register and its home slot is stored afterwards (Sly 2 func_00140F90 style) */
 struct VU_FLOAT2 { qword q; VU_FLOAT2(float f) { __asm__("qmtc2.ni %1, %0" : "=j"(q) : "r"(f)); } };
-/* "=rj" form (A12): the GPR value is spilled across the call and reloaded with lqc2 */
+/* "=rj" form: the GPR value is spilled across the call and reloaded with lqc2 */
 struct VU_FLOAT { qword q; VU_FLOAT(float f) { __asm__("mfc1 %0, %1" : "=rj"(q) : "f"(f)); } };
 static inline M4 *Matrix(PO *p) { VTE *e = &p->pvt->e120; return ((M4 *(*)(void *))e->pfn)((char *)p + e->d); }
 static inline qword Vel(PO *p) { VTE *e = &p->pvt->e130; return ((qword (*)(void *))e->pfn)((char *)p + e->d); }

@@ -3,9 +3,9 @@
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
 /* func_00294788 (Sony libc printf core: formats fmt/ap through the put callback; called by sceSnprintf and _sceSnprintf_pf).
-   Matched by Lilly's agent (T1628) from the T1619 near-miss (lilly8): the loop-test copy `ch` is a `short`, and the
+   The key: the loop-test copy `ch` is a `short`, and the
    loop top reads it (`z = (char)ch`, '%' test on z), so the entry keeps `move v0,a1` and the top extends v0.
-   Other keys (T1616/T1619): `t = i * 10 - '0'; i = t + (char)c;` digit steps, a `c = *fmt;` reload on every path
+   Other keys: `t = i * 10 - '0'; i = t + (char)c;` digit steps, a `c = *fmt;` reload on every path
    into `next:`, loop end `ch = *fmt; c = ch;`, and the sign-extended '*' test load first in case '.'. */
 typedef char *va_list;
 #define va_arg(ap, T) (*(T *)((ap += 8) - 8))

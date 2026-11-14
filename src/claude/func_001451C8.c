@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_001451C8 (A30, written from the target): contact-pair pass (push / hit reactions through func_00240CB0,
+// func_001451C8 (written from the target): contact-pair pass (push / hit reactions through func_00240CB0,
 // stops at the first reaction), then for flag 0x2F bit 0 the shape-vs-shape query of p358 (frame scope + PvAllocSlot
 // node buffer), the 8/9 vtable notifications of the 0x330/0x344 lists and the post-hit sound. Keys: all address-taken
 // locals declared first (vHit union 0x10, ctx 0x20, req 0x30, then the ints); 'f = x < -0.7f' store-flag;

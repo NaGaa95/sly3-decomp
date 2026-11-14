@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // NEEDS symbol D_00344840 = 0x00344840 (.data float -25.0) -> then LINKED_MATCH.
-// Sly 2 reference: /home/claude/decomp src/hand/func_0014F040.c.
+// Sly 2 reference: src/hand/func_0014F040.c.
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword q; float f; } U;
 struct PL { qword pos; qword plane; };

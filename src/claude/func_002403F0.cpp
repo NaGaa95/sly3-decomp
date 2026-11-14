@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_002403F0 (agent A76, from A53/A67 drafts): particle-style Verlet step over p->n88 points (pos += vel*dt,
+// func_002403F0: particle-style Verlet step over p->n88 points (pos += vel*dt,
 // prev blended with dt*0.5), flags motion when |prev - new| > 1, stores sqrt of the max squared length in p->f8.
 // Keys: volatile sqrt.s inline (otherwise sched1 moves 'a0 = p' above the p->f8 store, p conflicts with a0 and
 // lands in a1), and the init order maxv / prev / pos / vel / moved. No pins.

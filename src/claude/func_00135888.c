@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 /* step the 3-state machine; while following (state 1) push the target along its horizontal velocity toward us */
-/* (A16) Sly 3 order: Sub before the dt qmtc2, whose asm carries a "memory" clobber so the a restore schedules first. */
+/* Sly 3 order: Sub before the dt qmtc2, whose asm carries a "memory" clobber so the a restore schedules first. */
 typedef int qword __attribute__((mode(TI)));
 struct VTE { short d; short pad; void *pfn; };
 struct XF { char pad[0x30]; qword pos; };

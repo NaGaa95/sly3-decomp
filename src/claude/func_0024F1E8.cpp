@@ -1,6 +1,6 @@
 // Sly 3 port of the Sly 2 source src/hand/func_00204DA8.cpp (offsets updated).
 /* SetStepGravityRatio (Sly 1 name): scale the step's gravity to rGravity (at least 0.1) and its mass so the weight stays the same.
-   Ported from Lilly's personal decomp (T0981). Each VU float is a one-qword struct so it gets the stack home the dead sqc2 go to;
+   Ported from Lilly's personal decomp. Each VU float is a one-qword struct so it gets the stack home the dead sqc2 go to;
    the gravity is read as a struct member, and the old ratio goes into vf3 straight from memory ("rV"). No register pins. */
 typedef int qword __attribute__((mode(TI)));
 struct VU_FLOAT { qword qw; };

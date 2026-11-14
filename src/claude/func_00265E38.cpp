@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // SLY3_ASFIX: engine-divfix1
-// func_00265E38 (agent A92): draw a text item - Sly 3 form of Sly 2 func_00216BC8 (sprite text / dialog subtitle /
+// func_00265E38: draw a text item - Sly 3 form of Sly 2 func_00216BC8 (sprite text / dialog subtitle /
 // scrolling ticker). Text comes from the 178-entry generator table D_0047A4B8 (kind 1) or the string table (kind 0);
 // id 0x34C is the dialog subtitle (D_004BC220), id 0x34E the ticker (D_0046F770 state 2), repeated across the width.
 typedef unsigned int uint;

@@ -2,7 +2,7 @@
 // SLY3_CFLAGS: -O2 -G0 -fstrict-aliasing
 // SLY3_ASFIX: engine
 // Reference: Sly 2 src/lib/_updateRefImage.c; target Sly 3 0x002A98B8.
-// (Claude agent) one reused `temp` for the three swaps; check=out1, out2 if type==1.
+// One reused `temp` for the three swaps; check=out1, out2 if type==1.
 typedef struct IMG {
     char pad0[0x18]; long pts, dts; int ready;
     int structure, type, temporal, width, parameter;

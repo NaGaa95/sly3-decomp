@@ -1,8 +1,8 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
-// func_001A0CC8: A34 y3.cpp, vf1 pin replaced by allocation-only operands; one GPR pin for the -1.0 VU_FLOAT (Claude agent A45).
+// func_001A0CC8: allocation-only operands instead of a vf1 pin; one GPR pin for the -1.0 VU_FLOAT.
 typedef int qword __attribute__((mode(TI)));
 struct VU_FLOAT { qword q; VU_FLOAT(const float &f) { __asm__("qmtc2.ni %1, %0" : "=j"(q) : "r"(*(const int *)&f)); } };
-struct VU_FLOATC { qword q; VU_FLOATC(float f) { register int t __asm__("$3"); /* register pin (Claude agent): target moves the -1.0 bits through v1 */ __asm__("mfc1 %0, %1" : "=r"(t) : "f"(f)); __asm__("qmtc2.ni %1, %0" : "=j"(q) : "r"(t)); } };
+struct VU_FLOATC { qword q; VU_FLOATC(float f) { register int t __asm__("$3"); /* register pin: target moves the -1.0 bits through v1 */ __asm__("mfc1 %0, %1" : "=r"(t) : "f"(f)); __asm__("qmtc2.ni %1, %0" : "=j"(q) : "r"(t)); } };
 struct V4 { float f[4]; } __attribute__((aligned(16)));
 struct Obj { unsigned char pad0[0x260]; qword origin; unsigned char pad270[0x1148 - 0x270]; float reach; int flip; };
 extern "C" {

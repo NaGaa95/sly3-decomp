@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Sly 3 port of Sly 2 func_0015B9F0: pemitb at 0xD4, vtable slot 0x128, emit kinds shifted down by one (k==0 adds mB*mA.pos only).
-// func_00179800: emitter particle transform (Claude agent, lane E20). The clock time is read into a local BEFORE
+// func_00179800: emitter particle transform. The clock time is read into a local BEFORE
 // the ptimes->at[i] load, so loop.c sees a 1-insn life for %hi(D_0036BB98) and doesn't hoist it.
 typedef int qword __attribute__((mode(TI)));
 struct M4 { qword r[4]; };

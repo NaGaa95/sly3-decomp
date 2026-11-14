@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* func_002956E0 (libkernel sifrpc). Matched by Lilly's agent (T1624): func_002980D0 (func_002980D0) must return int
+/* func_002956E0 (libkernel sifrpc). func_002980D0 (func_002980D0) must return int
    (its unused $v0 result keeps hi(pkt table) out of $v0), and the RPC data fields are set in struct order
    with pid last, as in ps2sdk's SifInitRpc. */
 typedef struct {

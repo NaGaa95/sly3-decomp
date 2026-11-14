@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0
-// Sly 2 reference: /home/claude/decomp src/hand/func_0015C5C8.c.
+// Sly 2 reference: src/hand/func_0015C5C8.c.
 struct O { char pad[0x128]; void *p100; void *p104; };
 void func_0013BD88(void *pv, void *po);
 void func_00177B78(struct O *o, int msgid, void *pv)

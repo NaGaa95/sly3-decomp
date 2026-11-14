@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // SLY3_ASFIX: engine-divfix1
-// Sly 3 port (A16) of the matched Sly 2 func_0011FEC8 `/` builtin: tags 2 lower, short-tag CRef, float case split per pr tag, matrix scale reads the VU_FLOAT temp per element.
+// Sly 3 port of the matched Sly 2 func_0011FEC8 `/` builtin: tags 2 lower, short-tag CRef, float case split per pr tag, matrix scale reads the VU_FLOAT temp per element.
 typedef int qword __attribute__((mode(TI)));
 struct VECTOR { float x, y, z, w; };
 struct MATRIX4 { float af[16]; } __attribute__((aligned(16)));

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
-// func_0014AFB0 (A46): A12 draft fixed: case 6 = matA/matB declared then assigned (3-store NRV copies), matC initialized, and a const M3 &mF0 bound before the inverse call (keeps &px->mF0 in s1).
+// func_0014AFB0: case 6 = matA/matB declared then assigned (3-store NRV copies), matC initialized, and a const M3 &mF0 bound before the inverse call (keeps &px->mF0 in s1).
 typedef int qword __attribute__((mode(TI)));
 struct M3 { qword r[3]; };
 struct X { char pad[0xB0]; M3 mB0; qword qE0; M3 mF0; qword q120; };

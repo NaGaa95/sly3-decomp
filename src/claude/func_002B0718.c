@@ -1,5 +1,5 @@
 // Sly 2 counterpart: _sceMpegMbAddressIncrement (decomp src/lib/_sceMpegMbAddressIncrement.c)
-// (Claude agent) MATCH: ee-gcc2.9, IPU cmd as inline helper, (short)(unsigned short)r after x12C, cont=1 before inc+=0x21.
+// MATCH: ee-gcc2.9, IPU cmd as inline helper, (short)(unsigned short)r after x12C, cont=1 before inc+=0x21.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

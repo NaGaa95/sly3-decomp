@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00160960 (A35, from scratch): state change - leave the old state, then per-state setup (owns the three jump tables
+// func_00160960 (from scratch): state change - leave the old state, then per-state setup (owns the three jump tables
 // 0x3209F0/0x320A50/0x320A90; the -2275 gravity vector before them is D_003209E0). Keys: C++ so the VU_FLOAT temps share
 // sp+0 with the by-value GRF copy; per-case statements left as written so jump2 cross-jumps the shared Enter() tails;
 // case 8: MulF with 2 extra allocation-only "j"(f.q) operands (temp vf1) and 'SO *pso' + 'float r' read before the temps.

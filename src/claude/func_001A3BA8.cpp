@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
-// A34: vsqrt with untied input (its input pseudo dies -> sched1 issues it before the lw of name->identity) and the
+// vsqrt with untied input (its input pseudo dies -> sched1 issues it before the lw of name->identity) and the
 // XY length read through an mtc1 asm with an "r" input (gcc emits the qmfc2, raising the sqrt chain priority in sched2).
 // Adapted from the Sly 2 decomp (func_001758A0): pick the first enabled response ENTRY of p that accepts target
 // (range, height, angle, optional line of sight), ask p's HandleSpliceEvent(0x1B) about it, then run the response.

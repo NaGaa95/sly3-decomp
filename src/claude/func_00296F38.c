@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* libkernel fileio func_00296F38 (Lilly's agent, T1568). Keys: `nowait` assigned in a nested do{do{}while(0);}while(0) after
+/* libkernel fileio func_00296F38. Keys: `nowait` assigned in a nested do{do{}while(0);}while(0) after
    `i = 0` (global-alloc priority); and the dead `r = (int)<table>` first statement of each arm: it computes the arm's
    `lui` itself, so gcse PRE no longer appends it AFTER `i = 0` / `nowait = 0` (the target has lui first in both arms). */
 struct iob { int fd, flags, x8, xC; };

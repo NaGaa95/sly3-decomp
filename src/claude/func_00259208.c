@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// (A49 draft) clamp of a planar length / heading; extra "j"(vv) operand and gcc-emitted z-lane qmfc2 (A64).
+// Clamp of a planar length / heading; extra "j"(vv) operand and gcc-emitted z-lane qmfc2.
 typedef int qword __attribute__((mode(TI)));
 struct S { char pad[0x70]; float f70; char a74[1]; };
 float func_001205C8(qword);

@@ -2,7 +2,6 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* near miss (2 diffs): arg-setup scheduling of the 2nd func_00298590 call (target: ori a0 before jal, addiu a2 in slot). Same on all 2.95 builds; prototypes/types don't change it. */
 typedef struct { int num; void *func; } SysEnt;
 extern SysEnt D_0034B610[];
 extern char D_0034AEA8[];

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -fno-exceptions
-// func_00283BB0 (agent A60): fill a save record from the game state - task keys, the level id, the GAMESAVE
+// func_00283BB0: fill a save record from the game state - task keys, the level id, the GAMESAVE
 // (0x6808 bytes from D_00468D30) and GAME+0x10 (0x1488 bytes) block copies, then re-writes the request's option
 // (tag 0x15 CRef, read before func_0021C860 resets the options) and clears the 0x43 SW option keys for kind 2.
 extern "C" {

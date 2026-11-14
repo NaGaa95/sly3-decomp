@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -fno-exceptions -fno-rtti
-// func_00221EC0 (agent A93): reset handler - clears p+0x50, writes the real option 0.0 to the key at D_004794EC (same
+// func_00221EC0: reset handler - clears p+0x50, writes the real option 0.0 to the key at D_004794EC (same
 // CRef write pattern as src/engine/subject_options_187d30.cpp), then calls func_00156768(x,1) for each non-null
 // *D_00344050[i] (count D_00344068) and finishes with func_0018AB08(D_00468D30). No Sly 2 counterpart.
 extern "C" {

@@ -2,7 +2,7 @@
 // Two-bone aim: rotate the base bone about its joint so the tip points at `pos`, express the rotation in the parent's
 // frame (parent^-1 * rot * parent), then slide the tip bone by the remaining offset, refresh both world matrices and
 // hand over to the IK solver (func_001A5FF0) and the owner's refresh method.
-// Matrix products use the Lilly-style M3 operator* (named return value); Rot lists its operands vector-first, which
+// Matrix products use the Sly 2 M3 operator* (named return value); Rot lists its operands vector-first, which
 // decides the VU register numbering of the rotated vector.
 typedef int qword __attribute__((mode(TI)));
 union U { qword q; float f[4]; int i[4]; };

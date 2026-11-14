@@ -1,5 +1,4 @@
 // Sly 2 counterpart: execute_cfa_insn (decomp src/lib/execute_cfa_insn.c)
-// WIP (Claude agent): gcc-2.95 frame.c verbatim minus DW_CFA_GNU_negative_offset_extended (table is 0..0x2E). Left: inlined memcpy block-move loops have `nop; bne; nop` in target (Sony gas/compiler; toolchain), a1=sp hoisted in DW_CFA_offset case, window_save loop scheduling.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

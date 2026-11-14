@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A74: the length compare is one inline (FGt) so jump2 cross-jumps case 1 into case 0's tail; the float is read with a
+// The length compare is one inline (FGt) so jump2 cross-jumps case 1 into case 0's tail; the float is read with a
 // plain mtc1 asm (gcc emits the qmfc2 itself) - reorg cannot move `li v0,1` past that asm into the bc1t slot.
 typedef int qword __attribute__((mode(TI)));
 struct M4 { qword r[4]; };

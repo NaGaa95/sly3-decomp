@@ -2,7 +2,7 @@
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
 // Sly 2 counterpart: end_fde_sort (decomp src/lib/end_fde_sort.c)
-// libgcc frame.c (gcc 2.95) func_0029E058 with the original inline frame_heapsort (Claude agent)
+// libgcc frame.c (gcc 2.95) func_0029E058 with the original inline frame_heapsort
 typedef unsigned int size_t;
 typedef unsigned int uword;
 typedef int sword;

@@ -3,7 +3,7 @@
 // current video mode (NTSC 2 / PAL 3, interlaced or not, 480p 0x50).
 // The non-interlaced arms divide by w three times: gcc keeps one div but all three divide-by-zero traps; the two
 // later traps print nothing (div_trap outputs "" when anti-dependent on an earlier trap) yet still gate the ox/oy
-// stack loads in the scheduler, which is why the target computes h-1 right after the div (T1587).
+// stack loads in the scheduler, which is why the target computes h-1 right after the div.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

@@ -19,7 +19,7 @@ void func_0027C860(struct S *p, int k);
 void func_001F4670(struct S *p, int k);
 void func_00279F00(struct S *p);
 }
-/* VU_FLOAT by value (A41 form): fresh temp per call keeps both 0(sp) home stores */
+/* VU_FLOAT by value: fresh temp per call keeps both 0(sp) home stores */
 struct VU_FLOAT { qword q; VU_FLOAT(const float &f) { __asm__("qmtc2.ni %1, %0" : "=j,!r"(q) : "r,m"(f)); } };
 static inline qword AddScaled(qword a, qword v, VU_FLOAT s)
 {

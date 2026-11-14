@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_002897B8 (agent A69): Sly 3 form of Sly 1's UpdateWrStateVectors / Sly 2 func_0022B7D8, per warp group: (WR *pwr, WRBG *pwrbg).
+// func_002897B8: Sly 3 form of Sly 1's UpdateWrStateVectors / Sly 2 func_0022B7D8, per warp group: (WR *pwr, WRBG *pwrbg).
 // The envelope space is the inverse of weki.dmat with the unused axes' columns zeroed per WEK (jump table) and scaled by 1/16;
 // the world matrix (glob XF, times the glob's extra matrix, optionally relative to the WR's LO position) is scaled by 1/16 too.
 // Vertex positions are integer vectors (cvt.s.w). Per vertex: weight u (linear CLQ of the distance, limited to the LM), then for

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0028B640 (agent A60): DmatSkew - Sly 2 DmatSkew__FP7MATRIX4P7VECTOR4PvG9VU_VECTOR (0x22CCD0) rewritten without asm/pins:
+// func_0028B640: DmatSkew - Sly 2 DmatSkew__FP7MATRIX4P7VECTOR4PvG9VU_VECTOR (0x22CCD0) rewritten without asm/pins:
 // skew matrix of v (lane helpers mtc1/prot3w/pextuw) times *pmat via the NRV MATRIX3 operator*, w lanes cleared.
 typedef int qword __attribute__((mode(TI)));
 struct MATRIX3 { float mat[3][4]; } __attribute__((aligned(16)));

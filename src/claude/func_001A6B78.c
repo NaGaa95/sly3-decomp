@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_001A6B78 (A28/A32 wip 6b78_d + A34: XY length split [vmul,vaddy]|[vsqrt] with untied input, limit added at the compare, if/return 1/return 0).
+// func_001A6B78: XY length split [vmul,vaddy]|[vsqrt] with untied input, limit added at the compare, if/return 1/return 0.
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[4]; } M4;
 typedef struct VirtualEntry { short adjustment; short reserved; M4 *(*call)(); } VirtualEntry;

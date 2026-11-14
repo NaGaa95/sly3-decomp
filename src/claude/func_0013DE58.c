@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -mvu0-use-vf0-vf31
-/* A20b draft; A26: case 15 -1 scale passed as an in/out vmulx operand so its home store follows the result store. */
+/* Case 15 -1 scale passed as an in/out vmulx operand so its home store follows the result store. */
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword q; float f[4]; } U;
 typedef struct { qword r[3]; } M3;

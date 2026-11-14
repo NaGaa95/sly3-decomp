@@ -2,7 +2,6 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* near miss (2 diffs): addiu a2/addiu a1 order before func_002983A8 call (scheduler tie). */
 typedef struct { int num; void *func; } SysEnt;
 extern SysEnt D_0034AE88[];
 extern char D_0034A6E0[];

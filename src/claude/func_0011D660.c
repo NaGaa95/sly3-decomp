@@ -1,6 +1,6 @@
 // Adapted from the matched Sly 2 source src/hand/func_0011C210.c (identical code at the Sly 3 address).
-/* func_0011D660 (Claude agent, lane A29, 2026-10-24): builds a 4x4 matrix from a 3x3 rotation scaled per row by pg[0..2] plus a
-   position. From v6 (aligned 2): the one register pin is on the pg[2] temp in Q7 (the target puts pg[2] in pg's dying a3).
+/* func_0011D660: builds a 4x4 matrix from a 3x3 rotation scaled per row by pg[0..2] plus a
+   Position. The one register pin is on the pg[2] temp in Q7 (the target puts pg[2] in pg's dying a3).
    The dead sqc2 stores of the scales and their extra operands are commented below. */
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[3]; } M3;

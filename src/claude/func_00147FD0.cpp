@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00147FD0 (A21b): Sly 3 rework of Sly 2 func_00137A30 (merge of element ENT lists into pxNew). One register pin (mF31 in s6).
+// func_00147FD0: Sly 3 rework of Sly 2 func_00137A30 (merge of element ENT lists into pxNew). One register pin (mF31 in s6).
 typedef int qword __attribute__((mode(TI)));
 struct AREQ { int cb; int cbAlign; AREQ(int c) { cb = c; cbAlign = 0x10; } };
 class FRAME { public: FRAME(); ~FRAME(); int a[4]; };

@@ -4,7 +4,7 @@
 // temporary allocator FRAME, collects each triangle's three vertices from the edge list (edge face ids
 // -> unique edge vertices, at most 3 per triangle), then orients every triple so that
 // dot(cross(v1-v0, v2-v0), plane normal) >= 0 (swaps vertex 1/2 otherwise).
-// MATCH (T1582): ONE function-scope triangle index (`itri`, used by the edge loop and as the second loop's
+// MATCH: ONE function-scope triangle index (`itri`, used by the edge loop and as the second loop's
 // counter) and ONE function-scope `ptri` shared by both loops; per-loop locals gave register rotation only.
 typedef int qword __attribute__((mode(TI)));
 union U { qword q; float f[4]; };

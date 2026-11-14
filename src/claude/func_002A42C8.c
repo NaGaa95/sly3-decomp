@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-// (Claude agent) newlib wf_pow.c, -O2: exact except the neg**non-integral block: target loads the 0.0/0.0 NaN double as 'lui v0; ld v1,lo(v0); sd v1' (separate store per arm), ours 'ld v0' so jump.c cross-jumps the two sd's (1 insn shorter). pow.c (double) has the same NaN ld-v1 pattern. x<0.0 must be a double compare.
+// newlib wf_pow.c.
 struct exception {
     int type;
     char *name;

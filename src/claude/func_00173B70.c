@@ -1,4 +1,4 @@
-// Sly 2 reference: /home/claude/decomp src/hand/func_00156918.c (Q.x offset 0x58 -> 0x48).
+// Sly 2 reference: src/hand/func_00156918.c (Q.x offset 0x58 -> 0x48).
 typedef int qword __attribute__((mode(TI)));
 struct Q { char pad[0x48]; int x; };
 struct P { char pad[0x14]; struct Q *pq; char pad2[8]; qword v20; };

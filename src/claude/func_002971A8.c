@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* libkernel fileio func_002971A8 (Lilly's agent, T1573; same recipe as sceRead, T1568). Keys: `nowait` assigned in a nested
+/* libkernel fileio func_002971A8. Keys: `nowait` assigned in a nested
    do{do{}while(0);}while(0) after `i = 0` (loop-depth weight gives the target's s4 nowait > s5 sema > s6 size > s7 flags
    priority); a separate counter j for the head-copy loop; and a dead first statement in each arm (`r = (int)D_0034A618;`,
    `n = buf & 0xF;`): it computes the arm's `lui`/andi itself, so gcse PRE no longer appends it AFTER `i = 0` / `nowait = 0`. */

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// WakeSoWater. Sly 2 reference: /home/claude/decomp src/hand/WakeSoWater__FP2SOP5WATERfP6VECTORT3ff.cpp
+// WakeSoWater. Sly 2 reference: src/hand/WakeSoWater__FP2SOP5WATERfP6VECTORT3ff.cpp
 // (Sly 3 drops the splash and spawns the ripple through func_001FE840/func_00202C90).
 typedef int qword __attribute__((mode(TI)));
 struct VTE { short d; short pad; qword (*pfn)(void *); };

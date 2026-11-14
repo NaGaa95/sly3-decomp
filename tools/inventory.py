@@ -1,4 +1,4 @@
-"""Write the remaining main-code worklist and whole-executable component scope."""
+"""Write the whole-executable component scope (main EE, IOP modules, VU programs)."""
 import csv
 import json
 from common import ROOT, Elf32, target_config, save_json
@@ -11,10 +11,6 @@ def main():
     for row in csv.DictReader((ROOT / "config/functions.csv").open()):
         if int(row["Start"], 16) not in matched:
             remaining.append(row)
-    with (ROOT / "config/unmatched.csv").open("w", newline="", encoding="utf-8") as stream:
-        writer = csv.DictWriter(stream, fieldnames=("Name", "Start", "End", "Size", "BoundarySource"))
-        writer.writeheader()
-        writer.writerows(remaining)
     target = target_config()
     elf = Elf32((ROOT / "disc" / target["serial"]).read_bytes())
     from iop_sources import current_modules

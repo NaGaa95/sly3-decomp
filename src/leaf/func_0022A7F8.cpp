@@ -5,7 +5,7 @@
 // func_0022A7F8: movement output of a scripted action. Dispatches on the action node's type (38..103): curve following,
 // walking to or following a target, stop actions, and the blocked flag; it sets the actor's heading and fills the actor's
 // controller output (x/y direction, speed, flags). Based on the structure of Sly 2 func_001E46A0, decoded fresh.
-// Default assembler (hazard nops); the 66-entry jump table is padded by it, see build/naga_work/w60/NOTES.md.
+// Default assembler (hazard nops); the 66-entry jump table is padded by it.
 typedef int qword __attribute__((mode(TI)));
 union U { qword q; float f[4]; };
 struct Method { short delta; short pad; void *fn; };

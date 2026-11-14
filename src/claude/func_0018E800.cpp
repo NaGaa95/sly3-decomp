@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0018E800 (A41): Sly 3 rewrite of Sly 2 func_00168638 (model draw: per-view weights from func_0018E630, VU MAC-flag
+// func_0018E800: Sly 3 rewrite of Sly 2 func_00168638 (model draw: per-view weights from func_0018E630, VU MAC-flag
 // zero tests, packet built once per distinct view weight and queued once per view). func_0018F650 (qsort-style comparator)
 // follows in the same unit. D_00321C90 (0.0025 scale) / jump table / D_00321CC8 are this unit's .rodata (0x321C90-0x321CCC).
 // Notes: j-loop bound read as D_00475480.cview (== 0x479338): %hi(D_00475480+0x3EB8) is not GCSE-merged with the

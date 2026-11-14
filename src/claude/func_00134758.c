@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-/* A26: Dot reads its lane with a qmfc2.ni+mtc1 lane helper so m stays a VU pseudo (fixes the vf4 reload of b). */
+/* Dot reads its lane with a qmfc2.ni+mtc1 lane helper so m stays a VU pseudo (fixes the vf4 reload of b). */
 /* probe the segment a->b: on a hit return the hit point and its plane, else the plane through b facing a */
 typedef int qword __attribute__((mode(TI)));
 struct CTX { int a[4]; };

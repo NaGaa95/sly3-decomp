@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // SLY3_ASFIX: engine-divfix1
-// (A16) Sly 2 func_001229B8 port with Sly 3 CRef; the vdiv tail is one inline (DivQ) so both normalize paths share an asm source line and cross-jump.
+// Sly 2 func_001229B8 port with Sly 3 CRef; the vdiv tail is one inline (DivQ) so both normalize paths share an asm source line and cross-jump.
 typedef int qword __attribute__((mode(TI)));
 struct CRef {
     short m_tagk; short m_cref; union { int n; float g; void *pv; qword *pq; } u;

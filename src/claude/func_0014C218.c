@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A18: Sly 2 func_0013AC18 counterpart, rewritten for the Sly 3 layout; scope = local with out-of-line dtor func_002BC490.
+// Sly 2 func_0013AC18 counterpart, rewritten for the Sly 3 layout; scope = local with out-of-line dtor func_002BC490.
 // func_00164B08 takes its float first in the prototype (arg-setup order).
 typedef int qword __attribute__((mode(TI)));
 struct M4 { qword r[4]; };

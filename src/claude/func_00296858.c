@@ -1,5 +1,5 @@
 // Sly 2 counterpart: sceFsInit (decomp src/lib/sceFsInit.c)
-// func_00296858 (T1563): MATCH. -fstrict-aliasing is what fixes the prologue: flag (int) and next (pointer) get different alias
+// func_00296858: MATCH. -fstrict-aliasing is what fixes the prologue: flag (int) and next (pointer) get different alias
 // sets, so the two stores before func_002980D0 are independent and the s0 save/lui chain outranks the s1 save in sched2.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0 -fstrict-aliasing

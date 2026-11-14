@@ -2,7 +2,7 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 extern "C" {
 /* Steer the holder toward its target in the target's facing frame (states 3-6, 8, 9). */
-/* A20b (from A10's draft): C++ so `m = func_0011CBA0()` goes through a return temporary (0x40) copied to m via
+/* C++ so `m = func_0011CBA0()` goes through a return temporary (0x40) copied to m via
    the VU rows MulT reads (single-asm MulT, result shares the vector's register); VU_FLOAT by value gives the
    shared 0x70 home slot; v enters the VU via an explicit qmtc2; len re-read through an explicit qmfc2;
    the default-vector address is taken before the branch (pd). */

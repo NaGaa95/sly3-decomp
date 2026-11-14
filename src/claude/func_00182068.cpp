@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00182068: pick a reachable point near the actor (Sly 2 func_0017BFF8 lane H14 source adapted: actor fields at 0x34C/0x3D8,
+// func_00182068: pick a reachable point near the actor (Sly 2 func_0017BFF8 source adapted: actor fields at 0x34C/0x3D8,
 // func_002575C0 returns the range scale, position via the vtable matrix, FLT_MAX literal = RO 0x321860).
 // The first func_00120A00 argument is read from an uninitialized local, as in the original (lq a0,0x370(sp)).
 typedef int qword __attribute__((mode(TI)));

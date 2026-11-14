@@ -1,5 +1,5 @@
 // Adapted from the matched Sly 2 source src/hand/func_0011EFB0.c (Sly 3 call addresses).
-/* RadPanTiltRFromVector-style: pan/tilt angles and length of v (Claude agent, 2026-10-17) */
+/* RadPanTiltRFromVector-style: pan/tilt angles and length of v */
 typedef int qword __attribute__((mode(TI)));
 static __inline__ float GetX(qword q) { float x; __asm__("" : "=r"(x) : "0"(q)); return x; }
 static __inline__ float GetY(qword q) { float y; __asm__("prot3w %0,%0" : "=r"(y) : "0"(q)); return y; }

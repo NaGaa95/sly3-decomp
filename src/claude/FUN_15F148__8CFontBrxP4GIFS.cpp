@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 2 reference: /home/claude/decomp src/auto/func_0015F148.c (same body).
+// Sly 2 reference: src/auto/func_0015F148.c (same body).
 struct QW;
 struct DMAS {
     void EndDmaCnt();

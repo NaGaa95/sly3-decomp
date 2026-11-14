@@ -1,5 +1,4 @@
 // Sly 2 counterpart: dpdiv (decomp src/lib/dpdiv.c)
-// WIP (Claude agent): 44 diffs, all in the divide loop: target computes num<den once after the normalise-if (both paths) and jumps past the first in-loop sltu (PRE across loop entry); ours enters at loop top. Flags/do-while no help.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

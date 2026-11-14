@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 3 port (A16) of the matched Sly 2 func_00120FB0 (list shuffle builtin): Sly 3 CRef/NODE layout, list tag 0x1D.
+// Sly 3 port of the matched Sly 2 func_00120FB0 (list shuffle builtin): Sly 3 CRef/NODE layout, list tag 0x1D.
 struct NODE;
 struct CRef {
     short m_tagk; short m_cref; union { int n; float g; void *pv; NODE *pnode; } u;

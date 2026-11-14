@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A12 draft; A70: the destination pointers (pmAcc, pmProd) are taken before the first call so they live in
+// The destination pointers (pmAcc, pmProd) are taken before the first call so they live in
 // s-regs as in the target (s6/s1), and loop 3 walks am itself (am++).
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword r[4]; float f[4][4]; } M4;

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A26: prototype (px, f, p, g, ...) as in Sly 2 func_001300B8 fixes the f20/f21 choice. (Claude agent, laneB10) memsets through an inline ClearM4 helper keep &m2/&mB out of gcse; pe at function scope.
+// Prototype (px, f, p, g, ...) as in Sly 2 func_001300B8 fixes the f20/f21 choice. The memsets through an inline ClearM4 helper keep &m2/&mB out of gcse; pe at function scope.
 typedef int qword __attribute__((mode(TI)));
 struct AREQ { int cb; int cbAlign; AREQ(int c, int a) { cb = c; cbAlign = a; } };
 class FRAME { public: FRAME(); ~FRAME(); int a[4]; };

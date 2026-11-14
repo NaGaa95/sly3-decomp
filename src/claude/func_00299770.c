@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* func_00299770 (libkernel sifcmd). Handler func field must be a function pointer type (Claude agent). */
+/* func_00299770 (libkernel sifcmd). Handler func field must be a function pointer type. */
 typedef struct { void (*func)(void *, void *); void *data; int pad; } HANDLER;
 typedef struct {
     void *pktbuf;

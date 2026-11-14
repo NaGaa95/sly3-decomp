@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00129208 (agent A20b): script call evaluation (Sly 2 func_001272E0 port, from the laneB6 Sly 2 match):
+// func_00129208: script call evaluation (Sly 2 func_001272E0 port):
 // Sly 3 CRef (short tag/refcount, tags 2 lower: bif 0x17, lambda 0x1E, method 0x20, param 0x12), NODE pnext at
 // +0xC, node delete func_002BA840(pn, 3), METHOD gains a field (pv 0xC, pfn 0x10, cargMin 0x14), FRAME init
 // func_002BAA50 on frame+8, SPF::Set func_002BAB88, frame delete func_002BABA8(pf, 3).

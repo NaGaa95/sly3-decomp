@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31
-// func_00285C98 (agent A69): per-frame state machine of an actor with a target (0x204) and a partner object (0x208).
+// func_00285C98: per-frame state machine of an actor with a target (0x204) and a partner object (0x208).
 // States 1..5 are re-dispatched until the state stops changing (do/while on p->state); then state 3 moves the target
 // towards the partner and state 5 moves the actor towards a point from func_0028E910 (func_00120C80 smoothing with the
 // two rodata SMP tables, step = g_clock.dt), handing over through func_00287080 when it arrives; finally, in any state but

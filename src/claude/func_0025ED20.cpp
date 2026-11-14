@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// (A53 draft) build an entry from two id lists; REQs live in an Alloc() inline so the 2nd reuses the freed CRef temp slot (A64).
+// Build an entry from two id lists; REQs live in an Alloc() inline so the 2nd reuses the freed CRef temp slot.
 struct CRef;
 extern "C" void func_0012BC20(CRef *pr);
 struct CRef {

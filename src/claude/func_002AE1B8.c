@@ -1,5 +1,5 @@
 // Sly 2 counterpart: sceMpegAddStrCallback (decomp src/lib/sceMpegAddStrCallback.c)
-// (Claude agent) ee-gcc2.9; table accessed as D_0034E018[type] (no descriptor ptr); the $gp read asm has a "memory" clobber (nStrCb reloaded).
+// ee-gcc2.9; table accessed as D_0034E018[type] (no descriptor ptr); the $gp read asm has a "memory" clobber (nStrCb reloaded).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0 
 // SLY3_ASM: gnu-reorder-db

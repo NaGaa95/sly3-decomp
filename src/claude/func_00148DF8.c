@@ -85,7 +85,7 @@ void func_00148DF8(struct P *p, qword *ppos, qword *prot, float t, float rate)
             s1 = ToVf(pe->u.iw);
             a.q = Madd(a.q, v20.q, s1);
             {
-                register int iw2 __asm__("$17") = pe->u.iw; /* register pin (Claude agent): target reloads pe->w into pe's dying s1 */
+                register int iw2 __asm__("$17") = pe->u.iw; /* register pin: target reloads pe->w into pe's dying s1 */
                 __asm__("qmtc2.ni %1, %0" : "=j"(s2) : "r"(iw2));
             }
             w.q = s1;

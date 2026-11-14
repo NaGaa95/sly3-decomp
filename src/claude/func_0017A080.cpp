@@ -1,7 +1,7 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
 // Port of Sly 2 src/hand/func_0015C3C0.cpp (record offsets shifted, flag 0x40->0x20, vtable slot 51->55).
-// func_0015C3C0 (Claude agent, lane D40): matched with Lilly's MATRIX3 operator* (src/hand/func_0021CB18.cpp: rows of the LEFT
-// matrix into qword locals, VU_VECTOR4 row temps) and her QwRotateVec(MATRIX3 *, qword), with px->mat as the left operand.
+// Matched with the Sly 2 MATRIX3 operator* (src/hand/func_0021CB18.cpp: rows of the LEFT
+// matrix into qword locals, VU_VECTOR4 row temps) and QwRotateVec(MATRIX3 *, qword), with px->mat as the left operand.
 typedef int qword __attribute__((mode(TI)));
 struct MATRIX4 { qword r[4]; };
 struct MATRIX3 { qword r[3]; };

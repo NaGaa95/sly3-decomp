@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// Sly 3 (A16): Sly 2 func_0011EE08 port; the e0.d dot is read with Dot() (gcc-emitted qmfc2) so it schedules first.
-// func_00120A00: closest point on segment p0-p1 to pos (Claude agent). The dead stack copy of the t vector is a
+// Sly 3: Sly 2 func_0011EE08 port; the e0.d dot is read with Dot() (gcc-emitted qmfc2) so it schedules first.
+// func_00120A00: closest point on segment p0-p1 to pos. The dead stack copy of the t vector is a
 // volatile sqc2 asm (keeps it ahead of beqz); the ppos copy goes vf->gpr via a gcc reload (empty asm with "0") so
 // reorg can steal its qmfc2 into the delay slot.
 typedef int qword __attribute__((mode(TI)));

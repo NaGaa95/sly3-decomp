@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* func_002AB098 (libmpeg, Claude agent): DMA the reference image to the IPU (toIPU ch4, chunked via the
+/* func_002AB098 (libmpeg): DMA the reference image to the IPU (toIPU ch4, chunked via the
    func_002AB6B8 handler when > 0xFFFF qw) and CSC it back (fromIPU ch3; func_002AAED8 for >= 0x400 MBs). The CSC part is an
    inline function used twice; the IPU command helper sets d->x82C/x828. */
 typedef struct { int type; int pad[7]; } CB;

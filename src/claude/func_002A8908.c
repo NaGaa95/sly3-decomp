@@ -1,5 +1,4 @@
 // Sly 2 counterpart: func_00249EE0 (decomp src/lib/func_00249EE0.c)
-// (Claude agent) TOOLCHAIN near miss: MATCHES if gas does not move the 2nd insn of the li.d (ori;dsll32) expansion into the following jal delay slot (verified by adding a label after li.d in the .s).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

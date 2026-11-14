@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* libkernel fileio func_00297468 (Claude agent). Keys: `volatile` sema table D_0034A618 (case-1 loop); the request
+/* libkernel fileio func_00297468. Keys: `volatile` sema table D_0034A618 (case-1 loop); the request
    dispatch is written as the switch's own decision tree (==2, <3, ==1, ==3) with the case-1 constant in a local `one`
    set at entry - that is what keeps 1 in $s5 from the prologue; arg->sema is stored before res/rsize (gcc rotates it
    into the jal delay slot). */

@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_002686A0 (agent A69): Sly 3 form of Sly 2 func_00219400 - apply one animation key's poses to the reuse slot's items
+// func_002686A0: Sly 3 form of Sly 2 func_00219400 - apply one animation key's poses to the reuse slot's items
 // (called by func_00269418). Sly 3 packs each pose into a 0x30-byte record: a 64-bit header (index:8, link offset:6, sprite
 // id:10, colour index:7 (0x7F = none), interpolate:1, selected:32) and the M23 matrix at +0x10; the key's COLORS table follows
 // its pose array. New in Sly 3: a pose whose sprite id differs from the item's sprite releases it (func_002646F8), resets the

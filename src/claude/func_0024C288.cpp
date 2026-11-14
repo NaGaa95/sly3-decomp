@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-/* func_0024C288 (Sly 3: camera position via func_001F4A80 + vcall; based on the Sly 2 match T1560): four-ray visibility of an actor from the selector's origin (p+0x20, the caller
+/* func_0024C288 (Sly 3: camera position via func_001F4A80 + vcall; based on the Sly 2 match): four-ray visibility of an actor from the selector's origin (p+0x20, the caller
  * func_00202540 raises it by 20). Collects the objects between the two points (func_0025CF18 with the func_0024C260 filter),
  * then casts rays from the origin to the actor's centre (pulled radius 0xE4 towards the viewer) and to that centre moved by
  * the radius along the camera's up row (D_002DDFA0[1]) and along the side direction up x view. Every ray that hits an object

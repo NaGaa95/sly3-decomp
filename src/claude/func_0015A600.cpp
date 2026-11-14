@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0015A600 (A21b): port of Sly 2 func_001477D8 (HUD 2-matrix GIF sprite draw). Owns rodata 0x320780-0x32082F.
+// func_0015A600: port of Sly 2 func_001477D8 (HUD 2-matrix GIF sprite draw). Owns rodata 0x320780-0x32082F.
 typedef int qword __attribute__((mode(TI)));
 typedef unsigned long ulong;
 struct VECTOR4F { float x, y, z, w; };

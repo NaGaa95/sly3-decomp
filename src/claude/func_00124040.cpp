@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Script element accessor (Sly 2 func_001222C8 evolved): (elt vec i) / (elt mat i j) / (elt mat i) as a float or row.
-// VECTOR/MATRIX4 operator[] inlines give the target register choice with no pins (A26).
+// VECTOR/MATRIX4 operator[] inlines give the target register choice with no pins.
 typedef int qword __attribute__((mode(TI)));
 struct NODE;
 struct CRef {

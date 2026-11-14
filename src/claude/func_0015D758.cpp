@@ -1,5 +1,4 @@
 // SLY3_CFLAGS: -Os -G0 -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0015D758 (agent A43, from A18 r5n.cpp).
 typedef int qword __attribute__((mode(TI)));
 struct Matrix { qword rows[4]; };
 struct Method { short delta, reserved; struct Matrix *(*call)(void *); };

@@ -2,7 +2,6 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-// (Claude agent) near miss 10/171: only the cb.type store vs 'a1 = &cb' order before the two inlined Dispatch(type=2) calls (same as _sceMpegErrorBdec).
 typedef struct { int type; int pad[7]; } CB;
 typedef struct {
     char p0[0xE8]; int xE8;

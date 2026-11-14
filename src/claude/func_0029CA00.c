@@ -2,7 +2,6 @@
 // SLY3_CC: tools/third_party/ee-gcc2.95.3-136
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorg
-/* MATCHES with the reorg+short-loop+GNU-as model: LOOPMAX=5 python3 build/hand_wip/hyb_asm_experiment.py build/hand_wip/func_0029CA00.c func_0029CA00 (see notes/23C000.md). Normal mode: only the 6-insn loop differs. */
 typedef unsigned long fractype;
 typedef int SItype;
 typedef enum { CLASS_SNAN, CLASS_QNAN, CLASS_ZERO, CLASS_NUMBER, CLASS_INFINITY } fp_class_type;

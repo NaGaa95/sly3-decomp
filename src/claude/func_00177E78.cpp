@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// UpdateEmitter. Sly 2 reference: /home/claude/decomp src/hand/UpdateEmitter__FP7EMITTERf.cpp.
+// UpdateEmitter. Sly 2 reference: src/hand/UpdateEmitter__FP7EMITTERf.cpp.
 typedef int qword __attribute__((mode(TI)));
 struct CLOCK { float t; float dt; };
 struct VTE { short d; short pad; qword *(*pfn)(void *); };

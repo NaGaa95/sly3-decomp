@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-rtti
-#include "/home/claude/sly3-decomp/src/P2/vector_intrinsics.h"
-#include "/home/claude/sly3-decomp/src/P2/input_interface.h"
+#include "../P2/vector_intrinsics.h"
+#include "../P2/input_interface.h"
 #include "input_query_api.h"
 struct VTE { short delta, pad; void *fn; };
 struct M4 { qword r[4]; };

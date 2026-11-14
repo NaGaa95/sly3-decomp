@@ -2,7 +2,7 @@
 // func_0022F998: bounding radius of a path measured from its origin. mode 0 transforms every control point by the path's
 // own basis (rotation only) and keeps the largest squared length; the spline mode also measures the two bezier handles
 // (outgoing/incoming tangent scaled by a third of the segment time) of every segment.
-// Matching notes (build/naga_work/w54/RULES.md): LengthSquared reads the dot with `mtc1 %1,%0 : "r"(d), "j"(d)` (allocation-only "j" input keeps the dot a VU
+// Matching notes: LengthSquared reads the dot with `mtc1 %1,%0 : "r"(d), "j"(d)` (allocation-only "j" input keeps the dot a VU
 // pseudo, so the qmfc2 is a round-robin reload copy: $v0, $v0, $v1 as in the original). The loop-carried `previous` is copied out of `next` by the VU helper Move()
 // (vmove): a plain `previous = next` is canonicalised by cse (previous has the lower pseudo number) so the second AddScaled would read vf4 instead of vf8.
 typedef int qword __attribute__((mode(TI)));

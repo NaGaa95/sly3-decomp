@@ -1,5 +1,5 @@
 // Sly 2 counterpart: atanf (decomp src/lib/atanf.c)
-// (Claude agent) fdlibm sf_atan.c. MATCH with SLY3_DIVNOP; the empty asm barriers after the divisions emulate Sony's
+// fdlibm sf_atan.c. MATCH with SLY3_DIVNOP; the empty asm barriers after the divisions emulate Sony's
 // libm div.s being an unschedulable 'nop; nop; div.s' unit (gcc may not move id= across it or put it in a delay slot).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0

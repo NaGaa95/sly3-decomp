@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // func_0012F938: adapted from the matched Sly 2 source src/hand/func_0012D508.cpp (Sly 3 calls, cases and constants).
-// A20b: Fin() assigns the function-level pmT (set in both inlined copies, so it has no REG_EQUIV and stays in $s1
+// Fin() assigns the function-level pmT (set in both inlined copies, so it has no REG_EQUIV and stays in $s1
 // across the calls); the up-vector constant is a function-local static so it lands in .rodata before the jump tables.
 typedef int qword __attribute__((mode(TI)));
 struct M3 { qword r[3]; };

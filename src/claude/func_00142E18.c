@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00142E18 (A46): A12 draft fixed: both speed profiles use the Sly-style "if (dt<half) {} else {v0=a*half; dt-=half; a=-a;} v0+a*dt" (shared mul cross-jumped), stick deflection scaled inside each branch.
+// func_00142E18: both speed profiles use the Sly-style "if (dt<half) {} else {v0=a*half; dt-=half; a=-a;} v0+a*dt" (shared mul cross-jumped), stick deflection scaled inside each branch.
 typedef int qword __attribute__((mode(TI)));
 typedef union { qword q; float f[4]; int i[4]; } VU;
 struct LM { float gMin, gMax; };

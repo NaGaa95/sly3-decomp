@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* (Claude agent) libmpeg demux: MPEG-2 PES packet header parser. BS helpers as in src/lib/_pack_header.c.
+/* libmpeg demux: MPEG-2 PES packet header parser. BS helpers as in src/lib/_pack_header.c.
    Keys: tests on pes->id (no local copy); PTS/DTS as lo/hi like _pack_header; `flags == 3` test outside the
    `flags & 2` block; block-scoped `len` in the no-header branch. tbl = bit sizes of ES_rate/DSM/copy/CRC fields. */
 typedef struct {

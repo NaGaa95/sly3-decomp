@@ -1,5 +1,4 @@
 // Sly 2 counterpart: fmodf (decomp src/lib/fmodf.c)
-// (Claude agent) 22/79: c.eq.s->bc1f hazard nop (toolchain) + 'lui v1; daddu s1,v1' hi-copy artefact of our PRE (Sony puts lui straight into s1).
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

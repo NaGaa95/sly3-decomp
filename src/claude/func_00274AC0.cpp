@@ -1,7 +1,7 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // func_00274AC0: the follow camera policy's update (Sly 2 CMPART2::Update 0x221DD8, src/hand/func_00221DD8.cpp in the
 // Sly 2 decomp, with Sly 3's zones in place of tunnels; SafeHouse sly3/cmfollow3.cpp documents it).
-// Keys (A75 + A78): address-taken float out-params as scalars; radStick test as `else if (> 1.309) {dradPan=0; fLeft=1}
+// Keys: address-taken float out-params as scalars; radStick test as `else if (> 1.309) {dradPan=0; fLeft=1}
 // else {fLeft=1; fArrived=1}` (cross-jumped B8 store); D_00329108 const (unchanging mem: no anti-deps, fixes the smpPull
 // schedule); the uRate length read through an mtc1 asm so gcc emits the qmfc2 itself (mov.s into the bc1f slot).
 typedef int qword __attribute__((mode(TI)));

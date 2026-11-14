@@ -5,7 +5,7 @@
 // velocity transformed by func_00179CC0's matrix, 1 = plain copy, 2 = func_00118558 path; x43C == 2 updates c.w through
 // RadNormalize. It accumulates the bounding box in vMin/vMax and sets p->vF0 = centre, p->g100 = radius + p->g120 (or calls
 // virtual slot 9 when p->c444 drops to 0).
-// A74: A70's a2c1 draft + the case-2 destination pointers pa/pbb declared at the loop top around pcd (order a, b, c)
+// The case-2 destination pointers pa/pbb are declared at the loop top around pcd (order a, b, c)
 // -> loop.c creates the a/b/c givs in the target's order (s7 = a, s6 = b, pcd from t1).
 typedef int qword __attribute__((mode(TI)));
 /* FLT_MAX / -FLT_MAX literals: in the original unit's shared literal row 0x320200 (with func_00148890's D_00320200), referenced by address */

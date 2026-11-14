@@ -1,4 +1,4 @@
-// Sly 2 reference: /home/claude/decomp src/hand/func_001471C0.c.
+// Sly 2 reference: src/hand/func_001471C0.c.
 void func_001F3B50(void *p);
 void func_001C9118(void *p, int n);
 extern char *D_0036BB80;

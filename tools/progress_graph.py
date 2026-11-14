@@ -1,11 +1,8 @@
 #!/usr/bin/env python3
 """Draw docs/progress.svg (shown in README) and log config/progress_history.csv.
 
-Needs only files that are committed to the repo (config/functions.csv, config/matched.csv and the
-VU/IOP config JSONs), so it runs on GitHub without the game disc: .github/workflows/progress.yml
-calls it on every push and commits the refreshed graph. Run it locally after tools/source_progress.py
-to preview:  python tools/progress_graph.py
-If progress.svg or progress_history.csv conflicts on a pull, take either side and re-run this script."""
+Needs only files that are committed to the repo (config/functions.csv, config/matched.csv, config/credits.csv
+and the VU/IOP config JSONs), so it runs without the game disc:  python tools/progress_graph.py"""
 import csv
 import datetime
 import glob
@@ -19,19 +16,18 @@ HIST = os.path.join(ROOT, 'config', 'progress_history.csv')
 SVG = os.path.join(ROOT, 'docs', 'progress.svg')
 MATCH = ('LINKED_MATCH', 'EXACT_MATCH')
 
-# Range owners, from ASSIGNMENTS.md (everything below 0x1B0000 is Dimitri + Claude)
-OWNERS = {'naga': [(0x1B0000, 0x240000)], 'lilly': [(0x240000, 0x1_0000_0000)]}
 C_DONE, C_DONE2, C_LEFT = '#2f9e6e', '#4c7fd1', '#e4e7ec'
 C_TEXT, C_MUTED, C_GRID = '#1f2328', '#656d76', '#d0d7de'
-C_ME, C_COLLAB, C_LILLY = '#d97706', '#7c3aed', '#db2777'
-WHO = [('me', 'Dimitri + Claude', C_ME), ('naga', 'NaGa + Claude + ChatGPT', C_COLLAB), ('lilly', 'Lilly + Claude', C_LILLY)]
+C_WHO = {'NaGa': '#7c3aed', 'Dimitri': '#d97706'}
 
 
-def owner(addr):
-    for who, ranges in OWNERS.items():
-        if any(a <= addr < b for a, b in ranges):
-            return who
-    return 'me'
+def load_credits():
+    """[(name, functions, instructions)] from config/credits.csv: who first committed each matched source (see CREDITS.md)."""
+    path = os.path.join(ROOT, 'config', 'credits.csv')
+    if not os.path.exists(path):
+        return []
+    with open(path, newline='') as f:
+        return [(r['name'], int(r['functions']), int(r['instructions'])) for r in csv.DictReader(f)]
 
 
 def load_functions():
@@ -51,7 +47,7 @@ def load_matched():
 
 
 def side_stats():
-    """VU programs and IOP functions recorded by NaGa's VU/IOP pipelines (None when unavailable)."""
+    """VU programs and IOP functions recorded by the VU/IOP pipelines (None when unavailable)."""
     vu = iop_f = iop_b = None
     try:
         v = json.load(open(os.path.join(ROOT, 'config', 'vu_original_programs.json')))
@@ -125,7 +121,8 @@ def render(real, matched_addrs):
     mf = sum(1 for a in real if a in matched_addrs)
     mi = sum(s // 4 for a, (_, s) in real.items() if a in matched_addrs)
     hist = log(mf, mi, total_f, total_i)
-    today = datetime.date.today().isoformat()
+    complete = mf == total_f
+    stamp = f'completed {hist[-1]["date"][:10]}' if complete else f'updated {datetime.date.today().isoformat()}'
     W = 960
     out = []
     y = 0
@@ -135,7 +132,7 @@ def render(real, matched_addrs):
     y += 40
     out.append(t(32, y, 'Sly 3: Honor Among Thieves — matching decompilation progress', 22, weight='bold'))
     y += 22
-    out.append(t(32, y, f'SCUS_974.64 (NTSC-U) · only byte-identical, relocation-checked functions count · updated {today}', 13, C_MUTED))
+    out.append(t(32, y, f'SCUS_974.64 (NTSC-U) · only byte-identical, relocation-checked functions count · {stamp}', 13, C_MUTED))
 
     def headline(y, label, sub, done, total, color, unit):
         frac = done / total if total else 1
@@ -215,41 +212,31 @@ def render(real, matched_addrs):
     # ---- per-person progress
     out.append('<!-- Progress By Person Section -->')
     y += 16
-    out.append(t(32, y, 'Progress by person (assigned ranges, see ASSIGNMENTS.md)', 16, weight='bold'))
+    out.append(t(32, y, 'Progress by person (see CREDITS.md)', 16, weight='bold'))
     y += 8
-    for key, label, color in WHO:
-        fs = [a for a in real if owner(a) == key]
-        if not fs:
-            continue
-        ti = sum(real[a][1] // 4 for a in fs)
-        di = sum(real[a][1] // 4 for a in fs if a in matched_addrs)
-        df = sum(1 for a in fs if a in matched_addrs)
-        frac = di / ti if ti else 1
+    for name, df, di in load_credits():
+        # each person's part is the set of functions they matched, so a finished project shows 100% for everyone
+        color = C_WHO.get(name, C_DONE2)
         y += 26
-        out.append(f'<rect x="32" y="{y - 11}" width="10" height="12" rx="2" fill="{color}"/>' + t(48, y, label, 12, weight='bold'))
-        out.append(bar(240, y - 12, 270, 14, frac, color, 3))
-        out.append(t(630, y, f'{frac:.1%} of code', 12, anchor='end'))
-        out.append(t(W - 32, y, f'{df:,} of {len(fs):,} functions matched · {len(fs) - df:,} left', 12, C_MUTED, 'end'))
+        out.append(f'<rect x="32" y="{y - 11}" width="10" height="12" rx="2" fill="{color}"/>' + t(48, y, name, 12, weight='bold'))
+        out.append(bar(240, y - 12, 270, 14, 1, color, 3))
+        out.append(t(630, y, '100.0% of code', 12, anchor='end'))
+        out.append(t(W - 32, y, f'{df:,} of {df:,} functions matched · 0 left', 12, C_MUTED, 'end'))
     y += 20
 
     # ---- per-range table
     out.append('<!-- By Address Range Section -->')
     y += 16
-    out.append(t(32, y, 'Where the remaining work is (by address range)', 16, weight='bold'))
-    y += 18
-    out.append(f'<rect x="32" y="{y - 9}" width="10" height="10" rx="2" fill="{C_ME}"/>' + t(48, y, 'Dimitri + Claude', 12))
-    out.append(f'<rect x="170" y="{y - 9}" width="10" height="10" rx="2" fill="{C_COLLAB}"/>' + t(186, y, 'NaGa', 12))
-    out.append(f'<rect x="240" y="{y - 9}" width="10" height="10" rx="2" fill="{C_LILLY}"/>' + t(256, y, 'Lilly', 12))
+    out.append(t(32, y, 'By address range', 16, weight='bold'))
     out.append(t(W - 32, y, 'bar = share of the range\'s code matched', 12, C_MUTED, 'end'))
     y += 22
-    out.append(t(52, y, 'Range', 11, C_MUTED) + t(560, y, 'Code done', 11, C_MUTED, 'end')
+    out.append(t(32, y, 'Range', 11, C_MUTED) + t(560, y, 'Code done', 11, C_MUTED, 'end')
                + t(650, y, 'Funcs left', 11, C_MUTED, 'end') + t(760, y, 'Instr. left', 11, C_MUTED, 'end')
                + t(W - 32, y, 'Biggest left', 11, C_MUTED, 'end'))
     y += 8
     buckets = {}
     for a, (name, s) in real.items():
-        b = buckets.setdefault(a >> 16, {'fi': 0, 'ti': 0, 'fl': 0, 'il': 0, 'big': 0, 'own': {}})
-        b['own'][owner(a)] = b['own'].get(owner(a), 0) + s // 4
+        b = buckets.setdefault(a >> 16, {'fi': 0, 'ti': 0, 'fl': 0, 'il': 0, 'big': 0})
         b['ti'] += s // 4
         if a in matched_addrs:
             b['fi'] += s // 4
@@ -262,9 +249,7 @@ def render(real, matched_addrs):
         lo = k << 16
         frac = b['fi'] / b['ti'] if b['ti'] else 1
         y += 22
-        oc = {'me': C_ME, 'naga': C_COLLAB, 'lilly': C_LILLY}[max(b['own'], key=b['own'].get)]
-        out.append(f'<rect x="32" y="{y - 11}" width="10" height="12" rx="2" fill="{oc}"/>')
-        out.append(t(52, y, f'0x{lo:06X}–0x{lo + 0x10000:06X}', 12, weight='bold' if frac == 1 else 'normal'))
+        out.append(t(32, y, f'0x{lo:06X}–0x{lo + 0x10000:06X}', 12, weight='bold' if frac == 1 else 'normal'))
         out.append(bar(250, y - 11, 250, 12, frac, C_DONE2 if frac < 1 else C_DONE, 3))
         out.append(t(560, y, f'{frac:.0%}', 12, anchor='end'))
         out.append(t(650, y, f'{b["fl"]:,}' if b['fl'] else 'done', 12, C_MUTED if not b['fl'] else C_TEXT, 'end'))
@@ -275,7 +260,10 @@ def render(real, matched_addrs):
     # ---- remaining by function size
     out.append('<!-- By Function Size Section -->')
     y += 24
-    out.append(t(32, y, 'What\'s left, by function size', 16, weight='bold'))
+    out.append(t(32, y, 'By function size', 16, weight='bold'))
+    if complete:
+        y += 18
+        out.append(t(32, y, 'Every function is matched — the decompilation is complete.', 12, C_MUTED))
     sizes = [(1, 20, 'Tiny (≤20 instr.)'), (21, 100, 'Small (21–100)'), (101, 300, 'Medium (101–300)'),
              (301, 1000, 'Large (301–1,000)'), (1001, 10 ** 9, 'Huge (1,000+)')]
     y += 10
@@ -291,7 +279,7 @@ def render(real, matched_addrs):
         out.append(t(630, y, f'{frac:.0%} done', 12, anchor='end'))
         out.append(t(W - 32, y, f'{len(left):,} of {len(tot):,} functions left · {sum(left):,} instr.', 12, C_MUTED, 'end'))
     y += 30
-    out.append(t(32, y, 'Generated by tools/progress_graph.py from config/matched.csv (refreshed automatically on every push).', 11, C_MUTED))
+    out.append(t(32, y, 'Generated by tools/progress_graph.py from config/matched.csv.', 11, C_MUTED))
     H = y + 24
     svg = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}" viewBox="0 0 {W} {H}" '
            f'font-family="-apple-system,BlinkMacSystemFont,Segoe UI,Helvetica,Arial,sans-serif">'

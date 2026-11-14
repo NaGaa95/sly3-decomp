@@ -1,7 +1,9 @@
 # Sly 3: Honor Among Thieves — matching decompilation
 
-**This repo contains no game data; bring your own disc.** Game files, SDK/compiler binaries and generated
-build files are never committed.
+**Complete: all 8,723 functions of the game executable match the original byte for byte.**
+
+This repo contains no game data; bring your own disc. Game files, SDK/compiler binaries and generated build files
+are never committed. Who did what: [CREDITS.md](CREDITS.md).
 
 Target: `SCUS_974.64` (NTSC-U, SHA-1 5941b7877e6bf5dfb8acb2d04a3c5059367f385b)
 
@@ -9,24 +11,21 @@ Target: `SCUS_974.64` (NTSC-U, SHA-1 5941b7877e6bf5dfb8acb2d04a3c5059367f385b)
 
 ![Decompilation progress](docs/progress.svg)
 
-The graph updates automatically on every push (GitHub Actions runs `tools/progress_graph.py` on
-`config/matched.csv`). Only functions whose compiled bytes are identical to the original game, with every
-call and data address resolved to the right target, count (`LINKED_MATCH` / `EXACT_MATCH`).
-Ranges: orange = Dimitri + Claude, purple = NaGa, pink = Lilly (see `ASSIGNMENTS.md`).
+Only functions whose compiled bytes are identical to the original game count, and every call and data address in
+them is checked against the original (`LINKED_MATCH` / `EXACT_MATCH` in `config/matched.csv`).
 
-## Toolchain (confirmed)
+## Toolchain
 - **Compiler: ee-gcc 2.95.3 build 136** (a few files use build 114), flags `-O2 -G0 -ffast-math` by default;
   per-file overrides live in each source's header (`SLY3_CC:`, `SLY3_CFLAGS:`, `SLY3_AS:`, `SLY3_ASFIX:`).
 - **Assembler: `ps2eeas` from 2.95.3-114**, plus the assembly filters in `tools/asfix_*.py`
-  (`asfix_sly2.py` is the filter proven on the Sly 2 decomp).
+  (`asfix_sly2.py` is the filter from the Sly 2 decomp).
 - VU microcode is assembled with GNU `dvp-as` 2.45.1; IOP modules have their own pipeline under `iop/`.
 - Compilers come from decomp.me's collection (`config/toolchain.lock.json`) and go in `tools/third_party/`.
   On Windows they run natively; on Linux they run through [wibo](https://github.com/decompals/wibo).
 - **Sony SDK libraries** (libkernel/sif, libpad, libmpeg, libcdvd, libgcc, libm, ...) were built by Sony with
   older EE compilers and assembled by GNU as in reorder mode. `tools/bootstrap.py` also fetches those compilers
-  (ee-gcc 2.9-990721 / 991111 / 991111a / 991111-01 / 991111-01-dtls13010, 3.2-030926 / 040921 and 2.96 — the
-  same set the Sly 2 decomp uses; native 32-bit Linux binaries, so Linux/WSL with a 32-bit glibc). A source opts in
-  with its header, nothing else changes:
+  (ee-gcc 2.9-990721 / 991111 / 991111a / 991111-01 / 991111-01-dtls13010, 3.2-030926 / 040921 and 2.96;
+  native 32-bit Linux binaries, so Linux/WSL with a 32-bit glibc). A source opts in with its header:
 
   ```c
   // SLY3_CC: tools/third_party/ee-gcc2.9-991111      (or the short form `991111`)
@@ -34,11 +33,11 @@ Ranges: orange = Dimitri + Claude, purple = NaGa, pink = Lilly (see `ASSIGNMENTS
   // SLY3_ASM: gnu-reorder-db
   ```
 
-  `SLY3_ASM` modes (`tools/gnu_reorder.py`, ported from Sly 2): `gnu-reorder-db` (gcc fills delay slots, GNU as
-  2.96 fills the rest; most SDK code), `gnu-reorder` (no gcc slot filling, adds `-fno-delayed-branch`; libkernel),
-  `gnu-reorg` (like -db, short single-block loops keep a nop; libgcc). Extra switches: `// SLY3_SAVES: sd`
-  (64-bit `sd`/`ld` register saves), `// SLY3_DIVNOP` (libm), `// SLY3_NOLOOPFIX` (libmpeg). `SLY3_ASFIX`
-  filters are for ps2eeas output and cannot be combined with these.
+  `SLY3_ASM` modes (`tools/gnu_reorder.py`): `gnu-reorder-db` (gcc fills delay slots, GNU as 2.96 fills the rest;
+  most SDK code), `gnu-reorder` (no gcc slot filling, adds `-fno-delayed-branch`; libkernel), `gnu-reorg` (like
+  -db, short single-block loops keep a nop; libgcc). Extra switches: `// SLY3_SAVES: sd` (64-bit `sd`/`ld`
+  register saves), `// SLY3_DIVNOP` (libm), `// SLY3_NOLOOPFIX` (libmpeg). `SLY3_ASFIX` filters are for ps2eeas
+  output and cannot be combined with these.
 
 ## Build (Windows)
 
@@ -59,32 +58,34 @@ VU sources:
 ```
 
 ## Layout
-- `src/P2/`, `src/engine/`, `src/hand/` — hand-decompiled engine code
+- `src/P2/`, `src/engine/`, `src/hand/`, `src/game_middle/`, `src/leaf/`, `src/claude/` — engine and game code,
+  mostly one function per file. The directories reflect when a function was matched, not the original file layout.
 - `src/reference*/` — functions recovered from the finished Sly 2 decomp and re-verified against Sly 3
-- `src/auto/` — functions matched from m2c output (byte-identical, still need cleanup into proper types/names)
-- `src/lib/`, `src/startup/`, `src/vu/` — Sony SDK libraries, startup code, VU microcode
+- `src/auto/` — functions matched from m2c output (raw C)
+- `src/factories/`, `src/wrappers/` — object factory callbacks and small forwarding functions
+- `src/lib/`, `src/runtime_agent/`, `src/startup/` — Sony SDK libraries, C runtime and startup code
+- `src/vu/` — VU microcode
 - `src/asm/` — Sony's original hand-written assembly routines (see below)
 - `iop/src/` — IOP module sources
 - `include/` — shared headers
-- `config/functions.csv` — every function's address/size; `config/symbol_addrs.txt` — known names;
-  `config/matched.csv` — current verified match list (generated by `tools/source_progress.py`);
-  `config/progress_history.csv` — checkpoints for the graph
+- `config/functions.csv` — every function's address/size (`function_overrides.csv` and `function_exclusions.csv`
+  hold the boundary corrections); `config/symbol_addrs.txt` — names; `config/matched.csv` — verified match list
+  (generated by `tools/source_progress.py`); `config/progress_history.csv` — data for the graph
 
 ## Tools
 - `sly3.ps1 <command>` — Windows front end for the tools below
 - `tools/matchtool.py target NAME` — original disassembly of one function
-- `tools/matchtool.py check FILE [func...]` — compile and compare against the original, per function
-- `tools/draft.py NAME` — m2c draft of a function as a starting point
+- `tools/matchtool.py check FILE [func...]` — compile one source and compare it to the original, per function
 - `tools/source_progress.py` — rebuild every source, relocation-check it, and regenerate `config/matched.csv`
-- `tools/progress_graph.py` — redraw `docs/progress.svg` from `config/matched.csv` (also run by GitHub on push)
-- `tools/reference_sly2.py`, `tools/find_reuse.py`, `tools/reuse_reference.py` — find Sly 3 functions that
-  match Sly 2 code and recover them
+- `tools/progress_graph.py` — redraw `docs/progress.svg` from `config/matched.csv`
+- `tools/draft.py NAME` — m2c pseudo-C of one function
+- `tools/selftest.py` — checks the toolchain and the assembly filters against real code; it needs a local copy of
+  the Sly 2 decomp, taken with `tools/reference_sly2.py` (pinned revision in `config/reference.json`)
 
-## Rules for matches
-- Only byte-identical, relocation-checked functions go into `src/`.
+## Conventions
+- Only byte-identical, relocation-checked functions are in `src/`.
 - At most one commented register pin per function; no inline asm replacing plain C (VU helper inlines are fine).
-- No invented global names — address-based `D_XXXXXXXX` / `func_XXXXXXXX` names are fine until the real name
-  is known.
+- Address-based names (`D_XXXXXXXX` / `func_XXXXXXXX`) are used wherever the real name is not known.
 
 ### Hand-written assembly (`src/asm/`)
 A few routines in the SDK libraries were never C: Sony wrote them in assembly (libkernel's timer read, D-cache
@@ -92,6 +93,10 @@ write-back and kernel-mode exception/syscall trampolines, newlib's r5900 `strcmp
 `_copyRefImage`/`_copyAddRefImage` and `_rix_*`/`_ri0_*` motion-compensation routines at 0x298E50–0x2B1EA8). They use
 COP0/ERET, `cache`, MMI and SA-register instructions and non-ABI register conventions that no compiler output
 reproduces, so they are kept as top-level `__asm__(".set noreorder" … ".ent" …)` blocks, one file per original
-routine group, exactly like their counterparts in the finished Sly 2 decomp (`src/lib/*.c` there). Each file's
-header names the Sly 2 counterpart and the evidence. These are the only instruction-level asm sources in the
-project: the no-asm rule above still applies to all C/C++ code.
+routine group, exactly like their counterparts in the Sly 2 decomp (`src/lib/*.c` there). Each file's header names
+the Sly 2 counterpart and the evidence. These are the only instruction-level asm sources in the project.
+
+## Not yet done
+The code matches, but most functions still have address-based names and offset-only struct views. Naming and
+cleanup can be done later without affecting the match. The nine VU microprograms are rebuilt from source; the IOP
+modules are covered only in small part, and the executable is not yet relinked from the sources alone.

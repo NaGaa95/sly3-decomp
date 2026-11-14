@@ -3,12 +3,12 @@
 // func_00120C80: ported from Lilly's personal Sly 2 decomp (src/P2/util.c), reduced to the declarations it needs.
 // Every global is named by its address; the function keeps its readable name and gets the team symbol through __asm__.
 // Globals: D_00317560 (g_qwZero)
-// 0x0011F088 PosSmooth__FUxUxfP3SMPP6VECTOR  (T1258)
+// 0x0011F088 PosSmooth__FUxUxfP3SMPP6VECTOR
 // GSmooth for a position (a 128-bit qword): the distance from posCur to posTarget is what GSmooth eases to zero (psmp's pace, dt seconds), the direction stays.
 // Returns the new position (posCur + dpos * (the distance moved / the distance)); *pv (optional) gets the velocity it arrives with, in the same direction
 // (dpos * (GSmooth's speed / the distance)). Closer than 0.0001: the position is posTarget and *pv is all zero (g_qwZero).
 // Callers: STEPPLAYER::GetCpdefi 0x141640 (the focus offset at JT+0x1070 eases back to zero), UpdateJtAirInput (dposUnk1010).
-// What decided the match (T1258, search over spellings; the first draft, a plain qword dpos, was 4%): dpos is a VU_VECTOR4 VALUE returned by SubPos (a memory
+// What decided the match (search over spellings; the first draft, a plain qword dpos, was 4%): dpos is a VU_VECTOR4 VALUE returned by SubPos (a memory
 // temp) and qwDpos is a qword copy of it that every later use reads; the length is the dot product with the vector passed twice (QwLengthDot - with QwLength
 // it is 51%): that gives the pseudo enough references for the register allocator to keep it in vf3 with a caller-save (sqc2 / lqc2 sp+0x40) around the
 // GSmooth call, while the temp stays in memory (sp+0x30) for the reloads. Using dpos.qw again after the call, or without the copy, is 7%.

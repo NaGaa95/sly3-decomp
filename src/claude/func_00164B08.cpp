@@ -60,7 +60,7 @@ int func_00164B08(qword posCenter, float sRadius, qword pos0, qword pos1, int cl
     if (clsgMax <= 0)
         return 0;
     qword dpos = SubQ(pos0, posCenter);
-    register float c0 __asm__("$f0") = Dot(dpos, dpos); /* register pin (Claude agent): breaks the f0/f1 local-alloc tie */
+    register float c0 __asm__("$f0") = Dot(dpos, dpos); /* register pin: breaks the f0/f1 local-alloc tie */
     float c = c0 - sRadius * sRadius;
     qword dir = SubQ(pos1, pos0);
     float a = Dot(dir, dir);

@@ -1,4 +1,4 @@
-// func_001ACE40 (A36): new C; relative/residual/gain are reload spill slots (0xC0/0xD0/0xE0).
+// func_001ACE40: new C; relative/residual/gain are reload spill slots (0xC0/0xD0/0xE0).
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31
 typedef int qword __attribute__((mode(TI)));
 #define AT(p, off, type) (*(type *)((char *)(p) + (off)))

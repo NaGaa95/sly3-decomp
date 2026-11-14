@@ -2,7 +2,7 @@
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db
-/* func_00298BA8 (libkernel timer.c, Claude agent): T2 compare interrupt; runs expired alarms. The callback's $gp is
+/* func_00298BA8 (libkernel timer.c): T2 compare interrupt; runs expired alarms. The callback's $gp is
    loaded from the counter (asm), the inline GetTime is iGetTimerSystemTime; ovf/count volatile as in the target. */
 typedef struct Counter {
     struct Counter *next;

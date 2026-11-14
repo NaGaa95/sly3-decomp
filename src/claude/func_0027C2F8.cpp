@@ -1,7 +1,7 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions -fno-thread-jumps
 // SLY3_ASFIX: engine-divfix1
 // func_0027C2F8 (A62/A66): per-wheel suspension/steer update of the car (4 wheels): ground snap via func_0027AD80,
-// GSmooth spin, wheel matrix = rotZ(steer) * rotX(spin) through Lilly's NRV MATRIX3 operator* (per-row stores), then
+// GSmooth spin, wheel matrix = rotZ(steer) * rotX(spin) through the Sly 2 NRV MATRIX3 operator* (per-row stores), then
 // the wheel actor's teleport/rotation and skid sound. Clamp inline with the divisor as its own local.
 typedef int qword __attribute__((mode(TI)));
 union U { qword q; float f[4]; int n[4]; };

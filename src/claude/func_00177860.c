@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// PostEmitterLoad. Sly 2 reference: /home/claude/decomp src/hand/PostEmitterLoad__FP7EMITTER.c.
+// PostEmitterLoad. Sly 2 reference: src/hand/PostEmitterLoad__FP7EMITTER.c.
 struct K { short a; short b; void (*pfn)(void); };
 struct LM { float gMin; float gMax; };
 struct BOX { float xMin, yMin, zMin, pad; float xMax, yMax, zMax; };

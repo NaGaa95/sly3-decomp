@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_0011CDC8 (agent A20b): rotation matrix taking direction a onto b. Port of the matched Sly 2
+// func_0011CDC8: rotation matrix taking direction a onto b. Port of the matched Sly 2
 // func_0011BA08 (src/hand/func_0011BA08.cpp in the Sly 2 decomp), adapted:
 //  - -Os (as the neighbouring Sly 3 math functions) fixes the second Len() VU registers.
 //  - G() reads a VU float via an explicit qmfc2 + mtc1 (no register pin). Using it for the lb test adds one

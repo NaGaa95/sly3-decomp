@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00147410 (A46): spring integrator acc=(pg-pos)*k0+(vg-vel)*k1; vel+=acc*dt; pos+=(vel+vel')*dt/2. A30 u0.cpp + one allocation-only "j"(s.q) operand in AddScaled2 (h gets vf1, dt vf5).
+// func_00147410: spring integrator acc=(pg-pos)*k0+(vg-vel)*k1; vel+=acc*dt; pos+=(vel+vel')*dt/2. One allocation-only "j"(s.q) operand in AddScaled2 (h gets vf1, dt vf5).
 typedef int qword __attribute__((mode(TI)));
 struct VU_FLOAT { qword q; VU_FLOAT(float f) { __asm__("qmtc2.ni %1, %0" : "=j"(q) : "r"(f)); } };
 struct VU_VECTOR { qword q; VU_VECTOR(const qword &v) { q = v; } };

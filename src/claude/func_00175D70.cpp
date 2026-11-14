@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Sly 3 port of Sly 2 func_00158B20 (helpers unchanged); Sly 3: ALO pzz at 0xD8, literal 1500.0f, j-loop not strength-reduced (no giv hint).
-// func_00175D70 (Claude agent, T1655): DZG constraint-add loop. Each pass re-solves (func_00175BD8), picks the free
+// func_00175D70: DZG constraint-add loop. Each pass re-solves (func_00175BD8), picks the free
 // contact row whose projected push (the rows' gC-weighted af[j].av[i] vectors minus the normal part) is largest, then
 // appends a new row paired with it: its g10 = -|v|, its F gets the push divided by g10 and the SO, its g8/g4 limits come from
 // the object's friction data, and func_001758A0 (AppendDzgDz) gets the new row and its F.

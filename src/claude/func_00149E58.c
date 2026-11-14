@@ -1,13 +1,13 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// A18: port of Sly 2 func_00139950 (src/hand/func_00139950.c in the Sly 2 decomp); func_0011E3B8 = RadNormalize.
-// laneZ2 v4 (Claude agent, 2026-10-30): particle update through VU0 microprogram 0x10.
-// (Sly 2 origin) Built from build/hand_wip/func_00139950.lilly1.c (Claude agent for Lilly, T1646). The fixed vf21-vf31 registers
+// Port of Sly 2 func_00139950 (src/hand/func_00139950.c in the Sly 2 decomp); func_0011E3B8 = RadNormalize.
+// Particle update through VU0 microprogram 0x10.
+// The fixed vf21-vf31 registers
 // of the microprogram are bound only inside the inline VU helper UpdateMs10, which loads them, runs vcallms 0x10
 // per live particle and stores the results after the cfc2.i interlock; the function body has no register pins.
 // Microprogram ABI: vf27 = dt, vf28..vf31 = matrix rows 3..0, vf23/vf24 = the pa/pb entries; it accumulates the
 // bounds in vf26 (min) / vf25 (max) in place and writes the new pa/pb entries to vf21/vf22.
 // vmin/vmax are only asm INPUTS of the vcallms: keeping both registers set once makes sched1 treat their loads as
-// "birthing" insns, which gives the original order of the parameter spill stores (see notes/130000.md).
+// "birthing" insns, which gives the original order of the parameter spill stores.
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[4]; } M4;
 typedef struct { float x, y, z, w; } V;

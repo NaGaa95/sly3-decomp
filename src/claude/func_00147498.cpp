@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00147498 (A30): camera-mode update, written from the target. Stick/state picks gx/gy, the 3x3 tent weights
+// func_00147498: camera-mode update, written from the target. Stick/state picks gx/gy, the 3x3 tent weights
 // (max(0,-g), 1-|g|, max(0,g)) blend the D_00342D20 offset table into acc (spilled at 0xF0), optional D_00317530 term,
 // stiffness lerped by a CLQ/LM of the XY distance, spring step func_00147410, then either a look-dir M4 or a look-at.
 // Keys: AddScaled takes the table vector as const qword & (load after the VU_FLOAT home store); M4 built through an

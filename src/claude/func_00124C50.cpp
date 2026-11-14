@@ -1,6 +1,6 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
 // Adapted from the matched Sly 2 source src/hand/func_00122F00.cpp (Sly 3: -Os, matrix tag 0x19).
-// Script matrix-slerp builtin. Matched by Claude agent (2026-10-17): MulM3 uses the g++ named return value (`return m`),
+// Script matrix-slerp builtin. MulM3 uses the g++ named return value (`return m`),
 // stores each row right after its asm, and also writes a second (dead) M3 copy t, which is the target's 0xB0 slot.
 typedef int qword __attribute__((mode(TI)));
 typedef struct { qword r[3]; } M3;

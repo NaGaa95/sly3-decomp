@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00280828 (agent A60): Sly 3 form of Sly 2 func_00228E50 (SO collider membership + landing impacts), no pins/asm.
+// func_00280828: Sly 3 form of Sly 2 func_00228E50 (SO collider membership + landing impacts), no pins/asm.
 // Sly 3: bit 63 of flags 0x120 marks old members, bit 0 of 0x128 new ones; CTX scope; PvAllocSlot; the impact is
 // func_00280BF8(p, pos, fall); the stack request pointer is a named local (kept in s5, reused for the signal pair).
 typedef int qword __attribute__((mode(TI)));

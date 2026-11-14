@@ -1,5 +1,5 @@
 // Sly 2 counterpart: scePadSetActAlign (decomp src/lib/scePadSetActAlign.c)
-// (Claude agent) 2 diffs: pad result pattern r = p->result; if (r == 1) { f(); r = p->result; }. Left: loop body sb/slti order (ours sb first) in every mode/compiler tried.
+// Pad result pattern: r = p->result; if (r == 1) { f(); r = p->result; }.
 // SLY3_CC: tools/third_party/ee-gcc2.9-991111
 // SLY3_CFLAGS: -O2 -G0
 // SLY3_ASM: gnu-reorder-db

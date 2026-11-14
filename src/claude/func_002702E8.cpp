@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// WriteTftUl(TFT*, OSTRM*, ulong): unsigned printf conversion (Claude agent)
+// WriteTftUl(TFT*, OSTRM*, ulong): unsigned printf conversion
 struct TFT {int fLeft,fPlus,fSpace,fPrefix,fZero,fPrec0,width,precision,cbits;int matrixRows,vectorColumns;unsigned char conversion;int fUpper;};
 union UL {unsigned short us;short s;unsigned int u;int i;unsigned long ul;long l;};
 class OSTRM {public:char *buffer;int capacity,used;char unknownC[4];int written,buffered;int CbWrite(void *,int) __asm__("func_0025A2D0");};

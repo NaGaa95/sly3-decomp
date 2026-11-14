@@ -1,5 +1,5 @@
 // SLY3_CFLAGS: -Os -G0 -ffast-math -mvu0-use-vf0-vf31 -fno-exceptions
-// func_00156FD0 (agent A43, from A18 wip): the 0 <= f108 test guards BOTH func_001F4DD8 and func_001854C8
+// func_00156FD0: the 0 <= f108 test guards BOTH func_001F4DD8 and func_001854C8
 // (target bc1f skips to the 0.5f setup); that block boundary also fixes the fAny=1 delay slot and the beqz fill.
 typedef int qword __attribute__((mode(TI)));
 struct M4 { qword r[4]; };
