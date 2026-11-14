@@ -1,4 +1,7 @@
 name,address,instructions,status,source
+_start,0x00100008,132,LINKED_MATCH,src/asm/crt0.c
+func_00100218,0x00100218,2,LINKED_MATCH,src/asm/crt0.c
+func_00100220,0x00100220,2,EXACT_MATCH,src/asm/crt0.c
 func_00100228,0x00100228,31,LINKED_MATCH,src/P2/reflected_00100228.cpp
 func_001002A8,0x001002A8,42,LINKED_MATCH,src/P2/reflected_001002A8.cpp
 func_00100350,0x00100350,42,LINKED_MATCH,src/P2/reflected_00100350.cpp
